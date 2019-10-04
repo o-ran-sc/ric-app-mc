@@ -1,0 +1,77 @@
+
+--------------------------------------------------------------------------------
+
+	Copyright (c) 2018-2019 AT&T Intellectual Property.
+
+   Licensed under the Apache License, Version 2.0 (the "License");
+   you may not use this file except in compliance with the License.
+   You may obtain a copy of the License at
+
+	   http://www.apache.org/licenses/LICENSE-2.0
+
+   Unless required by applicable law or agreed to in writing, software
+   distributed under the License is distributed on an "AS IS" BASIS,
+   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+   See the License for the specific language governing permissions and
+   limitations under the License.
+--------------------------------------------------------------------------------
+
+
+
+MC Listener
+
+This directory contains the source for the a simple message listener which 
+writes messages received via RMR into a fifo (named pipe) for an external
+process to consume. 
+
+Fifos are named MT_xxxxxxxx where the Xs are replaced with the message 
+type with up to 7 leading zeros (e.g. MT_00000002).  The data written 
+to a pipe has the form:
+	<8 bytes><n bytes>
+
+Where the first 8 bytes are the ASCII representation of the length of
+the message (n) (the 8th byte is a zero allowing the bytes to be
+treated as a C string if desired.  The next n bytes are the unchanged 
+payload which was received.  No RMR header information (e.g. source, 
+meid, etc.) is communicated.
+
+If the listener is executed with the timestamp extension enabled, then
+the leading 'header' is enhanced such that the time the message was
+received by the listener is added.  Additionally, a leading delimiter
+is added to make synchronisation possible. The timestamp is also an 
+ASCII string of the form 1570110224356 (milliseconds past the epoch).  
+The enhanced header has the format:
+
+	<delimeter><length-bytes><time-bytes>
+
+The <delimeter> is a series of 4 bytes which should always be: '@MCL'.
+It is intended to be used to sequence "frames" in the pipe should there be
+write errors which result in missing data.  If the application reading from
+a pipe does not see this delimeter, then it should read byte by byte from
+the pipe until it does in order to synchronise with the stream.
+
+The <length-bytes> are as descrbed previously: 8 byte ASCII string (nil 
+terminated).
+
+The <time-bytes> is an ASCII string (nil terminated) with a length of 16
+bytes. 
+
+The entire header will require 28 bytes.
+	
+
+There are multiple docker files; *.df.
+	mcl_runime.df -- builds an image with the runtime mc_listener binary
+	mcl_dev.df    -- builds a development image that can be used to
+					 interactively build and test the library and mc_listener
+					 application.
+
+Unit testing
+A very small set of unit tests are provided for the library functions in
+mcl.c.  Because of the nature of the fanout function, which blocks waiting
+on RMR messages, it is not possible to unit test that bit of code.
+
+FIFO Reader
+The pipe_reader programme is a simple application which uses the mcl.c 
+library functions to open and read from a single pipe.  If the -e option
+is given it will expect that data in the FIFO has extended headers. Use
+the -? option (or -h) to generate a full usage statement.

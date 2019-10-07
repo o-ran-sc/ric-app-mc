@@ -87,7 +87,7 @@ endKat
 
 # ---- run everything ---------------------------------------------------
 
-ext_hdr="-e"				# run with extended header enabled
+ext_hdr=""					# run with extended header enabled (-e turns extended off)
 fifo_dir=/tmp/fifos
 mkdir -p $fifo_dir			# redirect fifos so we don't depend on mount
 

@@ -61,7 +61,7 @@ int main( int argc,  char** argv ) {
 	int		mtype = 0;
 	char	buf[4096];
 	int		flush_often = 0;
-	int		long_hdrs = 0;					// if -e is on command line, we expect long headers
+	int		long_hdrs = 1;					// if -e is on command line, we expect long headers
 	int		stats_only = 0;
 	char	timestamp[MCL_TSTAMP_SIZE];		// we'll get the timestamp from this
 	long	count = 0;
@@ -80,7 +80,7 @@ int main( int argc,  char** argv ) {
 				break;
 
 			case 'e':
-				long_hdrs = 1;
+				long_hdrs = 0;
 				break;
 
 			case 'f':

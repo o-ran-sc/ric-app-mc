@@ -40,8 +40,8 @@ then
 fi
 
 
-ver=${1:-1.1}
-patch=${2:-0}
+ver=${1:-1.2}
+patch=${2:-1}
 
 if (( skip_dev == 0 ))
 then

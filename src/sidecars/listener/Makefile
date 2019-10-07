@@ -22,7 +22,7 @@
 
 binaries = mc_listener
 test_progs = sender unit_test pipe_reader
-lib_obj = mcl.o
+lib_obj = mcl.o rdc.o
 lib_h = mcl.h
 
 coverage_opts = -ftest-coverage -fprofile-arcs
@@ -30,8 +30,8 @@ coverage_opts = -ftest-coverage -fprofile-arcs
 # make with no parms should just build 'production' binaries
 all: $(binaries) mc_listener
 
-libmcl.a:	$(lib_obj) $(lib_h)
-	ar -v -r libmcl.a $<
+libmcl.a::	$(lib_obj) $(lib_h)
+	ar -v -r libmcl.a $(lib_obj)
 
 mc_listener: mc_listener.c libmcl.a
 	gcc mc_listener.c -o mc_listener -L. -lmcl  -lrmr_nng -lnng -lm -lpthread

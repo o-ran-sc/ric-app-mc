@@ -30,7 +30,7 @@
 #include <rmr/rmr.h>
 #include <rmr/rmr_symtab.h>
 
-// ------- public constants and structs -------------------------------------------------
+// ------- public constants and structs -------------------------------------------------------------------
 
 #define MCL_LEN_SIZE 8		// number of bytes the length has in both short and extended header
 #define MCL_DELIM_SIZE	4	// number of bytes in extended header delimiter
@@ -45,6 +45,14 @@
 #define MCL_NOWAIT	0	// do not wait for RMR route table to arrive
 #define MCL_WAIT	1	// block reader start until RMR route table is initialised
 
+// ---- rdc definitions ----------------------------------------------------------------------------------
+#define LOG_CRIT	0
+#define LOG_ERR		1
+#define LOG_WARN	2
+#define LOG_INFO	3
+#define LOG_STAT	4		// stats messages go to stdout
+
+
 //------------ prototypes --------------------------------------------------------------
 extern void mcl_fifo_fanout( void* ctx, int report, int long_hdrs );
 extern rmr_mbuf_t* mcl_get_msg( void* vctx, rmr_mbuf_t* msg, int timeout );
@@ -53,5 +61,14 @@ extern int mcl_fifo_read1( void* vctx, int mtype, char* ubuf, int ublen, int lon
 extern int mcl_fifo_tsread1( void* vctx, int mtype, char* ubuf, int ublen, int long_hdr, char* timestamp );
 extern int mcl_set_sigh( );
 extern int mcl_start_listening( void* vctx, char* port, int wait4ready );
+
+// ---- these can be used by external programmes, but it liekely doesn't make sense to do so ----
+extern void logit( int level, char* fmt, ... );
+extern void* rdc_init( char* sdir, char* fdir, char* suffix, char* dsuffix );
+extern void* rdc_init_buf( int mtype, char* uheader, int uhlen, void* capture_buf );
+extern void rdc_close( void* rdl_ctx );
+extern void rdc_set_freq( void* rdl_ctx, int freq );
+extern int rdc_write( void* rdl_ctx, void* rdc_buffer, char* payload, int len );
+
 
 #endif

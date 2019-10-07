@@ -70,8 +70,63 @@ A very small set of unit tests are provided for the library functions in
 mcl.c.  Because of the nature of the fanout function, which blocks waiting
 on RMR messages, it is not possible to unit test that bit of code.
 
+
+Data Capture
+In addition to writing received messages to a FIFO, each message is 
+captured in a raw data file. These files are created in a staging
+directory (/tmp/rdc/stage by default) and moved to a final directory
+(/tmp/rdc/final by default) every 5 minutes (300 seconds).  The files
+are named MCLT[src]_<timestamp><.suffix>; the default suffix is ".rdc".
+The "src" string is optional and can be used to disabmiguate files
+if merged with capture files from different environments.
+
+The data capture is controlled by setting environment variables:
+
+ MCL_RDC_ENABLE: If set to 0 the raw data capture will be disabled.
+				(It is on by default if this variable is not defined.)
+
+ MCL_RDC_STAGE: overrides the directory where raw data capture 
+				files are staged.
+
+ MCL_RDC_FINAL: overrides the directory where raw data capture files 
+				are placed for export.
+
+ MCL_RDC_SUFFIX: the suffix written on each raw data capture file; 
+				must include '.' if a dot is desired and is written only on
+				the final file (not the staged file).
+
+ MCL_RDC_SOURCE: a short string used as source identification in rdc file names.
+				This defaults to nothing and should begin, but not end,
+				with an underbar (e.g. _host1).
+
+ MCL_RDC_FREQ: The frequency with which files are closed and moved from the
+				staging to final directory. The default if 300 sec.
+
+The captured data is saved in the following format:
+	<delim><mtype><len><fifo-buffer>
+
+Where
+	<delim> is a 4 character delimiter for synchronisation (@RDC)
+
+	<mtype> is an 8 character field containing a nil terminated ACII
+		value that is the message type of the received message.
+
+	<len> is an 8 character field containing a nil terminated ASCII
+		value that is the length of the <fifo-buffer>
+
+	<fifo-buffer> is the exact contents that were written to the FIFO.
+
+Thus to "replay" the captured data, a decoder need read just the first 
+20 bytes, convert the message type and length, read the payload, and 
+then write the payload to a FIFO
+
+
+
+
 FIFO Reader
 The pipe_reader programme is a simple application which uses the mcl.c 
 library functions to open and read from a single pipe.  If the -e option
 is given it will expect that data in the FIFO has extended headers. Use
 the -? option (or -h) to generate a full usage statement.
+
+

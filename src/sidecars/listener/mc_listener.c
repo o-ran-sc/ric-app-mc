@@ -60,6 +60,15 @@ static void bad_arg( char* what ) {
 static void usage( char* argv0 ) {
 	fprintf( stderr, "usage: %s [-d fifo-dir] [-e] [-p listen-port] [-q | -r report-freq]\n", argv0 );
 	fprintf( stderr, "  -e  disable extended header in buffers written to FIFOs\n" );
+	fprintf( stderr, "\n" );
+	fprintf( stderr, "The following environment variables may be set to affect operation:\n" );
+	fprintf( stderr, "  MCL_RDC_STAGE: the directory where raw data capture files are staged. (/tmp/rdc/stage)\n" );
+	fprintf( stderr, "  MCL_RDC_FINAL: the directory where raw data capture files are placed for export. (/tmp/rdc/final)\n" );
+	fprintf( stderr, "  MCL_RDC_SUFFIX: the suffix written on each raw data capture file; must include '.'. (.rdc)\n" );
+	fprintf( stderr, "  MCL_RDC_SOURCE: a short string used as source identification in rdc file names.\n" );
+	fprintf( stderr, "  MCL_RDC_FREQ: the amount of time (seconds) that raw capture files are rolled. (300)\n" );
+	fprintf( stderr, "\nIf either final or staging directories are defined by environment vars, they MUST exist.\n" );
+	fprintf( stderr, "\n" );
 }
 
 //------------------------------------------------------------------------------------------

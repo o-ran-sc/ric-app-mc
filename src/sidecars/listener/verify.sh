@@ -32,6 +32,23 @@
 # Author:	E. Scott Daniels
 # ----------------------------------------------------------------------
 
+# set the various sleep values based on long test or short test
+function set_wait_values {
+	if (( long_test ))
+	then
+		export MCL_RDC_FREQ=13		# file cycle after 13s
+		sender_wait=100
+		listener_wait=105
+		reader_wait=102
+		main_wait=120
+	else
+		sender_wait=10
+		listener_wait=15
+		reader_wait=12
+		main_wait=20
+	fi
+}
+
 # run sender at a 2 msg/sec rate (500000 musec delay)
 # sender sends msg types 0-6 and the route table in /tmp
 # will direct them to the listener. We also need to switch
@@ -42,7 +59,7 @@ function run_sender {
 	echo "starting sender"
 	RMR_SEED_RT=/tmp/local.rt RMR_RTG_SVC=9989 /playpen/bin/sender 43086 10000 >/tmp/sender.log 2>&1 &
 	spid=$!
-	sleep 10
+	sleep $sender_wait
 
 	echo "stopping sender"
 	kill -15 $spid
@@ -53,7 +70,7 @@ function run_listener {
 	/playpen/bin/mc_listener $ext_hdr -r 1 -d $fifo_dir >/tmp/listen.log 2>&1 &
 	lpid=$!
 
-	sleep 15
+	sleep $listener_wait
 	echo "stopping listener"
 	kill -15 $lpid
 }
@@ -65,7 +82,7 @@ function run_pr {
 	#/playpen/bin/pipe_reader -m $1 -d $fifo_dir & # >/tmp/pr.$1.log 2>&1 
 	typeset prpid=$!
 	
-	sleep 12
+	sleep $reader_wait
 	echo "stopping pipe reader $1"
 	kill -1 $prpid
 }
@@ -88,6 +105,42 @@ endKat
 # ---- run everything ---------------------------------------------------
 
 ext_hdr=""					# run with extended header enabled (-e turns extended off)
+long_test=0
+raw_capture=1
+while [[ $1 == -* ]]
+do
+	case $1 in 
+		-l)	long_test=1;;
+		-n)	raw_capture=0;;
+		*)	echo "$1 is not a recognised option"
+			exit 1
+			;;
+	esac
+
+	shift
+done
+
+set_wait_values
+
+if (( ! raw_capture ))		# -n set, turn off capture
+then
+	export MCL_RDC_ENABLE=0
+fi
+
+if [[ -d /data/final ]]			# assume if we find data that final directory goes here
+then
+	echo "### found /data/final using that as final directory"
+	export MCL_RDC_FINAL=/data/final
+fi
+
+if [[ -d /data/stage ]]
+then
+	echo "### found /data/staging using that as stage directory"
+	export MCL_RDC_STAGE=/data/stage
+fi
+final_dir=${MCL_RDC_FINAL:-/tmp/rdc/final}
+stage_dir=${MCL_RDC_STAGE:-/tmp/rdc/stage}
+
 fifo_dir=/tmp/fifos
 mkdir -p $fifo_dir			# redirect fifos so we don't depend on mount
 
@@ -102,7 +155,7 @@ done
 sleep 1
 run_sender &
 
-sleep 20			# long enough for all functions to finish w/o having to risk a wait hanging
+sleep $main_wait			# long enough for all functions to finish w/o having to risk a wait hanging
 echo "all functions stopped; looking at logs"
 
 # ---------- validation -------------------------------------------------
@@ -145,6 +198,40 @@ then
 	(( errors++ ))
 else
 	echo "[OK]    Found expected fifos"
+fi
+
+if (( raw_capture ))		# not an error if not capturing
+then
+	if [[ -d $stage_dir ]]
+	then
+		echo "[OK]    Found staging direcory ($stage_dir)"
+		ls -al $stage_dir
+	else
+		(( errors++ ))
+		echo "[FAIL]  No staging directory found ($stage_dir)"
+	fi
+
+
+	if [[ -d $final_dir ]]
+	then
+		echo "[OK]    Found final direcory ($final_dir)"
+		ls -al $final_dir
+	
+		if (( long_test ))		# look for files in final dir to ensure roll
+		then
+			found=$( ls $final_dir/MC* | wc -l )
+			if (( found > 0 ))
+			then
+				echo "[OK]   Found $found files in final directory ($final_dir)"
+			else
+				echo "[FAIL] Did not find any files in the final directory ($final_dir)"
+				(( errors++ ))
+			fi
+		fi
+	else
+		(( errors++ ))
+		echo "[FAIL]  No final directory found"
+	fi
 fi
 
 if (( errors ))

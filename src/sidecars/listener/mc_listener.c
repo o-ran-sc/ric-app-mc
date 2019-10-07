@@ -59,7 +59,7 @@ static void bad_arg( char* what ) {
 
 static void usage( char* argv0 ) {
 	fprintf( stderr, "usage: %s [-d fifo-dir] [-e] [-p listen-port] [-q | -r report-freq]\n", argv0 );
-	fprintf( stderr, "  -e  enable extended header in buffers written to FIFOs\n" );
+	fprintf( stderr, "  -e  disable extended header in buffers written to FIFOs\n" );
 }
 
 //------------------------------------------------------------------------------------------
@@ -72,7 +72,7 @@ int main( int argc,  char** argv ) {
 	int		report_freq = 60;				// report stats every n seconds
 	int		pidx = 1;						// parameter index
 	int		error = 0;
-	int		long_hdrs = 0;					// -e sets and causes extended headers to be written
+	int		long_hdrs = 1;					// -e sets and causes extended headers to be written
 
 	while( pidx < argc && argv[pidx][0] == '-' ) {			// simple argument parsing (-x  or -x value)
 		switch( argv[pidx][1] ) {
@@ -87,7 +87,7 @@ int main( int argc,  char** argv ) {
 				break;
 
 			case 'e':
-				long_hdrs = 1;
+				long_hdrs = 0;
 				break;
 
 			case 'p':

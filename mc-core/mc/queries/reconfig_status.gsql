@@ -1,0 +1,161 @@
+DEFINE{query_name 'reconfig_status_start';}
+PARAM{ window uint; }
+select timestamp_ms as timestamp,
+	non_temporal(timestamp_ms) as start_time,
+	0ULL as end_time,
+	id_MeNB_UE_X2AP_ID as eUE_ID,
+	gnb_id,
+	0 as event_type
+from SGNB_ADDITION_REQ.sgnb_addreq_for_ue
+where schemaId=401
+;
+
+DEFINE{query_name 'reconfig_status_success';}
+PARAM{ window uint; }
+select timestamp_ms as timestamp,
+	0ULL as start_time,
+	non_temporal(timestamp_ms) as end_time,
+	id_MeNB_UE_X2AP_ID as eUE_ID,
+	gnb_id,
+	1 as event_type
+from RECONCOMPLETE.reconfig_success
+where schemaId=101
+;
+
+DEFINE{query_name 'reconfig_status_events';}
+PARAM{ window uint; }
+merge p1.timestamp : p2.timestamp
+from reconfig_status_start p1, reconfig_status_success p2
+;
+
+
+DEFINE{query_name 'reconfig_status_merge';}
+PARAM{ window uint; }
+select eUE_ID, gnb_id, TB,
+	max(start_time) as max_start_time,
+	max(end_time) as max_end_time
+from reconfig_status_events
+group by eUE_ID, gnb_id, timestamp / $window as TB
+;
+
+DEFINE{query_name 'reconfig_status_success_rate';}
+PARAM{ window uint; }
+select gnb_id as GNB_ID,
+	($window*(TB+1))/1000 as TS, 
+	     $window/1000.0 as measurementInterval,
+	count(*) as total_reconfiguration_requests,
+	sum(GEQ(max_end_time,ULLONG(1))) as successful_reconfiguration_requests,
+	FLOAT(sum(GEQ(max_end_time,ULLONG(1))))/count(*) as success_rate
+from reconfig_status_merge
+group by gnb_id, TB
+;
+
+// ----------------------------------------------
+//	Merge in reconfig_reject causes and aggregate with this.
+DEFINE{query_name 'reconfig_status_reject_cause';}
+PARAM{ window uint; }
+Select gnb_id, TB,
+	count(*) as total_reconfig_reject,
+	sum(GEQ(UINT(cause_radio_network),0)) as count_radio_network,
+	sum(GEQ(UINT(cause_transport),0)) as count_transport,
+	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
+	sum(GEQ(UINT(cause_misc),0)) as count_misc
+from ADDREQREJECT.sgnb_add_req_reject
+where schemaId=701
+group by gnb_id, timestamp_ms / $window as TB
+;
+
+DEFINE{query_name 'reconfig_complete_reject_cause';}
+PARAM{ window uint; }
+Select gnb_id, TB,
+	count(*) as total_reconfig_reject,
+	sum(GEQ(UINT(cause_radio_network),0)) as count_radio_network,
+	sum(GEQ(UINT(cause_transport),0)) as count_transport,
+	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
+	sum(GEQ(UINT(cause_misc),0)) as count_misc
+from RECONCOMPLETE.reconfig_reject
+where schemaId=102
+group by gnb_id, timestamp_ms / $window as TB
+;
+
+DEFINE{query_name 'reconfig_reject_merge';}
+PARAM{ window uint; }
+merge p1.TB : p2.TB
+from reconfig_status_reject_cause p1, reconfig_complete_reject_cause p2
+;
+
+DEFINE{query_name 'reconfig_reject_cause';}
+PARAM{ window uint; }
+Select gnb_id as GNB_ID, ($window*(TB+1))/1000 as TS, 
+	     $window/1000.0 as measurementInterval,
+	sum(total_reconfig_refuse) as total_reconfig_refuse,
+	sum(count_radio_network) as count_radio_network,
+	sum(count_transport) as count_transport,
+	sum(count_protocol) as count_protocol,
+	sum(count_misc) as count_misc
+from reconfig_cause_merge
+group by gnb_id, TB
+;
+
+// ----------------------------------------------
+
+DEFINE{query_name 'mod_status_refuse_cause';}
+PARAM{ window uint; }
+Select gnb_id as GNB_ID, ($window*(TB+1))/1000 as TS, 
+	     $window/1000.0 as measurementInterval,
+	count(*) as total_reconfig_refuse,
+	sum(GEQ(UINT(cause_radio_network),0)) as count_radio_network,
+	sum(GEQ(UINT(cause_transport),0)) as count_transport,
+	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
+	sum(GEQ(UINT(cause_misc),0)) as count_misc
+from SGNBMODREFUSE.sgnb_mod_refuse
+where schemaId=1401
+group by gnb_id, timestamp_ms / $window as TB
+;
+
+// ----------------------------------------------
+DEFINE{query_name 'release_rqd_cause';}
+PARAM{ window uint; }
+Select gnb_id, TB,
+	count(*) as total_reconfig_refuse,
+	sum(GEQ(UINT(cause_radio_network),0)) as count_radio_network,
+	sum(GEQ(UINT(cause_transport),0)) as count_transport,
+	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
+	sum(GEQ(UINT(cause_misc),0)) as count_misc
+from SGNBRELEASERQD.SgNB_release_rqd
+where schemaId=1001
+group by gnb_id, timestamp_ms / $window as TB
+;
+
+DEFINE{query_name 'release_request_cause';}
+PARAM{ window uint; }
+Select gnb_id, TB,
+	count(*) as total_reconfig_refuse,
+	sum(GEQ(UINT(cause_radio_network),0)) as count_radio_network,
+	sum(GEQ(UINT(cause_transport),0)) as count_transport,
+	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
+	sum(GEQ(UINT(cause_misc),0)) as count_misc
+from RELREQ.release_req
+where schemaId=801
+group by gnb_id, timestamp_ms / $window as TB
+;
+
+DEFINE{query_name 'reconfig_cause_merge';}
+PARAM{ window uint; }
+merge p1.TB : p2.TB
+from release_rqd_cause p1, release_request_cause p2
+;
+
+DEFINE{query_name 'release_cause';}
+PARAM{ window uint; }
+Select gnb_id as GNB_ID, ($window*(TB+1))/1000 as TS, 
+	     $window/1000.0 as measurementInterval,
+	sum(total_reconfig_refuse) as total_reconfig_refuse,
+	sum(count_radio_network) as count_radio_network,
+	sum(count_transport) as count_transport,
+	sum(count_protocol) as count_protocol,
+	sum(count_misc) as count_misc
+from reconfig_cause_merge
+group by gnb_id, TB
+
+

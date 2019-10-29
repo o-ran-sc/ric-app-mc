@@ -1,0 +1,111 @@
+
+DEFINE{ query_name 'rrcx_pdf_neigh_cell_csi'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	physCellId as CELL_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,37)) as rsrp_vbad,
+	sum(GEQ(rsrp,38)*LEQ(rsrp,52)) as rsrp_bad,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,67)) as rsrp_medium,
+	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
+	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
+from RRCXFER.neighbor_beam_csi
+where schemaId = 5
+group by timestamp_ms/$window as tb, physCellId
+;
+
+DEFINE{ query_name 'rrcx_pdf_neigh_gnb_csi'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	gnb_id as GNB_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,37)) as rsrp_vbad,
+	sum(GEQ(rsrp,38)*LEQ(rsrp,52)) as rsrp_bad,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,67)) as rsrp_medium,
+	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
+	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
+from RRCXFER.neighbor_beam_csi
+where schemaId = 5
+group by timestamp_ms/$window as tb, gnb_id
+;
+
+
+DEFINE{ query_name 'rrcx_pdf_neigh_cell_ssb'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	physCellId as CELL_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,37)) as rsrp_vbad,
+	sum(GEQ(rsrp,38)*LEQ(rsrp,52)) as rsrp_bad,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,67)) as rsrp_medium,
+	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
+	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
+from RRCXFER.neighbor_beam_ssb
+where schemaId = 5
+group by timestamp_ms/$window as tb, physCellId
+;
+
+DEFINE{ query_name 'rrcx_pdf_neigh_gnb_ssb'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	gnb_id as GNB_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,37)) as rsrp_vbad,
+	sum(GEQ(rsrp,38)*LEQ(rsrp,52)) as rsrp_bad,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,67)) as rsrp_medium,
+	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
+	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
+from RRCXFER.neighbor_beam_ssb
+where schemaId = 5
+group by timestamp_ms/$window as tb, gnb_id
+;
+
+
+
+DEFINE{ query_name 'rrcx_pdf_serv_cell'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	physCellId as CELL_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,21)) as rsrp_vbad,
+	sum(GEQ(rsrp,22)*LEQ(rsrp,36)) as rsrp_bad,
+	sum(GEQ(rsrp,37)*LEQ(rsrp,51)) as rsrp_medium,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,66)) as rsrp_good,
+	sum(GEQ(rsrp,67)*LEQ(rsrp,127)) as rsrp_vgood
+from RRCXFER.serv_nr_cell
+where schemaId = 1
+group by timestamp_ms/$window as tb, physCellId
+;
+
+DEFINE{ query_name 'rrcx_pdf_serv_gnb'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	gnb_id as GNB_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,21)) as rsrp_vbad,
+	sum(GEQ(rsrp,22)*LEQ(rsrp,36)) as rsrp_bad,
+	sum(GEQ(rsrp,37)*LEQ(rsrp,51)) as rsrp_medium,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,66)) as rsrp_good,
+	sum(GEQ(rsrp,67)*LEQ(rsrp,127)) as rsrp_vgood
+from RRCXFER.serv_nr_cell
+where schemaId = 1
+group by timestamp_ms/$window as tb, gnb_id
+

@@ -1,0 +1,111 @@
+DEFINE{query_name 'dc_connect';}
+PARAM{ window uint; }
+select timestamp_ms as timestamp,
+	UINT(id_MeNB_UE_X2AP_ID) as eUE_ID,
+	UINT(id_SgNB_UE_X2AP_ID) as gUE_ID,
+	1 as event_type
+from RECONCOMPLETE.reconfig_success
+where schemaId=101
+;
+
+DEFINE{query_name 'dc_terminate';}
+PARAM{ window uint; }
+select timestamp_ms as timestamp,
+	UINT(id_Old_eNB_UE_X2AP_ID) as eUE_ID,
+	id_SgNB_UE_X2AP_ID as gUE_ID,
+	0 as event_type
+from CONRELEASE.dc_release
+where schemaId=201
+;
+
+DEFINE{query_name 'dc_events';}
+PARAM{ window uint; }
+merge p1.timestamp : p2.timestamp
+from dc_connect p1, dc_terminate p2
+;
+
+
+DEFINE{ query_name 'mc_connected_ues'; }
+PARAM{ window uint; }
+SELECT TB, UE_ID,
+	((TB+1)*$window-LAST(timestamp))/1000.0 as connected_time
+FROM dc_events
+GROUP BY timestamp / $window as TB, gUE_ID as UE_ID
+HAVING LAST(event_type) = 1
+CLOSING_WHEN LAST(event_type) = 0
+;
+
+DEFINE{ query_name 'mc_connected_cnt'; }
+PARAM{ window uint; }
+SELECT ($window*(TB+1))/1000 as TS, 
+                $window/1000.0 as measurementInterval, // standard_name
+      COUNT(*) as count_connected_ue
+FROM mc_connected_ues
+GROUP BY TB
+;
+
+DEFINE{ query_name 'mc_disconnected_ues'; }
+PARAM{ window uint; }
+SELECT TB_1000, UE_ID, 
+	UINT((LAST(timestamp) - FIRST(timestamp))) as connected_time
+FROM dc_events
+GROUP BY timestamp / 1000  as TB_1000, gUE_ID as UE_ID
+HAVING LAST(event_type) = 0
+CLOSING_WHEN LAST(event_type) = 0
+;
+
+
+DEFINE{ query_name 'mc_connection_stats'; }
+PARAM{ window uint; }
+SELECT ($window*(TB+1))/1000 as TS, 
+        $window/1000.0 as measurementInterval, // standard_name
+        MIN(connected_time)/1000.0 as min_connected_time,
+        MAX(connected_time)/1000.0 as max_connected_time,
+        AVG(connected_time)/1000.0 as avg_connected_time,
+	quantile_of(connected_time, .05)/1000.0 as pctl_05_connected_time,
+	quantile_of(connected_time, .95)/1000.0 as pctl_95_connected_time,
+	sqrt(
+		sum((connected_time/1000.0)*(connected_time/1000.0)) - sum(connected_time/1000.0)*sum(connected_time/1000.0)/count(*)
+	) / count(*) as stddev_connected_time
+FROM mc_disconnected_ues
+GROUP BY (TB_1000 * 1000) / $window as TB
+;
+
+
+DEFINE{ query_name 'mc_connects_cnt'; }
+PARAM{ window uint; }
+SELECT ($window*(TB+1))/1000 as TS,
+        $window/1000.0 as measurementInterval, // standard_name
+        COUNT(*) as count_ue_connects
+FROM dc_events
+WHERE event_type = 1
+GROUP BY timestamp / $window as TB
+;
+
+DEFINE{ query_name 'mc_disconnects_cnt'; }
+PARAM{ window uint; }
+SELECT ($window*(TB+1))/1000 as TS, 
+         $window/1000.0 as measurementInterval, // standard_name
+         COUNT(*) as count_ue_disconnects
+FROM dc_events
+WHERE event_type = 0
+GROUP BY timestamp / $window as TB
+;
+
+DEFINE{ query_name 'mc_unique_ues'; }
+PARAM{ window uint; }
+SELECT TB, UE_ID
+FROM dc_events
+GROUP BY timestamp / $window as TB, gUE_ID as UE_ID
+;
+
+DEFINE{ query_name 'mc_unique_ue_cnt'; }
+PARAM{ window uint; } 
+SELECT ($window*(TB+1))/1000 as TS, 
+         $window/1000.0 as measurementInterval, // standard_name
+         COUNT(*) as count_unique_ue
+FROM mc_unique_ues
+GROUP BY TB
+
+
+

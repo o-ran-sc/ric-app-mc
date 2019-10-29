@@ -1,0 +1,38 @@
+{
+	"local": {
+		"host": ":8080"
+	},
+	"logger": {
+		"level": 3
+	},
+	"rmr": {
+		"protPort": "tcp:4560",
+		"maxSize": 2072,
+		"numWorkers": 1,
+		"txMessages": [
+			"RIC_SUB_REQ",
+			"RIC_SUB_DEL_REQ"
+		],
+		"rxMessages": [
+			"RIC_SUB_RESP",
+			"RIC_SUB_FAILURE",
+			"RIC_SUB_DEL_RESP",
+			"RIC_INDICATION"
+		]
+	},
+	"controls": {
+		"active": true,
+		"interfaceId": {
+			"globalENBId": {
+				"plmnId": 123456,
+				"eNBId": 5678
+			}
+		}
+	},
+	"parameters": {
+		"ves_collector_address":"envy15:8888",
+		"measurement_interval": 10000,
+		"simulator_mode": "true",
+		"debug_mode": "true"
+	}
+}

@@ -1,0 +1,88 @@
+DEFINE{ query_name 'rrcx_stats_neigh_cell'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	to convert rsrp to dbm, subtract 157
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	physCellId as CELL_ID,
+	count(*) as cnt,
+	INT(min(rsrp))-INT(157) as min_rsrp,
+	INT(quantile_of(rsrp, .05)) - INT(157) as pctl_05_rsrp,
+	INT(median_of(rsrp)) - INT(157) as median_rsrp,
+	INT(quantile_of(rsrp, .95)) - INT(157) as pctl_95_rsrp,
+	sqrt(
+		sum( (FLOAT(rsrp)-157)*(FLOAT(rsrp)-157))  -
+		sum( (FLOAT(rsrp)-157) )*sum( (FLOAT(rsrp)-157) )/count(*)
+	) / count(*) as stddev_rsrp,
+	INT(max(rsrp))-INT(157) as max_rsrp
+from RRCXFER.neighbor_beam_csi
+where schemaId = 5 and rsrp<128
+group by timestamp_ms/$window as tb, physCellId
+;
+
+DEFINE{ query_name 'rrcx_stats_neigh_gnb'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	to convert rsrp to dbm, subtract 157
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	gnb_id as GNB_ID,
+	count(*) as cnt,
+	INT(min(rsrp))-INT(157) as min_rsrp,
+	INT(quantile_of(rsrp, .05)) - INT(157) as pctl_05_rsrp,
+	INT(median_of(rsrp)) - INT(157) as median_rsrp,
+	INT(quantile_of(rsrp, .95)) - INT(157) as pctl_95_rsrp,
+	sqrt(
+		sum( (FLOAT(rsrp)-157)*(FLOAT(rsrp)-157))  -
+		sum( (FLOAT(rsrp)-157) )*sum( (FLOAT(rsrp)-157) )/count(*)
+	) / count(*) as stddev_rsrp,
+	INT(max(rsrp))-INT(157) as max_rsrp
+from RRCXFER.neighbor_beam_csi
+where schemaId = 5 and rsrp<128
+group by timestamp_ms/$window as tb, gnb_id
+;
+
+
+DEFINE{ query_name 'rrcx_stats_serv_cell'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	to convert rsrp to dbm, subtract 157
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	physCellId as CELL_ID,
+	count(*) as cnt,
+	INT(min(rsrp))-INT(157) as min_rsrp,
+	INT(quantile_of(rsrp, .05)) - INT(157) as pctl_05_rsrp,
+	INT(median_of(rsrp)) - INT(157) as median_rsrp,
+	INT(quantile_of(rsrp, .95)) - INT(157) as pctl_95_rsrp,
+	sqrt(
+		sum( (FLOAT(rsrp)-157)*(FLOAT(rsrp)-157))  -
+		sum( (FLOAT(rsrp)-157) )*sum( (FLOAT(rsrp)-157) )/count(*)
+	) / count(*) as stddev_rsrp,
+	INT(max(rsrp))-INT(157) as max_rsrp
+from RRCXFER.serv_nr_cell
+where schemaId = 1 and rsrp<128
+group by timestamp_ms/$window as tb, physCellId
+;
+
+DEFINE{ query_name 'rrcx_stats_serv_gnb'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	to convert rsrp to dbm, subtract 157
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	gnb_id as GNB_ID,
+	count(*) as cnt,
+	INT(min(rsrp))-INT(157) as min_rsrp,
+	INT(quantile_of(rsrp, .05)) - INT(157) as pctl_05_rsrp,
+	INT(median_of(rsrp)) - INT(157) as median_rsrp,
+	INT(quantile_of(rsrp, .95)) - INT(157) as pctl_95_rsrp,
+	sqrt(
+		sum( (FLOAT(rsrp)-157)*(FLOAT(rsrp)-157))  -
+		sum( (FLOAT(rsrp)-157) )*sum( (FLOAT(rsrp)-157) )/count(*)
+	) / count(*) as stddev_rsrp,
+	INT(max(rsrp))-INT(157) as max_rsrp
+from RRCXFER.serv_nr_cell
+where schemaId = 1 and rsrp<128
+group by timestamp_ms/$window as tb, gnb_id
+

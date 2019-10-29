@@ -1,0 +1,32 @@
+
+// join interval should be 10 seconds
+// Compromise between ensuring that most add_req_ack-recon_complete pairs
+// are caught while avoiding duplicates due to short sessions
+//	NB: $window should be a multiple of 10.
+DEFINE{query_name 'erab_stats_join';}
+PARAM{ window uint; }
+select e.timestamp_ms/10000 as TB10, e.id_SgNB_UE_X2AP_ID, e.e_RAB_ID, e.qCI
+INNER_JOIN from SGNB_ADDITION_REQ_ACK.eRABs_acked_for_admit_for_ue e,
+	RECONCOMPLETE.reconfig_success r
+where r.schemaId = 101 and e.schemaId = 502
+and r.id_SgNB_UE_X2AP_ID = e.id_SgNB_UE_X2AP_ID
+and r.timestamp_ms/10000 = e.timestamp_ms/10000
+;
+
+DEFINE{query_name 'erab_stats';}
+PARAM{ window uint; }
+Select (TB*$window)/1000 as TS, 
+	$window/1000.0 as measurementInterval,
+	count(*) as total_erabs,
+	sum(EQ(UINT(qCI),1)) as qCI_1,
+	sum(EQ(UINT(qCI),2)) as qCI_2,
+	sum(EQ(UINT(qCI),3)) as qCI_3,
+	sum(EQ(UINT(qCI),4)) as qCI_4,
+	sum(EQ(UINT(qCI),5)) as qCI_5,
+	sum(EQ(UINT(qCI),6)) as qCI_6,
+	sum(EQ(UINT(qCI),7)) as qCI_7,
+	sum(EQ(UINT(qCI),8)) as qCI_8,
+	sum(EQ(UINT(qCI),9)) as qCI_9,
+	sum(LEQ(UINT(qCI),0))+sum(GEQ(UINT(qCI),10)) as qCI_other
+from erab_stats_join
+group by (10000*TB10)/$window as TB

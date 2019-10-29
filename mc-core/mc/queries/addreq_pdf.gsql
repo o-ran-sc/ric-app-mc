@@ -1,0 +1,35 @@
+DEFINE{ query_name 'addreq_pdf_nr_cell'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	physCellId as CELL_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,37)) as rsrp_vbad,
+	sum(GEQ(rsrp,38)*LEQ(rsrp,52)) as rsrp_bad,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,67)) as rsrp_medium,
+	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
+	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
+from SGNB_ADDITION_REQ.sgnb_addreq_for_ue_mn_neigh_ssb
+where schemaId = 410
+group by timestamp_ms/$window as tb, physCellId
+;
+
+DEFINE{ query_name 'addreq_pdf_nr_gnb'; }
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	gnb_id as GNB_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,37)) as rsrp_vbad,
+	sum(GEQ(rsrp,38)*LEQ(rsrp,52)) as rsrp_bad,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,67)) as rsrp_medium,
+	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
+	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
+from SGNB_ADDITION_REQ.sgnb_addreq_for_ue_mn_neigh_ssb
+where schemaId = 410
+group by timestamp_ms/$window as tb, gnb_id
+

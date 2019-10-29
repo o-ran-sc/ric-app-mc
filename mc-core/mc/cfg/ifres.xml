@@ -1,0 +1,102 @@
+<Resources>
+	<Host Name='localhost'>
+		<Interface Name='CONRELEASE'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010050'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='RECONCOMPLETE'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010280'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='RELCONF'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010321'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='RELREQ'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010310'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='RELREQACK'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010311'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='SGNBRELEASERQD'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010320'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='RRCXFER'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010350'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='ADDREQREJECT'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010272'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='SGNB_ADDITION_REQ_ACK'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010271'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='SGNB_ADDITION_REQ'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010270'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='SGNBMODCONF'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010301'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='SGNBMODREQ'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010290'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+		<Interface Name='SGNBMODREFUSE'>
+			<InterfaceType value='PROTO'/>
+			<Filename value='/tmp/mcl/fifos/MT_000010302'/>
+			<StartUpDelay value='10'/>
+			<Verbose value='TRUE'/>
+			<SingleFile value='TRUE'/>
+		</Interface>
+                <Interface Name='RATDATAUSAGE'>
+                        <InterfaceType value='PROTO'/>
+                        <Filename value='/tmp/mcl/fifos/MT_000010380'/>
+                        <StartUpDelay value='10'/>
+                        <Verbose value='TRUE'/>
+                        <SingleFile value='TRUE'/>
+                </Interface>
+	</Host>
+</Resources>

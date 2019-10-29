@@ -1,0 +1,93 @@
+DEFINE{query_name 'throughput_ue';}
+PARAM{ window uint; }
+select ($window*(TB+1))/1000 as TS, e_RAB_ID, UE_ID, GNB_ID,
+       $window/1000.0 as measurementInterval,
+
+		(sum(usageCountDL)) / UMAX( sum(
+			UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) -
+			UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  ), 1)  as active_throughput,
+
+		(sum(usageCountDL)) / UMAX( 
+			max( UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) ) -
+            min( UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  ), $window) as average_throughput,
+
+		min((usageCountDL) / UMAX( 
+			UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) -
+			UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  , 1) ) as min_throughput,
+
+		max((usageCountDL) / UMAX( 
+			UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) -
+			UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  , 1) ) as max_throughput
+
+from RATDATAUSAGE.rat_data_usage
+where schemaId=1501
+group by e_RAB_ID, id_SgNB_UE_X2AP_ID as UE_ID, gnb_id as GNB_ID, timestamp_ms/$window as TB
+;
+
+// 	transform to switch byte order
+// (((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24))
+// (((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24))
+
+
+DEFINE{query_name 'throughput_rollup';}
+PARAM{ window uint; }
+select TS, e_RAB_ID, GNB_ID,
+       $window/1000.0 as measurementInterval,
+	count(*) as count_ues,
+	quantile_of( UINT(average_throughput), .05) as average_throughput_percentile_05,
+	quantile_of( UINT(average_throughput), .50) as average_throughput_percentile_50,
+	avg( average_throughput) as average_average_throughput,
+	quantile_of( UINT(average_throughput), .95) as average_throughput_percentile_95,
+	quantile_of( UINT(active_throughput), .05) as active_throughput_percentile_05,
+	quantile_of( UINT(active_throughput), .50) as active_throughput_percentile_50,
+	avg( active_throughput) as average_active_throughput,
+	quantile_of( UINT(active_throughput), .95) as active_throughput_percentile_95
+from throughput_ue
+group by TS, e_RAB_ID, GNB_ID
+;
+
+DEFINE{query_name 'throughput_gnb';}
+PARAM{ window uint; }
+select ($window*(TB+1))/1000 as TS, e_RAB_ID, GNB_ID,
+       $window/1000.0 as measurementInterval,
+
+		(sum(usageCountDL)) / UMAX( sum(
+			UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) -
+			UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  ), 1)  as active_throughput,
+
+		(sum(usageCountDL)) / UMAX( 
+			max( UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) ) -
+            min( UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  ), $window) as average_throughput,
+
+		min((usageCountDL) / UMAX( 
+			UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) -
+			UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  , 1) ) as min_throughput,
+
+		max((usageCountDL) / UMAX( 
+			UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) -
+			UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  , 1) ) as max_throughput,
+
+		quantile_of( UINT( (usageCountDL) / UMAX( 
+			UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) -
+			UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  , 1) ), .05),
+
+		quantile_of( UINT( (usageCountDL) / UMAX( 
+			UINT(((endTimeStamp & HEX'FF000000') >> 24) | ((endTimeStamp & HEX'00FF0000') >> 8) | ((endTimeStamp & HEX'0000FF00') << 8) | ((endTimeStamp & HEX'000000FF') << 24)) -
+			UINT(((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24)) 
+		  , 1) ), .95)
+
+from RATDATAUSAGE.rat_data_usage
+where schemaId=1501
+group by e_RAB_ID, gnb_id as GNB_ID, timestamp_ms/$window as TB
+
+
+

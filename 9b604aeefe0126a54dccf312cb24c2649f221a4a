@@ -1,0 +1,9 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Scott Daniels <daniels@research.att.com>
+Code-Review+2: theodore johnson <johnsont@research.att.com>
+Verified+1: theodore johnson <johnsont@research.att.com>
+Submitted-by: Vlad Shkapenyuk <vshkap@research.att.com>
+Submitted-at: Mon, 11 Nov 2019 20:56:34 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ric-app/mc/+/1478
+Project: ric-app/mc
+Branch: refs/heads/master

@@ -246,7 +246,7 @@ PROTOCOL serv_nr_cell (base){
 	uint sinr get_serv_nr_cell__sinr;
 }
 
-// Cell-wide CSI-RS measurement tuple and SSB measurement (from neighbor cells)
+// Cell-wide  SSB measurement (from neighbor cells)
 // Defined in rrc_metrics.json on rrctransfer.proto
 // schemaId = 4, interface RRCXFER
 PROTOCOL nr_neighbor (base){
@@ -858,11 +858,71 @@ PROTOCOL sgnb_mod_req (base){
 //   default=-1
 	llong cause_transport get_sgnb_mod_req__cause_transport (required);
 //   default=-1
+	llong failureType get_sgnb_mod_req__failureType (required);
+//   default=-1
 	llong cause_radio_network get_sgnb_mod_req__cause_radio_network (required);
 // UE_ID assigned by gNB for the UE over the X2.  Is mandatory
 	llong id_SgNB_UE_X2AP_ID get_sgnb_mod_req__id_SgNB_UE_X2AP_ID (required);
 //   default=-1
 	llong cause_misc get_sgnb_mod_req__cause_misc (required);
+}
+
+// ??? 
+// Defined in sgnb_mod_req_ack.json on sgnb_modification_request_acknowledge.proto
+// schemaId = 1701, interface SGNBMODREQACK
+PROTOCOL sgnb_mod_req_ack (base){
+// timestamp in milliseconds
+	ullong timestamp_ms get_sgnb_mod_req_ack__timestamp_ms (required,increasing);
+// gNB ID
+	string gnb_id get_sgnb_mod_req_ack__gnb_id (required);
+// UE_ID assigned by eNB for the UE over an X2. Is mandatory
+	llong id_MeNB_UE_X2AP_ID get_sgnb_mod_req_ack__id_MeNB_UE_X2AP_ID (required);
+// UE_ID assigned by gNB for the UE over the X2.  Is mandatory
+	llong id_SgNB_UE_X2AP_ID get_sgnb_mod_req_ack__id_SgNB_UE_X2AP_ID (required);
+}
+
+// ??? 
+// Defined in sgnb_mod_req_reject.json on sgnb_modification_request_reject.proto
+// schemaId = 1801, interface SGNBMODREQREJECT
+PROTOCOL sgnb_mod_req_reject (base){
+// timestamp in milliseconds
+	ullong timestamp_ms get_sgnb_mod_req_reject__timestamp_ms (required,increasing);
+// gNB ID
+	string gnb_id get_sgnb_mod_req_reject__gnb_id (required);
+//   default=-1
+	llong cause_protocol get_sgnb_mod_req_reject__cause_protocol (required);
+// UE_ID assigned by eNB for the UE over an X2. Is mandatory
+	llong id_MeNB_UE_X2AP_ID get_sgnb_mod_req_reject__id_MeNB_UE_X2AP_ID (required);
+//   default=-1
+	llong cause_transport get_sgnb_mod_req_reject__cause_transport (required);
+//   default=-1
+	llong cause_radio_network get_sgnb_mod_req_reject__cause_radio_network (required);
+// UE_ID assigned by gNB for the UE over the X2.  Is mandatory
+	llong id_SgNB_UE_X2AP_ID get_sgnb_mod_req_reject__id_SgNB_UE_X2AP_ID (required);
+//   default=-1
+	llong cause_misc get_sgnb_mod_req_reject__cause_misc (required);
+}
+
+// ??? 
+// Defined in sgnb_mod_rqd.json on sgnb_modification_required.proto
+// schemaId = 1901, interface SGNBMODREQUIRED
+PROTOCOL sgnb_mod_required (base){
+// timestamp in milliseconds
+	ullong timestamp_ms get_sgnb_mod_required__timestamp_ms (required,increasing);
+// gNB ID
+	string gnb_id get_sgnb_mod_required__gnb_id (required);
+//   default=-1
+	llong cause_protocol get_sgnb_mod_required__cause_protocol (required);
+// UE_ID assigned by eNB for the UE over an X2. Is mandatory
+	llong id_MeNB_UE_X2AP_ID get_sgnb_mod_required__id_MeNB_UE_X2AP_ID (required);
+//   default=-1
+	llong cause_transport get_sgnb_mod_required__cause_transport (required);
+//   default=-1
+	llong cause_radio_network get_sgnb_mod_required__cause_radio_network (required);
+// UE_ID assigned by gNB for the UE over the X2.  Is mandatory
+	llong id_SgNB_UE_X2AP_ID get_sgnb_mod_required__id_SgNB_UE_X2AP_ID (required);
+//   default=-1
+	llong cause_misc get_sgnb_mod_required__cause_misc (required);
 }
 
 // ??? 

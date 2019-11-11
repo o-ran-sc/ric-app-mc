@@ -1,0 +1,19 @@
+DEFINE{ query_name 'mod_req_failure_distribution'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
+PARAM{ window uint;}
+
+select ($window*(tb+1))/1000 as TS,
+	$window/1000.0 as measurementInterval,
+	count(*) as cnt,
+	sum(EQ(UINT(failureType),0)) as count_protobuf_unspecified,
+	sum(EQ(UINT(failureType),1)) as count_t310_Expiry,
+	sum(EQ(UINT(failureType),2)) as count_randomAccessProblem,
+	sum(EQ(UINT(failureType),3)) as count_rlc_MaxNumRetx,
+	sum(EQ(UINT(failureType),4)) as count_synchReconfigFailure_SCG,
+	sum(EQ(UINT(failureType),5)) as count_scg_reconfigFailure,
+	sum(EQ(UINT(failureType),6)) as count_srb3_IntegrityFailure
+From SGNBMODREQ.sgnb_mod_req
+where schemaId=1201
+group by timestamp_ms/$window as tb
+

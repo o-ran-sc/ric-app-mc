@@ -875,8 +875,8 @@ gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 											if(node_0_10->measresult){
 												node_0_12 = node_0_11->cellresults;
 												if(node_0_11->cellresults){
-													node_0_13 = node_0_12->resultscsi_rs_cell;
-													if(node_0_12->resultscsi_rs_cell){
+													node_0_13 = node_0_12->resultsssb_cell;
+													if(node_0_12->resultsssb_cell){
 														if(node_0_13->rsrq){
 															serv_nr_cell->rsrq = node_0_13->rsrq->value;
 															serv_nr_cell->rsrq_exists = 1;
@@ -951,8 +951,8 @@ gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 										if(node_1_9->measresult){
 											node_1_11 = node_1_10->cellresults;
 											if(node_1_10->cellresults){
-												node_1_12 = node_1_11->resultscsi_rs_cell;
-												if(node_1_11->resultscsi_rs_cell){
+												node_1_12 = node_1_11->resultsssb_cell;
+												if(node_1_11->resultsssb_cell){
 													if(node_1_12->rsrq){
 														nr_neighbor->rsrq = node_1_12->rsrq->value;
 														nr_neighbor->rsrq_exists = 1;

@@ -3,7 +3,9 @@
 // Compromise between ensuring that most add_req_ack-recon_complete pairs
 // are caught while avoiding duplicates due to short sessions
 //	NB: $window should be a multiple of 10.
-DEFINE{query_name 'erab_stats_join';}
+DEFINE{query_name 'erab_stats_join';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select e.timestamp_ms/10000 as TB10, e.id_SgNB_UE_X2AP_ID, e.e_RAB_ID, e.qCI
 INNER_JOIN from SGNB_ADDITION_REQ_ACK.eRABs_acked_for_admit_for_ue e,
@@ -13,7 +15,9 @@ and r.id_SgNB_UE_X2AP_ID = e.id_SgNB_UE_X2AP_ID
 and r.timestamp_ms/10000 = e.timestamp_ms/10000
 ;
 
-DEFINE{query_name 'erab_stats';}
+DEFINE{query_name 'erab_stats';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 Select (TB*$window)/1000 as TS, 
 	$window/1000.0 as measurementInterval,

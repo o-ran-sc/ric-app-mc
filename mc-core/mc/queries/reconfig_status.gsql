@@ -29,7 +29,9 @@ from reconfig_status_start p1, reconfig_status_success p2
 ;
 
 
-DEFINE{query_name 'reconfig_status_merge';}
+DEFINE{query_name 'reconfig_status_merge';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select eUE_ID, gnb_id, TB,
 	max(start_time) as max_start_time,
@@ -38,7 +40,9 @@ from reconfig_status_events
 group by eUE_ID, gnb_id, timestamp / $window as TB
 ;
 
-DEFINE{query_name 'reconfig_status_success_rate';}
+DEFINE{query_name 'reconfig_status_success_rate';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select gnb_id as GNB_ID,
 	($window*(TB+1))/1000 as TS, 
@@ -52,7 +56,9 @@ group by gnb_id, TB
 
 // ----------------------------------------------
 //	Merge in reconfig_reject causes and aggregate with this.
-DEFINE{query_name 'reconfig_status_reject_cause';}
+DEFINE{query_name 'reconfig_status_reject_cause';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 Select gnb_id, TB,
 	count(*) as total_reconfig_reject,
@@ -65,7 +71,9 @@ where schemaId=701
 group by gnb_id, timestamp_ms / $window as TB
 ;
 
-DEFINE{query_name 'reconfig_complete_reject_cause';}
+DEFINE{query_name 'reconfig_complete_reject_cause';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 Select gnb_id, TB,
 	count(*) as total_reconfig_reject,
@@ -84,7 +92,9 @@ merge p1.TB : p2.TB
 from reconfig_status_reject_cause p1, reconfig_complete_reject_cause p2
 ;
 
-DEFINE{query_name 'reconfig_reject_cause';}
+DEFINE{query_name 'reconfig_reject_cause';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 Select gnb_id as GNB_ID, ($window*(TB+1))/1000 as TS, 
 	     $window/1000.0 as measurementInterval,
@@ -99,7 +109,9 @@ group by gnb_id, TB
 
 // ----------------------------------------------
 
-DEFINE{query_name 'mod_status_refuse_cause';}
+DEFINE{query_name 'mod_status_refuse_cause';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 Select gnb_id as GNB_ID, ($window*(TB+1))/1000 as TS, 
 	     $window/1000.0 as measurementInterval,
@@ -114,7 +126,9 @@ group by gnb_id, timestamp_ms / $window as TB
 ;
 
 // ----------------------------------------------
-DEFINE{query_name 'release_rqd_cause';}
+DEFINE{query_name 'release_rqd_cause';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 Select gnb_id, TB,
 	count(*) as total_reconfig_refuse,
@@ -127,7 +141,9 @@ where schemaId=1001
 group by gnb_id, timestamp_ms / $window as TB
 ;
 
-DEFINE{query_name 'release_request_cause';}
+DEFINE{query_name 'release_request_cause';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 Select gnb_id, TB,
 	count(*) as total_reconfig_refuse,
@@ -146,7 +162,9 @@ merge p1.TB : p2.TB
 from release_rqd_cause p1, release_request_cause p2
 ;
 
-DEFINE{query_name 'release_cause';}
+DEFINE{query_name 'release_cause';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 Select gnb_id as GNB_ID, ($window*(TB+1))/1000 as TS, 
 	     $window/1000.0 as measurementInterval,

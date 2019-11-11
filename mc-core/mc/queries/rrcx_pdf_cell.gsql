@@ -1,5 +1,7 @@
 
-DEFINE{ query_name 'rrcx_pdf_neigh_cell_csi'; }
+DEFINE{ query_name 'rrcx_pdf_neigh_cell_csi'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
 //	for now divide into 5 bins.
@@ -17,7 +19,9 @@ where schemaId = 5
 group by timestamp_ms/$window as tb, physCellId
 ;
 
-DEFINE{ query_name 'rrcx_pdf_neigh_gnb_csi'; }
+DEFINE{ query_name 'rrcx_pdf_neigh_gnb_csi'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
 //	for now divide into 5 bins.
@@ -36,7 +40,9 @@ group by timestamp_ms/$window as tb, gnb_id
 ;
 
 
-DEFINE{ query_name 'rrcx_pdf_neigh_cell_ssb'; }
+DEFINE{ query_name 'rrcx_pdf_neigh_cell_ssb'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
 //	for now divide into 5 bins.
@@ -54,7 +60,9 @@ where schemaId = 5
 group by timestamp_ms/$window as tb, physCellId
 ;
 
-DEFINE{ query_name 'rrcx_pdf_neigh_gnb_ssb'; }
+DEFINE{ query_name 'rrcx_pdf_neigh_gnb_ssb'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
 //	for now divide into 5 bins.
@@ -74,7 +82,9 @@ group by timestamp_ms/$window as tb, gnb_id
 
 
 
-DEFINE{ query_name 'rrcx_pdf_serv_cell'; }
+DEFINE{ query_name 'rrcx_pdf_serv_cell'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
 //	for now divide into 5 bins.
@@ -92,7 +102,30 @@ where schemaId = 1
 group by timestamp_ms/$window as tb, physCellId
 ;
 
-DEFINE{ query_name 'rrcx_pdf_serv_gnb'; }
+DEFINE{ query_name 'rrcx_pdf_neighbor_cell'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	physCellId as CELL_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,21)) as rsrp_vbad,
+	sum(GEQ(rsrp,22)*LEQ(rsrp,36)) as rsrp_bad,
+	sum(GEQ(rsrp,37)*LEQ(rsrp,51)) as rsrp_medium,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,66)) as rsrp_good,
+	sum(GEQ(rsrp,67)*LEQ(rsrp,127)) as rsrp_vgood
+from RRCXFER.nr_neighbor
+where schemaId = 4
+group by timestamp_ms/$window as tb, physCellId
+;
+
+
+DEFINE{ query_name 'rrcx_pdf_serv_gnb'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
 //	for now divide into 5 bins.
@@ -108,4 +141,25 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 from RRCXFER.serv_nr_cell
 where schemaId = 1
 group by timestamp_ms/$window as tb, gnb_id
+;
+
+DEFINE{ query_name 'rrcx_pdf_neighbor_gnb'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
+PARAM{ window uint;}
+//	rsrp, rsrq, sinr ranges are 0 .. 127
+//	for now divide into 5 bins.
+
+select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
+	gnb_id as GNB_ID,
+	count(*) as cnt,
+	sum(GEQ(rsrp, 0)*LEQ(rsrp,21)) as rsrp_vbad,
+	sum(GEQ(rsrp,22)*LEQ(rsrp,36)) as rsrp_bad,
+	sum(GEQ(rsrp,37)*LEQ(rsrp,51)) as rsrp_medium,
+	sum(GEQ(rsrp,52)*LEQ(rsrp,66)) as rsrp_good,
+	sum(GEQ(rsrp,67)*LEQ(rsrp,127)) as rsrp_vgood
+from RRCXFER.nr_neighbor
+where schemaId = 4
+group by timestamp_ms/$window as tb, gnb_id
+
 

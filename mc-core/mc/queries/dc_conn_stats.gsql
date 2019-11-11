@@ -1,4 +1,6 @@
-DEFINE{query_name 'dc_connect';}
+DEFINE{query_name 'dc_connect';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select timestamp_ms as timestamp,
 	UINT(id_MeNB_UE_X2AP_ID) as eUE_ID,
@@ -8,7 +10,9 @@ from RECONCOMPLETE.reconfig_success
 where schemaId=101
 ;
 
-DEFINE{query_name 'dc_terminate';}
+DEFINE{query_name 'dc_terminate';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select timestamp_ms as timestamp,
 	UINT(id_Old_eNB_UE_X2AP_ID) as eUE_ID,
@@ -25,7 +29,9 @@ from dc_connect p1, dc_terminate p2
 ;
 
 
-DEFINE{ query_name 'mc_connected_ues'; }
+DEFINE{ query_name 'mc_connected_ues'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 SELECT TB, UE_ID,
 	((TB+1)*$window-LAST(timestamp))/1000.0 as connected_time
@@ -35,7 +41,9 @@ HAVING LAST(event_type) = 1
 CLOSING_WHEN LAST(event_type) = 0
 ;
 
-DEFINE{ query_name 'mc_connected_cnt'; }
+DEFINE{ query_name 'mc_connected_cnt'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 SELECT ($window*(TB+1))/1000 as TS, 
                 $window/1000.0 as measurementInterval, // standard_name
@@ -44,7 +52,9 @@ FROM mc_connected_ues
 GROUP BY TB
 ;
 
-DEFINE{ query_name 'mc_disconnected_ues'; }
+DEFINE{ query_name 'mc_disconnected_ues'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 SELECT TB_1000, UE_ID, 
 	UINT((LAST(timestamp) - FIRST(timestamp))) as connected_time
@@ -55,7 +65,9 @@ CLOSING_WHEN LAST(event_type) = 0
 ;
 
 
-DEFINE{ query_name 'mc_connection_stats'; }
+DEFINE{ query_name 'mc_connection_stats'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 SELECT ($window*(TB+1))/1000 as TS, 
         $window/1000.0 as measurementInterval, // standard_name
@@ -72,7 +84,9 @@ GROUP BY (TB_1000 * 1000) / $window as TB
 ;
 
 
-DEFINE{ query_name 'mc_connects_cnt'; }
+DEFINE{ query_name 'mc_connects_cnt'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 SELECT ($window*(TB+1))/1000 as TS,
         $window/1000.0 as measurementInterval, // standard_name
@@ -82,7 +96,9 @@ WHERE event_type = 1
 GROUP BY timestamp / $window as TB
 ;
 
-DEFINE{ query_name 'mc_disconnects_cnt'; }
+DEFINE{ query_name 'mc_disconnects_cnt'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 SELECT ($window*(TB+1))/1000 as TS, 
          $window/1000.0 as measurementInterval, // standard_name
@@ -92,14 +108,18 @@ WHERE event_type = 0
 GROUP BY timestamp / $window as TB
 ;
 
-DEFINE{ query_name 'mc_unique_ues'; }
+DEFINE{ query_name 'mc_unique_ues'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 SELECT TB, UE_ID
 FROM dc_events
 GROUP BY timestamp / $window as TB, gUE_ID as UE_ID
 ;
 
-DEFINE{ query_name 'mc_unique_ue_cnt'; }
+DEFINE{ query_name 'mc_unique_ue_cnt'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; } 
 SELECT ($window*(TB+1))/1000 as TS, 
          $window/1000.0 as measurementInterval, // standard_name

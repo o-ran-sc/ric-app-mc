@@ -1,4 +1,6 @@
-DEFINE{ query_name 'addreq_pdf_nr_cell'; }
+DEFINE{ query_name 'addreq_pdf_nr_cell'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
 //	for now divide into 5 bins.
@@ -16,7 +18,9 @@ where schemaId = 410
 group by timestamp_ms/$window as tb, physCellId
 ;
 
-DEFINE{ query_name 'addreq_pdf_nr_gnb'; }
+DEFINE{ query_name 'addreq_pdf_nr_gnb'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
 //	for now divide into 5 bins.

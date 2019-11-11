@@ -1,4 +1,6 @@
-DEFINE{query_name 'throughput_ue';}
+DEFINE{query_name 'throughput_ue';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select ($window*(TB+1))/1000 as TS, e_RAB_ID, UE_ID, GNB_ID,
        $window/1000.0 as measurementInterval,
@@ -33,7 +35,9 @@ group by e_RAB_ID, id_SgNB_UE_X2AP_ID as UE_ID, gnb_id as GNB_ID, timestamp_ms/$
 // (((startTimeStamp & HEX'FF000000') >> 24) | ((startTimeStamp & HEX'00FF0000') >> 8) | ((startTimeStamp & HEX'0000FF00') << 8) | ((startTimeStamp & HEX'000000FF') << 24))
 
 
-DEFINE{query_name 'throughput_rollup';}
+DEFINE{query_name 'throughput_rollup';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select TS, e_RAB_ID, GNB_ID,
        $window/1000.0 as measurementInterval,
@@ -50,7 +54,9 @@ from throughput_ue
 group by TS, e_RAB_ID, GNB_ID
 ;
 
-DEFINE{query_name 'throughput_gnb';}
+DEFINE{query_name 'throughput_gnb';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select ($window*(TB+1))/1000 as TS, e_RAB_ID, GNB_ID,
        $window/1000.0 as measurementInterval,

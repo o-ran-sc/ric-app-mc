@@ -1,4 +1,6 @@
-DEFINE{ query_name 'reconfig_all_debug'; }
+DEFINE{ query_name 'reconfig_all_debug'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select 'reconfig_all_debug' as name, 
 	count(*) as cnt, ($window*(TB+1))/1000 as TS, 
@@ -8,7 +10,9 @@ where schemaId=103
 group by timestamp_ms / $window as TB
 ;
 
-DEFINE{ query_name 'reconfig_success_debug'; }
+DEFINE{ query_name 'reconfig_success_debug'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select 'reconfig_success_debug' as name,
 	count(*) as cnt, ($window*(TB+1))/1000 as TS, 
@@ -18,7 +22,9 @@ where schemaId=101
 group by timestamp_ms / $window as TB
 ;
 
-DEFINE{ query_name 'reconfig_reject_debug'; }
+DEFINE{ query_name 'reconfig_reject_debug'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select 'reconfig_reject_debug' as name,
 	count(*) as cnt, ($window*(TB+1))/1000 as TS, 
@@ -28,7 +34,9 @@ where schemaId=102
 group by timestamp_ms / $window as TB
 ;
 
-DEFINE{ query_name 'dc_release_debug'; }
+DEFINE{ query_name 'dc_release_debug'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
 PARAM{ window uint; }
 select 'dc_release_debug' as name,
 	count(*) as cnt, ($window*(TB+1))/1000 as TS, 

@@ -77,10 +77,14 @@ else
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_pdf_neigh_gnb_ssb window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_pdf_serv_cell window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_pdf_serv_gnb window=$WINDOW &
+	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_pdf_neighbor_cell window=$WINDOW &
+	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_pdf_neighbor_gnb window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_stats_neigh_cell window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_stats_neigh_gnb window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_stats_serv_cell window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_stats_serv_gnb window=$WINDOW &
+	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_stats_neighbor_cell window=$WINDOW &
+	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default rrcx_stats_neighbor_gnb window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default mc_connected_cnt window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default mc_connection_stats window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default mc_connects_cnt window=$WINDOW &
@@ -96,6 +100,7 @@ else
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default throughput_ue window=$WINDOW &
         /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default throughput_rollup window=$WINDOW &
         /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default throughput_gnb window=$WINDOW &
+        /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default mod_req_failure_distribution window=$WINDOW &
 fi
 
 sleep 1

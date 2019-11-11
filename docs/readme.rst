@@ -7,6 +7,7 @@ RIC Measurement Campaign (MC) supported KPIs
 
 name: throughput_ue
 description: throughput experienced by UE over a measurement interval. "Active" throughput is throughput while actively downloading, "average" averages bytes transfered over the measurement interval
+
 - ULLONG TS
 - LLONG e_RAB_ID
 - LLONG UE_ID

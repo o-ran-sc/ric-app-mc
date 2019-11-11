@@ -6,6 +6,7 @@ RIC Measurement Campaign (MC) supported KPIs
 ============================================
 
 name: throughput_ue
+
 description: throughput experienced by UE over a measurement interval. "Active" throughput is throughput while actively downloading, "average" averages bytes transfered over the measurement interval
 
 - ULLONG TS
@@ -20,6 +21,7 @@ description: throughput experienced by UE over a measurement interval. "Active" 
 
 
 name: addreq_success_stats
+
 description: statistics on the time to successfully make a DC connection
 
 - V_STR GNB_ID
@@ -34,6 +36,7 @@ description: statistics on the time to successfully make a DC connection
 
 
 name: addreq_pdf_nr_cell
+
 description : histogram of neighboring cell RSRP, aggregated by cell id
 
 - ULLONG TS
@@ -48,6 +51,7 @@ description : histogram of neighboring cell RSRP, aggregated by cell id
 
 
 name: addreq_pdf_nr_gnb
+
 description : histogram of neighboring cell RSRP, aggregated by GNB, as computed from addition request events.
 
 - ULLONG TS
@@ -62,6 +66,7 @@ description : histogram of neighboring cell RSRP, aggregated by GNB, as computed
 
 
 name: addreq_stats_nr_cell
+
 description : statistics about neighboring cell RSRP aggregated by cell id
 
 - ULLONG TS
@@ -77,6 +82,7 @@ description : statistics about neighboring cell RSRP aggregated by cell id
 
 
 name: addreq_stats_nr_gnb
+
 description : statistics about neighboring cell RSRP aggregated by GNB, as computed from addition request events.
 
 - ULLONG TS
@@ -92,6 +98,7 @@ description : statistics about neighboring cell RSRP aggregated by GNB, as compu
 
 
 name: erab_stats
+
 description: number of admitted bearers and the distribution of their qCI
 
 - ULLONG TS
@@ -110,6 +117,7 @@ description: number of admitted bearers and the distribution of their qCI
 
 
 name: mc_connected_cnt
+
 description: Number of dual connected users
 
 - ULLONG TS
@@ -118,6 +126,7 @@ description: Number of dual connected users
 
 
 name: mc_connection_stats
+
 description : statistics about the length of dual connected sessions
 
 - ULLONG TS
@@ -131,6 +140,7 @@ description : statistics about the length of dual connected sessions
 
 
 name: mc_connects_cnt
+
 description: number of DC connection requests
 
 - ULLONG TS
@@ -139,6 +149,7 @@ description: number of DC connection requests
 
 
 name: mc_disconnects_cnt
+
 description: number of DC connection releases
 
 - ULLONG TS
@@ -147,6 +158,7 @@ description: number of DC connection releases
 
 
 name: mc_unique_ue_cnt
+
 description: Number of distinct UEs making a DC request or release
 
 - ULLONG TS
@@ -155,6 +167,7 @@ description: Number of distinct UEs making a DC request or release
 
 
 name: mod_req_failure_distribution
+
 description: distribution of causes of a modification requet failure
 
 - ULLONG TS
@@ -170,6 +183,7 @@ description: distribution of causes of a modification requet failure
 
 
 name: reconfig_status_success_rate
+
 description: fraction of DC connect requests which are successful
 
 - V_STR GNB_ID
@@ -181,6 +195,7 @@ description: fraction of DC connect requests which are successful
 
 
 name: reconfig_status_reject_cause
+
 description: distribution of causes for DC rejection
 
 - V_STR gnb_id
@@ -193,6 +208,7 @@ description: distribution of causes for DC rejection
 
 
 name: mod_status_refuse_cause
+
 description: distribution of causes for a sgnb modification refusal
 
 - V_STR GNB_ID
@@ -206,6 +222,7 @@ description: distribution of causes for a sgnb modification refusal
 
 
 name: release_cause
+
 description: distribution of the causes of a DC release
 
 - V_STR GNB_ID
@@ -219,6 +236,7 @@ description: distribution of the causes of a DC release
 
 
 name: release_req_success_stats
+
 description: statistics on the time to delease a DC connection
 
 - V_STR GNB_ID
@@ -233,6 +251,7 @@ description: statistics on the time to delease a DC connection
 
 
 name: rrcx_pdf_neigh_cell_csi
+
 description: distribution of the beam csi rsrp of neighboring cells, aggregated by cell id, computed from rrc transfer
 
 - ULLONG TS
@@ -247,6 +266,7 @@ description: distribution of the beam csi rsrp of neighboring cells, aggregated 
 
 
 name: rrcx_pdf_neigh_gnb_csi
+
 description: distribution of the beam csi rsrp of neighboring cells, aggregated by gNB, computed from rrc transfer
 
 - ULLONG TS
@@ -261,6 +281,7 @@ description: distribution of the beam csi rsrp of neighboring cells, aggregated 
 
 
 name: rrcx_pdf_neigh_cell_ssb
+
 description: distribution of the beam ssb rsrp of neighboring cells, aggregated by cell id, computed from rrc transfer
 
 - ULLONG TS
@@ -275,6 +296,7 @@ description: distribution of the beam ssb rsrp of neighboring cells, aggregated 
 
 
 name: rrcx_pdf_neigh_gnb_ssb
+
 description: distribution of the beam ssb rsrp of neighboring cells, aggregated by gNB, computed from rrc transfer
 
 - ULLONG TS
@@ -289,6 +311,7 @@ description: distribution of the beam ssb rsrp of neighboring cells, aggregated 
 
 
 name: rrcx_pdf_serv_cell
+
 description: distribution of the  ssb rsrp of serving cell aggregated by cell id, computed from rrc transfer
 
 - ULLONG TS
@@ -303,6 +326,7 @@ description: distribution of the  ssb rsrp of serving cell aggregated by cell id
 
 
 name: rrcx_pdf_neighbor_cell
+
 description: distribution of the  ssb rsrp of neighbor cells aggregated by cell id, computed from rrc transfer
 
 - ULLONG TS
@@ -317,6 +341,7 @@ description: distribution of the  ssb rsrp of neighbor cells aggregated by cell 
 
 
 name: rrcx_pdf_serv_gnb
+
 description: distribution of the  ssb rsrp of serving cell aggregated by gnb, computed from rrc transfer
 
 - ULLONG TS
@@ -331,6 +356,7 @@ description: distribution of the  ssb rsrp of serving cell aggregated by gnb, co
 
 
 name: rrcx_pdf_neighbor_gnb
+
 description: distribution of the  ssb rsrp of serving cell aggregated by cell id, computed from rrc transfer
 
 - ULLONG TS
@@ -345,6 +371,7 @@ description: distribution of the  ssb rsrp of serving cell aggregated by cell id
 
 
 name: rrcx_stats_neigh_cell
+
 description: statistics on ssb RSRP on the beams of nrighboring cells, aggregated by cell ID, computed using rrc transfer
 
 - ULLONG TS
@@ -360,6 +387,7 @@ description: statistics on ssb RSRP on the beams of nrighboring cells, aggregate
 
 
 name: rrcx_stats_neigh_gnb
+
 description: statistics on ssb RSRP on the beams of nrighboring cells, aggregated by gNB, computed using rrc transfer
 
 - ULLONG TS
@@ -375,6 +403,7 @@ description: statistics on ssb RSRP on the beams of nrighboring cells, aggregate
 
 
 name: rrcx_stats_serv_cell
+
 description: statistics on the ssb rsrp of the serving cell, aggregated by cell id, computed using rrc transfer
 
 - ULLONG TS
@@ -390,6 +419,7 @@ description: statistics on the ssb rsrp of the serving cell, aggregated by cell 
 
 
 name: rrcx_stats_neighbor_cell
+
 description: statistics on the ssb rsrp of the neighbor cells, aggregated by cell id, computed using rrc transfer
 
 - ULLONG TS
@@ -405,6 +435,7 @@ description: statistics on the ssb rsrp of the neighbor cells, aggregated by cel
 
 
 name: rrcx_stats_serv_gnb
+
 description: statistics on the ssb srp of the serving cell, aggregated by gNB, computed using rrc transfer
 
 - ULLONG TS
@@ -420,6 +451,7 @@ description: statistics on the ssb srp of the serving cell, aggregated by gNB, c
 
 
 name: rrcx_stats_neighbor_gnb
+
 description: statistics on the ssb rsrp of the neighbor cells, aggregated by gNB, computed using rrc transfer
 
 - ULLONG TS
@@ -435,6 +467,7 @@ description: statistics on the ssb rsrp of the neighbor cells, aggregated by gNB
 
 
 name: throughput_rollup
+
 description: statistics on the per-UE throughput
 
 - ULLONG TS
@@ -453,6 +486,7 @@ description: statistics on the per-UE throughput
 
 
 name: throughput_gnb
+
 description: throughput experienced by a GNB over a measurement interval. "Active" throughput is throughput while actively downloading, "average" averages bytes transfered over the measurement interval
 
 - ULLONG TS

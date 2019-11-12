@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5e140aa2_591e6ed6",
+        "filename": "docs/index.rst",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-12T16:44:30Z",
+      "side": 1,
+      "message": "Is this the same token from conf.yaml? Learned something new.",
+      "range": {
+        "startLine": 8,
+        "startChar": 3,
+        "endLine": 8,
+        "endChar": 14
+      },
+      "revId": "943f36969dfb62bc59e616cd054b3f703f6b83d4",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}

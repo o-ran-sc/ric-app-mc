@@ -17,6 +17,26 @@
 These files are needed to support the continuous integration process
 which verifies code on commit and might build images for the application.
 
-The Docker file is used to build an image during CI vetting, and maybe even
-during the building of the overall application container. For vetting,
-the successful build indicates that all vetting of the repo passed.
+There are multiple containers built from this repo. For each container built
+there is a subdirectory here:
+
+	listener -- the mc_listener application which ingests RMR messages to feed
+				the core MC xAPP.
+
+	mc_core	--	The core MC xAPP.
+
+
+The builds are kicked off based on the yaml files in the ci-management project
+	ssh://<some-user>@gerrit.o-ran-sc.org:29418/ci-management
+
+Specifically controlled by ric-app-mc.yaml.
+
+
+Image Versioning
+Docker image tags are applied based on the contents of the container-tag.yaml 
+file in each of the directories listed above. Specifically the "tag" field as
+illustrated in the following example:
+
+     tag: '1.2.1'
+
+

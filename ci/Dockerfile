@@ -1,5 +1,10 @@
 # vim: ts=4 sw=4 noet:
 
+### 2019 November 11th
+### This file is deprecated and can be removed once the ci-managment repo has been 
+### changed to use the docker files in the subdiretories
+###
+
 # -------------------------------------------------------------------------------
 #    Copyright (c) 2018-2019 AT&T Intellectual Property.
 #

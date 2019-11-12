@@ -5,6 +5,7 @@
 RIC Measurement Campaign (MC) xApp
 ==================================
 
+.. _ric-app-mc:
 
 .. toctree::
    :maxdepth: 1

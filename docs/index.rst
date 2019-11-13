@@ -5,12 +5,12 @@
 RIC Measurement Campaign (MC) xApp
 ==================================
 
-.. _ric-app-mc:
 
 .. toctree::
    :maxdepth: 1
    :caption: Documents:
 
+   overview.rst
    readme.rst
 
 

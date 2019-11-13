@@ -1,49 +1,73 @@
 # vim: ts=4 sw=4 noet:
-
-# -------------------------------------------------------------------------------
-#    Copyright (c) 2018-2019 AT&T Intellectual Property.
+#==================================================================================
+#	Copyright (c) 2018-2019 AT&T Intellectual Property.
 #
 #   Licensed under the Apache License, Version 2.0 (the "License");
 #   you may not use this file except in compliance with the License.
 #   You may obtain a copy of the License at
 #
-#       http://www.apache.org/licenses/LICENSE-2.0
+#	   http://www.apache.org/licenses/LICENSE-2.0
 #
 #   Unless required by applicable law or agreed to in writing, software
 #   distributed under the License is distributed on an "AS IS" BASIS,
 #   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
-# -------------------------------------------------------------------------------
+#==================================================================================
 
-# CAUTION:   This file eventually should exist in the ci directory, however until
-#			this can be confirmed, and the .yaml file(s) in the ci project changed
-#			to indicaate that ci/Dockerfile should be used, this is here with minor
-#			changes needed to exist at the root.
-# ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-# CI to verify the MC application components
-# Inherits C toolchain from buildpack-deps:stretch then adds cmake and better shell(s).
+#	Mnemonic:	Dockerfile
+#	Abstract:	Build file which creaes a runtime image for the listener. 
+#				Building should be as simple as:
+#
+#					docker build -f sidecars/listener/Dockerfile -t mc_listener:xx.xx .
+#
+#				Running the image in a container:
+#					The fifo output directory needs to be mounted to the container
+#					e.g.  -v /exports/mcl/fifos:/tmp/mcl/fifos.  The internal
+#					directory can be supplied on the command line using -d path, but
+#					should not be needed.
+#
+#					The RMR listen port must be properly exposed to the container. The
+#					internal default is 4560, and can be changed with the -p port option
+#					on the command line (needed if running from docker-compose). Typical
+#					exposure might be  -p <host-port>:4560  on the docker run command.
+#
+#					The MC listener application does NOT need route table updates and thus
+#					there is NO need to expose the route table generator port on this
+#					container.
+#
+#	Date:		22 August 2019
+#	Author:		E. Scott Daniels
 
-# It is assumed that this docker file is used with a build command run at the
-# root level of the repo (directory containing the ci directory). E.g.
-#	docker build -f ci/Dockerfile .
 
-FROM buildpack-deps:stretch
-
-RUN apt-get update && apt-get -q -y install cmake ksh
-
-# stuff our repo things into a scratch area
+FROM ubuntu:18.04 as buildenv
 RUN mkdir /playpen
-ADD . /playpen
 
+RUN apt-get update && apt-get install -y cmake gcc make git g++ wget
 
-# add any unit test scripts that need to be driven, e.g.
-# RUN ksh test/mcl_unit_test.ksh
+RUN mkdir /playpen/bin /playpen/src
+ARG SRC=.
+COPY ${SRC}/build_dev_env.sh /playpen/bin/
+COPY ${SRC}/Makefile ${SRC}/*.h ${SRC}/*.c /playpen/src/
 
-#  This is a final/only script which might print useful things to the log and ALWAYS succeeds.
-RUN ksh /playpen/ci/stats.ksh
+ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
+ENV C_INCLUDE_PATH=/usr/local/include
+RUN bash /playpen/bin/build_dev_env.sh
+RUN cd /playpen/src/; make -B mc_listener sender pipe_reader
 
-# there is no cmd; the build/verification assumes that if the image is created
-# successfully, e.g. none of the previous run commands fail, that the environment
-# is successfully vetted.
+# -----  final, smaller image ----------------------------------
+FROM ubuntu:18.04
+
+# obtusely this uses the previous value
+ARG SRC
+
+RUN mkdir -p /playpen/bin
+COPY --from=buildenv /usr/local/lib/* /usr/local/lib/
+COPY --from=buildenv /playpen/src/mc_listener /playpen/src/sender /playpen/src/pipe_reader /playpen/bin/
+COPY ${SRC}/verify.sh /playpen/bin
+
+ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
+ENV C_INCLUDE_PATH=/usr/local/include
+
+CMD [ "/playpen/bin/mc_listener" ]

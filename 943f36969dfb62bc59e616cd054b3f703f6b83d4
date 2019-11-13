@@ -1,0 +1,10 @@
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Scott Daniels <daniels@research.att.com>
+Code-Review+1: Chris Lott <cl778h@att.com>
+Code-Review+1: weichen ni <niweichen@chinamobile.com>
+Code-Review+2: Vlad Shkapenyuk <vshkap@research.att.com>
+Submitted-by: Vlad Shkapenyuk <vshkap@research.att.com>
+Submitted-at: Wed, 13 Nov 2019 15:56:08 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ric-app/mc/+/1509
+Project: ric-app/mc
+Branch: refs/heads/master

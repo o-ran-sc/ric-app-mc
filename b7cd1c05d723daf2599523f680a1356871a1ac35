@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "3d68db48_f0211b1d",
+        "filename": "sidecars/listener/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T19:09:11Z",
+      "side": 1,
+      "message": "Because I was in a hurry and took what was working. Yes, this needs to use the base versions for all the reasons you\u0027ve said.",
+      "parentUuid": "016ae9a6_d86045a9",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 4
+      },
+      "revId": "b7cd1c05d723daf2599523f680a1356871a1ac35",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8e981d97_d6f6bbf5",
         "filename": "sidecars/listener/Dockerfile",
         "patchSetId": 1
@@ -36,6 +60,30 @@
       "writtenOn": "2019-11-13T18:44:19Z",
       "side": 1,
       "message": "Does this reinstall nng?  That\u0027s another thing already present in the base builder image :/\n\nThis really should install RMR from PackageCloud, right?",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 56,
+        "endChar": 6
+      },
+      "revId": "b7cd1c05d723daf2599523f680a1356871a1ac35",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "904a9853_341d3289",
+        "filename": "sidecars/listener/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-13T19:09:11Z",
+      "side": 1,
+      "message": "Yes. The original listener, I thought, wasn\u0027t to be released. I wasn\u0027t worried about the packages I crafted manually for the trials.  When it became known that the listener needed to be packaged for real, I didn\u0027t take the time to redo.  Too many fish frying in my pan.   It needs to be made so.",
+      "parentUuid": "8e981d97_d6f6bbf5",
       "range": {
         "startLine": 56,
         "startChar": 0,

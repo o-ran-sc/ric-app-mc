@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "016ae9a6_d86045a9",
+        "filename": "sidecars/listener/Dockerfile",
+        "patchSetId": 1
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2019-11-13T18:41:14Z",
+      "side": 1,
+      "message": "Why do you not use the base builder images that I have so lovingly prepared for you (*guilt*)??\n\nSeriously tho, you get an image with GCC already installed and ready to go, no waiting for cmake make g++ etc to trickle in, why not just use it?",
+      "range": {
+        "startLine": 44,
+        "startChar": 0,
+        "endLine": 44,
+        "endChar": 4
+      },
+      "revId": "b7cd1c05d723daf2599523f680a1356871a1ac35",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}

@@ -58,12 +58,10 @@ RUN dpkg -i rmr-dev_${RMR_VER}_amd64.deb
 
 RUN mkdir /playpen/bin /playpen/src
 ARG SRC=.
-COPY ${SRC}/build_dev_env.sh /playpen/bin/
 COPY ${SRC}/Makefile ${SRC}/*.h ${SRC}/*.c /playpen/src/
 
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
 ENV C_INCLUDE_PATH=/usr/local/include
-RUN bash /playpen/bin/build_dev_env.sh
 RUN cd /playpen/src/; make -B mc_listener sender pipe_reader
 
 # -----  final, smaller image ----------------------------------

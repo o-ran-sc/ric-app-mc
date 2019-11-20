@@ -208,6 +208,7 @@ static int open_fifo( mcl_ctx_t* ctx, int mtype, int io_dir ) {
 		jfd = open( wbuf, O_RDWR  | O_NONBLOCK );			// must have a reader before we can open a non-blocking writer
 		if( jfd < 0 ) {
 			logit(  LOG_ERR, "(mcl) fifo open failed (rw): %s: %s", wbuf, strerror( errno ) );
+			return -1;
 		}
 
 		fd = open( wbuf, O_WRONLY  | O_NONBLOCK );			// this will be our actual writer, in non-blocking mode
@@ -635,3 +636,29 @@ extern void mcl_fifo_fanout( void* vctx, int report, int long_hdr  ) {
 }
 
 
+/*
+	Given a buffer and length, along with the message type, look up the fifo and write
+	the buffer. Returns 0 on error; 1 on success.
+*/
+extern int mcl_fifo_one( void* vctx, char* payload, int plen, int mtype ) {
+	mcl_ctx_t*	ctx;					// our context; mostly for the rmr context reference and symtable
+	fifo_t*		fifo;					// fifo to chalk counts on
+	int			state = -1;
+	int			fd;						// file des to write to
+
+	if( plen <= 0 ) {
+		return 1;
+	}
+
+	if( (ctx = (mcl_ctx_t*) vctx) == NULL ) {
+		logit( LOG_ERR, "(mcl) invalid context given to fifo_one\n" );
+		return 0;
+	}
+
+	fd = suss_fifo( ctx, mtype, WRITER, &fifo );		// map the message type to an open fd
+	if( fd >= 0 ) {
+		state = write( fd, payload, plen );
+	} 
+
+	return state == plen;
+}

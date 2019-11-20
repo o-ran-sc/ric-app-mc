@@ -55,14 +55,13 @@ RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/pack
 RUN dpkg -i rmr_${RMR_VER}_amd64.deb
 RUN dpkg -i rmr-dev_${RMR_VER}_amd64.deb
 
-
 RUN mkdir /playpen/bin /playpen/src
 ARG SRC=.
 COPY ${SRC}/Makefile ${SRC}/*.h ${SRC}/*.c /playpen/src/
 
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
 ENV C_INCLUDE_PATH=/usr/local/include
-RUN cd /playpen/src/; make -B mc_listener sender pipe_reader
+RUN cd /playpen/src/; make -B mc_listener sender pipe_reader rdc_replay
 
 # -----  final, smaller image ----------------------------------
 FROM ubuntu:18.04
@@ -72,9 +71,10 @@ ARG SRC
 
 RUN mkdir -p /playpen/bin
 COPY --from=buildenv /usr/local/lib/* /usr/local/lib/
-COPY --from=buildenv /playpen/src/mc_listener /playpen/src/sender /playpen/src/pipe_reader /playpen/bin/
-COPY ${SRC}/verify.sh /playpen/bin
+COPY --from=buildenv /playpen/src/mc_listener /playpen/src/sender /playpen/src/pipe_reader /playpen/src/rdc_replay /playpen/bin/
+COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh ${SRC}run_replay.sh ${SRC}/help /playpen/bin/
 
+ENV PATH=/playpen/bin:$PATH
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
 ENV C_INCLUDE_PATH=/usr/local/include
 

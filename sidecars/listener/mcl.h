@@ -55,6 +55,7 @@
 
 //------------ prototypes --------------------------------------------------------------
 extern void mcl_fifo_fanout( void* ctx, int report, int long_hdrs );
+extern int mcl_fifo_one( void* ctx, char* payload, int plen, int mtype );
 extern rmr_mbuf_t* mcl_get_msg( void* vctx, rmr_mbuf_t* msg, int timeout );
 extern	void* mcl_mk_context( char* dir );
 extern int mcl_fifo_read1( void* vctx, int mtype, char* ubuf, int ublen, int long_hdr );

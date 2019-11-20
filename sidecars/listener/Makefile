@@ -49,6 +49,9 @@ pipe_reader : pipe_reader.c libmcl.a
 unit_test: unit_test.c mcl.c
 	gcc $(coverage_opts) unit_test.c -o unit_test -lrmr_nng -lnng -lm -lpthread
 
+# ---- adjunct tools -----------------------------------------------------------------
+rdc_replay: rdc_replay.c libmcl.a
+	gcc $(coverage_opts) rdc_replay.c -o rdc_replay -L. -lmcl -lrmr_nng -lnng -lpthread -lm 
 
 # ---- housekeeping stuff -------------------------------------------------------------
 # remove only intermediates

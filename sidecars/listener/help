@@ -52,5 +52,18 @@ the replay binary should write FIFOs to should be mounted (as the example is
 above). If an alternate path must be used, it must be supplied using the -d path
 command line option to run_replay.sh.  
 
+The replay script supports pre-creating the FIFOs either from a list of known
+and/or expected message types, or by parsing the input file to determine the
+types contained. Use the '-p' option on the run_replay script command line to
+enable pre-creation, and -m "list" to supply a list of message types (e.g.
+-m 1,2,3,10002).  
+
+If coordination with a FIFO reader is needed, there are two options to delay
+the start of the replay binary.  The '-g file' will cause the run script to
+wait until the gate file "file" exists before starting the reader.  This pause
+happens after FIFO creation if -p is given.  Additionally, a delay in seconds
+can be given with the -D seconds command line option.  After creating FIFOs, 
+and optionally waiting for the gate file, the script will delay an additional
+number of seconds before starting the replay process.
 
 endKat

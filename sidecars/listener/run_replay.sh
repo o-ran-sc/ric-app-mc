@@ -1,4 +1,7 @@
-#!/usr/bin/env bash
+#!/usr/bin/env ksh
+# Do NOT use bash; it cannot handle constructing variables in while loops.
+
+
 # vim: ts=4 sw=4 noet:
 #----------------------------------------------------------------------------------
 #

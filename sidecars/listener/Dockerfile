@@ -61,17 +61,21 @@ COPY ${SRC}/Makefile ${SRC}/*.h ${SRC}/*.c /playpen/src/
 
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
 ENV C_INCLUDE_PATH=/usr/local/include
-RUN cd /playpen/src/; make -B mc_listener sender pipe_reader rdc_replay
+RUN cd /playpen/src/; make -B mc_listener sender pipe_reader rdc_replay rdc_extract
 
 # -----  final, smaller image ----------------------------------
 FROM ubuntu:18.04
+
+# bash doesn't cut it for run_replay so grab a real shell and clean up as much as we can
+RUN apt-get update; apt-get install -y ksh
+RUN rm -fr /var/lib/apt/lists 
 
 # obtusely this uses the previous value
 ARG SRC
 
 RUN mkdir -p /playpen/bin
 COPY --from=buildenv /usr/local/lib/* /usr/local/lib/
-COPY --from=buildenv /playpen/src/mc_listener /playpen/src/sender /playpen/src/pipe_reader /playpen/src/rdc_replay /playpen/bin/
+COPY --from=buildenv /playpen/src/mc_listener /playpen/src/sender /playpen/src/pipe_reader /playpen/src/rdc_replay /playpen/src/rdc_extract /playpen/bin/
 COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh ${SRC}run_replay.sh ${SRC}/help /playpen/bin/
 
 ENV PATH=/playpen/bin:$PATH

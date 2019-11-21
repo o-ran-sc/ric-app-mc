@@ -53,6 +53,9 @@ unit_test: unit_test.c mcl.c
 rdc_replay: rdc_replay.c libmcl.a
 	gcc $(coverage_opts) rdc_replay.c -o rdc_replay -L. -lmcl -lrmr_nng -lnng -lpthread -lm 
 
+rdc_extract: rdc_extract.c libmcl.a
+	gcc $(coverage_opts) rdc_extract.c -o rdc_extract -L. -lmcl -lrmr_nng -lnng -lpthread -lm 
+
 # ---- housekeeping stuff -------------------------------------------------------------
 # remove only intermediates
 clean:

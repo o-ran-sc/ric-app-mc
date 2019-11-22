@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6f44b392_3da536f9",
+        "filename": "releases/container-release-mc.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-22T21:59:43Z",
+      "side": 1,
+      "message": "Current version for the listener is 1.3.0",
+      "revId": "18b4a1cea1be52b9dee855ff1a2ebaa8e0556120",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "501a72c4_ecc89e93",
+        "filename": "releases/container-release-mc.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2019-11-22T21:59:43Z",
+      "side": 1,
+      "message": "It does seem from their doc that this should do both, but the resulting tags on the images will be the tag listed at the top. If we want/need them to be different, then we might need to submit a yaml with just mc-core, then another commit with a changed yaml that sets a different tag at the top for the listener and lists just the listener in the containers.",
+      "revId": "18b4a1cea1be52b9dee855ff1a2ebaa8e0556120",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53",
+      "unresolved": true
+    }
+  ]
+}

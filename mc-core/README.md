@@ -1,4 +1,4 @@
-GS-Lite based Measurement Campaign xApp
+GS-Lite based Measurement Campaign (MC) xApp
 
  
 

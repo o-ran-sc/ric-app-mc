@@ -12,6 +12,7 @@ RIC Measurement Campaign (MC) xApp
 
    overview.rst
    readme.rst
+   release-notes.rst
 
 
 * :ref:`search`

@@ -86,7 +86,7 @@ typedef struct {
 
 	There seems to be an issue with some collectors and thus it is required 
 	to initially name the file with a leading dot (.) until the file is closed
-	and ready to be read by external processes (marking it write only seems
+	and ready to be read by external processes (marking it write-only seems
 	not to discourage them from trying!).
 */
 static int copy_unlink( char* old, char* new, int mode ) {
@@ -104,7 +104,7 @@ static int copy_unlink( char* old, char* new, int mode ) {
 	
 	errno = 0;
 	if( (rfd = open( old, O_RDONLY )) < 0 ) {
-		logit( LOG_ERR, "copy: open src for copy failed: %s: %s\n", old, strerror( errno ) );
+		logit( LOG_ERR, "copy: open src for copy failed: %s: %s", old, strerror( errno ) );
 		return -1;
 	}
 
@@ -122,7 +122,7 @@ static int copy_unlink( char* old, char* new, int mode ) {
 	//logit( LOG_INFO, "copy: creating file in tmp filename: %s", tfname );
 
 	if( (wfd = open( tfname, O_WRONLY | O_CREAT | O_TRUNC, 0200 )) < 0 ) {
-		logit( LOG_ERR, "copy: open tmp file for copy failed: %s: %s\n", tfname, strerror( errno ) );
+		logit( LOG_ERR, "copy: open tmp file for copy failed: %s: %s", tfname, strerror( errno ) );
 		return -1;
 	}
 
@@ -346,11 +346,12 @@ extern void rdc_set_freq( void* vctx, int freq ) {
 
 	ctx = (rdc_ctx_t *) vctx;
 	
-	if( ctx != NULL && freq > 10 ) {
+	if( ctx != NULL && freq >= 10 ) {
 		ctx->frequency = freq;
+		logit( LOG_INFO, "(rdc) file roll frequency set to %d seconds", ctx->frequency );
+	} else {
+		logit( LOG_ERR, "(rdc) file roll frequency was not set; ctx was nill or frequency was less than 10s" );
 	}
-
-	logit( LOG_INFO, "(rdc) file roll frequency set to %d seconds", ctx->frequency );
 }
 
 /*
@@ -471,7 +472,7 @@ int main( ) {
 	ctx = rdc_init( "/tmp/rdc/stage", "/tmp/rdc/final", ".rdc", NULL );			// does not create done files
 	//ctx = rdc_init( "/tmp/rdc/stage", "/tmp/rdc/final", ".rdc", ".done" );	// will create a "done" file
 	if( ctx == NULL ) {
-		logit( LOG_CRIT, "<TEST> abort! rdc_init returned a nil pointer\n" );
+		logit( LOG_CRIT, "<TEST> abort! rdc_init returned a nil pointer" );
 		exit( 1 );
 	}
 

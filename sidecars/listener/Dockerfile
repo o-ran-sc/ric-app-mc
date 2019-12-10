@@ -57,11 +57,22 @@ RUN dpkg -i rmr-dev_${RMR_VER}_amd64.deb
 
 RUN mkdir /playpen/bin /playpen/src
 ARG SRC=.
-COPY ${SRC}/Makefile ${SRC}/*.h ${SRC}/*.c /playpen/src/
+COPY ${SRC}/*.ksh ${SRC}/Makefile ${SRC}/*.h ${SRC}/*.c /playpen/src/
+COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh /playpen/src/
 
+# Build all binaries; verify scripts expect them to be in bin, so we must copy too
+#
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
 ENV C_INCLUDE_PATH=/usr/local/include
-RUN cd /playpen/src/; make -B mc_listener sender pipe_reader rdc_replay rdc_extract
+RUN cd /playpen/src/; make -B all; ls -al mc_listener; cp mc_listener sender pipe_reader rdc_replay rdc_extract /playpen/bin/
+
+# Run unit tests. If they don't pass the build fails here. Tests can be run from src, but expect binaries in bin
+# so that they can be run in the final image as well.
+#
+ENV PATH /playpen/bin:/playpen/src:$PATH
+RUN cd /playpen/src/; ./run_unit_test.ksh
+RUN /playpen/src/verify.sh; /playpen/src/verify_replay.sh
+
 
 # -----  final, smaller image ----------------------------------
 FROM ubuntu:18.04
@@ -76,7 +87,7 @@ ARG SRC
 RUN mkdir -p /playpen/bin
 COPY --from=buildenv /usr/local/lib/* /usr/local/lib/
 COPY --from=buildenv /playpen/src/mc_listener /playpen/src/sender /playpen/src/pipe_reader /playpen/src/rdc_replay /playpen/src/rdc_extract /playpen/bin/
-COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh ${SRC}run_replay.sh ${SRC}/help /playpen/bin/
+COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh ${SRC}/run_replay.sh ${SRC}/help /playpen/bin/
 
 ENV PATH=/playpen/bin:$PATH
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib

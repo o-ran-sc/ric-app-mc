@@ -44,6 +44,10 @@
 
 #include "mcl.h"
 
+#ifndef FOREVER
+#define FOREVER 1
+#endif
+
 #define READER 0
 #define WRITER 1
 
@@ -83,7 +87,7 @@ typedef struct {
 /*
 	Set up for raw data capture. We look for directory overriedes from
 	environment variables, and then invoke the rdc_init() to actually
-	set things upd.
+	set things up.
 */
 static void* setup_rdc() {
 	void*	ctx;
@@ -183,7 +187,7 @@ static char* build_hdr( int len, char* dest, int dest_len ) {
 */
 static int open_fifo( mcl_ctx_t* ctx, int mtype, int io_dir ) {
 	char	wbuf[1024];
-	int		fd;				// real file des
+	int		fd;					// real file des
 	int		jfd = -1;			// junk file des
 	int		state;
 
@@ -234,10 +238,17 @@ static int open_fifo( mcl_ctx_t* ctx, int mtype, int io_dir ) {
 	allowing for direct update of counts after the write.
 */
 static int suss_fifo( mcl_ctx_t* ctx, int mtype, int io_dir, fifo_t** fref ) {
-	fifo_t* fifo;
+	fifo_t* fifo = NULL;
 	void*	hash;
 
-	if( io_dir == READER ) {		// with an integer key, we nned two hash tables
+	if( ctx == NULL ) {
+		if( fref != NULL ) {
+			*fref = NULL;
+		}
+		return -1;
+	}
+
+	if( io_dir == READER ) {		// with an integer key, we need two hash tables
 		hash = ctx->rd_hash;
 	} else {
 		hash = ctx->wr_hash;
@@ -245,20 +256,24 @@ static int suss_fifo( mcl_ctx_t* ctx, int mtype, int io_dir, fifo_t** fref ) {
 
 	if( (fifo = (fifo_t *) rmr_sym_pull( hash, mtype )) == NULL ) {
 		fifo = (fifo_t *) malloc( sizeof( *fifo ) );
-		if( fifo == NULL ) {
-			return -1;
+		if( fifo != NULL ) {
+			memset( fifo, 0, sizeof( *fifo ) );
+			fifo->key = mtype;
+			fifo->fd = open_fifo( ctx, mtype, io_dir );
+			if( fifo->fd >= 0 ) {					// save only on good open
+				rmr_sym_map( hash, mtype, fifo );
+			} else {
+				free( fifo );
+				fifo = NULL;
+			}
 		}
-
-		memset( fifo, 0, sizeof( *fifo ) );
-		fifo->key = mtype;
-		fifo->fd = open_fifo( ctx, mtype, io_dir );
-		rmr_sym_map( hash, mtype, fifo );
 	}
 
 	if( fref != NULL ) {
 		*fref = fifo;
 	}
-	return fifo->fd;
+
+	return fifo == NULL ? -1 : fifo->fd;
 }
 
 /*
@@ -582,7 +597,7 @@ extern void mcl_fifo_fanout( void* vctx, int report, int long_hdr  ) {
 
 	rdc_ctx = setup_rdc( );				// pull rdc directories from enviornment and initialise
 
-	while( 1 ) {
+	do {
 		mbuf = mcl_get_msg( ctx, mbuf, report );			// wait up to report sec for msg (0 == block until message)
 
 		if( mbuf != NULL && mbuf->state == RMR_OK && mbuf->len > 0  ) {
@@ -632,7 +647,7 @@ extern void mcl_fifo_fanout( void* vctx, int report, int long_hdr  ) {
 				fflush( stdout );
 			}
 		}
-	}
+	} while( FOREVER );				// forever allows for escape during unit testing
 }
 
 

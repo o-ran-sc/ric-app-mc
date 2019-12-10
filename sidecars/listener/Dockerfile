@@ -63,6 +63,12 @@ ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
 ENV C_INCLUDE_PATH=/usr/local/include
 RUN cd /playpen/src/; make -B mc_listener sender pipe_reader rdc_replay rdc_extract
 
+# run unit tests. If they don't pass the build fails here
+ENV PATH /playpen/src:$PATH
+RUN cd /playpen/src/; run_unit_test.ksh
+RUN /playpen/bin/verify.sh; /playpen/vin/verify_replay.sh
+
+
 # -----  final, smaller image ----------------------------------
 FROM ubuntu:18.04
 
@@ -76,7 +82,7 @@ ARG SRC
 RUN mkdir -p /playpen/bin
 COPY --from=buildenv /usr/local/lib/* /usr/local/lib/
 COPY --from=buildenv /playpen/src/mc_listener /playpen/src/sender /playpen/src/pipe_reader /playpen/src/rdc_replay /playpen/src/rdc_extract /playpen/bin/
-COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh ${SRC}run_replay.sh ${SRC}/help /playpen/bin/
+COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh ${SRC}/run_replay.sh ${SRC}/help /playpen/bin/
 
 ENV PATH=/playpen/bin:$PATH
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib

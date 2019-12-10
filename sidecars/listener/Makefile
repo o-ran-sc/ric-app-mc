@@ -47,7 +47,7 @@ pipe_reader : pipe_reader.c libmcl.a
 	gcc pipe_reader.c -o pipe_reader  -L. -lmcl -lrmr_nng -lnng -lm -lpthread
 
 unit_test: unit_test.c mcl.c
-	gcc $(coverage_opts) unit_test.c -o unit_test -lrmr_nng -lnng -lm -lpthread
+	gcc -g $(coverage_opts) unit_test.c -o unit_test -lrmr_nng -lnng -lm -lpthread
 
 # ---- adjunct tools -----------------------------------------------------------------
 rdc_replay: rdc_replay.c libmcl.a

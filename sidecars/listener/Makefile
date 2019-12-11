@@ -21,14 +21,17 @@
 # LD_LIBRARY_PATH, LIBRARY_PATH are set correctly.
 
 binaries = mc_listener
+adjuncts = rdc_replay rdc_extract
+testers = sender pipe_reader
+
 test_progs = sender unit_test pipe_reader
 lib_obj = mcl.o rdc.o
 lib_h = mcl.h
 
 coverage_opts = -ftest-coverage -fprofile-arcs
 
-# make with no parms should just build 'production' binaries
-all: $(binaries) mc_listener
+# make with no parms should build all production and adjunct/verification binaries
+all: $(binaries) $(adjuncts) $(testers)
 
 libmcl.a::	$(lib_obj) $(lib_h)
 	ar -v -r libmcl.a $(lib_obj)
@@ -47,14 +50,14 @@ pipe_reader : pipe_reader.c libmcl.a
 	gcc pipe_reader.c -o pipe_reader  -L. -lmcl -lrmr_nng -lnng -lm -lpthread
 
 unit_test: unit_test.c mcl.c
-	gcc $(coverage_opts) unit_test.c -o unit_test -lrmr_nng -lnng -lm -lpthread
+	gcc -g $(coverage_opts) unit_test.c -o unit_test -lrmr_nng -lnng -lm -lpthread
 
 # ---- adjunct tools -----------------------------------------------------------------
 rdc_replay: rdc_replay.c libmcl.a
-	gcc $(coverage_opts) rdc_replay.c -o rdc_replay -L. -lmcl -lrmr_nng -lnng -lpthread -lm 
+	gcc rdc_replay.c -o rdc_replay -L. -lmcl -lrmr_nng -lnng -lpthread -lm 
 
 rdc_extract: rdc_extract.c libmcl.a
-	gcc $(coverage_opts) rdc_extract.c -o rdc_extract -L. -lmcl -lrmr_nng -lnng -lpthread -lm 
+	gcc rdc_extract.c -o rdc_extract -L. -lmcl -lrmr_nng -lnng -lpthread -lm 
 
 # ---- housekeeping stuff -------------------------------------------------------------
 # remove only intermediates

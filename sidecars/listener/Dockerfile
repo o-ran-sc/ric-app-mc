@@ -17,7 +17,7 @@
 
 
 #	Mnemonic:	Dockerfile
-#	Abstract:	Build file which creaes a runtime image for the listener. 
+#	Abstract:	Build file which creaes a runtime image for the listener.
 #				Building should be as simple as:
 #
 #					docker build -f sidecars/listener/Dockerfile -t mc_listener:xx.xx .
@@ -37,6 +37,17 @@
 #					there is NO need to expose the route table generator port on this
 #					container.
 #
+#				NNG vs SI95
+#				RMR supports two transport mechanisms which are not compatable. Thus the
+#				transport which the listener uses must match the transport that the sender
+#				is using.  This image is built with both NNG and SI95 versions. Currently
+#				the NNG binary is the default as SI95 is not yet ready for prime time. To
+#				use the SI95 version, add /playpen/si_bin/mc_listener to the container run
+#				command line, or change the CMD line in the docker file.
+#
+#				The SI95 versions can be validated by running the validate script with the
+#				-s option.
+#
 #	Date:		22 August 2019
 #	Author:		E. Scott Daniels
 
@@ -48,7 +59,7 @@ RUN apt-get update && apt-get install -y cmake gcc make git g++ wget
 
 WORKDIR /playpen
 # Install RMr (runtime and dev) from debian package cached on packagecloud.io
-ARG RMR_VER=1.10.2
+ARG RMR_VER=3.0.0
 
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/rmr_${RMR_VER}_amd64.deb/download.deb
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/rmr-dev_${RMR_VER}_amd64.deb/download.deb
@@ -79,14 +90,17 @@ FROM ubuntu:18.04
 
 # bash doesn't cut it for run_replay so grab a real shell and clean up as much as we can
 RUN apt-get update; apt-get install -y ksh
-RUN rm -fr /var/lib/apt/lists 
+RUN rm -fr /var/lib/apt/lists
 
 # obtusely this uses the previous value
 ARG SRC
 
-RUN mkdir -p /playpen/bin
+RUN mkdir -p /playpen/bin /playpen/si_bin
 COPY --from=buildenv /usr/local/lib/* /usr/local/lib/
 COPY --from=buildenv /playpen/src/mc_listener /playpen/src/sender /playpen/src/pipe_reader /playpen/src/rdc_replay /playpen/src/rdc_extract /playpen/bin/
+COPY --from=buildenv /playpen/src/mc_listener_si /playpen/si_bin/mc_listener
+COPY --from=buildenv /playpen/src/sender_si /playpen/si_bin/sender
+
 COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh ${SRC}/run_replay.sh ${SRC}/help /playpen/bin/
 
 ENV PATH=/playpen/bin:$PATH

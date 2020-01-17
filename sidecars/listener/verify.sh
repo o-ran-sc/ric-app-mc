@@ -57,7 +57,7 @@ function set_wait_values {
 #
 function run_sender {
 	echo "starting sender"
-	RMR_SEED_RT=/tmp/local.rt RMR_RTG_SVC=9989 /playpen/bin/sender 43086 10000 >/tmp/sender.log 2>&1 &
+	RMR_SEED_RT=/tmp/local.rt RMR_RTG_SVC=9989 /playpen/${si}bin/sender 43086 10000 >/tmp/sender.log 2>&1 &
 	spid=$!
 	sleep $sender_wait
 
@@ -67,7 +67,7 @@ function run_sender {
 
 function run_listener {
 	echo "starting listener"
-	/playpen/bin/mc_listener $ext_hdr -r 1 -d $fifo_dir >/tmp/listen.log 2>&1 &
+	/playpen/${si}bin/mc_listener $ext_hdr -r 1 -d $fifo_dir >/tmp/listen.log 2>&1 &
 	lpid=$!
 
 	sleep $listener_wait
@@ -104,6 +104,7 @@ endKat
 
 # ---- run everything ---------------------------------------------------
 
+si=""						# if -s given then we add this to sender/listener to run SI95 versions
 ext_hdr=""					# run with extended header enabled (-e turns extended off)
 long_test=0
 raw_capture=1
@@ -112,6 +113,7 @@ do
 	case $1 in 
 		-l)	long_test=1;;
 		-n)	raw_capture=0;;
+		-s)	si="si_";;
 		*)	echo "$1 is not a recognised option"
 			exit 1
 			;;

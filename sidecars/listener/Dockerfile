@@ -41,7 +41,7 @@
 #	Author:		E. Scott Daniels
 
 
-FROM nexus3.o-ran-sc.org:10004/bldr-ubuntu16-c-go:2-u16.04-nng as buildenv
+FROM nexus3.o-ran-sc.org:10004/bldr-ubuntu18-c-go:4-u18.04-nng as buildenv
 RUN mkdir /playpen
 
 RUN apt-get update && apt-get install -y cmake gcc make git g++ wget

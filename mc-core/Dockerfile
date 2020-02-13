@@ -46,7 +46,7 @@ RUN make install
 RUN ldconfig
 RUN pip install protobuf
 WORKDIR ${STAGE_DIR}
-RUN git clone -b release/0.1.0 https://gerrit.o-ran-sc.org/r/com/gs-lite
+RUN git clone -b release/Amber https://gerrit.o-ran-sc.org/r/com/gs-lite
 WORKDIR ${STAGE_DIR}/gs-lite
 COPY mc/cfg ${STAGE_DIR}/gs-lite/cfg
 COPY mc/local_datasource ${STAGE_DIR}/gs-lite/src/lib/gscprts/local_datasource

@@ -16,7 +16,7 @@
 
 ARG STAGE_DIR=/mc
 
-FROM nexus3.o-ran-sc.org:10004/bldr-ubuntu16-c-go:2-u16.04-nng AS project-build
+FROM nexus3.o-ran-sc.org:10004/bldr-ubuntu16-c-go:3-u16.04-nng AS project-build
 # Update & installation of linux packages
 RUN apt-get update -y && \
         apt-get install -y curl && \
@@ -46,7 +46,7 @@ RUN make install
 RUN ldconfig
 RUN pip install protobuf
 WORKDIR ${STAGE_DIR}
-RUN git clone -b release/0.1.0 https://gerrit.o-ran-sc.org/r/com/gs-lite
+RUN git clone -b release/Amber https://gerrit.o-ran-sc.org/r/com/gs-lite
 WORKDIR ${STAGE_DIR}/gs-lite
 COPY mc/cfg ${STAGE_DIR}/gs-lite/cfg
 COPY mc/local_datasource ${STAGE_DIR}/gs-lite/src/lib/gscprts/local_datasource

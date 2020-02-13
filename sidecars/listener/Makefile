@@ -20,9 +20,9 @@
 # this make file assuems that both NNG and RMR are installed and that the variables
 # LD_LIBRARY_PATH, LIBRARY_PATH are set correctly.
 
-binaries = mc_listener
+binaries = mc_listener mc_listener_si
 adjuncts = rdc_replay rdc_extract
-testers = sender pipe_reader
+testers = sender pipe_reader sender_si
 
 test_progs = sender unit_test pipe_reader
 lib_obj = mcl.o rdc.o
@@ -39,12 +39,18 @@ libmcl.a::	$(lib_obj) $(lib_h)
 mc_listener: mc_listener.c libmcl.a
 	gcc mc_listener.c -o mc_listener -L. -lmcl  -lrmr_nng -lnng -lm -lpthread
 
+mc_listener_si: mc_listener.c libmcl.a
+	gcc mc_listener.c -o mc_listener_si -L. -lmcl  -lrmr_si -lm -lpthread
+
 
 # ---- testing stuff -----------------------------------------------------------------
 tests: $(test_progs)
 
 sender : sender.c
 	gcc sender.c -o sender  -lrmr_nng -lnng -lm -lpthread
+
+sender_si : sender.c
+	gcc sender.c -o sender_si  -lrmr_si -lm -lpthread
 
 pipe_reader : pipe_reader.c libmcl.a
 	gcc pipe_reader.c -o pipe_reader  -L. -lmcl -lrmr_nng -lnng -lm -lpthread
@@ -67,3 +73,4 @@ clean:
 # remove anything that can be rebuilt
 nuke: clean
 	rm -f *mcl.a $(binaries) $(test_progs)
+

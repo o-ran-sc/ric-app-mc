@@ -17,6 +17,7 @@
 ARG STAGE_DIR=/mc
 
 FROM nexus3.o-ran-sc.org:10004/bldr-ubuntu16-c-go:3-u16.04-nng AS project-build
+
 # Update & installation of linux packages
 RUN apt-get update -y && \
         apt-get install -y curl && \
@@ -57,9 +58,17 @@ WORKDIR ${STAGE_DIR}/gs-lite/demo/queries
 ENV GSLITE_ROOT ${STAGE_DIR}/gs-lite
 RUN bash ${STAGE_DIR}/gs-lite/bin/buildit
 
+# Update & installation of linux packages
+RUN apt-get update -y && \
+        apt-get install -y curl && \
+        apt-get install -y procps && \
+        apt-get install -y python-pip
 
 # now install the binaries and libraries into smaller docker image
-FROM ubuntu:16.04
+# use the mc_listener container as the base; all of it's stuff is in /playpen and can
+# stay where it is
+#
+FROM nexus3.o-ran-sc.org:10004/o-ran-sc/ric-app-mc-listener:1.3.2
 
 ARG STAGE_DIR
 
@@ -70,6 +79,8 @@ COPY --from=project-build ${STAGE_DIR}/mc_deployment.json /mc/
 COPY --from=project-build ${STAGE_DIR}/extract_params.py /mc/
 COPY --from=project-build /usr/local/lib/libproto* /usr/local/lib/
 
+COPY container_start.sh /playpen/bin/
+
 RUN apt-get update && \
     apt-get install -y curl python python-pip && \
     apt-get clean
@@ -78,6 +89,7 @@ RUN ldconfig
 RUN pip install protobuf
 
 ENV XAPP_DESCRIPTOR_PATH /mc/mc_deployment.json
-WORKDIR /mc/gs-lite/demo/queries
+WORKDIR /playpen
 ENV GSLITE_ROOT /mc/gs-lite
-CMD ["./runall"]
+
+CMD ["/playpen/bin/container_start.sh"]

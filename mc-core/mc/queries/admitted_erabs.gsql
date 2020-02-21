@@ -10,13 +10,14 @@ PARAM{ window uint; }
 select e.timestamp_ms/10000 as TB10, e.id_SgNB_UE_X2AP_ID, e.e_RAB_ID, e.qCI
 INNER_JOIN from SGNB_ADDITION_REQ_ACK.eRABs_acked_for_admit_for_ue e,
 	RECONCOMPLETE.reconfig_success r
-where r.schemaId = 101 and e.schemaId = 502
-and r.id_SgNB_UE_X2AP_ID = e.id_SgNB_UE_X2AP_ID
+where // r.schemaId = 101 and e.schemaId = 502 and
+ r.id_SgNB_UE_X2AP_ID = e.id_SgNB_UE_X2AP_ID
 and r.timestamp_ms/10000 = e.timestamp_ms/10000
 ;
 
 DEFINE{query_name 'erab_stats';
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'number of admitted bearers and the distribution of their qCI';
 }
 PARAM{ window uint; }
 Select (TB*$window)/1000 as TS, 

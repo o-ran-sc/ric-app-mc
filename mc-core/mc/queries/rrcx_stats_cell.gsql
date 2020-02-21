@@ -1,3 +1,6 @@
+DEFINE{ 
+	max_lfta_disorder '1'; max_hfta_disorder '1'; real_time 'true';
+}
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
 

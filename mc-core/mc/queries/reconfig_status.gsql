@@ -7,10 +7,11 @@ select timestamp_ms as timestamp,
 	gnb_id,
 	0 as event_type
 from SGNB_ADDITION_REQ.sgnb_addreq_for_ue
-where schemaId=401
+// where schemaId=401
 ;
 
-DEFINE{query_name 'reconfig_status_success';}
+DEFINE{query_name 'reconfig_status_success';
+}
 PARAM{ window uint; }
 select timestamp_ms as timestamp,
 	0ULL as start_time,
@@ -19,7 +20,7 @@ select timestamp_ms as timestamp,
 	gnb_id,
 	1 as event_type
 from RECONCOMPLETE.reconfig_success
-where schemaId=101
+// where schemaId=101
 ;
 
 DEFINE{query_name 'reconfig_status_events';}
@@ -42,6 +43,7 @@ group by eUE_ID, gnb_id, timestamp / $window as TB
 
 DEFINE{query_name 'reconfig_status_success_rate';
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'fraction of DC connect requests which are successful';
 }
 PARAM{ window uint; }
 select gnb_id as GNB_ID,
@@ -58,6 +60,7 @@ group by gnb_id, TB
 //	Merge in reconfig_reject causes and aggregate with this.
 DEFINE{query_name 'reconfig_status_reject_cause';
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of causes for DC rejection';
 }
 PARAM{ window uint; }
 Select gnb_id, TB,
@@ -67,7 +70,7 @@ Select gnb_id, TB,
 	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
 	sum(GEQ(UINT(cause_misc),0)) as count_misc
 from ADDREQREJECT.sgnb_add_req_reject
-where schemaId=701
+// where schemaId=701
 group by gnb_id, timestamp_ms / $window as TB
 ;
 
@@ -82,7 +85,7 @@ Select gnb_id, TB,
 	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
 	sum(GEQ(UINT(cause_misc),0)) as count_misc
 from RECONCOMPLETE.reconfig_reject
-where schemaId=102
+// where schemaId=102
 group by gnb_id, timestamp_ms / $window as TB
 ;
 
@@ -111,6 +114,7 @@ group by gnb_id, TB
 
 DEFINE{query_name 'mod_status_refuse_cause';
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of causes for a sgnb modification refusal';
 }
 PARAM{ window uint; }
 Select gnb_id as GNB_ID, ($window*(TB+1))/1000 as TS, 
@@ -121,7 +125,7 @@ Select gnb_id as GNB_ID, ($window*(TB+1))/1000 as TS,
 	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
 	sum(GEQ(UINT(cause_misc),0)) as count_misc
 from SGNBMODREFUSE.sgnb_mod_refuse
-where schemaId=1401
+// where schemaId=1401
 group by gnb_id, timestamp_ms / $window as TB
 ;
 
@@ -137,7 +141,7 @@ Select gnb_id, TB,
 	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
 	sum(GEQ(UINT(cause_misc),0)) as count_misc
 from SGNBRELEASERQD.SgNB_release_rqd
-where schemaId=1001
+// where schemaId=1001
 group by gnb_id, timestamp_ms / $window as TB
 ;
 
@@ -152,7 +156,7 @@ Select gnb_id, TB,
 	sum(GEQ(UINT(cause_protocol),0)) as count_protocol,
 	sum(GEQ(UINT(cause_misc),0)) as count_misc
 from RELREQ.release_req
-where schemaId=801
+// where schemaId=801
 group by gnb_id, timestamp_ms / $window as TB
 ;
 
@@ -164,6 +168,7 @@ from release_rqd_cause p1, release_request_cause p2
 
 DEFINE{query_name 'release_cause';
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of the causes of a DC release';
 }
 PARAM{ window uint; }
 Select gnb_id as GNB_ID, ($window*(TB+1))/1000 as TS, 

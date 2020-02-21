@@ -33,6 +33,8 @@
 		"ves_collector_address":"envy15:8888",
 		"measurement_interval": 10000,
 		"simulator_mode": "true",
-		"debug_mode": "true"
+		"debug_mode": "true",
+		"__DBAAS_SERVICE_HOST__": "tuska",
+		"__DBAAS_SERVICE_PORT__": 6379
 	}
 }

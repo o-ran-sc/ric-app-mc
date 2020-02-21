@@ -600,7 +600,6 @@ gs_uint32_t process_buffer_SGNBRELEASERQD(gs_uint8_t * buffer, gs_uint32_t bufle
 	struct _SgNB_release_rqd *SgNB_release_rqd = NULL;
 	Uenibstreamprotobuf__SgNBReleaseRequired *node_0_0 = NULL;
 	Uenibstreamprotobuf__SgNBReleaseRequiredIEs *node_0_1 = NULL;
-	Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList *node_0_2 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_release_required.json, path release_rqd.json
@@ -634,6 +633,54 @@ gs_uint32_t process_buffer_SGNBRELEASERQD(gs_uint8_t * buffer, gs_uint32_t bufle
 		}else{
 			SgNB_release_rqd->cause_transport = -1;
 		}
+		if(node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 0){
+			SgNB_release_rqd->e_RAB_ID0 = node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item[0]->e_rab_id;
+			SgNB_release_rqd->e_RAB_ID0_exists = 1;
+		}else{
+			SgNB_release_rqd->e_RAB_ID0_exists = 0;
+		}
+		if(node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 1){
+			SgNB_release_rqd->e_RAB_ID1 = node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item[1]->e_rab_id;
+			SgNB_release_rqd->e_RAB_ID1_exists = 1;
+		}else{
+			SgNB_release_rqd->e_RAB_ID1_exists = 0;
+		}
+		if(node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 2){
+			SgNB_release_rqd->e_RAB_ID2 = node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item[2]->e_rab_id;
+			SgNB_release_rqd->e_RAB_ID2_exists = 1;
+		}else{
+			SgNB_release_rqd->e_RAB_ID2_exists = 0;
+		}
+		if(node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 3){
+			SgNB_release_rqd->e_RAB_ID3 = node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item[3]->e_rab_id;
+			SgNB_release_rqd->e_RAB_ID3_exists = 1;
+		}else{
+			SgNB_release_rqd->e_RAB_ID3_exists = 0;
+		}
+		if(node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 4){
+			SgNB_release_rqd->e_RAB_ID4 = node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item[4]->e_rab_id;
+			SgNB_release_rqd->e_RAB_ID4_exists = 1;
+		}else{
+			SgNB_release_rqd->e_RAB_ID4_exists = 0;
+		}
+		if(node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 5){
+			SgNB_release_rqd->e_RAB_ID5 = node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item[5]->e_rab_id;
+			SgNB_release_rqd->e_RAB_ID5_exists = 1;
+		}else{
+			SgNB_release_rqd->e_RAB_ID5_exists = 0;
+		}
+		if(node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 6){
+			SgNB_release_rqd->e_RAB_ID6 = node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item[6]->e_rab_id;
+			SgNB_release_rqd->e_RAB_ID6_exists = 1;
+		}else{
+			SgNB_release_rqd->e_RAB_ID6_exists = 0;
+		}
+		if(node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 7){
+			SgNB_release_rqd->e_RAB_ID7 = node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist->id_e_rabs_tobereleased_sgnbrelreqd_item[7]->e_rab_id;
+			SgNB_release_rqd->e_RAB_ID7_exists = 1;
+		}else{
+			SgNB_release_rqd->e_RAB_ID7_exists = 0;
+		}
 		if(node_0_1->id_cause && node_0_1->id_cause->radionetwork){
 			SgNB_release_rqd->cause_radio_network = node_0_1->id_cause->radionetwork->value;
 		}else{
@@ -645,58 +692,7 @@ gs_uint32_t process_buffer_SGNBRELEASERQD(gs_uint8_t * buffer, gs_uint32_t bufle
 		}else{
 			SgNB_release_rqd->cause_misc = -1;
 		}
-		node_0_2 = node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist;
-		if(node_0_1->id_e_rabs_tobereleased_sgnbrelreqdlist){
-			if(node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_2->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 0){
-				SgNB_release_rqd->e_RAB_ID0 = node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item[0]->e_rab_id;
-				SgNB_release_rqd->e_RAB_ID0_exists = 1;
-			}else{
-				SgNB_release_rqd->e_RAB_ID0_exists = 0;
-			}
-			if(node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_2->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 1){
-				SgNB_release_rqd->e_RAB_ID1 = node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item[1]->e_rab_id;
-				SgNB_release_rqd->e_RAB_ID1_exists = 1;
-			}else{
-				SgNB_release_rqd->e_RAB_ID1_exists = 0;
-			}
-			if(node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_2->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 2){
-				SgNB_release_rqd->e_RAB_ID2 = node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item[2]->e_rab_id;
-				SgNB_release_rqd->e_RAB_ID2_exists = 1;
-			}else{
-				SgNB_release_rqd->e_RAB_ID2_exists = 0;
-			}
-			if(node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_2->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 3){
-				SgNB_release_rqd->e_RAB_ID3 = node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item[3]->e_rab_id;
-				SgNB_release_rqd->e_RAB_ID3_exists = 1;
-			}else{
-				SgNB_release_rqd->e_RAB_ID3_exists = 0;
-			}
-			if(node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_2->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 4){
-				SgNB_release_rqd->e_RAB_ID4 = node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item[4]->e_rab_id;
-				SgNB_release_rqd->e_RAB_ID4_exists = 1;
-			}else{
-				SgNB_release_rqd->e_RAB_ID4_exists = 0;
-			}
-			if(node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_2->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 5){
-				SgNB_release_rqd->e_RAB_ID5 = node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item[5]->e_rab_id;
-				SgNB_release_rqd->e_RAB_ID5_exists = 1;
-			}else{
-				SgNB_release_rqd->e_RAB_ID5_exists = 0;
-			}
-			if(node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_2->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 6){
-				SgNB_release_rqd->e_RAB_ID6 = node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item[6]->e_rab_id;
-				SgNB_release_rqd->e_RAB_ID6_exists = 1;
-			}else{
-				SgNB_release_rqd->e_RAB_ID6_exists = 0;
-			}
-			if(node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item && node_0_2->n_id_e_rabs_tobereleased_sgnbrelreqd_item > 7){
-				SgNB_release_rqd->e_RAB_ID7 = node_0_2->id_e_rabs_tobereleased_sgnbrelreqd_item[7]->e_rab_id;
-				SgNB_release_rqd->e_RAB_ID7_exists = 1;
-			}else{
-				SgNB_release_rqd->e_RAB_ID7_exists = 0;
-			}
-			rts_fta_process_packet(&cur_packet);
-		}
+		rts_fta_process_packet(&cur_packet);
 	}
 	uenibstreamprotobuf__sg_nbrelease_required__free_unpacked(node_0_0,NULL);
 	return 0;

@@ -6,7 +6,7 @@ select 'reconfig_all_debug' as name,
 	count(*) as cnt, ($window*(TB+1))/1000 as TS, 
         $window/1000.0 as measurementInterval
 from RECONCOMPLETE.reconfig_all
-where schemaId=103
+// where schemaId=103
 group by timestamp_ms / $window as TB
 ;
 
@@ -18,7 +18,7 @@ select 'reconfig_success_debug' as name,
 	count(*) as cnt, ($window*(TB+1))/1000 as TS, 
         $window/1000.0 as measurementInterval
 from RECONCOMPLETE.reconfig_success
-where schemaId=101
+// where schemaId=101
 group by timestamp_ms / $window as TB
 ;
 
@@ -30,7 +30,7 @@ select 'reconfig_reject_debug' as name,
 	count(*) as cnt, ($window*(TB+1))/1000 as TS, 
         $window/1000.0 as measurementInterval
 from RECONCOMPLETE.reconfig_reject
-where schemaId=102
+// where schemaId=102
 group by timestamp_ms / $window as TB
 ;
 
@@ -42,7 +42,7 @@ select 'dc_release_debug' as name,
 	count(*) as cnt, ($window*(TB+1))/1000 as TS, 
         $window/1000.0 as measurementInterval
 from CONRELEASE.dc_release
-where schemaId=201
+// where schemaId=201
 group by timestamp_ms / $window as TB
 
 

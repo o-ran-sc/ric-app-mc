@@ -1,6 +1,7 @@
 
 DEFINE{ query_name 'rrcx_pdf_neigh_cell_csi'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of the beam csi rsrp of neighboring cells, aggregated by cell id, computed from rrc transfer';
 }
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
@@ -15,12 +16,13 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
 	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
 from RRCXFER.neighbor_beam_csi
-where schemaId = 5
+// where schemaId = 5
 group by timestamp_ms/$window as tb, physCellId
 ;
 
 DEFINE{ query_name 'rrcx_pdf_neigh_gnb_csi'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of the beam csi rsrp of neighboring cells, aggregated by gNB, computed from rrc transfer';
 }
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
@@ -35,13 +37,14 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
 	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
 from RRCXFER.neighbor_beam_csi
-where schemaId = 5
+// where schemaId = 5
 group by timestamp_ms/$window as tb, gnb_id
 ;
 
 
 DEFINE{ query_name 'rrcx_pdf_neigh_cell_ssb'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of the beam ssb rsrp of neighboring cells, aggregated by cell id, computed from rrc transfer';
 }
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
@@ -56,12 +59,13 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
 	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
 from RRCXFER.neighbor_beam_ssb
-where schemaId = 5
+// where schemaId = 6
 group by timestamp_ms/$window as tb, physCellId
 ;
 
 DEFINE{ query_name 'rrcx_pdf_neigh_gnb_ssb'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of the beam ssb rsrp of neighboring cells, aggregated by gNB, computed from rrc transfer';
 }
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
@@ -76,7 +80,7 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	sum(GEQ(rsrp,68)*LEQ(rsrp,82)) as rsrp_good,
 	sum(GEQ(rsrp,83)*LEQ(rsrp,127)) as rsrp_vgood
 from RRCXFER.neighbor_beam_ssb
-where schemaId = 5
+// where schemaId = 6
 group by timestamp_ms/$window as tb, gnb_id
 ;
 
@@ -84,6 +88,7 @@ group by timestamp_ms/$window as tb, gnb_id
 
 DEFINE{ query_name 'rrcx_pdf_serv_cell'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of the  ssb rsrp of serving cell aggregated by cell id, computed from rrc transfer';
 }
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
@@ -98,7 +103,7 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	sum(GEQ(rsrp,52)*LEQ(rsrp,66)) as rsrp_good,
 	sum(GEQ(rsrp,67)*LEQ(rsrp,127)) as rsrp_vgood
 from RRCXFER.serv_nr_cell
-where schemaId = 1
+// where schemaId = 1
 group by timestamp_ms/$window as tb, physCellId
 ;
 
@@ -118,13 +123,14 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	sum(GEQ(rsrp,52)*LEQ(rsrp,66)) as rsrp_good,
 	sum(GEQ(rsrp,67)*LEQ(rsrp,127)) as rsrp_vgood
 from RRCXFER.nr_neighbor
-where schemaId = 4
+// where schemaId = 4
 group by timestamp_ms/$window as tb, physCellId
 ;
 
 
 DEFINE{ query_name 'rrcx_pdf_serv_gnb'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of the  ssb rsrp of neighbor cells aggregated by cell id, computed from rrc transfer';
 }
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
@@ -139,12 +145,13 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	sum(GEQ(rsrp,52)*LEQ(rsrp,66)) as rsrp_good,
 	sum(GEQ(rsrp,67)*LEQ(rsrp,127)) as rsrp_vgood
 from RRCXFER.serv_nr_cell
-where schemaId = 1
+// where schemaId = 1
 group by timestamp_ms/$window as tb, gnb_id
 ;
 
 DEFINE{ query_name 'rrcx_pdf_neighbor_gnb'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'distribution of the  ssb rsrp of neighbor cells aggregated by gNB, computed from rrc transfer';
 }
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
@@ -159,7 +166,7 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	sum(GEQ(rsrp,52)*LEQ(rsrp,66)) as rsrp_good,
 	sum(GEQ(rsrp,67)*LEQ(rsrp,127)) as rsrp_vgood
 from RRCXFER.nr_neighbor
-where schemaId = 4
+// where schemaId = 4
 group by timestamp_ms/$window as tb, gnb_id
 
 

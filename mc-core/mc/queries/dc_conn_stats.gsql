@@ -7,7 +7,7 @@ select timestamp_ms as timestamp,
 	UINT(id_SgNB_UE_X2AP_ID) as gUE_ID,
 	1 as event_type
 from RECONCOMPLETE.reconfig_success
-where schemaId=101
+// where schemaId=101
 ;
 
 DEFINE{query_name 'dc_terminate';
@@ -19,7 +19,7 @@ select timestamp_ms as timestamp,
 	id_SgNB_UE_X2AP_ID as gUE_ID,
 	0 as event_type
 from CONRELEASE.dc_release
-where schemaId=201
+// where schemaId=201
 ;
 
 DEFINE{query_name 'dc_events';}
@@ -43,6 +43,7 @@ CLOSING_WHEN LAST(event_type) = 0
 
 DEFINE{ query_name 'mc_connected_cnt'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'Number of dual connected users';
 }
 PARAM{ window uint; }
 SELECT ($window*(TB+1))/1000 as TS, 
@@ -67,6 +68,7 @@ CLOSING_WHEN LAST(event_type) = 0
 
 DEFINE{ query_name 'mc_connection_stats'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'statistics about the length of dual connected sessions';
 }
 PARAM{ window uint; }
 SELECT ($window*(TB+1))/1000 as TS, 
@@ -86,6 +88,7 @@ GROUP BY (TB_1000 * 1000) / $window as TB
 
 DEFINE{ query_name 'mc_connects_cnt'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'number of DC connection requests';
 }
 PARAM{ window uint; }
 SELECT ($window*(TB+1))/1000 as TS,
@@ -98,6 +101,7 @@ GROUP BY timestamp / $window as TB
 
 DEFINE{ query_name 'mc_disconnects_cnt'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'number of DC connection releases';
 }
 PARAM{ window uint; }
 SELECT ($window*(TB+1))/1000 as TS, 
@@ -119,6 +123,7 @@ GROUP BY timestamp / $window as TB, gUE_ID as UE_ID
 
 DEFINE{ query_name 'mc_unique_ue_cnt'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'Number of distinct UEs making a DC request or release';
 }
 PARAM{ window uint; } 
 SELECT ($window*(TB+1))/1000 as TS, 

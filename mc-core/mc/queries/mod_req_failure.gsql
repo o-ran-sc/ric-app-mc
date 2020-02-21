@@ -1,5 +1,6 @@
 DEFINE{ query_name 'mod_req_failure_distribution'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	commetn 'distribution of causes of a modification requet failure';
 }
 PARAM{ window uint;}
 
@@ -14,6 +15,6 @@ select ($window*(tb+1))/1000 as TS,
 	sum(EQ(UINT(failureType),5)) as count_scg_reconfigFailure,
 	sum(EQ(UINT(failureType),6)) as count_srb3_IntegrityFailure
 From SGNBMODREQ.sgnb_mod_req
-where schemaId=1201
+// where schemaId=1201
 group by timestamp_ms/$window as tb
 

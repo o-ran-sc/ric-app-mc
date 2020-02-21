@@ -1,5 +1,6 @@
 DEFINE{ query_name 'addreq_stats_nr_cell'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'statistics about neighboring cell RSRP aggregated by cell id';
 }
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
@@ -18,12 +19,13 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	) / count(*) as stddev_rsrp,
 	INT(max(rsrp))-INT(157) as max_rsrp
 from SGNB_ADDITION_REQ.sgnb_addreq_for_ue_mn_neigh_ssb
-where schemaId = 410
+//where schemaId = 410
 group by timestamp_ms/$window as tb, physCellId
 ;
 
 DEFINE{ query_name 'addreq_stats_nr_gnb'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'statistics about neighboring cell RSRP aggregated by GNB, as computed from addition request events.';
 }
 PARAM{ window uint;}
 //	rsrp, rsrq, sinr ranges are 0 .. 127
@@ -42,5 +44,5 @@ select ($window*(tb+1))/1000 as TS, $window/1000.0 as measurementInterval,
 	) / count(*) as stddev_rsrp,
 	INT(max(rsrp))-INT(157) as max_rsrp
 from SGNB_ADDITION_REQ.sgnb_addreq_for_ue_mn_neigh_ssb
-where schemaId = 410
+//where schemaId = 410
 group by timestamp_ms/$window as tb, gnb_id

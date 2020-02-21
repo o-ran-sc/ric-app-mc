@@ -61,6 +61,7 @@ echo "listener was started" >&2
 
 fi
 
+
 # ---- finally, start the core MC application -----------------------------
 cd ${GSLITE_ROOT:-/mc/gs-lite}/demo/queries
 ./runall

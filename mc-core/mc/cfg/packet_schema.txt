@@ -7,7 +7,7 @@ PROTOCOL base{
 // indicates release of dual connectivity for the UE
 // Defined in context_release.json on ue_context_release.proto
 // schemaId = 201, interface CONRELEASE
-PROTOCOL dc_release (base){
+PROTOCOL dc_release (base, schema_id 201){
 // timestamp in milliseconds
 	ullong timestamp_ms get_dc_release__timestamp_ms (required,increasing);
 // gNB ID
@@ -27,7 +27,7 @@ PROTOCOL dc_release (base){
 // transfer per UE and bearere between given time intervals
 // Defined in rat_data_usage.json on secondary_rat_data_usage_report.proto
 // schemaId = 1501, interface RATDATAUSAGE
-PROTOCOL rat_data_usage (base){
+PROTOCOL rat_data_usage (base, schema_id 1501){
 // timestamp in milliseconds
 	ullong timestamp_ms get_rat_data_usage__timestamp_ms (required,increasing);
 // gNB ID
@@ -50,7 +50,7 @@ PROTOCOL rat_data_usage (base){
 // indicates successful configuration of Dual Connectivity
 // Defined in recon_complete.json on sgnb_reconfiguration_complete.proto
 // schemaId = 103, interface RECONCOMPLETE
-PROTOCOL reconfig_all (base){
+PROTOCOL reconfig_all (base, schema_id 103){
 // timestamp in milliseconds
 	ullong timestamp_ms get_reconfig_all__timestamp_ms (required,increasing);
 // gNB ID
@@ -66,7 +66,7 @@ PROTOCOL reconfig_all (base){
 // indicates unsuccessful configuration of Dual Connectivity`
 // Defined in recon_complete.json on sgnb_reconfiguration_complete.proto
 // schemaId = 101, interface RECONCOMPLETE
-PROTOCOL reconfig_success (base){
+PROTOCOL reconfig_success (base, schema_id 101){
 // timestamp in milliseconds
 	ullong timestamp_ms get_reconfig_success__timestamp_ms (required,increasing);
 // gNB ID
@@ -82,7 +82,7 @@ PROTOCOL reconfig_success (base){
 // indicates unsuccessful configuration of Dual Connectivity`
 // Defined in recon_complete.json on sgnb_reconfiguration_complete.proto
 // schemaId = 102, interface RECONCOMPLETE
-PROTOCOL reconfig_reject (base){
+PROTOCOL reconfig_reject (base, schema_id 102){
 // timestamp in milliseconds
 	ullong timestamp_ms get_reconfig_reject__timestamp_ms (required,increasing);
 // gNB ID
@@ -106,7 +106,7 @@ PROTOCOL reconfig_reject (base){
 // Confirmation of release of SgNB and SCG resources by the MeNB, list the eRABs if any (default is ALL in which case no eRABs are listed).
 // Defined in release_confirm.json on sgnb_release_confirm.proto
 // schemaId = 1101, interface RELCONF
-PROTOCOL sgnb_release_confirm_from_menb_erabs (base){
+PROTOCOL sgnb_release_confirm_from_menb_erabs (base, schema_id 1101){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_release_confirm_from_menb_erabs__timestamp_ms (required,increasing);
 // gNB ID
@@ -134,7 +134,7 @@ PROTOCOL sgnb_release_confirm_from_menb_erabs (base){
 // Confirmation of release of SgNB and SCG resources by the MeNB.
 // Defined in release_confirm.json on sgnb_release_confirm.proto
 // schemaId = 1102, interface RELCONF
-PROTOCOL sgnb_release_confirm_from_menb (base){
+PROTOCOL sgnb_release_confirm_from_menb (base, schema_id 1102){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_release_confirm_from_menb__timestamp_ms (required,increasing);
 // gNB ID
@@ -150,7 +150,7 @@ PROTOCOL sgnb_release_confirm_from_menb (base){
 // initiated by the MeNB to request SgNB to release its SCG resources for the UE
 // Defined in release_req.json on sgnb_release_request.proto
 // schemaId = 801, interface RELREQ
-PROTOCOL release_req (base){
+PROTOCOL release_req (base, schema_id 801){
 // timestamp in milliseconds
 	ullong timestamp_ms get_release_req__timestamp_ms (required,increasing);
 // gNB ID
@@ -174,7 +174,7 @@ PROTOCOL release_req (base){
 // response by the SgNB back to the MeNB acknowledging release of SCG resources for the UE.
 // Defined in release_req_ack.json on sgnb_release_request_acknowledge.proto
 // schemaId = 901, interface RELREQACK
-PROTOCOL release_req_ack (base){
+PROTOCOL release_req_ack (base, schema_id 901){
 // timestamp in milliseconds
 	ullong timestamp_ms get_release_req_ack__timestamp_ms (required,increasing);
 // gNB ID
@@ -190,7 +190,7 @@ PROTOCOL release_req_ack (base){
 // Initiated by the SgNB indicating to MeNB that SCG resources need to be released for the given underlying cause.
 // Defined in release_rqd.json on sgnb_release_required.proto
 // schemaId = 1001, interface SGNBRELEASERQD
-PROTOCOL SgNB_release_rqd (base){
+PROTOCOL SgNB_release_rqd (base, schema_id 1001){
 // timestamp in milliseconds
 	ullong timestamp_ms get_SgNB_release_rqd__timestamp_ms (required,increasing);
 // gNB ID
@@ -201,12 +201,6 @@ PROTOCOL SgNB_release_rqd (base){
 	llong id_MeNB_UE_X2AP_ID get_SgNB_release_rqd__id_MeNB_UE_X2AP_ID (required);
 //   default=-1
 	llong cause_transport get_SgNB_release_rqd__cause_transport (required);
-//   default=-1
-	llong cause_radio_network get_SgNB_release_rqd__cause_radio_network (required);
-// UE_ID assigned by gNB for the UE over an X2. primary key for referring to the UE within SgNB.
-	llong id_SgNB_UE_X2AP_ID get_SgNB_release_rqd__id_SgNB_UE_X2AP_ID (required);
-//   default=-1
-	llong cause_misc get_SgNB_release_rqd__cause_misc (required);
 // max is 8, for piz trial 4.  Optional.  If not present, release ALL bearers.
 	llong e_RAB_ID0 get_SgNB_release_rqd__e_RAB_ID0;
 // max is 8, for piz trial 4.  Optional.  If not present, release ALL bearers.
@@ -223,12 +217,18 @@ PROTOCOL SgNB_release_rqd (base){
 	llong e_RAB_ID6 get_SgNB_release_rqd__e_RAB_ID6;
 // max is 8, for piz trial 4.  Optional.  If not present, release ALL bearers.
 	llong e_RAB_ID7 get_SgNB_release_rqd__e_RAB_ID7;
+//   default=-1
+	llong cause_radio_network get_SgNB_release_rqd__cause_radio_network (required);
+// UE_ID assigned by gNB for the UE over an X2. primary key for referring to the UE within SgNB.
+	llong id_SgNB_UE_X2AP_ID get_SgNB_release_rqd__id_SgNB_UE_X2AP_ID (required);
+//   default=-1
+	llong cause_misc get_SgNB_release_rqd__cause_misc (required);
 }
 
 // Cell-wide CSI-RS measurement tuple and SSB measurement (on serving cells)
 // Defined in rrc_metrics.json on rrctransfer.proto
 // schemaId = 1, interface RRCXFER
-PROTOCOL serv_nr_cell (base){
+PROTOCOL serv_nr_cell (base, schema_id 1){
 // timestamp in milliseconds
 	ullong timestamp_ms get_serv_nr_cell__timestamp_ms (required,increasing);
 // gNB ID
@@ -249,7 +249,7 @@ PROTOCOL serv_nr_cell (base){
 // Cell-wide  SSB measurement (from neighbor cells)
 // Defined in rrc_metrics.json on rrctransfer.proto
 // schemaId = 4, interface RRCXFER
-PROTOCOL nr_neighbor (base){
+PROTOCOL nr_neighbor (base, schema_id 4){
 // timestamp in milliseconds
 	ullong timestamp_ms get_nr_neighbor__timestamp_ms (required,increasing);
 // gNB ID
@@ -268,7 +268,7 @@ PROTOCOL nr_neighbor (base){
 // Cell-wide beam-specific CSI-RS measurements (on serving cells) 
 // Defined in rrc_metrics.json on rrctransfer.proto
 // schemaId = 2, interface RRCXFER
-PROTOCOL serv_cell_beam_csi (base){
+PROTOCOL serv_cell_beam_csi (base, schema_id 2){
 // timestamp in milliseconds
 	ullong timestamp_ms get_serv_cell_beam_csi__timestamp_ms (required,increasing);
 // gNB ID
@@ -291,7 +291,7 @@ PROTOCOL serv_cell_beam_csi (base){
 // Cell-wide beam-specific CSI-RS measurements (from neighbor cells) 
 // Defined in rrc_metrics.json on rrctransfer.proto
 // schemaId = 5, interface RRCXFER
-PROTOCOL neighbor_beam_csi (base){
+PROTOCOL neighbor_beam_csi (base, schema_id 5){
 // timestamp in milliseconds
 	ullong timestamp_ms get_neighbor_beam_csi__timestamp_ms (required,increasing);
 // gNB ID
@@ -312,7 +312,7 @@ PROTOCOL neighbor_beam_csi (base){
 // Cell-wide beam-specific LIST of SS/PBCH reference signal measurement (on serving cells)
 // Defined in rrc_metrics.json on rrctransfer.proto
 // schemaId = 3, interface RRCXFER
-PROTOCOL serv_cell_beam_ssb (base){
+PROTOCOL serv_cell_beam_ssb (base, schema_id 3){
 // timestamp in milliseconds
 	ullong timestamp_ms get_serv_cell_beam_ssb__timestamp_ms (required,increasing);
 // gNB ID
@@ -335,7 +335,7 @@ PROTOCOL serv_cell_beam_ssb (base){
 // Cell-wide beam-specific LIST of SS/PBCH reference signal measurement (from neighbor cell)
 // Defined in rrc_metrics.json on rrctransfer.proto
 // schemaId = 6, interface RRCXFER
-PROTOCOL neighbor_beam_ssb (base){
+PROTOCOL neighbor_beam_ssb (base, schema_id 6){
 // timestamp in milliseconds
 	ullong timestamp_ms get_neighbor_beam_ssb__timestamp_ms (required,increasing);
 // gNB ID
@@ -356,7 +356,7 @@ PROTOCOL neighbor_beam_ssb (base){
 // Rejection by the gNMB of an incoming request from the MeNB to the gNB for getting added as a secondary node.
 // Defined in sgnb_add_req_reject.json on sgnb_addition_request_reject.proto
 // schemaId = 701, interface ADDREQREJECT
-PROTOCOL sgnb_add_req_reject (base){
+PROTOCOL sgnb_add_req_reject (base, schema_id 701){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_add_req_reject__timestamp_ms (required,increasing);
 // gNB ID
@@ -378,7 +378,7 @@ PROTOCOL sgnb_add_req_reject (base){
 // Indicates positive response for adding secondary node to the UE.  This record has indicated bearers not admitted by the secondary node.
 // Defined in sgnb_addition_ack.json on sgnb_addition_request_acknowledge.proto
 // schemaId = 501, interface SGNB_ADDITION_REQ_ACK
-PROTOCOL eRABs_notadmitted_for_ue (base){
+PROTOCOL eRABs_notadmitted_for_ue (base, schema_id 501){
 // timestamp in milliseconds
 	ullong timestamp_ms get_eRABs_notadmitted_for_ue__timestamp_ms (required,increasing);
 // gNB ID
@@ -404,7 +404,7 @@ PROTOCOL eRABs_notadmitted_for_ue (base){
 // Indicates positive response for adding secondary node to the UE.  This record indicates eRABs acknowledged for admission for the UE. 
 // Defined in sgnb_addition_ack.json on sgnb_addition_request_acknowledge.proto
 // schemaId = 502, interface SGNB_ADDITION_REQ_ACK
-PROTOCOL eRABs_acked_for_admit_for_ue (base){
+PROTOCOL eRABs_acked_for_admit_for_ue (base, schema_id 502){
 // timestamp in milliseconds
 	ullong timestamp_ms get_eRABs_acked_for_admit_for_ue__timestamp_ms (required,increasing);
 // gNB ID
@@ -429,7 +429,7 @@ PROTOCOL eRABs_acked_for_admit_for_ue (base){
 // Extracts the frequencies of the NR cells serving the eRAB.
 // Defined in sgnb_addition_ack.json on sgnb_addition_request_acknowledge.proto
 // schemaId = 503, interface SGNB_ADDITION_REQ_ACK
-PROTOCOL SgNB_ack_for_ue_NRfreqs (base){
+PROTOCOL SgNB_ack_for_ue_NRfreqs (base, schema_id 503){
 // timestamp in milliseconds
 	ullong timestamp_ms get_SgNB_ack_for_ue_NRfreqs__timestamp_ms (required,increasing);
 // gNB ID
@@ -479,7 +479,7 @@ PROTOCOL SgNB_ack_for_ue_NRfreqs (base){
 // list of eRABs with sgNB radio bearer config info for addition or modification.
 // Defined in sgnb_addition_ack.json on sgnb_addition_request_acknowledge.proto
 // schemaId = 504, interface SGNB_ADDITION_REQ_ACK
-PROTOCOL SgNB_ack_for_add_mod_for_ue (base){
+PROTOCOL SgNB_ack_for_add_mod_for_ue (base, schema_id 504){
 // timestamp in milliseconds
 	ullong timestamp_ms get_SgNB_ack_for_add_mod_for_ue__timestamp_ms (required,increasing);
 // gNB ID
@@ -507,7 +507,7 @@ PROTOCOL SgNB_ack_for_add_mod_for_ue (base){
 // signaling measurements of the user while serving the eRABs
 // Defined in sgnb_addition_ack.json on sgnb_addition_request_acknowledge.proto
 // schemaId = 505, interface SGNB_ADDITION_REQ_ACK
-PROTOCOL SgNB_ack_for_ue_measurements (base){
+PROTOCOL SgNB_ack_for_ue_measurements (base, schema_id 505){
 // timestamp in milliseconds
 	ullong timestamp_ms get_SgNB_ack_for_ue_measurements__timestamp_ms (required,increasing);
 // gNB ID
@@ -532,7 +532,7 @@ PROTOCOL SgNB_ack_for_ue_measurements (base){
 // CSI beam measurements of the user while serving the eRABs
 // Defined in sgnb_addition_ack.json on sgnb_addition_request_acknowledge.proto
 // schemaId = 506, interface SGNB_ADDITION_REQ_ACK
-PROTOCOL SgNB_ack_for_ue_beam_csi (base){
+PROTOCOL SgNB_ack_for_ue_beam_csi (base, schema_id 506){
 // timestamp in milliseconds
 	ullong timestamp_ms get_SgNB_ack_for_ue_beam_csi__timestamp_ms (required,increasing);
 // gNB ID
@@ -559,7 +559,7 @@ PROTOCOL SgNB_ack_for_ue_beam_csi (base){
 // SSB beam measurements of the user while serving the eRABs
 // Defined in sgnb_addition_ack.json on sgnb_addition_request_acknowledge.proto
 // schemaId = 507, interface SGNB_ADDITION_REQ_ACK
-PROTOCOL SgNB_ack_for_ue_beam_ssb (base){
+PROTOCOL SgNB_ack_for_ue_beam_ssb (base, schema_id 507){
 // timestamp in milliseconds
 	ullong timestamp_ms get_SgNB_ack_for_ue_beam_ssb__timestamp_ms (required,increasing);
 // gNB ID
@@ -586,7 +586,7 @@ PROTOCOL SgNB_ack_for_ue_beam_ssb (base){
 // Indicates request for adding secondary node to the UE
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 401, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue (base){
+PROTOCOL sgnb_addreq_for_ue (base, schema_id 401){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue__timestamp_ms (required,increasing);
 // gNB ID
@@ -606,7 +606,7 @@ PROTOCOL sgnb_addreq_for_ue (base){
 // Indicates request for adding secondary node to the UE, with bearer details
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 402, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue_bearers (base){
+PROTOCOL sgnb_addreq_for_ue_bearers (base, schema_id 402){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue_bearers__timestamp_ms (required,increasing);
 // gNB ID
@@ -656,7 +656,7 @@ PROTOCOL sgnb_addreq_for_ue_bearers (base){
 // Indicates request for adding secondary node to the UE.  Extract the SN / serving cell / ssb measurements.
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 403, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue_sn_serv_ssb (base){
+PROTOCOL sgnb_addreq_for_ue_sn_serv_ssb (base, schema_id 403){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue_sn_serv_ssb__timestamp_ms (required,increasing);
 // gNB ID
@@ -678,7 +678,7 @@ PROTOCOL sgnb_addreq_for_ue_sn_serv_ssb (base){
 // Indicates request for adding secondary node to the UE.  Extract the SN / serving cell / ssb measurements.
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 404, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue_sn_serv_csi_rs (base){
+PROTOCOL sgnb_addreq_for_ue_sn_serv_csi_rs (base, schema_id 404){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue_sn_serv_csi_rs__timestamp_ms (required,increasing);
 // gNB ID
@@ -700,7 +700,7 @@ PROTOCOL sgnb_addreq_for_ue_sn_serv_csi_rs (base){
 // Indicates request for adding secondary node to the UE.  Extract the SN / serving cell / ssb measurements.
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 405, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue_mn_serv_ssb (base){
+PROTOCOL sgnb_addreq_for_ue_mn_serv_ssb (base, schema_id 405){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue_mn_serv_ssb__timestamp_ms (required,increasing);
 // gNB ID
@@ -722,7 +722,7 @@ PROTOCOL sgnb_addreq_for_ue_mn_serv_ssb (base){
 // Indicates request for adding secondary node to the UE.  Extract the SN / serving cell / ssb measurements.
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 406, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue_mn_serv_csi_rs (base){
+PROTOCOL sgnb_addreq_for_ue_mn_serv_csi_rs (base, schema_id 406){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue_mn_serv_csi_rs__timestamp_ms (required,increasing);
 // gNB ID
@@ -744,7 +744,7 @@ PROTOCOL sgnb_addreq_for_ue_mn_serv_csi_rs (base){
 // Indicates request for adding secondary node to the UE.  Extract the SN / serving cell / ssb measurements.
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 408, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue_sn_neigh_ssb (base){
+PROTOCOL sgnb_addreq_for_ue_sn_neigh_ssb (base, schema_id 408){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue_sn_neigh_ssb__timestamp_ms (required,increasing);
 // gNB ID
@@ -766,7 +766,7 @@ PROTOCOL sgnb_addreq_for_ue_sn_neigh_ssb (base){
 // Indicates request for adding secondary node to the UE.  Extract the SN / serving cell / ssb measurements.
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 409, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue_sn_neigh_csi_rs (base){
+PROTOCOL sgnb_addreq_for_ue_sn_neigh_csi_rs (base, schema_id 409){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue_sn_neigh_csi_rs__timestamp_ms (required,increasing);
 // gNB ID
@@ -788,7 +788,7 @@ PROTOCOL sgnb_addreq_for_ue_sn_neigh_csi_rs (base){
 // Indicates request for adding secondary node to the UE.  Extract the SN / serving cell / ssb measurements.
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 410, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue_mn_neigh_ssb (base){
+PROTOCOL sgnb_addreq_for_ue_mn_neigh_ssb (base, schema_id 410){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue_mn_neigh_ssb__timestamp_ms (required,increasing);
 // gNB ID
@@ -810,7 +810,7 @@ PROTOCOL sgnb_addreq_for_ue_mn_neigh_ssb (base){
 // Indicates request for adding secondary node to the UE.  Extract the SN / serving cell / ssb measurements.
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 411, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_for_ue_mn_neigh_csi_rs (base){
+PROTOCOL sgnb_addreq_for_ue_mn_neigh_csi_rs (base, schema_id 411){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_for_ue_mn_neigh_csi_rs__timestamp_ms (required,increasing);
 // gNB ID
@@ -832,7 +832,7 @@ PROTOCOL sgnb_addreq_for_ue_mn_neigh_csi_rs (base){
 // ??? 
 // Defined in sgnb_mod_confirm.json on sgnb_modification_confirm.proto
 // schemaId = 1301, interface SGNBMODCONF
-PROTOCOL sgnb_mod_conf (base){
+PROTOCOL sgnb_mod_conf (base, schema_id 1301){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_mod_conf__timestamp_ms (required,increasing);
 // gNB ID
@@ -846,7 +846,7 @@ PROTOCOL sgnb_mod_conf (base){
 // ??? 
 // Defined in sgnb_mod_req.json on sgnb_modification_request.proto
 // schemaId = 1201, interface SGNBMODREQ
-PROTOCOL sgnb_mod_req (base){
+PROTOCOL sgnb_mod_req (base, schema_id 1201){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_mod_req__timestamp_ms (required,increasing);
 // gNB ID
@@ -870,7 +870,7 @@ PROTOCOL sgnb_mod_req (base){
 // ??? 
 // Defined in sgnb_mod_req_ack.json on sgnb_modification_request_acknowledge.proto
 // schemaId = 1701, interface SGNBMODREQACK
-PROTOCOL sgnb_mod_req_ack (base){
+PROTOCOL sgnb_mod_req_ack (base, schema_id 1701){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_mod_req_ack__timestamp_ms (required,increasing);
 // gNB ID
@@ -884,7 +884,7 @@ PROTOCOL sgnb_mod_req_ack (base){
 // ??? 
 // Defined in sgnb_mod_req_reject.json on sgnb_modification_request_reject.proto
 // schemaId = 1801, interface SGNBMODREQREJECT
-PROTOCOL sgnb_mod_req_reject (base){
+PROTOCOL sgnb_mod_req_reject (base, schema_id 1801){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_mod_req_reject__timestamp_ms (required,increasing);
 // gNB ID
@@ -906,7 +906,7 @@ PROTOCOL sgnb_mod_req_reject (base){
 // ??? 
 // Defined in sgnb_mod_rqd.json on sgnb_modification_required.proto
 // schemaId = 1901, interface SGNBMODREQUIRED
-PROTOCOL sgnb_mod_required (base){
+PROTOCOL sgnb_mod_required (base, schema_id 1901){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_mod_required__timestamp_ms (required,increasing);
 // gNB ID
@@ -928,7 +928,7 @@ PROTOCOL sgnb_mod_required (base){
 // ??? 
 // Defined in sgnb_modification_refuse.json on sgnb_modification_refuse.proto
 // schemaId = 1401, interface SGNBMODREFUSE
-PROTOCOL sgnb_mod_refuse (base){
+PROTOCOL sgnb_mod_refuse (base, schema_id 1401){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_mod_refuse__timestamp_ms (required,increasing);
 // gNB ID
@@ -950,7 +950,7 @@ PROTOCOL sgnb_mod_refuse (base){
 //  
 // Defined in snstatusxfer.json on sn_status_transfer.proto
 // schemaId = 1601, interface SNSTATUSXFER
-PROTOCOL sn_status_transfer (base){
+PROTOCOL sn_status_transfer (base, schema_id 1601){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sn_status_transfer__timestamp_ms (required,increasing);
 // gNB ID

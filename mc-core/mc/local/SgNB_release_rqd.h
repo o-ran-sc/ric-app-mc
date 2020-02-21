@@ -29,9 +29,6 @@ struct _SgNB_release_rqd {
 	gs_int64_t cause_protocol;
 	gs_int64_t id_MeNB_UE_X2AP_ID;
 	gs_int64_t cause_transport;
-	gs_int64_t cause_radio_network;
-	gs_int64_t id_SgNB_UE_X2AP_ID;
-	gs_int64_t cause_misc;
 	gs_int64_t e_RAB_ID0;
 	gs_int8_t e_RAB_ID0_exists;
 	gs_int64_t e_RAB_ID1;
@@ -48,6 +45,9 @@ struct _SgNB_release_rqd {
 	gs_int8_t e_RAB_ID6_exists;
 	gs_int64_t e_RAB_ID7;
 	gs_int8_t e_RAB_ID7_exists;
+	gs_int64_t cause_radio_network;
+	gs_int64_t id_SgNB_UE_X2AP_ID;
+	gs_int64_t cause_misc;
 };
 
 static inline void init__SgNB_release_rqd(struct _SgNB_release_rqd *m){
@@ -85,21 +85,6 @@ static inline gs_retval_t get_SgNB_release_rqd__id_MeNB_UE_X2AP_ID(struct packet
 
 static inline gs_retval_t get_SgNB_release_rqd__cause_transport(struct packet *p, gs_int64_t *t){
 	*t = ((struct _SgNB_release_rqd *)(p->record.packed.values))->cause_transport;
-	return 0;
-}
-
-static inline gs_retval_t get_SgNB_release_rqd__cause_radio_network(struct packet *p, gs_int64_t *t){
-	*t = ((struct _SgNB_release_rqd *)(p->record.packed.values))->cause_radio_network;
-	return 0;
-}
-
-static inline gs_retval_t get_SgNB_release_rqd__id_SgNB_UE_X2AP_ID(struct packet *p, gs_int64_t *t){
-	*t = ((struct _SgNB_release_rqd *)(p->record.packed.values))->id_SgNB_UE_X2AP_ID;
-	return 0;
-}
-
-static inline gs_retval_t get_SgNB_release_rqd__cause_misc(struct packet *p, gs_int64_t *t){
-	*t = ((struct _SgNB_release_rqd *)(p->record.packed.values))->cause_misc;
 	return 0;
 }
 
@@ -141,6 +126,21 @@ static inline gs_retval_t get_SgNB_release_rqd__e_RAB_ID6(struct packet *p, gs_i
 static inline gs_retval_t get_SgNB_release_rqd__e_RAB_ID7(struct packet *p, gs_int64_t *t){
 	*t = ((struct _SgNB_release_rqd *)(p->record.packed.values))->e_RAB_ID7;
 	return (((struct _SgNB_release_rqd *)(p->record.packed.values))->e_RAB_ID7==0);
+}
+
+static inline gs_retval_t get_SgNB_release_rqd__cause_radio_network(struct packet *p, gs_int64_t *t){
+	*t = ((struct _SgNB_release_rqd *)(p->record.packed.values))->cause_radio_network;
+	return 0;
+}
+
+static inline gs_retval_t get_SgNB_release_rqd__id_SgNB_UE_X2AP_ID(struct packet *p, gs_int64_t *t){
+	*t = ((struct _SgNB_release_rqd *)(p->record.packed.values))->id_SgNB_UE_X2AP_ID;
+	return 0;
+}
+
+static inline gs_retval_t get_SgNB_release_rqd__cause_misc(struct packet *p, gs_int64_t *t){
+	*t = ((struct _SgNB_release_rqd *)(p->record.packed.values))->cause_misc;
+	return 0;
 }
 
 #endif

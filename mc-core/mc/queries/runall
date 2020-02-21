@@ -98,9 +98,9 @@ else
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default release_cause window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default erab_stats window=$WINDOW &
 	/mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default throughput_ue window=$WINDOW &
-        /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default throughput_rollup window=$WINDOW &
-        /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default throughput_gnb window=$WINDOW &
-        /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default mod_req_failure_distribution window=$WINDOW &
+    /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default throughput_rollup window=$WINDOW &
+    /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default throughput_gnb window=$WINDOW &
+    /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default mod_req_failure_distribution window=$WINDOW &
 fi
 
 sleep 1

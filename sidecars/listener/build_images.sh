@@ -20,7 +20,8 @@
 #------------------------------------------------------------------------------------
 #	Mnemonic:	build_images.sh
 #	Abstract:	This script will create both the mc_listener runtime and development
-#				images.
+#				images when "all" is given on the command line, otherwise it builds
+#				just a runtime environment.
 #	Date:		22 August 2-19
 #	Author:		E. Scott Daniels
 # -----------------------------------------------------------------------------------
@@ -40,8 +41,8 @@ then
 fi
 
 
-ver=${1:-1.2}
-patch=${2:-1}
+ver=${1:-1.3}
+patch=${2:-0}
 
 if (( skip_dev == 0 ))
 then
@@ -49,8 +50,9 @@ then
 	docker build -f mcl_dev.df -t mcl_dev:$ver.$patch .
 fi
 
+# use the main dockerfile for the runtime image
 echo "building runtime image mc_listener:$ver"
-if docker build -f mcl_runtime.df -t mc_listener:$ver.$patch .
+if docker build -f Dockerfile -t mc_listener:$ver.$patch .
 then
 	echo "build finished"
 	echo ""

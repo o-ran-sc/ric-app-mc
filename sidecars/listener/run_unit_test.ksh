@@ -26,6 +26,16 @@
 #	Author:		E. Scott Daniels
 # -------------------------------------------------------------------------
 
+function abort_after {
+	touch /tmp/running
+	sleep ${1:-60}
+	if [[ -e /tmp/running ]]
+	then
+		echo "abort: unit test running too long"
+		kill -9 ${2:-bad-pid}
+	fi
+}
+
 function setup_dirs {
 	mkdir -p /tmp/fifos
 	mkdir -p /tmp/mc_listener_test/final
@@ -67,13 +77,16 @@ then
 	exit
 fi
 
+abort_after 60 
 if ! unit_test >/tmp/PID$$.utlog 2>&1
 then
+	rm /tmp/running
 	cat /tmp/PID$$.utlog
 	rm -f /tmp/PID$$.*
 	purge_dirs
 	exit 1
 fi
+rm /tmp/running
 
 echo "[PASS] base unit tests all pass"
 echo "[INFO] file/directory verification begins...."

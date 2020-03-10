@@ -37,6 +37,7 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 
+#define TEST_MTYPE	1000		// message type for testing
 #include "test_rmr_em.c"		// emulated rmr functions (for receives)
 
 // this/these are what we are testing; include them directly (must be after forever def)
@@ -89,14 +90,14 @@ int main( int argc,  char** argv ) {
 
 	mcl_set_sigh();										// prevent colobber from broken pipe
 
-	open_fifo( ctx, 100, WRITER );						// open dummy to prevent blocking reader
-	rfd = open_fifo( ctx, 100, READER );				// open a reader to check fanout output
+	open_fifo( ctx, TEST_MTYPE, WRITER );						// open dummy to prevent blocking reader
+	rfd = open_fifo( ctx, TEST_MTYPE, READER );				// open a reader to check fanout output
 	if( rfd < 0 ) {
 		fprintf( stderr, "[FAIL] unable to open a pipe reader for type == 100\n" );
 		errors++;
 	}
 
-	fd = suss_fifo( ctx, 100, 1, &fref );				// should open the file for writing and return the fdes
+	fd = suss_fifo( ctx, TEST_MTYPE, WRITER, &fref );			// should open the file for writing and return the fdes
 	if( fd < 0 ) {
 		fprintf( stderr, "[FAIL] suss_fifo did not return a valid fd\n" );
 		errors++;
@@ -110,7 +111,7 @@ int main( int argc,  char** argv ) {
 		chalk_error( fref );
 	}
 
-	fd2= suss_fifo( ctx, 100, 0, NULL );				// should open the file file for reading and return a different fd
+	fd2= suss_fifo( ctx, TEST_MTYPE, 0, NULL );				// should open the file file for reading and return a different fd
 	if( fd < 0 ) {
 		fprintf( stderr, "[FAIL] suss_fifo did not return a valid fd\n" );
 		errors++;
@@ -122,25 +123,28 @@ int main( int argc,  char** argv ) {
 
 	mcl_start_listening( ctx, port, 0 );			// start the listener
 
-													// under test, the forever keeps fanout from blocking; drive for each of two cases:
+	// under test, the FOREVER = 0 keeps fanout from blocking; drive several times to cover all cases
 	mcl_fifo_fanout( ctx, 5, 1 );					// first rmr receive call will simulate a timeout
-	mcl_fifo_fanout( ctx, 5, 1 );					// second receive call simualtes a message arriving
-	mcl_fifo_fanout( ctx, 5, 1 );					// another round so there are two to read
+	mcl_fifo_fanout( ctx, 5, 1 );					// second receive simulates a health check
+	mcl_fifo_fanout( ctx, 5, 1 );					// 3-n return alternating timeout messages; drive so that 
+	mcl_fifo_fanout( ctx, 5, 1 );					// we will have several land in the FIFO
+	mcl_fifo_fanout( ctx, 5, 1 );
+	mcl_fifo_fanout( ctx, 5, 1 );
 	mcl_fifo_fanout( ctx, 5, 1 );
 
 	*timestamp = 0;
-	state = mcl_fifo_read1( ctx, 100, payload, sizeof( payload ), TRUE );
+	state = mcl_fifo_read1( ctx, TEST_MTYPE, payload, sizeof( payload ), TRUE );
 	if( state < 1 ) {
 		fprintf( stderr, "[FAIL] fifo_read return positive value when expected to\n" );
 		errors++;
 	}
-	state = mcl_fifo_tsread1( ctx, 100, payload, sizeof( payload ), TRUE, timestamp );
+	state = mcl_fifo_tsread1( ctx, TEST_MTYPE, payload, sizeof( payload ), TRUE, timestamp );
 	if( state < 1 ) {
 		fprintf( stderr, "[FAIL] fifo_read with timestamp return positive value when expected to\n" );
 		errors++;
 	}
 
-	state = fifo_read1( NULL, 100, payload, sizeof( payload ), 1, timestamp );		// coverage error check
+	state = fifo_read1( NULL, TEST_MTYPE, payload, sizeof( payload ), 1, timestamp );		// coverage error check
 	if( state != 0 ) {
 		fprintf( stderr, "[FAIL] fifo_read didn't return 0 when given a nil context to\n" );
 		errors++;
@@ -162,7 +166,7 @@ int main( int argc,  char** argv ) {
 	}
 
 	fref = NULL;
-	fd = suss_fifo( bad_ctx, 100, 1, &fref );				// should fail to open the file for writing beacuse directory is bad
+	fd = suss_fifo( bad_ctx, TEST_MTYPE, 1, &fref );				// should fail to open the file for writing beacuse directory is bad
 	if( fd >= 0 ) {
 		fprintf( stderr, "[FAIL] suss_fifo returned a valid fd when given a context with a bad directory path\n" );
 		errors++;
@@ -172,7 +176,7 @@ int main( int argc,  char** argv ) {
 		errors++;
 	}
 
-	fd = suss_fifo( NULL, 100, 1, &fref );				// coverage nil pointer check
+	fd = suss_fifo( NULL, TEST_MTYPE, 1, &fref );				// coverage nil pointer check
 	if( fd >= 0 ) {
 		fprintf( stderr, "[FAIL] suss_fifo returned a valid fd when given a nil context a bad directory path\n" );
 		errors++;
@@ -231,14 +235,14 @@ int main( int argc,  char** argv ) {
 
 	build_hdr( 1024, wbuf, sizeof( wbuf ) );
 	bp = NULL;
-	bp = rdc_init_buf( 100, wbuf, 10, bp );					// set up for write
+	bp = rdc_init_buf( TEST_MTYPE, wbuf, 10, bp );					// set up for write
 	rdc_write( ctx, bp, payload, sizeof( payload ) );				// write the raw data
 
 	fprintf( stderr, "[INFO] pausing to test rdc file rolling\n" );
 	sleep( 15 );
 	build_hdr( 1024, wbuf, sizeof( wbuf ) );
 	bp = NULL;
-	bp = rdc_init_buf( 100, wbuf, 10, bp );
+	bp = rdc_init_buf( TEST_MTYPE, wbuf, 10, bp );
 	rdc_write( ctx, bp, payload, sizeof( payload ) );
 
 

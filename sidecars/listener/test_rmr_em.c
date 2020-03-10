@@ -30,11 +30,16 @@
 */
 
 #include <rmr/rmr.h>
+#include <rmr/RIC_message_types.h>
 
-#define rmr_torcv_msg RMR_torcv_msg
 
+/*
+	The first call will generate a timeout for testing. All others will
+	succeed with a message.
+*/
 extern rmr_mbuf_t* RMR_torcv_msg( void* ctx, rmr_mbuf_t* old_msg, int ms_to ) {
 	static int timeout = 0;
+	static int hcheck = 0;
 
 	if( old_msg == NULL ) {
 		old_msg = rmr_alloc_msg( ctx, 256 );
@@ -49,12 +54,52 @@ extern rmr_mbuf_t* RMR_torcv_msg( void* ctx, rmr_mbuf_t* old_msg, int ms_to ) {
 		return old_msg;	
 	}
 
+	if( !hcheck ) {									// send one health check message
+		old_msg->mtype = RIC_HEALTH_CHECK_REQ;
+		old_msg->state = 0;
+		hcheck = 1;
+		return old_msg;
+	}
 
-	snprintf( old_msg->payload, 100, "DUMMY MESSAGE" );
-	old_msg->mtype = 100;
+
+	snprintf( old_msg->payload, rmr_payload_size( old_msg ), "DUMMY MESSAGE" );
+	old_msg->mtype = TEST_MTYPE;
 	old_msg->len = strlen( old_msg->payload );
 	old_msg->sub_id = -1;
 	old_msg->state = 0;
 
 	return old_msg;
 }
+
+/*
+	Always successful if a message was passed in.
+*/
+extern rmr_mbuf_t* RMR_rts_msg( void* ctx, rmr_mbuf_t* msg ) {
+	if( msg != NULL ) {
+		msg->state = 0;
+	}
+
+	return msg;
+}
+
+/*
+	Generates "short" reads 9 out of 10 times so that we can
+	drive the buffer construction code that otherwise wouldn't
+	be driven since long reads are usually the case.
+*/
+extern int Read( int fd, char* dest, int max ) {
+	static int count = -1;
+
+	count++;
+
+	if( count % 10 ) {
+		return read( fd, dest, max );		// return long read
+	}
+
+	return read( fd, dest, 3 );             // short read
+}
+
+// ----------- defines that point included code here --------------------
+#define rmr_torcv_msg RMR_torcv_msg
+#define rmr_rts_msg RMR_rts_msg
+#define read Read

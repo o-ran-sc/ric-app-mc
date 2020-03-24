@@ -70,29 +70,31 @@ RUN python generate_runall.py
 
 
 # now install the binaries and libraries into smaller docker image
-FROM nexus3.o-ran-sc.org:10004/o-ran-sc/ric-app-mc-listener:1.3.2
+FROM nexus3.o-ran-sc.org:10004/o-ran-sc/ric-app-mc-listener:1.3.3
 
 ARG STAGE_DIR
 
 COPY --from=project-build ${STAGE_DIR}/gs-lite/demo/queries /mc/gs-lite/demo/queries
 COPY --from=project-build ${STAGE_DIR}/gs-lite/bin /mc/gs-lite/bin
 COPY --from=project-build ${STAGE_DIR}/data_gen /mc/data_gen
-COPY --from=project-build ${STAGE_DIR}/mc_deployment.json /mc/
 COPY --from=project-build ${STAGE_DIR}/extract_params.py /mc/
 COPY --from=project-build /usr/local/lib/libproto* /usr/local/lib/
 COPY --from=project-build /usr/local/lib/libsdl* /usr/local/lib/
 
+WORKDIR /opt/ric/config
+COPY --from=project-build ${STAGE_DIR}/mc_deployment.json /opt/ric/config
+
 COPY container_start.sh /playpen/bin/
 
 RUN apt-get update && \
-    apt-get install -y curl python python-pip libboost-all-dev libhiredis-dev && \
-# redis-tools && \
+    apt-get install -y curl python python-pip libboost-all-dev libhiredis-dev \
+ redis-tools && \
     apt-get clean
 
 RUN ldconfig
 RUN pip install protobuf
 
-ENV XAPP_DESCRIPTOR_PATH /mc/mc_deployment.json
+ENV XAPP_DESCRIPTOR_PATH /opt/ric/config/mc_deployment.json
 WORKDIR /playpen
 ENV GSLITE_ROOT /mc/gs-lite
 

@@ -69,8 +69,8 @@ DEBUG_MODE=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH debug_mode`
 
 WINDOW=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH measurement_interval`
 
-export DBAAS_SERVICE_HOST=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH __DBAAS_SERVICE_HOST__`
-export DBAAS_SERVICE_PORT=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH __DBAAS_SERVICE_PORT__`
+# export DBAAS_SERVICE_HOST=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH __DBAAS_SERVICE_HOST__`
+# export DBAAS_SERVICE_PORT=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH __DBAAS_SERVICE_PORT__`
 
 if [ "$SIMULATOR_MODE" = "true" ]
 then
@@ -90,8 +90,8 @@ VES_NAME=`echo $VES_COLLECTOR | awk 'BEGIN{FS=":"} {print $1}'`
 VES_PORT=`echo $VES_COLLECTOR | awk 'BEGIN{FS=":"} {print $2}'`
 VES_IP=`getent ahosts $VES_NAME | awk '{ print $1; exit }'`
 
-echo "Clearing MC NIB namespace"
-/mc/gs-lite/bin/mc_clear
+echo "Clearing MC NIB namespace" >&2
+/mc/gs-lite/bin/mc_clear >&2
 
 echo "Storing MC NIB schemas" >&2
 /mc/gs-lite/bin/mc_store_schema >&2

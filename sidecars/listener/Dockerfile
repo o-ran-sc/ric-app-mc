@@ -48,7 +48,7 @@ RUN apt-get update && apt-get install -y cmake gcc make git g++ wget
 
 WORKDIR /playpen
 # Install RMr (runtime and dev) from debian package cached on packagecloud.io
-ARG RMR_VER=3.5.1
+ARG RMR_VER=3.6.5
 
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/rmr_${RMR_VER}_amd64.deb/download.deb
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/rmr-dev_${RMR_VER}_amd64.deb/download.deb
@@ -80,6 +80,10 @@ FROM ubuntu:18.04
 # bash doesn't cut it for run_replay so grab a real shell and clean up as much as we can
 RUN apt-get update; apt-get install -y ksh
 RUN rm -fr /var/lib/apt/lists 
+
+# must have rmr runtime to get health check etc
+COPY --from=buildenv /playpen/rmr_*.deb /tmp/
+RUN dpkg -i /tmp/rmr_*_amd64.deb
 
 # obtusely this uses the previous value
 ARG SRC

@@ -82,7 +82,7 @@ COPY --from=project-build /usr/local/lib/libproto* /usr/local/lib/
 COPY --from=project-build /usr/local/lib/libsdl* /usr/local/lib/
 
 WORKDIR /opt/ric/config
-COPY --from=project-build ${STAGE_DIR}/mc_deployment.json /opt/ric/config
+COPY --from=project-build ${STAGE_DIR}/mc_deployment.json /opt/ric/config/config-file.json
 
 COPY container_start.sh /playpen/bin/
 
@@ -94,7 +94,7 @@ RUN apt-get update && \
 RUN ldconfig
 RUN pip install protobuf
 
-ENV XAPP_DESCRIPTOR_PATH /opt/ric/config/mc_deployment.json
+ENV XAPP_DESCRIPTOR_PATH /opt/ric/config/
 WORKDIR /playpen
 ENV GSLITE_ROOT /mc/gs-lite
 

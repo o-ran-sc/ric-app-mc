@@ -63,14 +63,14 @@ set -m
 
 FIFO_DIR="/tmp/mcl/fifos"
 
-SIMULATOR_MODE=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH simulator_mode`
+SIMULATOR_MODE=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json simulator_mode`
 
-DEBUG_MODE=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH debug_mode`
+DEBUG_MODE=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json debug_mode`
 
-WINDOW=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH measurement_interval`
+WINDOW=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json measurement_interval`
 
-# export DBAAS_SERVICE_HOST=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH __DBAAS_SERVICE_HOST__`
-# export DBAAS_SERVICE_PORT=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH __DBAAS_SERVICE_PORT__`
+# export DBAAS_SERVICE_HOST=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json __DBAAS_SERVICE_HOST__`
+# export DBAAS_SERVICE_PORT=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json __DBAAS_SERVICE_PORT__`
 
 if [ "$SIMULATOR_MODE" = "true" ]
 then
@@ -84,7 +84,7 @@ then
 	WINDOW="10000"
 fi
 
-VES_COLLECTOR=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH ves_collector_address`
+VES_COLLECTOR=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json ves_collector_address`
 
 VES_NAME=`echo $VES_COLLECTOR | awk 'BEGIN{FS=":"} {print $1}'`
 VES_PORT=`echo $VES_COLLECTOR | awk 'BEGIN{FS=":"} {print $2}'`

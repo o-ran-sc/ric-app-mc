@@ -41,7 +41,7 @@
 
 set -e
 
-SIMULATOR_MODE=`python /mc/extract_params.py $XAPP_DESCRIPTOR_PATH simulator_mode`
+SIMULATOR_MODE=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json simulator_mode`
 
 if [ "$SIMULATOR_MODE" != "true" ]
 then

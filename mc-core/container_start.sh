@@ -55,7 +55,7 @@ then
 	else
 		bin/mc_listener_si
 	fi
-) >/tmp/listener.std 2>&1 &
+)
 
 echo "listener was started" >&2
 

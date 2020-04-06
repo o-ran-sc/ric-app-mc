@@ -1,10 +1,10 @@
 ---
 distribution_type: container
-container_release_tag: 1.0.2
+container_release_tag: 1.0.3
 container_pull_registry: nexus3.o-ran-sc.org:10004
 container_push_registry: nexus3.o-ran-sc.org:10002
 project: ric-app/mc
-ref: 9dbc426b7fe4f742ff41918f07acdd8ac83a9b1a
+ref: 783f6bfa93c3eed4787bded3c35016952b74b2e3
 containers:
     - name: ric-app-mc
-      version: 1.0.2
+      version: 1.0.3

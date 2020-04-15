@@ -16,7 +16,7 @@
 
 ARG STAGE_DIR=/mc
 
-FROM nexus3.o-ran-sc.org:10004/bldr-ubuntu18-c-go:4-u18.04-nng AS project-build
+FROM nexus3.o-ran-sc.org:10004/bldr-ubuntu18-c-go:7-u18.04 as project-build
 # Update & installation of linux packages
 RUN apt-get update -y && \
         apt-get install -y curl && \

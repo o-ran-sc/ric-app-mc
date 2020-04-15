@@ -49,12 +49,7 @@ then
 
 (
 	cd /playpen
-	if (( $USE_NNG )) || [[ ! -f bin/mc_listener_si ]]		# we really want the si version unless forced
-	then
-		bin/mc_listener
-	else
-		bin/mc_listener_si
-	fi
+	bin/mc_listener
 )
 
 echo "listener was started" >&2

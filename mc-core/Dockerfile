@@ -16,14 +16,17 @@
 
 ARG STAGE_DIR=/mc
 
-FROM nexus3.o-ran-sc.org:10004/bldr-ubuntu18-c-go:7-u18.04 as project-build
-# Update & installation of linux packages
-RUN apt-get update -y && \
-        apt-get install -y curl && \
-        apt-get install -y procps && \
-        apt-get install -y python-pip
+FROM nexus3.o-ran-sc.org:10004/bldr-ubuntu18-c-go:7-u18.04 AS project-build
 
 ARG STAGE_DIR
+
+ARG RMR_VER=3.7.4
+
+RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/rmr_${RMR_VER}_amd64.deb/download.deb
+RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/staging/packages/debian/stretch/rmr-dev_${RMR_VER}_amd64.deb/download.deb
+RUN dpkg -i rmr_${RMR_VER}_amd64.deb
+RUN dpkg -i rmr-dev_${RMR_VER}_amd64.deb
+RUN ldconfig
 
 COPY mc ${STAGE_DIR}
 WORKDIR ${STAGE_DIR}
@@ -53,7 +56,6 @@ RUN ./configure
 RUN make
 RUN make install
 RUN ldconfig
-RUN pip install protobuf
 WORKDIR ${STAGE_DIR}
 RUN git clone -b release/0.1.0 https://gerrit.o-ran-sc.org/r/com/gs-lite
 WORKDIR ${STAGE_DIR}/gs-lite
@@ -70,7 +72,7 @@ RUN python generate_runall.py
 
 
 # now install the binaries and libraries into smaller docker image
-FROM nexus3.o-ran-sc.org:10004/o-ran-sc/ric-app-mc-listener:1.4.0
+FROM nexus3.o-ran-sc.org:10004/o-ran-sc/ric-app-mc-listener:1.5.0
 
 ARG STAGE_DIR
 
@@ -78,6 +80,7 @@ COPY --from=project-build ${STAGE_DIR}/gs-lite/demo/queries /mc/gs-lite/demo/que
 COPY --from=project-build ${STAGE_DIR}/gs-lite/bin /mc/gs-lite/bin
 COPY --from=project-build ${STAGE_DIR}/data_gen /mc/data_gen
 COPY --from=project-build ${STAGE_DIR}/extract_params.py /mc/
+COPY --from=project-build ${STAGE_DIR}/extract_rmr_port.py /mc/
 COPY --from=project-build /usr/local/lib/libproto* /usr/local/lib/
 COPY --from=project-build /usr/local/lib/libsdl* /usr/local/lib/
 
@@ -87,8 +90,7 @@ COPY --from=project-build ${STAGE_DIR}/mc_deployment.json /opt/ric/config/config
 COPY container_start.sh /playpen/bin/
 
 RUN apt-get update && \
-    apt-get install -y curl python python-pip libboost-all-dev libhiredis-dev \
- redis-tools && \
+    apt-get install -y curl python python-pip libboost-all-dev libhiredis-dev && \
     apt-get clean
 
 RUN ldconfig

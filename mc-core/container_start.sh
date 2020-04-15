@@ -42,6 +42,7 @@
 set -e
 
 SIMULATOR_MODE=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json simulator_mode`
+RMR_PORT=`python /mc/extract_rmr_port.py ${XAPP_DESCRIPTOR_PATH}/config-file.json rmr_data_in`
 
 if [ "$SIMULATOR_MODE" != "true" ]
 then
@@ -49,7 +50,12 @@ then
 
 (
 	cd /playpen
-	bin/mc_listener
+	if [ "$RMR_PORT" != "" ]
+	then
+		bin/mc_listener -p $RMR_PORT
+	else
+		bin/mc_listener
+	fi
 )
 
 echo "listener was started" >&2

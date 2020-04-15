@@ -17,20 +17,23 @@
 import json
 import sys
 
-usage = "extract_params.py xapp_descriptor_file param_name"
+usage = "extract_rmr_port.py xapp_descriptor_file port_name"
 
 if len(sys.argv) < 3 :
     sys.exit(-1)
 
 xapp_descriptor_file = sys.argv[1]
-param_name = sys.argv[2]
+port_name = sys.argv[2]
 
 ret = ''
 
 with open(xapp_descriptor_file) as f:
     data = json.load(f)
     
-    if 'controls' in data.keys()  and param_name in data['controls'].keys():
-        ret = data['controls'][param_name]
+    if 'messaging' in data.keys() and 'ports' in data['messaging'].keys():
+        port_list = data['messaging']['ports']
+        for port in port_list :
+            if 'name' in port.keys() and 'port' in port.keys() and port['name'] == port_name :
+                ret = port['port']
 
 print ret

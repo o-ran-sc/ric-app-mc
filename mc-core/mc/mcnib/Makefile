@@ -60,7 +60,7 @@ gsprintconsole: gsprintconsole.o ../../lib/libgscphostaux.a ../../lib/libgscphos
 	g++ -g -o gsprintconsole gsprintconsole.o -L../../lib -lgscpapp  -lgscphostaux -lgscphost -lgscpinterface -lgscplftaaux -lclearinghouse -lgscpaux  
 
 gsprintconsole_ves: gsprintconsole_ves.o ../../lib/libgscphostaux.a ../../lib/libgscphost.a ../../lib/libgscpinterface.a ../../lib/libgscpapp.a
-	g++ -g -o gsprintconsole_ves gsprintconsole_ves.o -L../../lib -lgscpapp  -lgscphostaux -lgscphost -lgscpinterface -lgscplftaaux -lclearinghouse -lgscpaux  
+	g++ -g -o gsprintconsole_ves gsprintconsole_ves.o -L../../lib -lgscpapp  -lgscphostaux -lgscphost -lgscpinterface -lgscplftaaux -lclearinghouse -lgscpaux -lrmr_si -lm -lpthread
 
 gsmcnib: gsmcnib.o ../../lib/libgscphostaux.a ../../lib/libgscphost.a ../../lib/libgscpinterface.a ../../lib/libgscpapp.a
 	g++ -g -o gsmcnib gsmcnib.o -L../../lib -lgscpapp  -lgscphostaux -lgscphost -lgscpinterface -lgscplftaaux -lclearinghouse -lgscpaux -lsdl

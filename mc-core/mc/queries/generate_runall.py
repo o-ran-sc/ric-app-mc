@@ -69,6 +69,8 @@ DEBUG_MODE=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.jso
 
 WINDOW=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json measurement_interval`
 
+RMR_PORT=`python /mc/extract_rmr_port.py ${XAPP_DESCRIPTOR_PATH}/config-file.json rmr_data_out`
+
 # export DBAAS_SERVICE_HOST=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json __DBAAS_SERVICE_HOST__`
 # export DBAAS_SERVICE_PORT=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json __DBAAS_SERVICE_PORT__`
 
@@ -119,12 +121,17 @@ fi
 
 runall += """
 
+if [ "$RMR_PORT" != "" ]
+then
+    RMR_OPTION="-R $RMR_PORT"
+fi
+
 # invoke gsprintconsole_ves gsmcnib for all non-debug queries
 """
 
 for q in oqy:
 	if "debug" not in q:
-		runall += " /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 `cat gshub.log` default "+q+" window=$WINDOW &\n"
+		runall += " /mc/gs-lite/bin/gsprintconsole_ves -C $VES_IP:$VES_PORT -U /vescollector/eventListener/v7 -V 7 $RMR_OPTION `cat gshub.log` default "+q+" window=$WINDOW &\n"
 		keys = nib[q]["keys"]
 		if len(keys)>0:
 			keys_str = ",".join(keys)

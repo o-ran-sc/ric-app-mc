@@ -7,142 +7,142 @@
 #endif
 
 #include "rrc_failure_information.pb-c.h"
-void   uenibstreamprotobuf__failure_information__init
-                     (Uenibstreamprotobuf__FailureInformation         *message)
+void   streaming_protobufs__failure_information__init
+                     (StreamingProtobufs__FailureInformation         *message)
 {
-  static const Uenibstreamprotobuf__FailureInformation init_value = UENIBSTREAMPROTOBUF__FAILURE_INFORMATION__INIT;
+  static const StreamingProtobufs__FailureInformation init_value = STREAMING_PROTOBUFS__FAILURE_INFORMATION__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__failure_information__get_packed_size
-                     (const Uenibstreamprotobuf__FailureInformation *message)
+size_t streaming_protobufs__failure_information__get_packed_size
+                     (const StreamingProtobufs__FailureInformation *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_information__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_information__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__failure_information__pack
-                     (const Uenibstreamprotobuf__FailureInformation *message,
+size_t streaming_protobufs__failure_information__pack
+                     (const StreamingProtobufs__FailureInformation *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_information__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_information__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__failure_information__pack_to_buffer
-                     (const Uenibstreamprotobuf__FailureInformation *message,
+size_t streaming_protobufs__failure_information__pack_to_buffer
+                     (const StreamingProtobufs__FailureInformation *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_information__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_information__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__FailureInformation *
-       uenibstreamprotobuf__failure_information__unpack
+StreamingProtobufs__FailureInformation *
+       streaming_protobufs__failure_information__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__FailureInformation *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__failure_information__descriptor,
+  return (StreamingProtobufs__FailureInformation *)
+     protobuf_c_message_unpack (&streaming_protobufs__failure_information__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__failure_information__free_unpacked
-                     (Uenibstreamprotobuf__FailureInformation *message,
+void   streaming_protobufs__failure_information__free_unpacked
+                     (StreamingProtobufs__FailureInformation *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_information__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_information__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__failure_information__ies__init
-                     (Uenibstreamprotobuf__FailureInformationIEs         *message)
+void   streaming_protobufs__failure_information__ies__init
+                     (StreamingProtobufs__FailureInformationIEs         *message)
 {
-  static const Uenibstreamprotobuf__FailureInformationIEs init_value = UENIBSTREAMPROTOBUF__FAILURE_INFORMATION__IES__INIT;
+  static const StreamingProtobufs__FailureInformationIEs init_value = STREAMING_PROTOBUFS__FAILURE_INFORMATION__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__failure_information__ies__get_packed_size
-                     (const Uenibstreamprotobuf__FailureInformationIEs *message)
+size_t streaming_protobufs__failure_information__ies__get_packed_size
+                     (const StreamingProtobufs__FailureInformationIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_information__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_information__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__failure_information__ies__pack
-                     (const Uenibstreamprotobuf__FailureInformationIEs *message,
+size_t streaming_protobufs__failure_information__ies__pack
+                     (const StreamingProtobufs__FailureInformationIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_information__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_information__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__failure_information__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__FailureInformationIEs *message,
+size_t streaming_protobufs__failure_information__ies__pack_to_buffer
+                     (const StreamingProtobufs__FailureInformationIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_information__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_information__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__FailureInformationIEs *
-       uenibstreamprotobuf__failure_information__ies__unpack
+StreamingProtobufs__FailureInformationIEs *
+       streaming_protobufs__failure_information__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__FailureInformationIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__failure_information__ies__descriptor,
+  return (StreamingProtobufs__FailureInformationIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__failure_information__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__failure_information__ies__free_unpacked
-                     (Uenibstreamprotobuf__FailureInformationIEs *message,
+void   streaming_protobufs__failure_information__ies__free_unpacked
+                     (StreamingProtobufs__FailureInformationIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_information__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_information__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__failure_info_rlc__bearer__init
-                     (Uenibstreamprotobuf__FailureInfoRLCBearer         *message)
+void   streaming_protobufs__failure_info_rlc__bearer__init
+                     (StreamingProtobufs__FailureInfoRLCBearer         *message)
 {
-  static const Uenibstreamprotobuf__FailureInfoRLCBearer init_value = UENIBSTREAMPROTOBUF__FAILURE_INFO_RLC__BEARER__INIT;
+  static const StreamingProtobufs__FailureInfoRLCBearer init_value = STREAMING_PROTOBUFS__FAILURE_INFO_RLC__BEARER__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__failure_info_rlc__bearer__get_packed_size
-                     (const Uenibstreamprotobuf__FailureInfoRLCBearer *message)
+size_t streaming_protobufs__failure_info_rlc__bearer__get_packed_size
+                     (const StreamingProtobufs__FailureInfoRLCBearer *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_info_rlc__bearer__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_info_rlc__bearer__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__failure_info_rlc__bearer__pack
-                     (const Uenibstreamprotobuf__FailureInfoRLCBearer *message,
+size_t streaming_protobufs__failure_info_rlc__bearer__pack
+                     (const StreamingProtobufs__FailureInfoRLCBearer *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_info_rlc__bearer__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_info_rlc__bearer__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__failure_info_rlc__bearer__pack_to_buffer
-                     (const Uenibstreamprotobuf__FailureInfoRLCBearer *message,
+size_t streaming_protobufs__failure_info_rlc__bearer__pack_to_buffer
+                     (const StreamingProtobufs__FailureInfoRLCBearer *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_info_rlc__bearer__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_info_rlc__bearer__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__FailureInfoRLCBearer *
-       uenibstreamprotobuf__failure_info_rlc__bearer__unpack
+StreamingProtobufs__FailureInfoRLCBearer *
+       streaming_protobufs__failure_info_rlc__bearer__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__FailureInfoRLCBearer *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__failure_info_rlc__bearer__descriptor,
+  return (StreamingProtobufs__FailureInfoRLCBearer *)
+     protobuf_c_message_unpack (&streaming_protobufs__failure_info_rlc__bearer__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__failure_info_rlc__bearer__free_unpacked
-                     (Uenibstreamprotobuf__FailureInfoRLCBearer *message,
+void   streaming_protobufs__failure_info_rlc__bearer__free_unpacked
+                     (StreamingProtobufs__FailureInfoRLCBearer *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__failure_info_rlc__bearer__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__failure_info_rlc__bearer__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__failure_information__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__failure_information__field_descriptors[1] =
 {
   {
     "failureInformation",
@@ -150,37 +150,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__failure_information__
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__FailureInformation, failureinformation),
-    &uenibstreamprotobuf__failure_information__ies__descriptor,
+    offsetof(StreamingProtobufs__FailureInformation, failureinformation),
+    &streaming_protobufs__failure_information__ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__failure_information__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__failure_information__field_indices_by_name[] = {
   0,   /* field[0] = failureInformation */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__failure_information__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__failure_information__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__failure_information__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__failure_information__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.FailureInformation",
+  "streaming_protobufs.FailureInformation",
   "FailureInformation",
-  "Uenibstreamprotobuf__FailureInformation",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__FailureInformation),
+  "StreamingProtobufs__FailureInformation",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__FailureInformation),
   1,
-  uenibstreamprotobuf__failure_information__field_descriptors,
-  uenibstreamprotobuf__failure_information__field_indices_by_name,
-  1,  uenibstreamprotobuf__failure_information__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__failure_information__init,
+  streaming_protobufs__failure_information__field_descriptors,
+  streaming_protobufs__failure_information__field_indices_by_name,
+  1,  streaming_protobufs__failure_information__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__failure_information__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__failure_information__ies__field_descriptors[2] =
+static const ProtobufCFieldDescriptor streaming_protobufs__failure_information__ies__field_descriptors[2] =
 {
   {
     "failureInfoRLC_Bearer",
@@ -188,8 +188,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__failure_information__
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__FailureInformationIEs, failureinforlc_bearer),
-    &uenibstreamprotobuf__failure_info_rlc__bearer__descriptor,
+    offsetof(StreamingProtobufs__FailureInformationIEs, failureinforlc_bearer),
+    &streaming_protobufs__failure_info_rlc__bearer__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -200,66 +200,66 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__failure_information__
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__FailureInformationIEs, latenoncriticalextension),
-    &google__protobuf__string_value__descriptor,
+    offsetof(StreamingProtobufs__FailureInformationIEs, latenoncriticalextension),
+    &google__protobuf__bytes_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__failure_information__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__failure_information__ies__field_indices_by_name[] = {
   0,   /* field[0] = failureInfoRLC_Bearer */
   1,   /* field[1] = lateNonCriticalExtension */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__failure_information__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__failure_information__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 2 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__failure_information__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__failure_information__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.FailureInformation_IEs",
+  "streaming_protobufs.FailureInformation_IEs",
   "FailureInformationIEs",
-  "Uenibstreamprotobuf__FailureInformationIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__FailureInformationIEs),
+  "StreamingProtobufs__FailureInformationIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__FailureInformationIEs),
   2,
-  uenibstreamprotobuf__failure_information__ies__field_descriptors,
-  uenibstreamprotobuf__failure_information__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__failure_information__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__failure_information__ies__init,
+  streaming_protobufs__failure_information__ies__field_descriptors,
+  streaming_protobufs__failure_information__ies__field_indices_by_name,
+  1,  streaming_protobufs__failure_information__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__failure_information__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue uenibstreamprotobuf__failure_info_rlc__bearer__failure_type__enum_values_by_number[2] =
+static const ProtobufCEnumValue streaming_protobufs__failure_info_rlc__bearer__failure_type__enum_values_by_number[2] =
 {
-  { "protobuf_unspecified", "UENIBSTREAMPROTOBUF__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__protobuf_unspecified", 0 },
-  { "duplication", "UENIBSTREAMPROTOBUF__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__duplication", 1 },
+  { "protobuf_unspecified", "STREAMING_PROTOBUFS__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__protobuf_unspecified", 0 },
+  { "duplication", "STREAMING_PROTOBUFS__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__duplication", 1 },
 };
-static const ProtobufCIntRange uenibstreamprotobuf__failure_info_rlc__bearer__failure_type__value_ranges[] = {
+static const ProtobufCIntRange streaming_protobufs__failure_info_rlc__bearer__failure_type__value_ranges[] = {
 {0, 0},{0, 2}
 };
-static const ProtobufCEnumValueIndex uenibstreamprotobuf__failure_info_rlc__bearer__failure_type__enum_values_by_name[2] =
+static const ProtobufCEnumValueIndex streaming_protobufs__failure_info_rlc__bearer__failure_type__enum_values_by_name[2] =
 {
   { "duplication", 1 },
   { "protobuf_unspecified", 0 },
 };
-const ProtobufCEnumDescriptor uenibstreamprotobuf__failure_info_rlc__bearer__failure_type__descriptor =
+const ProtobufCEnumDescriptor streaming_protobufs__failure_info_rlc__bearer__failure_type__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.FailureInfoRLC_Bearer.FailureType",
+  "streaming_protobufs.FailureInfoRLC_Bearer.FailureType",
   "FailureType",
-  "Uenibstreamprotobuf__FailureInfoRLCBearer__FailureType",
-  "uenibstreamprotobuf",
+  "StreamingProtobufs__FailureInfoRLCBearer__FailureType",
+  "streaming_protobufs",
   2,
-  uenibstreamprotobuf__failure_info_rlc__bearer__failure_type__enum_values_by_number,
+  streaming_protobufs__failure_info_rlc__bearer__failure_type__enum_values_by_number,
   2,
-  uenibstreamprotobuf__failure_info_rlc__bearer__failure_type__enum_values_by_name,
+  streaming_protobufs__failure_info_rlc__bearer__failure_type__enum_values_by_name,
   1,
-  uenibstreamprotobuf__failure_info_rlc__bearer__failure_type__value_ranges,
+  streaming_protobufs__failure_info_rlc__bearer__failure_type__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__failure_info_rlc__bearer__field_descriptors[3] =
+static const ProtobufCFieldDescriptor streaming_protobufs__failure_info_rlc__bearer__field_descriptors[3] =
 {
   {
     "cellGroupId",
@@ -267,7 +267,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__failure_info_rlc__bea
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__FailureInfoRLCBearer, cellgroupid),
+    offsetof(StreamingProtobufs__FailureInfoRLCBearer, cellgroupid),
     NULL,
     NULL,
     0,             /* flags */
@@ -279,7 +279,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__failure_info_rlc__bea
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__FailureInfoRLCBearer, logicalchannelidentity),
+    offsetof(StreamingProtobufs__FailureInfoRLCBearer, logicalchannelidentity),
     NULL,
     NULL,
     0,             /* flags */
@@ -291,35 +291,35 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__failure_info_rlc__bea
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__FailureInfoRLCBearer, failuretype),
-    &uenibstreamprotobuf__failure_info_rlc__bearer__failure_type__descriptor,
+    offsetof(StreamingProtobufs__FailureInfoRLCBearer, failuretype),
+    &streaming_protobufs__failure_info_rlc__bearer__failure_type__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__failure_info_rlc__bearer__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__failure_info_rlc__bearer__field_indices_by_name[] = {
   0,   /* field[0] = cellGroupId */
   2,   /* field[2] = failureType */
   1,   /* field[1] = logicalChannelIdentity */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__failure_info_rlc__bearer__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__failure_info_rlc__bearer__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__failure_info_rlc__bearer__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__failure_info_rlc__bearer__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.FailureInfoRLC_Bearer",
+  "streaming_protobufs.FailureInfoRLC_Bearer",
   "FailureInfoRLCBearer",
-  "Uenibstreamprotobuf__FailureInfoRLCBearer",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__FailureInfoRLCBearer),
+  "StreamingProtobufs__FailureInfoRLCBearer",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__FailureInfoRLCBearer),
   3,
-  uenibstreamprotobuf__failure_info_rlc__bearer__field_descriptors,
-  uenibstreamprotobuf__failure_info_rlc__bearer__field_indices_by_name,
-  1,  uenibstreamprotobuf__failure_info_rlc__bearer__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__failure_info_rlc__bearer__init,
+  streaming_protobufs__failure_info_rlc__bearer__field_descriptors,
+  streaming_protobufs__failure_info_rlc__bearer__field_indices_by_name,
+  1,  streaming_protobufs__failure_info_rlc__bearer__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__failure_info_rlc__bearer__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

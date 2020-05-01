@@ -17,17 +17,17 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='error_cause.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x11\x65rror_cause.proto\x12\x13uenibstreamprotobuf\"\xf2\x01\n\x05\x43\x61use\x12>\n\x0cradioNetwork\x18\x01 \x01(\x0b\x32&.uenibstreamprotobuf.CauseRadioNetworkH\x00\x12\x38\n\ttransport\x18\x02 \x01(\x0b\x32#.uenibstreamprotobuf.CauseTransportH\x00\x12\x36\n\x08protocol\x18\x03 \x01(\x0b\x32\".uenibstreamprotobuf.CauseProtocolH\x00\x12.\n\x04misc\x18\x04 \x01(\x0b\x32\x1e.uenibstreamprotobuf.CauseMiscH\x00\x42\x07\n\x05value\"\xdf\x0c\n\x11\x43\x61useRadioNetwork\x12;\n\x05value\x18\x01 \x01(\x0e\x32,.uenibstreamprotobuf.CauseRadioNetwork.Value\"\x8c\x0c\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12(\n$handover_desirable_for_radio_reasons\x10\x01\x12\x1a\n\x16time_critical_handover\x10\x02\x12\"\n\x1eresource_optimisation_handover\x10\x03\x12\x1f\n\x1breduce_load_in_serving_cell\x10\x04\x12\x14\n\x10partial_handover\x10\x05\x12\x1e\n\x1aunknown_new_eNB_UE_X2AP_ID\x10\x06\x12\x1e\n\x1aunknown_old_eNB_UE_X2AP_ID\x10\x07\x12\x1e\n\x1aunknown_pair_of_UE_X2AP_ID\x10\x08\x12\x19\n\x15ho_target_not_allowed\x10\t\x12\x1a\n\x16tx2relocoverall_expiry\x10\n\x12\x15\n\x11trelocprep_expiry\x10\x0b\x12\x16\n\x12\x63\x65ll_not_available\x10\x0c\x12/\n+no_radio_resources_available_in_target_cell\x10\r\x12\x17\n\x13invalid_MME_GroupID\x10\x0e\x12\x14\n\x10unknown_MME_Code\x10\x0f\x12\x43\n?encryption_and_or_integrity_protection_algorithms_not_supported\x10\x10\x12\x1e\n\x1areportCharacteristicsEmpty\x10\x11\x12\x17\n\x13noReportPeriodicity\x10\x12\x12\x19\n\x15\x65xistingMeasurementID\x10\x13\x12\x1e\n\x1aunknown_eNB_Measurement_ID\x10\x14\x12)\n%measurement_temporarily_not_available\x10\x15\x12\x0f\n\x0bunspecified\x10\x16\x12\x12\n\x0eload_balancing\x10\x17\x12\x19\n\x15handover_optimisation\x10\x18\x12\x1e\n\x1avalue_out_of_allowed_range\x10\x19\x12\x1f\n\x1bmultiple_E_RAB_ID_instances\x10\x1a\x12\x16\n\x12switch_off_ongoing\x10\x1b\x12\x1b\n\x17not_supported_QCI_value\x10\x1c\x12,\n(measurement_not_supported_for_the_object\x10\x1d\x12\x15\n\x11tDCoverall_expiry\x10\x1e\x12\x12\n\x0etDCprep_expiry\x10\x1f\x12&\n\"action_desirable_for_radio_reasons\x10 \x12\x0f\n\x0breduce_load\x10!\x12\x19\n\x15resource_optimisation\x10\"\x12\x18\n\x14time_critical_action\x10#\x12\x16\n\x12target_not_allowed\x10$\x12 \n\x1cno_radio_resources_available\x10%\x12\x1b\n\x17invalid_QoS_combination\x10&\x12\'\n#encryption_algorithms_not_aupported\x10\'\x12\x17\n\x13procedure_cancelled\x10(\x12\x0f\n\x0brRM_purpose\x10)\x12\x19\n\x15improve_user_bit_rate\x10*\x12\x13\n\x0fuser_inactivity\x10+\x12!\n\x1dradio_connection_with_UE_lost\x10,\x12,\n(failure_in_the_radio_interface_procedure\x10-\x12\x1f\n\x1b\x62\x65\x61rer_option_not_supported\x10.\x12\x10\n\x0cmCG_Mobility\x10/\x12\x10\n\x0csCG_Mobility\x10\x30\x12\x1b\n\x17\x63ount_reaches_max_value\x10\x31\x12!\n\x1dunknown_old_en_gNB_UE_X2AP_ID\x10\x32\x12\x11\n\rpDCP_Overload\x10\x33\"\xa2\x01\n\x0e\x43\x61useTransport\x12\x38\n\x05value\x18\x01 \x01(\x0e\x32).uenibstreamprotobuf.CauseTransport.Value\"V\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\"\n\x1etransport_resource_unavailable\x10\x01\x12\x0f\n\x0bunspecified\x10\x02\"\xe2\x02\n\rCauseProtocol\x12\x37\n\x05value\x18\x01 \x01(\x0e\x32(.uenibstreamprotobuf.CauseProtocol.Value\"\x97\x02\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x19\n\x15transfer_syntax_error\x10\x01\x12 \n\x1c\x61\x62stract_syntax_error_reject\x10\x02\x12+\n\'abstract_syntax_error_ignore_and_notify\x10\x03\x12.\n*message_not_compatible_with_receiver_state\x10\x04\x12\x12\n\x0esemantic_error\x10\x05\x12\x0f\n\x0bunspecified\x10\x06\x12\x35\n1abstract_syntax_error_falsely_constructed_message\x10\x07\"\xf1\x01\n\tCauseMisc\x12\x33\n\x05value\x18\x01 \x01(\x0e\x32$.uenibstreamprotobuf.CauseMisc.Value\"\xae\x01\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1f\n\x1b\x63ontrol_processing_overload\x10\x01\x12\x14\n\x10hardware_failure\x10\x02\x12\x13\n\x0fom_intervention\x10\x03\x12.\n*not_enough_user_plane_processing_resources\x10\x04\x12\x0f\n\x0bunspecified\x10\x05\x42:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x11\x65rror_cause.proto\x12\x13streaming_protobufs\"\xf2\x01\n\x05\x43\x61use\x12>\n\x0cradioNetwork\x18\x01 \x01(\x0b\x32&.streaming_protobufs.CauseRadioNetworkH\x00\x12\x38\n\ttransport\x18\x02 \x01(\x0b\x32#.streaming_protobufs.CauseTransportH\x00\x12\x36\n\x08protocol\x18\x03 \x01(\x0b\x32\".streaming_protobufs.CauseProtocolH\x00\x12.\n\x04misc\x18\x04 \x01(\x0b\x32\x1e.streaming_protobufs.CauseMiscH\x00\x42\x07\n\x05value\"\xdf\x0c\n\x11\x43\x61useRadioNetwork\x12;\n\x05value\x18\x01 \x01(\x0e\x32,.streaming_protobufs.CauseRadioNetwork.Value\"\x8c\x0c\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12(\n$handover_desirable_for_radio_reasons\x10\x01\x12\x1a\n\x16time_critical_handover\x10\x02\x12\"\n\x1eresource_optimisation_handover\x10\x03\x12\x1f\n\x1breduce_load_in_serving_cell\x10\x04\x12\x14\n\x10partial_handover\x10\x05\x12\x1e\n\x1aunknown_new_eNB_UE_X2AP_ID\x10\x06\x12\x1e\n\x1aunknown_old_eNB_UE_X2AP_ID\x10\x07\x12\x1e\n\x1aunknown_pair_of_UE_X2AP_ID\x10\x08\x12\x19\n\x15ho_target_not_allowed\x10\t\x12\x1a\n\x16tx2relocoverall_expiry\x10\n\x12\x15\n\x11trelocprep_expiry\x10\x0b\x12\x16\n\x12\x63\x65ll_not_available\x10\x0c\x12/\n+no_radio_resources_available_in_target_cell\x10\r\x12\x17\n\x13invalid_MME_GroupID\x10\x0e\x12\x14\n\x10unknown_MME_Code\x10\x0f\x12\x43\n?encryption_and_or_integrity_protection_algorithms_not_supported\x10\x10\x12\x1e\n\x1areportCharacteristicsEmpty\x10\x11\x12\x17\n\x13noReportPeriodicity\x10\x12\x12\x19\n\x15\x65xistingMeasurementID\x10\x13\x12\x1e\n\x1aunknown_eNB_Measurement_ID\x10\x14\x12)\n%measurement_temporarily_not_available\x10\x15\x12\x0f\n\x0bunspecified\x10\x16\x12\x12\n\x0eload_balancing\x10\x17\x12\x19\n\x15handover_optimisation\x10\x18\x12\x1e\n\x1avalue_out_of_allowed_range\x10\x19\x12\x1f\n\x1bmultiple_E_RAB_ID_instances\x10\x1a\x12\x16\n\x12switch_off_ongoing\x10\x1b\x12\x1b\n\x17not_supported_QCI_value\x10\x1c\x12,\n(measurement_not_supported_for_the_object\x10\x1d\x12\x15\n\x11tDCoverall_expiry\x10\x1e\x12\x12\n\x0etDCprep_expiry\x10\x1f\x12&\n\"action_desirable_for_radio_reasons\x10 \x12\x0f\n\x0breduce_load\x10!\x12\x19\n\x15resource_optimisation\x10\"\x12\x18\n\x14time_critical_action\x10#\x12\x16\n\x12target_not_allowed\x10$\x12 \n\x1cno_radio_resources_available\x10%\x12\x1b\n\x17invalid_QoS_combination\x10&\x12\'\n#encryption_algorithms_not_aupported\x10\'\x12\x17\n\x13procedure_cancelled\x10(\x12\x0f\n\x0brRM_purpose\x10)\x12\x19\n\x15improve_user_bit_rate\x10*\x12\x13\n\x0fuser_inactivity\x10+\x12!\n\x1dradio_connection_with_UE_lost\x10,\x12,\n(failure_in_the_radio_interface_procedure\x10-\x12\x1f\n\x1b\x62\x65\x61rer_option_not_supported\x10.\x12\x10\n\x0cmCG_Mobility\x10/\x12\x10\n\x0csCG_Mobility\x10\x30\x12\x1b\n\x17\x63ount_reaches_max_value\x10\x31\x12!\n\x1dunknown_old_en_gNB_UE_X2AP_ID\x10\x32\x12\x11\n\rpDCP_Overload\x10\x33\"\xa2\x01\n\x0e\x43\x61useTransport\x12\x38\n\x05value\x18\x01 \x01(\x0e\x32).streaming_protobufs.CauseTransport.Value\"V\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\"\n\x1etransport_resource_unavailable\x10\x01\x12\x0f\n\x0bunspecified\x10\x02\"\xe2\x02\n\rCauseProtocol\x12\x37\n\x05value\x18\x01 \x01(\x0e\x32(.streaming_protobufs.CauseProtocol.Value\"\x97\x02\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x19\n\x15transfer_syntax_error\x10\x01\x12 \n\x1c\x61\x62stract_syntax_error_reject\x10\x02\x12+\n\'abstract_syntax_error_ignore_and_notify\x10\x03\x12.\n*message_not_compatible_with_receiver_state\x10\x04\x12\x12\n\x0esemantic_error\x10\x05\x12\x0f\n\x0bunspecified\x10\x06\x12\x35\n1abstract_syntax_error_falsely_constructed_message\x10\x07\"\xf1\x01\n\tCauseMisc\x12\x33\n\x05value\x18\x01 \x01(\x0e\x32$.streaming_protobufs.CauseMisc.Value\"\xae\x01\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1f\n\x1b\x63ontrol_processing_overload\x10\x01\x12\x14\n\x10hardware_failure\x10\x02\x12\x13\n\x0fom_intervention\x10\x03\x12.\n*not_enough_user_plane_processing_resources\x10\x04\x12\x0f\n\x0bunspecified\x10\x05\x42\x33Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
 )
 
 
 
 _CAUSERADIONETWORK_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.CauseRadioNetwork.Value',
+  full_name='streaming_protobufs.CauseRadioNetwork.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -249,7 +249,7 @@ _sym_db.RegisterEnumDescriptor(_CAUSERADIONETWORK_VALUE)
 
 _CAUSETRANSPORT_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.CauseTransport.Value',
+  full_name='streaming_protobufs.CauseTransport.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -275,7 +275,7 @@ _sym_db.RegisterEnumDescriptor(_CAUSETRANSPORT_VALUE)
 
 _CAUSEPROTOCOL_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.CauseProtocol.Value',
+  full_name='streaming_protobufs.CauseProtocol.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -321,7 +321,7 @@ _sym_db.RegisterEnumDescriptor(_CAUSEPROTOCOL_VALUE)
 
 _CAUSEMISC_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.CauseMisc.Value',
+  full_name='streaming_protobufs.CauseMisc.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -360,34 +360,34 @@ _sym_db.RegisterEnumDescriptor(_CAUSEMISC_VALUE)
 
 _CAUSE = _descriptor.Descriptor(
   name='Cause',
-  full_name='uenibstreamprotobuf.Cause',
+  full_name='streaming_protobufs.Cause',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='radioNetwork', full_name='uenibstreamprotobuf.Cause.radioNetwork', index=0,
+      name='radioNetwork', full_name='streaming_protobufs.Cause.radioNetwork', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='transport', full_name='uenibstreamprotobuf.Cause.transport', index=1,
+      name='transport', full_name='streaming_protobufs.Cause.transport', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='protocol', full_name='uenibstreamprotobuf.Cause.protocol', index=2,
+      name='protocol', full_name='streaming_protobufs.Cause.protocol', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='misc', full_name='uenibstreamprotobuf.Cause.misc', index=3,
+      name='misc', full_name='streaming_protobufs.Cause.misc', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -405,7 +405,7 @@ _CAUSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='value', full_name='uenibstreamprotobuf.Cause.value',
+      name='value', full_name='streaming_protobufs.Cause.value',
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=43,
@@ -415,13 +415,13 @@ _CAUSE = _descriptor.Descriptor(
 
 _CAUSERADIONETWORK = _descriptor.Descriptor(
   name='CauseRadioNetwork',
-  full_name='uenibstreamprotobuf.CauseRadioNetwork',
+  full_name='streaming_protobufs.CauseRadioNetwork',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.CauseRadioNetwork.value', index=0,
+      name='value', full_name='streaming_protobufs.CauseRadioNetwork.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -447,13 +447,13 @@ _CAUSERADIONETWORK = _descriptor.Descriptor(
 
 _CAUSETRANSPORT = _descriptor.Descriptor(
   name='CauseTransport',
-  full_name='uenibstreamprotobuf.CauseTransport',
+  full_name='streaming_protobufs.CauseTransport',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.CauseTransport.value', index=0,
+      name='value', full_name='streaming_protobufs.CauseTransport.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -479,13 +479,13 @@ _CAUSETRANSPORT = _descriptor.Descriptor(
 
 _CAUSEPROTOCOL = _descriptor.Descriptor(
   name='CauseProtocol',
-  full_name='uenibstreamprotobuf.CauseProtocol',
+  full_name='streaming_protobufs.CauseProtocol',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.CauseProtocol.value', index=0,
+      name='value', full_name='streaming_protobufs.CauseProtocol.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -511,13 +511,13 @@ _CAUSEPROTOCOL = _descriptor.Descriptor(
 
 _CAUSEMISC = _descriptor.Descriptor(
   name='CauseMisc',
-  full_name='uenibstreamprotobuf.CauseMisc',
+  full_name='streaming_protobufs.CauseMisc',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.CauseMisc.value', index=0,
+      name='value', full_name='streaming_protobufs.CauseMisc.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -574,35 +574,35 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Cause = _reflection.GeneratedProtocolMessageType('Cause', (_message.Message,), {
   'DESCRIPTOR' : _CAUSE,
   '__module__' : 'error_cause_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.Cause)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.Cause)
   })
 _sym_db.RegisterMessage(Cause)
 
 CauseRadioNetwork = _reflection.GeneratedProtocolMessageType('CauseRadioNetwork', (_message.Message,), {
   'DESCRIPTOR' : _CAUSERADIONETWORK,
   '__module__' : 'error_cause_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CauseRadioNetwork)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CauseRadioNetwork)
   })
 _sym_db.RegisterMessage(CauseRadioNetwork)
 
 CauseTransport = _reflection.GeneratedProtocolMessageType('CauseTransport', (_message.Message,), {
   'DESCRIPTOR' : _CAUSETRANSPORT,
   '__module__' : 'error_cause_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CauseTransport)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CauseTransport)
   })
 _sym_db.RegisterMessage(CauseTransport)
 
 CauseProtocol = _reflection.GeneratedProtocolMessageType('CauseProtocol', (_message.Message,), {
   'DESCRIPTOR' : _CAUSEPROTOCOL,
   '__module__' : 'error_cause_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CauseProtocol)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CauseProtocol)
   })
 _sym_db.RegisterMessage(CauseProtocol)
 
 CauseMisc = _reflection.GeneratedProtocolMessageType('CauseMisc', (_message.Message,), {
   'DESCRIPTOR' : _CAUSEMISC,
   '__module__' : 'error_cause_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CauseMisc)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CauseMisc)
   })
 _sym_db.RegisterMessage(CauseMisc)
 

@@ -20,20 +20,20 @@ PROTOBUF_C__BEGIN_DECLS
 #include "rrc_cg_config.pb-c.h"
 #include "error_cause.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__SgNBModificationRequired Uenibstreamprotobuf__SgNBModificationRequired;
-typedef struct _Uenibstreamprotobuf__SgNBModificationRequiredIEs Uenibstreamprotobuf__SgNBModificationRequiredIEs;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs;
-typedef struct _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList;
-typedef struct _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs;
-typedef struct _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem;
-typedef struct _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs;
-typedef struct _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent;
-typedef struct _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs;
-typedef struct _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent;
-typedef struct _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs;
+typedef struct _StreamingProtobufs__SgNBModificationRequired StreamingProtobufs__SgNBModificationRequired;
+typedef struct _StreamingProtobufs__SgNBModificationRequiredIEs StreamingProtobufs__SgNBModificationRequiredIEs;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs;
+typedef struct _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList;
+typedef struct _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs;
+typedef struct _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem;
+typedef struct _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs;
+typedef struct _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent;
+typedef struct _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs;
+typedef struct _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent;
+typedef struct _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs;
 
 
 /* --- enums --- */
@@ -41,497 +41,497 @@ typedef struct _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpres
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__SgNBModificationRequired
+struct  _StreamingProtobufs__SgNBModificationRequired
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__SgNBModificationRequiredIEs *protocolies;
+  StreamingProtobufs__SgNBModificationRequiredIEs *protocolies;
 };
-#define UENIBSTREAMPROTOBUF__SG_NBMODIFICATION_REQUIRED__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sg_nbmodification_required__descriptor) \
+#define STREAMING_PROTOBUFS__SG_NBMODIFICATION_REQUIRED__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sg_nbmodification_required__descriptor) \
     , NULL }
 
 
-struct  _Uenibstreamprotobuf__SgNBModificationRequiredIEs
+struct  _StreamingProtobufs__SgNBModificationRequiredIEs
 {
   ProtobufCMessage base;
   uint32_t id_menb_ue_x2ap_id;
   uint32_t id_sgnb_ue_x2ap_id;
-  Uenibstreamprotobuf__Cause *id_cause;
-  Uenibstreamprotobuf__PDCPChangeIndication *id_pdcpchangeindication;
-  Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList *id_e_rabs_tobereleased_sgnbmodreqdlist;
+  StreamingProtobufs__Cause *id_cause;
+  StreamingProtobufs__PDCPChangeIndication *id_pdcpchangeindication;
+  StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList *id_e_rabs_tobereleased_sgnbmodreqdlist;
   /*
    *The content of id_SgNBtoMeNBContainer has been specified in 3GPP 38.331 to be CG-Config.
    */
-  Uenibstreamprotobuf__CGConfig *id_sgnbtomenbcontainer;
+  StreamingProtobufs__CGConfig *id_sgnbtomenbcontainer;
   Google__Protobuf__UInt32Value *id_menb_ue_x2ap_id_extension;
-  Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList *id_e_rabs_tobemodified_sgnbmodreqdlist;
-  Uenibstreamprotobuf__SgNBResourceCoordinationInformation *id_sgnbresourcecoordinationinformation;
-  Uenibstreamprotobuf__RRCConfigInd *id_rrcconfigindication;
+  StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList *id_e_rabs_tobemodified_sgnbmodreqdlist;
+  StreamingProtobufs__SgNBResourceCoordinationInformation *id_sgnbresourcecoordinationinformation;
+  StreamingProtobufs__RRCConfigInd *id_rrcconfigindication;
 };
-#define UENIBSTREAMPROTOBUF__SG_NBMODIFICATION_REQUIRED__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sg_nbmodification_required__ies__descriptor) \
+#define STREAMING_PROTOBUFS__SG_NBMODIFICATION_REQUIRED__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sg_nbmodification_required__ies__descriptor) \
     , 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList
 {
   ProtobufCMessage base;
   size_t n_items;
-  Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs **items;
+  StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs **items;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBMOD_REQD_LIST__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd_list__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBMOD_REQD_LIST__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd_list__descriptor) \
     , 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem *id_e_rabs_tobereleased_sgnbmodreqd_item;
+  StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem *id_e_rabs_tobereleased_sgnbmodreqd_item;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBMOD_REQD__ITEM_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBMOD_REQD__ITEM_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__descriptor) \
     , NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem
 {
   ProtobufCMessage base;
   uint32_t e_rab_id;
-  Uenibstreamprotobuf__Cause *cause;
+  StreamingProtobufs__Cause *cause;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs **ie_extensions;
+  StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBMOD_REQD__ITEM__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBMOD_REQD__ITEM__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item__descriptor) \
     , 0, NULL, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__RLCMode *id_rlcmode_transferred;
+  StreamingProtobufs__RLCMode *id_rlcmode_transferred;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBMOD_REQD__ITEM_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBMOD_REQD__ITEM_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__descriptor) \
     , NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList
+struct  _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList
 {
   ProtobufCMessage base;
   size_t n_items;
-  Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs **items;
+  StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs **items;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD_LIST__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd_list__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD_LIST__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd_list__descriptor) \
     , 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs
+struct  _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem *id_e_rabs_tobemodified_sgnbmodreqd_item;
+  StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem *id_e_rabs_tobemodified_sgnbmodreqd_item;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__descriptor) \
     , NULL }
 
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPPRESENT = 3,
-  UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPNOTPRESENT = 4
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION)
-} Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem__ResourceConfigurationCase;
+  STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION__NOT_SET = 0,
+  STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPPRESENT = 3,
+  STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPNOTPRESENT = 4
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION)
+} StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem__ResourceConfigurationCase;
 
-struct  _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem
+struct  _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem
 {
   ProtobufCMessage base;
   uint32_t e_rab_id;
-  Uenibstreamprotobuf__ENDCResourceConfiguration *en_dc_resourceconfiguration;
+  StreamingProtobufs__ENDCResourceConfiguration *en_dc_resourceconfiguration;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs **ie_extensions;
-  Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem__ResourceConfigurationCase resource_configuration_case;
+  StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs **ie_extensions;
+  StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem__ResourceConfigurationCase resource_configuration_case;
   union {
-    Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent *sgnbpdcppresent;
-    Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent *sgnbpdcpnotpresent;
+    StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent *sgnbpdcppresent;
+    StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent *sgnbpdcpnotpresent;
   };
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item__descriptor) \
-    , 0, NULL, 0,NULL, UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item__descriptor) \
+    , 0, NULL, 0,NULL, STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM__RESOURCE_CONFIGURATION__NOT_SET, {0} }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs
+struct  _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__ITEM_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__descriptor) \
      }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent
+struct  _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__ERABLevelQoSParameters *requested_mcg_e_rab_level_qos_parameters;
-  Uenibstreamprotobuf__ULConfiguration *ul_configuration;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *sgnb_ul_gtp_teidatpdcp;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *s1_dl_gtp_teidatsgnb;
+  StreamingProtobufs__ERABLevelQoSParameters *requested_mcg_e_rab_level_qos_parameters;
+  StreamingProtobufs__ULConfiguration *ul_configuration;
+  StreamingProtobufs__GTPtunnelEndpoint *sgnb_ul_gtp_teidatpdcp;
+  StreamingProtobufs__GTPtunnelEndpoint *s1_dl_gtp_teidatsgnb;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs **ie_extensions;
+  StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__SG_NBPDCPPRESENT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__SG_NBPDCPPRESENT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__descriptor) \
     , NULL, NULL, NULL, NULL, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs
+struct  _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__PDCPSnLength *id_ulpdcpsnlength;
-  Uenibstreamprotobuf__PDCPSnLength *id_dlpdcpsnlength;
-  Uenibstreamprotobuf__TrueOpt *id_new_drb_id_req;
+  StreamingProtobufs__PDCPSnLength *id_ulpdcpsnlength;
+  StreamingProtobufs__PDCPSnLength *id_dlpdcpsnlength;
+  StreamingProtobufs__TrueOpt *id_new_drb_id_req;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__SG_NBPDCPPRESENT_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__SG_NBPDCPPRESENT_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__descriptor) \
     , NULL, NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent
+struct  _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *sgnb_dl_gtp_teidatscg;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *secondary_sgnb_dl_gtp_teidatscg;
+  StreamingProtobufs__GTPtunnelEndpoint *sgnb_dl_gtp_teidatscg;
+  StreamingProtobufs__GTPtunnelEndpoint *secondary_sgnb_dl_gtp_teidatscg;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs **ie_extensions;
+  StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__SG_NBPDCPNOTPRESENT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__SG_NBPDCPNOTPRESENT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__descriptor) \
     , NULL, NULL, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs
+struct  _StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__RLCStatus *id_rlc_status;
+  StreamingProtobufs__RLCStatus *id_rlc_status;
   Google__Protobuf__UInt32Value *id_lcid;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__SG_NBPDCPNOTPRESENT_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_MODIFIED__SG_NBMOD_REQD__SG_NBPDCPNOTPRESENT_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__descriptor) \
     , NULL, NULL }
 
 
-/* Uenibstreamprotobuf__SgNBModificationRequired methods */
-void   uenibstreamprotobuf__sg_nbmodification_required__init
-                     (Uenibstreamprotobuf__SgNBModificationRequired         *message);
-size_t uenibstreamprotobuf__sg_nbmodification_required__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBModificationRequired   *message);
-size_t uenibstreamprotobuf__sg_nbmodification_required__pack
-                     (const Uenibstreamprotobuf__SgNBModificationRequired   *message,
+/* StreamingProtobufs__SgNBModificationRequired methods */
+void   streaming_protobufs__sg_nbmodification_required__init
+                     (StreamingProtobufs__SgNBModificationRequired         *message);
+size_t streaming_protobufs__sg_nbmodification_required__get_packed_size
+                     (const StreamingProtobufs__SgNBModificationRequired   *message);
+size_t streaming_protobufs__sg_nbmodification_required__pack
+                     (const StreamingProtobufs__SgNBModificationRequired   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sg_nbmodification_required__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBModificationRequired   *message,
+size_t streaming_protobufs__sg_nbmodification_required__pack_to_buffer
+                     (const StreamingProtobufs__SgNBModificationRequired   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SgNBModificationRequired *
-       uenibstreamprotobuf__sg_nbmodification_required__unpack
+StreamingProtobufs__SgNBModificationRequired *
+       streaming_protobufs__sg_nbmodification_required__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sg_nbmodification_required__free_unpacked
-                     (Uenibstreamprotobuf__SgNBModificationRequired *message,
+void   streaming_protobufs__sg_nbmodification_required__free_unpacked
+                     (StreamingProtobufs__SgNBModificationRequired *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__SgNBModificationRequiredIEs methods */
-void   uenibstreamprotobuf__sg_nbmodification_required__ies__init
-                     (Uenibstreamprotobuf__SgNBModificationRequiredIEs         *message);
-size_t uenibstreamprotobuf__sg_nbmodification_required__ies__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBModificationRequiredIEs   *message);
-size_t uenibstreamprotobuf__sg_nbmodification_required__ies__pack
-                     (const Uenibstreamprotobuf__SgNBModificationRequiredIEs   *message,
+/* StreamingProtobufs__SgNBModificationRequiredIEs methods */
+void   streaming_protobufs__sg_nbmodification_required__ies__init
+                     (StreamingProtobufs__SgNBModificationRequiredIEs         *message);
+size_t streaming_protobufs__sg_nbmodification_required__ies__get_packed_size
+                     (const StreamingProtobufs__SgNBModificationRequiredIEs   *message);
+size_t streaming_protobufs__sg_nbmodification_required__ies__pack
+                     (const StreamingProtobufs__SgNBModificationRequiredIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sg_nbmodification_required__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBModificationRequiredIEs   *message,
+size_t streaming_protobufs__sg_nbmodification_required__ies__pack_to_buffer
+                     (const StreamingProtobufs__SgNBModificationRequiredIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SgNBModificationRequiredIEs *
-       uenibstreamprotobuf__sg_nbmodification_required__ies__unpack
+StreamingProtobufs__SgNBModificationRequiredIEs *
+       streaming_protobufs__sg_nbmodification_required__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sg_nbmodification_required__ies__free_unpacked
-                     (Uenibstreamprotobuf__SgNBModificationRequiredIEs *message,
+void   streaming_protobufs__sg_nbmodification_required__ies__free_unpacked
+                     (StreamingProtobufs__SgNBModificationRequiredIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd_list__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd_list__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd_list__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd_list__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd_list__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd_list__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd_list__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd_list__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd_list__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd_list__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd_list__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd_list__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList methods */
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd_list__init
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd_list__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd_list__pack
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList   *message,
+/* StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList methods */
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd_list__init
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList         *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd_list__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList   *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd_list__pack
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd_list__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList   *message,
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd_list__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList *
-       uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd_list__unpack
+StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList *
+       streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd_list__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd_list__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList *message,
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd_list__free_unpacked
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs methods */
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs   *message,
+/* StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs methods */
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__init
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs         *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs   *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__pack
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs   *message,
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs *
-       uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__unpack
+StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs *
+       streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs *message,
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem methods */
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item__init
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item__pack
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem   *message,
+/* StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem methods */
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item__init
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem         *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem   *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item__pack
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem   *message,
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem *
-       uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item__unpack
+StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem *
+       streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem *message,
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item__free_unpacked
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs methods */
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs   *message,
+/* StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs methods */
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs         *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs   *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs   *message,
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__unpack
+StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs *
+       streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent methods */
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__init
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__pack
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent   *message,
+/* StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent methods */
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__init
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent         *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent   *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__pack
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent   *message,
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent *
-       uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__unpack
+StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent *
+       streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent *message,
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__free_unpacked
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs methods */
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs   *message,
+/* StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs methods */
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs         *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs   *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs   *message,
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__unpack
+StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs *
+       streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent methods */
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__init
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__pack
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent   *message,
+/* StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent methods */
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__init
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent         *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent   *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__pack
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent   *message,
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent *
-       uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__unpack
+StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent *
+       streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent *message,
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__free_unpacked
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs methods */
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs   *message,
+/* StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs methods */
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs         *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs   *message);
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs   *message,
+size_t streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__unpack
+StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs *
+       streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__SgNBModificationRequired_Closure)
-                 (const Uenibstreamprotobuf__SgNBModificationRequired *message,
+typedef void (*StreamingProtobufs__SgNBModificationRequired_Closure)
+                 (const StreamingProtobufs__SgNBModificationRequired *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__SgNBModificationRequiredIEs_Closure)
-                 (const Uenibstreamprotobuf__SgNBModificationRequiredIEs *message,
+typedef void (*StreamingProtobufs__SgNBModificationRequiredIEs_Closure)
+                 (const StreamingProtobufs__SgNBModificationRequiredIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdList *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdList *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemIEs *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItem *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItem *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBModReqdItemExtIEs *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBModReqdItemExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdList *message,
+typedef void (*StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList_Closure)
+                 (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdList *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemIEs *message,
+typedef void (*StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs_Closure)
+                 (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItem *message,
+typedef void (*StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem_Closure)
+                 (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItem *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdItemExtIEs *message,
+typedef void (*StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs_Closure)
+                 (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdItemExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent *message,
+typedef void (*StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent_Closure)
+                 (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresent *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs *message,
+typedef void (*StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs_Closure)
+                 (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPpresentExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent *message,
+typedef void (*StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent_Closure)
+                 (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresent *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs *message,
+typedef void (*StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs_Closure)
+                 (const StreamingProtobufs__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotpresentExtIEs *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -539,20 +539,20 @@ typedef void (*Uenibstreamprotobuf__ERABsToBeModifiedSgNBModReqdSgNBPDCPnotprese
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbmodification_required__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbmodification_required__ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd_list__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd_list__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sg_nbmodification_required__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sg_nbmodification_required__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd_list__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbmod_reqd__item_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd_list__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__item_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcppresent_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_modified__sg_nbmod_reqd__sg_nbpdcpnotpresent_ext_ies__descriptor;
 
 PROTOBUF_C__END_DECLS
 

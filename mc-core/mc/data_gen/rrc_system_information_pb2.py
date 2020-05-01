@@ -20,10 +20,10 @@ import rrc_sib_pb2 as rrc__sib__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rrc_system_information.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x1crrc_system_information.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x16rrc_common_types.proto\x1a\rrrc_sib.proto\"v\n\x11SystemInformation\x12K\n\x15systemInformation_r15\x18\x01 \x01(\x0b\x32*.uenibstreamprotobuf.SystemInformation_IEsH\x00\x42\x14\n\x12\x63riticalExtensions\"\x96\x01\n\x15SystemInformation_IEs\x12=\n\x0fsib_TypeAndInfo\x18\x01 \x03(\x0b\x32$.uenibstreamprotobuf.SIB_TypeAndInfo\x12>\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xee\x02\n\x0fSIB_TypeAndInfo\x12)\n\x04sib2\x18\x01 \x01(\x0b\x32\x19.uenibstreamprotobuf.SIB2H\x00\x12)\n\x04sib3\x18\x02 \x01(\x0b\x32\x19.uenibstreamprotobuf.SIB3H\x00\x12)\n\x04sib4\x18\x03 \x01(\x0b\x32\x19.uenibstreamprotobuf.SIB4H\x00\x12)\n\x04sib5\x18\x04 \x01(\x0b\x32\x19.uenibstreamprotobuf.SIB5H\x00\x12)\n\x04sib6\x18\x05 \x01(\x0b\x32\x19.uenibstreamprotobuf.SIB6H\x00\x12)\n\x04sib7\x18\x06 \x01(\x0b\x32\x19.uenibstreamprotobuf.SIB7H\x00\x12)\n\x04sib8\x18\x07 \x01(\x0b\x32\x19.uenibstreamprotobuf.SIB8H\x00\x12)\n\x04sib9\x18\x08 \x01(\x0b\x32\x19.uenibstreamprotobuf.SIB9H\x00\x42\x03\n\x01\x63\x42:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x1crrc_system_information.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x16rrc_common_types.proto\x1a\rrrc_sib.proto\"v\n\x11SystemInformation\x12K\n\x15systemInformation_r15\x18\x01 \x01(\x0b\x32*.streaming_protobufs.SystemInformation_IEsH\x00\x42\x14\n\x12\x63riticalExtensions\"\x95\x01\n\x15SystemInformation_IEs\x12=\n\x0fsib_TypeAndInfo\x18\x01 \x03(\x0b\x32$.streaming_protobufs.SIB_TypeAndInfo\x12=\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"\xee\x02\n\x0fSIB_TypeAndInfo\x12)\n\x04sib2\x18\x01 \x01(\x0b\x32\x19.streaming_protobufs.SIB2H\x00\x12)\n\x04sib3\x18\x02 \x01(\x0b\x32\x19.streaming_protobufs.SIB3H\x00\x12)\n\x04sib4\x18\x03 \x01(\x0b\x32\x19.streaming_protobufs.SIB4H\x00\x12)\n\x04sib5\x18\x04 \x01(\x0b\x32\x19.streaming_protobufs.SIB5H\x00\x12)\n\x04sib6\x18\x05 \x01(\x0b\x32\x19.streaming_protobufs.SIB6H\x00\x12)\n\x04sib7\x18\x06 \x01(\x0b\x32\x19.streaming_protobufs.SIB7H\x00\x12)\n\x04sib8\x18\x07 \x01(\x0b\x32\x19.streaming_protobufs.SIB8H\x00\x12)\n\x04sib9\x18\x08 \x01(\x0b\x32\x19.streaming_protobufs.SIB9H\x00\x42\x03\n\x01\x63\x42\x33Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,rrc__common__types__pb2.DESCRIPTOR,rrc__sib__pb2.DESCRIPTOR,])
 
@@ -32,13 +32,13 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _SYSTEMINFORMATION = _descriptor.Descriptor(
   name='SystemInformation',
-  full_name='uenibstreamprotobuf.SystemInformation',
+  full_name='streaming_protobufs.SystemInformation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='systemInformation_r15', full_name='uenibstreamprotobuf.SystemInformation.systemInformation_r15', index=0,
+      name='systemInformation_r15', full_name='streaming_protobufs.SystemInformation.systemInformation_r15', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -56,7 +56,7 @@ _SYSTEMINFORMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='criticalExtensions', full_name='uenibstreamprotobuf.SystemInformation.criticalExtensions',
+      name='criticalExtensions', full_name='streaming_protobufs.SystemInformation.criticalExtensions',
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=124,
@@ -66,20 +66,20 @@ _SYSTEMINFORMATION = _descriptor.Descriptor(
 
 _SYSTEMINFORMATION_IES = _descriptor.Descriptor(
   name='SystemInformation_IEs',
-  full_name='uenibstreamprotobuf.SystemInformation_IEs',
+  full_name='streaming_protobufs.SystemInformation_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='sib_TypeAndInfo', full_name='uenibstreamprotobuf.SystemInformation_IEs.sib_TypeAndInfo', index=0,
+      name='sib_TypeAndInfo', full_name='streaming_protobufs.SystemInformation_IEs.sib_TypeAndInfo', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.SystemInformation_IEs.lateNonCriticalExtension', index=1,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.SystemInformation_IEs.lateNonCriticalExtension', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -98,68 +98,68 @@ _SYSTEMINFORMATION_IES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=245,
-  serialized_end=395,
+  serialized_end=394,
 )
 
 
 _SIB_TYPEANDINFO = _descriptor.Descriptor(
   name='SIB_TypeAndInfo',
-  full_name='uenibstreamprotobuf.SIB_TypeAndInfo',
+  full_name='streaming_protobufs.SIB_TypeAndInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='sib2', full_name='uenibstreamprotobuf.SIB_TypeAndInfo.sib2', index=0,
+      name='sib2', full_name='streaming_protobufs.SIB_TypeAndInfo.sib2', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sib3', full_name='uenibstreamprotobuf.SIB_TypeAndInfo.sib3', index=1,
+      name='sib3', full_name='streaming_protobufs.SIB_TypeAndInfo.sib3', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sib4', full_name='uenibstreamprotobuf.SIB_TypeAndInfo.sib4', index=2,
+      name='sib4', full_name='streaming_protobufs.SIB_TypeAndInfo.sib4', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sib5', full_name='uenibstreamprotobuf.SIB_TypeAndInfo.sib5', index=3,
+      name='sib5', full_name='streaming_protobufs.SIB_TypeAndInfo.sib5', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sib6', full_name='uenibstreamprotobuf.SIB_TypeAndInfo.sib6', index=4,
+      name='sib6', full_name='streaming_protobufs.SIB_TypeAndInfo.sib6', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sib7', full_name='uenibstreamprotobuf.SIB_TypeAndInfo.sib7', index=5,
+      name='sib7', full_name='streaming_protobufs.SIB_TypeAndInfo.sib7', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sib8', full_name='uenibstreamprotobuf.SIB_TypeAndInfo.sib8', index=6,
+      name='sib8', full_name='streaming_protobufs.SIB_TypeAndInfo.sib8', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sib9', full_name='uenibstreamprotobuf.SIB_TypeAndInfo.sib9', index=7,
+      name='sib9', full_name='streaming_protobufs.SIB_TypeAndInfo.sib9', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -177,11 +177,11 @@ _SIB_TYPEANDINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='c', full_name='uenibstreamprotobuf.SIB_TypeAndInfo.c',
+      name='c', full_name='streaming_protobufs.SIB_TypeAndInfo.c',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=398,
-  serialized_end=764,
+  serialized_start=397,
+  serialized_end=763,
 )
 
 _SYSTEMINFORMATION.fields_by_name['systemInformation_r15'].message_type = _SYSTEMINFORMATION_IES
@@ -189,7 +189,7 @@ _SYSTEMINFORMATION.oneofs_by_name['criticalExtensions'].fields.append(
   _SYSTEMINFORMATION.fields_by_name['systemInformation_r15'])
 _SYSTEMINFORMATION.fields_by_name['systemInformation_r15'].containing_oneof = _SYSTEMINFORMATION.oneofs_by_name['criticalExtensions']
 _SYSTEMINFORMATION_IES.fields_by_name['sib_TypeAndInfo'].message_type = _SIB_TYPEANDINFO
-_SYSTEMINFORMATION_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SYSTEMINFORMATION_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _SIB_TYPEANDINFO.fields_by_name['sib2'].message_type = rrc__sib__pb2._SIB2
 _SIB_TYPEANDINFO.fields_by_name['sib3'].message_type = rrc__sib__pb2._SIB3
 _SIB_TYPEANDINFO.fields_by_name['sib4'].message_type = rrc__sib__pb2._SIB4
@@ -230,21 +230,21 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 SystemInformation = _reflection.GeneratedProtocolMessageType('SystemInformation', (_message.Message,), {
   'DESCRIPTOR' : _SYSTEMINFORMATION,
   '__module__' : 'rrc_system_information_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SystemInformation)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SystemInformation)
   })
 _sym_db.RegisterMessage(SystemInformation)
 
 SystemInformation_IEs = _reflection.GeneratedProtocolMessageType('SystemInformation_IEs', (_message.Message,), {
   'DESCRIPTOR' : _SYSTEMINFORMATION_IES,
   '__module__' : 'rrc_system_information_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SystemInformation_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SystemInformation_IEs)
   })
 _sym_db.RegisterMessage(SystemInformation_IEs)
 
 SIB_TypeAndInfo = _reflection.GeneratedProtocolMessageType('SIB_TypeAndInfo', (_message.Message,), {
   'DESCRIPTOR' : _SIB_TYPEANDINFO,
   '__module__' : 'rrc_system_information_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB_TypeAndInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB_TypeAndInfo)
   })
 _sym_db.RegisterMessage(SIB_TypeAndInfo)
 

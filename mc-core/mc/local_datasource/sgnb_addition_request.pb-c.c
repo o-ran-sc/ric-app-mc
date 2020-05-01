@@ -7,457 +7,457 @@
 #endif
 
 #include "sgnb_addition_request.pb-c.h"
-void   uenibstreamprotobuf__sg_nbaddition_request__init
-                     (Uenibstreamprotobuf__SgNBAdditionRequest         *message)
+void   streaming_protobufs__sg_nbaddition_request__init
+                     (StreamingProtobufs__SgNBAdditionRequest         *message)
 {
-  static const Uenibstreamprotobuf__SgNBAdditionRequest init_value = UENIBSTREAMPROTOBUF__SG_NBADDITION_REQUEST__INIT;
+  static const StreamingProtobufs__SgNBAdditionRequest init_value = STREAMING_PROTOBUFS__SG_NBADDITION_REQUEST__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__sg_nbaddition_request__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBAdditionRequest *message)
+size_t streaming_protobufs__sg_nbaddition_request__get_packed_size
+                     (const StreamingProtobufs__SgNBAdditionRequest *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbaddition_request__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbaddition_request__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__sg_nbaddition_request__pack
-                     (const Uenibstreamprotobuf__SgNBAdditionRequest *message,
+size_t streaming_protobufs__sg_nbaddition_request__pack
+                     (const StreamingProtobufs__SgNBAdditionRequest *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbaddition_request__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbaddition_request__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__sg_nbaddition_request__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBAdditionRequest *message,
+size_t streaming_protobufs__sg_nbaddition_request__pack_to_buffer
+                     (const StreamingProtobufs__SgNBAdditionRequest *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbaddition_request__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbaddition_request__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__SgNBAdditionRequest *
-       uenibstreamprotobuf__sg_nbaddition_request__unpack
+StreamingProtobufs__SgNBAdditionRequest *
+       streaming_protobufs__sg_nbaddition_request__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__SgNBAdditionRequest *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__sg_nbaddition_request__descriptor,
+  return (StreamingProtobufs__SgNBAdditionRequest *)
+     protobuf_c_message_unpack (&streaming_protobufs__sg_nbaddition_request__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__sg_nbaddition_request__free_unpacked
-                     (Uenibstreamprotobuf__SgNBAdditionRequest *message,
+void   streaming_protobufs__sg_nbaddition_request__free_unpacked
+                     (StreamingProtobufs__SgNBAdditionRequest *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbaddition_request__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbaddition_request__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__sg_nbaddition_request__ies__init
-                     (Uenibstreamprotobuf__SgNBAdditionRequestIEs         *message)
+void   streaming_protobufs__sg_nbaddition_request__ies__init
+                     (StreamingProtobufs__SgNBAdditionRequestIEs         *message)
 {
-  static const Uenibstreamprotobuf__SgNBAdditionRequestIEs init_value = UENIBSTREAMPROTOBUF__SG_NBADDITION_REQUEST__IES__INIT;
+  static const StreamingProtobufs__SgNBAdditionRequestIEs init_value = STREAMING_PROTOBUFS__SG_NBADDITION_REQUEST__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__sg_nbaddition_request__ies__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBAdditionRequestIEs *message)
+size_t streaming_protobufs__sg_nbaddition_request__ies__get_packed_size
+                     (const StreamingProtobufs__SgNBAdditionRequestIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbaddition_request__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbaddition_request__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__sg_nbaddition_request__ies__pack
-                     (const Uenibstreamprotobuf__SgNBAdditionRequestIEs *message,
+size_t streaming_protobufs__sg_nbaddition_request__ies__pack
+                     (const StreamingProtobufs__SgNBAdditionRequestIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbaddition_request__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbaddition_request__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__sg_nbaddition_request__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBAdditionRequestIEs *message,
+size_t streaming_protobufs__sg_nbaddition_request__ies__pack_to_buffer
+                     (const StreamingProtobufs__SgNBAdditionRequestIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbaddition_request__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbaddition_request__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__SgNBAdditionRequestIEs *
-       uenibstreamprotobuf__sg_nbaddition_request__ies__unpack
+StreamingProtobufs__SgNBAdditionRequestIEs *
+       streaming_protobufs__sg_nbaddition_request__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__SgNBAdditionRequestIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__sg_nbaddition_request__ies__descriptor,
+  return (StreamingProtobufs__SgNBAdditionRequestIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__sg_nbaddition_request__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__sg_nbaddition_request__ies__free_unpacked
-                     (Uenibstreamprotobuf__SgNBAdditionRequestIEs *message,
+void   streaming_protobufs__sg_nbaddition_request__ies__free_unpacked
+                     (StreamingProtobufs__SgNBAdditionRequestIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbaddition_request__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbaddition_request__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__init
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList         *message)
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__init
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqList         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_ADDED__SG_NBADD_REQ_LIST__INIT;
+  static const StreamingProtobufs__ERABsToBeAddedSgNBAddReqList init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_ADDED__SG_NBADD_REQ_LIST__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList *message)
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqList *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__pack
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__pack
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqList *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqList *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList *
-       uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__unpack
+StreamingProtobufs__ERABsToBeAddedSgNBAddReqList *
+       streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__descriptor,
+  return (StreamingProtobufs__ERABsToBeAddedSgNBAddReqList *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList *message,
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__free_unpacked
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqList *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs         *message)
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__init
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__ITEM_IES__INIT;
+  static const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__ITEM_IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs *message)
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__pack
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs *
-       uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__unpack
+StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs *
+       streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor,
+  return (StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs *message,
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__init
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem         *message)
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__init
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__ITEM__INIT;
+  static const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__ITEM__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem *message)
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__pack
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__pack
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem *
-       uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__unpack
+StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem *
+       streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__descriptor,
+  return (StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem *message,
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__free_unpacked
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs         *message)
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__ITEM_EXT_IES__INIT;
+  static const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__ITEM_EXT_IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs *message)
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__unpack
+StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs *
+       streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor,
+  return (StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__init
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent         *message)
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__init
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__SG_NBPDCPPRESENT__INIT;
+  static const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__SG_NBPDCPPRESENT__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *message)
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__pack
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__pack
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *
-       uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__unpack
+StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *
+       streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor,
+  return (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *message,
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__free_unpacked
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs         *message)
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__SG_NBPDCPPRESENT_EXT_IES__INIT;
+  static const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__SG_NBPDCPPRESENT_EXT_IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *message)
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__unpack
+StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *
+       streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor,
+  return (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__init
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent         *message)
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__init
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__SG_NBPDCPNOTPRESENT__INIT;
+  static const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__SG_NBPDCPNOTPRESENT__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *message)
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__pack
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__pack
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *
-       uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__unpack
+StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *
+       streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor,
+  return (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *message,
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__free_unpacked
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs         *message)
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__SG_NBPDCPNOTPRESENT_EXT_IES__INIT;
+  static const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_ADDED__SG_NBADD_REQ__SG_NBPDCPNOTPRESENT_EXT_IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *message)
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__unpack
+StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *
+       streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor,
+  return (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__sg_nbaddition_request__field_descriptors[1] =
 {
   {
     "protocolIEs",
@@ -465,37 +465,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequest, protocolies),
-    &uenibstreamprotobuf__sg_nbaddition_request__ies__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequest, protocolies),
+    &streaming_protobufs__sg_nbaddition_request__ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__sg_nbaddition_request__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__sg_nbaddition_request__field_indices_by_name[] = {
   0,   /* field[0] = protocolIEs */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__sg_nbaddition_request__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__sg_nbaddition_request__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbaddition_request__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__sg_nbaddition_request__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.SgNBAdditionRequest",
+  "streaming_protobufs.SgNBAdditionRequest",
   "SgNBAdditionRequest",
-  "Uenibstreamprotobuf__SgNBAdditionRequest",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__SgNBAdditionRequest),
+  "StreamingProtobufs__SgNBAdditionRequest",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__SgNBAdditionRequest),
   1,
-  uenibstreamprotobuf__sg_nbaddition_request__field_descriptors,
-  uenibstreamprotobuf__sg_nbaddition_request__field_indices_by_name,
-  1,  uenibstreamprotobuf__sg_nbaddition_request__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__sg_nbaddition_request__init,
+  streaming_protobufs__sg_nbaddition_request__field_descriptors,
+  streaming_protobufs__sg_nbaddition_request__field_indices_by_name,
+  1,  streaming_protobufs__sg_nbaddition_request__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__sg_nbaddition_request__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request__ies__field_descriptors[16] =
+static const ProtobufCFieldDescriptor streaming_protobufs__sg_nbaddition_request__ies__field_descriptors[16] =
 {
   {
     "id_MeNB_UE_X2AP_ID",
@@ -503,7 +503,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_menb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_menb_ue_x2ap_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -515,8 +515,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_nruesecuritycapabilities),
-    &uenibstreamprotobuf__nruesecurity_capabilities__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_nruesecuritycapabilities),
+    &streaming_protobufs__nruesecurity_capabilities__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -525,11 +525,11 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     "id_SgNBSecurityKey",
     3,
     PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_STRING,
+    PROTOBUF_C_TYPE_BYTES,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_sgnbsecuritykey),
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_sgnbsecuritykey),
     NULL,
-    &protobuf_c_empty_string,
+    NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -539,8 +539,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_sgnbueaggregatemaximumbitrate),
-    &uenibstreamprotobuf__ueaggregate_maximum_bit_rate__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_sgnbueaggregatemaximumbitrate),
+    &streaming_protobufs__ueaggregate_maximum_bit_rate__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -551,8 +551,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_selectedplmn),
-    &google__protobuf__string_value__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_selectedplmn),
+    &google__protobuf__bytes_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -563,8 +563,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_handoverrestrictionlist),
-    &uenibstreamprotobuf__handover_restriction_list__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_handoverrestrictionlist),
+    &streaming_protobufs__handover_restriction_list__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -575,8 +575,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_e_rabs_tobeadded_sgnbaddreqlist),
-    &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_e_rabs_tobeadded_sgnbaddreqlist),
+    &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -587,8 +587,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_menbtosgnbcontainer),
-    &uenibstreamprotobuf__cg__config_info__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_menbtosgnbcontainer),
+    &streaming_protobufs__cg__config_info__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -599,7 +599,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_sgnb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_sgnb_ue_x2ap_id),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -611,8 +611,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_expecteduebehaviour),
-    &uenibstreamprotobuf__expected_uebehaviour__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_expecteduebehaviour),
+    &streaming_protobufs__expected_uebehaviour__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -623,7 +623,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_menb_ue_x2ap_id_extension),
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_menb_ue_x2ap_id_extension),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -635,8 +635,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_requestedsplitsrbs),
-    &uenibstreamprotobuf__split_srbs__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_requestedsplitsrbs),
+    &streaming_protobufs__split_srbs__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -647,8 +647,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_menbresourcecoordinationinformation),
-    &uenibstreamprotobuf__me_nbresource_coordination_information__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_menbresourcecoordinationinformation),
+    &streaming_protobufs__me_nbresource_coordination_information__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -659,8 +659,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_sgnb_addition_trigger_ind),
-    &uenibstreamprotobuf__sgnb__addition__trigger__ind__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_sgnb_addition_trigger_ind),
+    &streaming_protobufs__sgnb__addition__trigger__ind__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -671,7 +671,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_subscriberprofileidforrfp),
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_subscriberprofileidforrfp),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -683,14 +683,14 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbaddition_request
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBAdditionRequestIEs, id_menbcell_id),
-    &uenibstreamprotobuf__ecgi__descriptor,
+    offsetof(StreamingProtobufs__SgNBAdditionRequestIEs, id_menbcell_id),
+    &streaming_protobufs__ecgi__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__sg_nbaddition_request__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__sg_nbaddition_request__ies__field_indices_by_name[] = {
   6,   /* field[6] = id_E_RABs_ToBeAdded_SgNBAddReqList */
   9,   /* field[9] = id_ExpectedUEBehaviour */
   5,   /* field[5] = id_HandoverRestrictionList */
@@ -708,65 +708,65 @@ static const unsigned uenibstreamprotobuf__sg_nbaddition_request__ies__field_ind
   8,   /* field[8] = id_SgNB_UE_X2AP_ID */
   14,   /* field[14] = id_SubscriberProfileIDforRFP */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__sg_nbaddition_request__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__sg_nbaddition_request__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 16 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbaddition_request__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__sg_nbaddition_request__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.SgNBAdditionRequest_IEs",
+  "streaming_protobufs.SgNBAdditionRequest_IEs",
   "SgNBAdditionRequestIEs",
-  "Uenibstreamprotobuf__SgNBAdditionRequestIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__SgNBAdditionRequestIEs),
+  "StreamingProtobufs__SgNBAdditionRequestIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__SgNBAdditionRequestIEs),
   16,
-  uenibstreamprotobuf__sg_nbaddition_request__ies__field_descriptors,
-  uenibstreamprotobuf__sg_nbaddition_request__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__sg_nbaddition_request__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__sg_nbaddition_request__ies__init,
+  streaming_protobufs__sg_nbaddition_request__ies__field_descriptors,
+  streaming_protobufs__sg_nbaddition_request__ies__field_indices_by_name,
+  1,  streaming_protobufs__sg_nbaddition_request__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__sg_nbaddition_request__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__field_descriptors[1] =
 {
   {
     "items",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList, n_items),
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList, items),
-    &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqList, n_items),
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqList, items),
+    &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__field_indices_by_name[] = {
   0,   /* field[0] = items */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeAdded_SgNBAddReqList",
+  "streaming_protobufs.E_RABs_ToBeAdded_SgNBAddReqList",
   "ERABsToBeAddedSgNBAddReqList",
-  "Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList),
+  "StreamingProtobufs__ERABsToBeAddedSgNBAddReqList",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqList),
   1,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_list__init,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_list__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__field_descriptors[1] =
 {
   {
     "id_E_RABs_ToBeAdded_SgNBAddReq_Item",
@@ -774,37 +774,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs, id_e_rabs_tobeadded_sgnbaddreq_item),
-    &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs, id_e_rabs_tobeadded_sgnbaddreq_item),
+    &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__field_indices_by_name[] = {
   0,   /* field[0] = id_E_RABs_ToBeAdded_SgNBAddReq_Item */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeAdded_SgNBAddReq_ItemIEs",
+  "streaming_protobufs.E_RABs_ToBeAdded_SgNBAddReq_ItemIEs",
   "ERABsToBeAddedSgNBAddReqItemIEs",
-  "Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs),
+  "StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs),
   1,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ies__init,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__field_descriptors[6] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__field_descriptors[6] =
 {
   {
     "e_RAB_ID",
@@ -812,7 +812,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem, e_rab_id),
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem, e_rab_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -824,7 +824,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem, drb_id),
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem, drb_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -836,8 +836,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem, en_dc_resourceconfiguration),
-    &uenibstreamprotobuf__en__dc__resource_configuration__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem, en_dc_resourceconfiguration),
+    &streaming_protobufs__en__dc__resource_configuration__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -847,9 +847,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     4,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem, resource_configuration_case),
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem, sgnbpdcppresent),
-    &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem, resource_configuration_case),
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem, sgnbpdcppresent),
+    &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -859,9 +859,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     5,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem, resource_configuration_case),
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem, sgnbpdcpnotpresent),
-    &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem, resource_configuration_case),
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem, sgnbpdcpnotpresent),
+    &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -871,15 +871,15 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     6,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem, n_ie_extensions),
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem, ie_extensions),
-    &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem, n_ie_extensions),
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem, ie_extensions),
+    &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__field_indices_by_name[] = {
   1,   /* field[1] = drb_ID */
   0,   /* field[0] = e_RAB_ID */
   2,   /* field[2] = en_DC_ResourceConfiguration */
@@ -887,45 +887,45 @@ static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__i
   4,   /* field[4] = sgNBPDCPnotpresent */
   3,   /* field[3] = sgNBPDCPpresent */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 6 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeAdded_SgNBAddReq_Item",
+  "streaming_protobufs.E_RABs_ToBeAdded_SgNBAddReq_Item",
   "ERABsToBeAddedSgNBAddReqItem",
-  "Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem),
+  "StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem),
   6,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item__init,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-#define uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__field_descriptors NULL
-#define uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__field_indices_by_name NULL
-#define uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__number_ranges NULL
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor =
+#define streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__field_descriptors NULL
+#define streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__field_indices_by_name NULL
+#define streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__number_ranges NULL
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeAdded_SgNBAddReq_ItemExtIEs",
+  "streaming_protobufs.E_RABs_ToBeAdded_SgNBAddReq_ItemExtIEs",
   "ERABsToBeAddedSgNBAddReqItemExtIEs",
-  "Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemExtIEs),
+  "StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemExtIEs),
   0,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__field_indices_by_name,
-  0,  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__init,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__field_indices_by_name,
+  0,  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__item_ext_ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__field_descriptors[6] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__field_descriptors[6] =
 {
   {
     "full_E_RAB_Level_QoS_Parameters",
@@ -933,8 +933,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, full_e_rab_level_qos_parameters),
-    &uenibstreamprotobuf__e__rab__level__qo_s__parameters__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, full_e_rab_level_qos_parameters),
+    &streaming_protobufs__e__rab__level__qo_s__parameters__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -945,8 +945,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, max_mcg_admit_e_rab_level_qos_parameters),
-    &uenibstreamprotobuf__gbr__qos_information__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, max_mcg_admit_e_rab_level_qos_parameters),
+    &streaming_protobufs__gbr__qos_information__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -957,8 +957,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, dl_forwarding),
-    &uenibstreamprotobuf__dl__forwarding__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, dl_forwarding),
+    &streaming_protobufs__dl__forwarding__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -969,8 +969,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, menb_dl_gtp_teidatmcg),
-    &uenibstreamprotobuf__gtptunnel_endpoint__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, menb_dl_gtp_teidatmcg),
+    &streaming_protobufs__gtptunnel_endpoint__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -981,8 +981,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, s1_ul_gtptunnelendpoint),
-    &uenibstreamprotobuf__gtptunnel_endpoint__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, s1_ul_gtptunnelendpoint),
+    &streaming_protobufs__gtptunnel_endpoint__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -992,15 +992,15 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     6,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, n_ie_extensions),
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, ie_extensions),
-    &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, n_ie_extensions),
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent, ie_extensions),
+    &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__field_indices_by_name[] = {
   2,   /* field[2] = dL_Forwarding */
   0,   /* field[0] = full_E_RAB_Level_QoS_Parameters */
   5,   /* field[5] = iE_Extensions */
@@ -1008,27 +1008,27 @@ static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__s
   3,   /* field[3] = meNB_DL_GTP_TEIDatMCG */
   4,   /* field[4] = s1_UL_GTPtunnelEndpoint */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 6 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeAdded_SgNBAddReq_SgNBPDCPpresent",
+  "streaming_protobufs.E_RABs_ToBeAdded_SgNBAddReq_SgNBPDCPpresent",
   "ERABsToBeAddedSgNBAddReqSgNBPDCPpresent",
-  "Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent),
+  "StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent),
   6,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__init,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__field_descriptors[1] =
 {
   {
     "id_RLCMode_transferred",
@@ -1036,37 +1036,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs, id_rlcmode_transferred),
-    &uenibstreamprotobuf__rlcmode__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs, id_rlcmode_transferred),
+    &streaming_protobufs__rlcmode__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__field_indices_by_name[] = {
   0,   /* field[0] = id_RLCMode_transferred */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeAdded_SgNBAddReq_SgNBPDCPpresentExtIEs",
+  "streaming_protobufs.E_RABs_ToBeAdded_SgNBAddReq_SgNBPDCPpresentExtIEs",
   "ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs",
-  "Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs),
+  "StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresentExtIEs),
   1,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__init,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcppresent_ext_ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__field_descriptors[6] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__field_descriptors[6] =
 {
   {
     "requested_SCG_E_RAB_Level_QoS_Parameters",
@@ -1074,8 +1074,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, requested_scg_e_rab_level_qos_parameters),
-    &uenibstreamprotobuf__e__rab__level__qo_s__parameters__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, requested_scg_e_rab_level_qos_parameters),
+    &streaming_protobufs__e__rab__level__qo_s__parameters__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1086,8 +1086,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, menb_ul_gtp_teidatpdcp),
-    &uenibstreamprotobuf__gtptunnel_endpoint__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, menb_ul_gtp_teidatpdcp),
+    &streaming_protobufs__gtptunnel_endpoint__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1098,8 +1098,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, secondary_menb_ul_gtp_teidatpdcp),
-    &uenibstreamprotobuf__gtptunnel_endpoint__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, secondary_menb_ul_gtp_teidatpdcp),
+    &streaming_protobufs__gtptunnel_endpoint__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1110,8 +1110,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, rlc_mode),
-    &uenibstreamprotobuf__rlcmode__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, rlc_mode),
+    &streaming_protobufs__rlcmode__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1122,8 +1122,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, ul_configuration),
-    &uenibstreamprotobuf__ulconfiguration__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, ul_configuration),
+    &streaming_protobufs__ulconfiguration__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1133,15 +1133,15 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     6,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, n_ie_extensions),
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, ie_extensions),
-    &uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, n_ie_extensions),
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent, ie_extensions),
+    &streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__field_indices_by_name[] = {
   5,   /* field[5] = iE_Extensions */
   1,   /* field[1] = meNB_UL_GTP_TEIDatPDCP */
   0,   /* field[0] = requested_SCG_E_RAB_Level_QoS_Parameters */
@@ -1149,27 +1149,27 @@ static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__s
   2,   /* field[2] = secondary_meNB_UL_GTP_TEIDatPDCP */
   4,   /* field[4] = uL_Configuration */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 6 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeAdded_SgNBAddReq_SgNBPDCPnotpresent",
+  "streaming_protobufs.E_RABs_ToBeAdded_SgNBAddReq_SgNBPDCPnotpresent",
   "ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent",
-  "Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent),
+  "StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresent),
   6,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__init,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__field_descriptors[3] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__field_descriptors[3] =
 {
   {
     "id_uLpDCPSnLength",
@@ -1177,8 +1177,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs, id_ulpdcpsnlength),
-    &uenibstreamprotobuf__pdcpsn_length__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs, id_ulpdcpsnlength),
+    &streaming_protobufs__pdcpsn_length__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1189,8 +1189,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs, id_dlpdcpsnlength),
-    &uenibstreamprotobuf__pdcpsn_length__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs, id_dlpdcpsnlength),
+    &streaming_protobufs__pdcpsn_length__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1201,35 +1201,35 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_added_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs, id_duplicationactivation),
-    &uenibstreamprotobuf__duplication_activation__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs, id_duplicationactivation),
+    &streaming_protobufs__duplication_activation__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__field_indices_by_name[] = {
   1,   /* field[1] = id_dLPDCPSnLength */
   2,   /* field[2] = id_duplicationActivation */
   0,   /* field[0] = id_uLpDCPSnLength */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeAdded_SgNBAddReq_SgNBPDCPnotpresentExtIEs",
+  "streaming_protobufs.E_RABs_ToBeAdded_SgNBAddReq_SgNBPDCPnotpresentExtIEs",
   "ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs",
-  "Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs),
+  "StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPnotpresentExtIEs),
   3,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__init,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req__sg_nbpdcpnotpresent_ext_ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

@@ -20,10 +20,10 @@ import common_types_pb2 as common__types__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rrc_measurement_report.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x1crrc_measurement_report.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x16rrc_common_types.proto\x1a\x12\x63ommon_types.proto\"r\n\x11MeasurementReport\x12G\n\x11measurementReport\x18\x01 \x01(\x0b\x32*.uenibstreamprotobuf.MeasurementReport_IEsH\x00\x42\x14\n\x12\x63riticalExtensions\"\x8e\x01\n\x15MeasurementReport_IEs\x12\x35\n\x0bmeasResults\x18\x01 \x01(\x0b\x32 .uenibstreamprotobuf.MeasResults\x12>\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValueB:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x1crrc_measurement_report.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x16rrc_common_types.proto\x1a\x12\x63ommon_types.proto\"r\n\x11MeasurementReport\x12G\n\x11measurementReport\x18\x01 \x01(\x0b\x32*.streaming_protobufs.MeasurementReport_IEsH\x00\x42\x14\n\x12\x63riticalExtensions\"\x8d\x01\n\x15MeasurementReport_IEs\x12\x35\n\x0bmeasResults\x18\x01 \x01(\x0b\x32 .streaming_protobufs.MeasResults\x12=\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValueB3Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,rrc__common__types__pb2.DESCRIPTOR,common__types__pb2.DESCRIPTOR,])
 
@@ -32,13 +32,13 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _MEASUREMENTREPORT = _descriptor.Descriptor(
   name='MeasurementReport',
-  full_name='uenibstreamprotobuf.MeasurementReport',
+  full_name='streaming_protobufs.MeasurementReport',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='measurementReport', full_name='uenibstreamprotobuf.MeasurementReport.measurementReport', index=0,
+      name='measurementReport', full_name='streaming_protobufs.MeasurementReport.measurementReport', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -56,7 +56,7 @@ _MEASUREMENTREPORT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='criticalExtensions', full_name='uenibstreamprotobuf.MeasurementReport.criticalExtensions',
+      name='criticalExtensions', full_name='streaming_protobufs.MeasurementReport.criticalExtensions',
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=129,
@@ -66,20 +66,20 @@ _MEASUREMENTREPORT = _descriptor.Descriptor(
 
 _MEASUREMENTREPORT_IES = _descriptor.Descriptor(
   name='MeasurementReport_IEs',
-  full_name='uenibstreamprotobuf.MeasurementReport_IEs',
+  full_name='streaming_protobufs.MeasurementReport_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='measResults', full_name='uenibstreamprotobuf.MeasurementReport_IEs.measResults', index=0,
+      name='measResults', full_name='streaming_protobufs.MeasurementReport_IEs.measResults', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.MeasurementReport_IEs.lateNonCriticalExtension', index=1,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.MeasurementReport_IEs.lateNonCriticalExtension', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -98,7 +98,7 @@ _MEASUREMENTREPORT_IES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=246,
-  serialized_end=388,
+  serialized_end=387,
 )
 
 _MEASUREMENTREPORT.fields_by_name['measurementReport'].message_type = _MEASUREMENTREPORT_IES
@@ -106,7 +106,7 @@ _MEASUREMENTREPORT.oneofs_by_name['criticalExtensions'].fields.append(
   _MEASUREMENTREPORT.fields_by_name['measurementReport'])
 _MEASUREMENTREPORT.fields_by_name['measurementReport'].containing_oneof = _MEASUREMENTREPORT.oneofs_by_name['criticalExtensions']
 _MEASUREMENTREPORT_IES.fields_by_name['measResults'].message_type = rrc__common__types__pb2._MEASRESULTS
-_MEASUREMENTREPORT_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_MEASUREMENTREPORT_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 DESCRIPTOR.message_types_by_name['MeasurementReport'] = _MEASUREMENTREPORT
 DESCRIPTOR.message_types_by_name['MeasurementReport_IEs'] = _MEASUREMENTREPORT_IES
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -114,14 +114,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 MeasurementReport = _reflection.GeneratedProtocolMessageType('MeasurementReport', (_message.Message,), {
   'DESCRIPTOR' : _MEASUREMENTREPORT,
   '__module__' : 'rrc_measurement_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.MeasurementReport)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.MeasurementReport)
   })
 _sym_db.RegisterMessage(MeasurementReport)
 
 MeasurementReport_IEs = _reflection.GeneratedProtocolMessageType('MeasurementReport_IEs', (_message.Message,), {
   'DESCRIPTOR' : _MEASUREMENTREPORT_IES,
   '__module__' : 'rrc_measurement_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.MeasurementReport_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.MeasurementReport_IEs)
   })
 _sym_db.RegisterMessage(MeasurementReport_IEs)
 

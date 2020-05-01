@@ -17,7 +17,7 @@ PROTOBUF_C__BEGIN_DECLS
 #include "google/protobuf/wrappers.pb-c.h"
 #include "common_types.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__UEContextRelease Uenibstreamprotobuf__UEContextRelease;
+typedef struct _StreamingProtobufs__UEContextRelease StreamingProtobufs__UEContextRelease;
 
 
 /* --- enums --- */
@@ -25,44 +25,44 @@ typedef struct _Uenibstreamprotobuf__UEContextRelease Uenibstreamprotobuf__UECon
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__UEContextRelease
+struct  _StreamingProtobufs__UEContextRelease
 {
   ProtobufCMessage base;
   uint32_t id_old_enb_ue_x2ap_id;
   uint32_t id_new_enb_ue_x2ap_id;
   Google__Protobuf__UInt32Value *id_old_enb_ue_x2ap_id_extension;
   Google__Protobuf__UInt32Value *id_new_enb_ue_x2ap_id_extension;
-  Uenibstreamprotobuf__TrueOpt *id_sipto_bearerdeactivationindication;
+  StreamingProtobufs__TrueOpt *id_sipto_bearerdeactivationindication;
   Google__Protobuf__UInt32Value *id_sgnb_ue_x2ap_id;
 };
-#define UENIBSTREAMPROTOBUF__UECONTEXT_RELEASE__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__uecontext_release__descriptor) \
+#define STREAMING_PROTOBUFS__UECONTEXT_RELEASE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__uecontext_release__descriptor) \
     , 0, 0, NULL, NULL, NULL, NULL }
 
 
-/* Uenibstreamprotobuf__UEContextRelease methods */
-void   uenibstreamprotobuf__uecontext_release__init
-                     (Uenibstreamprotobuf__UEContextRelease         *message);
-size_t uenibstreamprotobuf__uecontext_release__get_packed_size
-                     (const Uenibstreamprotobuf__UEContextRelease   *message);
-size_t uenibstreamprotobuf__uecontext_release__pack
-                     (const Uenibstreamprotobuf__UEContextRelease   *message,
+/* StreamingProtobufs__UEContextRelease methods */
+void   streaming_protobufs__uecontext_release__init
+                     (StreamingProtobufs__UEContextRelease         *message);
+size_t streaming_protobufs__uecontext_release__get_packed_size
+                     (const StreamingProtobufs__UEContextRelease   *message);
+size_t streaming_protobufs__uecontext_release__pack
+                     (const StreamingProtobufs__UEContextRelease   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__uecontext_release__pack_to_buffer
-                     (const Uenibstreamprotobuf__UEContextRelease   *message,
+size_t streaming_protobufs__uecontext_release__pack_to_buffer
+                     (const StreamingProtobufs__UEContextRelease   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__UEContextRelease *
-       uenibstreamprotobuf__uecontext_release__unpack
+StreamingProtobufs__UEContextRelease *
+       streaming_protobufs__uecontext_release__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__uecontext_release__free_unpacked
-                     (Uenibstreamprotobuf__UEContextRelease *message,
+void   streaming_protobufs__uecontext_release__free_unpacked
+                     (StreamingProtobufs__UEContextRelease *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__UEContextRelease_Closure)
-                 (const Uenibstreamprotobuf__UEContextRelease *message,
+typedef void (*StreamingProtobufs__UEContextRelease_Closure)
+                 (const StreamingProtobufs__UEContextRelease *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -70,7 +70,7 @@ typedef void (*Uenibstreamprotobuf__UEContextRelease_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__uecontext_release__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__uecontext_release__descriptor;
 
 PROTOBUF_C__END_DECLS
 

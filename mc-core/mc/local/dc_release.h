@@ -23,6 +23,9 @@
 
 #include "packet.h"
 
+
+#include "/usr/local/include/protobuf-c/protobuf-c.h"
+
 struct _dc_release {
 	gs_uint64_t timestamp_ms;
 	gs_sp_t gnb_id;
@@ -42,10 +45,13 @@ static inline gs_retval_t get_dc_release__timestamp_ms(struct packet *p, gs_uint
 }
 
 static inline gs_retval_t get_dc_release__gnb_id(struct packet *p, struct gs_string *t){
-t->data = ((struct _dc_release *)(p->record.packed.values))->gnb_id;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _dc_release *)(p->record.packed.values))->gnb_id;
+	if( t->data == NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = strlen(t->data);
 }
 
 static inline gs_retval_t get_dc_release__id_Old_eNB_UE_X2AP_ID_Extension(struct packet *p, gs_uint32_t *t){

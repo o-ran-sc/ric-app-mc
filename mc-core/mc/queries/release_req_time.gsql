@@ -10,7 +10,6 @@ select timestamp_ms as timestamp,
 	gnb_id,
 	0 as event_type
 from RELREQ.release_req
-// where schemaId=801
 ;
 
 DEFINE{query_name 'release_req_success';
@@ -26,7 +25,6 @@ select timestamp_ms as timestamp,
 	gnb_id,
 	1 as event_type
 from CONRELEASE.dc_release
-// where schemaId=201
 ;
 
 DEFINE{query_name 'release_req_events';

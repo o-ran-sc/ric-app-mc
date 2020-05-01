@@ -17,6 +17,7 @@
 import sys
 import time
 from binascii import unhexlify
+import datetime
 
 # from https://stackoverflow.com/questions/8730927/convert-python-long-int-to-fixed-size-byte-array
 def long_to_bytes(val, endianness='big'):
@@ -46,6 +47,14 @@ import x2ap_streaming_pb2
 def create_record(dataset, ofl, ts):
 	X2APStreaming = x2ap_streaming_pb2.X2APStreaming() # header message
 	X2APStreaming.header.gNbID.value = dataset["sgnb_id"]
+	sec = ts / 1000
+        ms = ts % 1000
+        utc_time = datetime.datetime.utcfromtimestamp(sec)
+        diff = utc_time - datetime.datetime(1900, 1, 1, 0, 0, 0)
+        ntp_hi = diff.days*24*60*60+diff.seconds
+        ntp_lo = (ms << 32) / 1000
+        X2APStreaming.header.timestamp = ntp_hi << 32 | ntp_lo
+
 
 	# print "sgnb_id="+X2APStreaming.header.gNbID.value+", ts="+str(ts)
 

@@ -102,6 +102,7 @@ static unsigned long long timestamp; // extract from input header
 #include "lfta/local/SgNB_ack_for_ue_beam_csi.h"
 #include "lfta/local/SgNB_ack_for_ue_beam_ssb.h"
 #include "sgnb_addition_request.pb-c.h"
+#include "lfta/local/sgnb_addreq_gtp_teid.h"
 #include "lfta/local/sgnb_addreq_for_ue.h"
 #include "lfta/local/sgnb_addreq_for_ue_bearers.h"
 #include "lfta/local/sgnb_addreq_for_ue_sn_serv_ssb.h"
@@ -128,11 +129,12 @@ static unsigned long long timestamp; // extract from input header
 #include "lfta/local/sn_status_transfer.h"
 gs_uint32_t process_buffer_CONRELEASE(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto ue_context_release.json, path context_release.json
 	struct _dc_release *dc_release = NULL;
-	Uenibstreamprotobuf__UEContextRelease *node_0_0 = NULL;
+	StreamingProtobufs__UEContextRelease *node_0_0 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto ue_context_release.json, path context_release.json
@@ -140,14 +142,16 @@ gs_uint32_t process_buffer_CONRELEASE(gs_uint8_t * buffer, gs_uint32_t buflen){
 	dc_release = (struct _dc_release *)(cur_packet.record.packed.values);
 	cur_packet.schema = 201;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->uecontextrelease;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	dc_release->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	dc_release->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		dc_release->gnb_id = empty_string;
 	else
@@ -171,26 +175,27 @@ gs_uint32_t process_buffer_CONRELEASE(gs_uint8_t * buffer, gs_uint32_t buflen){
 	}
 	dc_release->id_Old_eNB_UE_X2AP_ID = node_0_0->id_old_enb_ue_x2ap_id;
 	rts_fta_process_packet(&cur_packet);
-	uenibstreamprotobuf__uecontext_release__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__uecontext_release__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_RATDATAUSAGE(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto secondary_rat_data_usage_report.json, path rat_data_usage.json
 	struct _rat_data_usage *rat_data_usage = NULL;
-	Uenibstreamprotobuf__SecondaryRATDataUsageReport *node_0_0 = NULL;
-	Uenibstreamprotobuf__SecondaryRATDataUsageReportIEs *node_0_1 = NULL;
-	Uenibstreamprotobuf__SecondaryRATUsageReportList *node_0_2 = NULL;
-	Uenibstreamprotobuf__SecondaryRATUsageReportItemIEs *node_0_3 = NULL;
+	StreamingProtobufs__SecondaryRATDataUsageReport *node_0_0 = NULL;
+	StreamingProtobufs__SecondaryRATDataUsageReportIEs *node_0_1 = NULL;
+	StreamingProtobufs__SecondaryRATUsageReportList *node_0_2 = NULL;
+	StreamingProtobufs__SecondaryRATUsageReportItemIEs *node_0_3 = NULL;
 	gs_uint32_t i_0_3;
-	Uenibstreamprotobuf__SecondaryRATUsageReportItem *node_0_4 = NULL;
-	Uenibstreamprotobuf__ERABUsageReportList *node_0_5 = NULL;
-	Uenibstreamprotobuf__ERABUsageReportItemIEs *node_0_6 = NULL;
+	StreamingProtobufs__SecondaryRATUsageReportItem *node_0_4 = NULL;
+	StreamingProtobufs__ERABUsageReportList *node_0_5 = NULL;
+	StreamingProtobufs__ERABUsageReportItemIEs *node_0_6 = NULL;
 	gs_uint32_t i_0_6;
-	Uenibstreamprotobuf__ERABUsageReportItem *node_0_7 = NULL;
+	StreamingProtobufs__ERABUsageReportItem *node_0_7 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto secondary_rat_data_usage_report.json, path rat_data_usage.json
@@ -198,14 +203,16 @@ gs_uint32_t process_buffer_RATDATAUSAGE(gs_uint8_t * buffer, gs_uint32_t buflen)
 	rat_data_usage = (struct _rat_data_usage *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1501;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->secondaryratdatausagereport;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	rat_data_usage->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	rat_data_usage->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		rat_data_usage->gnb_id = empty_string;
 	else
@@ -245,29 +252,30 @@ gs_uint32_t process_buffer_RATDATAUSAGE(gs_uint8_t * buffer, gs_uint32_t buflen)
 			}
 		}
 	}
-	uenibstreamprotobuf__secondary_ratdata_usage_report__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__secondary_ratdata_usage_report__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_RECONCOMPLETE(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_reconfiguration_complete.json, path recon_complete.json
 	struct _reconfig_all *reconfig_all = NULL;
-	Uenibstreamprotobuf__SgNBReconfigurationComplete *node_0_0 = NULL;
+	StreamingProtobufs__SgNBReconfigurationComplete *node_0_0 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_reconfiguration_complete.json, path recon_complete.json
 	struct _reconfig_success *reconfig_success = NULL;
-	Uenibstreamprotobuf__SgNBReconfigurationComplete *node_1_0 = NULL;
-	Uenibstreamprotobuf__ResponseInformationSgNBReconfComp *node_1_1 = NULL;
-	Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem *node_1_2 = NULL;
+	StreamingProtobufs__SgNBReconfigurationComplete *node_1_0 = NULL;
+	StreamingProtobufs__ResponseInformationSgNBReconfComp *node_1_1 = NULL;
+	StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem *node_1_2 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_reconfiguration_complete.json, path recon_complete.json
 	struct _reconfig_reject *reconfig_reject = NULL;
-	Uenibstreamprotobuf__SgNBReconfigurationComplete *node_2_0 = NULL;
-	Uenibstreamprotobuf__ResponseInformationSgNBReconfComp *node_2_1 = NULL;
-	Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem *node_2_2 = NULL;
+	StreamingProtobufs__SgNBReconfigurationComplete *node_2_0 = NULL;
+	StreamingProtobufs__ResponseInformationSgNBReconfComp *node_2_1 = NULL;
+	StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem *node_2_2 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_reconfiguration_complete.json, path recon_complete.json
@@ -275,14 +283,16 @@ gs_uint32_t process_buffer_RECONCOMPLETE(gs_uint8_t * buffer, gs_uint32_t buflen
 	reconfig_all = (struct _reconfig_all *)(cur_packet.record.packed.values);
 	cur_packet.schema = 103;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbreconfigurationcomplete;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	reconfig_all->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	reconfig_all->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		reconfig_all->gnb_id = empty_string;
 	else
@@ -302,7 +312,9 @@ gs_uint32_t process_buffer_RECONCOMPLETE(gs_uint8_t * buffer, gs_uint32_t buflen
 	reconfig_success = (struct _reconfig_success *)(cur_packet.record.packed.values);
 	cur_packet.schema = 101;
 	node_1_0 = node_0_0;
-	reconfig_success->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	reconfig_success->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		reconfig_success->gnb_id = empty_string;
 	else
@@ -320,7 +332,7 @@ gs_uint32_t process_buffer_RECONCOMPLETE(gs_uint8_t * buffer, gs_uint32_t buflen
 		rts_fta_process_packet(&cur_packet);
 	}else{
 		node_1_2 = node_1_1->reject_by_menb_sgnbreconfcomp;
-		if(!(node_1_1->value_case == UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE_REJECT_BY__ME_NB__SG_NBRECONF_COMP)){
+		if(!(node_1_1->value_case == STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE_REJECT_BY__ME_NB__SG_NBRECONF_COMP)){
 			rts_fta_process_packet(&cur_packet);
 		}else{
 			rts_fta_process_packet(&cur_packet);
@@ -332,7 +344,9 @@ gs_uint32_t process_buffer_RECONCOMPLETE(gs_uint8_t * buffer, gs_uint32_t buflen
 	reconfig_reject = (struct _reconfig_reject *)(cur_packet.record.packed.values);
 	cur_packet.schema = 102;
 	node_2_0 = node_1_0;
-	reconfig_reject->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	reconfig_reject->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		reconfig_reject->gnb_id = empty_string;
 	else
@@ -348,7 +362,7 @@ gs_uint32_t process_buffer_RECONCOMPLETE(gs_uint8_t * buffer, gs_uint32_t buflen
 	node_2_1 = node_2_0->id_responseinformationsgnbreconfcomp;
 	if(node_2_0->id_responseinformationsgnbreconfcomp){
 		node_2_2 = node_2_1->reject_by_menb_sgnbreconfcomp;
-		if(node_2_1->value_case == UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE_REJECT_BY__ME_NB__SG_NBRECONF_COMP){
+		if(node_2_1->value_case == STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE_REJECT_BY__ME_NB__SG_NBRECONF_COMP){
 			if(node_2_2->cause && node_2_2->cause->radionetwork){
 				reconfig_reject->cause_radio_network = node_2_2->cause->radionetwork->value;
 			}else{
@@ -372,28 +386,29 @@ gs_uint32_t process_buffer_RECONCOMPLETE(gs_uint8_t * buffer, gs_uint32_t buflen
 			rts_fta_process_packet(&cur_packet);
 		}
 	}
-	uenibstreamprotobuf__sg_nbreconfiguration_complete__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbreconfiguration_complete__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_RELCONF(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_release_confirm.json, path release_confirm.json
 	struct _sgnb_release_confirm_from_menb_erabs *sgnb_release_confirm_from_menb_erabs = NULL;
-	Uenibstreamprotobuf__SgNBReleaseConfirm *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBReleaseConfirmIEs *node_0_1 = NULL;
-	Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList *node_0_2 = NULL;
-	Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem *node_0_3 = NULL;
+	StreamingProtobufs__SgNBReleaseConfirm *node_0_0 = NULL;
+	StreamingProtobufs__SgNBReleaseConfirmIEs *node_0_1 = NULL;
+	StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList *node_0_2 = NULL;
+	StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem *node_0_3 = NULL;
 	gs_uint32_t i_0_3;
-	Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *node_0_4 = NULL;
-	Uenibstreamprotobuf__GTPtunnelEndpoint *node_0_5 = NULL;
+	StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *node_0_4 = NULL;
+	StreamingProtobufs__GTPtunnelEndpoint *node_0_5 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_release_confirm.json, path release_confirm.json
 	struct _sgnb_release_confirm_from_menb *sgnb_release_confirm_from_menb = NULL;
-	Uenibstreamprotobuf__SgNBReleaseConfirm *node_1_0 = NULL;
-	Uenibstreamprotobuf__SgNBReleaseConfirmIEs *node_1_1 = NULL;
+	StreamingProtobufs__SgNBReleaseConfirm *node_1_0 = NULL;
+	StreamingProtobufs__SgNBReleaseConfirmIEs *node_1_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_release_confirm.json, path release_confirm.json
@@ -401,14 +416,16 @@ gs_uint32_t process_buffer_RELCONF(gs_uint8_t * buffer, gs_uint32_t buflen){
 	sgnb_release_confirm_from_menb_erabs = (struct _sgnb_release_confirm_from_menb_erabs *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1101;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbreleaseconfirm;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sgnb_release_confirm_from_menb_erabs->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_release_confirm_from_menb_erabs->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_release_confirm_from_menb_erabs->gnb_id = empty_string;
 	else
@@ -461,7 +478,9 @@ gs_uint32_t process_buffer_RELCONF(gs_uint8_t * buffer, gs_uint32_t buflen){
 	sgnb_release_confirm_from_menb = (struct _sgnb_release_confirm_from_menb *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1102;
 	node_1_0 = node_0_0;
-	sgnb_release_confirm_from_menb->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_release_confirm_from_menb->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_release_confirm_from_menb->gnb_id = empty_string;
 	else
@@ -478,18 +497,19 @@ gs_uint32_t process_buffer_RELCONF(gs_uint8_t * buffer, gs_uint32_t buflen){
 		}
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbrelease_confirm__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbrelease_confirm__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_RELREQ(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_release_request.json, path release_req.json
 	struct _release_req *release_req = NULL;
-	Uenibstreamprotobuf__SgNBReleaseRequest *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBReleaseRequestIEs *node_0_1 = NULL;
+	StreamingProtobufs__SgNBReleaseRequest *node_0_0 = NULL;
+	StreamingProtobufs__SgNBReleaseRequestIEs *node_0_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_release_request.json, path release_req.json
@@ -497,14 +517,16 @@ gs_uint32_t process_buffer_RELREQ(gs_uint8_t * buffer, gs_uint32_t buflen){
 	release_req = (struct _release_req *)(cur_packet.record.packed.values);
 	cur_packet.schema = 801;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbreleaserequest;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	release_req->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	release_req->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		release_req->gnb_id = empty_string;
 	else
@@ -545,18 +567,19 @@ gs_uint32_t process_buffer_RELREQ(gs_uint8_t * buffer, gs_uint32_t buflen){
 		}
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbrelease_request__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbrelease_request__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_RELREQACK(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_release_request_acknowledge.json, path release_req_ack.json
 	struct _release_req_ack *release_req_ack = NULL;
-	Uenibstreamprotobuf__SgNBReleaseRequestAcknowledge *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBReleaseRequestAcknowledgeIEs *node_0_1 = NULL;
+	StreamingProtobufs__SgNBReleaseRequestAcknowledge *node_0_0 = NULL;
+	StreamingProtobufs__SgNBReleaseRequestAcknowledgeIEs *node_0_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_release_request_acknowledge.json, path release_req_ack.json
@@ -564,14 +587,16 @@ gs_uint32_t process_buffer_RELREQACK(gs_uint8_t * buffer, gs_uint32_t buflen){
 	release_req_ack = (struct _release_req_ack *)(cur_packet.record.packed.values);
 	cur_packet.schema = 901;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbreleaserequestacknowledge;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	release_req_ack->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	release_req_ack->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		release_req_ack->gnb_id = empty_string;
 	else
@@ -588,18 +613,19 @@ gs_uint32_t process_buffer_RELREQACK(gs_uint8_t * buffer, gs_uint32_t buflen){
 		}
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbrelease_request_acknowledge__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbrelease_request_acknowledge__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SGNBRELEASERQD(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_release_required.json, path release_rqd.json
 	struct _SgNB_release_rqd *SgNB_release_rqd = NULL;
-	Uenibstreamprotobuf__SgNBReleaseRequired *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBReleaseRequiredIEs *node_0_1 = NULL;
+	StreamingProtobufs__SgNBReleaseRequired *node_0_0 = NULL;
+	StreamingProtobufs__SgNBReleaseRequiredIEs *node_0_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_release_required.json, path release_rqd.json
@@ -607,14 +633,16 @@ gs_uint32_t process_buffer_SGNBRELEASERQD(gs_uint8_t * buffer, gs_uint32_t bufle
 	SgNB_release_rqd = (struct _SgNB_release_rqd *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1001;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbreleaserequired;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	SgNB_release_rqd->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	SgNB_release_rqd->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		SgNB_release_rqd->gnb_id = empty_string;
 	else
@@ -694,130 +722,131 @@ gs_uint32_t process_buffer_SGNBRELEASERQD(gs_uint8_t * buffer, gs_uint32_t bufle
 		}
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbrelease_required__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbrelease_required__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto rrctransfer.json, path rrc_metrics.json
 	struct _serv_nr_cell *serv_nr_cell = NULL;
-	Uenibstreamprotobuf__RRCTransfer *node_0_0 = NULL;
-	Uenibstreamprotobuf__RRCTransferIEs *node_0_1 = NULL;
-	Uenibstreamprotobuf__UENRMeasurement *node_0_2 = NULL;
-	Uenibstreamprotobuf__RRCContainer *node_0_3 = NULL;
-	Uenibstreamprotobuf__ULDCCHMessageType *node_0_4 = NULL;
-	Uenibstreamprotobuf__MeasurementReport *node_0_5 = NULL;
-	Uenibstreamprotobuf__MeasurementReportIEs *node_0_6 = NULL;
-	Uenibstreamprotobuf__MeasResults *node_0_7 = NULL;
-	Uenibstreamprotobuf__MeasResultServMOList *node_0_8 = NULL;
-	Uenibstreamprotobuf__MeasResultServMO *node_0_9 = NULL;
+	StreamingProtobufs__RRCTransfer *node_0_0 = NULL;
+	StreamingProtobufs__RRCTransferIEs *node_0_1 = NULL;
+	StreamingProtobufs__UENRMeasurement *node_0_2 = NULL;
+	StreamingProtobufs__RRCContainer *node_0_3 = NULL;
+	StreamingProtobufs__ULDCCHMessageType *node_0_4 = NULL;
+	StreamingProtobufs__MeasurementReport *node_0_5 = NULL;
+	StreamingProtobufs__MeasurementReportIEs *node_0_6 = NULL;
+	StreamingProtobufs__MeasResults *node_0_7 = NULL;
+	StreamingProtobufs__MeasResultServMOList *node_0_8 = NULL;
+	StreamingProtobufs__MeasResultServMO *node_0_9 = NULL;
 	gs_uint32_t i_0_9;
-	Uenibstreamprotobuf__MeasResultNR *node_0_10 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_0_11 = NULL;
-	Uenibstreamprotobuf__CellResults *node_0_12 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_0_13 = NULL;
+	StreamingProtobufs__MeasResultNR *node_0_10 = NULL;
+	StreamingProtobufs__MeasResult *node_0_11 = NULL;
+	StreamingProtobufs__CellResults *node_0_12 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_0_13 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto rrctransfer.json, path rrc_metrics.json
 	struct _nr_neighbor *nr_neighbor = NULL;
-	Uenibstreamprotobuf__RRCTransfer *node_1_0 = NULL;
-	Uenibstreamprotobuf__RRCTransferIEs *node_1_1 = NULL;
-	Uenibstreamprotobuf__UENRMeasurement *node_1_2 = NULL;
-	Uenibstreamprotobuf__RRCContainer *node_1_3 = NULL;
-	Uenibstreamprotobuf__ULDCCHMessageType *node_1_4 = NULL;
-	Uenibstreamprotobuf__MeasurementReport *node_1_5 = NULL;
-	Uenibstreamprotobuf__MeasurementReportIEs *node_1_6 = NULL;
-	Uenibstreamprotobuf__MeasResults *node_1_7 = NULL;
-	Uenibstreamprotobuf__MeasResultListNR *node_1_8 = NULL;
-	Uenibstreamprotobuf__MeasResultNR *node_1_9 = NULL;
+	StreamingProtobufs__RRCTransfer *node_1_0 = NULL;
+	StreamingProtobufs__RRCTransferIEs *node_1_1 = NULL;
+	StreamingProtobufs__UENRMeasurement *node_1_2 = NULL;
+	StreamingProtobufs__RRCContainer *node_1_3 = NULL;
+	StreamingProtobufs__ULDCCHMessageType *node_1_4 = NULL;
+	StreamingProtobufs__MeasurementReport *node_1_5 = NULL;
+	StreamingProtobufs__MeasurementReportIEs *node_1_6 = NULL;
+	StreamingProtobufs__MeasResults *node_1_7 = NULL;
+	StreamingProtobufs__MeasResultListNR *node_1_8 = NULL;
+	StreamingProtobufs__MeasResultNR *node_1_9 = NULL;
 	gs_uint32_t i_1_9;
-	Uenibstreamprotobuf__MeasResult *node_1_10 = NULL;
-	Uenibstreamprotobuf__CellResults *node_1_11 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_1_12 = NULL;
+	StreamingProtobufs__MeasResult *node_1_10 = NULL;
+	StreamingProtobufs__CellResults *node_1_11 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_1_12 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto rrctransfer.json, path rrc_metrics.json
 	struct _serv_cell_beam_csi *serv_cell_beam_csi = NULL;
-	Uenibstreamprotobuf__RRCTransfer *node_2_0 = NULL;
-	Uenibstreamprotobuf__RRCTransferIEs *node_2_1 = NULL;
-	Uenibstreamprotobuf__UENRMeasurement *node_2_2 = NULL;
-	Uenibstreamprotobuf__RRCContainer *node_2_3 = NULL;
-	Uenibstreamprotobuf__ULDCCHMessageType *node_2_4 = NULL;
-	Uenibstreamprotobuf__MeasurementReport *node_2_5 = NULL;
-	Uenibstreamprotobuf__MeasurementReportIEs *node_2_6 = NULL;
-	Uenibstreamprotobuf__MeasResults *node_2_7 = NULL;
-	Uenibstreamprotobuf__MeasResultServMOList *node_2_8 = NULL;
-	Uenibstreamprotobuf__MeasResultServMO *node_2_9 = NULL;
+	StreamingProtobufs__RRCTransfer *node_2_0 = NULL;
+	StreamingProtobufs__RRCTransferIEs *node_2_1 = NULL;
+	StreamingProtobufs__UENRMeasurement *node_2_2 = NULL;
+	StreamingProtobufs__RRCContainer *node_2_3 = NULL;
+	StreamingProtobufs__ULDCCHMessageType *node_2_4 = NULL;
+	StreamingProtobufs__MeasurementReport *node_2_5 = NULL;
+	StreamingProtobufs__MeasurementReportIEs *node_2_6 = NULL;
+	StreamingProtobufs__MeasResults *node_2_7 = NULL;
+	StreamingProtobufs__MeasResultServMOList *node_2_8 = NULL;
+	StreamingProtobufs__MeasResultServMO *node_2_9 = NULL;
 	gs_uint32_t i_2_9;
-	Uenibstreamprotobuf__MeasResultNR *node_2_10 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_2_11 = NULL;
-	Uenibstreamprotobuf__RsIndexResults *node_2_12 = NULL;
-	Uenibstreamprotobuf__ResultsPerCSIRSIndexList *node_2_13 = NULL;
-	Uenibstreamprotobuf__ResultsPerCSIRSIndex *node_2_14 = NULL;
+	StreamingProtobufs__MeasResultNR *node_2_10 = NULL;
+	StreamingProtobufs__MeasResult *node_2_11 = NULL;
+	StreamingProtobufs__RsIndexResults *node_2_12 = NULL;
+	StreamingProtobufs__ResultsPerCSIRSIndexList *node_2_13 = NULL;
+	StreamingProtobufs__ResultsPerCSIRSIndex *node_2_14 = NULL;
 	gs_uint32_t i_2_14;
-	Uenibstreamprotobuf__MeasQuantityResults *node_2_15 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_2_15 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto rrctransfer.json, path rrc_metrics.json
 	struct _neighbor_beam_csi *neighbor_beam_csi = NULL;
-	Uenibstreamprotobuf__RRCTransfer *node_3_0 = NULL;
-	Uenibstreamprotobuf__RRCTransferIEs *node_3_1 = NULL;
-	Uenibstreamprotobuf__UENRMeasurement *node_3_2 = NULL;
-	Uenibstreamprotobuf__RRCContainer *node_3_3 = NULL;
-	Uenibstreamprotobuf__ULDCCHMessageType *node_3_4 = NULL;
-	Uenibstreamprotobuf__MeasurementReport *node_3_5 = NULL;
-	Uenibstreamprotobuf__MeasurementReportIEs *node_3_6 = NULL;
-	Uenibstreamprotobuf__MeasResults *node_3_7 = NULL;
-	Uenibstreamprotobuf__MeasResultListNR *node_3_8 = NULL;
-	Uenibstreamprotobuf__MeasResultNR *node_3_9 = NULL;
+	StreamingProtobufs__RRCTransfer *node_3_0 = NULL;
+	StreamingProtobufs__RRCTransferIEs *node_3_1 = NULL;
+	StreamingProtobufs__UENRMeasurement *node_3_2 = NULL;
+	StreamingProtobufs__RRCContainer *node_3_3 = NULL;
+	StreamingProtobufs__ULDCCHMessageType *node_3_4 = NULL;
+	StreamingProtobufs__MeasurementReport *node_3_5 = NULL;
+	StreamingProtobufs__MeasurementReportIEs *node_3_6 = NULL;
+	StreamingProtobufs__MeasResults *node_3_7 = NULL;
+	StreamingProtobufs__MeasResultListNR *node_3_8 = NULL;
+	StreamingProtobufs__MeasResultNR *node_3_9 = NULL;
 	gs_uint32_t i_3_9;
-	Uenibstreamprotobuf__MeasResult *node_3_10 = NULL;
-	Uenibstreamprotobuf__RsIndexResults *node_3_11 = NULL;
-	Uenibstreamprotobuf__ResultsPerCSIRSIndexList *node_3_12 = NULL;
-	Uenibstreamprotobuf__ResultsPerCSIRSIndex *node_3_13 = NULL;
+	StreamingProtobufs__MeasResult *node_3_10 = NULL;
+	StreamingProtobufs__RsIndexResults *node_3_11 = NULL;
+	StreamingProtobufs__ResultsPerCSIRSIndexList *node_3_12 = NULL;
+	StreamingProtobufs__ResultsPerCSIRSIndex *node_3_13 = NULL;
 	gs_uint32_t i_3_13;
-	Uenibstreamprotobuf__MeasQuantityResults *node_3_14 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_3_14 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto rrctransfer.json, path rrc_metrics.json
 	struct _serv_cell_beam_ssb *serv_cell_beam_ssb = NULL;
-	Uenibstreamprotobuf__RRCTransfer *node_4_0 = NULL;
-	Uenibstreamprotobuf__RRCTransferIEs *node_4_1 = NULL;
-	Uenibstreamprotobuf__UENRMeasurement *node_4_2 = NULL;
-	Uenibstreamprotobuf__RRCContainer *node_4_3 = NULL;
-	Uenibstreamprotobuf__ULDCCHMessageType *node_4_4 = NULL;
-	Uenibstreamprotobuf__MeasurementReport *node_4_5 = NULL;
-	Uenibstreamprotobuf__MeasurementReportIEs *node_4_6 = NULL;
-	Uenibstreamprotobuf__MeasResults *node_4_7 = NULL;
-	Uenibstreamprotobuf__MeasResultServMOList *node_4_8 = NULL;
-	Uenibstreamprotobuf__MeasResultServMO *node_4_9 = NULL;
+	StreamingProtobufs__RRCTransfer *node_4_0 = NULL;
+	StreamingProtobufs__RRCTransferIEs *node_4_1 = NULL;
+	StreamingProtobufs__UENRMeasurement *node_4_2 = NULL;
+	StreamingProtobufs__RRCContainer *node_4_3 = NULL;
+	StreamingProtobufs__ULDCCHMessageType *node_4_4 = NULL;
+	StreamingProtobufs__MeasurementReport *node_4_5 = NULL;
+	StreamingProtobufs__MeasurementReportIEs *node_4_6 = NULL;
+	StreamingProtobufs__MeasResults *node_4_7 = NULL;
+	StreamingProtobufs__MeasResultServMOList *node_4_8 = NULL;
+	StreamingProtobufs__MeasResultServMO *node_4_9 = NULL;
 	gs_uint32_t i_4_9;
-	Uenibstreamprotobuf__MeasResultNR *node_4_10 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_4_11 = NULL;
-	Uenibstreamprotobuf__RsIndexResults *node_4_12 = NULL;
-	Uenibstreamprotobuf__ResultsPerSSBIndexList *node_4_13 = NULL;
-	Uenibstreamprotobuf__ResultsPerSSBIndex *node_4_14 = NULL;
+	StreamingProtobufs__MeasResultNR *node_4_10 = NULL;
+	StreamingProtobufs__MeasResult *node_4_11 = NULL;
+	StreamingProtobufs__RsIndexResults *node_4_12 = NULL;
+	StreamingProtobufs__ResultsPerSSBIndexList *node_4_13 = NULL;
+	StreamingProtobufs__ResultsPerSSBIndex *node_4_14 = NULL;
 	gs_uint32_t i_4_14;
-	Uenibstreamprotobuf__MeasQuantityResults *node_4_15 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_4_15 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto rrctransfer.json, path rrc_metrics.json
 	struct _neighbor_beam_ssb *neighbor_beam_ssb = NULL;
-	Uenibstreamprotobuf__RRCTransfer *node_5_0 = NULL;
-	Uenibstreamprotobuf__RRCTransferIEs *node_5_1 = NULL;
-	Uenibstreamprotobuf__UENRMeasurement *node_5_2 = NULL;
-	Uenibstreamprotobuf__RRCContainer *node_5_3 = NULL;
-	Uenibstreamprotobuf__ULDCCHMessageType *node_5_4 = NULL;
-	Uenibstreamprotobuf__MeasurementReport *node_5_5 = NULL;
-	Uenibstreamprotobuf__MeasurementReportIEs *node_5_6 = NULL;
-	Uenibstreamprotobuf__MeasResults *node_5_7 = NULL;
-	Uenibstreamprotobuf__MeasResultListNR *node_5_8 = NULL;
-	Uenibstreamprotobuf__MeasResultNR *node_5_9 = NULL;
+	StreamingProtobufs__RRCTransfer *node_5_0 = NULL;
+	StreamingProtobufs__RRCTransferIEs *node_5_1 = NULL;
+	StreamingProtobufs__UENRMeasurement *node_5_2 = NULL;
+	StreamingProtobufs__RRCContainer *node_5_3 = NULL;
+	StreamingProtobufs__ULDCCHMessageType *node_5_4 = NULL;
+	StreamingProtobufs__MeasurementReport *node_5_5 = NULL;
+	StreamingProtobufs__MeasurementReportIEs *node_5_6 = NULL;
+	StreamingProtobufs__MeasResults *node_5_7 = NULL;
+	StreamingProtobufs__MeasResultListNR *node_5_8 = NULL;
+	StreamingProtobufs__MeasResultNR *node_5_9 = NULL;
 	gs_uint32_t i_5_9;
-	Uenibstreamprotobuf__MeasResult *node_5_10 = NULL;
-	Uenibstreamprotobuf__RsIndexResults *node_5_11 = NULL;
-	Uenibstreamprotobuf__ResultsPerSSBIndexList *node_5_12 = NULL;
-	Uenibstreamprotobuf__ResultsPerSSBIndex *node_5_13 = NULL;
+	StreamingProtobufs__MeasResult *node_5_10 = NULL;
+	StreamingProtobufs__RsIndexResults *node_5_11 = NULL;
+	StreamingProtobufs__ResultsPerSSBIndexList *node_5_12 = NULL;
+	StreamingProtobufs__ResultsPerSSBIndex *node_5_13 = NULL;
 	gs_uint32_t i_5_13;
-	Uenibstreamprotobuf__MeasQuantityResults *node_5_14 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_5_14 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto rrctransfer.json, path rrc_metrics.json
@@ -825,14 +854,16 @@ gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 	serv_nr_cell = (struct _serv_nr_cell *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->rrctransfer;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	serv_nr_cell->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	serv_nr_cell->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		serv_nr_cell->gnb_id = empty_string;
 	else
@@ -911,7 +942,9 @@ gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 	nr_neighbor = (struct _nr_neighbor *)(cur_packet.record.packed.values);
 	cur_packet.schema = 4;
 	node_1_0 = node_0_0;
-	nr_neighbor->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	nr_neighbor->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		nr_neighbor->gnb_id = empty_string;
 	else
@@ -986,7 +1019,9 @@ gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 	serv_cell_beam_csi = (struct _serv_cell_beam_csi *)(cur_packet.record.packed.values);
 	cur_packet.schema = 2;
 	node_2_0 = node_1_0;
-	serv_cell_beam_csi->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	serv_cell_beam_csi->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		serv_cell_beam_csi->gnb_id = empty_string;
 	else
@@ -1072,7 +1107,9 @@ gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 	neighbor_beam_csi = (struct _neighbor_beam_csi *)(cur_packet.record.packed.values);
 	cur_packet.schema = 5;
 	node_3_0 = node_2_0;
-	neighbor_beam_csi->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	neighbor_beam_csi->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		neighbor_beam_csi->gnb_id = empty_string;
 	else
@@ -1154,7 +1191,9 @@ gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 	serv_cell_beam_ssb = (struct _serv_cell_beam_ssb *)(cur_packet.record.packed.values);
 	cur_packet.schema = 3;
 	node_4_0 = node_3_0;
-	serv_cell_beam_ssb->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	serv_cell_beam_ssb->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		serv_cell_beam_ssb->gnb_id = empty_string;
 	else
@@ -1240,7 +1279,9 @@ gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 	neighbor_beam_ssb = (struct _neighbor_beam_ssb *)(cur_packet.record.packed.values);
 	cur_packet.schema = 6;
 	node_5_0 = node_4_0;
-	neighbor_beam_ssb->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	neighbor_beam_ssb->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		neighbor_beam_ssb->gnb_id = empty_string;
 	else
@@ -1316,18 +1357,19 @@ gs_uint32_t process_buffer_RRCXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 			}
 		}
 	}
-	uenibstreamprotobuf__rrctransfer__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__rrctransfer__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_ADDREQREJECT(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request_reject.json, path sgnb_add_req_reject.json
 	struct _sgnb_add_req_reject *sgnb_add_req_reject = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestReject *node_0_0 = NULL;
-	Uenibstreamprotobuf__Cause *node_0_1 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestReject *node_0_0 = NULL;
+	StreamingProtobufs__Cause *node_0_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_addition_request_reject.json, path sgnb_add_req_reject.json
@@ -1335,21 +1377,28 @@ gs_uint32_t process_buffer_ADDREQREJECT(gs_uint8_t * buffer, gs_uint32_t buflen)
 	sgnb_add_req_reject = (struct _sgnb_add_req_reject *)(cur_packet.record.packed.values);
 	cur_packet.schema = 701;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbadditionrequestreject;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sgnb_add_req_reject->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_add_req_reject->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_add_req_reject->gnb_id = empty_string;
 	else
 		sgnb_add_req_reject->gnb_id = hdr->header->gnbid->value;
 
 	sgnb_add_req_reject->id_MeNB_UE_X2AP_ID = node_0_0->id_menb_ue_x2ap_id;
-	sgnb_add_req_reject->id_SgNB_UE_X2AP_ID = node_0_0->id_sgnb_ue_x2ap_id;
+	if(node_0_0->id_sgnb_ue_x2ap_id){
+		sgnb_add_req_reject->id_SgNB_UE_X2AP_ID = node_0_0->id_sgnb_ue_x2ap_id->value;
+		sgnb_add_req_reject->id_SgNB_UE_X2AP_ID_exists = 1;
+	}else{
+		sgnb_add_req_reject->id_SgNB_UE_X2AP_ID_exists = 0;
+	}
 	node_0_1 = node_0_0->id_cause;
 	if(node_0_0->id_cause){
 		if(node_0_1->radionetwork){
@@ -1374,94 +1423,95 @@ gs_uint32_t process_buffer_ADDREQREJECT(gs_uint8_t * buffer, gs_uint32_t buflen)
 		}
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbaddition_request_reject__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbaddition_request_reject__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request_acknowledge.json, path sgnb_addition_ack.json
 	struct _eRABs_notadmitted_for_ue *eRABs_notadmitted_for_ue = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *node_0_0 = NULL;
-	Uenibstreamprotobuf__ERABList *node_0_1 = NULL;
-	Uenibstreamprotobuf__ERABItemIEs *node_0_2 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestAcknowledge *node_0_0 = NULL;
+	StreamingProtobufs__ERABList *node_0_1 = NULL;
+	StreamingProtobufs__ERABItemIEs *node_0_2 = NULL;
 	gs_uint32_t i_0_2;
-	Uenibstreamprotobuf__ERABItem *node_0_3 = NULL;
+	StreamingProtobufs__ERABItem *node_0_3 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request_acknowledge.json, path sgnb_addition_ack.json
 	struct _eRABs_acked_for_admit_for_ue *eRABs_acked_for_admit_for_ue = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *node_1_0 = NULL;
-	Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList *node_1_1 = NULL;
-	Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem *node_1_2 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestAcknowledge *node_1_0 = NULL;
+	StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList *node_1_1 = NULL;
+	StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem *node_1_2 = NULL;
 	gs_uint32_t i_1_2;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request_acknowledge.json, path sgnb_addition_ack.json
 	struct _SgNB_ack_for_ue_NRfreqs *SgNB_ack_for_ue_NRfreqs = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *node_2_0 = NULL;
-	Uenibstreamprotobuf__CGConfig *node_2_1 = NULL;
-	Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 *node_2_2 = NULL;
-	Uenibstreamprotobuf__CGConfigIEs *node_2_3 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestAcknowledge *node_2_0 = NULL;
+	StreamingProtobufs__CGConfig *node_2_1 = NULL;
+	StreamingProtobufs__CGConfigCriticalExtensionsChoice1 *node_2_2 = NULL;
+	StreamingProtobufs__CGConfigIEs *node_2_3 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request_acknowledge.json, path sgnb_addition_ack.json
 	struct _SgNB_ack_for_add_mod_for_ue *SgNB_ack_for_add_mod_for_ue = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *node_3_0 = NULL;
-	Uenibstreamprotobuf__CGConfig *node_3_1 = NULL;
-	Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 *node_3_2 = NULL;
-	Uenibstreamprotobuf__CGConfigIEs *node_3_3 = NULL;
-	Uenibstreamprotobuf__RadioBearerConfig *node_3_4 = NULL;
-	Uenibstreamprotobuf__DRBToAddModList *node_3_5 = NULL;
-	Uenibstreamprotobuf__DRBToAddMod *node_3_6 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestAcknowledge *node_3_0 = NULL;
+	StreamingProtobufs__CGConfig *node_3_1 = NULL;
+	StreamingProtobufs__CGConfigCriticalExtensionsChoice1 *node_3_2 = NULL;
+	StreamingProtobufs__CGConfigIEs *node_3_3 = NULL;
+	StreamingProtobufs__RadioBearerConfig *node_3_4 = NULL;
+	StreamingProtobufs__DRBToAddModList *node_3_5 = NULL;
+	StreamingProtobufs__DRBToAddMod *node_3_6 = NULL;
 	gs_uint32_t i_3_6;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request_acknowledge.json, path sgnb_addition_ack.json
 	struct _SgNB_ack_for_ue_measurements *SgNB_ack_for_ue_measurements = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *node_4_0 = NULL;
-	Uenibstreamprotobuf__CGConfig *node_4_1 = NULL;
-	Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 *node_4_2 = NULL;
-	Uenibstreamprotobuf__CGConfigIEs *node_4_3 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_4_4 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_4_5 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestAcknowledge *node_4_0 = NULL;
+	StreamingProtobufs__CGConfig *node_4_1 = NULL;
+	StreamingProtobufs__CGConfigCriticalExtensionsChoice1 *node_4_2 = NULL;
+	StreamingProtobufs__CGConfigIEs *node_4_3 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_4_4 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_4_5 = NULL;
 	gs_uint32_t i_4_5;
-	Uenibstreamprotobuf__MeasResultNR *node_4_6 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_4_7 = NULL;
-	Uenibstreamprotobuf__CellResults *node_4_8 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_4_9 = NULL;
+	StreamingProtobufs__MeasResultNR *node_4_6 = NULL;
+	StreamingProtobufs__MeasResult *node_4_7 = NULL;
+	StreamingProtobufs__CellResults *node_4_8 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_4_9 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request_acknowledge.json, path sgnb_addition_ack.json
 	struct _SgNB_ack_for_ue_beam_csi *SgNB_ack_for_ue_beam_csi = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *node_5_0 = NULL;
-	Uenibstreamprotobuf__CGConfig *node_5_1 = NULL;
-	Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 *node_5_2 = NULL;
-	Uenibstreamprotobuf__CGConfigIEs *node_5_3 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_5_4 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_5_5 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestAcknowledge *node_5_0 = NULL;
+	StreamingProtobufs__CGConfig *node_5_1 = NULL;
+	StreamingProtobufs__CGConfigCriticalExtensionsChoice1 *node_5_2 = NULL;
+	StreamingProtobufs__CGConfigIEs *node_5_3 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_5_4 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_5_5 = NULL;
 	gs_uint32_t i_5_5;
-	Uenibstreamprotobuf__MeasResultNR *node_5_6 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_5_7 = NULL;
-	Uenibstreamprotobuf__RsIndexResults *node_5_8 = NULL;
-	Uenibstreamprotobuf__ResultsPerCSIRSIndexList *node_5_9 = NULL;
-	Uenibstreamprotobuf__ResultsPerCSIRSIndex *node_5_10 = NULL;
+	StreamingProtobufs__MeasResultNR *node_5_6 = NULL;
+	StreamingProtobufs__MeasResult *node_5_7 = NULL;
+	StreamingProtobufs__RsIndexResults *node_5_8 = NULL;
+	StreamingProtobufs__ResultsPerCSIRSIndexList *node_5_9 = NULL;
+	StreamingProtobufs__ResultsPerCSIRSIndex *node_5_10 = NULL;
 	gs_uint32_t i_5_10;
-	Uenibstreamprotobuf__MeasQuantityResults *node_5_11 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_5_11 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request_acknowledge.json, path sgnb_addition_ack.json
 	struct _SgNB_ack_for_ue_beam_ssb *SgNB_ack_for_ue_beam_ssb = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *node_6_0 = NULL;
-	Uenibstreamprotobuf__CGConfig *node_6_1 = NULL;
-	Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 *node_6_2 = NULL;
-	Uenibstreamprotobuf__CGConfigIEs *node_6_3 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_6_4 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_6_5 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestAcknowledge *node_6_0 = NULL;
+	StreamingProtobufs__CGConfig *node_6_1 = NULL;
+	StreamingProtobufs__CGConfigCriticalExtensionsChoice1 *node_6_2 = NULL;
+	StreamingProtobufs__CGConfigIEs *node_6_3 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_6_4 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_6_5 = NULL;
 	gs_uint32_t i_6_5;
-	Uenibstreamprotobuf__MeasResultNR *node_6_6 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_6_7 = NULL;
-	Uenibstreamprotobuf__RsIndexResults *node_6_8 = NULL;
-	Uenibstreamprotobuf__ResultsPerSSBIndexList *node_6_9 = NULL;
-	Uenibstreamprotobuf__ResultsPerSSBIndex *node_6_10 = NULL;
+	StreamingProtobufs__MeasResultNR *node_6_6 = NULL;
+	StreamingProtobufs__MeasResult *node_6_7 = NULL;
+	StreamingProtobufs__RsIndexResults *node_6_8 = NULL;
+	StreamingProtobufs__ResultsPerSSBIndexList *node_6_9 = NULL;
+	StreamingProtobufs__ResultsPerSSBIndex *node_6_10 = NULL;
 	gs_uint32_t i_6_10;
-	Uenibstreamprotobuf__MeasQuantityResults *node_6_11 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_6_11 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_addition_request_acknowledge.json, path sgnb_addition_ack.json
@@ -1469,14 +1519,16 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 	eRABs_notadmitted_for_ue = (struct _eRABs_notadmitted_for_ue *)(cur_packet.record.packed.values);
 	cur_packet.schema = 501;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbadditionrequestacknowledge;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	eRABs_notadmitted_for_ue->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	eRABs_notadmitted_for_ue->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		eRABs_notadmitted_for_ue->gnb_id = empty_string;
 	else
@@ -1526,7 +1578,9 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 	eRABs_acked_for_admit_for_ue = (struct _eRABs_acked_for_admit_for_ue *)(cur_packet.record.packed.values);
 	cur_packet.schema = 502;
 	node_1_0 = node_0_0;
-	eRABs_acked_for_admit_for_ue->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	eRABs_acked_for_admit_for_ue->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		eRABs_acked_for_admit_for_ue->gnb_id = empty_string;
 	else
@@ -1543,6 +1597,11 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 	if(node_1_0->id_e_rabs_admitted_tobeadded_sgnbaddreqacklist){
 		for(i_1_2=0;i_1_2<node_1_1->n_id_e_rabs_admitted_tobeadded_sgnbaddreqack_item; i_1_2++){
 			node_1_2 = node_1_1->id_e_rabs_admitted_tobeadded_sgnbaddreqack_item[i_1_2];
+			if(node_1_2->sgnbpdcppresent && node_1_2->sgnbpdcppresent->mcg_e_rab_level_qos_parameters && node_1_2->sgnbpdcppresent->mcg_e_rab_level_qos_parameters->allocationandretentionpriority){
+				eRABs_acked_for_admit_for_ue->ARP = node_1_2->sgnbpdcppresent->mcg_e_rab_level_qos_parameters->allocationandretentionpriority->prioritylevel;
+			}else{
+				eRABs_acked_for_admit_for_ue->ARP = 0;
+			}
 			if(node_1_2->sgnbpdcppresent && node_1_2->sgnbpdcppresent->dl_forwarding_gtptunnelendpoint){
 				eRABs_acked_for_admit_for_ue->gTP_TEID_dl = node_1_2->sgnbpdcppresent->dl_forwarding_gtptunnelendpoint->gtp_teid;
 				eRABs_acked_for_admit_for_ue->gTP_TEID_dl_exists = 1;
@@ -1588,7 +1647,9 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 	SgNB_ack_for_ue_NRfreqs = (struct _SgNB_ack_for_ue_NRfreqs *)(cur_packet.record.packed.values);
 	cur_packet.schema = 503;
 	node_2_0 = node_1_0;
-	SgNB_ack_for_ue_NRfreqs->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	SgNB_ack_for_ue_NRfreqs->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		SgNB_ack_for_ue_NRfreqs->gnb_id = empty_string;
 	else
@@ -1607,11 +1668,53 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 		if(node_2_1->criticalextensionschoice1){
 			node_2_3 = node_2_2->protocolies;
 			if(node_2_2->protocolies){
-				if(node_2_3->scg_cellgroupconfig){
-					SgNB_ack_for_ue_NRfreqs->scg_CellGroupConfig = node_2_3->scg_cellgroupconfig->value;
-					SgNB_ack_for_ue_NRfreqs->scg_CellGroupConfig_exists = 1;
+				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 0 && node_2_3->measconfigsn->measuredfrequenciessn[0]->measuredfrequency){
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN0 = node_2_3->measconfigsn->measuredfrequenciessn[0]->measuredfrequency->value;
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN0_exists = 1;
 				}else{
-					SgNB_ack_for_ue_NRfreqs->scg_CellGroupConfig_exists = 0;
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN0_exists = 0;
+				}
+				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 1 && node_2_3->measconfigsn->measuredfrequenciessn[1]->measuredfrequency){
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN1 = node_2_3->measconfigsn->measuredfrequenciessn[1]->measuredfrequency->value;
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN1_exists = 1;
+				}else{
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN1_exists = 0;
+				}
+				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 2 && node_2_3->measconfigsn->measuredfrequenciessn[2]->measuredfrequency){
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN2 = node_2_3->measconfigsn->measuredfrequenciessn[2]->measuredfrequency->value;
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN2_exists = 1;
+				}else{
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN2_exists = 0;
+				}
+				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 3 && node_2_3->measconfigsn->measuredfrequenciessn[3]->measuredfrequency){
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN3 = node_2_3->measconfigsn->measuredfrequenciessn[3]->measuredfrequency->value;
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN3_exists = 1;
+				}else{
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN3_exists = 0;
+				}
+				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 4 && node_2_3->measconfigsn->measuredfrequenciessn[4]->measuredfrequency){
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN4 = node_2_3->measconfigsn->measuredfrequenciessn[4]->measuredfrequency->value;
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN4_exists = 1;
+				}else{
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN4_exists = 0;
+				}
+				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 5 && node_2_3->measconfigsn->measuredfrequenciessn[5]->measuredfrequency){
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN5 = node_2_3->measconfigsn->measuredfrequenciessn[5]->measuredfrequency->value;
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN5_exists = 1;
+				}else{
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN5_exists = 0;
+				}
+				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 6 && node_2_3->measconfigsn->measuredfrequenciessn[6]->measuredfrequency){
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN6 = node_2_3->measconfigsn->measuredfrequenciessn[6]->measuredfrequency->value;
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN6_exists = 1;
+				}else{
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN6_exists = 0;
+				}
+				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 7 && node_2_3->measconfigsn->measuredfrequenciessn[7]->measuredfrequency){
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN7 = node_2_3->measconfigsn->measuredfrequenciessn[7]->measuredfrequency->value;
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN7_exists = 1;
+				}else{
+					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN7_exists = 0;
 				}
 				if(node_2_3->candidateservingfreqlistnr && node_2_3->candidateservingfreqlistnr->n_items > 0){
 					SgNB_ack_for_ue_NRfreqs->candidate_serving_cell_freqs0 = node_2_3->candidateservingfreqlistnr->items[0];
@@ -1661,54 +1764,6 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 				}else{
 					SgNB_ack_for_ue_NRfreqs->candidate_serving_cell_freqs7_exists = 0;
 				}
-				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 0 && node_2_3->measconfigsn->measuredfrequenciessn[0]->measuredfrequency){
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN0 = node_2_3->measconfigsn->measuredfrequenciessn[0]->measuredfrequency->value;
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN0_exists = 1;
-				}else{
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN0_exists = 0;
-				}
-				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 1 && node_2_3->measconfigsn->measuredfrequenciessn[1]->measuredfrequency){
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN1 = node_2_3->measconfigsn->measuredfrequenciessn[1]->measuredfrequency->value;
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN1_exists = 1;
-				}else{
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN1_exists = 0;
-				}
-				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 2 && node_2_3->measconfigsn->measuredfrequenciessn[2]->measuredfrequency){
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN2 = node_2_3->measconfigsn->measuredfrequenciessn[2]->measuredfrequency->value;
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN2_exists = 1;
-				}else{
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN2_exists = 0;
-				}
-				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 3 && node_2_3->measconfigsn->measuredfrequenciessn[3]->measuredfrequency){
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN3 = node_2_3->measconfigsn->measuredfrequenciessn[3]->measuredfrequency->value;
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN3_exists = 1;
-				}else{
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN3_exists = 0;
-				}
-				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 4 && node_2_3->measconfigsn->measuredfrequenciessn[4]->measuredfrequency){
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN4 = node_2_3->measconfigsn->measuredfrequenciessn[4]->measuredfrequency->value;
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN4_exists = 1;
-				}else{
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN4_exists = 0;
-				}
-				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 5 && node_2_3->measconfigsn->measuredfrequenciessn[5]->measuredfrequency){
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN5 = node_2_3->measconfigsn->measuredfrequenciessn[5]->measuredfrequency->value;
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN5_exists = 1;
-				}else{
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN5_exists = 0;
-				}
-				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 6 && node_2_3->measconfigsn->measuredfrequenciessn[6]->measuredfrequency){
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN6 = node_2_3->measconfigsn->measuredfrequenciessn[6]->measuredfrequency->value;
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN6_exists = 1;
-				}else{
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN6_exists = 0;
-				}
-				if(node_2_3->measconfigsn && node_2_3->measconfigsn->measuredfrequenciessn && node_2_3->measconfigsn->n_measuredfrequenciessn > 7 && node_2_3->measconfigsn->measuredfrequenciessn[7]->measuredfrequency){
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN7 = node_2_3->measconfigsn->measuredfrequenciessn[7]->measuredfrequency->value;
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN7_exists = 1;
-				}else{
-					SgNB_ack_for_ue_NRfreqs->measuredFrequenciesSN7_exists = 0;
-				}
 				rts_fta_process_packet(&cur_packet);
 			}
 		}
@@ -1719,7 +1774,9 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 	SgNB_ack_for_add_mod_for_ue = (struct _SgNB_ack_for_add_mod_for_ue *)(cur_packet.record.packed.values);
 	cur_packet.schema = 504;
 	node_3_0 = node_2_0;
-	SgNB_ack_for_add_mod_for_ue->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	SgNB_ack_for_add_mod_for_ue->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		SgNB_ack_for_add_mod_for_ue->gnb_id = empty_string;
 	else
@@ -1795,7 +1852,9 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 	SgNB_ack_for_ue_measurements = (struct _SgNB_ack_for_ue_measurements *)(cur_packet.record.packed.values);
 	cur_packet.schema = 505;
 	node_4_0 = node_3_0;
-	SgNB_ack_for_ue_measurements->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	SgNB_ack_for_ue_measurements->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		SgNB_ack_for_ue_measurements->gnb_id = empty_string;
 	else
@@ -1878,7 +1937,9 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 	SgNB_ack_for_ue_beam_csi = (struct _SgNB_ack_for_ue_beam_csi *)(cur_packet.record.packed.values);
 	cur_packet.schema = 506;
 	node_5_0 = node_4_0;
-	SgNB_ack_for_ue_beam_csi->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	SgNB_ack_for_ue_beam_csi->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		SgNB_ack_for_ue_beam_csi->gnb_id = empty_string;
 	else
@@ -1968,7 +2029,9 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 	SgNB_ack_for_ue_beam_ssb = (struct _SgNB_ack_for_ue_beam_ssb *)(cur_packet.record.packed.values);
 	cur_packet.schema = 507;
 	node_6_0 = node_5_0;
-	SgNB_ack_for_ue_beam_ssb->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	SgNB_ack_for_ue_beam_ssb->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		SgNB_ack_for_ue_beam_ssb->gnb_id = empty_string;
 	else
@@ -2052,194 +2115,244 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ_ACK(gs_uint8_t * buffer, gs_uint32_
 			}
 		}
 	}
-	uenibstreamprotobuf__sg_nbaddition_request_acknowledge__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbaddition_request_acknowledge__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
+// ------------------------------------------
+// ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
+	struct _sgnb_addreq_gtp_teid *sgnb_addreq_gtp_teid = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_0_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_0_1 = NULL;
+	StreamingProtobufs__ERABsToBeAddedSgNBAddReqList *node_0_2 = NULL;
+	StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs *node_0_3 = NULL;
+	gs_uint32_t i_0_3;
+	StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem *node_0_4 = NULL;
+	StreamingProtobufs__ERABsToBeAddedSgNBAddReqSgNBPDCPpresent *node_0_5 = NULL;
+	StreamingProtobufs__GTPtunnelEndpoint *node_0_6 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue *sgnb_addreq_for_ue = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_0_1 = NULL;
-	Uenibstreamprotobuf__ECGI *node_0_2 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_1_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_1_1 = NULL;
+	StreamingProtobufs__ECGI *node_1_2 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue_bearers *sgnb_addreq_for_ue_bearers = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_1_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_1_1 = NULL;
-	Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqList *node_1_2 = NULL;
-	Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItemIEs *node_1_3 = NULL;
-	gs_uint32_t i_1_3;
-	Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqItem *node_1_4 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_2_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_2_1 = NULL;
+	StreamingProtobufs__ERABsToBeAddedSgNBAddReqList *node_2_2 = NULL;
+	StreamingProtobufs__ERABsToBeAddedSgNBAddReqItemIEs *node_2_3 = NULL;
+	gs_uint32_t i_2_3;
+	StreamingProtobufs__ERABsToBeAddedSgNBAddReqItem *node_2_4 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue_sn_serv_ssb *sgnb_addreq_for_ue_sn_serv_ssb = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_2_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_2_1 = NULL;
-	Uenibstreamprotobuf__CGConfigInfo *node_2_2 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *node_2_3 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoIEs *node_2_4 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_2_5 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_2_6 = NULL;
-	gs_uint32_t i_2_6;
-	Uenibstreamprotobuf__MeasResultNR *node_2_7 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_2_8 = NULL;
-	Uenibstreamprotobuf__CellResults *node_2_9 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_2_10 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_3_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_3_1 = NULL;
+	StreamingProtobufs__CGConfigInfo *node_3_2 = NULL;
+	StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *node_3_3 = NULL;
+	StreamingProtobufs__CGConfigInfoIEs *node_3_4 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_3_5 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_3_6 = NULL;
+	gs_uint32_t i_3_6;
+	StreamingProtobufs__MeasResultNR *node_3_7 = NULL;
+	StreamingProtobufs__MeasResult *node_3_8 = NULL;
+	StreamingProtobufs__CellResults *node_3_9 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_3_10 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue_sn_serv_csi_rs *sgnb_addreq_for_ue_sn_serv_csi_rs = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_3_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_3_1 = NULL;
-	Uenibstreamprotobuf__CGConfigInfo *node_3_2 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *node_3_3 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoIEs *node_3_4 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_3_5 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_3_6 = NULL;
-	gs_uint32_t i_3_6;
-	Uenibstreamprotobuf__MeasResultNR *node_3_7 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_3_8 = NULL;
-	Uenibstreamprotobuf__CellResults *node_3_9 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_3_10 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_4_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_4_1 = NULL;
+	StreamingProtobufs__CGConfigInfo *node_4_2 = NULL;
+	StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *node_4_3 = NULL;
+	StreamingProtobufs__CGConfigInfoIEs *node_4_4 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_4_5 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_4_6 = NULL;
+	gs_uint32_t i_4_6;
+	StreamingProtobufs__MeasResultNR *node_4_7 = NULL;
+	StreamingProtobufs__MeasResult *node_4_8 = NULL;
+	StreamingProtobufs__CellResults *node_4_9 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_4_10 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue_mn_serv_ssb *sgnb_addreq_for_ue_mn_serv_ssb = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_4_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_4_1 = NULL;
-	Uenibstreamprotobuf__CGConfigInfo *node_4_2 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *node_4_3 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoIEs *node_4_4 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_4_5 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_4_6 = NULL;
-	gs_uint32_t i_4_6;
-	Uenibstreamprotobuf__MeasResultNR *node_4_7 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_4_8 = NULL;
-	Uenibstreamprotobuf__CellResults *node_4_9 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_4_10 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_5_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_5_1 = NULL;
+	StreamingProtobufs__CGConfigInfo *node_5_2 = NULL;
+	StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *node_5_3 = NULL;
+	StreamingProtobufs__CGConfigInfoIEs *node_5_4 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_5_5 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_5_6 = NULL;
+	gs_uint32_t i_5_6;
+	StreamingProtobufs__MeasResultNR *node_5_7 = NULL;
+	StreamingProtobufs__MeasResult *node_5_8 = NULL;
+	StreamingProtobufs__CellResults *node_5_9 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_5_10 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue_mn_serv_csi_rs *sgnb_addreq_for_ue_mn_serv_csi_rs = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_5_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_5_1 = NULL;
-	Uenibstreamprotobuf__CGConfigInfo *node_5_2 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *node_5_3 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoIEs *node_5_4 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_5_5 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_5_6 = NULL;
-	gs_uint32_t i_5_6;
-	Uenibstreamprotobuf__MeasResultNR *node_5_7 = NULL;
-	Uenibstreamprotobuf__MeasResult *node_5_8 = NULL;
-	Uenibstreamprotobuf__CellResults *node_5_9 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_5_10 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_6_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_6_1 = NULL;
+	StreamingProtobufs__CGConfigInfo *node_6_2 = NULL;
+	StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *node_6_3 = NULL;
+	StreamingProtobufs__CGConfigInfoIEs *node_6_4 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_6_5 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_6_6 = NULL;
+	gs_uint32_t i_6_6;
+	StreamingProtobufs__MeasResultNR *node_6_7 = NULL;
+	StreamingProtobufs__MeasResult *node_6_8 = NULL;
+	StreamingProtobufs__CellResults *node_6_9 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_6_10 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue_sn_neigh_ssb *sgnb_addreq_for_ue_sn_neigh_ssb = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_6_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_6_1 = NULL;
-	Uenibstreamprotobuf__CGConfigInfo *node_6_2 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *node_6_3 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoIEs *node_6_4 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_6_5 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_6_6 = NULL;
-	gs_uint32_t i_6_6;
-	Uenibstreamprotobuf__MeasResultListNR *node_6_7 = NULL;
-	Uenibstreamprotobuf__MeasResultNR *node_6_8 = NULL;
-	gs_uint32_t i_6_8;
-	Uenibstreamprotobuf__MeasResult *node_6_9 = NULL;
-	Uenibstreamprotobuf__CellResults *node_6_10 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_6_11 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_7_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_7_1 = NULL;
+	StreamingProtobufs__CGConfigInfo *node_7_2 = NULL;
+	StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *node_7_3 = NULL;
+	StreamingProtobufs__CGConfigInfoIEs *node_7_4 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_7_5 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_7_6 = NULL;
+	gs_uint32_t i_7_6;
+	StreamingProtobufs__MeasResultListNR *node_7_7 = NULL;
+	StreamingProtobufs__MeasResultNR *node_7_8 = NULL;
+	gs_uint32_t i_7_8;
+	StreamingProtobufs__MeasResult *node_7_9 = NULL;
+	StreamingProtobufs__CellResults *node_7_10 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_7_11 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue_sn_neigh_csi_rs *sgnb_addreq_for_ue_sn_neigh_csi_rs = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_7_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_7_1 = NULL;
-	Uenibstreamprotobuf__CGConfigInfo *node_7_2 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *node_7_3 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoIEs *node_7_4 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_7_5 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_7_6 = NULL;
-	gs_uint32_t i_7_6;
-	Uenibstreamprotobuf__MeasResultListNR *node_7_7 = NULL;
-	Uenibstreamprotobuf__MeasResultNR *node_7_8 = NULL;
-	gs_uint32_t i_7_8;
-	Uenibstreamprotobuf__MeasResult *node_7_9 = NULL;
-	Uenibstreamprotobuf__CellResults *node_7_10 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_7_11 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_8_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_8_1 = NULL;
+	StreamingProtobufs__CGConfigInfo *node_8_2 = NULL;
+	StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *node_8_3 = NULL;
+	StreamingProtobufs__CGConfigInfoIEs *node_8_4 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_8_5 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_8_6 = NULL;
+	gs_uint32_t i_8_6;
+	StreamingProtobufs__MeasResultListNR *node_8_7 = NULL;
+	StreamingProtobufs__MeasResultNR *node_8_8 = NULL;
+	gs_uint32_t i_8_8;
+	StreamingProtobufs__MeasResult *node_8_9 = NULL;
+	StreamingProtobufs__CellResults *node_8_10 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_8_11 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue_mn_neigh_ssb *sgnb_addreq_for_ue_mn_neigh_ssb = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_8_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_8_1 = NULL;
-	Uenibstreamprotobuf__CGConfigInfo *node_8_2 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *node_8_3 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoIEs *node_8_4 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_8_5 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_8_6 = NULL;
-	gs_uint32_t i_8_6;
-	Uenibstreamprotobuf__MeasResultListNR *node_8_7 = NULL;
-	Uenibstreamprotobuf__MeasResultNR *node_8_8 = NULL;
-	gs_uint32_t i_8_8;
-	Uenibstreamprotobuf__MeasResult *node_8_9 = NULL;
-	Uenibstreamprotobuf__CellResults *node_8_10 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_8_11 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_9_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_9_1 = NULL;
+	StreamingProtobufs__CGConfigInfo *node_9_2 = NULL;
+	StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *node_9_3 = NULL;
+	StreamingProtobufs__CGConfigInfoIEs *node_9_4 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_9_5 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_9_6 = NULL;
+	gs_uint32_t i_9_6;
+	StreamingProtobufs__MeasResultListNR *node_9_7 = NULL;
+	StreamingProtobufs__MeasResultNR *node_9_8 = NULL;
+	gs_uint32_t i_9_8;
+	StreamingProtobufs__MeasResult *node_9_9 = NULL;
+	StreamingProtobufs__CellResults *node_9_10 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_9_11 = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 	struct _sgnb_addreq_for_ue_mn_neigh_csi_rs *sgnb_addreq_for_ue_mn_neigh_csi_rs = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequest *node_9_0 = NULL;
-	Uenibstreamprotobuf__SgNBAdditionRequestIEs *node_9_1 = NULL;
-	Uenibstreamprotobuf__CGConfigInfo *node_9_2 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *node_9_3 = NULL;
-	Uenibstreamprotobuf__CGConfigInfoIEs *node_9_4 = NULL;
-	Uenibstreamprotobuf__MeasResultList2NR *node_9_5 = NULL;
-	Uenibstreamprotobuf__MeasResult2NR *node_9_6 = NULL;
-	gs_uint32_t i_9_6;
-	Uenibstreamprotobuf__MeasResultListNR *node_9_7 = NULL;
-	Uenibstreamprotobuf__MeasResultNR *node_9_8 = NULL;
-	gs_uint32_t i_9_8;
-	Uenibstreamprotobuf__MeasResult *node_9_9 = NULL;
-	Uenibstreamprotobuf__CellResults *node_9_10 = NULL;
-	Uenibstreamprotobuf__MeasQuantityResults *node_9_11 = NULL;
+	StreamingProtobufs__SgNBAdditionRequest *node_10_0 = NULL;
+	StreamingProtobufs__SgNBAdditionRequestIEs *node_10_1 = NULL;
+	StreamingProtobufs__CGConfigInfo *node_10_2 = NULL;
+	StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *node_10_3 = NULL;
+	StreamingProtobufs__CGConfigInfoIEs *node_10_4 = NULL;
+	StreamingProtobufs__MeasResultList2NR *node_10_5 = NULL;
+	StreamingProtobufs__MeasResult2NR *node_10_6 = NULL;
+	gs_uint32_t i_10_6;
+	StreamingProtobufs__MeasResultListNR *node_10_7 = NULL;
+	StreamingProtobufs__MeasResultNR *node_10_8 = NULL;
+	gs_uint32_t i_10_8;
+	StreamingProtobufs__MeasResult *node_10_9 = NULL;
+	StreamingProtobufs__CellResults *node_10_10 = NULL;
+	StreamingProtobufs__MeasQuantityResults *node_10_11 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 
-	sgnb_addreq_for_ue = (struct _sgnb_addreq_for_ue *)(cur_packet.record.packed.values);
-	cur_packet.schema = 401;
+	sgnb_addreq_gtp_teid = (struct _sgnb_addreq_gtp_teid *)(cur_packet.record.packed.values);
+	cur_packet.schema = 10000;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbadditionrequest;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sgnb_addreq_for_ue->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_gtp_teid->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
+	if(hdr->header->gnbid==NULL)
+		sgnb_addreq_gtp_teid->gnb_id = empty_string;
+	else
+		sgnb_addreq_gtp_teid->gnb_id = hdr->header->gnbid->value;
+
+	node_0_1 = node_0_0->protocolies;
+	if(node_0_0->protocolies){
+		sgnb_addreq_gtp_teid->id_MeNB_UE_X2AP_ID = node_0_1->id_menb_ue_x2ap_id;
+		node_0_2 = node_0_1->id_e_rabs_tobeadded_sgnbaddreqlist;
+		if(node_0_1->id_e_rabs_tobeadded_sgnbaddreqlist){
+			for(i_0_3=0;i_0_3<node_0_2->n_items; i_0_3++){
+				node_0_3 = node_0_2->items[i_0_3];
+				node_0_4 = node_0_3->id_e_rabs_tobeadded_sgnbaddreq_item;
+				if(node_0_3->id_e_rabs_tobeadded_sgnbaddreq_item){
+					node_0_5 = node_0_4->sgnbpdcppresent;
+					if(node_0_4->sgnbpdcppresent){
+						node_0_6 = node_0_5->s1_ul_gtptunnelendpoint;
+						if(node_0_5->s1_ul_gtptunnelendpoint){
+							sgnb_addreq_gtp_teid->gTP_TEID = node_0_6->gtp_teid;
+							sgnb_addreq_gtp_teid->transportLayerAddress = node_0_6->transportlayeraddress;
+							rts_fta_process_packet(&cur_packet);
+						}
+					}
+				}
+			}
+		}
+	}
+// --------------------------------------------------
+// ---  Specialized processing for .proto sgnb_addition_request.json, path sgnb_addition_req.json
+
+	sgnb_addreq_for_ue = (struct _sgnb_addreq_for_ue *)(cur_packet.record.packed.values);
+	cur_packet.schema = 401;
+	node_1_0 = node_0_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue->gnb_id = hdr->header->gnbid->value;
 
-	node_0_1 = node_0_0->protocolies;
-	if(node_0_0->protocolies){
-		sgnb_addreq_for_ue->id_MeNB_UE_X2AP_ID = node_0_1->id_menb_ue_x2ap_id;
-		if(node_0_1->id_sgnbueaggregatemaximumbitrate){
-			sgnb_addreq_for_ue->uEaggregateMaximumBitRateDownlink = node_0_1->id_sgnbueaggregatemaximumbitrate->ueaggregatemaximumbitratedownlink;
+	node_1_1 = node_1_0->protocolies;
+	if(node_1_0->protocolies){
+		sgnb_addreq_for_ue->id_MeNB_UE_X2AP_ID = node_1_1->id_menb_ue_x2ap_id;
+		if(node_1_1->id_sgnbueaggregatemaximumbitrate){
+			sgnb_addreq_for_ue->uEaggregateMaximumBitRateDownlink = node_1_1->id_sgnbueaggregatemaximumbitrate->ueaggregatemaximumbitratedownlink;
 			sgnb_addreq_for_ue->uEaggregateMaximumBitRateDownlink_exists = 1;
 		}else{
 			sgnb_addreq_for_ue->uEaggregateMaximumBitRateDownlink_exists = 0;
 		}
-		if(node_0_1->id_menb_ue_x2ap_id_extension){
-			sgnb_addreq_for_ue->id_MeNB_UE_X2AP_ID_Extension = node_0_1->id_menb_ue_x2ap_id_extension->value;
+		if(node_1_1->id_menb_ue_x2ap_id_extension){
+			sgnb_addreq_for_ue->id_MeNB_UE_X2AP_ID_Extension = node_1_1->id_menb_ue_x2ap_id_extension->value;
 		}else{
 			sgnb_addreq_for_ue->id_MeNB_UE_X2AP_ID_Extension = 0;
 		}
-		node_0_2 = node_0_1->id_menbcell_id;
-		if(node_0_1->id_menbcell_id){
-			sgnb_addreq_for_ue->eUTRANcellIdentifier = node_0_2->eutrancellidentifier;
-			sgnb_addreq_for_ue->pLMN_Identity = node_0_2->plmn_identity;
+		node_1_2 = node_1_1->id_menbcell_id;
+		if(node_1_1->id_menbcell_id){
+			sgnb_addreq_for_ue->eUTRANcellIdentifier = node_1_2->eutrancellidentifier;
+			sgnb_addreq_for_ue->pLMN_Identity = node_1_2->plmn_identity;
 			rts_fta_process_packet(&cur_packet);
 		}
 	}
@@ -2248,106 +2361,110 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 
 	sgnb_addreq_for_ue_bearers = (struct _sgnb_addreq_for_ue_bearers *)(cur_packet.record.packed.values);
 	cur_packet.schema = 402;
-	node_1_0 = node_0_0;
-	sgnb_addreq_for_ue_bearers->timestamp_ms = timestamp;
+	node_2_0 = node_1_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue_bearers->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue_bearers->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue_bearers->gnb_id = hdr->header->gnbid->value;
 
-	node_1_1 = node_1_0->protocolies;
-	if(node_1_0->protocolies){
-		sgnb_addreq_for_ue_bearers->id_MeNB_UE_X2AP_ID = node_1_1->id_menb_ue_x2ap_id;
-		node_1_2 = node_1_1->id_e_rabs_tobeadded_sgnbaddreqlist;
-		if(node_1_1->id_e_rabs_tobeadded_sgnbaddreqlist){
-			for(i_1_3=0;i_1_3<node_1_2->n_items; i_1_3++){
-				node_1_3 = node_1_2->items[i_1_3];
-				node_1_4 = node_1_3->id_e_rabs_tobeadded_sgnbaddreq_item;
-				if(node_1_3->id_e_rabs_tobeadded_sgnbaddreq_item){
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters){
-						sgnb_addreq_for_ue_bearers->MCG_eRAB_MaximumBitrateDL = node_1_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters->e_rab_maximumbitratedl;
+	node_2_1 = node_2_0->protocolies;
+	if(node_2_0->protocolies){
+		sgnb_addreq_for_ue_bearers->id_MeNB_UE_X2AP_ID = node_2_1->id_menb_ue_x2ap_id;
+		node_2_2 = node_2_1->id_e_rabs_tobeadded_sgnbaddreqlist;
+		if(node_2_1->id_e_rabs_tobeadded_sgnbaddreqlist){
+			for(i_2_3=0;i_2_3<node_2_2->n_items; i_2_3++){
+				node_2_3 = node_2_2->items[i_2_3];
+				node_2_4 = node_2_3->id_e_rabs_tobeadded_sgnbaddreq_item;
+				if(node_2_3->id_e_rabs_tobeadded_sgnbaddreq_item){
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters){
+						sgnb_addreq_for_ue_bearers->MCG_eRAB_MaximumBitrateDL = node_2_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters->e_rab_maximumbitratedl;
 					}else{
 						sgnb_addreq_for_ue_bearers->MCG_eRAB_MaximumBitrateDL = 0;
 					}
-					if(node_1_4->en_dc_resourceconfiguration){
-						sgnb_addreq_for_ue_bearers->pDCPatSgNB = node_1_4->en_dc_resourceconfiguration->pdcpatsgnb;
+					if(node_2_4->en_dc_resourceconfiguration){
+						sgnb_addreq_for_ue_bearers->pDCPatSgNB = node_2_4->en_dc_resourceconfiguration->pdcpatsgnb;
 					}else{
 						sgnb_addreq_for_ue_bearers->pDCPatSgNB = -1;
 					}
-					sgnb_addreq_for_ue_bearers->drb_ID = node_1_4->drb_id;
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority){
-						sgnb_addreq_for_ue_bearers->priorityLevel = node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->prioritylevel;
+					sgnb_addreq_for_ue_bearers->drb_ID = node_2_4->drb_id;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority){
+						sgnb_addreq_for_ue_bearers->priorityLevel = node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->prioritylevel;
 					}else{
 						sgnb_addreq_for_ue_bearers->priorityLevel = 0;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->menb_dl_gtp_teidatmcg){
-						sgnb_addreq_for_ue_bearers->gTP_TEID = node_1_4->sgnbpdcppresent->menb_dl_gtp_teidatmcg->gtp_teid;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->menb_dl_gtp_teidatmcg){
+						sgnb_addreq_for_ue_bearers->gTP_TEID = node_2_4->sgnbpdcppresent->menb_dl_gtp_teidatmcg->gtp_teid;
 					}else{
-						sgnb_addreq_for_ue_bearers->gTP_TEID = "";
+						sgnb_addreq_for_ue_bearers->gTP_TEID.data = "";
+						sgnb_addreq_for_ue_bearers->gTP_TEID.len = 1;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->pre_emptioncapability){
-						sgnb_addreq_for_ue_bearers->pre_emptionCapability = node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->pre_emptioncapability->value;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->pre_emptioncapability){
+						sgnb_addreq_for_ue_bearers->pre_emptionCapability = node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->pre_emptioncapability->value;
 					}else{
 						sgnb_addreq_for_ue_bearers->pre_emptionCapability = -1;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters){
-						sgnb_addreq_for_ue_bearers->MCG_eRAB_GuaranteedBitrateUL = node_1_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters->e_rab_guaranteedbitrateul;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters){
+						sgnb_addreq_for_ue_bearers->MCG_eRAB_GuaranteedBitrateUL = node_2_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters->e_rab_guaranteedbitrateul;
 					}else{
 						sgnb_addreq_for_ue_bearers->MCG_eRAB_GuaranteedBitrateUL = 0;
 					}
-					if(node_1_4->en_dc_resourceconfiguration){
-						sgnb_addreq_for_ue_bearers->mCGresources = node_1_4->en_dc_resourceconfiguration->mcgresources;
+					if(node_2_4->en_dc_resourceconfiguration){
+						sgnb_addreq_for_ue_bearers->mCGresources = node_2_4->en_dc_resourceconfiguration->mcgresources;
 					}else{
 						sgnb_addreq_for_ue_bearers->mCGresources = -1;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->menb_dl_gtp_teidatmcg){
-						sgnb_addreq_for_ue_bearers->transportLayerAddress = node_1_4->sgnbpdcppresent->menb_dl_gtp_teidatmcg->transportlayeraddress;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->menb_dl_gtp_teidatmcg){
+						sgnb_addreq_for_ue_bearers->transportLayerAddress = node_2_4->sgnbpdcppresent->menb_dl_gtp_teidatmcg->transportlayeraddress;
 					}else{
-						sgnb_addreq_for_ue_bearers->transportLayerAddress = "";
+						sgnb_addreq_for_ue_bearers->transportLayerAddress.data = "";
+						sgnb_addreq_for_ue_bearers->transportLayerAddress.len = 1;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation){
-						sgnb_addreq_for_ue_bearers->full_eRAB_GuaranteedBitrateUL = node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation->e_rab_guaranteedbitrateul;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation){
+						sgnb_addreq_for_ue_bearers->full_eRAB_GuaranteedBitrateUL = node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation->e_rab_guaranteedbitrateul;
 					}else{
 						sgnb_addreq_for_ue_bearers->full_eRAB_GuaranteedBitrateUL = 0;
 					}
-					if(node_1_4->en_dc_resourceconfiguration){
-						sgnb_addreq_for_ue_bearers->sCGresources = node_1_4->en_dc_resourceconfiguration->scgresources;
+					if(node_2_4->en_dc_resourceconfiguration){
+						sgnb_addreq_for_ue_bearers->sCGresources = node_2_4->en_dc_resourceconfiguration->scgresources;
 					}else{
 						sgnb_addreq_for_ue_bearers->sCGresources = -1;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters){
-						sgnb_addreq_for_ue_bearers->MCG_eRAB_MaximumBitrateUL = node_1_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters->e_rab_maximumbitrateul;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters){
+						sgnb_addreq_for_ue_bearers->MCG_eRAB_MaximumBitrateUL = node_2_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters->e_rab_maximumbitrateul;
 					}else{
 						sgnb_addreq_for_ue_bearers->MCG_eRAB_MaximumBitrateUL = 0;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation){
-						sgnb_addreq_for_ue_bearers->full_eRAB_MaximumBitrateUL = node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation->e_rab_maximumbitrateul;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation){
+						sgnb_addreq_for_ue_bearers->full_eRAB_MaximumBitrateUL = node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation->e_rab_maximumbitrateul;
 					}else{
 						sgnb_addreq_for_ue_bearers->full_eRAB_MaximumBitrateUL = 0;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->pre_emptionvulnerability){
-						sgnb_addreq_for_ue_bearers->pre_emptionVulnerability = node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->pre_emptionvulnerability->value;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->pre_emptionvulnerability){
+						sgnb_addreq_for_ue_bearers->pre_emptionVulnerability = node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->allocationandretentionpriority->pre_emptionvulnerability->value;
 					}else{
 						sgnb_addreq_for_ue_bearers->pre_emptionVulnerability = -1;
 					}
-					sgnb_addreq_for_ue_bearers->e_RAB_ID = node_1_4->e_rab_id;
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters){
-						sgnb_addreq_for_ue_bearers->MCG_eRAB_GuaranteedBitrateDL = node_1_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters->e_rab_guaranteedbitratedl;
+					sgnb_addreq_for_ue_bearers->e_RAB_ID = node_2_4->e_rab_id;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters){
+						sgnb_addreq_for_ue_bearers->MCG_eRAB_GuaranteedBitrateDL = node_2_4->sgnbpdcppresent->max_mcg_admit_e_rab_level_qos_parameters->e_rab_guaranteedbitratedl;
 					}else{
 						sgnb_addreq_for_ue_bearers->MCG_eRAB_GuaranteedBitrateDL = 0;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters){
-						sgnb_addreq_for_ue_bearers->qCI = node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->qci;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters){
+						sgnb_addreq_for_ue_bearers->qCI = node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->qci;
 					}else{
 						sgnb_addreq_for_ue_bearers->qCI = 0;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation){
-						sgnb_addreq_for_ue_bearers->full_eRAB_MaximumBitrateDL = node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation->e_rab_maximumbitratedl;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation){
+						sgnb_addreq_for_ue_bearers->full_eRAB_MaximumBitrateDL = node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation->e_rab_maximumbitratedl;
 					}else{
 						sgnb_addreq_for_ue_bearers->full_eRAB_MaximumBitrateDL = 0;
 					}
-					if(node_1_4->sgnbpdcppresent && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation){
-						sgnb_addreq_for_ue_bearers->full_eRAB_GuaranteedBitrateDL = node_1_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation->e_rab_guaranteedbitratedl;
+					if(node_2_4->sgnbpdcppresent && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters && node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation){
+						sgnb_addreq_for_ue_bearers->full_eRAB_GuaranteedBitrateDL = node_2_4->sgnbpdcppresent->full_e_rab_level_qos_parameters->gbrqosinformation->e_rab_guaranteedbitratedl;
 					}else{
 						sgnb_addreq_for_ue_bearers->full_eRAB_GuaranteedBitrateDL = 0;
 					}
@@ -2361,57 +2478,59 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 
 	sgnb_addreq_for_ue_sn_serv_ssb = (struct _sgnb_addreq_for_ue_sn_serv_ssb *)(cur_packet.record.packed.values);
 	cur_packet.schema = 403;
-	node_2_0 = node_1_0;
-	sgnb_addreq_for_ue_sn_serv_ssb->timestamp_ms = timestamp;
+	node_3_0 = node_2_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue_sn_serv_ssb->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue_sn_serv_ssb->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue_sn_serv_ssb->gnb_id = hdr->header->gnbid->value;
 
-	node_2_1 = node_2_0->protocolies;
-	if(node_2_0->protocolies){
-		sgnb_addreq_for_ue_sn_serv_ssb->id_MeNB_UE_X2AP_ID = node_2_1->id_menb_ue_x2ap_id;
-		if(node_2_1->id_menb_ue_x2ap_id_extension){
-			sgnb_addreq_for_ue_sn_serv_ssb->id_MeNB_UE_X2AP_ID_Extension = node_2_1->id_menb_ue_x2ap_id_extension->value;
+	node_3_1 = node_3_0->protocolies;
+	if(node_3_0->protocolies){
+		sgnb_addreq_for_ue_sn_serv_ssb->id_MeNB_UE_X2AP_ID = node_3_1->id_menb_ue_x2ap_id;
+		if(node_3_1->id_menb_ue_x2ap_id_extension){
+			sgnb_addreq_for_ue_sn_serv_ssb->id_MeNB_UE_X2AP_ID_Extension = node_3_1->id_menb_ue_x2ap_id_extension->value;
 		}else{
 			sgnb_addreq_for_ue_sn_serv_ssb->id_MeNB_UE_X2AP_ID_Extension = 0;
 		}
-		node_2_2 = node_2_1->id_menbtosgnbcontainer;
-		if(node_2_1->id_menbtosgnbcontainer){
-			node_2_3 = node_2_2->criticalextensionschoice1;
-			if(node_2_2->criticalextensionschoice1){
-				node_2_4 = node_2_3->protocolies;
-				if(node_2_3->protocolies){
-					node_2_5 = node_2_4->candidatecellinfolistsn;
-					if(node_2_4->candidatecellinfolistsn){
-						for(i_2_6=0;i_2_6<node_2_5->n_items; i_2_6++){
-							node_2_6 = node_2_5->items[i_2_6];
-							node_2_7 = node_2_6->measresultservingcell;
-							if(node_2_6->measresultservingcell){
-								if(node_2_7->physcellid){
-									sgnb_addreq_for_ue_sn_serv_ssb->physCellId = node_2_7->physcellid->value;
+		node_3_2 = node_3_1->id_menbtosgnbcontainer;
+		if(node_3_1->id_menbtosgnbcontainer){
+			node_3_3 = node_3_2->criticalextensionschoice1;
+			if(node_3_2->criticalextensionschoice1){
+				node_3_4 = node_3_3->protocolies;
+				if(node_3_3->protocolies){
+					node_3_5 = node_3_4->candidatecellinfolistsn;
+					if(node_3_4->candidatecellinfolistsn){
+						for(i_3_6=0;i_3_6<node_3_5->n_items; i_3_6++){
+							node_3_6 = node_3_5->items[i_3_6];
+							node_3_7 = node_3_6->measresultservingcell;
+							if(node_3_6->measresultservingcell){
+								if(node_3_7->physcellid){
+									sgnb_addreq_for_ue_sn_serv_ssb->physCellId = node_3_7->physcellid->value;
 									sgnb_addreq_for_ue_sn_serv_ssb->physCellId_exists = 1;
 								}else{
 									sgnb_addreq_for_ue_sn_serv_ssb->physCellId_exists = 0;
 								}
-								node_2_8 = node_2_7->measresult;
-								if(node_2_7->measresult){
-									node_2_9 = node_2_8->cellresults;
-									if(node_2_8->cellresults){
-										node_2_10 = node_2_9->resultsssb_cell;
-										if(node_2_9->resultsssb_cell){
-											if(node_2_10->rsrq){
-												sgnb_addreq_for_ue_sn_serv_ssb->rsrq = node_2_10->rsrq->value;
+								node_3_8 = node_3_7->measresult;
+								if(node_3_7->measresult){
+									node_3_9 = node_3_8->cellresults;
+									if(node_3_8->cellresults){
+										node_3_10 = node_3_9->resultsssb_cell;
+										if(node_3_9->resultsssb_cell){
+											if(node_3_10->rsrq){
+												sgnb_addreq_for_ue_sn_serv_ssb->rsrq = node_3_10->rsrq->value;
 											}else{
 												sgnb_addreq_for_ue_sn_serv_ssb->rsrq = 128;
 											}
-											if(node_2_10->rsrp){
-												sgnb_addreq_for_ue_sn_serv_ssb->rsrp = node_2_10->rsrp->value;
+											if(node_3_10->rsrp){
+												sgnb_addreq_for_ue_sn_serv_ssb->rsrp = node_3_10->rsrp->value;
 											}else{
 												sgnb_addreq_for_ue_sn_serv_ssb->rsrp = 128;
 											}
-											if(node_2_10->sinr){
-												sgnb_addreq_for_ue_sn_serv_ssb->sinr = node_2_10->sinr->value;
+											if(node_3_10->sinr){
+												sgnb_addreq_for_ue_sn_serv_ssb->sinr = node_3_10->sinr->value;
 											}else{
 												sgnb_addreq_for_ue_sn_serv_ssb->sinr = 128;
 											}
@@ -2431,57 +2550,59 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 
 	sgnb_addreq_for_ue_sn_serv_csi_rs = (struct _sgnb_addreq_for_ue_sn_serv_csi_rs *)(cur_packet.record.packed.values);
 	cur_packet.schema = 404;
-	node_3_0 = node_2_0;
-	sgnb_addreq_for_ue_sn_serv_csi_rs->timestamp_ms = timestamp;
+	node_4_0 = node_3_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue_sn_serv_csi_rs->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue_sn_serv_csi_rs->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue_sn_serv_csi_rs->gnb_id = hdr->header->gnbid->value;
 
-	node_3_1 = node_3_0->protocolies;
-	if(node_3_0->protocolies){
-		sgnb_addreq_for_ue_sn_serv_csi_rs->id_MeNB_UE_X2AP_ID = node_3_1->id_menb_ue_x2ap_id;
-		if(node_3_1->id_menb_ue_x2ap_id_extension){
-			sgnb_addreq_for_ue_sn_serv_csi_rs->id_MeNB_UE_X2AP_ID_Extension = node_3_1->id_menb_ue_x2ap_id_extension->value;
+	node_4_1 = node_4_0->protocolies;
+	if(node_4_0->protocolies){
+		sgnb_addreq_for_ue_sn_serv_csi_rs->id_MeNB_UE_X2AP_ID = node_4_1->id_menb_ue_x2ap_id;
+		if(node_4_1->id_menb_ue_x2ap_id_extension){
+			sgnb_addreq_for_ue_sn_serv_csi_rs->id_MeNB_UE_X2AP_ID_Extension = node_4_1->id_menb_ue_x2ap_id_extension->value;
 		}else{
 			sgnb_addreq_for_ue_sn_serv_csi_rs->id_MeNB_UE_X2AP_ID_Extension = 0;
 		}
-		node_3_2 = node_3_1->id_menbtosgnbcontainer;
-		if(node_3_1->id_menbtosgnbcontainer){
-			node_3_3 = node_3_2->criticalextensionschoice1;
-			if(node_3_2->criticalextensionschoice1){
-				node_3_4 = node_3_3->protocolies;
-				if(node_3_3->protocolies){
-					node_3_5 = node_3_4->candidatecellinfolistsn;
-					if(node_3_4->candidatecellinfolistsn){
-						for(i_3_6=0;i_3_6<node_3_5->n_items; i_3_6++){
-							node_3_6 = node_3_5->items[i_3_6];
-							node_3_7 = node_3_6->measresultservingcell;
-							if(node_3_6->measresultservingcell){
-								if(node_3_7->physcellid){
-									sgnb_addreq_for_ue_sn_serv_csi_rs->physCellId = node_3_7->physcellid->value;
+		node_4_2 = node_4_1->id_menbtosgnbcontainer;
+		if(node_4_1->id_menbtosgnbcontainer){
+			node_4_3 = node_4_2->criticalextensionschoice1;
+			if(node_4_2->criticalextensionschoice1){
+				node_4_4 = node_4_3->protocolies;
+				if(node_4_3->protocolies){
+					node_4_5 = node_4_4->candidatecellinfolistsn;
+					if(node_4_4->candidatecellinfolistsn){
+						for(i_4_6=0;i_4_6<node_4_5->n_items; i_4_6++){
+							node_4_6 = node_4_5->items[i_4_6];
+							node_4_7 = node_4_6->measresultservingcell;
+							if(node_4_6->measresultservingcell){
+								if(node_4_7->physcellid){
+									sgnb_addreq_for_ue_sn_serv_csi_rs->physCellId = node_4_7->physcellid->value;
 									sgnb_addreq_for_ue_sn_serv_csi_rs->physCellId_exists = 1;
 								}else{
 									sgnb_addreq_for_ue_sn_serv_csi_rs->physCellId_exists = 0;
 								}
-								node_3_8 = node_3_7->measresult;
-								if(node_3_7->measresult){
-									node_3_9 = node_3_8->cellresults;
-									if(node_3_8->cellresults){
-										node_3_10 = node_3_9->resultscsi_rs_cell;
-										if(node_3_9->resultscsi_rs_cell){
-											if(node_3_10->rsrq){
-												sgnb_addreq_for_ue_sn_serv_csi_rs->rsrq = node_3_10->rsrq->value;
+								node_4_8 = node_4_7->measresult;
+								if(node_4_7->measresult){
+									node_4_9 = node_4_8->cellresults;
+									if(node_4_8->cellresults){
+										node_4_10 = node_4_9->resultscsi_rs_cell;
+										if(node_4_9->resultscsi_rs_cell){
+											if(node_4_10->rsrq){
+												sgnb_addreq_for_ue_sn_serv_csi_rs->rsrq = node_4_10->rsrq->value;
 											}else{
 												sgnb_addreq_for_ue_sn_serv_csi_rs->rsrq = 128;
 											}
-											if(node_3_10->rsrp){
-												sgnb_addreq_for_ue_sn_serv_csi_rs->rsrp = node_3_10->rsrp->value;
+											if(node_4_10->rsrp){
+												sgnb_addreq_for_ue_sn_serv_csi_rs->rsrp = node_4_10->rsrp->value;
 											}else{
 												sgnb_addreq_for_ue_sn_serv_csi_rs->rsrp = 128;
 											}
-											if(node_3_10->sinr){
-												sgnb_addreq_for_ue_sn_serv_csi_rs->sinr = node_3_10->sinr->value;
+											if(node_4_10->sinr){
+												sgnb_addreq_for_ue_sn_serv_csi_rs->sinr = node_4_10->sinr->value;
 											}else{
 												sgnb_addreq_for_ue_sn_serv_csi_rs->sinr = 128;
 											}
@@ -2501,57 +2622,59 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 
 	sgnb_addreq_for_ue_mn_serv_ssb = (struct _sgnb_addreq_for_ue_mn_serv_ssb *)(cur_packet.record.packed.values);
 	cur_packet.schema = 405;
-	node_4_0 = node_3_0;
-	sgnb_addreq_for_ue_mn_serv_ssb->timestamp_ms = timestamp;
+	node_5_0 = node_4_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue_mn_serv_ssb->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue_mn_serv_ssb->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue_mn_serv_ssb->gnb_id = hdr->header->gnbid->value;
 
-	node_4_1 = node_4_0->protocolies;
-	if(node_4_0->protocolies){
-		sgnb_addreq_for_ue_mn_serv_ssb->id_MeNB_UE_X2AP_ID = node_4_1->id_menb_ue_x2ap_id;
-		if(node_4_1->id_menb_ue_x2ap_id_extension){
-			sgnb_addreq_for_ue_mn_serv_ssb->id_MeNB_UE_X2AP_ID_Extension = node_4_1->id_menb_ue_x2ap_id_extension->value;
+	node_5_1 = node_5_0->protocolies;
+	if(node_5_0->protocolies){
+		sgnb_addreq_for_ue_mn_serv_ssb->id_MeNB_UE_X2AP_ID = node_5_1->id_menb_ue_x2ap_id;
+		if(node_5_1->id_menb_ue_x2ap_id_extension){
+			sgnb_addreq_for_ue_mn_serv_ssb->id_MeNB_UE_X2AP_ID_Extension = node_5_1->id_menb_ue_x2ap_id_extension->value;
 		}else{
 			sgnb_addreq_for_ue_mn_serv_ssb->id_MeNB_UE_X2AP_ID_Extension = 0;
 		}
-		node_4_2 = node_4_1->id_menbtosgnbcontainer;
-		if(node_4_1->id_menbtosgnbcontainer){
-			node_4_3 = node_4_2->criticalextensionschoice1;
-			if(node_4_2->criticalextensionschoice1){
-				node_4_4 = node_4_3->protocolies;
-				if(node_4_3->protocolies){
-					node_4_5 = node_4_4->candidatecellinfolistmn;
-					if(node_4_4->candidatecellinfolistmn){
-						for(i_4_6=0;i_4_6<node_4_5->n_items; i_4_6++){
-							node_4_6 = node_4_5->items[i_4_6];
-							node_4_7 = node_4_6->measresultservingcell;
-							if(node_4_6->measresultservingcell){
-								if(node_4_7->physcellid){
-									sgnb_addreq_for_ue_mn_serv_ssb->physCellId = node_4_7->physcellid->value;
+		node_5_2 = node_5_1->id_menbtosgnbcontainer;
+		if(node_5_1->id_menbtosgnbcontainer){
+			node_5_3 = node_5_2->criticalextensionschoice1;
+			if(node_5_2->criticalextensionschoice1){
+				node_5_4 = node_5_3->protocolies;
+				if(node_5_3->protocolies){
+					node_5_5 = node_5_4->candidatecellinfolistmn;
+					if(node_5_4->candidatecellinfolistmn){
+						for(i_5_6=0;i_5_6<node_5_5->n_items; i_5_6++){
+							node_5_6 = node_5_5->items[i_5_6];
+							node_5_7 = node_5_6->measresultservingcell;
+							if(node_5_6->measresultservingcell){
+								if(node_5_7->physcellid){
+									sgnb_addreq_for_ue_mn_serv_ssb->physCellId = node_5_7->physcellid->value;
 									sgnb_addreq_for_ue_mn_serv_ssb->physCellId_exists = 1;
 								}else{
 									sgnb_addreq_for_ue_mn_serv_ssb->physCellId_exists = 0;
 								}
-								node_4_8 = node_4_7->measresult;
-								if(node_4_7->measresult){
-									node_4_9 = node_4_8->cellresults;
-									if(node_4_8->cellresults){
-										node_4_10 = node_4_9->resultsssb_cell;
-										if(node_4_9->resultsssb_cell){
-											if(node_4_10->rsrq){
-												sgnb_addreq_for_ue_mn_serv_ssb->rsrq = node_4_10->rsrq->value;
+								node_5_8 = node_5_7->measresult;
+								if(node_5_7->measresult){
+									node_5_9 = node_5_8->cellresults;
+									if(node_5_8->cellresults){
+										node_5_10 = node_5_9->resultsssb_cell;
+										if(node_5_9->resultsssb_cell){
+											if(node_5_10->rsrq){
+												sgnb_addreq_for_ue_mn_serv_ssb->rsrq = node_5_10->rsrq->value;
 											}else{
 												sgnb_addreq_for_ue_mn_serv_ssb->rsrq = 128;
 											}
-											if(node_4_10->rsrp){
-												sgnb_addreq_for_ue_mn_serv_ssb->rsrp = node_4_10->rsrp->value;
+											if(node_5_10->rsrp){
+												sgnb_addreq_for_ue_mn_serv_ssb->rsrp = node_5_10->rsrp->value;
 											}else{
 												sgnb_addreq_for_ue_mn_serv_ssb->rsrp = 128;
 											}
-											if(node_4_10->sinr){
-												sgnb_addreq_for_ue_mn_serv_ssb->sinr = node_4_10->sinr->value;
+											if(node_5_10->sinr){
+												sgnb_addreq_for_ue_mn_serv_ssb->sinr = node_5_10->sinr->value;
 											}else{
 												sgnb_addreq_for_ue_mn_serv_ssb->sinr = 128;
 											}
@@ -2571,57 +2694,59 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 
 	sgnb_addreq_for_ue_mn_serv_csi_rs = (struct _sgnb_addreq_for_ue_mn_serv_csi_rs *)(cur_packet.record.packed.values);
 	cur_packet.schema = 406;
-	node_5_0 = node_4_0;
-	sgnb_addreq_for_ue_mn_serv_csi_rs->timestamp_ms = timestamp;
+	node_6_0 = node_5_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue_mn_serv_csi_rs->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue_mn_serv_csi_rs->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue_mn_serv_csi_rs->gnb_id = hdr->header->gnbid->value;
 
-	node_5_1 = node_5_0->protocolies;
-	if(node_5_0->protocolies){
-		sgnb_addreq_for_ue_mn_serv_csi_rs->id_MeNB_UE_X2AP_ID = node_5_1->id_menb_ue_x2ap_id;
-		if(node_5_1->id_menb_ue_x2ap_id_extension){
-			sgnb_addreq_for_ue_mn_serv_csi_rs->id_MeNB_UE_X2AP_ID_Extension = node_5_1->id_menb_ue_x2ap_id_extension->value;
+	node_6_1 = node_6_0->protocolies;
+	if(node_6_0->protocolies){
+		sgnb_addreq_for_ue_mn_serv_csi_rs->id_MeNB_UE_X2AP_ID = node_6_1->id_menb_ue_x2ap_id;
+		if(node_6_1->id_menb_ue_x2ap_id_extension){
+			sgnb_addreq_for_ue_mn_serv_csi_rs->id_MeNB_UE_X2AP_ID_Extension = node_6_1->id_menb_ue_x2ap_id_extension->value;
 		}else{
 			sgnb_addreq_for_ue_mn_serv_csi_rs->id_MeNB_UE_X2AP_ID_Extension = 0;
 		}
-		node_5_2 = node_5_1->id_menbtosgnbcontainer;
-		if(node_5_1->id_menbtosgnbcontainer){
-			node_5_3 = node_5_2->criticalextensionschoice1;
-			if(node_5_2->criticalextensionschoice1){
-				node_5_4 = node_5_3->protocolies;
-				if(node_5_3->protocolies){
-					node_5_5 = node_5_4->candidatecellinfolistmn;
-					if(node_5_4->candidatecellinfolistmn){
-						for(i_5_6=0;i_5_6<node_5_5->n_items; i_5_6++){
-							node_5_6 = node_5_5->items[i_5_6];
-							node_5_7 = node_5_6->measresultservingcell;
-							if(node_5_6->measresultservingcell){
-								if(node_5_7->physcellid){
-									sgnb_addreq_for_ue_mn_serv_csi_rs->physCellId = node_5_7->physcellid->value;
+		node_6_2 = node_6_1->id_menbtosgnbcontainer;
+		if(node_6_1->id_menbtosgnbcontainer){
+			node_6_3 = node_6_2->criticalextensionschoice1;
+			if(node_6_2->criticalextensionschoice1){
+				node_6_4 = node_6_3->protocolies;
+				if(node_6_3->protocolies){
+					node_6_5 = node_6_4->candidatecellinfolistmn;
+					if(node_6_4->candidatecellinfolistmn){
+						for(i_6_6=0;i_6_6<node_6_5->n_items; i_6_6++){
+							node_6_6 = node_6_5->items[i_6_6];
+							node_6_7 = node_6_6->measresultservingcell;
+							if(node_6_6->measresultservingcell){
+								if(node_6_7->physcellid){
+									sgnb_addreq_for_ue_mn_serv_csi_rs->physCellId = node_6_7->physcellid->value;
 									sgnb_addreq_for_ue_mn_serv_csi_rs->physCellId_exists = 1;
 								}else{
 									sgnb_addreq_for_ue_mn_serv_csi_rs->physCellId_exists = 0;
 								}
-								node_5_8 = node_5_7->measresult;
-								if(node_5_7->measresult){
-									node_5_9 = node_5_8->cellresults;
-									if(node_5_8->cellresults){
-										node_5_10 = node_5_9->resultscsi_rs_cell;
-										if(node_5_9->resultscsi_rs_cell){
-											if(node_5_10->rsrq){
-												sgnb_addreq_for_ue_mn_serv_csi_rs->rsrq = node_5_10->rsrq->value;
+								node_6_8 = node_6_7->measresult;
+								if(node_6_7->measresult){
+									node_6_9 = node_6_8->cellresults;
+									if(node_6_8->cellresults){
+										node_6_10 = node_6_9->resultscsi_rs_cell;
+										if(node_6_9->resultscsi_rs_cell){
+											if(node_6_10->rsrq){
+												sgnb_addreq_for_ue_mn_serv_csi_rs->rsrq = node_6_10->rsrq->value;
 											}else{
 												sgnb_addreq_for_ue_mn_serv_csi_rs->rsrq = 128;
 											}
-											if(node_5_10->rsrp){
-												sgnb_addreq_for_ue_mn_serv_csi_rs->rsrp = node_5_10->rsrp->value;
+											if(node_6_10->rsrp){
+												sgnb_addreq_for_ue_mn_serv_csi_rs->rsrp = node_6_10->rsrp->value;
 											}else{
 												sgnb_addreq_for_ue_mn_serv_csi_rs->rsrp = 128;
 											}
-											if(node_5_10->sinr){
-												sgnb_addreq_for_ue_mn_serv_csi_rs->sinr = node_5_10->sinr->value;
+											if(node_6_10->sinr){
+												sgnb_addreq_for_ue_mn_serv_csi_rs->sinr = node_6_10->sinr->value;
 											}else{
 												sgnb_addreq_for_ue_mn_serv_csi_rs->sinr = 128;
 											}
@@ -2641,59 +2766,61 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 
 	sgnb_addreq_for_ue_sn_neigh_ssb = (struct _sgnb_addreq_for_ue_sn_neigh_ssb *)(cur_packet.record.packed.values);
 	cur_packet.schema = 408;
-	node_6_0 = node_5_0;
-	sgnb_addreq_for_ue_sn_neigh_ssb->timestamp_ms = timestamp;
+	node_7_0 = node_6_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue_sn_neigh_ssb->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue_sn_neigh_ssb->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue_sn_neigh_ssb->gnb_id = hdr->header->gnbid->value;
 
-	node_6_1 = node_6_0->protocolies;
-	if(node_6_0->protocolies){
-		sgnb_addreq_for_ue_sn_neigh_ssb->id_MeNB_UE_X2AP_ID = node_6_1->id_menb_ue_x2ap_id;
-		if(node_6_1->id_menb_ue_x2ap_id_extension){
-			sgnb_addreq_for_ue_sn_neigh_ssb->id_MeNB_UE_X2AP_ID_Extension = node_6_1->id_menb_ue_x2ap_id_extension->value;
+	node_7_1 = node_7_0->protocolies;
+	if(node_7_0->protocolies){
+		sgnb_addreq_for_ue_sn_neigh_ssb->id_MeNB_UE_X2AP_ID = node_7_1->id_menb_ue_x2ap_id;
+		if(node_7_1->id_menb_ue_x2ap_id_extension){
+			sgnb_addreq_for_ue_sn_neigh_ssb->id_MeNB_UE_X2AP_ID_Extension = node_7_1->id_menb_ue_x2ap_id_extension->value;
 		}else{
 			sgnb_addreq_for_ue_sn_neigh_ssb->id_MeNB_UE_X2AP_ID_Extension = 0;
 		}
-		node_6_2 = node_6_1->id_menbtosgnbcontainer;
-		if(node_6_1->id_menbtosgnbcontainer){
-			node_6_3 = node_6_2->criticalextensionschoice1;
-			if(node_6_2->criticalextensionschoice1){
-				node_6_4 = node_6_3->protocolies;
-				if(node_6_3->protocolies){
-					node_6_5 = node_6_4->candidatecellinfolistsn;
-					if(node_6_4->candidatecellinfolistsn){
-						for(i_6_6=0;i_6_6<node_6_5->n_items; i_6_6++){
-							node_6_6 = node_6_5->items[i_6_6];
-							node_6_7 = node_6_6->measresultneighcelllistnr;
-							if(node_6_6->measresultneighcelllistnr){
-								for(i_6_8=0;i_6_8<node_6_7->n_items; i_6_8++){
-									node_6_8 = node_6_7->items[i_6_8];
-									if(node_6_8->physcellid){
-										sgnb_addreq_for_ue_sn_neigh_ssb->physCellId = node_6_8->physcellid->value;
+		node_7_2 = node_7_1->id_menbtosgnbcontainer;
+		if(node_7_1->id_menbtosgnbcontainer){
+			node_7_3 = node_7_2->criticalextensionschoice1;
+			if(node_7_2->criticalextensionschoice1){
+				node_7_4 = node_7_3->protocolies;
+				if(node_7_3->protocolies){
+					node_7_5 = node_7_4->candidatecellinfolistsn;
+					if(node_7_4->candidatecellinfolistsn){
+						for(i_7_6=0;i_7_6<node_7_5->n_items; i_7_6++){
+							node_7_6 = node_7_5->items[i_7_6];
+							node_7_7 = node_7_6->measresultneighcelllistnr;
+							if(node_7_6->measresultneighcelllistnr){
+								for(i_7_8=0;i_7_8<node_7_7->n_items; i_7_8++){
+									node_7_8 = node_7_7->items[i_7_8];
+									if(node_7_8->physcellid){
+										sgnb_addreq_for_ue_sn_neigh_ssb->physCellId = node_7_8->physcellid->value;
 										sgnb_addreq_for_ue_sn_neigh_ssb->physCellId_exists = 1;
 									}else{
 										sgnb_addreq_for_ue_sn_neigh_ssb->physCellId_exists = 0;
 									}
-									node_6_9 = node_6_8->measresult;
-									if(node_6_8->measresult){
-										node_6_10 = node_6_9->cellresults;
-										if(node_6_9->cellresults){
-											node_6_11 = node_6_10->resultsssb_cell;
-											if(node_6_10->resultsssb_cell){
-												if(node_6_11->rsrq){
-													sgnb_addreq_for_ue_sn_neigh_ssb->rsrq = node_6_11->rsrq->value;
+									node_7_9 = node_7_8->measresult;
+									if(node_7_8->measresult){
+										node_7_10 = node_7_9->cellresults;
+										if(node_7_9->cellresults){
+											node_7_11 = node_7_10->resultsssb_cell;
+											if(node_7_10->resultsssb_cell){
+												if(node_7_11->rsrq){
+													sgnb_addreq_for_ue_sn_neigh_ssb->rsrq = node_7_11->rsrq->value;
 												}else{
 													sgnb_addreq_for_ue_sn_neigh_ssb->rsrq = 128;
 												}
-												if(node_6_11->rsrp){
-													sgnb_addreq_for_ue_sn_neigh_ssb->rsrp = node_6_11->rsrp->value;
+												if(node_7_11->rsrp){
+													sgnb_addreq_for_ue_sn_neigh_ssb->rsrp = node_7_11->rsrp->value;
 												}else{
 													sgnb_addreq_for_ue_sn_neigh_ssb->rsrp = 128;
 												}
-												if(node_6_11->sinr){
-													sgnb_addreq_for_ue_sn_neigh_ssb->sinr = node_6_11->sinr->value;
+												if(node_7_11->sinr){
+													sgnb_addreq_for_ue_sn_neigh_ssb->sinr = node_7_11->sinr->value;
 												}else{
 													sgnb_addreq_for_ue_sn_neigh_ssb->sinr = 128;
 												}
@@ -2714,59 +2841,61 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 
 	sgnb_addreq_for_ue_sn_neigh_csi_rs = (struct _sgnb_addreq_for_ue_sn_neigh_csi_rs *)(cur_packet.record.packed.values);
 	cur_packet.schema = 409;
-	node_7_0 = node_6_0;
-	sgnb_addreq_for_ue_sn_neigh_csi_rs->timestamp_ms = timestamp;
+	node_8_0 = node_7_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue_sn_neigh_csi_rs->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue_sn_neigh_csi_rs->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue_sn_neigh_csi_rs->gnb_id = hdr->header->gnbid->value;
 
-	node_7_1 = node_7_0->protocolies;
-	if(node_7_0->protocolies){
-		sgnb_addreq_for_ue_sn_neigh_csi_rs->id_MeNB_UE_X2AP_ID = node_7_1->id_menb_ue_x2ap_id;
-		if(node_7_1->id_menb_ue_x2ap_id_extension){
-			sgnb_addreq_for_ue_sn_neigh_csi_rs->id_MeNB_UE_X2AP_ID_Extension = node_7_1->id_menb_ue_x2ap_id_extension->value;
+	node_8_1 = node_8_0->protocolies;
+	if(node_8_0->protocolies){
+		sgnb_addreq_for_ue_sn_neigh_csi_rs->id_MeNB_UE_X2AP_ID = node_8_1->id_menb_ue_x2ap_id;
+		if(node_8_1->id_menb_ue_x2ap_id_extension){
+			sgnb_addreq_for_ue_sn_neigh_csi_rs->id_MeNB_UE_X2AP_ID_Extension = node_8_1->id_menb_ue_x2ap_id_extension->value;
 		}else{
 			sgnb_addreq_for_ue_sn_neigh_csi_rs->id_MeNB_UE_X2AP_ID_Extension = 0;
 		}
-		node_7_2 = node_7_1->id_menbtosgnbcontainer;
-		if(node_7_1->id_menbtosgnbcontainer){
-			node_7_3 = node_7_2->criticalextensionschoice1;
-			if(node_7_2->criticalextensionschoice1){
-				node_7_4 = node_7_3->protocolies;
-				if(node_7_3->protocolies){
-					node_7_5 = node_7_4->candidatecellinfolistsn;
-					if(node_7_4->candidatecellinfolistsn){
-						for(i_7_6=0;i_7_6<node_7_5->n_items; i_7_6++){
-							node_7_6 = node_7_5->items[i_7_6];
-							node_7_7 = node_7_6->measresultneighcelllistnr;
-							if(node_7_6->measresultneighcelllistnr){
-								for(i_7_8=0;i_7_8<node_7_7->n_items; i_7_8++){
-									node_7_8 = node_7_7->items[i_7_8];
-									if(node_7_8->physcellid){
-										sgnb_addreq_for_ue_sn_neigh_csi_rs->physCellId = node_7_8->physcellid->value;
+		node_8_2 = node_8_1->id_menbtosgnbcontainer;
+		if(node_8_1->id_menbtosgnbcontainer){
+			node_8_3 = node_8_2->criticalextensionschoice1;
+			if(node_8_2->criticalextensionschoice1){
+				node_8_4 = node_8_3->protocolies;
+				if(node_8_3->protocolies){
+					node_8_5 = node_8_4->candidatecellinfolistsn;
+					if(node_8_4->candidatecellinfolistsn){
+						for(i_8_6=0;i_8_6<node_8_5->n_items; i_8_6++){
+							node_8_6 = node_8_5->items[i_8_6];
+							node_8_7 = node_8_6->measresultneighcelllistnr;
+							if(node_8_6->measresultneighcelllistnr){
+								for(i_8_8=0;i_8_8<node_8_7->n_items; i_8_8++){
+									node_8_8 = node_8_7->items[i_8_8];
+									if(node_8_8->physcellid){
+										sgnb_addreq_for_ue_sn_neigh_csi_rs->physCellId = node_8_8->physcellid->value;
 										sgnb_addreq_for_ue_sn_neigh_csi_rs->physCellId_exists = 1;
 									}else{
 										sgnb_addreq_for_ue_sn_neigh_csi_rs->physCellId_exists = 0;
 									}
-									node_7_9 = node_7_8->measresult;
-									if(node_7_8->measresult){
-										node_7_10 = node_7_9->cellresults;
-										if(node_7_9->cellresults){
-											node_7_11 = node_7_10->resultscsi_rs_cell;
-											if(node_7_10->resultscsi_rs_cell){
-												if(node_7_11->rsrq){
-													sgnb_addreq_for_ue_sn_neigh_csi_rs->rsrq = node_7_11->rsrq->value;
+									node_8_9 = node_8_8->measresult;
+									if(node_8_8->measresult){
+										node_8_10 = node_8_9->cellresults;
+										if(node_8_9->cellresults){
+											node_8_11 = node_8_10->resultscsi_rs_cell;
+											if(node_8_10->resultscsi_rs_cell){
+												if(node_8_11->rsrq){
+													sgnb_addreq_for_ue_sn_neigh_csi_rs->rsrq = node_8_11->rsrq->value;
 												}else{
 													sgnb_addreq_for_ue_sn_neigh_csi_rs->rsrq = 128;
 												}
-												if(node_7_11->rsrp){
-													sgnb_addreq_for_ue_sn_neigh_csi_rs->rsrp = node_7_11->rsrp->value;
+												if(node_8_11->rsrp){
+													sgnb_addreq_for_ue_sn_neigh_csi_rs->rsrp = node_8_11->rsrp->value;
 												}else{
 													sgnb_addreq_for_ue_sn_neigh_csi_rs->rsrp = 128;
 												}
-												if(node_7_11->sinr){
-													sgnb_addreq_for_ue_sn_neigh_csi_rs->sinr = node_7_11->sinr->value;
+												if(node_8_11->sinr){
+													sgnb_addreq_for_ue_sn_neigh_csi_rs->sinr = node_8_11->sinr->value;
 												}else{
 													sgnb_addreq_for_ue_sn_neigh_csi_rs->sinr = 128;
 												}
@@ -2787,59 +2916,61 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 
 	sgnb_addreq_for_ue_mn_neigh_ssb = (struct _sgnb_addreq_for_ue_mn_neigh_ssb *)(cur_packet.record.packed.values);
 	cur_packet.schema = 410;
-	node_8_0 = node_7_0;
-	sgnb_addreq_for_ue_mn_neigh_ssb->timestamp_ms = timestamp;
+	node_9_0 = node_8_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue_mn_neigh_ssb->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue_mn_neigh_ssb->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue_mn_neigh_ssb->gnb_id = hdr->header->gnbid->value;
 
-	node_8_1 = node_8_0->protocolies;
-	if(node_8_0->protocolies){
-		sgnb_addreq_for_ue_mn_neigh_ssb->id_MeNB_UE_X2AP_ID = node_8_1->id_menb_ue_x2ap_id;
-		if(node_8_1->id_menb_ue_x2ap_id_extension){
-			sgnb_addreq_for_ue_mn_neigh_ssb->id_MeNB_UE_X2AP_ID_Extension = node_8_1->id_menb_ue_x2ap_id_extension->value;
+	node_9_1 = node_9_0->protocolies;
+	if(node_9_0->protocolies){
+		sgnb_addreq_for_ue_mn_neigh_ssb->id_MeNB_UE_X2AP_ID = node_9_1->id_menb_ue_x2ap_id;
+		if(node_9_1->id_menb_ue_x2ap_id_extension){
+			sgnb_addreq_for_ue_mn_neigh_ssb->id_MeNB_UE_X2AP_ID_Extension = node_9_1->id_menb_ue_x2ap_id_extension->value;
 		}else{
 			sgnb_addreq_for_ue_mn_neigh_ssb->id_MeNB_UE_X2AP_ID_Extension = 0;
 		}
-		node_8_2 = node_8_1->id_menbtosgnbcontainer;
-		if(node_8_1->id_menbtosgnbcontainer){
-			node_8_3 = node_8_2->criticalextensionschoice1;
-			if(node_8_2->criticalextensionschoice1){
-				node_8_4 = node_8_3->protocolies;
-				if(node_8_3->protocolies){
-					node_8_5 = node_8_4->candidatecellinfolistmn;
-					if(node_8_4->candidatecellinfolistmn){
-						for(i_8_6=0;i_8_6<node_8_5->n_items; i_8_6++){
-							node_8_6 = node_8_5->items[i_8_6];
-							node_8_7 = node_8_6->measresultneighcelllistnr;
-							if(node_8_6->measresultneighcelllistnr){
-								for(i_8_8=0;i_8_8<node_8_7->n_items; i_8_8++){
-									node_8_8 = node_8_7->items[i_8_8];
-									if(node_8_8->physcellid){
-										sgnb_addreq_for_ue_mn_neigh_ssb->physCellId = node_8_8->physcellid->value;
+		node_9_2 = node_9_1->id_menbtosgnbcontainer;
+		if(node_9_1->id_menbtosgnbcontainer){
+			node_9_3 = node_9_2->criticalextensionschoice1;
+			if(node_9_2->criticalextensionschoice1){
+				node_9_4 = node_9_3->protocolies;
+				if(node_9_3->protocolies){
+					node_9_5 = node_9_4->candidatecellinfolistmn;
+					if(node_9_4->candidatecellinfolistmn){
+						for(i_9_6=0;i_9_6<node_9_5->n_items; i_9_6++){
+							node_9_6 = node_9_5->items[i_9_6];
+							node_9_7 = node_9_6->measresultneighcelllistnr;
+							if(node_9_6->measresultneighcelllistnr){
+								for(i_9_8=0;i_9_8<node_9_7->n_items; i_9_8++){
+									node_9_8 = node_9_7->items[i_9_8];
+									if(node_9_8->physcellid){
+										sgnb_addreq_for_ue_mn_neigh_ssb->physCellId = node_9_8->physcellid->value;
 										sgnb_addreq_for_ue_mn_neigh_ssb->physCellId_exists = 1;
 									}else{
 										sgnb_addreq_for_ue_mn_neigh_ssb->physCellId_exists = 0;
 									}
-									node_8_9 = node_8_8->measresult;
-									if(node_8_8->measresult){
-										node_8_10 = node_8_9->cellresults;
-										if(node_8_9->cellresults){
-											node_8_11 = node_8_10->resultsssb_cell;
-											if(node_8_10->resultsssb_cell){
-												if(node_8_11->rsrq){
-													sgnb_addreq_for_ue_mn_neigh_ssb->rsrq = node_8_11->rsrq->value;
+									node_9_9 = node_9_8->measresult;
+									if(node_9_8->measresult){
+										node_9_10 = node_9_9->cellresults;
+										if(node_9_9->cellresults){
+											node_9_11 = node_9_10->resultsssb_cell;
+											if(node_9_10->resultsssb_cell){
+												if(node_9_11->rsrq){
+													sgnb_addreq_for_ue_mn_neigh_ssb->rsrq = node_9_11->rsrq->value;
 												}else{
 													sgnb_addreq_for_ue_mn_neigh_ssb->rsrq = 128;
 												}
-												if(node_8_11->rsrp){
-													sgnb_addreq_for_ue_mn_neigh_ssb->rsrp = node_8_11->rsrp->value;
+												if(node_9_11->rsrp){
+													sgnb_addreq_for_ue_mn_neigh_ssb->rsrp = node_9_11->rsrp->value;
 												}else{
 													sgnb_addreq_for_ue_mn_neigh_ssb->rsrp = 128;
 												}
-												if(node_8_11->sinr){
-													sgnb_addreq_for_ue_mn_neigh_ssb->sinr = node_8_11->sinr->value;
+												if(node_9_11->sinr){
+													sgnb_addreq_for_ue_mn_neigh_ssb->sinr = node_9_11->sinr->value;
 												}else{
 													sgnb_addreq_for_ue_mn_neigh_ssb->sinr = 128;
 												}
@@ -2860,59 +2991,61 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 
 	sgnb_addreq_for_ue_mn_neigh_csi_rs = (struct _sgnb_addreq_for_ue_mn_neigh_csi_rs *)(cur_packet.record.packed.values);
 	cur_packet.schema = 411;
-	node_9_0 = node_8_0;
-	sgnb_addreq_for_ue_mn_neigh_csi_rs->timestamp_ms = timestamp;
+	node_10_0 = node_9_0;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_addreq_for_ue_mn_neigh_csi_rs->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_addreq_for_ue_mn_neigh_csi_rs->gnb_id = empty_string;
 	else
 		sgnb_addreq_for_ue_mn_neigh_csi_rs->gnb_id = hdr->header->gnbid->value;
 
-	node_9_1 = node_9_0->protocolies;
-	if(node_9_0->protocolies){
-		sgnb_addreq_for_ue_mn_neigh_csi_rs->id_MeNB_UE_X2AP_ID = node_9_1->id_menb_ue_x2ap_id;
-		if(node_9_1->id_menb_ue_x2ap_id_extension){
-			sgnb_addreq_for_ue_mn_neigh_csi_rs->id_MeNB_UE_X2AP_ID_Extension = node_9_1->id_menb_ue_x2ap_id_extension->value;
+	node_10_1 = node_10_0->protocolies;
+	if(node_10_0->protocolies){
+		sgnb_addreq_for_ue_mn_neigh_csi_rs->id_MeNB_UE_X2AP_ID = node_10_1->id_menb_ue_x2ap_id;
+		if(node_10_1->id_menb_ue_x2ap_id_extension){
+			sgnb_addreq_for_ue_mn_neigh_csi_rs->id_MeNB_UE_X2AP_ID_Extension = node_10_1->id_menb_ue_x2ap_id_extension->value;
 		}else{
 			sgnb_addreq_for_ue_mn_neigh_csi_rs->id_MeNB_UE_X2AP_ID_Extension = 0;
 		}
-		node_9_2 = node_9_1->id_menbtosgnbcontainer;
-		if(node_9_1->id_menbtosgnbcontainer){
-			node_9_3 = node_9_2->criticalextensionschoice1;
-			if(node_9_2->criticalextensionschoice1){
-				node_9_4 = node_9_3->protocolies;
-				if(node_9_3->protocolies){
-					node_9_5 = node_9_4->candidatecellinfolistmn;
-					if(node_9_4->candidatecellinfolistmn){
-						for(i_9_6=0;i_9_6<node_9_5->n_items; i_9_6++){
-							node_9_6 = node_9_5->items[i_9_6];
-							node_9_7 = node_9_6->measresultneighcelllistnr;
-							if(node_9_6->measresultneighcelllistnr){
-								for(i_9_8=0;i_9_8<node_9_7->n_items; i_9_8++){
-									node_9_8 = node_9_7->items[i_9_8];
-									if(node_9_8->physcellid){
-										sgnb_addreq_for_ue_mn_neigh_csi_rs->physCellId = node_9_8->physcellid->value;
+		node_10_2 = node_10_1->id_menbtosgnbcontainer;
+		if(node_10_1->id_menbtosgnbcontainer){
+			node_10_3 = node_10_2->criticalextensionschoice1;
+			if(node_10_2->criticalextensionschoice1){
+				node_10_4 = node_10_3->protocolies;
+				if(node_10_3->protocolies){
+					node_10_5 = node_10_4->candidatecellinfolistmn;
+					if(node_10_4->candidatecellinfolistmn){
+						for(i_10_6=0;i_10_6<node_10_5->n_items; i_10_6++){
+							node_10_6 = node_10_5->items[i_10_6];
+							node_10_7 = node_10_6->measresultneighcelllistnr;
+							if(node_10_6->measresultneighcelllistnr){
+								for(i_10_8=0;i_10_8<node_10_7->n_items; i_10_8++){
+									node_10_8 = node_10_7->items[i_10_8];
+									if(node_10_8->physcellid){
+										sgnb_addreq_for_ue_mn_neigh_csi_rs->physCellId = node_10_8->physcellid->value;
 										sgnb_addreq_for_ue_mn_neigh_csi_rs->physCellId_exists = 1;
 									}else{
 										sgnb_addreq_for_ue_mn_neigh_csi_rs->physCellId_exists = 0;
 									}
-									node_9_9 = node_9_8->measresult;
-									if(node_9_8->measresult){
-										node_9_10 = node_9_9->cellresults;
-										if(node_9_9->cellresults){
-											node_9_11 = node_9_10->resultscsi_rs_cell;
-											if(node_9_10->resultscsi_rs_cell){
-												if(node_9_11->rsrq){
-													sgnb_addreq_for_ue_mn_neigh_csi_rs->rsrq = node_9_11->rsrq->value;
+									node_10_9 = node_10_8->measresult;
+									if(node_10_8->measresult){
+										node_10_10 = node_10_9->cellresults;
+										if(node_10_9->cellresults){
+											node_10_11 = node_10_10->resultscsi_rs_cell;
+											if(node_10_10->resultscsi_rs_cell){
+												if(node_10_11->rsrq){
+													sgnb_addreq_for_ue_mn_neigh_csi_rs->rsrq = node_10_11->rsrq->value;
 												}else{
 													sgnb_addreq_for_ue_mn_neigh_csi_rs->rsrq = 128;
 												}
-												if(node_9_11->rsrp){
-													sgnb_addreq_for_ue_mn_neigh_csi_rs->rsrp = node_9_11->rsrp->value;
+												if(node_10_11->rsrp){
+													sgnb_addreq_for_ue_mn_neigh_csi_rs->rsrp = node_10_11->rsrp->value;
 												}else{
 													sgnb_addreq_for_ue_mn_neigh_csi_rs->rsrp = 128;
 												}
-												if(node_9_11->sinr){
-													sgnb_addreq_for_ue_mn_neigh_csi_rs->sinr = node_9_11->sinr->value;
+												if(node_10_11->sinr){
+													sgnb_addreq_for_ue_mn_neigh_csi_rs->sinr = node_10_11->sinr->value;
 												}else{
 													sgnb_addreq_for_ue_mn_neigh_csi_rs->sinr = 128;
 												}
@@ -2928,18 +3061,19 @@ gs_uint32_t process_buffer_SGNB_ADDITION_REQ(gs_uint8_t * buffer, gs_uint32_t bu
 			}
 		}
 	}
-	uenibstreamprotobuf__sg_nbaddition_request__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbaddition_request__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SGNBMODCONF(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_modification_confirm.json, path sgnb_mod_confirm.json
 	struct _sgnb_mod_conf *sgnb_mod_conf = NULL;
-	Uenibstreamprotobuf__SgNBModificationConfirm *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBModificationConfirmIEs *node_0_1 = NULL;
+	StreamingProtobufs__SgNBModificationConfirm *node_0_0 = NULL;
+	StreamingProtobufs__SgNBModificationConfirmIEs *node_0_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_modification_confirm.json, path sgnb_mod_confirm.json
@@ -2947,14 +3081,16 @@ gs_uint32_t process_buffer_SGNBMODCONF(gs_uint8_t * buffer, gs_uint32_t buflen){
 	sgnb_mod_conf = (struct _sgnb_mod_conf *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1301;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbmodificationconfirm;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sgnb_mod_conf->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_mod_conf->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_mod_conf->gnb_id = empty_string;
 	else
@@ -2966,18 +3102,19 @@ gs_uint32_t process_buffer_SGNBMODCONF(gs_uint8_t * buffer, gs_uint32_t buflen){
 		sgnb_mod_conf->id_SgNB_UE_X2AP_ID = node_0_1->id_sgnb_ue_x2ap_id;
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbmodification_confirm__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbmodification_confirm__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SGNBMODREQ(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_modification_request.json, path sgnb_mod_req.json
 	struct _sgnb_mod_req *sgnb_mod_req = NULL;
-	Uenibstreamprotobuf__SgNBModificationRequest *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBModificationRequestIEs *node_0_1 = NULL;
+	StreamingProtobufs__SgNBModificationRequest *node_0_0 = NULL;
+	StreamingProtobufs__SgNBModificationRequestIEs *node_0_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_modification_request.json, path sgnb_mod_req.json
@@ -2985,14 +3122,16 @@ gs_uint32_t process_buffer_SGNBMODREQ(gs_uint8_t * buffer, gs_uint32_t buflen){
 	sgnb_mod_req = (struct _sgnb_mod_req *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1201;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbmodificationrequest;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sgnb_mod_req->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_mod_req->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_mod_req->gnb_id = empty_string;
 	else
@@ -3029,18 +3168,19 @@ gs_uint32_t process_buffer_SGNBMODREQ(gs_uint8_t * buffer, gs_uint32_t buflen){
 		}
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbmodification_request__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbmodification_request__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SGNBMODREQACK(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_modification_request_acknowledge.json, path sgnb_mod_req_ack.json
 	struct _sgnb_mod_req_ack *sgnb_mod_req_ack = NULL;
-	Uenibstreamprotobuf__SgNBModificationRequestAcknowledge *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBModificationRequestAcknowledgeIEs *node_0_1 = NULL;
+	StreamingProtobufs__SgNBModificationRequestAcknowledge *node_0_0 = NULL;
+	StreamingProtobufs__SgNBModificationRequestAcknowledgeIEs *node_0_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_modification_request_acknowledge.json, path sgnb_mod_req_ack.json
@@ -3048,14 +3188,16 @@ gs_uint32_t process_buffer_SGNBMODREQACK(gs_uint8_t * buffer, gs_uint32_t buflen
 	sgnb_mod_req_ack = (struct _sgnb_mod_req_ack *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1701;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbmodificationrequestacknowledge;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sgnb_mod_req_ack->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_mod_req_ack->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_mod_req_ack->gnb_id = empty_string;
 	else
@@ -3067,18 +3209,19 @@ gs_uint32_t process_buffer_SGNBMODREQACK(gs_uint8_t * buffer, gs_uint32_t buflen
 		sgnb_mod_req_ack->id_SgNB_UE_X2AP_ID = node_0_1->id_sgnb_ue_x2ap_id;
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbmodification_request_acknowledge__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbmodification_request_acknowledge__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SGNBMODREQREJECT(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_modification_request_reject.json, path sgnb_mod_req_reject.json
 	struct _sgnb_mod_req_reject *sgnb_mod_req_reject = NULL;
-	Uenibstreamprotobuf__SgNBModificationRequestReject *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBModificationRequestRejectIEs *node_0_1 = NULL;
+	StreamingProtobufs__SgNBModificationRequestReject *node_0_0 = NULL;
+	StreamingProtobufs__SgNBModificationRequestRejectIEs *node_0_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_modification_request_reject.json, path sgnb_mod_req_reject.json
@@ -3086,14 +3229,16 @@ gs_uint32_t process_buffer_SGNBMODREQREJECT(gs_uint8_t * buffer, gs_uint32_t buf
 	sgnb_mod_req_reject = (struct _sgnb_mod_req_reject *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1801;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbmodificationrequestreject;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sgnb_mod_req_reject->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_mod_req_reject->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_mod_req_reject->gnb_id = empty_string;
 	else
@@ -3125,18 +3270,19 @@ gs_uint32_t process_buffer_SGNBMODREQREJECT(gs_uint8_t * buffer, gs_uint32_t buf
 		}
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbmodification_request_reject__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbmodification_request_reject__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SGNBMODREQUIRED(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_modification_required.json, path sgnb_mod_rqd.json
 	struct _sgnb_mod_required *sgnb_mod_required = NULL;
-	Uenibstreamprotobuf__SgNBModificationRequired *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBModificationRequiredIEs *node_0_1 = NULL;
+	StreamingProtobufs__SgNBModificationRequired *node_0_0 = NULL;
+	StreamingProtobufs__SgNBModificationRequiredIEs *node_0_1 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_modification_required.json, path sgnb_mod_rqd.json
@@ -3144,14 +3290,16 @@ gs_uint32_t process_buffer_SGNBMODREQUIRED(gs_uint8_t * buffer, gs_uint32_t bufl
 	sgnb_mod_required = (struct _sgnb_mod_required *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1901;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbmodificationrequired;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sgnb_mod_required->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_mod_required->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_mod_required->gnb_id = empty_string;
 	else
@@ -3183,19 +3331,20 @@ gs_uint32_t process_buffer_SGNBMODREQUIRED(gs_uint8_t * buffer, gs_uint32_t bufl
 		}
 		rts_fta_process_packet(&cur_packet);
 	}
-	uenibstreamprotobuf__sg_nbmodification_required__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbmodification_required__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SGNBMODREFUSE(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sgnb_modification_refuse.json, path sgnb_modification_refuse.json
 	struct _sgnb_mod_refuse *sgnb_mod_refuse = NULL;
-	Uenibstreamprotobuf__SgNBModificationRefuse *node_0_0 = NULL;
-	Uenibstreamprotobuf__SgNBModificationRefuseIEs *node_0_1 = NULL;
-	Uenibstreamprotobuf__Cause *node_0_2 = NULL;
+	StreamingProtobufs__SgNBModificationRefuse *node_0_0 = NULL;
+	StreamingProtobufs__SgNBModificationRefuseIEs *node_0_1 = NULL;
+	StreamingProtobufs__Cause *node_0_2 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sgnb_modification_refuse.json, path sgnb_modification_refuse.json
@@ -3203,14 +3352,16 @@ gs_uint32_t process_buffer_SGNBMODREFUSE(gs_uint8_t * buffer, gs_uint32_t buflen
 	sgnb_mod_refuse = (struct _sgnb_mod_refuse *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1401;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->sgnbmodificationrefuse;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sgnb_mod_refuse->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sgnb_mod_refuse->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sgnb_mod_refuse->gnb_id = empty_string;
 	else
@@ -3245,25 +3396,26 @@ gs_uint32_t process_buffer_SGNBMODREFUSE(gs_uint8_t * buffer, gs_uint32_t buflen
 			rts_fta_process_packet(&cur_packet);
 		}
 	}
-	uenibstreamprotobuf__sg_nbmodification_refuse__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__sg_nbmodification_refuse__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
 gs_uint32_t process_buffer_SNSTATUSXFER(gs_uint8_t * buffer, gs_uint32_t buflen){
 	char *empty_string = "";
-	Uenibstreamprotobuf__X2APStreaming *hdr = NULL;
+unsigned long long int ts_lo, ts_hi;
+	StreamingProtobufs__X2APStreaming *hdr = NULL;
 // ------------------------------------------
 // ---  Variables for .proto sn_status_transfer.json, path snstatusxfer.json
 	struct _sn_status_transfer *sn_status_transfer = NULL;
-	Uenibstreamprotobuf__SNStatusTransfer *node_0_0 = NULL;
-	Uenibstreamprotobuf__SNStatusTransferIEs *node_0_1 = NULL;
-	Uenibstreamprotobuf__ERABsSubjectToStatusTransferList *node_0_2 = NULL;
-	Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs *node_0_3 = NULL;
+	StreamingProtobufs__SNStatusTransfer *node_0_0 = NULL;
+	StreamingProtobufs__SNStatusTransferIEs *node_0_1 = NULL;
+	StreamingProtobufs__ERABsSubjectToStatusTransferList *node_0_2 = NULL;
+	StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs *node_0_3 = NULL;
 	gs_uint32_t i_0_3;
-	Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem *node_0_4 = NULL;
-	Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs *node_0_5 = NULL;
+	StreamingProtobufs__ERABsSubjectToStatusTransferItem *node_0_4 = NULL;
+	StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs *node_0_5 = NULL;
 	gs_uint32_t i_0_5;
-	Uenibstreamprotobuf__COUNTvaluePDCPSNlength18 *node_0_6 = NULL;
+	StreamingProtobufs__COUNTvaluePDCPSNlength18 *node_0_6 = NULL;
 
 // --------------------------------------------------
 // ---  Specialized processing for .proto sn_status_transfer.json, path snstatusxfer.json
@@ -3271,14 +3423,16 @@ gs_uint32_t process_buffer_SNSTATUSXFER(gs_uint8_t * buffer, gs_uint32_t buflen)
 	sn_status_transfer = (struct _sn_status_transfer *)(cur_packet.record.packed.values);
 	cur_packet.schema = 1601;
 
-	hdr = uenibstreamprotobuf__x2_apstreaming__unpack(NULL, buflen, buffer);
+	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
 
 	node_0_0 = hdr->snstatustransfer;
 	if(node_0_0==NULL) return -2;
 	if(hdr->header==NULL) return -3;
 
-	sn_status_transfer->timestamp_ms = timestamp;
+	ts_lo = hdr->header->timestamp & 0xffffffff;
+	ts_hi = hdr->header->timestamp >> 32;
+	sn_status_transfer->timestamp_ms = (ts_hi - 2208988800) * 1000 + ((ts_lo * 1000) >> 32);
 	if(hdr->header->gnbid==NULL)
 		sn_status_transfer->gnb_id = empty_string;
 	else
@@ -3311,7 +3465,7 @@ gs_uint32_t process_buffer_SNSTATUSXFER(gs_uint8_t * buffer, gs_uint32_t buflen)
 			}
 		}
 	}
-	uenibstreamprotobuf__snstatus_transfer__free_unpacked(node_0_0,NULL);
+	streaming_protobufs__snstatus_transfer__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
@@ -3493,11 +3647,8 @@ static gs_retval_t dproto_read_socket()
 	char *timestamp_s;
     
 	if((ret=gs_read_buffer(line,28))<0) { return ret;}
-
 	pkg_len_s = line+4;
-	timestamp_s = line+12;
 	pkg_len = atoi(pkg_len_s);
-	timestamp = atoll(timestamp_s);
 
 	if((ret=gs_read_buffer(line,pkg_len))<0) { return ret;}
 
@@ -3529,7 +3680,7 @@ static void dproto_read_tuple(){
 		pkg_len_s = line+4;
 		timestamp_s = line+12;
 		pkg_len = atoi(pkg_len_s);
-		timestamp = atoll(timestamp_s);
+
 		if(pkg_len >= MAXLINE){
 // TODO be more graceful here, but a large pkg_len likely indicates
 // 		a garbaged file.

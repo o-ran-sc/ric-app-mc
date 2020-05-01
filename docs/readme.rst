@@ -1,30 +1,125 @@
 .. This work is licensed under a Creative Commons Attribution 4.0 International License.
 .. SPDX-License-Identifier: CC-BY-4.0
+.. Copyright (C) 2019 AT&T
 
 
 RIC Measurement Campaign (MC) supported KPIs
 ============================================
 
-name: throughput_ue
+me: addreq_pdf_nr_cell
+------------------------
 
-description: throughput experienced by UE over a measurement interval. "Active" throughput is throughput while actively downloading, "average" averages bytes transfered over the measurement interval
+description: histogram of neighboring cell RSRP, aggregated by gnb_id / cell id
+
+keys: CELL_ID, GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
-- LLONG e_RAB_ID
-- LLONG UE_ID
-- V_STR GNB_ID
 - FLOAT measurementInterval
-- LLONG active_throughput
-- LLONG average_throughput
-- LLONG min_throughput
-- LLONG max_throughput
+- UINT CELL_ID
+- STRING GNB_ID
+- INT cnt
+- UINT rsrp_vbad
+- UINT rsrp_bad
+- UINT rsrp_medium
+- UINT rsrp_good
+- UINT rsrp_vgood
 
+sources: sgnb_addreq_for_ue_mn_neigh_ssb
+
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_for_ue_mn_neigh_ssb
+
+Interface map: SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: addreq_pdf_nr_gnb
+-----------------------
+
+description: histogram of neighboring cell RSRP, aggregated by GNB, as computed from addition request events.
+
+keys: GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- INT cnt
+- UINT rsrp_vbad
+- UINT rsrp_bad
+- UINT rsrp_medium
+- UINT rsrp_good
+- UINT rsrp_vgood
+
+sources: sgnb_addreq_for_ue_mn_neigh_ssb
+
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_for_ue_mn_neigh_ssb
+
+Interface map: SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: addreq_stats_nr_cell
+--------------------------
+
+description: statistics about neighboring cell RSRP aggregated by cell id
+
+keys: CELL_ID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- UINT CELL_ID
+- STRING GNB_ID
+- INT cnt
+- INT min_rsrp
+- INT pctl_05_rsrp
+- INT median_rsrp
+- INT pctl_95_rsrp
+- FLOAT stddev_rsrp
+- INT max_rsrp
+
+sources: sgnb_addreq_for_ue_mn_neigh_ssb
+
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_for_ue_mn_neigh_ssb
+
+Interface map: SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: addreq_stats_nr_gnb
+-------------------------
+
+description: statistics about neighboring cell RSRP aggregated by GNB, as computed from addition request events.
+
+keys: GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- INT cnt
+- INT min_rsrp
+- INT pctl_05_rsrp
+- INT median_rsrp
+- INT pctl_95_rsrp
+- FLOAT stddev_rsrp
+- INT max_rsrp
+
+sources: sgnb_addreq_for_ue_mn_neigh_ssb
+
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_for_ue_mn_neigh_ssb
+
+Interface map: SGNB_ADDITION_REQ (sgnb_addition_request)
 
 name: addreq_success_stats
+--------------------------
 
 description: statistics on the time to successfully make a DC connection
 
-- V_STR GNB_ID
+keys: GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
 - ULLONG TS
 - FLOAT measurementInterval
 - FLOAT min_success_time
@@ -34,74 +129,59 @@ description: statistics on the time to successfully make a DC connection
 - FLOAT pctl_95_success_time
 - FLOAT stddev_success_time
 
+sources: add_req_start, add_req_success
 
-name: addreq_pdf_nr_cell
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_for_ue, RECONCOMPLETE.reconfig_success
 
-description : histogram of neighboring cell RSRP, aggregated by cell id
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: dc_release_debug
+----------------------
+
+timestamp: TS
+
+- STRING name
+- INT cnt
+- ULLONG TS
+- FLOAT measurementInterval
+
+sources: dc_release
+
+transitive sources: CONRELEASE.dc_release
+
+Interface map: CONRELEASE (ue_context_release)
+
+name: distinct_users
+--------------------
+
+description: Number of users based on distinct gTP_TEIDs seen
+
+keys: GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
 - FLOAT measurementInterval
-- UINT CELL_ID
-- INT cnt
-- UINT rsrp_vbad
-- UINT rsrp_bad
-- UINT rsrp_medium
-- UINT rsrp_good
-- UINT rsrp_vgood
+- STRING GNB_ID
+- INT num_users
 
+sources: sgnb_addreq_gtp_teid
 
-name: addreq_pdf_nr_gnb
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid
 
-description : histogram of neighboring cell RSRP, aggregated by GNB, as computed from addition request events.
-
-- ULLONG TS
-- FLOAT measurementInterval
-- V_STR GNB_ID
-- INT cnt
-- UINT rsrp_vbad
-- UINT rsrp_bad
-- UINT rsrp_medium
-- UINT rsrp_good
-- UINT rsrp_vgood
-
-
-name: addreq_stats_nr_cell
-
-description : statistics about neighboring cell RSRP aggregated by cell id
-
-- ULLONG TS
-- FLOAT measurementInterval
-- UINT CELL_ID
-- INT cnt
-- INT min_rsrp
-- INT pctl_05_rsrp
-- INT median_rsrp
-- INT pctl_95_rsrp
-- FLOAT stddev_rsrp
-- INT max_rsrp
-
-
-name: addreq_stats_nr_gnb
-
-description : statistics about neighboring cell RSRP aggregated by GNB, as computed from addition request events.
-
-- ULLONG TS
-- FLOAT measurementInterval
-- V_STR GNB_ID
-- INT cnt
-- INT min_rsrp
-- INT pctl_05_rsrp
-- INT median_rsrp
-- INT pctl_95_rsrp
-- FLOAT stddev_rsrp
-- INT max_rsrp
-
+Interface map: SGNB_ADDITION_REQ (sgnb_addition_request)
 
 name: erab_stats
+----------------
 
 description: number of admitted bearers and the distribution of their qCI
 
+keys: GNB_ID
+
+timestamp: TS
+
 - ULLONG TS
+- STRING GNB_ID
 - FLOAT measurementInterval
 - INT total_erabs
 - UINT qCI_1
@@ -115,21 +195,87 @@ description: number of admitted bearers and the distribution of their qCI
 - UINT qCI_9
 - UINT qCI_other
 
+sources: eRABs_acked_for_admit_for_ue, reconfig_success
 
-name: mc_connected_cnt
+transitive sources: SGNB_ADDITION_REQ_ACK.eRABs_acked_for_admit_for_ue, RECONCOMPLETE.reconfig_success
 
-description: Number of dual connected users
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
+
+name: handovers_gnb
+-------------------
+
+description: Number of handovers on a per-gtp_teid basis
+
+keys: GTP_TEID, GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
 - FLOAT measurementInterval
-- INT count_connected_ue
+- STRING GTP_TEID
+- STRING GNB_ID
+- INT total_addition_requests
+- UINT n_handovers
+- UINT n_ping_pong
 
+sources: handovers_join
 
-name: mc_connection_stats
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
 
-description : statistics about the length of dual connected sessions
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: ho_counts_gtp_teid
+------------------------
+
+description: Number of handovers, by UE (gTP_TEID)
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
+- STRING GNB_ID
+- STRING gTP_TEID
+- FLOAT measurementInterval
+- INT n_handovers
+
+sources: sgnb_mod_req_ack, sgnb_mod_conf, gnb_ueid_teid_map
+
+transitive sources: SGNBMODREQACK.sgnb_mod_req_ack, SGNBMODCONF.sgnb_mod_conf, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNBMODREQACK (sgnb_modification_request_acknowledge), SGNB_ADDITION_REQ (sgnb_addition_request), SGNBMODCONF (sgnb_modification_confirm)
+
+name: mc_connected_cnt
+----------------------
+
+description: Number of dual connected users
+
+keys: GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- FLOAT measurementInterval
+- INT count_connected_ue
+
+sources: dc_events
+
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), CONRELEASE (ue_context_release)
+
+name: mc_connection_stats
+-------------------------
+
+description: statistics about the length of dual connected sessions by gnb
+
+keys: GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
 - FLOAT measurementInterval
 - FLOAT min_connected_time
 - FLOAT max_connected_time
@@ -138,39 +284,155 @@ description : statistics about the length of dual connected sessions
 - FLOAT pctl_95_connected_time
 - FLOAT stddev_connected_time
 
+sources: mc_disconnected_ues
 
-name: mc_connects_cnt
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release
 
-description: number of DC connection requests
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), CONRELEASE (ue_context_release)
+
+name: mc_connection_stats_gtp_teid
+----------------------------------
+
+description: statistics about the length of dual connected sessions, by gtp_teid
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
+- STRING GNB_ID
+- STRING gTP_TEID
+- FLOAT measurementInterval
+- FLOAT min_connected_time
+- FLOAT max_connected_time
+- FLOAT avg_connected_time
+- FLOAT pctl_05_connected_time
+- FLOAT pctl_95_connected_time
+- FLOAT stddev_connected_time
+
+sources: mc_disconnected_ues, gnb_ueid_teid_map
+
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request), CONRELEASE (ue_context_release)
+
+name: mc_connects_cnt
+---------------------
+
+description: number of DC connection requests, by GNB
+
+keys: GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
 - FLOAT measurementInterval
 - INT count_ue_connects
 
+sources: dc_events
+
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), CONRELEASE (ue_context_release)
+
+name: mc_connects_cnt_gtp_teid
+------------------------------
+
+description: number of DC connection requests by UE
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- STRING gTP_TEID
+- FLOAT measurementInterval
+- INT count_ue_connects
+
+sources: dc_events, gnb_ueid_teid_map
+
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request), CONRELEASE (ue_context_release)
 
 name: mc_disconnects_cnt
+------------------------
 
 description: number of DC connection releases
 
+keys: GNB_ID
+
+timestamp: TS
+
 - ULLONG TS
+- STRING GNB_ID
 - FLOAT measurementInterval
 - INT count_ue_disconnects
 
+sources: dc_events
+
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), CONRELEASE (ue_context_release)
 
 name: mc_unique_ue_cnt
+----------------------
 
 description: Number of distinct UEs making a DC request or release
 
+keys: GNB_ID
+
+timestamp: TS
+
 - ULLONG TS
+- STRING GNB_ID
 - FLOAT measurementInterval
 - INT count_unique_ue
 
+sources: dc_events
+
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), CONRELEASE (ue_context_release)
+
+name: mod_failure_cause_gtp_teid
+--------------------------------
+
+description: distribution of causes for a sgnb modification failure, by UE (gtp_teid)
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
+- STRING gTP_TEID
+- ULLONG TS
+- FLOAT measurementInterval
+- INT total_reconfig_refuse
+- UINT count_radio_network
+- UINT count_transport
+- UINT count_protocol
+- UINT count_misc
+
+sources: sgnb_mod_req_reject, mod_status_refuse_cause_base, gnb_ueid_teid_map, gnb_ueid_teid_map
+
+transitive sources: SGNBMODREQREJECT.sgnb_mod_req_reject, SGNBMODREFUSE.sgnb_mod_refuse, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNBMODREFUSE (sgnb_modification_refuse), SGNB_ADDITION_REQ (sgnb_addition_request), SGNBMODREQREJECT (sgnb_modification_request_reject)
 
 name: mod_req_failure_distribution
+----------------------------------
 
-description: distribution of causes of a modification requet failure
+description: distribution of causes of a modification request failure
+
+keys: GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
+- STRING GNB_ID
 - FLOAT measurementInterval
 - INT cnt
 - UINT count_protobuf_unspecified
@@ -181,24 +443,90 @@ description: distribution of causes of a modification requet failure
 - UINT count_scg_reconfigFailure
 - UINT count_srb3_IntegrityFailure
 
+sources: base_mod_req_failure_distribution
 
-name: reconfig_status_success_rate
+transitive sources: SGNBMODREQ.sgnb_mod_req
 
-description: fraction of DC connect requests which are successful
+Interface map: SGNBMODREQ (sgnb_modification_request)
 
-- V_STR GNB_ID
+name: mod_req_failure_distribution_gtp_teid
+-------------------------------------------
+
+description: distribution of causes of a modification request failure
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- STRING gTP_TEID
+- FLOAT measurementInterval
+- INT cnt
+- UINT count_protobuf_unspecified
+- UINT count_t310_Expiry
+- UINT count_randomAccessProblem
+- UINT count_rlc_MaxNumRetx
+- UINT count_synchReconfigFailure_SCG
+- UINT count_scg_reconfigFailure
+- UINT count_srb3_IntegrityFailure
+
+sources: base_mod_req_failure_distribution, gnb_ueid_teid_map
+
+transitive sources: SGNBMODREQ.sgnb_mod_req, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: SGNBMODREQ (sgnb_modification_request), RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: mod_status_refuse_cause
+-----------------------------
+
+description: distribution of causes for a sgnb modification refusal (base)
+
+keys: GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
 - ULLONG TS
 - FLOAT measurementInterval
-- INT total_reconfiguration_requests
-- UINT successful_reconfiguration_requests
-- FLOAT success_rate
+- INT total_reconfig_refuse
+- UINT count_radio_network
+- UINT count_transport
+- UINT count_protocol
+- UINT count_misc
 
+sources: mod_status_refuse_cause_base
+
+transitive sources: SGNBMODREFUSE.sgnb_mod_refuse
+
+Interface map: SGNBMODREFUSE (sgnb_modification_refuse)
+
+name: reconfig_reject_debug
+---------------------------
+
+timestamp: TS
+
+- STRING name
+- INT cnt
+- ULLONG TS
+- FLOAT measurementInterval
+
+sources: reconfig_reject
+
+transitive sources: RECONCOMPLETE.reconfig_reject
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete)
 
 name: reconfig_status_reject_cause
+----------------------------------
 
 description: distribution of causes for DC rejection
 
-- V_STR gnb_id
+keys: GNB_ID
+
+timestamp: TB
+
+- STRING GNB_ID
 - ULLONG TB
 - INT total_reconfig_reject
 - UINT count_radio_network
@@ -206,26 +534,109 @@ description: distribution of causes for DC rejection
 - UINT count_protocol
 - UINT count_misc
 
+sources: sgnb_add_req_reject
 
-name: mod_status_refuse_cause
+transitive sources: ADDREQREJECT.sgnb_add_req_reject
 
-description: distribution of causes for a sgnb modification refusal
+Interface map: ADDREQREJECT (sgnb_addition_request_reject)
 
-- V_STR GNB_ID
-- ULLONG TS
-- FLOAT measurementInterval
-- INT total_reconfig_refuse
+name: reconfig_status_reject_cause_gtp_teid
+-------------------------------------------
+
+description: distribution of causes for DC rejection on a per-ue (gtp-teid) basis
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TB
+
+- STRING GNB_ID
+- STRING gTP_TEID
+- ULLONG TB
+- INT total_reconfig_reject
 - UINT count_radio_network
 - UINT count_transport
 - UINT count_protocol
 - UINT count_misc
 
+sources: sgnb_add_req_reject, gnb_ueid_teid_map
+
+transitive sources: ADDREQREJECT.sgnb_add_req_reject, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), ADDREQREJECT (sgnb_addition_request_reject), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: reconfig_status_success_rate
+----------------------------------
+
+description: fraction of DC connect requests which are successful
+
+keys: GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
+- ULLONG TS
+- FLOAT measurementInterval
+- INT total_reconfiguration_requests
+- UINT successful_reconfiguration_requests
+- FLOAT success_rate
+- FLOAT failure_rate
+
+sources: reconfig_status_merge
+
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_for_ue, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: reconfig_status_success_rate_gtp_teid
+-------------------------------------------
+
+description: fraction of DC connect requests which are successful, on a per-user (gtp_teid) basis.
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
+- STRING gTP_TEID
+- ULLONG TS
+- FLOAT measurementInterval
+- INT total_reconfiguration_requests
+- UINT successful_reconfiguration_requests
+- FLOAT success_rate
+- FLOAT failure_rate
+
+sources: reconfig_status_merge, gnb_ueid_teid_map
+
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_for_ue, RECONCOMPLETE.reconfig_success, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: reconfig_success_debug
+----------------------------
+
+timestamp: TS
+
+- STRING name
+- INT cnt
+- ULLONG TS
+- FLOAT measurementInterval
+
+sources: reconfig_success
+
+transitive sources: RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete)
 
 name: release_cause
+-------------------
 
 description: distribution of the causes of a DC release
 
-- V_STR GNB_ID
+keys: GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
 - ULLONG TS
 - FLOAT measurementInterval
 - INT total_reconfig_refuse
@@ -234,12 +645,47 @@ description: distribution of the causes of a DC release
 - UINT count_protocol
 - UINT count_misc
 
+sources: reconfig_cause_merge
+
+transitive sources: RELREQ.release_req, SGNBRELEASERQD.SgNB_release_rqd
+
+Interface map: RELREQ (sgnb_release_request), SGNBRELEASERQD (sgnb_release_required)
+
+name: release_cause_gtp_ueid
+----------------------------
+
+description: distribution of the causes of a DC release by UE (gtp_teid)
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
+- STRING gTP_TEID
+- ULLONG TS
+- FLOAT measurementInterval
+- INT total_reconfig_refuse
+- UINT count_radio_network
+- UINT count_transport
+- UINT count_protocol
+- UINT count_misc
+
+sources: reconfig_cause_merge, gnb_ueid_teid_map
+
+transitive sources: RELREQ.release_req, SGNBRELEASERQD.SgNB_release_rqd, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RELREQ (sgnb_release_request), SGNBRELEASERQD (sgnb_release_required), SGNB_ADDITION_REQ (sgnb_addition_request), RECONCOMPLETE (sgnb_reconfiguration_complete)
 
 name: release_req_success_stats
+-------------------------------
 
 description: statistics on the time to delease a DC connection
 
-- V_STR GNB_ID
+keys: GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
 - ULLONG TS
 - FLOAT measurementInterval
 - FLOAT min_success_time
@@ -249,44 +695,25 @@ description: statistics on the time to delease a DC connection
 - FLOAT pctl_95_success_time
 - FLOAT stddev_success_time
 
+sources: release_req_start, release_req_success
 
-name: rrcx_pdf_neigh_cell_csi
+transitive sources: RELREQ.release_req, CONRELEASE.dc_release
 
-description: distribution of the beam csi rsrp of neighboring cells, aggregated by cell id, computed from rrc transfer
+Interface map: RELREQ (sgnb_release_request), CONRELEASE (ue_context_release)
 
-- ULLONG TS
-- FLOAT measurementInterval
-- UINT CELL_ID
-- INT cnt
-- UINT rsrp_vbad
-- UINT rsrp_bad
-- UINT rsrp_medium
-- UINT rsrp_good
-- UINT rsrp_vgood
+name: rrcx_pdf_neighbor_beam_cell
+---------------------------------
 
+description: distribution of the beam ssb rsrp of neighboring cells, aggregated by gnb_id / cell id, computed from rrc transfer
 
-name: rrcx_pdf_neigh_gnb_csi
+keys: CELL_ID, GNB_ID
 
-description: distribution of the beam csi rsrp of neighboring cells, aggregated by gNB, computed from rrc transfer
-
-- ULLONG TS
-- FLOAT measurementInterval
-- V_STR GNB_ID
-- INT cnt
-- UINT rsrp_vbad
-- UINT rsrp_bad
-- UINT rsrp_medium
-- UINT rsrp_good
-- UINT rsrp_vgood
-
-
-name: rrcx_pdf_neigh_cell_ssb
-
-description: distribution of the beam ssb rsrp of neighboring cells, aggregated by cell id, computed from rrc transfer
+timestamp: TS
 
 - ULLONG TS
 - FLOAT measurementInterval
 - UINT CELL_ID
+- STRING GNB_ID
 - INT cnt
 - UINT rsrp_vbad
 - UINT rsrp_bad
@@ -294,14 +721,24 @@ description: distribution of the beam ssb rsrp of neighboring cells, aggregated 
 - UINT rsrp_good
 - UINT rsrp_vgood
 
+sources: neighbor_beam_ssb
 
-name: rrcx_pdf_neigh_gnb_ssb
+transitive sources: RRCXFER.neighbor_beam_ssb
+
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_pdf_neighbor_beam_gnb
+--------------------------------
 
 description: distribution of the beam ssb rsrp of neighboring cells, aggregated by gNB, computed from rrc transfer
 
+keys: GNB_ID
+
+timestamp: TS
+
 - ULLONG TS
 - FLOAT measurementInterval
-- V_STR GNB_ID
+- STRING GNB_ID
 - INT cnt
 - UINT rsrp_vbad
 - UINT rsrp_bad
@@ -309,14 +746,25 @@ description: distribution of the beam ssb rsrp of neighboring cells, aggregated 
 - UINT rsrp_good
 - UINT rsrp_vgood
 
+sources: neighbor_beam_ssb
 
-name: rrcx_pdf_serv_cell
+transitive sources: RRCXFER.neighbor_beam_ssb
 
-description: distribution of the  ssb rsrp of serving cell aggregated by cell id, computed from rrc transfer
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_pdf_neighbor_beam_gtp_teid
+-------------------------------------
+
+description: distribution of the beam ssb rsrp of neighboring cells aggregated by ue (gtp_teid), computed from rrc transfer
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
 - FLOAT measurementInterval
-- UINT CELL_ID
+- STRING GNB_ID
+- STRING gTP_TEID
 - INT cnt
 - UINT rsrp_vbad
 - UINT rsrp_bad
@@ -324,14 +772,25 @@ description: distribution of the  ssb rsrp of serving cell aggregated by cell id
 - UINT rsrp_good
 - UINT rsrp_vgood
 
+sources: neighbor_beam_ssb, gnb_ueid_teid_map
+
+transitive sources: RRCXFER.neighbor_beam_ssb, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request), RRCXFER (rrctransfer)
 
 name: rrcx_pdf_neighbor_cell
+----------------------------
 
-description: distribution of the  ssb rsrp of neighbor cells aggregated by cell id, computed from rrc transfer
+description: distribution of the  ssb rsrp of the neighboring cells by cell id, computed from rrc transfer
+
+keys: CELL_ID, GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
 - FLOAT measurementInterval
 - UINT CELL_ID
+- STRING GNB_ID
 - INT cnt
 - UINT rsrp_vbad
 - UINT rsrp_bad
@@ -339,14 +798,24 @@ description: distribution of the  ssb rsrp of neighbor cells aggregated by cell 
 - UINT rsrp_good
 - UINT rsrp_vgood
 
+sources: nr_neighbor
 
-name: rrcx_pdf_serv_gnb
+transitive sources: RRCXFER.nr_neighbor
 
-description: distribution of the  ssb rsrp of serving cell aggregated by gnb, computed from rrc transfer
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_pdf_neighbor_gnb
+---------------------------
+
+description: distribution of the  ssb rsrp of neighbor cells aggregated by gNB, computed from rrc transfer
+
+keys: GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
 - FLOAT measurementInterval
-- V_STR GNB_ID
+- STRING GNB_ID
 - INT cnt
 - UINT rsrp_vbad
 - UINT rsrp_bad
@@ -354,14 +823,128 @@ description: distribution of the  ssb rsrp of serving cell aggregated by gnb, co
 - UINT rsrp_good
 - UINT rsrp_vgood
 
+sources: nr_neighbor
 
-name: rrcx_pdf_neighbor_gnb
+transitive sources: RRCXFER.nr_neighbor
+
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_pdf_neighbor_gtp_teid
+--------------------------------
+
+description: distribution of the  ssb rsrp of neighbor cells aggregated by ue (gtp_teid), computed from rrc transfer
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- STRING gTP_TEID
+- INT cnt
+- UINT rsrp_vbad
+- UINT rsrp_bad
+- UINT rsrp_medium
+- UINT rsrp_good
+- UINT rsrp_vgood
+
+sources: nr_neighbor, gnb_ueid_teid_map
+
+transitive sources: RRCXFER.nr_neighbor, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request), RRCXFER (rrctransfer)
+
+name: rrcx_pdf_serv_beam_cell
+-----------------------------
+
+description: distribution of the beam ssb rsrp of serving cells, aggregated by gnb_id / cell id, computed from rrc transfer
+
+keys: CELL_ID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- UINT CELL_ID
+- STRING GNB_ID
+- INT cnt
+- UINT rsrp_vbad
+- UINT rsrp_bad
+- UINT rsrp_medium
+- UINT rsrp_good
+- UINT rsrp_vgood
+
+sources: serv_cell_beam_ssb
+
+transitive sources: RRCXFER.serv_cell_beam_ssb
+
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_pdf_serv_beam_gnb
+----------------------------
+
+description: distribution of the beam ssb rsrp of serving cells, aggregated by gnb_id, computed from rrc transfer
+
+keys: GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- INT cnt
+- UINT rsrp_vbad
+- UINT rsrp_bad
+- UINT rsrp_medium
+- UINT rsrp_good
+- UINT rsrp_vgood
+
+sources: serv_cell_beam_ssb
+
+transitive sources: RRCXFER.serv_cell_beam_ssb
+
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_pdf_serv_beam_gtp_teid
+---------------------------------
+
+description: distribution of the  ssb beam rsrp of serving cells aggregated by ue (gtp_teid), computed from rrc transfer
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- STRING gTP_TEID
+- INT cnt
+- UINT rsrp_vbad
+- UINT rsrp_bad
+- UINT rsrp_medium
+- UINT rsrp_good
+- UINT rsrp_vgood
+
+sources: serv_cell_beam_ssb, gnb_ueid_teid_map
+
+transitive sources: RRCXFER.serv_cell_beam_ssb, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request), RRCXFER (rrctransfer)
+
+name: rrcx_pdf_serv_cell
+------------------------
 
 description: distribution of the  ssb rsrp of serving cell aggregated by cell id, computed from rrc transfer
 
+keys: CELL_ID, GNB_ID
+
+timestamp: TS
+
 - ULLONG TS
 - FLOAT measurementInterval
-- V_STR GNB_ID
+- UINT CELL_ID
+- STRING GNB_ID
 - INT cnt
 - UINT rsrp_vbad
 - UINT rsrp_bad
@@ -369,14 +952,76 @@ description: distribution of the  ssb rsrp of serving cell aggregated by cell id
 - UINT rsrp_good
 - UINT rsrp_vgood
 
+sources: serv_nr_cell
 
-name: rrcx_stats_neigh_cell
+transitive sources: RRCXFER.serv_nr_cell
 
-description: statistics on ssb RSRP on the beams of nrighboring cells, aggregated by cell ID, computed using rrc transfer
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_pdf_serv_gnb
+-----------------------
+
+description: distribution of the  ssb rsrp of serving cells aggregated by gnb id, computed from rrc transfer
+
+keys: GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- INT cnt
+- UINT rsrp_vbad
+- UINT rsrp_bad
+- UINT rsrp_medium
+- UINT rsrp_good
+- UINT rsrp_vgood
+
+sources: serv_nr_cell
+
+transitive sources: RRCXFER.serv_nr_cell
+
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_pdf_serv_gtp_teid
+----------------------------
+
+description: distribution of the  ssb rsrp of serving cells aggregated by ue (gtp_teid), computed from rrc transfer
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- STRING gTP_TEID
+- INT cnt
+- UINT rsrp_vbad
+- UINT rsrp_bad
+- UINT rsrp_medium
+- UINT rsrp_good
+- UINT rsrp_vgood
+
+sources: serv_nr_cell, gnb_ueid_teid_map
+
+transitive sources: RRCXFER.serv_nr_cell, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request), RRCXFER (rrctransfer)
+
+name: rrcx_stats_neighbor_beam_cell
+-----------------------------------
+
+description: statistics on ssb RSRP on the beams of neighboring cells, aggregated by gbn_id / cell ID, computed using rrc transfer
+
+keys: CELL_ID, GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
 - FLOAT measurementInterval
 - UINT CELL_ID
+- STRING GNB_ID
 - INT cnt
 - INT min_rsrp
 - INT pctl_05_rsrp
@@ -385,14 +1030,24 @@ description: statistics on ssb RSRP on the beams of nrighboring cells, aggregate
 - FLOAT stddev_rsrp
 - INT max_rsrp
 
+sources: neighbor_beam_ssb
 
-name: rrcx_stats_neigh_gnb
+transitive sources: RRCXFER.neighbor_beam_ssb
+
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_stats_neighbor_beam_gnb
+----------------------------------
 
 description: statistics on ssb RSRP on the beams of nrighboring cells, aggregated by gNB, computed using rrc transfer
 
+keys: GNB_ID
+
+timestamp: TS
+
 - ULLONG TS
 - FLOAT measurementInterval
-- V_STR GNB_ID
+- STRING GNB_ID
 - INT cnt
 - INT min_rsrp
 - INT pctl_05_rsrp
@@ -401,30 +1056,25 @@ description: statistics on ssb RSRP on the beams of nrighboring cells, aggregate
 - FLOAT stddev_rsrp
 - INT max_rsrp
 
+sources: neighbor_beam_ssb
 
-name: rrcx_stats_serv_cell
+transitive sources: RRCXFER.neighbor_beam_ssb
 
-description: statistics on the ssb rsrp of the serving cell, aggregated by cell id, computed using rrc transfer
-
-- ULLONG TS
-- FLOAT measurementInterval
-- UINT CELL_ID
-- INT cnt
-- INT min_rsrp
-- INT pctl_05_rsrp
-- INT median_rsrp
-- INT pctl_95_rsrp
-- FLOAT stddev_rsrp
-- INT max_rsrp
-
+Interface map: RRCXFER (rrctransfer)
 
 name: rrcx_stats_neighbor_cell
+------------------------------
 
-description: statistics on the ssb rsrp of the neighbor cells, aggregated by cell id, computed using rrc transfer
+description: statistics on the ssb rsrp of the neighbor cells, aggregated by gnb_id / cell id, computed using rrc transfer
+
+keys: CELL_ID, GNB_ID
+
+timestamp: TS
 
 - ULLONG TS
 - FLOAT measurementInterval
 - UINT CELL_ID
+- STRING GNB_ID
 - INT cnt
 - INT min_rsrp
 - INT pctl_05_rsrp
@@ -433,30 +1083,24 @@ description: statistics on the ssb rsrp of the neighbor cells, aggregated by cel
 - FLOAT stddev_rsrp
 - INT max_rsrp
 
+sources: nr_neighbor
 
-name: rrcx_stats_serv_gnb
+transitive sources: RRCXFER.nr_neighbor
 
-description: statistics on the ssb srp of the serving cell, aggregated by gNB, computed using rrc transfer
-
-- ULLONG TS
-- FLOAT measurementInterval
-- V_STR GNB_ID
-- INT cnt
-- INT min_rsrp
-- INT pctl_05_rsrp
-- INT median_rsrp
-- INT pctl_95_rsrp
-- FLOAT stddev_rsrp
-- INT max_rsrp
-
+Interface map: RRCXFER (rrctransfer)
 
 name: rrcx_stats_neighbor_gnb
+-----------------------------
 
 description: statistics on the ssb rsrp of the neighbor cells, aggregated by gNB, computed using rrc transfer
 
+keys: GNB_ID
+
+timestamp: TS
+
 - ULLONG TS
 - FLOAT measurementInterval
-- V_STR GNB_ID
+- STRING GNB_ID
 - INT cnt
 - INT min_rsrp
 - INT pctl_05_rsrp
@@ -465,14 +1109,205 @@ description: statistics on the ssb rsrp of the neighbor cells, aggregated by gNB
 - FLOAT stddev_rsrp
 - INT max_rsrp
 
+sources: nr_neighbor
 
-name: throughput_rollup
+transitive sources: RRCXFER.nr_neighbor
 
-description: statistics on the per-UE throughput
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_stats_serv_beam_cell
+-------------------------------
+
+description: statistics on ssb RSRP on the beams of serving cells, aggregated by gbn_id / cell ID, computed using rrc transfer
+
+keys: CELL_ID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- UINT CELL_ID
+- STRING GNB_ID
+- INT cnt
+- INT min_rsrp
+- INT pctl_05_rsrp
+- INT median_rsrp
+- INT pctl_95_rsrp
+- FLOAT stddev_rsrp
+- INT max_rsrp
+
+sources: serv_cell_beam_ssb
+
+transitive sources: RRCXFER.serv_cell_beam_ssb
+
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_stats_serv_beam_gnb
+------------------------------
+
+description: statistics on ssb RSRP on the beams of serving cells, aggregated by gbn_id / cell ID, computed using rrc transfer
+
+keys: GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- INT cnt
+- INT min_rsrp
+- INT pctl_05_rsrp
+- INT median_rsrp
+- INT pctl_95_rsrp
+- FLOAT stddev_rsrp
+- INT max_rsrp
+
+sources: serv_cell_beam_ssb
+
+transitive sources: RRCXFER.serv_cell_beam_ssb
+
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_stats_serv_cell
+--------------------------
+
+description: statistics on the ssb rsrp of the serving cell, aggregated by gnb_id / cell id, computed using rrc transfer
+
+keys: CELL_ID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- UINT CELL_ID
+- STRING GNB_ID
+- INT cnt
+- INT min_rsrp
+- INT pctl_05_rsrp
+- INT median_rsrp
+- INT pctl_95_rsrp
+- FLOAT stddev_rsrp
+- INT max_rsrp
+
+sources: serv_nr_cell
+
+transitive sources: RRCXFER.serv_nr_cell
+
+Interface map: RRCXFER (rrctransfer)
+
+name: rrcx_stats_serv_gnb
+-------------------------
+
+description: statistics on the ssb srp of the serving cell, aggregated by gNB, computed using rrc transfer
+
+keys: GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- INT cnt
+- INT min_rsrp
+- INT pctl_05_rsrp
+- INT median_rsrp
+- INT pctl_95_rsrp
+- FLOAT stddev_rsrp
+- INT max_rsrp
+
+sources: serv_nr_cell
+
+transitive sources: RRCXFER.serv_nr_cell
+
+Interface map: RRCXFER (rrctransfer)
+
+name: throughput_gnb
+--------------------
+
+description: throughput experienced by a GNB over a measurement interval.   *Active* throughput is throughput while actively downloading, *average* averages bytes transfered over the measurement interval
+
+keys: GNB_ID, e_RAB_ID
+
+timestamp: TS
 
 - ULLONG TS
 - LLONG e_RAB_ID
-- V_STR GNB_ID
+- STRING GNB_ID
+- FLOAT measurementInterval
+- LLONG active_throughput
+- LLONG average_throughput
+- LLONG min_throughput
+- LLONG max_throughput
+- UINT active_throughput_percentile_05
+- UINT active_throughput_percentile_95
+
+sources: rat_data_usage
+
+transitive sources: RATDATAUSAGE.rat_data_usage
+
+Interface map: RATDATAUSAGE (secondary_rat_data_usage_report)
+
+name: throughput_gtp_teid
+-------------------------
+
+description: throughput experienced by UE, as determined by the gtp_teid, over a measurement interval.   *Active* throughput is throughput while actively downloading, *average* averages bytes transfered over the measurement interval
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING gTP_TEID
+- STRING GNB_ID
+- FLOAT measurementInterval
+- LLONG active_throughput
+- LLONG average_throughput
+- LLONG min_throughput
+- LLONG max_throughput
+
+sources: throughput_ue_gtp_teid_join
+
+transitive sources: RATDATAUSAGE.rat_data_usage, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), RATDATAUSAGE (secondary_rat_data_usage_report), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: throughput_gtp_teid_bearer
+--------------------------------
+
+description: throughput experienced by UE, as determined by the gtp_teid, for a bearer (eRAB_ID) over a measurement interval.   *Active* throughput is throughput while actively downloading, *average* averages bytes transfered over the measurement interval
+
+keys: gTP_TEID, GNB_ID, e_RAB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING gTP_TEID
+- STRING GNB_ID
+- LLONG e_RAB_ID
+- FLOAT measurementInterval
+- LLONG active_throughput
+- LLONG average_throughput
+- LLONG min_throughput
+- LLONG max_throughput
+
+sources: throughput_ue_gtp_teid_join
+
+transitive sources: RATDATAUSAGE.rat_data_usage, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), RATDATAUSAGE (secondary_rat_data_usage_report), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: throughput_rollup
+-----------------------
+
+description: statistics on the per-UE throughput
+
+keys: GNB_ID, e_RAB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- LLONG e_RAB_ID
+- STRING GNB_ID
 - FLOAT measurementInterval
 - INT count_ues
 - UINT average_throughput_percentile_05
@@ -484,21 +1319,62 @@ description: statistics on the per-UE throughput
 - FLOAT average_active_throughput
 - UINT active_throughput_percentile_95
 
+sources: throughput_ue
 
-name: throughput_gnb
+transitive sources: RATDATAUSAGE.rat_data_usage
 
-description: throughput experienced by a GNB over a measurement interval. "Active" throughput is throughput while actively downloading, "average" averages bytes transfered over the measurement interval
+Interface map: RATDATAUSAGE (secondary_rat_data_usage_report)
+
+name: throughput_ue
+-------------------
+
+description: throughput experienced by UE over a measurement interval.   *Active* throughput is throughput while actively downloading, *average* averages bytes transfered over the measurement interval
+
+keys: UE_ID, GNB_ID, e_RAB_ID
+
+timestamp: TS
 
 - ULLONG TS
 - LLONG e_RAB_ID
-- V_STR GNB_ID
+- LLONG UE_ID
+- STRING GNB_ID
 - FLOAT measurementInterval
 - LLONG active_throughput
 - LLONG average_throughput
 - LLONG min_throughput
 - LLONG max_throughput
-- UINT extr_quant_hfta0_fcn_quant_udaf_hfta0
-- UINT extr_quant_hfta0_fcn_quant_udaf_hfta01
+
+sources: rat_data_usage
+
+transitive sources: RATDATAUSAGE.rat_data_usage
+
+Interface map: RATDATAUSAGE (secondary_rat_data_usage_report)
+
+name: throughput_userclass
+--------------------------
+
+description: throughput experienced by UE, rolled up into user classes, over a measurement interval.  Class A (qci=9, arp=15) is class=1 and Class B  (qci=8, arp=15) is class=2.   *Active* throughput is throughput while actively downloading, *average* averages bytes transfered over the measurement interval
+
+keys: GNB_ID, CLASS
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- UINT CLASS
+- FLOAT measurementInterval
+- LLONG active_throughput
+- LLONG average_throughput
+- LLONG min_throughput
+- LLONG max_throughput
+
+sources: prelim_throughput_gtp_teid, add_req_event, add_req_ack_event
+
+transitive sources: RATDATAUSAGE.rat_data_usage, SGNB_ADDITION_REQ.sgnb_addreq_for_ue_bearers, SGNB_ADDITION_REQ_ACK.eRABs_acked_for_admit_for_ue
+
+Interface map: RATDATAUSAGE (secondary_rat_data_usage_report), SGNB_ADDITION_REQ (sgnb_addition_request), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
+
+
 
 
 

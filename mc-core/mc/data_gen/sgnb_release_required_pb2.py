@@ -20,10 +20,10 @@ import error_cause_pb2 as error__cause__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='sgnb_release_required.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x1bsgnb_release_required.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x17x2ap_common_types.proto\x1a\x11\x65rror_cause.proto\"X\n\x13SgNBReleaseRequired\x12\x41\n\x0bprotocolIEs\x18\x01 \x01(\x0b\x32,.uenibstreamprotobuf.SgNBReleaseRequired_IEs\"\xad\x02\n\x17SgNBReleaseRequired_IEs\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12,\n\x08id_Cause\x18\x03 \x01(\x0b\x32\x1a.uenibstreamprotobuf.Cause\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12h\n&id_E_RABs_ToBeReleased_SgNBRelReqdList\x18\x05 \x01(\x0b\x32\x38.uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqdList\"\x91\x01\n#E_RABs_ToBeReleased_SgNBRelReqdList\x12j\n\'id_E_RABs_ToBeReleased_SgNBRelReqd_Item\x18\x01 \x03(\x0b\x32\x39.uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_Item\"\xcc\x01\n$E_RABs_ToBeReleased_SgNBRelReqd_Item\x12\x10\n\x08\x65_RAB_ID\x18\x01 \x01(\r\x12:\n\x14rlc_Mode_transferred\x18\x02 \x01(\x0b\x32\x1c.uenibstreamprotobuf.RLCMode\x12V\n\riE_Extensions\x18\x03 \x03(\x0b\x32?.uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs\",\n*E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEsB:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x1bsgnb_release_required.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x17x2ap_common_types.proto\x1a\x11\x65rror_cause.proto\"X\n\x13SgNBReleaseRequired\x12\x41\n\x0bprotocolIEs\x18\x01 \x01(\x0b\x32,.streaming_protobufs.SgNBReleaseRequired_IEs\"\xad\x02\n\x17SgNBReleaseRequired_IEs\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12,\n\x08id_Cause\x18\x03 \x01(\x0b\x32\x1a.streaming_protobufs.Cause\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12h\n&id_E_RABs_ToBeReleased_SgNBRelReqdList\x18\x05 \x01(\x0b\x32\x38.streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqdList\"\x91\x01\n#E_RABs_ToBeReleased_SgNBRelReqdList\x12j\n\'id_E_RABs_ToBeReleased_SgNBRelReqd_Item\x18\x01 \x03(\x0b\x32\x39.streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_Item\"\xcc\x01\n$E_RABs_ToBeReleased_SgNBRelReqd_Item\x12\x10\n\x08\x65_RAB_ID\x18\x01 \x01(\r\x12:\n\x14rlc_Mode_transferred\x18\x02 \x01(\x0b\x32\x1c.streaming_protobufs.RLCMode\x12V\n\riE_Extensions\x18\x03 \x03(\x0b\x32?.streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs\",\n*E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEsB3Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,x2ap__common__types__pb2.DESCRIPTOR,error__cause__pb2.DESCRIPTOR,])
 
@@ -32,13 +32,13 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _SGNBRELEASEREQUIRED = _descriptor.Descriptor(
   name='SgNBReleaseRequired',
-  full_name='uenibstreamprotobuf.SgNBReleaseRequired',
+  full_name='streaming_protobufs.SgNBReleaseRequired',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='protocolIEs', full_name='uenibstreamprotobuf.SgNBReleaseRequired.protocolIEs', index=0,
+      name='protocolIEs', full_name='streaming_protobufs.SgNBReleaseRequired.protocolIEs', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -63,41 +63,41 @@ _SGNBRELEASEREQUIRED = _descriptor.Descriptor(
 
 _SGNBRELEASEREQUIRED_IES = _descriptor.Descriptor(
   name='SgNBReleaseRequired_IEs',
-  full_name='uenibstreamprotobuf.SgNBReleaseRequired_IEs',
+  full_name='streaming_protobufs.SgNBReleaseRequired_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SgNBReleaseRequired_IEs.id_MeNB_UE_X2AP_ID', index=0,
+      name='id_MeNB_UE_X2AP_ID', full_name='streaming_protobufs.SgNBReleaseRequired_IEs.id_MeNB_UE_X2AP_ID', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_SgNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SgNBReleaseRequired_IEs.id_SgNB_UE_X2AP_ID', index=1,
+      name='id_SgNB_UE_X2AP_ID', full_name='streaming_protobufs.SgNBReleaseRequired_IEs.id_SgNB_UE_X2AP_ID', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_Cause', full_name='uenibstreamprotobuf.SgNBReleaseRequired_IEs.id_Cause', index=2,
+      name='id_Cause', full_name='streaming_protobufs.SgNBReleaseRequired_IEs.id_Cause', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID_Extension', full_name='uenibstreamprotobuf.SgNBReleaseRequired_IEs.id_MeNB_UE_X2AP_ID_Extension', index=3,
+      name='id_MeNB_UE_X2AP_ID_Extension', full_name='streaming_protobufs.SgNBReleaseRequired_IEs.id_MeNB_UE_X2AP_ID_Extension', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_E_RABs_ToBeReleased_SgNBRelReqdList', full_name='uenibstreamprotobuf.SgNBReleaseRequired_IEs.id_E_RABs_ToBeReleased_SgNBRelReqdList', index=4,
+      name='id_E_RABs_ToBeReleased_SgNBRelReqdList', full_name='streaming_protobufs.SgNBReleaseRequired_IEs.id_E_RABs_ToBeReleased_SgNBRelReqdList', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -122,13 +122,13 @@ _SGNBRELEASEREQUIRED_IES = _descriptor.Descriptor(
 
 _E_RABS_TOBERELEASED_SGNBRELREQDLIST = _descriptor.Descriptor(
   name='E_RABs_ToBeReleased_SgNBRelReqdList',
-  full_name='uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqdList',
+  full_name='streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqdList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_E_RABs_ToBeReleased_SgNBRelReqd_Item', full_name='uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqdList.id_E_RABs_ToBeReleased_SgNBRelReqd_Item', index=0,
+      name='id_E_RABs_ToBeReleased_SgNBRelReqd_Item', full_name='streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqdList.id_E_RABs_ToBeReleased_SgNBRelReqd_Item', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -153,27 +153,27 @@ _E_RABS_TOBERELEASED_SGNBRELREQDLIST = _descriptor.Descriptor(
 
 _E_RABS_TOBERELEASED_SGNBRELREQD_ITEM = _descriptor.Descriptor(
   name='E_RABs_ToBeReleased_SgNBRelReqd_Item',
-  full_name='uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_Item',
+  full_name='streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_Item',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='e_RAB_ID', full_name='uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_Item.e_RAB_ID', index=0,
+      name='e_RAB_ID', full_name='streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_Item.e_RAB_ID', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rlc_Mode_transferred', full_name='uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_Item.rlc_Mode_transferred', index=1,
+      name='rlc_Mode_transferred', full_name='streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_Item.rlc_Mode_transferred', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_Item.iE_Extensions', index=2,
+      name='iE_Extensions', full_name='streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_Item.iE_Extensions', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -198,7 +198,7 @@ _E_RABS_TOBERELEASED_SGNBRELREQD_ITEM = _descriptor.Descriptor(
 
 _E_RABS_TOBERELEASED_SGNBRELREQD_ITEMEXTIES = _descriptor.Descriptor(
   name='E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs',
-  full_name='uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs',
+  full_name='streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -236,35 +236,35 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 SgNBReleaseRequired = _reflection.GeneratedProtocolMessageType('SgNBReleaseRequired', (_message.Message,), {
   'DESCRIPTOR' : _SGNBRELEASEREQUIRED,
   '__module__' : 'sgnb_release_required_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SgNBReleaseRequired)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SgNBReleaseRequired)
   })
 _sym_db.RegisterMessage(SgNBReleaseRequired)
 
 SgNBReleaseRequired_IEs = _reflection.GeneratedProtocolMessageType('SgNBReleaseRequired_IEs', (_message.Message,), {
   'DESCRIPTOR' : _SGNBRELEASEREQUIRED_IES,
   '__module__' : 'sgnb_release_required_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SgNBReleaseRequired_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SgNBReleaseRequired_IEs)
   })
 _sym_db.RegisterMessage(SgNBReleaseRequired_IEs)
 
 E_RABs_ToBeReleased_SgNBRelReqdList = _reflection.GeneratedProtocolMessageType('E_RABs_ToBeReleased_SgNBRelReqdList', (_message.Message,), {
   'DESCRIPTOR' : _E_RABS_TOBERELEASED_SGNBRELREQDLIST,
   '__module__' : 'sgnb_release_required_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqdList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqdList)
   })
 _sym_db.RegisterMessage(E_RABs_ToBeReleased_SgNBRelReqdList)
 
 E_RABs_ToBeReleased_SgNBRelReqd_Item = _reflection.GeneratedProtocolMessageType('E_RABs_ToBeReleased_SgNBRelReqd_Item', (_message.Message,), {
   'DESCRIPTOR' : _E_RABS_TOBERELEASED_SGNBRELREQD_ITEM,
   '__module__' : 'sgnb_release_required_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_Item)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_Item)
   })
 _sym_db.RegisterMessage(E_RABs_ToBeReleased_SgNBRelReqd_Item)
 
 E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs = _reflection.GeneratedProtocolMessageType('E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _E_RABS_TOBERELEASED_SGNBRELREQD_ITEMEXTIES,
   '__module__' : 'sgnb_release_required_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs)
   })
 _sym_db.RegisterMessage(E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs)
 

@@ -23,6 +23,9 @@
 
 #include "packet.h"
 
+
+#include "/usr/local/include/protobuf-c/protobuf-c.h"
+
 struct _sgnb_addreq_for_ue_bearers {
 	gs_uint64_t timestamp_ms;
 	gs_sp_t gnb_id;
@@ -31,11 +34,11 @@ struct _sgnb_addreq_for_ue_bearers {
 	gs_int64_t pDCPatSgNB;
 	gs_int64_t drb_ID;
 	gs_int64_t priorityLevel;
-	gs_sp_t gTP_TEID;
+	ProtobufCBinaryData gTP_TEID;
 	gs_int64_t pre_emptionCapability;
 	gs_int64_t MCG_eRAB_GuaranteedBitrateUL;
 	gs_int64_t mCGresources;
-	gs_sp_t transportLayerAddress;
+	ProtobufCBinaryData transportLayerAddress;
 	gs_int64_t full_eRAB_GuaranteedBitrateUL;
 	gs_int64_t sCGresources;
 	gs_int64_t MCG_eRAB_MaximumBitrateUL;
@@ -57,10 +60,13 @@ static inline gs_retval_t get_sgnb_addreq_for_ue_bearers__timestamp_ms(struct pa
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue_bearers__gnb_id(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_addreq_for_ue_bearers *)(p->record.packed.values))->gnb_id;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_addreq_for_ue_bearers *)(p->record.packed.values))->gnb_id;
+	if( t->data == NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = strlen(t->data);
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue_bearers__id_MeNB_UE_X2AP_ID(struct packet *p, gs_int64_t *t){
@@ -89,10 +95,13 @@ static inline gs_retval_t get_sgnb_addreq_for_ue_bearers__priorityLevel(struct p
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue_bearers__gTP_TEID(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_addreq_for_ue_bearers *)(p->record.packed.values))->gTP_TEID;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_addreq_for_ue_bearers *)(p->record.packed.values))->gTP_TEID.data;
+	if(t->data==NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = ((struct _sgnb_addreq_for_ue_bearers *)(p->record.packed.values))->gTP_TEID.len;
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue_bearers__pre_emptionCapability(struct packet *p, gs_int64_t *t){
@@ -111,10 +120,13 @@ static inline gs_retval_t get_sgnb_addreq_for_ue_bearers__mCGresources(struct pa
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue_bearers__transportLayerAddress(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_addreq_for_ue_bearers *)(p->record.packed.values))->transportLayerAddress;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_addreq_for_ue_bearers *)(p->record.packed.values))->transportLayerAddress.data;
+	if(t->data==NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = ((struct _sgnb_addreq_for_ue_bearers *)(p->record.packed.values))->transportLayerAddress.len;
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue_bearers__full_eRAB_GuaranteedBitrateUL(struct packet *p, gs_int64_t *t){

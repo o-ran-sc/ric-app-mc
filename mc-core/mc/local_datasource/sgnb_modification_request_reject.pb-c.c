@@ -7,97 +7,97 @@
 #endif
 
 #include "sgnb_modification_request_reject.pb-c.h"
-void   uenibstreamprotobuf__sg_nbmodification_request_reject__init
-                     (Uenibstreamprotobuf__SgNBModificationRequestReject         *message)
+void   streaming_protobufs__sg_nbmodification_request_reject__init
+                     (StreamingProtobufs__SgNBModificationRequestReject         *message)
 {
-  static const Uenibstreamprotobuf__SgNBModificationRequestReject init_value = UENIBSTREAMPROTOBUF__SG_NBMODIFICATION_REQUEST_REJECT__INIT;
+  static const StreamingProtobufs__SgNBModificationRequestReject init_value = STREAMING_PROTOBUFS__SG_NBMODIFICATION_REQUEST_REJECT__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__sg_nbmodification_request_reject__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBModificationRequestReject *message)
+size_t streaming_protobufs__sg_nbmodification_request_reject__get_packed_size
+                     (const StreamingProtobufs__SgNBModificationRequestReject *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbmodification_request_reject__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbmodification_request_reject__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__sg_nbmodification_request_reject__pack
-                     (const Uenibstreamprotobuf__SgNBModificationRequestReject *message,
+size_t streaming_protobufs__sg_nbmodification_request_reject__pack
+                     (const StreamingProtobufs__SgNBModificationRequestReject *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbmodification_request_reject__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbmodification_request_reject__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__sg_nbmodification_request_reject__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBModificationRequestReject *message,
+size_t streaming_protobufs__sg_nbmodification_request_reject__pack_to_buffer
+                     (const StreamingProtobufs__SgNBModificationRequestReject *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbmodification_request_reject__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbmodification_request_reject__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__SgNBModificationRequestReject *
-       uenibstreamprotobuf__sg_nbmodification_request_reject__unpack
+StreamingProtobufs__SgNBModificationRequestReject *
+       streaming_protobufs__sg_nbmodification_request_reject__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__SgNBModificationRequestReject *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__sg_nbmodification_request_reject__descriptor,
+  return (StreamingProtobufs__SgNBModificationRequestReject *)
+     protobuf_c_message_unpack (&streaming_protobufs__sg_nbmodification_request_reject__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__sg_nbmodification_request_reject__free_unpacked
-                     (Uenibstreamprotobuf__SgNBModificationRequestReject *message,
+void   streaming_protobufs__sg_nbmodification_request_reject__free_unpacked
+                     (StreamingProtobufs__SgNBModificationRequestReject *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbmodification_request_reject__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbmodification_request_reject__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__sg_nbmodification_request_reject__ies__init
-                     (Uenibstreamprotobuf__SgNBModificationRequestRejectIEs         *message)
+void   streaming_protobufs__sg_nbmodification_request_reject__ies__init
+                     (StreamingProtobufs__SgNBModificationRequestRejectIEs         *message)
 {
-  static const Uenibstreamprotobuf__SgNBModificationRequestRejectIEs init_value = UENIBSTREAMPROTOBUF__SG_NBMODIFICATION_REQUEST_REJECT__IES__INIT;
+  static const StreamingProtobufs__SgNBModificationRequestRejectIEs init_value = STREAMING_PROTOBUFS__SG_NBMODIFICATION_REQUEST_REJECT__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__sg_nbmodification_request_reject__ies__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBModificationRequestRejectIEs *message)
+size_t streaming_protobufs__sg_nbmodification_request_reject__ies__get_packed_size
+                     (const StreamingProtobufs__SgNBModificationRequestRejectIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbmodification_request_reject__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbmodification_request_reject__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__sg_nbmodification_request_reject__ies__pack
-                     (const Uenibstreamprotobuf__SgNBModificationRequestRejectIEs *message,
+size_t streaming_protobufs__sg_nbmodification_request_reject__ies__pack
+                     (const StreamingProtobufs__SgNBModificationRequestRejectIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbmodification_request_reject__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbmodification_request_reject__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__sg_nbmodification_request_reject__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBModificationRequestRejectIEs *message,
+size_t streaming_protobufs__sg_nbmodification_request_reject__ies__pack_to_buffer
+                     (const StreamingProtobufs__SgNBModificationRequestRejectIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbmodification_request_reject__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbmodification_request_reject__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__SgNBModificationRequestRejectIEs *
-       uenibstreamprotobuf__sg_nbmodification_request_reject__ies__unpack
+StreamingProtobufs__SgNBModificationRequestRejectIEs *
+       streaming_protobufs__sg_nbmodification_request_reject__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__SgNBModificationRequestRejectIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__sg_nbmodification_request_reject__ies__descriptor,
+  return (StreamingProtobufs__SgNBModificationRequestRejectIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__sg_nbmodification_request_reject__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__sg_nbmodification_request_reject__ies__free_unpacked
-                     (Uenibstreamprotobuf__SgNBModificationRequestRejectIEs *message,
+void   streaming_protobufs__sg_nbmodification_request_reject__ies__free_unpacked
+                     (StreamingProtobufs__SgNBModificationRequestRejectIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbmodification_request_reject__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbmodification_request_reject__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbmodification_request_reject__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__sg_nbmodification_request_reject__field_descriptors[1] =
 {
   {
     "protocolIEs",
@@ -105,37 +105,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbmodification_req
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBModificationRequestReject, protocolies),
-    &uenibstreamprotobuf__sg_nbmodification_request_reject__ies__descriptor,
+    offsetof(StreamingProtobufs__SgNBModificationRequestReject, protocolies),
+    &streaming_protobufs__sg_nbmodification_request_reject__ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__sg_nbmodification_request_reject__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__sg_nbmodification_request_reject__field_indices_by_name[] = {
   0,   /* field[0] = protocolIEs */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__sg_nbmodification_request_reject__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__sg_nbmodification_request_reject__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbmodification_request_reject__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__sg_nbmodification_request_reject__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.SgNBModificationRequestReject",
+  "streaming_protobufs.SgNBModificationRequestReject",
   "SgNBModificationRequestReject",
-  "Uenibstreamprotobuf__SgNBModificationRequestReject",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__SgNBModificationRequestReject),
+  "StreamingProtobufs__SgNBModificationRequestReject",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__SgNBModificationRequestReject),
   1,
-  uenibstreamprotobuf__sg_nbmodification_request_reject__field_descriptors,
-  uenibstreamprotobuf__sg_nbmodification_request_reject__field_indices_by_name,
-  1,  uenibstreamprotobuf__sg_nbmodification_request_reject__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__sg_nbmodification_request_reject__init,
+  streaming_protobufs__sg_nbmodification_request_reject__field_descriptors,
+  streaming_protobufs__sg_nbmodification_request_reject__field_indices_by_name,
+  1,  streaming_protobufs__sg_nbmodification_request_reject__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__sg_nbmodification_request_reject__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbmodification_request_reject__ies__field_descriptors[5] =
+static const ProtobufCFieldDescriptor streaming_protobufs__sg_nbmodification_request_reject__ies__field_descriptors[5] =
 {
   {
     "id_MeNB_UE_X2AP_ID",
@@ -143,7 +143,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbmodification_req
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBModificationRequestRejectIEs, id_menb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__SgNBModificationRequestRejectIEs, id_menb_ue_x2ap_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -155,7 +155,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbmodification_req
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBModificationRequestRejectIEs, id_sgnb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__SgNBModificationRequestRejectIEs, id_sgnb_ue_x2ap_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -167,8 +167,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbmodification_req
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBModificationRequestRejectIEs, id_cause),
-    &uenibstreamprotobuf__cause__descriptor,
+    offsetof(StreamingProtobufs__SgNBModificationRequestRejectIEs, id_cause),
+    &streaming_protobufs__cause__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -179,8 +179,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbmodification_req
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBModificationRequestRejectIEs, id_criticalitydiagnostics),
-    &uenibstreamprotobuf__criticality_diagnostics__descriptor,
+    offsetof(StreamingProtobufs__SgNBModificationRequestRejectIEs, id_criticalitydiagnostics),
+    &streaming_protobufs__criticality_diagnostics__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -191,37 +191,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbmodification_req
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBModificationRequestRejectIEs, id_menb_ue_x2ap_id_extension),
+    offsetof(StreamingProtobufs__SgNBModificationRequestRejectIEs, id_menb_ue_x2ap_id_extension),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__sg_nbmodification_request_reject__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__sg_nbmodification_request_reject__ies__field_indices_by_name[] = {
   2,   /* field[2] = id_Cause */
   3,   /* field[3] = id_CriticalityDiagnostics */
   0,   /* field[0] = id_MeNB_UE_X2AP_ID */
   4,   /* field[4] = id_MeNB_UE_X2AP_ID_Extension */
   1,   /* field[1] = id_SgNB_UE_X2AP_ID */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__sg_nbmodification_request_reject__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__sg_nbmodification_request_reject__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 5 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbmodification_request_reject__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__sg_nbmodification_request_reject__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.SgNBModificationRequestReject_IEs",
+  "streaming_protobufs.SgNBModificationRequestReject_IEs",
   "SgNBModificationRequestRejectIEs",
-  "Uenibstreamprotobuf__SgNBModificationRequestRejectIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__SgNBModificationRequestRejectIEs),
+  "StreamingProtobufs__SgNBModificationRequestRejectIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__SgNBModificationRequestRejectIEs),
   5,
-  uenibstreamprotobuf__sg_nbmodification_request_reject__ies__field_descriptors,
-  uenibstreamprotobuf__sg_nbmodification_request_reject__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__sg_nbmodification_request_reject__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__sg_nbmodification_request_reject__ies__init,
+  streaming_protobufs__sg_nbmodification_request_reject__ies__field_descriptors,
+  streaming_protobufs__sg_nbmodification_request_reject__ies__field_indices_by_name,
+  1,  streaming_protobufs__sg_nbmodification_request_reject__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__sg_nbmodification_request_reject__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

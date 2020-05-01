@@ -7,97 +7,97 @@
 #endif
 
 #include "x2ap_streaming.pb-c.h"
-void   uenibstreamprotobuf__x2_apstreaming__init
-                     (Uenibstreamprotobuf__X2APStreaming         *message)
+void   streaming_protobufs__x2_apstreaming__init
+                     (StreamingProtobufs__X2APStreaming         *message)
 {
-  static const Uenibstreamprotobuf__X2APStreaming init_value = UENIBSTREAMPROTOBUF__X2_APSTREAMING__INIT;
+  static const StreamingProtobufs__X2APStreaming init_value = STREAMING_PROTOBUFS__X2_APSTREAMING__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__x2_apstreaming__get_packed_size
-                     (const Uenibstreamprotobuf__X2APStreaming *message)
+size_t streaming_protobufs__x2_apstreaming__get_packed_size
+                     (const StreamingProtobufs__X2APStreaming *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__x2_apstreaming__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__x2_apstreaming__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__x2_apstreaming__pack
-                     (const Uenibstreamprotobuf__X2APStreaming *message,
+size_t streaming_protobufs__x2_apstreaming__pack
+                     (const StreamingProtobufs__X2APStreaming *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__x2_apstreaming__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__x2_apstreaming__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__x2_apstreaming__pack_to_buffer
-                     (const Uenibstreamprotobuf__X2APStreaming *message,
+size_t streaming_protobufs__x2_apstreaming__pack_to_buffer
+                     (const StreamingProtobufs__X2APStreaming *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__x2_apstreaming__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__x2_apstreaming__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__X2APStreaming *
-       uenibstreamprotobuf__x2_apstreaming__unpack
+StreamingProtobufs__X2APStreaming *
+       streaming_protobufs__x2_apstreaming__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__X2APStreaming *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__x2_apstreaming__descriptor,
+  return (StreamingProtobufs__X2APStreaming *)
+     protobuf_c_message_unpack (&streaming_protobufs__x2_apstreaming__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__x2_apstreaming__free_unpacked
-                     (Uenibstreamprotobuf__X2APStreaming *message,
+void   streaming_protobufs__x2_apstreaming__free_unpacked
+                     (StreamingProtobufs__X2APStreaming *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__x2_apstreaming__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__x2_apstreaming__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__x2_apstreaming_header__init
-                     (Uenibstreamprotobuf__X2APStreamingHeader         *message)
+void   streaming_protobufs__x2_apstreaming_header__init
+                     (StreamingProtobufs__X2APStreamingHeader         *message)
 {
-  static const Uenibstreamprotobuf__X2APStreamingHeader init_value = UENIBSTREAMPROTOBUF__X2_APSTREAMING_HEADER__INIT;
+  static const StreamingProtobufs__X2APStreamingHeader init_value = STREAMING_PROTOBUFS__X2_APSTREAMING_HEADER__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__x2_apstreaming_header__get_packed_size
-                     (const Uenibstreamprotobuf__X2APStreamingHeader *message)
+size_t streaming_protobufs__x2_apstreaming_header__get_packed_size
+                     (const StreamingProtobufs__X2APStreamingHeader *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__x2_apstreaming_header__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__x2_apstreaming_header__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__x2_apstreaming_header__pack
-                     (const Uenibstreamprotobuf__X2APStreamingHeader *message,
+size_t streaming_protobufs__x2_apstreaming_header__pack
+                     (const StreamingProtobufs__X2APStreamingHeader *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__x2_apstreaming_header__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__x2_apstreaming_header__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__x2_apstreaming_header__pack_to_buffer
-                     (const Uenibstreamprotobuf__X2APStreamingHeader *message,
+size_t streaming_protobufs__x2_apstreaming_header__pack_to_buffer
+                     (const StreamingProtobufs__X2APStreamingHeader *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__x2_apstreaming_header__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__x2_apstreaming_header__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__X2APStreamingHeader *
-       uenibstreamprotobuf__x2_apstreaming_header__unpack
+StreamingProtobufs__X2APStreamingHeader *
+       streaming_protobufs__x2_apstreaming_header__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__X2APStreamingHeader *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__x2_apstreaming_header__descriptor,
+  return (StreamingProtobufs__X2APStreamingHeader *)
+     protobuf_c_message_unpack (&streaming_protobufs__x2_apstreaming_header__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__x2_apstreaming_header__free_unpacked
-                     (Uenibstreamprotobuf__X2APStreamingHeader *message,
+void   streaming_protobufs__x2_apstreaming_header__free_unpacked
+                     (StreamingProtobufs__X2APStreamingHeader *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__x2_apstreaming_header__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__x2_apstreaming_header__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field_descriptors[19] =
+static const ProtobufCFieldDescriptor streaming_protobufs__x2_apstreaming__field_descriptors[24] =
 {
   {
     "header",
@@ -105,8 +105,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__X2APStreaming, header),
-    &uenibstreamprotobuf__x2_apstreaming_header__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, header),
+    &streaming_protobufs__x2_apstreaming_header__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -116,9 +116,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     2,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, rrctransfer),
-    &uenibstreamprotobuf__rrctransfer__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, rrctransfer),
+    &streaming_protobufs__rrctransfer__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -128,9 +128,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     3,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbadditionrequest),
-    &uenibstreamprotobuf__sg_nbaddition_request__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbadditionrequest),
+    &streaming_protobufs__sg_nbaddition_request__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -140,9 +140,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     4,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbadditionrequestacknowledge),
-    &uenibstreamprotobuf__sg_nbaddition_request_acknowledge__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbadditionrequestacknowledge),
+    &streaming_protobufs__sg_nbaddition_request_acknowledge__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -152,9 +152,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     5,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbadditionrequestreject),
-    &uenibstreamprotobuf__sg_nbaddition_request_reject__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbadditionrequestreject),
+    &streaming_protobufs__sg_nbaddition_request_reject__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -164,9 +164,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     6,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbmodificationrequest),
-    &uenibstreamprotobuf__sg_nbmodification_request__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbmodificationrequest),
+    &streaming_protobufs__sg_nbmodification_request__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -176,9 +176,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     7,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbmodificationrequestacknowledge),
-    &uenibstreamprotobuf__sg_nbmodification_request_acknowledge__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbmodificationrequestacknowledge),
+    &streaming_protobufs__sg_nbmodification_request_acknowledge__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -188,9 +188,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     8,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbmodificationrequestreject),
-    &uenibstreamprotobuf__sg_nbmodification_request_reject__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbmodificationrequestreject),
+    &streaming_protobufs__sg_nbmodification_request_reject__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -200,9 +200,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     9,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbmodificationrequired),
-    &uenibstreamprotobuf__sg_nbmodification_required__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbmodificationrequired),
+    &streaming_protobufs__sg_nbmodification_required__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -212,9 +212,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     10,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbmodificationconfirm),
-    &uenibstreamprotobuf__sg_nbmodification_confirm__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbmodificationconfirm),
+    &streaming_protobufs__sg_nbmodification_confirm__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -224,9 +224,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     11,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbmodificationrefuse),
-    &uenibstreamprotobuf__sg_nbmodification_refuse__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbmodificationrefuse),
+    &streaming_protobufs__sg_nbmodification_refuse__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -236,9 +236,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     12,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbreconfigurationcomplete),
-    &uenibstreamprotobuf__sg_nbreconfiguration_complete__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbreconfigurationcomplete),
+    &streaming_protobufs__sg_nbreconfiguration_complete__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -248,9 +248,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     13,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbreleaserequest),
-    &uenibstreamprotobuf__sg_nbrelease_request__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbreleaserequest),
+    &streaming_protobufs__sg_nbrelease_request__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -260,9 +260,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     14,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbreleaserequestacknowledge),
-    &uenibstreamprotobuf__sg_nbrelease_request_acknowledge__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbreleaserequestacknowledge),
+    &streaming_protobufs__sg_nbrelease_request_acknowledge__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -272,9 +272,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     15,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbreleaserequired),
-    &uenibstreamprotobuf__sg_nbrelease_required__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbreleaserequired),
+    &streaming_protobufs__sg_nbrelease_required__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -284,9 +284,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     16,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, sgnbreleaseconfirm),
-    &uenibstreamprotobuf__sg_nbrelease_confirm__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbreleaseconfirm),
+    &streaming_protobufs__sg_nbrelease_confirm__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -296,9 +296,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     17,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, snstatustransfer),
-    &uenibstreamprotobuf__snstatus_transfer__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, snstatustransfer),
+    &streaming_protobufs__snstatus_transfer__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -308,9 +308,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     18,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, uecontextrelease),
-    &uenibstreamprotobuf__uecontext_release__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, uecontextrelease),
+    &streaming_protobufs__uecontext_release__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -320,21 +320,86 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming__field
     19,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__X2APStreaming, x2ap_message_case),
-    offsetof(Uenibstreamprotobuf__X2APStreaming, secondaryratdatausagereport),
-    &uenibstreamprotobuf__secondary_ratdata_usage_report__descriptor,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, secondaryratdatausagereport),
+    &streaming_protobufs__secondary_ratdata_usage_report__descriptor,
+    NULL,
+    0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "sgNBChangeRequired",
+    20,
+    PROTOBUF_C_LABEL_NONE,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbchangerequired),
+    &streaming_protobufs__sg_nbchange_required__descriptor,
+    NULL,
+    0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "sgNBChangeConfirm",
+    21,
+    PROTOBUF_C_LABEL_NONE,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbchangeconfirm),
+    &streaming_protobufs__sg_nbchange_confirm__descriptor,
+    NULL,
+    0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "sgNBChangeRefuse",
+    22,
+    PROTOBUF_C_LABEL_NONE,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbchangerefuse),
+    &streaming_protobufs__sg_nbchange_refuse__descriptor,
+    NULL,
+    0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "sgNBActivityNotification",
+    23,
+    PROTOBUF_C_LABEL_NONE,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, sgnbactivitynotification),
+    &streaming_protobufs__sg_nbactivity_notification__descriptor,
+    NULL,
+    0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
+    0,NULL,NULL    /* reserved1,reserved2, etc */
+  },
+  {
+    "gNBStatusIndication",
+    24,
+    PROTOBUF_C_LABEL_NONE,
+    PROTOBUF_C_TYPE_MESSAGE,
+    offsetof(StreamingProtobufs__X2APStreaming, x2ap_message_case),
+    offsetof(StreamingProtobufs__X2APStreaming, gnbstatusindication),
+    &streaming_protobufs__gnbstatus_indication__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__x2_apstreaming__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__x2_apstreaming__field_indices_by_name[] = {
+  23,   /* field[23] = gNBStatusIndication */
   0,   /* field[0] = header */
   1,   /* field[1] = rrcTransfer */
   18,   /* field[18] = secondaryRATDataUsageReport */
+  22,   /* field[22] = sgNBActivityNotification */
   2,   /* field[2] = sgNBAdditionRequest */
   3,   /* field[3] = sgNBAdditionRequestAcknowledge */
   4,   /* field[4] = sgNBAdditionRequestReject */
+  20,   /* field[20] = sgNBChangeConfirm */
+  21,   /* field[21] = sgNBChangeRefuse */
+  19,   /* field[19] = sgNBChangeRequired */
   9,   /* field[9] = sgNBModificationConfirm */
   10,   /* field[10] = sgNBModificationRefuse */
   5,   /* field[5] = sgNBModificationRequest */
@@ -349,27 +414,27 @@ static const unsigned uenibstreamprotobuf__x2_apstreaming__field_indices_by_name
   16,   /* field[16] = snStatusTransfer */
   17,   /* field[17] = ueContextRelease */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__x2_apstreaming__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__x2_apstreaming__number_ranges[1 + 1] =
 {
   { 1, 0 },
-  { 0, 19 }
+  { 0, 24 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__x2_apstreaming__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__x2_apstreaming__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.X2APStreaming",
+  "streaming_protobufs.X2APStreaming",
   "X2APStreaming",
-  "Uenibstreamprotobuf__X2APStreaming",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__X2APStreaming),
-  19,
-  uenibstreamprotobuf__x2_apstreaming__field_descriptors,
-  uenibstreamprotobuf__x2_apstreaming__field_indices_by_name,
-  1,  uenibstreamprotobuf__x2_apstreaming__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__x2_apstreaming__init,
+  "StreamingProtobufs__X2APStreaming",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__X2APStreaming),
+  24,
+  streaming_protobufs__x2_apstreaming__field_descriptors,
+  streaming_protobufs__x2_apstreaming__field_indices_by_name,
+  1,  streaming_protobufs__x2_apstreaming__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__x2_apstreaming__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming_header__field_descriptors[3] =
+static const ProtobufCFieldDescriptor streaming_protobufs__x2_apstreaming_header__field_descriptors[3] =
 {
   {
     "protobuf_revision",
@@ -377,7 +442,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming_header
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_STRING,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__X2APStreamingHeader, protobuf_revision),
+    offsetof(StreamingProtobufs__X2APStreamingHeader, protobuf_revision),
     NULL,
     &protobuf_c_empty_string,
     0,             /* flags */
@@ -389,7 +454,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming_header
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__X2APStreamingHeader, gnbid),
+    offsetof(StreamingProtobufs__X2APStreamingHeader, gnbid),
     &google__protobuf__string_value__descriptor,
     NULL,
     0,             /* flags */
@@ -401,35 +466,35 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__x2_apstreaming_header
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT64,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__X2APStreamingHeader, timestamp),
+    offsetof(StreamingProtobufs__X2APStreamingHeader, timestamp),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__x2_apstreaming_header__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__x2_apstreaming_header__field_indices_by_name[] = {
   1,   /* field[1] = gNbID */
   0,   /* field[0] = protobuf_revision */
   2,   /* field[2] = timestamp */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__x2_apstreaming_header__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__x2_apstreaming_header__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__x2_apstreaming_header__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__x2_apstreaming_header__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.X2APStreamingHeader",
+  "streaming_protobufs.X2APStreamingHeader",
   "X2APStreamingHeader",
-  "Uenibstreamprotobuf__X2APStreamingHeader",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__X2APStreamingHeader),
+  "StreamingProtobufs__X2APStreamingHeader",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__X2APStreamingHeader),
   3,
-  uenibstreamprotobuf__x2_apstreaming_header__field_descriptors,
-  uenibstreamprotobuf__x2_apstreaming_header__field_indices_by_name,
-  1,  uenibstreamprotobuf__x2_apstreaming_header__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__x2_apstreaming_header__init,
+  streaming_protobufs__x2_apstreaming_header__field_descriptors,
+  streaming_protobufs__x2_apstreaming_header__field_indices_by_name,
+  1,  streaming_protobufs__x2_apstreaming_header__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__x2_apstreaming_header__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

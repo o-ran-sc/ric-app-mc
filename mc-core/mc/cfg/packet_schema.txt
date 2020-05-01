@@ -127,7 +127,7 @@ PROTOCOL sgnb_release_confirm_from_menb_erabs (base, schema_id 1101){
 	llong mCGresources get_sgnb_release_confirm_from_menb_erabs__mCGresources (required);
 // Tunnel is a virtual connection over the physical X2 connection meant to handle a bearer-specific GTP (GPRS Tunneling Protocol) traffic flow in terms of PDCP PDUs.  This virtual connection has an ID given by this field.
 	string gTP_TEID get_sgnb_release_confirm_from_menb_erabs__gTP_TEID (required);
-// logical IP address for this virtual connection over X2.
+// logical IP address for this virtual connection over X2, likely an ipv6 in binary.
 	string transportLayerAddress get_sgnb_release_confirm_from_menb_erabs__transportLayerAddress (required);
 }
 
@@ -364,7 +364,7 @@ PROTOCOL sgnb_add_req_reject (base, schema_id 701){
 // UE_ID assigned by eNB for the UE over the X2.  Is mandatory
 	llong id_MeNB_UE_X2AP_ID get_sgnb_add_req_reject__id_MeNB_UE_X2AP_ID (required);
 // UE_ID assigned by gNB for the UE over an X2. Is optional
-	llong id_SgNB_UE_X2AP_ID get_sgnb_add_req_reject__id_SgNB_UE_X2AP_ID (required);
+	uint id_SgNB_UE_X2AP_ID get_sgnb_add_req_reject__id_SgNB_UE_X2AP_ID;
 //   default=-1
 	llong cause_radio_network get_sgnb_add_req_reject__cause_radio_network (required);
 //   default=-1
@@ -415,8 +415,11 @@ PROTOCOL eRABs_acked_for_admit_for_ue (base, schema_id 502){
 	llong id_SgNB_UE_X2AP_ID get_eRABs_acked_for_admit_for_ue__id_SgNB_UE_X2AP_ID (required);
 // additional bytes optionally rqd. for user id (MeNB ue ID is 16 bits)  not expected to be used for PIZ trial.  default=0
 	uint id_MeNB_UE_X2AP_ID_Extension get_eRABs_acked_for_admit_for_ue__id_MeNB_UE_X2AP_ID_Extension (required);
+//   default=0
+	llong ARP get_eRABs_acked_for_admit_for_ue__ARP (required);
 	string gTP_TEID_dl get_eRABs_acked_for_admit_for_ue__gTP_TEID_dl;
 	llong mCGresources get_eRABs_acked_for_admit_for_ue__mCGresources;
+// likely a binary ipv6 address
 	string transportLayerAddress_dl get_eRABs_acked_for_admit_for_ue__transportLayerAddress_dl;
 	llong pDCPatSgNB get_eRABs_acked_for_admit_for_ue__pDCPatSgNB;
 	llong sCGresources get_eRABs_acked_for_admit_for_ue__sCGresources;
@@ -440,24 +443,6 @@ PROTOCOL SgNB_ack_for_ue_NRfreqs (base, schema_id 503){
 	llong id_SgNB_UE_X2AP_ID get_SgNB_ack_for_ue_NRfreqs__id_SgNB_UE_X2AP_ID (required);
 // additional bytes optionally rqd. for user id (MeNB ue ID is 16 bits)  not expected to be used for PIZ trial.  default=0
 	uint id_MeNB_UE_X2AP_ID_Extension get_SgNB_ack_for_ue_NRfreqs__id_MeNB_UE_X2AP_ID_Extension (required);
-// rrc reconfig values for secondary cell group of sgNB
-	string scg_CellGroupConfig get_SgNB_ack_for_ue_NRfreqs__scg_CellGroupConfig;
-// max is 8, for piz trial 4
-	llong candidate_serving_cell_freqs0 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs0;
-// max is 8, for piz trial 4
-	llong candidate_serving_cell_freqs1 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs1;
-// max is 8, for piz trial 4
-	llong candidate_serving_cell_freqs2 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs2;
-// max is 8, for piz trial 4
-	llong candidate_serving_cell_freqs3 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs3;
-// max is 8, for piz trial 4
-	llong candidate_serving_cell_freqs4 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs4;
-// max is 8, for piz trial 4
-	llong candidate_serving_cell_freqs5 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs5;
-// max is 8, for piz trial 4
-	llong candidate_serving_cell_freqs6 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs6;
-// max is 8, for piz trial 4
-	llong candidate_serving_cell_freqs7 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs7;
 // max is 8, 4 for PIZ trial
 	uint measuredFrequenciesSN0 get_SgNB_ack_for_ue_NRfreqs__measuredFrequenciesSN0;
 // max is 8, 4 for PIZ trial
@@ -474,6 +459,22 @@ PROTOCOL SgNB_ack_for_ue_NRfreqs (base, schema_id 503){
 	uint measuredFrequenciesSN6 get_SgNB_ack_for_ue_NRfreqs__measuredFrequenciesSN6;
 // max is 8, 4 for PIZ trial
 	uint measuredFrequenciesSN7 get_SgNB_ack_for_ue_NRfreqs__measuredFrequenciesSN7;
+// max is 8, for piz trial 4
+	llong candidate_serving_cell_freqs0 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs0;
+// max is 8, for piz trial 4
+	llong candidate_serving_cell_freqs1 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs1;
+// max is 8, for piz trial 4
+	llong candidate_serving_cell_freqs2 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs2;
+// max is 8, for piz trial 4
+	llong candidate_serving_cell_freqs3 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs3;
+// max is 8, for piz trial 4
+	llong candidate_serving_cell_freqs4 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs4;
+// max is 8, for piz trial 4
+	llong candidate_serving_cell_freqs5 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs5;
+// max is 8, for piz trial 4
+	llong candidate_serving_cell_freqs6 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs6;
+// max is 8, for piz trial 4
+	llong candidate_serving_cell_freqs7 get_SgNB_ack_for_ue_NRfreqs__candidate_serving_cell_freqs7;
 }
 
 // list of eRABs with sgNB radio bearer config info for addition or modification.
@@ -583,6 +584,22 @@ PROTOCOL SgNB_ack_for_ue_beam_ssb (base, schema_id 507){
 	uint sinr get_SgNB_ack_for_ue_beam_ssb__sinr;
 }
 
+// Extract the gtp_teid and also the transport layer address
+// Defined in sgnb_addition_req.json on sgnb_addition_request.proto
+// schemaId = 10000, interface SGNB_ADDITION_REQ
+PROTOCOL sgnb_addreq_gtp_teid (base, schema_id 10000){
+// timestamp in milliseconds
+	ullong timestamp_ms get_sgnb_addreq_gtp_teid__timestamp_ms (required,increasing);
+// gNB ID
+	string gnb_id get_sgnb_addreq_gtp_teid__gnb_id (required);
+// UE_ID assigned by eNB for the UE over an X2.  primary key for matching.
+	llong id_MeNB_UE_X2AP_ID get_sgnb_addreq_gtp_teid__id_MeNB_UE_X2AP_ID (required);
+// UE_ID assigned by eNB for the UE over an X2.  primary key for matching.
+	string gTP_TEID get_sgnb_addreq_gtp_teid__gTP_TEID (required);
+// additional bytes optionally rqd. for user id (MeNB ue ID is 16 bits)  not expected to be used for PIZ trial, likely an ipv6 address in binary.  default=0
+	string transportLayerAddress get_sgnb_addreq_gtp_teid__transportLayerAddress (required);
+}
+
 // Indicates request for adding secondary node to the UE
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
 // schemaId = 401, interface SGNB_ADDITION_REQ
@@ -629,7 +646,7 @@ PROTOCOL sgnb_addreq_for_ue_bearers (base, schema_id 402){
 	llong MCG_eRAB_GuaranteedBitrateUL get_sgnb_addreq_for_ue_bearers__MCG_eRAB_GuaranteedBitrateUL (required);
 //   default=-1
 	llong mCGresources get_sgnb_addreq_for_ue_bearers__mCGresources (required);
-// logical IP address for this virtual connection over X2.  default=""
+// logical IP address for this virtual connection over X2, likely an ipv6 address in binary.  default=""
 	string transportLayerAddress get_sgnb_addreq_for_ue_bearers__transportLayerAddress (required);
 // complete profile  default=0
 	llong full_eRAB_GuaranteedBitrateUL get_sgnb_addreq_for_ue_bearers__full_eRAB_GuaranteedBitrateUL (required);

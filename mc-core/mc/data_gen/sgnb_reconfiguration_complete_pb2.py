@@ -19,10 +19,10 @@ import error_cause_pb2 as error__cause__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='sgnb_reconfiguration_complete.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n#sgnb_reconfiguration_complete.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x11\x65rror_cause.proto\"\xff\x01\n\x1bSgNBReconfigurationComplete\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12\x64\n$id_ResponseInformationSgNBReconfComp\x18\x03 \x01(\x0b\x32\x36.uenibstreamprotobuf.ResponseInformationSgNBReconfComp\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"\x84\x02\n!ResponseInformationSgNBReconfComp\x12\x64\n\x16success_SgNBReconfComp\x18\x01 \x01(\x0b\x32\x42.uenibstreamprotobuf.ResponseInformationSgNBReconfComp_SuccessItemH\x00\x12p\n\x1dreject_by_MeNB_SgNBReconfComp\x18\x02 \x01(\x0b\x32G.uenibstreamprotobuf.ResponseInformationSgNBReconfComp_RejectByMeNBItemH\x00\x42\x07\n\x05value\"\xcb\x01\n-ResponseInformationSgNBReconfComp_SuccessItem\x12\x39\n\x13meNBtoSgNBContainer\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12_\n\riE_Extensions\x18\x02 \x03(\x0b\x32H.uenibstreamprotobuf.ResponseInformationSgNBReconfComp_SuccessItemExtIEs\"5\n3ResponseInformationSgNBReconfComp_SuccessItemExtIEs\"\xc5\x01\n2ResponseInformationSgNBReconfComp_RejectByMeNBItem\x12)\n\x05\x63\x61use\x18\x01 \x01(\x0b\x32\x1a.uenibstreamprotobuf.Cause\x12\x64\n\riE_Extensions\x18\x02 \x03(\x0b\x32M.uenibstreamprotobuf.ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs\":\n8ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEsB:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n#sgnb_reconfiguration_complete.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x11\x65rror_cause.proto\"\xff\x01\n\x1bSgNBReconfigurationComplete\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12\x64\n$id_ResponseInformationSgNBReconfComp\x18\x03 \x01(\x0b\x32\x36.streaming_protobufs.ResponseInformationSgNBReconfComp\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"\x84\x02\n!ResponseInformationSgNBReconfComp\x12\x64\n\x16success_SgNBReconfComp\x18\x01 \x01(\x0b\x32\x42.streaming_protobufs.ResponseInformationSgNBReconfComp_SuccessItemH\x00\x12p\n\x1dreject_by_MeNB_SgNBReconfComp\x18\x02 \x01(\x0b\x32G.streaming_protobufs.ResponseInformationSgNBReconfComp_RejectByMeNBItemH\x00\x42\x07\n\x05value\"\xca\x01\n-ResponseInformationSgNBReconfComp_SuccessItem\x12\x38\n\x13meNBtoSgNBContainer\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12_\n\riE_Extensions\x18\x02 \x03(\x0b\x32H.streaming_protobufs.ResponseInformationSgNBReconfComp_SuccessItemExtIEs\"5\n3ResponseInformationSgNBReconfComp_SuccessItemExtIEs\"\xc5\x01\n2ResponseInformationSgNBReconfComp_RejectByMeNBItem\x12)\n\x05\x63\x61use\x18\x01 \x01(\x0b\x32\x1a.streaming_protobufs.Cause\x12\x64\n\riE_Extensions\x18\x02 \x03(\x0b\x32M.streaming_protobufs.ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs\":\n8ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEsB3Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,error__cause__pb2.DESCRIPTOR,])
 
@@ -31,34 +31,34 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _SGNBRECONFIGURATIONCOMPLETE = _descriptor.Descriptor(
   name='SgNBReconfigurationComplete',
-  full_name='uenibstreamprotobuf.SgNBReconfigurationComplete',
+  full_name='streaming_protobufs.SgNBReconfigurationComplete',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SgNBReconfigurationComplete.id_MeNB_UE_X2AP_ID', index=0,
+      name='id_MeNB_UE_X2AP_ID', full_name='streaming_protobufs.SgNBReconfigurationComplete.id_MeNB_UE_X2AP_ID', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_SgNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SgNBReconfigurationComplete.id_SgNB_UE_X2AP_ID', index=1,
+      name='id_SgNB_UE_X2AP_ID', full_name='streaming_protobufs.SgNBReconfigurationComplete.id_SgNB_UE_X2AP_ID', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_ResponseInformationSgNBReconfComp', full_name='uenibstreamprotobuf.SgNBReconfigurationComplete.id_ResponseInformationSgNBReconfComp', index=2,
+      name='id_ResponseInformationSgNBReconfComp', full_name='streaming_protobufs.SgNBReconfigurationComplete.id_ResponseInformationSgNBReconfComp', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID_Extension', full_name='uenibstreamprotobuf.SgNBReconfigurationComplete.id_MeNB_UE_X2AP_ID_Extension', index=3,
+      name='id_MeNB_UE_X2AP_ID_Extension', full_name='streaming_protobufs.SgNBReconfigurationComplete.id_MeNB_UE_X2AP_ID_Extension', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -83,20 +83,20 @@ _SGNBRECONFIGURATIONCOMPLETE = _descriptor.Descriptor(
 
 _RESPONSEINFORMATIONSGNBRECONFCOMP = _descriptor.Descriptor(
   name='ResponseInformationSgNBReconfComp',
-  full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp',
+  full_name='streaming_protobufs.ResponseInformationSgNBReconfComp',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='success_SgNBReconfComp', full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp.success_SgNBReconfComp', index=0,
+      name='success_SgNBReconfComp', full_name='streaming_protobufs.ResponseInformationSgNBReconfComp.success_SgNBReconfComp', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='reject_by_MeNB_SgNBReconfComp', full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp.reject_by_MeNB_SgNBReconfComp', index=1,
+      name='reject_by_MeNB_SgNBReconfComp', full_name='streaming_protobufs.ResponseInformationSgNBReconfComp.reject_by_MeNB_SgNBReconfComp', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -114,7 +114,7 @@ _RESPONSEINFORMATIONSGNBRECONFCOMP = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='value', full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp.value',
+      name='value', full_name='streaming_protobufs.ResponseInformationSgNBReconfComp.value',
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=370,
@@ -124,20 +124,20 @@ _RESPONSEINFORMATIONSGNBRECONFCOMP = _descriptor.Descriptor(
 
 _RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEM = _descriptor.Descriptor(
   name='ResponseInformationSgNBReconfComp_SuccessItem',
-  full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp_SuccessItem',
+  full_name='streaming_protobufs.ResponseInformationSgNBReconfComp_SuccessItem',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='meNBtoSgNBContainer', full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp_SuccessItem.meNBtoSgNBContainer', index=0,
+      name='meNBtoSgNBContainer', full_name='streaming_protobufs.ResponseInformationSgNBReconfComp_SuccessItem.meNBtoSgNBContainer', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp_SuccessItem.iE_Extensions', index=1,
+      name='iE_Extensions', full_name='streaming_protobufs.ResponseInformationSgNBReconfComp_SuccessItem.iE_Extensions', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -156,13 +156,13 @@ _RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEM = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=633,
-  serialized_end=836,
+  serialized_end=835,
 )
 
 
 _RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEMEXTIES = _descriptor.Descriptor(
   name='ResponseInformationSgNBReconfComp_SuccessItemExtIEs',
-  full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp_SuccessItemExtIEs',
+  full_name='streaming_protobufs.ResponseInformationSgNBReconfComp_SuccessItemExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -179,27 +179,27 @@ _RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEMEXTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=838,
-  serialized_end=891,
+  serialized_start=837,
+  serialized_end=890,
 )
 
 
 _RESPONSEINFORMATIONSGNBRECONFCOMP_REJECTBYMENBITEM = _descriptor.Descriptor(
   name='ResponseInformationSgNBReconfComp_RejectByMeNBItem',
-  full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp_RejectByMeNBItem',
+  full_name='streaming_protobufs.ResponseInformationSgNBReconfComp_RejectByMeNBItem',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cause', full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp_RejectByMeNBItem.cause', index=0,
+      name='cause', full_name='streaming_protobufs.ResponseInformationSgNBReconfComp_RejectByMeNBItem.cause', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp_RejectByMeNBItem.iE_Extensions', index=1,
+      name='iE_Extensions', full_name='streaming_protobufs.ResponseInformationSgNBReconfComp_RejectByMeNBItem.iE_Extensions', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -217,14 +217,14 @@ _RESPONSEINFORMATIONSGNBRECONFCOMP_REJECTBYMENBITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=894,
-  serialized_end=1091,
+  serialized_start=893,
+  serialized_end=1090,
 )
 
 
 _RESPONSEINFORMATIONSGNBRECONFCOMP_REJECTBYMENBITEMEXTIES = _descriptor.Descriptor(
   name='ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs',
-  full_name='uenibstreamprotobuf.ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs',
+  full_name='streaming_protobufs.ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -241,8 +241,8 @@ _RESPONSEINFORMATIONSGNBRECONFCOMP_REJECTBYMENBITEMEXTIES = _descriptor.Descript
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1093,
-  serialized_end=1151,
+  serialized_start=1092,
+  serialized_end=1150,
 )
 
 _SGNBRECONFIGURATIONCOMPLETE.fields_by_name['id_ResponseInformationSgNBReconfComp'].message_type = _RESPONSEINFORMATIONSGNBRECONFCOMP
@@ -255,7 +255,7 @@ _RESPONSEINFORMATIONSGNBRECONFCOMP.fields_by_name['success_SgNBReconfComp'].cont
 _RESPONSEINFORMATIONSGNBRECONFCOMP.oneofs_by_name['value'].fields.append(
   _RESPONSEINFORMATIONSGNBRECONFCOMP.fields_by_name['reject_by_MeNB_SgNBReconfComp'])
 _RESPONSEINFORMATIONSGNBRECONFCOMP.fields_by_name['reject_by_MeNB_SgNBReconfComp'].containing_oneof = _RESPONSEINFORMATIONSGNBRECONFCOMP.oneofs_by_name['value']
-_RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEM.fields_by_name['meNBtoSgNBContainer'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEM.fields_by_name['meNBtoSgNBContainer'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEM.fields_by_name['iE_Extensions'].message_type = _RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEMEXTIES
 _RESPONSEINFORMATIONSGNBRECONFCOMP_REJECTBYMENBITEM.fields_by_name['cause'].message_type = error__cause__pb2._CAUSE
 _RESPONSEINFORMATIONSGNBRECONFCOMP_REJECTBYMENBITEM.fields_by_name['iE_Extensions'].message_type = _RESPONSEINFORMATIONSGNBRECONFCOMP_REJECTBYMENBITEMEXTIES
@@ -270,42 +270,42 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 SgNBReconfigurationComplete = _reflection.GeneratedProtocolMessageType('SgNBReconfigurationComplete', (_message.Message,), {
   'DESCRIPTOR' : _SGNBRECONFIGURATIONCOMPLETE,
   '__module__' : 'sgnb_reconfiguration_complete_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SgNBReconfigurationComplete)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SgNBReconfigurationComplete)
   })
 _sym_db.RegisterMessage(SgNBReconfigurationComplete)
 
 ResponseInformationSgNBReconfComp = _reflection.GeneratedProtocolMessageType('ResponseInformationSgNBReconfComp', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSEINFORMATIONSGNBRECONFCOMP,
   '__module__' : 'sgnb_reconfiguration_complete_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ResponseInformationSgNBReconfComp)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ResponseInformationSgNBReconfComp)
   })
 _sym_db.RegisterMessage(ResponseInformationSgNBReconfComp)
 
 ResponseInformationSgNBReconfComp_SuccessItem = _reflection.GeneratedProtocolMessageType('ResponseInformationSgNBReconfComp_SuccessItem', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEM,
   '__module__' : 'sgnb_reconfiguration_complete_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ResponseInformationSgNBReconfComp_SuccessItem)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ResponseInformationSgNBReconfComp_SuccessItem)
   })
 _sym_db.RegisterMessage(ResponseInformationSgNBReconfComp_SuccessItem)
 
 ResponseInformationSgNBReconfComp_SuccessItemExtIEs = _reflection.GeneratedProtocolMessageType('ResponseInformationSgNBReconfComp_SuccessItemExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSEINFORMATIONSGNBRECONFCOMP_SUCCESSITEMEXTIES,
   '__module__' : 'sgnb_reconfiguration_complete_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ResponseInformationSgNBReconfComp_SuccessItemExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ResponseInformationSgNBReconfComp_SuccessItemExtIEs)
   })
 _sym_db.RegisterMessage(ResponseInformationSgNBReconfComp_SuccessItemExtIEs)
 
 ResponseInformationSgNBReconfComp_RejectByMeNBItem = _reflection.GeneratedProtocolMessageType('ResponseInformationSgNBReconfComp_RejectByMeNBItem', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSEINFORMATIONSGNBRECONFCOMP_REJECTBYMENBITEM,
   '__module__' : 'sgnb_reconfiguration_complete_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ResponseInformationSgNBReconfComp_RejectByMeNBItem)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ResponseInformationSgNBReconfComp_RejectByMeNBItem)
   })
 _sym_db.RegisterMessage(ResponseInformationSgNBReconfComp_RejectByMeNBItem)
 
 ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs = _reflection.GeneratedProtocolMessageType('ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _RESPONSEINFORMATIONSGNBRECONFCOMP_REJECTBYMENBITEMEXTIES,
   '__module__' : 'sgnb_reconfiguration_complete_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs)
   })
 _sym_db.RegisterMessage(ResponseInformationSgNBReconfComp_RejectByMeNBItemExtIEs)
 

@@ -19,10 +19,10 @@ import rrc_common_types_pb2 as rrc__common__types__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rrc_reconfiguration_complete.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\"rrc_reconfiguration_complete.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x16rrc_common_types.proto\"\xb0\x01\n\x1aRRCReconfigurationComplete\x12!\n\x19rrc_TransactionIdentifier\x18\x01 \x01(\r\x12Y\n\x1arrcReconfigurationComplete\x18\x02 \x01(\x0b\x32\x33.uenibstreamprotobuf.RRCReconfigurationComplete_IEsH\x00\x42\x14\n\x12\x63riticalExtensions\"\xb9\x01\n\x1eRRCReconfigurationComplete_IEs\x12>\n\x18lateNonCriticalExtension\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12W\n\x14nonCriticalExtension\x18\x02 \x01(\x0b\x32\x39.uenibstreamprotobuf.RRCReconfigurationComplete_v1530_IEs\"y\n$RRCReconfigurationComplete_v1530_IEs\x12Q\n\x19uplinkTxDirectCurrentList\x18\x01 \x01(\x0b\x32..uenibstreamprotobuf.UplinkTxDirectCurrentListB:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\"rrc_reconfiguration_complete.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x16rrc_common_types.proto\"\xb0\x01\n\x1aRRCReconfigurationComplete\x12!\n\x19rrc_TransactionIdentifier\x18\x01 \x01(\r\x12Y\n\x1arrcReconfigurationComplete\x18\x02 \x01(\x0b\x32\x33.streaming_protobufs.RRCReconfigurationComplete_IEsH\x00\x42\x14\n\x12\x63riticalExtensions\"\xb8\x01\n\x1eRRCReconfigurationComplete_IEs\x12=\n\x18lateNonCriticalExtension\x18\x01 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12W\n\x14nonCriticalExtension\x18\x02 \x01(\x0b\x32\x39.streaming_protobufs.RRCReconfigurationComplete_v1530_IEs\"y\n$RRCReconfigurationComplete_v1530_IEs\x12Q\n\x19uplinkTxDirectCurrentList\x18\x01 \x01(\x0b\x32..streaming_protobufs.UplinkTxDirectCurrentListB3Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,rrc__common__types__pb2.DESCRIPTOR,])
 
@@ -31,20 +31,20 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _RRCRECONFIGURATIONCOMPLETE = _descriptor.Descriptor(
   name='RRCReconfigurationComplete',
-  full_name='uenibstreamprotobuf.RRCReconfigurationComplete',
+  full_name='streaming_protobufs.RRCReconfigurationComplete',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='rrc_TransactionIdentifier', full_name='uenibstreamprotobuf.RRCReconfigurationComplete.rrc_TransactionIdentifier', index=0,
+      name='rrc_TransactionIdentifier', full_name='streaming_protobufs.RRCReconfigurationComplete.rrc_TransactionIdentifier', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rrcReconfigurationComplete', full_name='uenibstreamprotobuf.RRCReconfigurationComplete.rrcReconfigurationComplete', index=1,
+      name='rrcReconfigurationComplete', full_name='streaming_protobufs.RRCReconfigurationComplete.rrcReconfigurationComplete', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -62,7 +62,7 @@ _RRCRECONFIGURATIONCOMPLETE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='criticalExtensions', full_name='uenibstreamprotobuf.RRCReconfigurationComplete.criticalExtensions',
+      name='criticalExtensions', full_name='streaming_protobufs.RRCReconfigurationComplete.criticalExtensions',
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=116,
@@ -72,20 +72,20 @@ _RRCRECONFIGURATIONCOMPLETE = _descriptor.Descriptor(
 
 _RRCRECONFIGURATIONCOMPLETE_IES = _descriptor.Descriptor(
   name='RRCReconfigurationComplete_IEs',
-  full_name='uenibstreamprotobuf.RRCReconfigurationComplete_IEs',
+  full_name='streaming_protobufs.RRCReconfigurationComplete_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.RRCReconfigurationComplete_IEs.lateNonCriticalExtension', index=0,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.RRCReconfigurationComplete_IEs.lateNonCriticalExtension', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nonCriticalExtension', full_name='uenibstreamprotobuf.RRCReconfigurationComplete_IEs.nonCriticalExtension', index=1,
+      name='nonCriticalExtension', full_name='streaming_protobufs.RRCReconfigurationComplete_IEs.nonCriticalExtension', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -104,19 +104,19 @@ _RRCRECONFIGURATIONCOMPLETE_IES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=295,
-  serialized_end=480,
+  serialized_end=479,
 )
 
 
 _RRCRECONFIGURATIONCOMPLETE_V1530_IES = _descriptor.Descriptor(
   name='RRCReconfigurationComplete_v1530_IEs',
-  full_name='uenibstreamprotobuf.RRCReconfigurationComplete_v1530_IEs',
+  full_name='streaming_protobufs.RRCReconfigurationComplete_v1530_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uplinkTxDirectCurrentList', full_name='uenibstreamprotobuf.RRCReconfigurationComplete_v1530_IEs.uplinkTxDirectCurrentList', index=0,
+      name='uplinkTxDirectCurrentList', full_name='streaming_protobufs.RRCReconfigurationComplete_v1530_IEs.uplinkTxDirectCurrentList', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -134,15 +134,15 @@ _RRCRECONFIGURATIONCOMPLETE_V1530_IES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=482,
-  serialized_end=603,
+  serialized_start=481,
+  serialized_end=602,
 )
 
 _RRCRECONFIGURATIONCOMPLETE.fields_by_name['rrcReconfigurationComplete'].message_type = _RRCRECONFIGURATIONCOMPLETE_IES
 _RRCRECONFIGURATIONCOMPLETE.oneofs_by_name['criticalExtensions'].fields.append(
   _RRCRECONFIGURATIONCOMPLETE.fields_by_name['rrcReconfigurationComplete'])
 _RRCRECONFIGURATIONCOMPLETE.fields_by_name['rrcReconfigurationComplete'].containing_oneof = _RRCRECONFIGURATIONCOMPLETE.oneofs_by_name['criticalExtensions']
-_RRCRECONFIGURATIONCOMPLETE_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_RRCRECONFIGURATIONCOMPLETE_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _RRCRECONFIGURATIONCOMPLETE_IES.fields_by_name['nonCriticalExtension'].message_type = _RRCRECONFIGURATIONCOMPLETE_V1530_IES
 _RRCRECONFIGURATIONCOMPLETE_V1530_IES.fields_by_name['uplinkTxDirectCurrentList'].message_type = rrc__common__types__pb2._UPLINKTXDIRECTCURRENTLIST
 DESCRIPTOR.message_types_by_name['RRCReconfigurationComplete'] = _RRCRECONFIGURATIONCOMPLETE
@@ -153,21 +153,21 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 RRCReconfigurationComplete = _reflection.GeneratedProtocolMessageType('RRCReconfigurationComplete', (_message.Message,), {
   'DESCRIPTOR' : _RRCRECONFIGURATIONCOMPLETE,
   '__module__' : 'rrc_reconfiguration_complete_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCReconfigurationComplete)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCReconfigurationComplete)
   })
 _sym_db.RegisterMessage(RRCReconfigurationComplete)
 
 RRCReconfigurationComplete_IEs = _reflection.GeneratedProtocolMessageType('RRCReconfigurationComplete_IEs', (_message.Message,), {
   'DESCRIPTOR' : _RRCRECONFIGURATIONCOMPLETE_IES,
   '__module__' : 'rrc_reconfiguration_complete_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCReconfigurationComplete_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCReconfigurationComplete_IEs)
   })
 _sym_db.RegisterMessage(RRCReconfigurationComplete_IEs)
 
 RRCReconfigurationComplete_v1530_IEs = _reflection.GeneratedProtocolMessageType('RRCReconfigurationComplete_v1530_IEs', (_message.Message,), {
   'DESCRIPTOR' : _RRCRECONFIGURATIONCOMPLETE_V1530_IES,
   '__module__' : 'rrc_reconfiguration_complete_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCReconfigurationComplete_v1530_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCReconfigurationComplete_v1530_IEs)
   })
 _sym_db.RegisterMessage(RRCReconfigurationComplete_v1530_IEs)
 

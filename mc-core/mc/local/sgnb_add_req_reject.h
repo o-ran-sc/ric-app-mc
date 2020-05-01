@@ -23,11 +23,15 @@
 
 #include "packet.h"
 
+
+#include "/usr/local/include/protobuf-c/protobuf-c.h"
+
 struct _sgnb_add_req_reject {
 	gs_uint64_t timestamp_ms;
 	gs_sp_t gnb_id;
 	gs_int64_t id_MeNB_UE_X2AP_ID;
-	gs_int64_t id_SgNB_UE_X2AP_ID;
+	gs_uint32_t id_SgNB_UE_X2AP_ID;
+	gs_int8_t id_SgNB_UE_X2AP_ID_exists;
 	gs_int64_t cause_radio_network;
 	gs_int64_t cause_transport;
 	gs_int64_t cause_protocol;
@@ -35,6 +39,7 @@ struct _sgnb_add_req_reject {
 };
 
 static inline void init__sgnb_add_req_reject(struct _sgnb_add_req_reject *m){
+	m->id_SgNB_UE_X2AP_ID_exists=0;
 }
 
 static inline gs_retval_t get_sgnb_add_req_reject__timestamp_ms(struct packet *p, gs_uint64_t *t){
@@ -43,10 +48,13 @@ static inline gs_retval_t get_sgnb_add_req_reject__timestamp_ms(struct packet *p
 }
 
 static inline gs_retval_t get_sgnb_add_req_reject__gnb_id(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_add_req_reject *)(p->record.packed.values))->gnb_id;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_add_req_reject *)(p->record.packed.values))->gnb_id;
+	if( t->data == NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = strlen(t->data);
 }
 
 static inline gs_retval_t get_sgnb_add_req_reject__id_MeNB_UE_X2AP_ID(struct packet *p, gs_int64_t *t){
@@ -54,9 +62,9 @@ static inline gs_retval_t get_sgnb_add_req_reject__id_MeNB_UE_X2AP_ID(struct pac
 	return 0;
 }
 
-static inline gs_retval_t get_sgnb_add_req_reject__id_SgNB_UE_X2AP_ID(struct packet *p, gs_int64_t *t){
+static inline gs_retval_t get_sgnb_add_req_reject__id_SgNB_UE_X2AP_ID(struct packet *p, gs_uint32_t *t){
 	*t = ((struct _sgnb_add_req_reject *)(p->record.packed.values))->id_SgNB_UE_X2AP_ID;
-	return 0;
+	return (((struct _sgnb_add_req_reject *)(p->record.packed.values))->id_SgNB_UE_X2AP_ID==0);
 }
 
 static inline gs_retval_t get_sgnb_add_req_reject__cause_radio_network(struct packet *p, gs_int64_t *t){

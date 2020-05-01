@@ -18,7 +18,7 @@ PROTOBUF_C__BEGIN_DECLS
 #include "x2ap_common_types.pb-c.h"
 #include "error_cause.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__SgNBAdditionRequestReject Uenibstreamprotobuf__SgNBAdditionRequestReject;
+typedef struct _StreamingProtobufs__SgNBAdditionRequestReject StreamingProtobufs__SgNBAdditionRequestReject;
 
 
 /* --- enums --- */
@@ -26,43 +26,43 @@ typedef struct _Uenibstreamprotobuf__SgNBAdditionRequestReject Uenibstreamprotob
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__SgNBAdditionRequestReject
+struct  _StreamingProtobufs__SgNBAdditionRequestReject
 {
   ProtobufCMessage base;
   uint32_t id_menb_ue_x2ap_id;
-  uint32_t id_sgnb_ue_x2ap_id;
-  Uenibstreamprotobuf__Cause *id_cause;
-  Uenibstreamprotobuf__CriticalityDiagnostics *id_criticalitydiagnostics;
+  Google__Protobuf__UInt32Value *id_sgnb_ue_x2ap_id;
+  StreamingProtobufs__Cause *id_cause;
+  StreamingProtobufs__CriticalityDiagnostics *id_criticalitydiagnostics;
   Google__Protobuf__UInt32Value *id_menb_ue_x2ap_id_extension;
 };
-#define UENIBSTREAMPROTOBUF__SG_NBADDITION_REQUEST_REJECT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sg_nbaddition_request_reject__descriptor) \
-    , 0, 0, NULL, NULL, NULL }
+#define STREAMING_PROTOBUFS__SG_NBADDITION_REQUEST_REJECT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sg_nbaddition_request_reject__descriptor) \
+    , 0, NULL, NULL, NULL, NULL }
 
 
-/* Uenibstreamprotobuf__SgNBAdditionRequestReject methods */
-void   uenibstreamprotobuf__sg_nbaddition_request_reject__init
-                     (Uenibstreamprotobuf__SgNBAdditionRequestReject         *message);
-size_t uenibstreamprotobuf__sg_nbaddition_request_reject__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBAdditionRequestReject   *message);
-size_t uenibstreamprotobuf__sg_nbaddition_request_reject__pack
-                     (const Uenibstreamprotobuf__SgNBAdditionRequestReject   *message,
+/* StreamingProtobufs__SgNBAdditionRequestReject methods */
+void   streaming_protobufs__sg_nbaddition_request_reject__init
+                     (StreamingProtobufs__SgNBAdditionRequestReject         *message);
+size_t streaming_protobufs__sg_nbaddition_request_reject__get_packed_size
+                     (const StreamingProtobufs__SgNBAdditionRequestReject   *message);
+size_t streaming_protobufs__sg_nbaddition_request_reject__pack
+                     (const StreamingProtobufs__SgNBAdditionRequestReject   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sg_nbaddition_request_reject__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBAdditionRequestReject   *message,
+size_t streaming_protobufs__sg_nbaddition_request_reject__pack_to_buffer
+                     (const StreamingProtobufs__SgNBAdditionRequestReject   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SgNBAdditionRequestReject *
-       uenibstreamprotobuf__sg_nbaddition_request_reject__unpack
+StreamingProtobufs__SgNBAdditionRequestReject *
+       streaming_protobufs__sg_nbaddition_request_reject__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sg_nbaddition_request_reject__free_unpacked
-                     (Uenibstreamprotobuf__SgNBAdditionRequestReject *message,
+void   streaming_protobufs__sg_nbaddition_request_reject__free_unpacked
+                     (StreamingProtobufs__SgNBAdditionRequestReject *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__SgNBAdditionRequestReject_Closure)
-                 (const Uenibstreamprotobuf__SgNBAdditionRequestReject *message,
+typedef void (*StreamingProtobufs__SgNBAdditionRequestReject_Closure)
+                 (const StreamingProtobufs__SgNBAdditionRequestReject *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -70,7 +70,7 @@ typedef void (*Uenibstreamprotobuf__SgNBAdditionRequestReject_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbaddition_request_reject__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sg_nbaddition_request_reject__descriptor;
 
 PROTOBUF_C__END_DECLS
 

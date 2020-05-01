@@ -18,6 +18,7 @@ import sys
 import random
 import time
 import os
+import datetime
 
 import sgnb_reconfiguration_complete_pb2
 import ue_context_release_pb2
@@ -43,6 +44,13 @@ def process_conn_record(ofl,gnb_id, ue_id, ts):
 #	print "Connected ue_iud="+str(ue_id)+", gnb_id="+str(gnb_id)
 	X2APStreaming = x2ap_streaming_pb2.X2APStreaming() # header message
 	X2APStreaming.header.gNbID.value = "Bar"
+	sec = ts / 1000
+        ms = ts % 1000
+        utc_time = datetime.datetime.utcfromtimestamp(sec)
+        diff = utc_time - datetime.datetime(1900, 1, 1, 0, 0, 0)
+        ntp_hi = diff.days*24*60*60+diff.seconds
+        ntp_lo = (ms << 32) / 1000
+        X2APStreaming.header.timestamp = ntp_hi << 32 | ntp_lo
 
 #	root = sgnb_reconfiguration_complete_pb2.SgNBReconfigurationComplete()
 	root = X2APStreaming.sgNBReconfigurationComplete
@@ -69,6 +77,13 @@ def process_dis_record(ofl, gnb_id, old_enb_id, new_enb_id, ts):
 #	print "Disconnected old_ue_iud="+str(old_enb_id)+", gnb_id="+str(gnb_id)+", new_ue_id="+str(new_enb_id)
 	X2APStreaming = x2ap_streaming_pb2.X2APStreaming() # header message
 	X2APStreaming.header.gNbID.value = "Bar"
+	sec = ts / 1000
+        ms = ts % 1000
+        utc_time = datetime.datetime.utcfromtimestamp(sec)
+        diff = utc_time - datetime.datetime(1900, 1, 1, 0, 0, 0)
+        ntp_hi = diff.days*24*60*60+diff.seconds
+        ntp_lo = (ms << 32) / 1000
+        X2APStreaming.header.timestamp = ntp_hi << 32 | ntp_lo
 
 #	root = ue_context_release_pb2.UEContextRelease()
 	root = X2APStreaming.ueContextRelease

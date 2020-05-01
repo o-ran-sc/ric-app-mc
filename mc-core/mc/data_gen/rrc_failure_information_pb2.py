@@ -18,10 +18,10 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rrc_failure_information.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x1drrc_failure_information.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\"]\n\x12\x46\x61ilureInformation\x12G\n\x12\x66\x61ilureInformation\x18\x01 \x01(\x0b\x32+.uenibstreamprotobuf.FailureInformation_IEs\"\xa3\x01\n\x16\x46\x61ilureInformation_IEs\x12I\n\x15\x66\x61ilureInfoRLC_Bearer\x18\x01 \x01(\x0b\x32*.uenibstreamprotobuf.FailureInfoRLC_Bearer\x12>\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xd3\x01\n\x15\x46\x61ilureInfoRLC_Bearer\x12\x13\n\x0b\x63\x65llGroupId\x18\x01 \x01(\r\x12\x1e\n\x16logicalChannelIdentity\x18\x02 \x01(\r\x12K\n\x0b\x66\x61ilureType\x18\x03 \x01(\x0e\x32\x36.uenibstreamprotobuf.FailureInfoRLC_Bearer.FailureType\"8\n\x0b\x46\x61ilureType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0f\n\x0b\x64uplication\x10\x01\x42:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x1drrc_failure_information.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\"]\n\x12\x46\x61ilureInformation\x12G\n\x12\x66\x61ilureInformation\x18\x01 \x01(\x0b\x32+.streaming_protobufs.FailureInformation_IEs\"\xa2\x01\n\x16\x46\x61ilureInformation_IEs\x12I\n\x15\x66\x61ilureInfoRLC_Bearer\x18\x01 \x01(\x0b\x32*.streaming_protobufs.FailureInfoRLC_Bearer\x12=\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"\xd3\x01\n\x15\x46\x61ilureInfoRLC_Bearer\x12\x13\n\x0b\x63\x65llGroupId\x18\x01 \x01(\r\x12\x1e\n\x16logicalChannelIdentity\x18\x02 \x01(\r\x12K\n\x0b\x66\x61ilureType\x18\x03 \x01(\x0e\x32\x36.streaming_protobufs.FailureInfoRLC_Bearer.FailureType\"8\n\x0b\x46\x61ilureType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0f\n\x0b\x64uplication\x10\x01\x42\x33Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
@@ -29,7 +29,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _FAILUREINFORLC_BEARER_FAILURETYPE = _descriptor.EnumDescriptor(
   name='FailureType',
-  full_name='uenibstreamprotobuf.FailureInfoRLC_Bearer.FailureType',
+  full_name='streaming_protobufs.FailureInfoRLC_Bearer.FailureType',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -44,21 +44,21 @@ _FAILUREINFORLC_BEARER_FAILURETYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=503,
-  serialized_end=559,
+  serialized_start=502,
+  serialized_end=558,
 )
 _sym_db.RegisterEnumDescriptor(_FAILUREINFORLC_BEARER_FAILURETYPE)
 
 
 _FAILUREINFORMATION = _descriptor.Descriptor(
   name='FailureInformation',
-  full_name='uenibstreamprotobuf.FailureInformation',
+  full_name='streaming_protobufs.FailureInformation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='failureInformation', full_name='uenibstreamprotobuf.FailureInformation.failureInformation', index=0,
+      name='failureInformation', full_name='streaming_protobufs.FailureInformation.failureInformation', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -83,20 +83,20 @@ _FAILUREINFORMATION = _descriptor.Descriptor(
 
 _FAILUREINFORMATION_IES = _descriptor.Descriptor(
   name='FailureInformation_IEs',
-  full_name='uenibstreamprotobuf.FailureInformation_IEs',
+  full_name='streaming_protobufs.FailureInformation_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='failureInfoRLC_Bearer', full_name='uenibstreamprotobuf.FailureInformation_IEs.failureInfoRLC_Bearer', index=0,
+      name='failureInfoRLC_Bearer', full_name='streaming_protobufs.FailureInformation_IEs.failureInfoRLC_Bearer', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.FailureInformation_IEs.lateNonCriticalExtension', index=1,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.FailureInformation_IEs.lateNonCriticalExtension', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -115,33 +115,33 @@ _FAILUREINFORMATION_IES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=182,
-  serialized_end=345,
+  serialized_end=344,
 )
 
 
 _FAILUREINFORLC_BEARER = _descriptor.Descriptor(
   name='FailureInfoRLC_Bearer',
-  full_name='uenibstreamprotobuf.FailureInfoRLC_Bearer',
+  full_name='streaming_protobufs.FailureInfoRLC_Bearer',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cellGroupId', full_name='uenibstreamprotobuf.FailureInfoRLC_Bearer.cellGroupId', index=0,
+      name='cellGroupId', full_name='streaming_protobufs.FailureInfoRLC_Bearer.cellGroupId', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='logicalChannelIdentity', full_name='uenibstreamprotobuf.FailureInfoRLC_Bearer.logicalChannelIdentity', index=1,
+      name='logicalChannelIdentity', full_name='streaming_protobufs.FailureInfoRLC_Bearer.logicalChannelIdentity', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='failureType', full_name='uenibstreamprotobuf.FailureInfoRLC_Bearer.failureType', index=2,
+      name='failureType', full_name='streaming_protobufs.FailureInfoRLC_Bearer.failureType', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -160,13 +160,13 @@ _FAILUREINFORLC_BEARER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=348,
-  serialized_end=559,
+  serialized_start=347,
+  serialized_end=558,
 )
 
 _FAILUREINFORMATION.fields_by_name['failureInformation'].message_type = _FAILUREINFORMATION_IES
 _FAILUREINFORMATION_IES.fields_by_name['failureInfoRLC_Bearer'].message_type = _FAILUREINFORLC_BEARER
-_FAILUREINFORMATION_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_FAILUREINFORMATION_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _FAILUREINFORLC_BEARER.fields_by_name['failureType'].enum_type = _FAILUREINFORLC_BEARER_FAILURETYPE
 _FAILUREINFORLC_BEARER_FAILURETYPE.containing_type = _FAILUREINFORLC_BEARER
 DESCRIPTOR.message_types_by_name['FailureInformation'] = _FAILUREINFORMATION
@@ -177,21 +177,21 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 FailureInformation = _reflection.GeneratedProtocolMessageType('FailureInformation', (_message.Message,), {
   'DESCRIPTOR' : _FAILUREINFORMATION,
   '__module__' : 'rrc_failure_information_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.FailureInformation)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.FailureInformation)
   })
 _sym_db.RegisterMessage(FailureInformation)
 
 FailureInformation_IEs = _reflection.GeneratedProtocolMessageType('FailureInformation_IEs', (_message.Message,), {
   'DESCRIPTOR' : _FAILUREINFORMATION_IES,
   '__module__' : 'rrc_failure_information_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.FailureInformation_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.FailureInformation_IEs)
   })
 _sym_db.RegisterMessage(FailureInformation_IEs)
 
 FailureInfoRLC_Bearer = _reflection.GeneratedProtocolMessageType('FailureInfoRLC_Bearer', (_message.Message,), {
   'DESCRIPTOR' : _FAILUREINFORLC_BEARER,
   '__module__' : 'rrc_failure_information_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.FailureInfoRLC_Bearer)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.FailureInfoRLC_Bearer)
   })
 _sym_db.RegisterMessage(FailureInfoRLC_Bearer)
 

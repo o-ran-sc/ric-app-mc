@@ -20,10 +20,10 @@ import error_cause_pb2 as error__cause__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='sgnb_modification_request_reject.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n&sgnb_modification_request_reject.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x17x2ap_common_types.proto\x1a\x11\x65rror_cause.proto\"l\n\x1dSgNBModificationRequestReject\x12K\n\x0bprotocolIEs\x18\x01 \x01(\x0b\x32\x36.uenibstreamprotobuf.SgNBModificationRequestReject_IEs\"\x9d\x02\n!SgNBModificationRequestReject_IEs\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12,\n\x08id_Cause\x18\x03 \x01(\x0b\x32\x1a.uenibstreamprotobuf.Cause\x12N\n\x19id_CriticalityDiagnostics\x18\x04 \x01(\x0b\x32+.uenibstreamprotobuf.CriticalityDiagnostics\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32ValueB:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n&sgnb_modification_request_reject.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x17x2ap_common_types.proto\x1a\x11\x65rror_cause.proto\"l\n\x1dSgNBModificationRequestReject\x12K\n\x0bprotocolIEs\x18\x01 \x01(\x0b\x32\x36.streaming_protobufs.SgNBModificationRequestReject_IEs\"\x9d\x02\n!SgNBModificationRequestReject_IEs\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12,\n\x08id_Cause\x18\x03 \x01(\x0b\x32\x1a.streaming_protobufs.Cause\x12N\n\x19id_CriticalityDiagnostics\x18\x04 \x01(\x0b\x32+.streaming_protobufs.CriticalityDiagnostics\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32ValueB3Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,x2ap__common__types__pb2.DESCRIPTOR,error__cause__pb2.DESCRIPTOR,])
 
@@ -32,13 +32,13 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _SGNBMODIFICATIONREQUESTREJECT = _descriptor.Descriptor(
   name='SgNBModificationRequestReject',
-  full_name='uenibstreamprotobuf.SgNBModificationRequestReject',
+  full_name='streaming_protobufs.SgNBModificationRequestReject',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='protocolIEs', full_name='uenibstreamprotobuf.SgNBModificationRequestReject.protocolIEs', index=0,
+      name='protocolIEs', full_name='streaming_protobufs.SgNBModificationRequestReject.protocolIEs', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -63,41 +63,41 @@ _SGNBMODIFICATIONREQUESTREJECT = _descriptor.Descriptor(
 
 _SGNBMODIFICATIONREQUESTREJECT_IES = _descriptor.Descriptor(
   name='SgNBModificationRequestReject_IEs',
-  full_name='uenibstreamprotobuf.SgNBModificationRequestReject_IEs',
+  full_name='streaming_protobufs.SgNBModificationRequestReject_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SgNBModificationRequestReject_IEs.id_MeNB_UE_X2AP_ID', index=0,
+      name='id_MeNB_UE_X2AP_ID', full_name='streaming_protobufs.SgNBModificationRequestReject_IEs.id_MeNB_UE_X2AP_ID', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_SgNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SgNBModificationRequestReject_IEs.id_SgNB_UE_X2AP_ID', index=1,
+      name='id_SgNB_UE_X2AP_ID', full_name='streaming_protobufs.SgNBModificationRequestReject_IEs.id_SgNB_UE_X2AP_ID', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_Cause', full_name='uenibstreamprotobuf.SgNBModificationRequestReject_IEs.id_Cause', index=2,
+      name='id_Cause', full_name='streaming_protobufs.SgNBModificationRequestReject_IEs.id_Cause', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_CriticalityDiagnostics', full_name='uenibstreamprotobuf.SgNBModificationRequestReject_IEs.id_CriticalityDiagnostics', index=3,
+      name='id_CriticalityDiagnostics', full_name='streaming_protobufs.SgNBModificationRequestReject_IEs.id_CriticalityDiagnostics', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID_Extension', full_name='uenibstreamprotobuf.SgNBModificationRequestReject_IEs.id_MeNB_UE_X2AP_ID_Extension', index=4,
+      name='id_MeNB_UE_X2AP_ID_Extension', full_name='streaming_protobufs.SgNBModificationRequestReject_IEs.id_MeNB_UE_X2AP_ID_Extension', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -130,14 +130,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 SgNBModificationRequestReject = _reflection.GeneratedProtocolMessageType('SgNBModificationRequestReject', (_message.Message,), {
   'DESCRIPTOR' : _SGNBMODIFICATIONREQUESTREJECT,
   '__module__' : 'sgnb_modification_request_reject_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SgNBModificationRequestReject)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SgNBModificationRequestReject)
   })
 _sym_db.RegisterMessage(SgNBModificationRequestReject)
 
 SgNBModificationRequestReject_IEs = _reflection.GeneratedProtocolMessageType('SgNBModificationRequestReject_IEs', (_message.Message,), {
   'DESCRIPTOR' : _SGNBMODIFICATIONREQUESTREJECT_IES,
   '__module__' : 'sgnb_modification_request_reject_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SgNBModificationRequestReject_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SgNBModificationRequestReject_IEs)
   })
 _sym_db.RegisterMessage(SgNBModificationRequestReject_IEs)
 

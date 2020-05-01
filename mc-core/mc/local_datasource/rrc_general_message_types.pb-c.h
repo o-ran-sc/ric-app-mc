@@ -17,8 +17,8 @@ PROTOBUF_C__BEGIN_DECLS
 #include "rrc_measurement_report.pb-c.h"
 #include "rrc_failure_information.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__RRCContainer Uenibstreamprotobuf__RRCContainer;
-typedef struct _Uenibstreamprotobuf__ULDCCHMessageType Uenibstreamprotobuf__ULDCCHMessageType;
+typedef struct _StreamingProtobufs__RRCContainer StreamingProtobufs__RRCContainer;
+typedef struct _StreamingProtobufs__ULDCCHMessageType StreamingProtobufs__ULDCCHMessageType;
 
 
 /* --- enums --- */
@@ -26,7 +26,7 @@ typedef struct _Uenibstreamprotobuf__ULDCCHMessageType Uenibstreamprotobuf__ULDC
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__RRCContainer
+struct  _StreamingProtobufs__RRCContainer
 {
   ProtobufCMessage base;
   /*
@@ -36,79 +36,79 @@ struct  _Uenibstreamprotobuf__RRCContainer
    *DL_DCCH_MessageType_36331 DL_DCCH_message_36331 = 3;
    *}
    */
-  Uenibstreamprotobuf__ULDCCHMessageType *ul_dcch_message;
+  StreamingProtobufs__ULDCCHMessageType *ul_dcch_message;
 };
-#define UENIBSTREAMPROTOBUF__RRCCONTAINER__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__rrccontainer__descriptor) \
+#define STREAMING_PROTOBUFS__RRCCONTAINER__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__rrccontainer__descriptor) \
     , NULL }
 
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__UL__DCCH__MESSAGE_TYPE__C1__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__UL__DCCH__MESSAGE_TYPE__C1_MEASUREMENT_REPORT = 1,
-  UENIBSTREAMPROTOBUF__UL__DCCH__MESSAGE_TYPE__C1_FAILURE_INFORMATION = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__UL__DCCH__MESSAGE_TYPE__C1)
-} Uenibstreamprotobuf__ULDCCHMessageType__C1Case;
+  STREAMING_PROTOBUFS__UL__DCCH__MESSAGE_TYPE__C1__NOT_SET = 0,
+  STREAMING_PROTOBUFS__UL__DCCH__MESSAGE_TYPE__C1_MEASUREMENT_REPORT = 1,
+  STREAMING_PROTOBUFS__UL__DCCH__MESSAGE_TYPE__C1_FAILURE_INFORMATION = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__UL__DCCH__MESSAGE_TYPE__C1)
+} StreamingProtobufs__ULDCCHMessageType__C1Case;
 
-struct  _Uenibstreamprotobuf__ULDCCHMessageType
+struct  _StreamingProtobufs__ULDCCHMessageType
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__ULDCCHMessageType__C1Case c1_case;
+  StreamingProtobufs__ULDCCHMessageType__C1Case c1_case;
   union {
-    Uenibstreamprotobuf__MeasurementReport *measurementreport;
-    Uenibstreamprotobuf__FailureInformation *failureinformation;
+    StreamingProtobufs__MeasurementReport *measurementreport;
+    StreamingProtobufs__FailureInformation *failureinformation;
   };
 };
-#define UENIBSTREAMPROTOBUF__UL__DCCH__MESSAGE_TYPE__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__ul__dcch__message_type__descriptor) \
-    , UENIBSTREAMPROTOBUF__UL__DCCH__MESSAGE_TYPE__C1__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__UL__DCCH__MESSAGE_TYPE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__ul__dcch__message_type__descriptor) \
+    , STREAMING_PROTOBUFS__UL__DCCH__MESSAGE_TYPE__C1__NOT_SET, {0} }
 
 
-/* Uenibstreamprotobuf__RRCContainer methods */
-void   uenibstreamprotobuf__rrccontainer__init
-                     (Uenibstreamprotobuf__RRCContainer         *message);
-size_t uenibstreamprotobuf__rrccontainer__get_packed_size
-                     (const Uenibstreamprotobuf__RRCContainer   *message);
-size_t uenibstreamprotobuf__rrccontainer__pack
-                     (const Uenibstreamprotobuf__RRCContainer   *message,
+/* StreamingProtobufs__RRCContainer methods */
+void   streaming_protobufs__rrccontainer__init
+                     (StreamingProtobufs__RRCContainer         *message);
+size_t streaming_protobufs__rrccontainer__get_packed_size
+                     (const StreamingProtobufs__RRCContainer   *message);
+size_t streaming_protobufs__rrccontainer__pack
+                     (const StreamingProtobufs__RRCContainer   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__rrccontainer__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCContainer   *message,
+size_t streaming_protobufs__rrccontainer__pack_to_buffer
+                     (const StreamingProtobufs__RRCContainer   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__RRCContainer *
-       uenibstreamprotobuf__rrccontainer__unpack
+StreamingProtobufs__RRCContainer *
+       streaming_protobufs__rrccontainer__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__rrccontainer__free_unpacked
-                     (Uenibstreamprotobuf__RRCContainer *message,
+void   streaming_protobufs__rrccontainer__free_unpacked
+                     (StreamingProtobufs__RRCContainer *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ULDCCHMessageType methods */
-void   uenibstreamprotobuf__ul__dcch__message_type__init
-                     (Uenibstreamprotobuf__ULDCCHMessageType         *message);
-size_t uenibstreamprotobuf__ul__dcch__message_type__get_packed_size
-                     (const Uenibstreamprotobuf__ULDCCHMessageType   *message);
-size_t uenibstreamprotobuf__ul__dcch__message_type__pack
-                     (const Uenibstreamprotobuf__ULDCCHMessageType   *message,
+/* StreamingProtobufs__ULDCCHMessageType methods */
+void   streaming_protobufs__ul__dcch__message_type__init
+                     (StreamingProtobufs__ULDCCHMessageType         *message);
+size_t streaming_protobufs__ul__dcch__message_type__get_packed_size
+                     (const StreamingProtobufs__ULDCCHMessageType   *message);
+size_t streaming_protobufs__ul__dcch__message_type__pack
+                     (const StreamingProtobufs__ULDCCHMessageType   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__ul__dcch__message_type__pack_to_buffer
-                     (const Uenibstreamprotobuf__ULDCCHMessageType   *message,
+size_t streaming_protobufs__ul__dcch__message_type__pack_to_buffer
+                     (const StreamingProtobufs__ULDCCHMessageType   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ULDCCHMessageType *
-       uenibstreamprotobuf__ul__dcch__message_type__unpack
+StreamingProtobufs__ULDCCHMessageType *
+       streaming_protobufs__ul__dcch__message_type__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__ul__dcch__message_type__free_unpacked
-                     (Uenibstreamprotobuf__ULDCCHMessageType *message,
+void   streaming_protobufs__ul__dcch__message_type__free_unpacked
+                     (StreamingProtobufs__ULDCCHMessageType *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__RRCContainer_Closure)
-                 (const Uenibstreamprotobuf__RRCContainer *message,
+typedef void (*StreamingProtobufs__RRCContainer_Closure)
+                 (const StreamingProtobufs__RRCContainer *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ULDCCHMessageType_Closure)
-                 (const Uenibstreamprotobuf__ULDCCHMessageType *message,
+typedef void (*StreamingProtobufs__ULDCCHMessageType_Closure)
+                 (const StreamingProtobufs__ULDCCHMessageType *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -116,8 +116,8 @@ typedef void (*Uenibstreamprotobuf__ULDCCHMessageType_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__rrccontainer__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__ul__dcch__message_type__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__rrccontainer__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__ul__dcch__message_type__descriptor;
 
 PROTOBUF_C__END_DECLS
 

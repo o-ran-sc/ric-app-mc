@@ -15,314 +15,314 @@ PROTOBUF_C__BEGIN_DECLS
 #endif
 
 
-typedef struct _Uenibstreamprotobuf__Null Uenibstreamprotobuf__Null;
-typedef struct _Uenibstreamprotobuf__ConfiguredOpt Uenibstreamprotobuf__ConfiguredOpt;
-typedef struct _Uenibstreamprotobuf__TrueOpt Uenibstreamprotobuf__TrueOpt;
-typedef struct _Uenibstreamprotobuf__FalseOpt Uenibstreamprotobuf__FalseOpt;
-typedef struct _Uenibstreamprotobuf__EnabledOpt Uenibstreamprotobuf__EnabledOpt;
-typedef struct _Uenibstreamprotobuf__DisabledOpt Uenibstreamprotobuf__DisabledOpt;
-typedef struct _Uenibstreamprotobuf__EnabledDisabledOpt Uenibstreamprotobuf__EnabledDisabledOpt;
-typedef struct _Uenibstreamprotobuf__OnOffOpt Uenibstreamprotobuf__OnOffOpt;
+typedef struct _StreamingProtobufs__Null StreamingProtobufs__Null;
+typedef struct _StreamingProtobufs__ConfiguredOpt StreamingProtobufs__ConfiguredOpt;
+typedef struct _StreamingProtobufs__TrueOpt StreamingProtobufs__TrueOpt;
+typedef struct _StreamingProtobufs__FalseOpt StreamingProtobufs__FalseOpt;
+typedef struct _StreamingProtobufs__EnabledOpt StreamingProtobufs__EnabledOpt;
+typedef struct _StreamingProtobufs__DisabledOpt StreamingProtobufs__DisabledOpt;
+typedef struct _StreamingProtobufs__EnabledDisabledOpt StreamingProtobufs__EnabledDisabledOpt;
+typedef struct _StreamingProtobufs__OnOffOpt StreamingProtobufs__OnOffOpt;
 
 
 /* --- enums --- */
 
-typedef enum _Uenibstreamprotobuf__ConfiguredOpt__Value {
-  UENIBSTREAMPROTOBUF__CONFIGURED_OPT__VALUE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__CONFIGURED_OPT__VALUE__configured = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__CONFIGURED_OPT__VALUE)
-} Uenibstreamprotobuf__ConfiguredOpt__Value;
-typedef enum _Uenibstreamprotobuf__TrueOpt__Value {
-  UENIBSTREAMPROTOBUF__TRUE_OPT__VALUE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__TRUE_OPT__VALUE__true = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__TRUE_OPT__VALUE)
-} Uenibstreamprotobuf__TrueOpt__Value;
-typedef enum _Uenibstreamprotobuf__FalseOpt__Value {
-  UENIBSTREAMPROTOBUF__FALSE_OPT__VALUE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__FALSE_OPT__VALUE__false = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__FALSE_OPT__VALUE)
-} Uenibstreamprotobuf__FalseOpt__Value;
-typedef enum _Uenibstreamprotobuf__EnabledOpt__Value {
-  UENIBSTREAMPROTOBUF__ENABLED_OPT__VALUE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__ENABLED_OPT__VALUE__enabled = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__ENABLED_OPT__VALUE)
-} Uenibstreamprotobuf__EnabledOpt__Value;
-typedef enum _Uenibstreamprotobuf__DisabledOpt__Value {
-  UENIBSTREAMPROTOBUF__DISABLED_OPT__VALUE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__DISABLED_OPT__VALUE__disabled = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__DISABLED_OPT__VALUE)
-} Uenibstreamprotobuf__DisabledOpt__Value;
-typedef enum _Uenibstreamprotobuf__EnabledDisabledOpt__Value {
-  UENIBSTREAMPROTOBUF__ENABLED_DISABLED_OPT__VALUE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__ENABLED_DISABLED_OPT__VALUE__enabled = 1,
-  UENIBSTREAMPROTOBUF__ENABLED_DISABLED_OPT__VALUE__disabled = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__ENABLED_DISABLED_OPT__VALUE)
-} Uenibstreamprotobuf__EnabledDisabledOpt__Value;
-typedef enum _Uenibstreamprotobuf__OnOffOpt__Value {
-  UENIBSTREAMPROTOBUF__ON_OFF_OPT__VALUE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__ON_OFF_OPT__VALUE__on = 1,
-  UENIBSTREAMPROTOBUF__ON_OFF_OPT__VALUE__off = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__ON_OFF_OPT__VALUE)
-} Uenibstreamprotobuf__OnOffOpt__Value;
+typedef enum _StreamingProtobufs__ConfiguredOpt__Value {
+  STREAMING_PROTOBUFS__CONFIGURED_OPT__VALUE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__CONFIGURED_OPT__VALUE__configured = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__CONFIGURED_OPT__VALUE)
+} StreamingProtobufs__ConfiguredOpt__Value;
+typedef enum _StreamingProtobufs__TrueOpt__Value {
+  STREAMING_PROTOBUFS__TRUE_OPT__VALUE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__TRUE_OPT__VALUE__true = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__TRUE_OPT__VALUE)
+} StreamingProtobufs__TrueOpt__Value;
+typedef enum _StreamingProtobufs__FalseOpt__Value {
+  STREAMING_PROTOBUFS__FALSE_OPT__VALUE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__FALSE_OPT__VALUE__false = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__FALSE_OPT__VALUE)
+} StreamingProtobufs__FalseOpt__Value;
+typedef enum _StreamingProtobufs__EnabledOpt__Value {
+  STREAMING_PROTOBUFS__ENABLED_OPT__VALUE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__ENABLED_OPT__VALUE__enabled = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__ENABLED_OPT__VALUE)
+} StreamingProtobufs__EnabledOpt__Value;
+typedef enum _StreamingProtobufs__DisabledOpt__Value {
+  STREAMING_PROTOBUFS__DISABLED_OPT__VALUE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__DISABLED_OPT__VALUE__disabled = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__DISABLED_OPT__VALUE)
+} StreamingProtobufs__DisabledOpt__Value;
+typedef enum _StreamingProtobufs__EnabledDisabledOpt__Value {
+  STREAMING_PROTOBUFS__ENABLED_DISABLED_OPT__VALUE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__ENABLED_DISABLED_OPT__VALUE__enabled = 1,
+  STREAMING_PROTOBUFS__ENABLED_DISABLED_OPT__VALUE__disabled = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__ENABLED_DISABLED_OPT__VALUE)
+} StreamingProtobufs__EnabledDisabledOpt__Value;
+typedef enum _StreamingProtobufs__OnOffOpt__Value {
+  STREAMING_PROTOBUFS__ON_OFF_OPT__VALUE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__ON_OFF_OPT__VALUE__on = 1,
+  STREAMING_PROTOBUFS__ON_OFF_OPT__VALUE__off = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__ON_OFF_OPT__VALUE)
+} StreamingProtobufs__OnOffOpt__Value;
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__Null
+struct  _StreamingProtobufs__Null
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__NULL__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__null__descriptor) \
+#define STREAMING_PROTOBUFS__NULL__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__null__descriptor) \
      }
 
 
-struct  _Uenibstreamprotobuf__ConfiguredOpt
+struct  _StreamingProtobufs__ConfiguredOpt
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__ConfiguredOpt__Value value;
+  StreamingProtobufs__ConfiguredOpt__Value value;
 };
-#define UENIBSTREAMPROTOBUF__CONFIGURED_OPT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__configured_opt__descriptor) \
-    , UENIBSTREAMPROTOBUF__CONFIGURED_OPT__VALUE__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__CONFIGURED_OPT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__configured_opt__descriptor) \
+    , STREAMING_PROTOBUFS__CONFIGURED_OPT__VALUE__protobuf_unspecified }
 
 
-struct  _Uenibstreamprotobuf__TrueOpt
+struct  _StreamingProtobufs__TrueOpt
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__TrueOpt__Value value;
+  StreamingProtobufs__TrueOpt__Value value;
 };
-#define UENIBSTREAMPROTOBUF__TRUE_OPT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__true_opt__descriptor) \
-    , UENIBSTREAMPROTOBUF__TRUE_OPT__VALUE__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__TRUE_OPT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__true_opt__descriptor) \
+    , STREAMING_PROTOBUFS__TRUE_OPT__VALUE__protobuf_unspecified }
 
 
-struct  _Uenibstreamprotobuf__FalseOpt
+struct  _StreamingProtobufs__FalseOpt
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__FalseOpt__Value value;
+  StreamingProtobufs__FalseOpt__Value value;
 };
-#define UENIBSTREAMPROTOBUF__FALSE_OPT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__false_opt__descriptor) \
-    , UENIBSTREAMPROTOBUF__FALSE_OPT__VALUE__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__FALSE_OPT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__false_opt__descriptor) \
+    , STREAMING_PROTOBUFS__FALSE_OPT__VALUE__protobuf_unspecified }
 
 
-struct  _Uenibstreamprotobuf__EnabledOpt
+struct  _StreamingProtobufs__EnabledOpt
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__EnabledOpt__Value value;
+  StreamingProtobufs__EnabledOpt__Value value;
 };
-#define UENIBSTREAMPROTOBUF__ENABLED_OPT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__enabled_opt__descriptor) \
-    , UENIBSTREAMPROTOBUF__ENABLED_OPT__VALUE__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__ENABLED_OPT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__enabled_opt__descriptor) \
+    , STREAMING_PROTOBUFS__ENABLED_OPT__VALUE__protobuf_unspecified }
 
 
-struct  _Uenibstreamprotobuf__DisabledOpt
+struct  _StreamingProtobufs__DisabledOpt
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__DisabledOpt__Value value;
+  StreamingProtobufs__DisabledOpt__Value value;
 };
-#define UENIBSTREAMPROTOBUF__DISABLED_OPT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__disabled_opt__descriptor) \
-    , UENIBSTREAMPROTOBUF__DISABLED_OPT__VALUE__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__DISABLED_OPT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__disabled_opt__descriptor) \
+    , STREAMING_PROTOBUFS__DISABLED_OPT__VALUE__protobuf_unspecified }
 
 
-struct  _Uenibstreamprotobuf__EnabledDisabledOpt
+struct  _StreamingProtobufs__EnabledDisabledOpt
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__EnabledDisabledOpt__Value value;
+  StreamingProtobufs__EnabledDisabledOpt__Value value;
 };
-#define UENIBSTREAMPROTOBUF__ENABLED_DISABLED_OPT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__enabled_disabled_opt__descriptor) \
-    , UENIBSTREAMPROTOBUF__ENABLED_DISABLED_OPT__VALUE__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__ENABLED_DISABLED_OPT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__enabled_disabled_opt__descriptor) \
+    , STREAMING_PROTOBUFS__ENABLED_DISABLED_OPT__VALUE__protobuf_unspecified }
 
 
-struct  _Uenibstreamprotobuf__OnOffOpt
+struct  _StreamingProtobufs__OnOffOpt
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__OnOffOpt__Value value;
+  StreamingProtobufs__OnOffOpt__Value value;
 };
-#define UENIBSTREAMPROTOBUF__ON_OFF_OPT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__on_off_opt__descriptor) \
-    , UENIBSTREAMPROTOBUF__ON_OFF_OPT__VALUE__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__ON_OFF_OPT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__on_off_opt__descriptor) \
+    , STREAMING_PROTOBUFS__ON_OFF_OPT__VALUE__protobuf_unspecified }
 
 
-/* Uenibstreamprotobuf__Null methods */
-void   uenibstreamprotobuf__null__init
-                     (Uenibstreamprotobuf__Null         *message);
-size_t uenibstreamprotobuf__null__get_packed_size
-                     (const Uenibstreamprotobuf__Null   *message);
-size_t uenibstreamprotobuf__null__pack
-                     (const Uenibstreamprotobuf__Null   *message,
+/* StreamingProtobufs__Null methods */
+void   streaming_protobufs__null__init
+                     (StreamingProtobufs__Null         *message);
+size_t streaming_protobufs__null__get_packed_size
+                     (const StreamingProtobufs__Null   *message);
+size_t streaming_protobufs__null__pack
+                     (const StreamingProtobufs__Null   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__null__pack_to_buffer
-                     (const Uenibstreamprotobuf__Null   *message,
+size_t streaming_protobufs__null__pack_to_buffer
+                     (const StreamingProtobufs__Null   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__Null *
-       uenibstreamprotobuf__null__unpack
+StreamingProtobufs__Null *
+       streaming_protobufs__null__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__null__free_unpacked
-                     (Uenibstreamprotobuf__Null *message,
+void   streaming_protobufs__null__free_unpacked
+                     (StreamingProtobufs__Null *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ConfiguredOpt methods */
-void   uenibstreamprotobuf__configured_opt__init
-                     (Uenibstreamprotobuf__ConfiguredOpt         *message);
-size_t uenibstreamprotobuf__configured_opt__get_packed_size
-                     (const Uenibstreamprotobuf__ConfiguredOpt   *message);
-size_t uenibstreamprotobuf__configured_opt__pack
-                     (const Uenibstreamprotobuf__ConfiguredOpt   *message,
+/* StreamingProtobufs__ConfiguredOpt methods */
+void   streaming_protobufs__configured_opt__init
+                     (StreamingProtobufs__ConfiguredOpt         *message);
+size_t streaming_protobufs__configured_opt__get_packed_size
+                     (const StreamingProtobufs__ConfiguredOpt   *message);
+size_t streaming_protobufs__configured_opt__pack
+                     (const StreamingProtobufs__ConfiguredOpt   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__configured_opt__pack_to_buffer
-                     (const Uenibstreamprotobuf__ConfiguredOpt   *message,
+size_t streaming_protobufs__configured_opt__pack_to_buffer
+                     (const StreamingProtobufs__ConfiguredOpt   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ConfiguredOpt *
-       uenibstreamprotobuf__configured_opt__unpack
+StreamingProtobufs__ConfiguredOpt *
+       streaming_protobufs__configured_opt__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__configured_opt__free_unpacked
-                     (Uenibstreamprotobuf__ConfiguredOpt *message,
+void   streaming_protobufs__configured_opt__free_unpacked
+                     (StreamingProtobufs__ConfiguredOpt *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__TrueOpt methods */
-void   uenibstreamprotobuf__true_opt__init
-                     (Uenibstreamprotobuf__TrueOpt         *message);
-size_t uenibstreamprotobuf__true_opt__get_packed_size
-                     (const Uenibstreamprotobuf__TrueOpt   *message);
-size_t uenibstreamprotobuf__true_opt__pack
-                     (const Uenibstreamprotobuf__TrueOpt   *message,
+/* StreamingProtobufs__TrueOpt methods */
+void   streaming_protobufs__true_opt__init
+                     (StreamingProtobufs__TrueOpt         *message);
+size_t streaming_protobufs__true_opt__get_packed_size
+                     (const StreamingProtobufs__TrueOpt   *message);
+size_t streaming_protobufs__true_opt__pack
+                     (const StreamingProtobufs__TrueOpt   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__true_opt__pack_to_buffer
-                     (const Uenibstreamprotobuf__TrueOpt   *message,
+size_t streaming_protobufs__true_opt__pack_to_buffer
+                     (const StreamingProtobufs__TrueOpt   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__TrueOpt *
-       uenibstreamprotobuf__true_opt__unpack
+StreamingProtobufs__TrueOpt *
+       streaming_protobufs__true_opt__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__true_opt__free_unpacked
-                     (Uenibstreamprotobuf__TrueOpt *message,
+void   streaming_protobufs__true_opt__free_unpacked
+                     (StreamingProtobufs__TrueOpt *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__FalseOpt methods */
-void   uenibstreamprotobuf__false_opt__init
-                     (Uenibstreamprotobuf__FalseOpt         *message);
-size_t uenibstreamprotobuf__false_opt__get_packed_size
-                     (const Uenibstreamprotobuf__FalseOpt   *message);
-size_t uenibstreamprotobuf__false_opt__pack
-                     (const Uenibstreamprotobuf__FalseOpt   *message,
+/* StreamingProtobufs__FalseOpt methods */
+void   streaming_protobufs__false_opt__init
+                     (StreamingProtobufs__FalseOpt         *message);
+size_t streaming_protobufs__false_opt__get_packed_size
+                     (const StreamingProtobufs__FalseOpt   *message);
+size_t streaming_protobufs__false_opt__pack
+                     (const StreamingProtobufs__FalseOpt   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__false_opt__pack_to_buffer
-                     (const Uenibstreamprotobuf__FalseOpt   *message,
+size_t streaming_protobufs__false_opt__pack_to_buffer
+                     (const StreamingProtobufs__FalseOpt   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__FalseOpt *
-       uenibstreamprotobuf__false_opt__unpack
+StreamingProtobufs__FalseOpt *
+       streaming_protobufs__false_opt__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__false_opt__free_unpacked
-                     (Uenibstreamprotobuf__FalseOpt *message,
+void   streaming_protobufs__false_opt__free_unpacked
+                     (StreamingProtobufs__FalseOpt *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__EnabledOpt methods */
-void   uenibstreamprotobuf__enabled_opt__init
-                     (Uenibstreamprotobuf__EnabledOpt         *message);
-size_t uenibstreamprotobuf__enabled_opt__get_packed_size
-                     (const Uenibstreamprotobuf__EnabledOpt   *message);
-size_t uenibstreamprotobuf__enabled_opt__pack
-                     (const Uenibstreamprotobuf__EnabledOpt   *message,
+/* StreamingProtobufs__EnabledOpt methods */
+void   streaming_protobufs__enabled_opt__init
+                     (StreamingProtobufs__EnabledOpt         *message);
+size_t streaming_protobufs__enabled_opt__get_packed_size
+                     (const StreamingProtobufs__EnabledOpt   *message);
+size_t streaming_protobufs__enabled_opt__pack
+                     (const StreamingProtobufs__EnabledOpt   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__enabled_opt__pack_to_buffer
-                     (const Uenibstreamprotobuf__EnabledOpt   *message,
+size_t streaming_protobufs__enabled_opt__pack_to_buffer
+                     (const StreamingProtobufs__EnabledOpt   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__EnabledOpt *
-       uenibstreamprotobuf__enabled_opt__unpack
+StreamingProtobufs__EnabledOpt *
+       streaming_protobufs__enabled_opt__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__enabled_opt__free_unpacked
-                     (Uenibstreamprotobuf__EnabledOpt *message,
+void   streaming_protobufs__enabled_opt__free_unpacked
+                     (StreamingProtobufs__EnabledOpt *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__DisabledOpt methods */
-void   uenibstreamprotobuf__disabled_opt__init
-                     (Uenibstreamprotobuf__DisabledOpt         *message);
-size_t uenibstreamprotobuf__disabled_opt__get_packed_size
-                     (const Uenibstreamprotobuf__DisabledOpt   *message);
-size_t uenibstreamprotobuf__disabled_opt__pack
-                     (const Uenibstreamprotobuf__DisabledOpt   *message,
+/* StreamingProtobufs__DisabledOpt methods */
+void   streaming_protobufs__disabled_opt__init
+                     (StreamingProtobufs__DisabledOpt         *message);
+size_t streaming_protobufs__disabled_opt__get_packed_size
+                     (const StreamingProtobufs__DisabledOpt   *message);
+size_t streaming_protobufs__disabled_opt__pack
+                     (const StreamingProtobufs__DisabledOpt   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__disabled_opt__pack_to_buffer
-                     (const Uenibstreamprotobuf__DisabledOpt   *message,
+size_t streaming_protobufs__disabled_opt__pack_to_buffer
+                     (const StreamingProtobufs__DisabledOpt   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__DisabledOpt *
-       uenibstreamprotobuf__disabled_opt__unpack
+StreamingProtobufs__DisabledOpt *
+       streaming_protobufs__disabled_opt__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__disabled_opt__free_unpacked
-                     (Uenibstreamprotobuf__DisabledOpt *message,
+void   streaming_protobufs__disabled_opt__free_unpacked
+                     (StreamingProtobufs__DisabledOpt *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__EnabledDisabledOpt methods */
-void   uenibstreamprotobuf__enabled_disabled_opt__init
-                     (Uenibstreamprotobuf__EnabledDisabledOpt         *message);
-size_t uenibstreamprotobuf__enabled_disabled_opt__get_packed_size
-                     (const Uenibstreamprotobuf__EnabledDisabledOpt   *message);
-size_t uenibstreamprotobuf__enabled_disabled_opt__pack
-                     (const Uenibstreamprotobuf__EnabledDisabledOpt   *message,
+/* StreamingProtobufs__EnabledDisabledOpt methods */
+void   streaming_protobufs__enabled_disabled_opt__init
+                     (StreamingProtobufs__EnabledDisabledOpt         *message);
+size_t streaming_protobufs__enabled_disabled_opt__get_packed_size
+                     (const StreamingProtobufs__EnabledDisabledOpt   *message);
+size_t streaming_protobufs__enabled_disabled_opt__pack
+                     (const StreamingProtobufs__EnabledDisabledOpt   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__enabled_disabled_opt__pack_to_buffer
-                     (const Uenibstreamprotobuf__EnabledDisabledOpt   *message,
+size_t streaming_protobufs__enabled_disabled_opt__pack_to_buffer
+                     (const StreamingProtobufs__EnabledDisabledOpt   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__EnabledDisabledOpt *
-       uenibstreamprotobuf__enabled_disabled_opt__unpack
+StreamingProtobufs__EnabledDisabledOpt *
+       streaming_protobufs__enabled_disabled_opt__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__enabled_disabled_opt__free_unpacked
-                     (Uenibstreamprotobuf__EnabledDisabledOpt *message,
+void   streaming_protobufs__enabled_disabled_opt__free_unpacked
+                     (StreamingProtobufs__EnabledDisabledOpt *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__OnOffOpt methods */
-void   uenibstreamprotobuf__on_off_opt__init
-                     (Uenibstreamprotobuf__OnOffOpt         *message);
-size_t uenibstreamprotobuf__on_off_opt__get_packed_size
-                     (const Uenibstreamprotobuf__OnOffOpt   *message);
-size_t uenibstreamprotobuf__on_off_opt__pack
-                     (const Uenibstreamprotobuf__OnOffOpt   *message,
+/* StreamingProtobufs__OnOffOpt methods */
+void   streaming_protobufs__on_off_opt__init
+                     (StreamingProtobufs__OnOffOpt         *message);
+size_t streaming_protobufs__on_off_opt__get_packed_size
+                     (const StreamingProtobufs__OnOffOpt   *message);
+size_t streaming_protobufs__on_off_opt__pack
+                     (const StreamingProtobufs__OnOffOpt   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__on_off_opt__pack_to_buffer
-                     (const Uenibstreamprotobuf__OnOffOpt   *message,
+size_t streaming_protobufs__on_off_opt__pack_to_buffer
+                     (const StreamingProtobufs__OnOffOpt   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__OnOffOpt *
-       uenibstreamprotobuf__on_off_opt__unpack
+StreamingProtobufs__OnOffOpt *
+       streaming_protobufs__on_off_opt__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__on_off_opt__free_unpacked
-                     (Uenibstreamprotobuf__OnOffOpt *message,
+void   streaming_protobufs__on_off_opt__free_unpacked
+                     (StreamingProtobufs__OnOffOpt *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__Null_Closure)
-                 (const Uenibstreamprotobuf__Null *message,
+typedef void (*StreamingProtobufs__Null_Closure)
+                 (const StreamingProtobufs__Null *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ConfiguredOpt_Closure)
-                 (const Uenibstreamprotobuf__ConfiguredOpt *message,
+typedef void (*StreamingProtobufs__ConfiguredOpt_Closure)
+                 (const StreamingProtobufs__ConfiguredOpt *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__TrueOpt_Closure)
-                 (const Uenibstreamprotobuf__TrueOpt *message,
+typedef void (*StreamingProtobufs__TrueOpt_Closure)
+                 (const StreamingProtobufs__TrueOpt *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__FalseOpt_Closure)
-                 (const Uenibstreamprotobuf__FalseOpt *message,
+typedef void (*StreamingProtobufs__FalseOpt_Closure)
+                 (const StreamingProtobufs__FalseOpt *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__EnabledOpt_Closure)
-                 (const Uenibstreamprotobuf__EnabledOpt *message,
+typedef void (*StreamingProtobufs__EnabledOpt_Closure)
+                 (const StreamingProtobufs__EnabledOpt *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__DisabledOpt_Closure)
-                 (const Uenibstreamprotobuf__DisabledOpt *message,
+typedef void (*StreamingProtobufs__DisabledOpt_Closure)
+                 (const StreamingProtobufs__DisabledOpt *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__EnabledDisabledOpt_Closure)
-                 (const Uenibstreamprotobuf__EnabledDisabledOpt *message,
+typedef void (*StreamingProtobufs__EnabledDisabledOpt_Closure)
+                 (const StreamingProtobufs__EnabledDisabledOpt *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__OnOffOpt_Closure)
-                 (const Uenibstreamprotobuf__OnOffOpt *message,
+typedef void (*StreamingProtobufs__OnOffOpt_Closure)
+                 (const StreamingProtobufs__OnOffOpt *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -330,21 +330,21 @@ typedef void (*Uenibstreamprotobuf__OnOffOpt_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__null__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__configured_opt__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__configured_opt__value__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__true_opt__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__true_opt__value__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__false_opt__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__false_opt__value__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__enabled_opt__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__enabled_opt__value__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__disabled_opt__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__disabled_opt__value__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__enabled_disabled_opt__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__enabled_disabled_opt__value__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__on_off_opt__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__on_off_opt__value__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__null__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__configured_opt__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__configured_opt__value__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__true_opt__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__true_opt__value__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__false_opt__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__false_opt__value__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__enabled_opt__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__enabled_opt__value__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__disabled_opt__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__disabled_opt__value__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__enabled_disabled_opt__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__enabled_disabled_opt__value__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__on_off_opt__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__on_off_opt__value__descriptor;
 
 PROTOBUF_C__END_DECLS
 

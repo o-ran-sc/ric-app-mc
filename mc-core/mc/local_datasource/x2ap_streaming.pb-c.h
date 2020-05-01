@@ -33,9 +33,14 @@ PROTOBUF_C__BEGIN_DECLS
 #include "sn_status_transfer.pb-c.h"
 #include "ue_context_release.pb-c.h"
 #include "secondary_rat_data_usage_report.pb-c.h"
+#include "sgnb_change_required.pb-c.h"
+#include "sgnb_change_confirm.pb-c.h"
+#include "sgnb_change_refuse.pb-c.h"
+#include "sgnb_activity_notification.pb-c.h"
+#include "gnb_status_indication.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__X2APStreaming Uenibstreamprotobuf__X2APStreaming;
-typedef struct _Uenibstreamprotobuf__X2APStreamingHeader Uenibstreamprotobuf__X2APStreamingHeader;
+typedef struct _StreamingProtobufs__X2APStreaming StreamingProtobufs__X2APStreaming;
+typedef struct _StreamingProtobufs__X2APStreamingHeader StreamingProtobufs__X2APStreamingHeader;
 
 
 /* --- enums --- */
@@ -44,64 +49,74 @@ typedef struct _Uenibstreamprotobuf__X2APStreamingHeader Uenibstreamprotobuf__X2
 /* --- messages --- */
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_RRC_TRANSFER = 2,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBADDITION_REQUEST = 3,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBADDITION_REQUEST_ACKNOWLEDGE = 4,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBADDITION_REQUEST_REJECT = 5,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REQUEST = 6,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REQUEST_ACKNOWLEDGE = 7,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REQUEST_REJECT = 8,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REQUIRED = 9,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_CONFIRM = 10,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REFUSE = 11,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NBRECONFIGURATION_COMPLETE = 12,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NB_RELEASE_REQUEST = 13,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NB_RELEASE_REQUEST_ACKNOWLEDGE = 14,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NB_RELEASE_REQUIRED = 15,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SG_NB_RELEASE_CONFIRM = 16,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SN_STATUS_TRANSFER = 17,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_UE_CONTEXT_RELEASE = 18,
-  UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE_SECONDARY_RATDATA_USAGE_REPORT = 19
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE)
-} Uenibstreamprotobuf__X2APStreaming__X2apMessageCase;
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE__NOT_SET = 0,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_RRC_TRANSFER = 2,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBADDITION_REQUEST = 3,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBADDITION_REQUEST_ACKNOWLEDGE = 4,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBADDITION_REQUEST_REJECT = 5,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REQUEST = 6,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REQUEST_ACKNOWLEDGE = 7,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REQUEST_REJECT = 8,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REQUIRED = 9,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_CONFIRM = 10,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBMODIFICATION_REFUSE = 11,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBRECONFIGURATION_COMPLETE = 12,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NB_RELEASE_REQUEST = 13,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NB_RELEASE_REQUEST_ACKNOWLEDGE = 14,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NB_RELEASE_REQUIRED = 15,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NB_RELEASE_CONFIRM = 16,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SN_STATUS_TRANSFER = 17,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_UE_CONTEXT_RELEASE = 18,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SECONDARY_RATDATA_USAGE_REPORT = 19,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBCHANGE_REQUIRED = 20,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBCHANGE_CONFIRM = 21,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBCHANGE_REFUSE = 22,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_SG_NBACTIVITY_NOTIFICATION = 23,
+  STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE_G_NBSTATUS_INDICATION = 24
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE)
+} StreamingProtobufs__X2APStreaming__X2apMessageCase;
 
-struct  _Uenibstreamprotobuf__X2APStreaming
+struct  _StreamingProtobufs__X2APStreaming
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__X2APStreamingHeader *header;
-  Uenibstreamprotobuf__X2APStreaming__X2apMessageCase x2ap_message_case;
+  StreamingProtobufs__X2APStreamingHeader *header;
+  StreamingProtobufs__X2APStreaming__X2apMessageCase x2ap_message_case;
   union {
-    Uenibstreamprotobuf__RRCTransfer *rrctransfer;
-    Uenibstreamprotobuf__SgNBAdditionRequest *sgnbadditionrequest;
-    Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *sgnbadditionrequestacknowledge;
-    Uenibstreamprotobuf__SgNBAdditionRequestReject *sgnbadditionrequestreject;
-    Uenibstreamprotobuf__SgNBModificationRequest *sgnbmodificationrequest;
-    Uenibstreamprotobuf__SgNBModificationRequestAcknowledge *sgnbmodificationrequestacknowledge;
-    Uenibstreamprotobuf__SgNBModificationRequestReject *sgnbmodificationrequestreject;
-    Uenibstreamprotobuf__SgNBModificationRequired *sgnbmodificationrequired;
-    Uenibstreamprotobuf__SgNBModificationConfirm *sgnbmodificationconfirm;
-    Uenibstreamprotobuf__SgNBModificationRefuse *sgnbmodificationrefuse;
-    Uenibstreamprotobuf__SgNBReconfigurationComplete *sgnbreconfigurationcomplete;
-    Uenibstreamprotobuf__SgNBReleaseRequest *sgnbreleaserequest;
-    Uenibstreamprotobuf__SgNBReleaseRequestAcknowledge *sgnbreleaserequestacknowledge;
-    Uenibstreamprotobuf__SgNBReleaseRequired *sgnbreleaserequired;
-    Uenibstreamprotobuf__SgNBReleaseConfirm *sgnbreleaseconfirm;
-    Uenibstreamprotobuf__SNStatusTransfer *snstatustransfer;
-    Uenibstreamprotobuf__UEContextRelease *uecontextrelease;
-    Uenibstreamprotobuf__SecondaryRATDataUsageReport *secondaryratdatausagereport;
+    StreamingProtobufs__RRCTransfer *rrctransfer;
+    StreamingProtobufs__SgNBAdditionRequest *sgnbadditionrequest;
+    StreamingProtobufs__SgNBAdditionRequestAcknowledge *sgnbadditionrequestacknowledge;
+    StreamingProtobufs__SgNBAdditionRequestReject *sgnbadditionrequestreject;
+    StreamingProtobufs__SgNBModificationRequest *sgnbmodificationrequest;
+    StreamingProtobufs__SgNBModificationRequestAcknowledge *sgnbmodificationrequestacknowledge;
+    StreamingProtobufs__SgNBModificationRequestReject *sgnbmodificationrequestreject;
+    StreamingProtobufs__SgNBModificationRequired *sgnbmodificationrequired;
+    StreamingProtobufs__SgNBModificationConfirm *sgnbmodificationconfirm;
+    StreamingProtobufs__SgNBModificationRefuse *sgnbmodificationrefuse;
+    StreamingProtobufs__SgNBReconfigurationComplete *sgnbreconfigurationcomplete;
+    StreamingProtobufs__SgNBReleaseRequest *sgnbreleaserequest;
+    StreamingProtobufs__SgNBReleaseRequestAcknowledge *sgnbreleaserequestacknowledge;
+    StreamingProtobufs__SgNBReleaseRequired *sgnbreleaserequired;
+    StreamingProtobufs__SgNBReleaseConfirm *sgnbreleaseconfirm;
+    StreamingProtobufs__SNStatusTransfer *snstatustransfer;
+    StreamingProtobufs__UEContextRelease *uecontextrelease;
+    StreamingProtobufs__SecondaryRATDataUsageReport *secondaryratdatausagereport;
+    StreamingProtobufs__SgNBChangeRequired *sgnbchangerequired;
+    StreamingProtobufs__SgNBChangeConfirm *sgnbchangeconfirm;
+    StreamingProtobufs__SgNBChangeRefuse *sgnbchangerefuse;
+    StreamingProtobufs__SgNBActivityNotification *sgnbactivitynotification;
+    StreamingProtobufs__GNBStatusIndication *gnbstatusindication;
   };
 };
-#define UENIBSTREAMPROTOBUF__X2_APSTREAMING__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__x2_apstreaming__descriptor) \
-    , NULL, UENIBSTREAMPROTOBUF__X2_APSTREAMING__X2AP_MESSAGE__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__X2_APSTREAMING__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__x2_apstreaming__descriptor) \
+    , NULL, STREAMING_PROTOBUFS__X2_APSTREAMING__X2AP_MESSAGE__NOT_SET, {0} }
 
 
-struct  _Uenibstreamprotobuf__X2APStreamingHeader
+struct  _StreamingProtobufs__X2APStreamingHeader
 {
   ProtobufCMessage base;
   /*
-   *The revision number of protobuf files of UENIB Streaming API
+   *The revision number of X2AP streaming protobuf files
    */
   char *protobuf_revision;
   /*
@@ -114,56 +129,56 @@ struct  _Uenibstreamprotobuf__X2APStreamingHeader
    */
   uint64_t timestamp;
 };
-#define UENIBSTREAMPROTOBUF__X2_APSTREAMING_HEADER__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__x2_apstreaming_header__descriptor) \
+#define STREAMING_PROTOBUFS__X2_APSTREAMING_HEADER__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__x2_apstreaming_header__descriptor) \
     , (char *)protobuf_c_empty_string, NULL, 0 }
 
 
-/* Uenibstreamprotobuf__X2APStreaming methods */
-void   uenibstreamprotobuf__x2_apstreaming__init
-                     (Uenibstreamprotobuf__X2APStreaming         *message);
-size_t uenibstreamprotobuf__x2_apstreaming__get_packed_size
-                     (const Uenibstreamprotobuf__X2APStreaming   *message);
-size_t uenibstreamprotobuf__x2_apstreaming__pack
-                     (const Uenibstreamprotobuf__X2APStreaming   *message,
+/* StreamingProtobufs__X2APStreaming methods */
+void   streaming_protobufs__x2_apstreaming__init
+                     (StreamingProtobufs__X2APStreaming         *message);
+size_t streaming_protobufs__x2_apstreaming__get_packed_size
+                     (const StreamingProtobufs__X2APStreaming   *message);
+size_t streaming_protobufs__x2_apstreaming__pack
+                     (const StreamingProtobufs__X2APStreaming   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__x2_apstreaming__pack_to_buffer
-                     (const Uenibstreamprotobuf__X2APStreaming   *message,
+size_t streaming_protobufs__x2_apstreaming__pack_to_buffer
+                     (const StreamingProtobufs__X2APStreaming   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__X2APStreaming *
-       uenibstreamprotobuf__x2_apstreaming__unpack
+StreamingProtobufs__X2APStreaming *
+       streaming_protobufs__x2_apstreaming__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__x2_apstreaming__free_unpacked
-                     (Uenibstreamprotobuf__X2APStreaming *message,
+void   streaming_protobufs__x2_apstreaming__free_unpacked
+                     (StreamingProtobufs__X2APStreaming *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__X2APStreamingHeader methods */
-void   uenibstreamprotobuf__x2_apstreaming_header__init
-                     (Uenibstreamprotobuf__X2APStreamingHeader         *message);
-size_t uenibstreamprotobuf__x2_apstreaming_header__get_packed_size
-                     (const Uenibstreamprotobuf__X2APStreamingHeader   *message);
-size_t uenibstreamprotobuf__x2_apstreaming_header__pack
-                     (const Uenibstreamprotobuf__X2APStreamingHeader   *message,
+/* StreamingProtobufs__X2APStreamingHeader methods */
+void   streaming_protobufs__x2_apstreaming_header__init
+                     (StreamingProtobufs__X2APStreamingHeader         *message);
+size_t streaming_protobufs__x2_apstreaming_header__get_packed_size
+                     (const StreamingProtobufs__X2APStreamingHeader   *message);
+size_t streaming_protobufs__x2_apstreaming_header__pack
+                     (const StreamingProtobufs__X2APStreamingHeader   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__x2_apstreaming_header__pack_to_buffer
-                     (const Uenibstreamprotobuf__X2APStreamingHeader   *message,
+size_t streaming_protobufs__x2_apstreaming_header__pack_to_buffer
+                     (const StreamingProtobufs__X2APStreamingHeader   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__X2APStreamingHeader *
-       uenibstreamprotobuf__x2_apstreaming_header__unpack
+StreamingProtobufs__X2APStreamingHeader *
+       streaming_protobufs__x2_apstreaming_header__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__x2_apstreaming_header__free_unpacked
-                     (Uenibstreamprotobuf__X2APStreamingHeader *message,
+void   streaming_protobufs__x2_apstreaming_header__free_unpacked
+                     (StreamingProtobufs__X2APStreamingHeader *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__X2APStreaming_Closure)
-                 (const Uenibstreamprotobuf__X2APStreaming *message,
+typedef void (*StreamingProtobufs__X2APStreaming_Closure)
+                 (const StreamingProtobufs__X2APStreaming *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__X2APStreamingHeader_Closure)
-                 (const Uenibstreamprotobuf__X2APStreamingHeader *message,
+typedef void (*StreamingProtobufs__X2APStreamingHeader_Closure)
+                 (const StreamingProtobufs__X2APStreamingHeader *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -171,8 +186,8 @@ typedef void (*Uenibstreamprotobuf__X2APStreamingHeader_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__x2_apstreaming__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__x2_apstreaming_header__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__x2_apstreaming__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__x2_apstreaming_header__descriptor;
 
 PROTOBUF_C__END_DECLS
 

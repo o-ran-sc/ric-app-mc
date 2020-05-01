@@ -7,135 +7,135 @@
 #endif
 
 #include "rrc_measurement_report.pb-c.h"
-void   uenibstreamprotobuf__measurement_report__init
-                     (Uenibstreamprotobuf__MeasurementReport         *message)
+void   streaming_protobufs__measurement_report__init
+                     (StreamingProtobufs__MeasurementReport         *message)
 {
-  static const Uenibstreamprotobuf__MeasurementReport init_value = UENIBSTREAMPROTOBUF__MEASUREMENT_REPORT__INIT;
+  static const StreamingProtobufs__MeasurementReport init_value = STREAMING_PROTOBUFS__MEASUREMENT_REPORT__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__measurement_report__get_packed_size
-                     (const Uenibstreamprotobuf__MeasurementReport *message)
+size_t streaming_protobufs__measurement_report__get_packed_size
+                     (const StreamingProtobufs__MeasurementReport *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__measurement_report__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__measurement_report__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__measurement_report__pack
-                     (const Uenibstreamprotobuf__MeasurementReport *message,
+size_t streaming_protobufs__measurement_report__pack
+                     (const StreamingProtobufs__MeasurementReport *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__measurement_report__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__measurement_report__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__measurement_report__pack_to_buffer
-                     (const Uenibstreamprotobuf__MeasurementReport *message,
+size_t streaming_protobufs__measurement_report__pack_to_buffer
+                     (const StreamingProtobufs__MeasurementReport *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__measurement_report__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__measurement_report__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__MeasurementReport *
-       uenibstreamprotobuf__measurement_report__unpack
+StreamingProtobufs__MeasurementReport *
+       streaming_protobufs__measurement_report__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__MeasurementReport *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__measurement_report__descriptor,
+  return (StreamingProtobufs__MeasurementReport *)
+     protobuf_c_message_unpack (&streaming_protobufs__measurement_report__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__measurement_report__free_unpacked
-                     (Uenibstreamprotobuf__MeasurementReport *message,
+void   streaming_protobufs__measurement_report__free_unpacked
+                     (StreamingProtobufs__MeasurementReport *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__measurement_report__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__measurement_report__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__measurement_report__ies__init
-                     (Uenibstreamprotobuf__MeasurementReportIEs         *message)
+void   streaming_protobufs__measurement_report__ies__init
+                     (StreamingProtobufs__MeasurementReportIEs         *message)
 {
-  static const Uenibstreamprotobuf__MeasurementReportIEs init_value = UENIBSTREAMPROTOBUF__MEASUREMENT_REPORT__IES__INIT;
+  static const StreamingProtobufs__MeasurementReportIEs init_value = STREAMING_PROTOBUFS__MEASUREMENT_REPORT__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__measurement_report__ies__get_packed_size
-                     (const Uenibstreamprotobuf__MeasurementReportIEs *message)
+size_t streaming_protobufs__measurement_report__ies__get_packed_size
+                     (const StreamingProtobufs__MeasurementReportIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__measurement_report__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__measurement_report__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__measurement_report__ies__pack
-                     (const Uenibstreamprotobuf__MeasurementReportIEs *message,
+size_t streaming_protobufs__measurement_report__ies__pack
+                     (const StreamingProtobufs__MeasurementReportIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__measurement_report__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__measurement_report__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__measurement_report__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__MeasurementReportIEs *message,
+size_t streaming_protobufs__measurement_report__ies__pack_to_buffer
+                     (const StreamingProtobufs__MeasurementReportIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__measurement_report__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__measurement_report__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__MeasurementReportIEs *
-       uenibstreamprotobuf__measurement_report__ies__unpack
+StreamingProtobufs__MeasurementReportIEs *
+       streaming_protobufs__measurement_report__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__MeasurementReportIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__measurement_report__ies__descriptor,
+  return (StreamingProtobufs__MeasurementReportIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__measurement_report__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__measurement_report__ies__free_unpacked
-                     (Uenibstreamprotobuf__MeasurementReportIEs *message,
+void   streaming_protobufs__measurement_report__ies__free_unpacked
+                     (StreamingProtobufs__MeasurementReportIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__measurement_report__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__measurement_report__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__measurement_report__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__measurement_report__field_descriptors[1] =
 {
   {
     "measurementReport",
     1,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__MeasurementReport, critical_extensions_case),
-    offsetof(Uenibstreamprotobuf__MeasurementReport, measurementreport),
-    &uenibstreamprotobuf__measurement_report__ies__descriptor,
+    offsetof(StreamingProtobufs__MeasurementReport, critical_extensions_case),
+    offsetof(StreamingProtobufs__MeasurementReport, measurementreport),
+    &streaming_protobufs__measurement_report__ies__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__measurement_report__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__measurement_report__field_indices_by_name[] = {
   0,   /* field[0] = measurementReport */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__measurement_report__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__measurement_report__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__measurement_report__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__measurement_report__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.MeasurementReport",
+  "streaming_protobufs.MeasurementReport",
   "MeasurementReport",
-  "Uenibstreamprotobuf__MeasurementReport",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__MeasurementReport),
+  "StreamingProtobufs__MeasurementReport",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__MeasurementReport),
   1,
-  uenibstreamprotobuf__measurement_report__field_descriptors,
-  uenibstreamprotobuf__measurement_report__field_indices_by_name,
-  1,  uenibstreamprotobuf__measurement_report__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__measurement_report__init,
+  streaming_protobufs__measurement_report__field_descriptors,
+  streaming_protobufs__measurement_report__field_indices_by_name,
+  1,  streaming_protobufs__measurement_report__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__measurement_report__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__measurement_report__ies__field_descriptors[2] =
+static const ProtobufCFieldDescriptor streaming_protobufs__measurement_report__ies__field_descriptors[2] =
 {
   {
     "measResults",
@@ -143,8 +143,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__measurement_report__i
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MeasurementReportIEs, measresults),
-    &uenibstreamprotobuf__meas_results__descriptor,
+    offsetof(StreamingProtobufs__MeasurementReportIEs, measresults),
+    &streaming_protobufs__meas_results__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -155,34 +155,34 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__measurement_report__i
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MeasurementReportIEs, latenoncriticalextension),
-    &google__protobuf__string_value__descriptor,
+    offsetof(StreamingProtobufs__MeasurementReportIEs, latenoncriticalextension),
+    &google__protobuf__bytes_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__measurement_report__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__measurement_report__ies__field_indices_by_name[] = {
   1,   /* field[1] = lateNonCriticalExtension */
   0,   /* field[0] = measResults */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__measurement_report__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__measurement_report__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 2 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__measurement_report__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__measurement_report__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.MeasurementReport_IEs",
+  "streaming_protobufs.MeasurementReport_IEs",
   "MeasurementReportIEs",
-  "Uenibstreamprotobuf__MeasurementReportIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__MeasurementReportIEs),
+  "StreamingProtobufs__MeasurementReportIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__MeasurementReportIEs),
   2,
-  uenibstreamprotobuf__measurement_report__ies__field_descriptors,
-  uenibstreamprotobuf__measurement_report__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__measurement_report__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__measurement_report__ies__init,
+  streaming_protobufs__measurement_report__ies__field_descriptors,
+  streaming_protobufs__measurement_report__ies__field_indices_by_name,
+  1,  streaming_protobufs__measurement_report__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__measurement_report__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

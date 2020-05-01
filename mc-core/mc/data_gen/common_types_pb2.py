@@ -17,17 +17,17 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='common_types.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x12\x63ommon_types.proto\x12\x13uenibstreamprotobuf\"\x06\n\x04Null\"{\n\rConfiguredOpt\x12\x37\n\x05value\x18\x01 \x01(\x0e\x32(.uenibstreamprotobuf.ConfiguredOpt.Value\"1\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0e\n\nconfigured\x10\x01\"i\n\x07TrueOpt\x12\x31\n\x05value\x18\x01 \x01(\x0e\x32\".uenibstreamprotobuf.TrueOpt.Value\"+\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x08\n\x04true\x10\x01\"l\n\x08\x46\x61lseOpt\x12\x32\n\x05value\x18\x01 \x01(\x0e\x32#.uenibstreamprotobuf.FalseOpt.Value\",\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\t\n\x05\x66\x61lse\x10\x01\"r\n\nEnabledOpt\x12\x34\n\x05value\x18\x01 \x01(\x0e\x32%.uenibstreamprotobuf.EnabledOpt.Value\".\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0b\n\x07\x65nabled\x10\x01\"u\n\x0b\x44isabledOpt\x12\x35\n\x05value\x18\x01 \x01(\x0e\x32&.uenibstreamprotobuf.DisabledOpt.Value\"/\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0c\n\x08\x64isabled\x10\x01\"\x90\x01\n\x12\x45nabledDisabledOpt\x12<\n\x05value\x18\x01 \x01(\x0e\x32-.uenibstreamprotobuf.EnabledDisabledOpt.Value\"<\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0b\n\x07\x65nabled\x10\x01\x12\x0c\n\x08\x64isabled\x10\x02\"r\n\x08OnOffOpt\x12\x32\n\x05value\x18\x01 \x01(\x0e\x32#.uenibstreamprotobuf.OnOffOpt.Value\"2\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x06\n\x02on\x10\x01\x12\x07\n\x03off\x10\x02\x42:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x12\x63ommon_types.proto\x12\x13streaming_protobufs\"\x06\n\x04Null\"{\n\rConfiguredOpt\x12\x37\n\x05value\x18\x01 \x01(\x0e\x32(.streaming_protobufs.ConfiguredOpt.Value\"1\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0e\n\nconfigured\x10\x01\"i\n\x07TrueOpt\x12\x31\n\x05value\x18\x01 \x01(\x0e\x32\".streaming_protobufs.TrueOpt.Value\"+\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x08\n\x04true\x10\x01\"l\n\x08\x46\x61lseOpt\x12\x32\n\x05value\x18\x01 \x01(\x0e\x32#.streaming_protobufs.FalseOpt.Value\",\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\t\n\x05\x66\x61lse\x10\x01\"r\n\nEnabledOpt\x12\x34\n\x05value\x18\x01 \x01(\x0e\x32%.streaming_protobufs.EnabledOpt.Value\".\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0b\n\x07\x65nabled\x10\x01\"u\n\x0b\x44isabledOpt\x12\x35\n\x05value\x18\x01 \x01(\x0e\x32&.streaming_protobufs.DisabledOpt.Value\"/\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0c\n\x08\x64isabled\x10\x01\"\x90\x01\n\x12\x45nabledDisabledOpt\x12<\n\x05value\x18\x01 \x01(\x0e\x32-.streaming_protobufs.EnabledDisabledOpt.Value\"<\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0b\n\x07\x65nabled\x10\x01\x12\x0c\n\x08\x64isabled\x10\x02\"r\n\x08OnOffOpt\x12\x32\n\x05value\x18\x01 \x01(\x0e\x32#.streaming_protobufs.OnOffOpt.Value\"2\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x06\n\x02on\x10\x01\x12\x07\n\x03off\x10\x02\x42\x33Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
 )
 
 
 
 _CONFIGUREDOPT_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.ConfiguredOpt.Value',
+  full_name='streaming_protobufs.ConfiguredOpt.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -49,7 +49,7 @@ _sym_db.RegisterEnumDescriptor(_CONFIGUREDOPT_VALUE)
 
 _TRUEOPT_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.TrueOpt.Value',
+  full_name='streaming_protobufs.TrueOpt.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -71,7 +71,7 @@ _sym_db.RegisterEnumDescriptor(_TRUEOPT_VALUE)
 
 _FALSEOPT_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.FalseOpt.Value',
+  full_name='streaming_protobufs.FalseOpt.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -93,7 +93,7 @@ _sym_db.RegisterEnumDescriptor(_FALSEOPT_VALUE)
 
 _ENABLEDOPT_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.EnabledOpt.Value',
+  full_name='streaming_protobufs.EnabledOpt.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -115,7 +115,7 @@ _sym_db.RegisterEnumDescriptor(_ENABLEDOPT_VALUE)
 
 _DISABLEDOPT_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.DisabledOpt.Value',
+  full_name='streaming_protobufs.DisabledOpt.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -137,7 +137,7 @@ _sym_db.RegisterEnumDescriptor(_DISABLEDOPT_VALUE)
 
 _ENABLEDDISABLEDOPT_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.EnabledDisabledOpt.Value',
+  full_name='streaming_protobufs.EnabledDisabledOpt.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -163,7 +163,7 @@ _sym_db.RegisterEnumDescriptor(_ENABLEDDISABLEDOPT_VALUE)
 
 _ONOFFOPT_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.OnOffOpt.Value',
+  full_name='streaming_protobufs.OnOffOpt.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -190,7 +190,7 @@ _sym_db.RegisterEnumDescriptor(_ONOFFOPT_VALUE)
 
 _NULL = _descriptor.Descriptor(
   name='Null',
-  full_name='uenibstreamprotobuf.Null',
+  full_name='streaming_protobufs.Null',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -214,13 +214,13 @@ _NULL = _descriptor.Descriptor(
 
 _CONFIGUREDOPT = _descriptor.Descriptor(
   name='ConfiguredOpt',
-  full_name='uenibstreamprotobuf.ConfiguredOpt',
+  full_name='streaming_protobufs.ConfiguredOpt',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.ConfiguredOpt.value', index=0,
+      name='value', full_name='streaming_protobufs.ConfiguredOpt.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -246,13 +246,13 @@ _CONFIGUREDOPT = _descriptor.Descriptor(
 
 _TRUEOPT = _descriptor.Descriptor(
   name='TrueOpt',
-  full_name='uenibstreamprotobuf.TrueOpt',
+  full_name='streaming_protobufs.TrueOpt',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.TrueOpt.value', index=0,
+      name='value', full_name='streaming_protobufs.TrueOpt.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -278,13 +278,13 @@ _TRUEOPT = _descriptor.Descriptor(
 
 _FALSEOPT = _descriptor.Descriptor(
   name='FalseOpt',
-  full_name='uenibstreamprotobuf.FalseOpt',
+  full_name='streaming_protobufs.FalseOpt',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.FalseOpt.value', index=0,
+      name='value', full_name='streaming_protobufs.FalseOpt.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -310,13 +310,13 @@ _FALSEOPT = _descriptor.Descriptor(
 
 _ENABLEDOPT = _descriptor.Descriptor(
   name='EnabledOpt',
-  full_name='uenibstreamprotobuf.EnabledOpt',
+  full_name='streaming_protobufs.EnabledOpt',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.EnabledOpt.value', index=0,
+      name='value', full_name='streaming_protobufs.EnabledOpt.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -342,13 +342,13 @@ _ENABLEDOPT = _descriptor.Descriptor(
 
 _DISABLEDOPT = _descriptor.Descriptor(
   name='DisabledOpt',
-  full_name='uenibstreamprotobuf.DisabledOpt',
+  full_name='streaming_protobufs.DisabledOpt',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.DisabledOpt.value', index=0,
+      name='value', full_name='streaming_protobufs.DisabledOpt.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -374,13 +374,13 @@ _DISABLEDOPT = _descriptor.Descriptor(
 
 _ENABLEDDISABLEDOPT = _descriptor.Descriptor(
   name='EnabledDisabledOpt',
-  full_name='uenibstreamprotobuf.EnabledDisabledOpt',
+  full_name='streaming_protobufs.EnabledDisabledOpt',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.EnabledDisabledOpt.value', index=0,
+      name='value', full_name='streaming_protobufs.EnabledDisabledOpt.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -406,13 +406,13 @@ _ENABLEDDISABLEDOPT = _descriptor.Descriptor(
 
 _ONOFFOPT = _descriptor.Descriptor(
   name='OnOffOpt',
-  full_name='uenibstreamprotobuf.OnOffOpt',
+  full_name='streaming_protobufs.OnOffOpt',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.OnOffOpt.value', index=0,
+      name='value', full_name='streaming_protobufs.OnOffOpt.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -462,56 +462,56 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Null = _reflection.GeneratedProtocolMessageType('Null', (_message.Message,), {
   'DESCRIPTOR' : _NULL,
   '__module__' : 'common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.Null)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.Null)
   })
 _sym_db.RegisterMessage(Null)
 
 ConfiguredOpt = _reflection.GeneratedProtocolMessageType('ConfiguredOpt', (_message.Message,), {
   'DESCRIPTOR' : _CONFIGUREDOPT,
   '__module__' : 'common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ConfiguredOpt)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ConfiguredOpt)
   })
 _sym_db.RegisterMessage(ConfiguredOpt)
 
 TrueOpt = _reflection.GeneratedProtocolMessageType('TrueOpt', (_message.Message,), {
   'DESCRIPTOR' : _TRUEOPT,
   '__module__' : 'common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.TrueOpt)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.TrueOpt)
   })
 _sym_db.RegisterMessage(TrueOpt)
 
 FalseOpt = _reflection.GeneratedProtocolMessageType('FalseOpt', (_message.Message,), {
   'DESCRIPTOR' : _FALSEOPT,
   '__module__' : 'common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.FalseOpt)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.FalseOpt)
   })
 _sym_db.RegisterMessage(FalseOpt)
 
 EnabledOpt = _reflection.GeneratedProtocolMessageType('EnabledOpt', (_message.Message,), {
   'DESCRIPTOR' : _ENABLEDOPT,
   '__module__' : 'common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.EnabledOpt)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.EnabledOpt)
   })
 _sym_db.RegisterMessage(EnabledOpt)
 
 DisabledOpt = _reflection.GeneratedProtocolMessageType('DisabledOpt', (_message.Message,), {
   'DESCRIPTOR' : _DISABLEDOPT,
   '__module__' : 'common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.DisabledOpt)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.DisabledOpt)
   })
 _sym_db.RegisterMessage(DisabledOpt)
 
 EnabledDisabledOpt = _reflection.GeneratedProtocolMessageType('EnabledDisabledOpt', (_message.Message,), {
   'DESCRIPTOR' : _ENABLEDDISABLEDOPT,
   '__module__' : 'common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.EnabledDisabledOpt)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.EnabledDisabledOpt)
   })
 _sym_db.RegisterMessage(EnabledDisabledOpt)
 
 OnOffOpt = _reflection.GeneratedProtocolMessageType('OnOffOpt', (_message.Message,), {
   'DESCRIPTOR' : _ONOFFOPT,
   '__module__' : 'common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.OnOffOpt)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.OnOffOpt)
   })
 _sym_db.RegisterMessage(OnOffOpt)
 

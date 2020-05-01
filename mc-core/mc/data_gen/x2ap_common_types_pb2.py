@@ -19,10 +19,10 @@ import error_cause_pb2 as error__cause__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='x2ap_common_types.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x17x2ap_common_types.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x11\x65rror_cause.proto\"\xca\x02\n\x1b\x45N_DC_ResourceConfiguration\x12K\n\npDCPatSgNB\x18\x01 \x01(\x0e\x32\x37.uenibstreamprotobuf.EN_DC_ResourceConfiguration.Status\x12M\n\x0cmCGresources\x18\x02 \x01(\x0e\x32\x37.uenibstreamprotobuf.EN_DC_ResourceConfiguration.Status\x12M\n\x0csCGresources\x18\x03 \x01(\x0e\x32\x37.uenibstreamprotobuf.EN_DC_ResourceConfiguration.Status\"@\n\x06Status\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0b\n\x07present\x10\x01\x12\x0f\n\x0bnot_present\x10\x02\"\x99\x02\n\x1a\x45_RAB_Level_QoS_Parameters\x12\x0b\n\x03qCI\x18\x01 \x01(\r\x12[\n\x1e\x61llocationAndRetentionPriority\x18\x02 \x01(\x0b\x32\x33.uenibstreamprotobuf.AllocationAndRetentionPriority\x12\x42\n\x11gbrQosInformation\x18\x03 \x01(\x0b\x32\'.uenibstreamprotobuf.GBR_QosInformation\x12M\n\riE_Extensions\x18\x04 \x03(\x0b\x32\x36.uenibstreamprotobuf.E_RAB_Level_QoS_Parameters_ExtIEs\"\xd3\x01\n\x1e\x41llocationAndRetentionPriority\x12\x15\n\rpriorityLevel\x18\x01 \x01(\r\x12I\n\x15pre_emptionCapability\x18\x02 \x01(\x0b\x32*.uenibstreamprotobuf.Pre_emptionCapability\x12O\n\x18pre_emptionVulnerability\x18\x03 \x01(\x0b\x32-.uenibstreamprotobuf.Pre_emptionVulnerability\"\xa9\x01\n\x18Pre_emptionVulnerability\x12\x42\n\x05value\x18\x01 \x01(\x0e\x32\x33.uenibstreamprotobuf.Pre_emptionVulnerability.Value\"I\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x14\n\x10not_pre_emptable\x10\x01\x12\x10\n\x0cpre_emptable\x10\x02\"\xbb\x01\n\x15Pre_emptionCapability\x12?\n\x05value\x18\x01 \x01(\x0e\x32\x30.uenibstreamprotobuf.Pre_emptionCapability.Value\"a\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12!\n\x1dshall_not_trigger_pre_emption\x10\x01\x12\x1b\n\x17may_trigger_pre_emption\x10\x02\"\xa3\x01\n!E_RAB_Level_QoS_Parameters_ExtIEs\x12?\n\x19id_DownlinkPacketLossRate\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12=\n\x17id_UplinkPacketLossRate\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"\xe1\x01\n\x12GBR_QosInformation\x12\x1e\n\x16\x65_RAB_MaximumBitrateDL\x18\x01 \x01(\x04\x12\x1e\n\x16\x65_RAB_MaximumBitrateUL\x18\x02 \x01(\x04\x12!\n\x19\x65_RAB_GuaranteedBitrateDL\x18\x03 \x01(\x04\x12!\n\x19\x65_RAB_GuaranteedBitrateUL\x18\x04 \x01(\x04\x12\x45\n\riE_Extensions\x18\x05 \x03(\x0b\x32..uenibstreamprotobuf.GBR_QosInformation_ExtIEs\"\xc9\x02\n\x19GBR_QosInformation_ExtIEs\x12H\n\"id_extended_e_RAB_MaximumBitrateDL\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12H\n\"id_extended_e_RAB_MaximumBitrateUL\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12K\n%id_extended_e_RAB_GuaranteedBitrateDL\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12K\n%id_extended_e_RAB_GuaranteedBitrateUL\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\"\x8a\x01\n\x11GTPtunnelEndpoint\x12\x1d\n\x15transportLayerAddress\x18\x01 \x01(\t\x12\x10\n\x08gTP_TEID\x18\x02 \x01(\t\x12\x44\n\riE_Extensions\x18\x03 \x03(\x0b\x32-.uenibstreamprotobuf.GTPtunnelEndpoint_ExtIEs\"\x1a\n\x18GTPtunnelEndpoint_ExtIEs\"\xc2\x01\n\x07RLCMode\x12\x31\n\x05value\x18\x01 \x01(\x0e\x32\".uenibstreamprotobuf.RLCMode.Value\"\x83\x01\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\n\n\x06rlc_am\x10\x01\x12\x18\n\x14rlc_um_bidirectional\x10\x02\x12\x1c\n\x18rlc_um_unidirectional_ul\x10\x03\x12\x1c\n\x18rlc_um_unidirectional_dl\x10\x04\"\xb7\x01\n\nRLC_Status\x12^\n\x1areestablishment_Indication\x18\x01 \x01(\x0e\x32:.uenibstreamprotobuf.RLC_Status.Reestablishment_Indication\"I\n\x1aReestablishment_Indication\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x11\n\rreestablished\x10\x01\"\xb0\x01\n\x0fULConfiguration\x12I\n\x07uL_PDCP\x18\x01 \x01(\x0e\x32\x38.uenibstreamprotobuf.ULConfiguration.UL_UE_Configuration\"R\n\x13UL_UE_Configuration\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0b\n\x07no_data\x10\x01\x12\n\n\x06shared\x10\x02\x12\x08\n\x04only\x10\x03\"\x8d\x01\n\x0cPDCPSnLength\x12\x36\n\x05value\x18\x01 \x01(\x0e\x32\'.uenibstreamprotobuf.PDCPSnLength.Value\"E\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0f\n\x0btwelve_bits\x10\x01\x12\x11\n\reighteen_bits\x10\x02\"\xb6\x01\n\x14PDCPChangeIndication\x12>\n\x05value\x18\x01 \x01(\x0e\x32/.uenibstreamprotobuf.PDCPChangeIndication.Value\"^\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1a\n\x16s_KgNB_update_required\x10\x01\x12\x1f\n\x1bpDCP_data_recovery_required\x10\x02\"\x85\x01\n\tSplitSRBs\x12\x33\n\x05value\x18\x01 \x01(\x0e\x32$.uenibstreamprotobuf.SplitSRBs.Value\"C\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x08\n\x04srb1\x10\x01\x12\x08\n\x04srb2\x10\x02\x12\x0c\n\x08srb1and2\x10\x03\"r\n\x05NRCGI\x12\x15\n\rpLMN_Identity\x18\x01 \x01(\t\x12\x18\n\x10nRcellIdentifier\x18\x02 \x01(\t\x12\x38\n\riE_Extensions\x18\x03 \x03(\x0b\x32!.uenibstreamprotobuf.NRCGI_ExtIEs\"\x0e\n\x0cNRCGI_ExtIEs\";\n\x04\x45\x43GI\x12\x15\n\rpLMN_Identity\x18\x01 \x01(\t\x12\x1c\n\x14\x65UTRANcellIdentifier\x18\x02 \x01(\t\"?\n\nE_RAB_List\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\".uenibstreamprotobuf.E_RAB_ItemIEs\"G\n\rE_RAB_ItemIEs\x12\x36\n\rid_E_RAB_Item\x18\x01 \x01(\x0b\x32\x1f.uenibstreamprotobuf.E_RAB_Item\"I\n\nE_RAB_Item\x12\x10\n\x08\x65_RAB_ID\x18\x01 \x01(\r\x12)\n\x05\x63\x61use\x18\x02 \x01(\x0b\x32\x1a.uenibstreamprotobuf.Cause\"\xf3\x02\n\x16\x43riticalityDiagnostics\x12\x33\n\rprocedureCode\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x41\n\x11triggeringMessage\x18\x02 \x01(\x0b\x32&.uenibstreamprotobuf.TriggeringMessage\x12>\n\x14procedureCriticality\x18\x03 \x01(\x0b\x32 .uenibstreamprotobuf.Criticality\x12V\n\x19iEsCriticalityDiagnostics\x18\x04 \x01(\x0b\x32\x33.uenibstreamprotobuf.CriticalityDiagnostics_IE_List\x12I\n\riE_Extensions\x18\x05 \x03(\x0b\x32\x32.uenibstreamprotobuf.CriticalityDiagnostics_ExtIEs\"\xbd\x01\n\x11TriggeringMessage\x12;\n\x05value\x18\x01 \x01(\x0e\x32,.uenibstreamprotobuf.TriggeringMessage.Value\"k\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x16\n\x12initiating_message\x10\x01\x12\x16\n\x12successful_outcome\x10\x02\x12\x18\n\x14unsuccessful_outcome\x10\x03\"\x8b\x01\n\x0b\x43riticality\x12\x35\n\x05value\x18\x01 \x01(\x0e\x32&.uenibstreamprotobuf.Criticality.Value\"E\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\n\n\x06reject\x10\x01\x12\n\n\x06ignore\x10\x02\x12\n\n\x06notify\x10\x03\"i\n\x1e\x43riticalityDiagnostics_IE_List\x12G\n\x05items\x18\x01 \x03(\x0b\x32\x38.uenibstreamprotobuf.CriticalityDiagnostics_IE_List_Item\"\xa4\x01\n#CriticalityDiagnostics_IE_List_Item\x12\x37\n\riECriticality\x18\x01 \x01(\x0b\x32 .uenibstreamprotobuf.Criticality\x12\r\n\x05iE_ID\x18\x02 \x01(\r\x12\x35\n\x0btypeOfError\x18\x03 \x01(\x0b\x32 .uenibstreamprotobuf.TypeOfError\"\x88\x01\n\x0bTypeOfError\x12\x35\n\x05value\x18\x01 \x01(\x0e\x32&.uenibstreamprotobuf.TypeOfError.Value\"B\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x12\n\x0enot_understood\x10\x01\x12\x0b\n\x07missing\x10\x02\"\x1f\n\x1d\x43riticalityDiagnostics_ExtIEs\"\x8c\x02\n#SgNBResourceCoordinationInformation\x12*\n\x06nR_CGI\x18\x01 \x01(\x0b\x32\x1a.uenibstreamprotobuf.NRCGI\x12!\n\x19uLCoordinationInformation\x18\x02 \x01(\t\x12?\n\x19\x64LCoordinationInformation\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12U\n\riE_Extensions\x18\x04 \x03(\x0b\x32>.uenibstreamprotobuf.SgNBResourceCoordinationInformationExtIEs\"\xc5\x01\n)SgNBResourceCoordinationInformationExtIEs\x12*\n\x07id_ECGI\x18\x01 \x01(\x0b\x32\x19.uenibstreamprotobuf.ECGI\x12l\n(id_SgNBCoordinationAssistanceInformation\x18\x02 \x01(\x0b\x32:.uenibstreamprotobuf.SgNBCoordinationAssistanceInformation\"\xba\x01\n%SgNBCoordinationAssistanceInformation\x12O\n\x05value\x18\x01 \x01(\x0e\x32@.uenibstreamprotobuf.SgNBCoordinationAssistanceInformation.Value\"@\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1d\n\x19\x63oordination_not_required\x10\x01\"\x90\x01\n\x0eRRC_Config_Ind\x12\x38\n\x05value\x18\x01 \x01(\x0e\x32).uenibstreamprotobuf.RRC_Config_Ind.Value\"D\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0f\n\x0b\x66ull_config\x10\x01\x12\x10\n\x0c\x64\x65lta_config\x10\x02\"\xe7\x02\n\x17HandoverRestrictionList\x12\x13\n\x0bservingPLMN\x18\x01 \x01(\t\x12\x34\n\x0f\x65quivalentPLMNs\x18\x02 \x01(\x0b\x32\x1b.uenibstreamprotobuf.EPLMNs\x12\x37\n\x0c\x66orbiddenTAs\x18\x03 \x01(\x0b\x32!.uenibstreamprotobuf.ForbiddenTAs\x12\x37\n\x0c\x66orbiddenLAs\x18\x04 \x01(\x0b\x32!.uenibstreamprotobuf.ForbiddenLAs\x12\x43\n\x12\x66orbiddenInterRATs\x18\x05 \x01(\x0b\x32\'.uenibstreamprotobuf.ForbiddenInterRATs\x12J\n\riE_Extensions\x18\x06 \x03(\x0b\x32\x33.uenibstreamprotobuf.HandoverRestrictionList_ExtIEs\"\x17\n\x06\x45PLMNs\x12\r\n\x05items\x18\x01 \x03(\t\"E\n\x0c\x46orbiddenTAs\x12\x35\n\x05items\x18\x01 \x03(\x0b\x32&.uenibstreamprotobuf.ForbiddenTAs_Item\"e\n\x11\x46orbiddenTAs_Item\x12\x15\n\rpLMN_Identity\x18\x01 \x01(\t\x12\x39\n\rforbiddenTACs\x18\x02 \x01(\x0b\x32\".uenibstreamprotobuf.ForbiddenTACs\"\x1e\n\rForbiddenTACs\x12\r\n\x05items\x18\x01 \x03(\t\"E\n\x0c\x46orbiddenLAs\x12\x35\n\x05items\x18\x01 \x03(\x0b\x32&.uenibstreamprotobuf.ForbiddenLAs_Item\"e\n\x11\x46orbiddenLAs_Item\x12\x15\n\rpLMN_Identity\x18\x01 \x01(\t\x12\x39\n\rforbiddenLACs\x18\x02 \x01(\x0b\x32\".uenibstreamprotobuf.ForbiddenLACs\"\x1e\n\rForbiddenLACs\x12\r\n\x05items\x18\x01 \x03(\t\"\xcb\x01\n\x12\x46orbiddenInterRATs\x12<\n\x05value\x18\x01 \x01(\x0e\x32-.uenibstreamprotobuf.ForbiddenInterRATs.Value\"w\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x07\n\x03\x61ll\x10\x01\x12\t\n\x05geran\x10\x02\x12\t\n\x05utran\x10\x03\x12\x0c\n\x08\x63\x64ma2000\x10\x04\x12\x11\n\rgeranandutran\x10\x05\x12\x14\n\x10\x63\x64ma2000andutran\x10\x06\"\x94\x02\n\x1eHandoverRestrictionList_ExtIEs\x12\x62\n#id_NRrestrictioninEPSasSecondaryRAT\x18\x01 \x01(\x0b\x32\x35.uenibstreamprotobuf.NRrestrictioninEPSasSecondaryRAT\x12\x46\n\x15id_CNTypeRestrictions\x18\x02 \x01(\x0b\x32\'.uenibstreamprotobuf.CNTypeRestrictions\x12\x46\n\x15id_NRrestrictionin5GS\x18\x03 \x01(\x0b\x32\'.uenibstreamprotobuf.NRrestrictionin5GS\"\xb6\x01\n NRrestrictioninEPSasSecondaryRAT\x12J\n\x05value\x18\x01 \x01(\x0e\x32;.uenibstreamprotobuf.NRrestrictioninEPSasSecondaryRAT.Value\"F\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12#\n\x1fnRrestrictedinEPSasSecondaryRAT\x10\x01\"P\n\x12\x43NTypeRestrictions\x12:\n\x05items\x18\x01 \x03(\x0b\x32+.uenibstreamprotobuf.CNTypeRestrictionsItem\"\xaa\x01\n\x16\x43NTypeRestrictionsItem\x12\x0f\n\x07plmn_Id\x18\x01 \x01(\t\x12\x44\n\x07\x63n_type\x18\x02 \x01(\x0e\x32\x33.uenibstreamprotobuf.CNTypeRestrictionsItem.CN_type\"9\n\x07\x43N_type\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x14\n\x10\x66iveGC_forbidden\x10\x01\"\x8c\x01\n\x12NRrestrictionin5GS\x12<\n\x05value\x18\x01 \x01(\x0e\x32-.uenibstreamprotobuf.NRrestrictionin5GS.Value\"8\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x15\n\x11nRrestrictedin5GS\x10\x01\"c\n\x18NRUESecurityCapabilities\x12\x1e\n\x16nRencryptionAlgorithms\x18\x01 \x01(\t\x12\'\n\x1fnRintegrityProtectionAlgorithms\x18\x02 \x01(\t\"\xbe\x01\n\x19UEAggregateMaximumBitRate\x12)\n!uEaggregateMaximumBitRateDownlink\x18\x01 \x01(\x04\x12\'\n\x1fuEaggregateMaximumBitRateUplink\x18\x02 \x01(\x04\x12M\n\riE_Extensions\x18\x03 \x03(\x0b\x32\x36.uenibstreamprotobuf.UEAggregate_MaximumBitrate_ExtIEs\"\xcb\x01\n!UEAggregate_MaximumBitrate_ExtIEs\x12S\n-id_extended_uEaggregateMaximumBitRateDownlink\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12Q\n+id_extended_uEaggregateMaximumBitRateUplink\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\"\x86\x01\n\rDL_Forwarding\x12\x37\n\x05value\x18\x01 \x01(\x0e\x32(.uenibstreamprotobuf.DL_Forwarding.Value\"<\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x19\n\x15\x64L_forwardingProposed\x10\x01\"\x95\x01\n\x15\x44uplicationActivation\x12?\n\x05value\x18\x01 \x01(\x0e\x32\x30.uenibstreamprotobuf.DuplicationActivation.Value\";\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\n\n\x06\x61\x63tive\x10\x01\x12\x0c\n\x08inactive\x10\x02\"\x92\x02\n#MeNBResourceCoordinationInformation\x12\x30\n\reUTRA_Cell_ID\x18\x01 \x01(\x0b\x32\x19.uenibstreamprotobuf.ECGI\x12!\n\x19uLCoordinationInformation\x18\x02 \x01(\t\x12?\n\x19\x64LCoordinationInformation\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12U\n\riE_Extensions\x18\x04 \x03(\x0b\x32>.uenibstreamprotobuf.MeNBResourceCoordinationInformationExtIEs\"\xc7\x01\n)MeNBResourceCoordinationInformationExtIEs\x12,\n\x08id_NRCGI\x18\x01 \x01(\x0b\x32\x1a.uenibstreamprotobuf.NRCGI\x12l\n(id_MeNBCoordinationAssistanceInformation\x18\x02 \x01(\x0b\x32:.uenibstreamprotobuf.MeNBCoordinationAssistanceInformation\"\xba\x01\n%MeNBCoordinationAssistanceInformation\x12O\n\x05value\x18\x01 \x01(\x0e\x32@.uenibstreamprotobuf.MeNBCoordinationAssistanceInformation.Value\"@\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1d\n\x19\x63oordination_not_required\x10\x01\"*\n\nCOUNTvalue\x12\x0f\n\x07pDCP_SN\x18\x01 \x01(\r\x12\x0b\n\x03hFN\x18\x02 \x01(\r\"B\n\x12\x43OUNTValueExtended\x12\x17\n\x0fpDCP_SNExtended\x18\x01 \x01(\r\x12\x13\n\x0bhFNModified\x18\x02 \x01(\r\"S\n\x19\x43OUNTvaluePDCP_SNlength18\x12\x17\n\x0fpDCP_SNlength18\x18\x01 \x01(\r\x12\x1d\n\x15hFNforPDCP_SNlength18\x18\x02 \x01(\r\"\xa6\x01\n\x13\x45xpectedUEBehaviour\x12J\n\x10\x65xpectedActivity\x18\x01 \x01(\x0b\x32\x30.uenibstreamprotobuf.ExpectedUEActivityBehaviour\x12\x43\n\x12\x65xpectedHOInterval\x18\x02 \x01(\x0b\x32\'.uenibstreamprotobuf.ExpectedHOInterval\"\xd2\x02\n\x1b\x45xpectedUEActivityBehaviour\x12<\n\x16\x65xpectedActivityPeriod\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x38\n\x12\x65xpectedIdlePeriod\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12k\n&sourceOfUEActivityBehaviourInformation\x18\x03 \x01(\x0b\x32;.uenibstreamprotobuf.SourceOfUEActivityBehaviourInformation\x12N\n\riE_Extensions\x18\x04 \x03(\x0b\x32\x37.uenibstreamprotobuf.ExpectedUEActivityBehaviour_ExtIEs\"$\n\"ExpectedUEActivityBehaviour_ExtIEs\"\xc8\x01\n\x12\x45xpectedHOInterval\x12<\n\x05value\x18\x01 \x01(\x0e\x32-.uenibstreamprotobuf.ExpectedHOInterval.Value\"t\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\t\n\x05sec15\x10\x01\x12\t\n\x05sec30\x10\x02\x12\t\n\x05sec60\x10\x03\x12\t\n\x05sec90\x10\x04\x12\n\n\x06sec120\x10\x05\x12\n\n\x06sec180\x10\x06\x12\r\n\tlong_time\x10\x07\"\xcb\x01\n&SourceOfUEActivityBehaviourInformation\x12P\n\x05value\x18\x01 \x01(\x0e\x32\x41.uenibstreamprotobuf.SourceOfUEActivityBehaviourInformation.Value\"O\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1c\n\x18subscription_information\x10\x01\x12\x0e\n\nstatistics\x10\x02\"\xb6\x01\n\x19SGNB_Addition_Trigger_Ind\x12\x43\n\x05value\x18\x01 \x01(\x0e\x32\x34.uenibstreamprotobuf.SGNB_Addition_Trigger_Ind.Value\"T\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\r\n\tsn_change\x10\x01\x12\x10\n\x0cinter_eNB_HO\x10\x02\x12\x10\n\x0cintra_eNB_HO\x10\x03\x42:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x17x2ap_common_types.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x11\x65rror_cause.proto\"\xca\x02\n\x1b\x45N_DC_ResourceConfiguration\x12K\n\npDCPatSgNB\x18\x01 \x01(\x0e\x32\x37.streaming_protobufs.EN_DC_ResourceConfiguration.Status\x12M\n\x0cmCGresources\x18\x02 \x01(\x0e\x32\x37.streaming_protobufs.EN_DC_ResourceConfiguration.Status\x12M\n\x0csCGresources\x18\x03 \x01(\x0e\x32\x37.streaming_protobufs.EN_DC_ResourceConfiguration.Status\"@\n\x06Status\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0b\n\x07present\x10\x01\x12\x0f\n\x0bnot_present\x10\x02\"\x99\x02\n\x1a\x45_RAB_Level_QoS_Parameters\x12\x0b\n\x03qCI\x18\x01 \x01(\r\x12[\n\x1e\x61llocationAndRetentionPriority\x18\x02 \x01(\x0b\x32\x33.streaming_protobufs.AllocationAndRetentionPriority\x12\x42\n\x11gbrQosInformation\x18\x03 \x01(\x0b\x32\'.streaming_protobufs.GBR_QosInformation\x12M\n\riE_Extensions\x18\x04 \x03(\x0b\x32\x36.streaming_protobufs.E_RAB_Level_QoS_Parameters_ExtIEs\"\xd3\x01\n\x1e\x41llocationAndRetentionPriority\x12\x15\n\rpriorityLevel\x18\x01 \x01(\r\x12I\n\x15pre_emptionCapability\x18\x02 \x01(\x0b\x32*.streaming_protobufs.Pre_emptionCapability\x12O\n\x18pre_emptionVulnerability\x18\x03 \x01(\x0b\x32-.streaming_protobufs.Pre_emptionVulnerability\"\xa9\x01\n\x18Pre_emptionVulnerability\x12\x42\n\x05value\x18\x01 \x01(\x0e\x32\x33.streaming_protobufs.Pre_emptionVulnerability.Value\"I\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x14\n\x10not_pre_emptable\x10\x01\x12\x10\n\x0cpre_emptable\x10\x02\"\xbb\x01\n\x15Pre_emptionCapability\x12?\n\x05value\x18\x01 \x01(\x0e\x32\x30.streaming_protobufs.Pre_emptionCapability.Value\"a\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12!\n\x1dshall_not_trigger_pre_emption\x10\x01\x12\x1b\n\x17may_trigger_pre_emption\x10\x02\"\xa3\x01\n!E_RAB_Level_QoS_Parameters_ExtIEs\x12?\n\x19id_DownlinkPacketLossRate\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12=\n\x17id_UplinkPacketLossRate\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"\xe1\x01\n\x12GBR_QosInformation\x12\x1e\n\x16\x65_RAB_MaximumBitrateDL\x18\x01 \x01(\x04\x12\x1e\n\x16\x65_RAB_MaximumBitrateUL\x18\x02 \x01(\x04\x12!\n\x19\x65_RAB_GuaranteedBitrateDL\x18\x03 \x01(\x04\x12!\n\x19\x65_RAB_GuaranteedBitrateUL\x18\x04 \x01(\x04\x12\x45\n\riE_Extensions\x18\x05 \x03(\x0b\x32..streaming_protobufs.GBR_QosInformation_ExtIEs\"\xc9\x02\n\x19GBR_QosInformation_ExtIEs\x12H\n\"id_extended_e_RAB_MaximumBitrateDL\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12H\n\"id_extended_e_RAB_MaximumBitrateUL\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12K\n%id_extended_e_RAB_GuaranteedBitrateDL\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12K\n%id_extended_e_RAB_GuaranteedBitrateUL\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\"\x93\x01\n\x0cGlobalGNB_ID\x12\x15\n\rpLMN_Identity\x18\x01 \x01(\x0c\x12+\n\x06gNB_ID\x18\x02 \x01(\x0b\x32\x1b.streaming_protobufs.GNB_ID\x12?\n\riE_Extensions\x18\x03 \x03(\x0b\x32(.streaming_protobufs.GlobalGNB_ID_ExtIEs\"\x1f\n\x06GNB_ID\x12\x10\n\x06gNB_ID\x18\x01 \x01(\x0cH\x00\x42\x03\n\x01\x63\"\x15\n\x13GlobalGNB_ID_ExtIEs\"\x8a\x01\n\x11GTPtunnelEndpoint\x12\x1d\n\x15transportLayerAddress\x18\x01 \x01(\x0c\x12\x10\n\x08gTP_TEID\x18\x02 \x01(\x0c\x12\x44\n\riE_Extensions\x18\x03 \x03(\x0b\x32-.streaming_protobufs.GTPtunnelEndpoint_ExtIEs\"\x1a\n\x18GTPtunnelEndpoint_ExtIEs\"\xc2\x01\n\x07RLCMode\x12\x31\n\x05value\x18\x01 \x01(\x0e\x32\".streaming_protobufs.RLCMode.Value\"\x83\x01\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\n\n\x06rlc_am\x10\x01\x12\x18\n\x14rlc_um_bidirectional\x10\x02\x12\x1c\n\x18rlc_um_unidirectional_ul\x10\x03\x12\x1c\n\x18rlc_um_unidirectional_dl\x10\x04\"\xb7\x01\n\nRLC_Status\x12^\n\x1areestablishment_Indication\x18\x01 \x01(\x0e\x32:.streaming_protobufs.RLC_Status.Reestablishment_Indication\"I\n\x1aReestablishment_Indication\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x11\n\rreestablished\x10\x01\"\xb0\x01\n\x0fULConfiguration\x12I\n\x07uL_PDCP\x18\x01 \x01(\x0e\x32\x38.streaming_protobufs.ULConfiguration.UL_UE_Configuration\"R\n\x13UL_UE_Configuration\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0b\n\x07no_data\x10\x01\x12\n\n\x06shared\x10\x02\x12\x08\n\x04only\x10\x03\"\x8d\x01\n\x0cPDCPSnLength\x12\x36\n\x05value\x18\x01 \x01(\x0e\x32\'.streaming_protobufs.PDCPSnLength.Value\"E\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0f\n\x0btwelve_bits\x10\x01\x12\x11\n\reighteen_bits\x10\x02\"\xb6\x01\n\x14PDCPChangeIndication\x12>\n\x05value\x18\x01 \x01(\x0e\x32/.streaming_protobufs.PDCPChangeIndication.Value\"^\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1a\n\x16s_KgNB_update_required\x10\x01\x12\x1f\n\x1bpDCP_data_recovery_required\x10\x02\"\x85\x01\n\tSplitSRBs\x12\x33\n\x05value\x18\x01 \x01(\x0e\x32$.streaming_protobufs.SplitSRBs.Value\"C\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x08\n\x04srb1\x10\x01\x12\x08\n\x04srb2\x10\x02\x12\x0c\n\x08srb1and2\x10\x03\"r\n\x05NRCGI\x12\x15\n\rpLMN_Identity\x18\x01 \x01(\x0c\x12\x18\n\x10nRcellIdentifier\x18\x02 \x01(\x0c\x12\x38\n\riE_Extensions\x18\x03 \x03(\x0b\x32!.streaming_protobufs.NRCGI_ExtIEs\"\x0e\n\x0cNRCGI_ExtIEs\";\n\x04\x45\x43GI\x12\x15\n\rpLMN_Identity\x18\x01 \x01(\x0c\x12\x1c\n\x14\x65UTRANcellIdentifier\x18\x02 \x01(\x0c\"?\n\nE_RAB_List\x12\x31\n\x05items\x18\x01 \x03(\x0b\x32\".streaming_protobufs.E_RAB_ItemIEs\"G\n\rE_RAB_ItemIEs\x12\x36\n\rid_E_RAB_Item\x18\x01 \x01(\x0b\x32\x1f.streaming_protobufs.E_RAB_Item\"I\n\nE_RAB_Item\x12\x10\n\x08\x65_RAB_ID\x18\x01 \x01(\r\x12)\n\x05\x63\x61use\x18\x02 \x01(\x0b\x32\x1a.streaming_protobufs.Cause\"X\n\x1a\x45RABActivityNotifyItemList\x12:\n\x05items\x18\x01 \x03(\x0b\x32+.streaming_protobufs.ERABActivityNotifyItem\"\xc2\x01\n\x16\x45RABActivityNotifyItem\x12\x10\n\x08\x65_RAB_ID\x18\x01 \x01(\r\x12K\n\x0e\x61\x63tivityReport\x18\x02 \x01(\x0b\x32\x33.streaming_protobufs.UserPlaneTrafficActivityReport\x12I\n\riE_Extensions\x18\x03 \x01(\x0b\x32\x32.streaming_protobufs.ERABActivityNotifyItem_ExtIEs\"\x1f\n\x1d\x45RABActivityNotifyItem_ExtIEs\"\xad\x01\n\x1eUserPlaneTrafficActivityReport\x12H\n\x05value\x18\x01 \x01(\x0e\x32\x39.streaming_protobufs.UserPlaneTrafficActivityReport.Value\"A\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0c\n\x08inactive\x10\x01\x12\x10\n\x0cre_activated\x10\x02\"\xa1\x01\n\x16GNBOverloadInformation\x12@\n\x05value\x18\x01 \x01(\x0e\x32\x31.streaming_protobufs.GNBOverloadInformation.Value\"E\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0e\n\noverloaded\x10\x01\x12\x12\n\x0enot_overloaded\x10\x02\"\xf3\x02\n\x16\x43riticalityDiagnostics\x12\x33\n\rprocedureCode\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x41\n\x11triggeringMessage\x18\x02 \x01(\x0b\x32&.streaming_protobufs.TriggeringMessage\x12>\n\x14procedureCriticality\x18\x03 \x01(\x0b\x32 .streaming_protobufs.Criticality\x12V\n\x19iEsCriticalityDiagnostics\x18\x04 \x01(\x0b\x32\x33.streaming_protobufs.CriticalityDiagnostics_IE_List\x12I\n\riE_Extensions\x18\x05 \x03(\x0b\x32\x32.streaming_protobufs.CriticalityDiagnostics_ExtIEs\"\xbd\x01\n\x11TriggeringMessage\x12;\n\x05value\x18\x01 \x01(\x0e\x32,.streaming_protobufs.TriggeringMessage.Value\"k\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x16\n\x12initiating_message\x10\x01\x12\x16\n\x12successful_outcome\x10\x02\x12\x18\n\x14unsuccessful_outcome\x10\x03\"\x8b\x01\n\x0b\x43riticality\x12\x35\n\x05value\x18\x01 \x01(\x0e\x32&.streaming_protobufs.Criticality.Value\"E\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\n\n\x06reject\x10\x01\x12\n\n\x06ignore\x10\x02\x12\n\n\x06notify\x10\x03\"i\n\x1e\x43riticalityDiagnostics_IE_List\x12G\n\x05items\x18\x01 \x03(\x0b\x32\x38.streaming_protobufs.CriticalityDiagnostics_IE_List_Item\"\xa4\x01\n#CriticalityDiagnostics_IE_List_Item\x12\x37\n\riECriticality\x18\x01 \x01(\x0b\x32 .streaming_protobufs.Criticality\x12\r\n\x05iE_ID\x18\x02 \x01(\r\x12\x35\n\x0btypeOfError\x18\x03 \x01(\x0b\x32 .streaming_protobufs.TypeOfError\"\x88\x01\n\x0bTypeOfError\x12\x35\n\x05value\x18\x01 \x01(\x0e\x32&.streaming_protobufs.TypeOfError.Value\"B\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x12\n\x0enot_understood\x10\x01\x12\x0b\n\x07missing\x10\x02\"\x1f\n\x1d\x43riticalityDiagnostics_ExtIEs\"\x8b\x02\n#SgNBResourceCoordinationInformation\x12*\n\x06nR_CGI\x18\x01 \x01(\x0b\x32\x1a.streaming_protobufs.NRCGI\x12!\n\x19uLCoordinationInformation\x18\x02 \x01(\x0c\x12>\n\x19\x64LCoordinationInformation\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12U\n\riE_Extensions\x18\x04 \x03(\x0b\x32>.streaming_protobufs.SgNBResourceCoordinationInformationExtIEs\"\xc5\x01\n)SgNBResourceCoordinationInformationExtIEs\x12*\n\x07id_ECGI\x18\x01 \x01(\x0b\x32\x19.streaming_protobufs.ECGI\x12l\n(id_SgNBCoordinationAssistanceInformation\x18\x02 \x01(\x0b\x32:.streaming_protobufs.SgNBCoordinationAssistanceInformation\"\xba\x01\n%SgNBCoordinationAssistanceInformation\x12O\n\x05value\x18\x01 \x01(\x0e\x32@.streaming_protobufs.SgNBCoordinationAssistanceInformation.Value\"@\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1d\n\x19\x63oordination_not_required\x10\x01\"\x90\x01\n\x0eRRC_Config_Ind\x12\x38\n\x05value\x18\x01 \x01(\x0e\x32).streaming_protobufs.RRC_Config_Ind.Value\"D\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x0f\n\x0b\x66ull_config\x10\x01\x12\x10\n\x0c\x64\x65lta_config\x10\x02\"\xe7\x02\n\x17HandoverRestrictionList\x12\x13\n\x0bservingPLMN\x18\x01 \x01(\x0c\x12\x34\n\x0f\x65quivalentPLMNs\x18\x02 \x01(\x0b\x32\x1b.streaming_protobufs.EPLMNs\x12\x37\n\x0c\x66orbiddenTAs\x18\x03 \x01(\x0b\x32!.streaming_protobufs.ForbiddenTAs\x12\x37\n\x0c\x66orbiddenLAs\x18\x04 \x01(\x0b\x32!.streaming_protobufs.ForbiddenLAs\x12\x43\n\x12\x66orbiddenInterRATs\x18\x05 \x01(\x0b\x32\'.streaming_protobufs.ForbiddenInterRATs\x12J\n\riE_Extensions\x18\x06 \x03(\x0b\x32\x33.streaming_protobufs.HandoverRestrictionList_ExtIEs\"\x17\n\x06\x45PLMNs\x12\r\n\x05items\x18\x01 \x03(\x0c\"E\n\x0c\x46orbiddenTAs\x12\x35\n\x05items\x18\x01 \x03(\x0b\x32&.streaming_protobufs.ForbiddenTAs_Item\"e\n\x11\x46orbiddenTAs_Item\x12\x15\n\rpLMN_Identity\x18\x01 \x01(\x0c\x12\x39\n\rforbiddenTACs\x18\x02 \x01(\x0b\x32\".streaming_protobufs.ForbiddenTACs\"\x1e\n\rForbiddenTACs\x12\r\n\x05items\x18\x01 \x03(\x0c\"E\n\x0c\x46orbiddenLAs\x12\x35\n\x05items\x18\x01 \x03(\x0b\x32&.streaming_protobufs.ForbiddenLAs_Item\"e\n\x11\x46orbiddenLAs_Item\x12\x15\n\rpLMN_Identity\x18\x01 \x01(\x0c\x12\x39\n\rforbiddenLACs\x18\x02 \x01(\x0b\x32\".streaming_protobufs.ForbiddenLACs\"\x1e\n\rForbiddenLACs\x12\r\n\x05items\x18\x01 \x03(\x0c\"\xcb\x01\n\x12\x46orbiddenInterRATs\x12<\n\x05value\x18\x01 \x01(\x0e\x32-.streaming_protobufs.ForbiddenInterRATs.Value\"w\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x07\n\x03\x61ll\x10\x01\x12\t\n\x05geran\x10\x02\x12\t\n\x05utran\x10\x03\x12\x0c\n\x08\x63\x64ma2000\x10\x04\x12\x11\n\rgeranandutran\x10\x05\x12\x14\n\x10\x63\x64ma2000andutran\x10\x06\"\x94\x02\n\x1eHandoverRestrictionList_ExtIEs\x12\x62\n#id_NRrestrictioninEPSasSecondaryRAT\x18\x01 \x01(\x0b\x32\x35.streaming_protobufs.NRrestrictioninEPSasSecondaryRAT\x12\x46\n\x15id_CNTypeRestrictions\x18\x02 \x01(\x0b\x32\'.streaming_protobufs.CNTypeRestrictions\x12\x46\n\x15id_NRrestrictionin5GS\x18\x03 \x01(\x0b\x32\'.streaming_protobufs.NRrestrictionin5GS\"\xb6\x01\n NRrestrictioninEPSasSecondaryRAT\x12J\n\x05value\x18\x01 \x01(\x0e\x32;.streaming_protobufs.NRrestrictioninEPSasSecondaryRAT.Value\"F\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12#\n\x1fnRrestrictedinEPSasSecondaryRAT\x10\x01\"P\n\x12\x43NTypeRestrictions\x12:\n\x05items\x18\x01 \x03(\x0b\x32+.streaming_protobufs.CNTypeRestrictionsItem\"\xaa\x01\n\x16\x43NTypeRestrictionsItem\x12\x0f\n\x07plmn_Id\x18\x01 \x01(\x0c\x12\x44\n\x07\x63n_type\x18\x02 \x01(\x0e\x32\x33.streaming_protobufs.CNTypeRestrictionsItem.CN_type\"9\n\x07\x43N_type\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x14\n\x10\x66iveGC_forbidden\x10\x01\"\x8c\x01\n\x12NRrestrictionin5GS\x12<\n\x05value\x18\x01 \x01(\x0e\x32-.streaming_protobufs.NRrestrictionin5GS.Value\"8\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x15\n\x11nRrestrictedin5GS\x10\x01\"c\n\x18NRUESecurityCapabilities\x12\x1e\n\x16nRencryptionAlgorithms\x18\x01 \x01(\x0c\x12\'\n\x1fnRintegrityProtectionAlgorithms\x18\x02 \x01(\x0c\"\xbe\x01\n\x19UEAggregateMaximumBitRate\x12)\n!uEaggregateMaximumBitRateDownlink\x18\x01 \x01(\x04\x12\'\n\x1fuEaggregateMaximumBitRateUplink\x18\x02 \x01(\x04\x12M\n\riE_Extensions\x18\x03 \x03(\x0b\x32\x36.streaming_protobufs.UEAggregate_MaximumBitrate_ExtIEs\"\xcb\x01\n!UEAggregate_MaximumBitrate_ExtIEs\x12S\n-id_extended_uEaggregateMaximumBitRateDownlink\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\x12Q\n+id_extended_uEaggregateMaximumBitRateUplink\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt64Value\"\x86\x01\n\rDL_Forwarding\x12\x37\n\x05value\x18\x01 \x01(\x0e\x32(.streaming_protobufs.DL_Forwarding.Value\"<\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x19\n\x15\x64L_forwardingProposed\x10\x01\"\x95\x01\n\x15\x44uplicationActivation\x12?\n\x05value\x18\x01 \x01(\x0e\x32\x30.streaming_protobufs.DuplicationActivation.Value\";\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\n\n\x06\x61\x63tive\x10\x01\x12\x0c\n\x08inactive\x10\x02\"\x91\x02\n#MeNBResourceCoordinationInformation\x12\x30\n\reUTRA_Cell_ID\x18\x01 \x01(\x0b\x32\x19.streaming_protobufs.ECGI\x12!\n\x19uLCoordinationInformation\x18\x02 \x01(\x0c\x12>\n\x19\x64LCoordinationInformation\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12U\n\riE_Extensions\x18\x04 \x03(\x0b\x32>.streaming_protobufs.MeNBResourceCoordinationInformationExtIEs\"\xc7\x01\n)MeNBResourceCoordinationInformationExtIEs\x12,\n\x08id_NRCGI\x18\x01 \x01(\x0b\x32\x1a.streaming_protobufs.NRCGI\x12l\n(id_MeNBCoordinationAssistanceInformation\x18\x02 \x01(\x0b\x32:.streaming_protobufs.MeNBCoordinationAssistanceInformation\"\xba\x01\n%MeNBCoordinationAssistanceInformation\x12O\n\x05value\x18\x01 \x01(\x0e\x32@.streaming_protobufs.MeNBCoordinationAssistanceInformation.Value\"@\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1d\n\x19\x63oordination_not_required\x10\x01\"*\n\nCOUNTvalue\x12\x0f\n\x07pDCP_SN\x18\x01 \x01(\r\x12\x0b\n\x03hFN\x18\x02 \x01(\r\"B\n\x12\x43OUNTValueExtended\x12\x17\n\x0fpDCP_SNExtended\x18\x01 \x01(\r\x12\x13\n\x0bhFNModified\x18\x02 \x01(\r\"S\n\x19\x43OUNTvaluePDCP_SNlength18\x12\x17\n\x0fpDCP_SNlength18\x18\x01 \x01(\r\x12\x1d\n\x15hFNforPDCP_SNlength18\x18\x02 \x01(\r\"\xa6\x01\n\x13\x45xpectedUEBehaviour\x12J\n\x10\x65xpectedActivity\x18\x01 \x01(\x0b\x32\x30.streaming_protobufs.ExpectedUEActivityBehaviour\x12\x43\n\x12\x65xpectedHOInterval\x18\x02 \x01(\x0b\x32\'.streaming_protobufs.ExpectedHOInterval\"\xd2\x02\n\x1b\x45xpectedUEActivityBehaviour\x12<\n\x16\x65xpectedActivityPeriod\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x38\n\x12\x65xpectedIdlePeriod\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12k\n&sourceOfUEActivityBehaviourInformation\x18\x03 \x01(\x0b\x32;.streaming_protobufs.SourceOfUEActivityBehaviourInformation\x12N\n\riE_Extensions\x18\x04 \x03(\x0b\x32\x37.streaming_protobufs.ExpectedUEActivityBehaviour_ExtIEs\"$\n\"ExpectedUEActivityBehaviour_ExtIEs\"\xc8\x01\n\x12\x45xpectedHOInterval\x12<\n\x05value\x18\x01 \x01(\x0e\x32-.streaming_protobufs.ExpectedHOInterval.Value\"t\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\t\n\x05sec15\x10\x01\x12\t\n\x05sec30\x10\x02\x12\t\n\x05sec60\x10\x03\x12\t\n\x05sec90\x10\x04\x12\n\n\x06sec120\x10\x05\x12\n\n\x06sec180\x10\x06\x12\r\n\tlong_time\x10\x07\"\xcb\x01\n&SourceOfUEActivityBehaviourInformation\x12P\n\x05value\x18\x01 \x01(\x0e\x32\x41.streaming_protobufs.SourceOfUEActivityBehaviourInformation.Value\"O\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x1c\n\x18subscription_information\x10\x01\x12\x0e\n\nstatistics\x10\x02\"\xb6\x01\n\x19SGNB_Addition_Trigger_Ind\x12\x43\n\x05value\x18\x01 \x01(\x0e\x32\x34.streaming_protobufs.SGNB_Addition_Trigger_Ind.Value\"T\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\r\n\tsn_change\x10\x01\x12\x10\n\x0cinter_eNB_HO\x10\x02\x12\x10\n\x0cintra_eNB_HO\x10\x03\x42\x33Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,error__cause__pb2.DESCRIPTOR,])
 
@@ -30,7 +30,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _EN_DC_RESOURCECONFIGURATION_STATUS = _descriptor.EnumDescriptor(
   name='Status',
-  full_name='uenibstreamprotobuf.EN_DC_ResourceConfiguration.Status',
+  full_name='streaming_protobufs.EN_DC_ResourceConfiguration.Status',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -56,7 +56,7 @@ _sym_db.RegisterEnumDescriptor(_EN_DC_RESOURCECONFIGURATION_STATUS)
 
 _PRE_EMPTIONVULNERABILITY_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.Pre_emptionVulnerability.Value',
+  full_name='streaming_protobufs.Pre_emptionVulnerability.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -82,7 +82,7 @@ _sym_db.RegisterEnumDescriptor(_PRE_EMPTIONVULNERABILITY_VALUE)
 
 _PRE_EMPTIONCAPABILITY_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.Pre_emptionCapability.Value',
+  full_name='streaming_protobufs.Pre_emptionCapability.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -108,7 +108,7 @@ _sym_db.RegisterEnumDescriptor(_PRE_EMPTIONCAPABILITY_VALUE)
 
 _RLCMODE_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.RLCMode.Value',
+  full_name='streaming_protobufs.RLCMode.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -135,14 +135,14 @@ _RLCMODE_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2251,
-  serialized_end=2382,
+  serialized_start=2457,
+  serialized_end=2588,
 )
 _sym_db.RegisterEnumDescriptor(_RLCMODE_VALUE)
 
 _RLC_STATUS_REESTABLISHMENT_INDICATION = _descriptor.EnumDescriptor(
   name='Reestablishment_Indication',
-  full_name='uenibstreamprotobuf.RLC_Status.Reestablishment_Indication',
+  full_name='streaming_protobufs.RLC_Status.Reestablishment_Indication',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -157,14 +157,14 @@ _RLC_STATUS_REESTABLISHMENT_INDICATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2495,
-  serialized_end=2568,
+  serialized_start=2701,
+  serialized_end=2774,
 )
 _sym_db.RegisterEnumDescriptor(_RLC_STATUS_REESTABLISHMENT_INDICATION)
 
 _ULCONFIGURATION_UL_UE_CONFIGURATION = _descriptor.EnumDescriptor(
   name='UL_UE_Configuration',
-  full_name='uenibstreamprotobuf.ULConfiguration.UL_UE_Configuration',
+  full_name='streaming_protobufs.ULConfiguration.UL_UE_Configuration',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -187,14 +187,14 @@ _ULCONFIGURATION_UL_UE_CONFIGURATION = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2665,
-  serialized_end=2747,
+  serialized_start=2871,
+  serialized_end=2953,
 )
 _sym_db.RegisterEnumDescriptor(_ULCONFIGURATION_UL_UE_CONFIGURATION)
 
 _PDCPSNLENGTH_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.PDCPSnLength.Value',
+  full_name='streaming_protobufs.PDCPSnLength.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -213,14 +213,14 @@ _PDCPSNLENGTH_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2822,
-  serialized_end=2891,
+  serialized_start=3028,
+  serialized_end=3097,
 )
 _sym_db.RegisterEnumDescriptor(_PDCPSNLENGTH_VALUE)
 
 _PDCPCHANGEINDICATION_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.PDCPChangeIndication.Value',
+  full_name='streaming_protobufs.PDCPChangeIndication.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -239,14 +239,14 @@ _PDCPCHANGEINDICATION_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2982,
-  serialized_end=3076,
+  serialized_start=3188,
+  serialized_end=3282,
 )
 _sym_db.RegisterEnumDescriptor(_PDCPCHANGEINDICATION_VALUE)
 
 _SPLITSRBS_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.SplitSRBs.Value',
+  full_name='streaming_protobufs.SplitSRBs.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -269,14 +269,66 @@ _SPLITSRBS_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3145,
-  serialized_end=3212,
+  serialized_start=3351,
+  serialized_end=3418,
 )
 _sym_db.RegisterEnumDescriptor(_SPLITSRBS_VALUE)
 
+_USERPLANETRAFFICACTIVITYREPORT_VALUE = _descriptor.EnumDescriptor(
+  name='Value',
+  full_name='streaming_protobufs.UserPlaneTrafficActivityReport.Value',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='protobuf_unspecified', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='inactive', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='re_activated', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4255,
+  serialized_end=4320,
+)
+_sym_db.RegisterEnumDescriptor(_USERPLANETRAFFICACTIVITYREPORT_VALUE)
+
+_GNBOVERLOADINFORMATION_VALUE = _descriptor.EnumDescriptor(
+  name='Value',
+  full_name='streaming_protobufs.GNBOverloadInformation.Value',
+  filename=None,
+  file=DESCRIPTOR,
+  values=[
+    _descriptor.EnumValueDescriptor(
+      name='protobuf_unspecified', index=0, number=0,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='overloaded', index=1, number=1,
+      serialized_options=None,
+      type=None),
+    _descriptor.EnumValueDescriptor(
+      name='not_overloaded', index=2, number=2,
+      serialized_options=None,
+      type=None),
+  ],
+  containing_type=None,
+  serialized_options=None,
+  serialized_start=4415,
+  serialized_end=4484,
+)
+_sym_db.RegisterEnumDescriptor(_GNBOVERLOADINFORMATION_VALUE)
+
 _TRIGGERINGMESSAGE_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.TriggeringMessage.Value',
+  full_name='streaming_protobufs.TriggeringMessage.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -299,14 +351,14 @@ _TRIGGERINGMESSAGE_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4077,
-  serialized_end=4184,
+  serialized_start=4943,
+  serialized_end=5050,
 )
 _sym_db.RegisterEnumDescriptor(_TRIGGERINGMESSAGE_VALUE)
 
 _CRITICALITY_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.Criticality.Value',
+  full_name='streaming_protobufs.Criticality.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -329,14 +381,14 @@ _CRITICALITY_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4257,
-  serialized_end=4326,
+  serialized_start=5123,
+  serialized_end=5192,
 )
 _sym_db.RegisterEnumDescriptor(_CRITICALITY_VALUE)
 
 _TYPEOFERROR_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.TypeOfError.Value',
+  full_name='streaming_protobufs.TypeOfError.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -355,14 +407,14 @@ _TYPEOFERROR_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4673,
-  serialized_end=4739,
+  serialized_start=5539,
+  serialized_end=5605,
 )
 _sym_db.RegisterEnumDescriptor(_TYPEOFERROR_VALUE)
 
 _SGNBCOORDINATIONASSISTANCEINFORMATION_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.SgNBCoordinationAssistanceInformation.Value',
+  full_name='streaming_protobufs.SgNBCoordinationAssistanceInformation.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -377,14 +429,14 @@ _SGNBCOORDINATIONASSISTANCEINFORMATION_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5368,
-  serialized_end=5432,
+  serialized_start=6233,
+  serialized_end=6297,
 )
 _sym_db.RegisterEnumDescriptor(_SGNBCOORDINATIONASSISTANCEINFORMATION_VALUE)
 
 _RRC_CONFIG_IND_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.RRC_Config_Ind.Value',
+  full_name='streaming_protobufs.RRC_Config_Ind.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -403,14 +455,14 @@ _RRC_CONFIG_IND_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5511,
-  serialized_end=5579,
+  serialized_start=6376,
+  serialized_end=6444,
 )
 _sym_db.RegisterEnumDescriptor(_RRC_CONFIG_IND_VALUE)
 
 _FORBIDDENINTERRATS_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.ForbiddenInterRATs.Value',
+  full_name='streaming_protobufs.ForbiddenInterRATs.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -445,14 +497,14 @@ _FORBIDDENINTERRATS_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6465,
-  serialized_end=6584,
+  serialized_start=7330,
+  serialized_end=7449,
 )
 _sym_db.RegisterEnumDescriptor(_FORBIDDENINTERRATS_VALUE)
 
 _NRRESTRICTIONINEPSASSECONDARYRAT_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.NRrestrictioninEPSasSecondaryRAT.Value',
+  full_name='streaming_protobufs.NRrestrictioninEPSasSecondaryRAT.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -467,14 +519,14 @@ _NRRESTRICTIONINEPSASSECONDARYRAT_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=6978,
-  serialized_end=7048,
+  serialized_start=7843,
+  serialized_end=7913,
 )
 _sym_db.RegisterEnumDescriptor(_NRRESTRICTIONINEPSASSECONDARYRAT_VALUE)
 
 _CNTYPERESTRICTIONSITEM_CN_TYPE = _descriptor.EnumDescriptor(
   name='CN_type',
-  full_name='uenibstreamprotobuf.CNTypeRestrictionsItem.CN_type',
+  full_name='streaming_protobufs.CNTypeRestrictionsItem.CN_type',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -489,14 +541,14 @@ _CNTYPERESTRICTIONSITEM_CN_TYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7246,
-  serialized_end=7303,
+  serialized_start=8111,
+  serialized_end=8168,
 )
 _sym_db.RegisterEnumDescriptor(_CNTYPERESTRICTIONSITEM_CN_TYPE)
 
 _NRRESTRICTIONIN5GS_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.NRrestrictionin5GS.Value',
+  full_name='streaming_protobufs.NRrestrictionin5GS.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -511,14 +563,14 @@ _NRRESTRICTIONIN5GS_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=7390,
-  serialized_end=7446,
+  serialized_start=8255,
+  serialized_end=8311,
 )
 _sym_db.RegisterEnumDescriptor(_NRRESTRICTIONIN5GS_VALUE)
 
 _DL_FORWARDING_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.DL_Forwarding.Value',
+  full_name='streaming_protobufs.DL_Forwarding.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -533,14 +585,14 @@ _DL_FORWARDING_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8023,
-  serialized_end=8083,
+  serialized_start=8888,
+  serialized_end=8948,
 )
 _sym_db.RegisterEnumDescriptor(_DL_FORWARDING_VALUE)
 
 _DUPLICATIONACTIVATION_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.DuplicationActivation.Value',
+  full_name='streaming_protobufs.DuplicationActivation.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -559,14 +611,14 @@ _DUPLICATIONACTIVATION_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=8176,
-  serialized_end=8235,
+  serialized_start=9041,
+  serialized_end=9100,
 )
 _sym_db.RegisterEnumDescriptor(_DUPLICATIONACTIVATION_VALUE)
 
 _MENBCOORDINATIONASSISTANCEINFORMATION_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.MeNBCoordinationAssistanceInformation.Value',
+  full_name='streaming_protobufs.MeNBCoordinationAssistanceInformation.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -581,14 +633,14 @@ _MENBCOORDINATIONASSISTANCEINFORMATION_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=5368,
-  serialized_end=5432,
+  serialized_start=6233,
+  serialized_end=6297,
 )
 _sym_db.RegisterEnumDescriptor(_MENBCOORDINATIONASSISTANCEINFORMATION_VALUE)
 
 _EXPECTEDHOINTERVAL_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.ExpectedHOInterval.Value',
+  full_name='streaming_protobufs.ExpectedHOInterval.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -627,14 +679,14 @@ _EXPECTEDHOINTERVAL_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9735,
-  serialized_end=9851,
+  serialized_start=10599,
+  serialized_end=10715,
 )
 _sym_db.RegisterEnumDescriptor(_EXPECTEDHOINTERVAL_VALUE)
 
 _SOURCEOFUEACTIVITYBEHAVIOURINFORMATION_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.SourceOfUEActivityBehaviourInformation.Value',
+  full_name='streaming_protobufs.SourceOfUEActivityBehaviourInformation.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -653,14 +705,14 @@ _SOURCEOFUEACTIVITYBEHAVIOURINFORMATION_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9978,
-  serialized_end=10057,
+  serialized_start=10842,
+  serialized_end=10921,
 )
 _sym_db.RegisterEnumDescriptor(_SOURCEOFUEACTIVITYBEHAVIOURINFORMATION_VALUE)
 
 _SGNB_ADDITION_TRIGGER_IND_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.SGNB_Addition_Trigger_Ind.Value',
+  full_name='streaming_protobufs.SGNB_Addition_Trigger_Ind.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -683,35 +735,35 @@ _SGNB_ADDITION_TRIGGER_IND_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=10158,
-  serialized_end=10242,
+  serialized_start=11022,
+  serialized_end=11106,
 )
 _sym_db.RegisterEnumDescriptor(_SGNB_ADDITION_TRIGGER_IND_VALUE)
 
 
 _EN_DC_RESOURCECONFIGURATION = _descriptor.Descriptor(
   name='EN_DC_ResourceConfiguration',
-  full_name='uenibstreamprotobuf.EN_DC_ResourceConfiguration',
+  full_name='streaming_protobufs.EN_DC_ResourceConfiguration',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pDCPatSgNB', full_name='uenibstreamprotobuf.EN_DC_ResourceConfiguration.pDCPatSgNB', index=0,
+      name='pDCPatSgNB', full_name='streaming_protobufs.EN_DC_ResourceConfiguration.pDCPatSgNB', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='mCGresources', full_name='uenibstreamprotobuf.EN_DC_ResourceConfiguration.mCGresources', index=1,
+      name='mCGresources', full_name='streaming_protobufs.EN_DC_ResourceConfiguration.mCGresources', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sCGresources', full_name='uenibstreamprotobuf.EN_DC_ResourceConfiguration.sCGresources', index=2,
+      name='sCGresources', full_name='streaming_protobufs.EN_DC_ResourceConfiguration.sCGresources', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -737,34 +789,34 @@ _EN_DC_RESOURCECONFIGURATION = _descriptor.Descriptor(
 
 _E_RAB_LEVEL_QOS_PARAMETERS = _descriptor.Descriptor(
   name='E_RAB_Level_QoS_Parameters',
-  full_name='uenibstreamprotobuf.E_RAB_Level_QoS_Parameters',
+  full_name='streaming_protobufs.E_RAB_Level_QoS_Parameters',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='qCI', full_name='uenibstreamprotobuf.E_RAB_Level_QoS_Parameters.qCI', index=0,
+      name='qCI', full_name='streaming_protobufs.E_RAB_Level_QoS_Parameters.qCI', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='allocationAndRetentionPriority', full_name='uenibstreamprotobuf.E_RAB_Level_QoS_Parameters.allocationAndRetentionPriority', index=1,
+      name='allocationAndRetentionPriority', full_name='streaming_protobufs.E_RAB_Level_QoS_Parameters.allocationAndRetentionPriority', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='gbrQosInformation', full_name='uenibstreamprotobuf.E_RAB_Level_QoS_Parameters.gbrQosInformation', index=2,
+      name='gbrQosInformation', full_name='streaming_protobufs.E_RAB_Level_QoS_Parameters.gbrQosInformation', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.E_RAB_Level_QoS_Parameters.iE_Extensions', index=3,
+      name='iE_Extensions', full_name='streaming_protobufs.E_RAB_Level_QoS_Parameters.iE_Extensions', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -789,27 +841,27 @@ _E_RAB_LEVEL_QOS_PARAMETERS = _descriptor.Descriptor(
 
 _ALLOCATIONANDRETENTIONPRIORITY = _descriptor.Descriptor(
   name='AllocationAndRetentionPriority',
-  full_name='uenibstreamprotobuf.AllocationAndRetentionPriority',
+  full_name='streaming_protobufs.AllocationAndRetentionPriority',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='priorityLevel', full_name='uenibstreamprotobuf.AllocationAndRetentionPriority.priorityLevel', index=0,
+      name='priorityLevel', full_name='streaming_protobufs.AllocationAndRetentionPriority.priorityLevel', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='pre_emptionCapability', full_name='uenibstreamprotobuf.AllocationAndRetentionPriority.pre_emptionCapability', index=1,
+      name='pre_emptionCapability', full_name='streaming_protobufs.AllocationAndRetentionPriority.pre_emptionCapability', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='pre_emptionVulnerability', full_name='uenibstreamprotobuf.AllocationAndRetentionPriority.pre_emptionVulnerability', index=2,
+      name='pre_emptionVulnerability', full_name='streaming_protobufs.AllocationAndRetentionPriority.pre_emptionVulnerability', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -834,13 +886,13 @@ _ALLOCATIONANDRETENTIONPRIORITY = _descriptor.Descriptor(
 
 _PRE_EMPTIONVULNERABILITY = _descriptor.Descriptor(
   name='Pre_emptionVulnerability',
-  full_name='uenibstreamprotobuf.Pre_emptionVulnerability',
+  full_name='streaming_protobufs.Pre_emptionVulnerability',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.Pre_emptionVulnerability.value', index=0,
+      name='value', full_name='streaming_protobufs.Pre_emptionVulnerability.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -866,13 +918,13 @@ _PRE_EMPTIONVULNERABILITY = _descriptor.Descriptor(
 
 _PRE_EMPTIONCAPABILITY = _descriptor.Descriptor(
   name='Pre_emptionCapability',
-  full_name='uenibstreamprotobuf.Pre_emptionCapability',
+  full_name='streaming_protobufs.Pre_emptionCapability',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.Pre_emptionCapability.value', index=0,
+      name='value', full_name='streaming_protobufs.Pre_emptionCapability.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -898,20 +950,20 @@ _PRE_EMPTIONCAPABILITY = _descriptor.Descriptor(
 
 _E_RAB_LEVEL_QOS_PARAMETERS_EXTIES = _descriptor.Descriptor(
   name='E_RAB_Level_QoS_Parameters_ExtIEs',
-  full_name='uenibstreamprotobuf.E_RAB_Level_QoS_Parameters_ExtIEs',
+  full_name='streaming_protobufs.E_RAB_Level_QoS_Parameters_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_DownlinkPacketLossRate', full_name='uenibstreamprotobuf.E_RAB_Level_QoS_Parameters_ExtIEs.id_DownlinkPacketLossRate', index=0,
+      name='id_DownlinkPacketLossRate', full_name='streaming_protobufs.E_RAB_Level_QoS_Parameters_ExtIEs.id_DownlinkPacketLossRate', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_UplinkPacketLossRate', full_name='uenibstreamprotobuf.E_RAB_Level_QoS_Parameters_ExtIEs.id_UplinkPacketLossRate', index=1,
+      name='id_UplinkPacketLossRate', full_name='streaming_protobufs.E_RAB_Level_QoS_Parameters_ExtIEs.id_UplinkPacketLossRate', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -936,41 +988,41 @@ _E_RAB_LEVEL_QOS_PARAMETERS_EXTIES = _descriptor.Descriptor(
 
 _GBR_QOSINFORMATION = _descriptor.Descriptor(
   name='GBR_QosInformation',
-  full_name='uenibstreamprotobuf.GBR_QosInformation',
+  full_name='streaming_protobufs.GBR_QosInformation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='e_RAB_MaximumBitrateDL', full_name='uenibstreamprotobuf.GBR_QosInformation.e_RAB_MaximumBitrateDL', index=0,
+      name='e_RAB_MaximumBitrateDL', full_name='streaming_protobufs.GBR_QosInformation.e_RAB_MaximumBitrateDL', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='e_RAB_MaximumBitrateUL', full_name='uenibstreamprotobuf.GBR_QosInformation.e_RAB_MaximumBitrateUL', index=1,
+      name='e_RAB_MaximumBitrateUL', full_name='streaming_protobufs.GBR_QosInformation.e_RAB_MaximumBitrateUL', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='e_RAB_GuaranteedBitrateDL', full_name='uenibstreamprotobuf.GBR_QosInformation.e_RAB_GuaranteedBitrateDL', index=2,
+      name='e_RAB_GuaranteedBitrateDL', full_name='streaming_protobufs.GBR_QosInformation.e_RAB_GuaranteedBitrateDL', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='e_RAB_GuaranteedBitrateUL', full_name='uenibstreamprotobuf.GBR_QosInformation.e_RAB_GuaranteedBitrateUL', index=3,
+      name='e_RAB_GuaranteedBitrateUL', full_name='streaming_protobufs.GBR_QosInformation.e_RAB_GuaranteedBitrateUL', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.GBR_QosInformation.iE_Extensions', index=4,
+      name='iE_Extensions', full_name='streaming_protobufs.GBR_QosInformation.iE_Extensions', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -995,34 +1047,34 @@ _GBR_QOSINFORMATION = _descriptor.Descriptor(
 
 _GBR_QOSINFORMATION_EXTIES = _descriptor.Descriptor(
   name='GBR_QosInformation_ExtIEs',
-  full_name='uenibstreamprotobuf.GBR_QosInformation_ExtIEs',
+  full_name='streaming_protobufs.GBR_QosInformation_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_extended_e_RAB_MaximumBitrateDL', full_name='uenibstreamprotobuf.GBR_QosInformation_ExtIEs.id_extended_e_RAB_MaximumBitrateDL', index=0,
+      name='id_extended_e_RAB_MaximumBitrateDL', full_name='streaming_protobufs.GBR_QosInformation_ExtIEs.id_extended_e_RAB_MaximumBitrateDL', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_extended_e_RAB_MaximumBitrateUL', full_name='uenibstreamprotobuf.GBR_QosInformation_ExtIEs.id_extended_e_RAB_MaximumBitrateUL', index=1,
+      name='id_extended_e_RAB_MaximumBitrateUL', full_name='streaming_protobufs.GBR_QosInformation_ExtIEs.id_extended_e_RAB_MaximumBitrateUL', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_extended_e_RAB_GuaranteedBitrateDL', full_name='uenibstreamprotobuf.GBR_QosInformation_ExtIEs.id_extended_e_RAB_GuaranteedBitrateDL', index=2,
+      name='id_extended_e_RAB_GuaranteedBitrateDL', full_name='streaming_protobufs.GBR_QosInformation_ExtIEs.id_extended_e_RAB_GuaranteedBitrateDL', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_extended_e_RAB_GuaranteedBitrateUL', full_name='uenibstreamprotobuf.GBR_QosInformation_ExtIEs.id_extended_e_RAB_GuaranteedBitrateUL', index=3,
+      name='id_extended_e_RAB_GuaranteedBitrateUL', full_name='streaming_protobufs.GBR_QosInformation_ExtIEs.id_extended_e_RAB_GuaranteedBitrateUL', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1045,29 +1097,29 @@ _GBR_QOSINFORMATION_EXTIES = _descriptor.Descriptor(
 )
 
 
-_GTPTUNNELENDPOINT = _descriptor.Descriptor(
-  name='GTPtunnelEndpoint',
-  full_name='uenibstreamprotobuf.GTPtunnelEndpoint',
+_GLOBALGNB_ID = _descriptor.Descriptor(
+  name='GlobalGNB_ID',
+  full_name='streaming_protobufs.GlobalGNB_ID',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='transportLayerAddress', full_name='uenibstreamprotobuf.GTPtunnelEndpoint.transportLayerAddress', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='pLMN_Identity', full_name='streaming_protobufs.GlobalGNB_ID.pLMN_Identity', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='gTP_TEID', full_name='uenibstreamprotobuf.GTPtunnelEndpoint.gTP_TEID', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='gNB_ID', full_name='streaming_protobufs.GlobalGNB_ID.gNB_ID', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.GTPtunnelEndpoint.iE_Extensions', index=2,
+      name='iE_Extensions', full_name='streaming_protobufs.GlobalGNB_ID.iE_Extensions', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1086,13 +1138,47 @@ _GTPTUNNELENDPOINT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=2019,
-  serialized_end=2157,
+  serialized_end=2166,
 )
 
 
-_GTPTUNNELENDPOINT_EXTIES = _descriptor.Descriptor(
-  name='GTPtunnelEndpoint_ExtIEs',
-  full_name='uenibstreamprotobuf.GTPtunnelEndpoint_ExtIEs',
+_GNB_ID = _descriptor.Descriptor(
+  name='GNB_ID',
+  full_name='streaming_protobufs.GNB_ID',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='gNB_ID', full_name='streaming_protobufs.GNB_ID.gNB_ID', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+    _descriptor.OneofDescriptor(
+      name='c', full_name='streaming_protobufs.GNB_ID.c',
+      index=0, containing_type=None, fields=[]),
+  ],
+  serialized_start=2168,
+  serialized_end=2199,
+)
+
+
+_GLOBALGNB_ID_EXTIES = _descriptor.Descriptor(
+  name='GlobalGNB_ID_ExtIEs',
+  full_name='streaming_protobufs.GlobalGNB_ID_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -1109,20 +1195,89 @@ _GTPTUNNELENDPOINT_EXTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2159,
-  serialized_end=2185,
+  serialized_start=2201,
+  serialized_end=2222,
 )
 
 
-_RLCMODE = _descriptor.Descriptor(
-  name='RLCMode',
-  full_name='uenibstreamprotobuf.RLCMode',
+_GTPTUNNELENDPOINT = _descriptor.Descriptor(
+  name='GTPtunnelEndpoint',
+  full_name='streaming_protobufs.GTPtunnelEndpoint',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.RLCMode.value', index=0,
+      name='transportLayerAddress', full_name='streaming_protobufs.GTPtunnelEndpoint.transportLayerAddress', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='gTP_TEID', full_name='streaming_protobufs.GTPtunnelEndpoint.gTP_TEID', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='iE_Extensions', full_name='streaming_protobufs.GTPtunnelEndpoint.iE_Extensions', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2225,
+  serialized_end=2363,
+)
+
+
+_GTPTUNNELENDPOINT_EXTIES = _descriptor.Descriptor(
+  name='GTPtunnelEndpoint_ExtIEs',
+  full_name='streaming_protobufs.GTPtunnelEndpoint_ExtIEs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2365,
+  serialized_end=2391,
+)
+
+
+_RLCMODE = _descriptor.Descriptor(
+  name='RLCMode',
+  full_name='streaming_protobufs.RLCMode',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='streaming_protobufs.RLCMode.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1141,20 +1296,20 @@ _RLCMODE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2188,
-  serialized_end=2382,
+  serialized_start=2394,
+  serialized_end=2588,
 )
 
 
 _RLC_STATUS = _descriptor.Descriptor(
   name='RLC_Status',
-  full_name='uenibstreamprotobuf.RLC_Status',
+  full_name='streaming_protobufs.RLC_Status',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='reestablishment_Indication', full_name='uenibstreamprotobuf.RLC_Status.reestablishment_Indication', index=0,
+      name='reestablishment_Indication', full_name='streaming_protobufs.RLC_Status.reestablishment_Indication', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1173,20 +1328,20 @@ _RLC_STATUS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2385,
-  serialized_end=2568,
+  serialized_start=2591,
+  serialized_end=2774,
 )
 
 
 _ULCONFIGURATION = _descriptor.Descriptor(
   name='ULConfiguration',
-  full_name='uenibstreamprotobuf.ULConfiguration',
+  full_name='streaming_protobufs.ULConfiguration',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uL_PDCP', full_name='uenibstreamprotobuf.ULConfiguration.uL_PDCP', index=0,
+      name='uL_PDCP', full_name='streaming_protobufs.ULConfiguration.uL_PDCP', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1205,20 +1360,20 @@ _ULCONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2571,
-  serialized_end=2747,
+  serialized_start=2777,
+  serialized_end=2953,
 )
 
 
 _PDCPSNLENGTH = _descriptor.Descriptor(
   name='PDCPSnLength',
-  full_name='uenibstreamprotobuf.PDCPSnLength',
+  full_name='streaming_protobufs.PDCPSnLength',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.PDCPSnLength.value', index=0,
+      name='value', full_name='streaming_protobufs.PDCPSnLength.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1237,20 +1392,20 @@ _PDCPSNLENGTH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2750,
-  serialized_end=2891,
+  serialized_start=2956,
+  serialized_end=3097,
 )
 
 
 _PDCPCHANGEINDICATION = _descriptor.Descriptor(
   name='PDCPChangeIndication',
-  full_name='uenibstreamprotobuf.PDCPChangeIndication',
+  full_name='streaming_protobufs.PDCPChangeIndication',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.PDCPChangeIndication.value', index=0,
+      name='value', full_name='streaming_protobufs.PDCPChangeIndication.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1269,20 +1424,20 @@ _PDCPCHANGEINDICATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2894,
-  serialized_end=3076,
+  serialized_start=3100,
+  serialized_end=3282,
 )
 
 
 _SPLITSRBS = _descriptor.Descriptor(
   name='SplitSRBs',
-  full_name='uenibstreamprotobuf.SplitSRBs',
+  full_name='streaming_protobufs.SplitSRBs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.SplitSRBs.value', index=0,
+      name='value', full_name='streaming_protobufs.SplitSRBs.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1301,34 +1456,34 @@ _SPLITSRBS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3079,
-  serialized_end=3212,
+  serialized_start=3285,
+  serialized_end=3418,
 )
 
 
 _NRCGI = _descriptor.Descriptor(
   name='NRCGI',
-  full_name='uenibstreamprotobuf.NRCGI',
+  full_name='streaming_protobufs.NRCGI',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pLMN_Identity', full_name='uenibstreamprotobuf.NRCGI.pLMN_Identity', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='pLMN_Identity', full_name='streaming_protobufs.NRCGI.pLMN_Identity', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nRcellIdentifier', full_name='uenibstreamprotobuf.NRCGI.nRcellIdentifier', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='nRcellIdentifier', full_name='streaming_protobufs.NRCGI.nRcellIdentifier', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.NRCGI.iE_Extensions', index=2,
+      name='iE_Extensions', full_name='streaming_protobufs.NRCGI.iE_Extensions', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1346,14 +1501,14 @@ _NRCGI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3214,
-  serialized_end=3328,
+  serialized_start=3420,
+  serialized_end=3534,
 )
 
 
 _NRCGI_EXTIES = _descriptor.Descriptor(
   name='NRCGI_ExtIEs',
-  full_name='uenibstreamprotobuf.NRCGI_ExtIEs',
+  full_name='streaming_protobufs.NRCGI_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -1370,29 +1525,29 @@ _NRCGI_EXTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3330,
-  serialized_end=3344,
+  serialized_start=3536,
+  serialized_end=3550,
 )
 
 
 _ECGI = _descriptor.Descriptor(
   name='ECGI',
-  full_name='uenibstreamprotobuf.ECGI',
+  full_name='streaming_protobufs.ECGI',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pLMN_Identity', full_name='uenibstreamprotobuf.ECGI.pLMN_Identity', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='pLMN_Identity', full_name='streaming_protobufs.ECGI.pLMN_Identity', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='eUTRANcellIdentifier', full_name='uenibstreamprotobuf.ECGI.eUTRANcellIdentifier', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='eUTRANcellIdentifier', full_name='streaming_protobufs.ECGI.eUTRANcellIdentifier', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -1408,20 +1563,20 @@ _ECGI = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3346,
-  serialized_end=3405,
+  serialized_start=3552,
+  serialized_end=3611,
 )
 
 
 _E_RAB_LIST = _descriptor.Descriptor(
   name='E_RAB_List',
-  full_name='uenibstreamprotobuf.E_RAB_List',
+  full_name='streaming_protobufs.E_RAB_List',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.E_RAB_List.items', index=0,
+      name='items', full_name='streaming_protobufs.E_RAB_List.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1439,20 +1594,20 @@ _E_RAB_LIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3407,
-  serialized_end=3470,
+  serialized_start=3613,
+  serialized_end=3676,
 )
 
 
 _E_RAB_ITEMIES = _descriptor.Descriptor(
   name='E_RAB_ItemIEs',
-  full_name='uenibstreamprotobuf.E_RAB_ItemIEs',
+  full_name='streaming_protobufs.E_RAB_ItemIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_E_RAB_Item', full_name='uenibstreamprotobuf.E_RAB_ItemIEs.id_E_RAB_Item', index=0,
+      name='id_E_RAB_Item', full_name='streaming_protobufs.E_RAB_ItemIEs.id_E_RAB_Item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1470,27 +1625,27 @@ _E_RAB_ITEMIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3472,
-  serialized_end=3543,
+  serialized_start=3678,
+  serialized_end=3749,
 )
 
 
 _E_RAB_ITEM = _descriptor.Descriptor(
   name='E_RAB_Item',
-  full_name='uenibstreamprotobuf.E_RAB_Item',
+  full_name='streaming_protobufs.E_RAB_Item',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='e_RAB_ID', full_name='uenibstreamprotobuf.E_RAB_Item.e_RAB_ID', index=0,
+      name='e_RAB_ID', full_name='streaming_protobufs.E_RAB_Item.e_RAB_ID', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cause', full_name='uenibstreamprotobuf.E_RAB_Item.cause', index=1,
+      name='cause', full_name='streaming_protobufs.E_RAB_Item.cause', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1508,48 +1663,212 @@ _E_RAB_ITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3545,
-  serialized_end=3618,
+  serialized_start=3751,
+  serialized_end=3824,
 )
 
 
-_CRITICALITYDIAGNOSTICS = _descriptor.Descriptor(
-  name='CriticalityDiagnostics',
-  full_name='uenibstreamprotobuf.CriticalityDiagnostics',
+_ERABACTIVITYNOTIFYITEMLIST = _descriptor.Descriptor(
+  name='ERABActivityNotifyItemList',
+  full_name='streaming_protobufs.ERABActivityNotifyItemList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='procedureCode', full_name='uenibstreamprotobuf.CriticalityDiagnostics.procedureCode', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='items', full_name='streaming_protobufs.ERABActivityNotifyItemList.items', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3826,
+  serialized_end=3914,
+)
+
+
+_ERABACTIVITYNOTIFYITEM = _descriptor.Descriptor(
+  name='ERABActivityNotifyItem',
+  full_name='streaming_protobufs.ERABActivityNotifyItem',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='e_RAB_ID', full_name='streaming_protobufs.ERABActivityNotifyItem.e_RAB_ID', index=0,
+      number=1, type=13, cpp_type=3, label=1,
+      has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='triggeringMessage', full_name='uenibstreamprotobuf.CriticalityDiagnostics.triggeringMessage', index=1,
+      name='activityReport', full_name='streaming_protobufs.ERABActivityNotifyItem.activityReport', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='procedureCriticality', full_name='uenibstreamprotobuf.CriticalityDiagnostics.procedureCriticality', index=2,
+      name='iE_Extensions', full_name='streaming_protobufs.ERABActivityNotifyItem.iE_Extensions', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=3917,
+  serialized_end=4111,
+)
+
+
+_ERABACTIVITYNOTIFYITEM_EXTIES = _descriptor.Descriptor(
+  name='ERABActivityNotifyItem_ExtIEs',
+  full_name='streaming_protobufs.ERABActivityNotifyItem_ExtIEs',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4113,
+  serialized_end=4144,
+)
+
+
+_USERPLANETRAFFICACTIVITYREPORT = _descriptor.Descriptor(
+  name='UserPlaneTrafficActivityReport',
+  full_name='streaming_protobufs.UserPlaneTrafficActivityReport',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='streaming_protobufs.UserPlaneTrafficActivityReport.value', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _USERPLANETRAFFICACTIVITYREPORT_VALUE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4147,
+  serialized_end=4320,
+)
+
+
+_GNBOVERLOADINFORMATION = _descriptor.Descriptor(
+  name='GNBOverloadInformation',
+  full_name='streaming_protobufs.GNBOverloadInformation',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='value', full_name='streaming_protobufs.GNBOverloadInformation.value', index=0,
+      number=1, type=14, cpp_type=8, label=1,
+      has_default_value=False, default_value=0,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+    _GNBOVERLOADINFORMATION_VALUE,
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=4323,
+  serialized_end=4484,
+)
+
+
+_CRITICALITYDIAGNOSTICS = _descriptor.Descriptor(
+  name='CriticalityDiagnostics',
+  full_name='streaming_protobufs.CriticalityDiagnostics',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='procedureCode', full_name='streaming_protobufs.CriticalityDiagnostics.procedureCode', index=0,
+      number=1, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='triggeringMessage', full_name='streaming_protobufs.CriticalityDiagnostics.triggeringMessage', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR),
+    _descriptor.FieldDescriptor(
+      name='procedureCriticality', full_name='streaming_protobufs.CriticalityDiagnostics.procedureCriticality', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iEsCriticalityDiagnostics', full_name='uenibstreamprotobuf.CriticalityDiagnostics.iEsCriticalityDiagnostics', index=3,
+      name='iEsCriticalityDiagnostics', full_name='streaming_protobufs.CriticalityDiagnostics.iEsCriticalityDiagnostics', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.CriticalityDiagnostics.iE_Extensions', index=4,
+      name='iE_Extensions', full_name='streaming_protobufs.CriticalityDiagnostics.iE_Extensions', index=4,
       number=5, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1567,20 +1886,20 @@ _CRITICALITYDIAGNOSTICS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3621,
-  serialized_end=3992,
+  serialized_start=4487,
+  serialized_end=4858,
 )
 
 
 _TRIGGERINGMESSAGE = _descriptor.Descriptor(
   name='TriggeringMessage',
-  full_name='uenibstreamprotobuf.TriggeringMessage',
+  full_name='streaming_protobufs.TriggeringMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.TriggeringMessage.value', index=0,
+      name='value', full_name='streaming_protobufs.TriggeringMessage.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1599,20 +1918,20 @@ _TRIGGERINGMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3995,
-  serialized_end=4184,
+  serialized_start=4861,
+  serialized_end=5050,
 )
 
 
 _CRITICALITY = _descriptor.Descriptor(
   name='Criticality',
-  full_name='uenibstreamprotobuf.Criticality',
+  full_name='streaming_protobufs.Criticality',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.Criticality.value', index=0,
+      name='value', full_name='streaming_protobufs.Criticality.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1631,20 +1950,20 @@ _CRITICALITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4187,
-  serialized_end=4326,
+  serialized_start=5053,
+  serialized_end=5192,
 )
 
 
 _CRITICALITYDIAGNOSTICS_IE_LIST = _descriptor.Descriptor(
   name='CriticalityDiagnostics_IE_List',
-  full_name='uenibstreamprotobuf.CriticalityDiagnostics_IE_List',
+  full_name='streaming_protobufs.CriticalityDiagnostics_IE_List',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.CriticalityDiagnostics_IE_List.items', index=0,
+      name='items', full_name='streaming_protobufs.CriticalityDiagnostics_IE_List.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1662,34 +1981,34 @@ _CRITICALITYDIAGNOSTICS_IE_LIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4328,
-  serialized_end=4433,
+  serialized_start=5194,
+  serialized_end=5299,
 )
 
 
 _CRITICALITYDIAGNOSTICS_IE_LIST_ITEM = _descriptor.Descriptor(
   name='CriticalityDiagnostics_IE_List_Item',
-  full_name='uenibstreamprotobuf.CriticalityDiagnostics_IE_List_Item',
+  full_name='streaming_protobufs.CriticalityDiagnostics_IE_List_Item',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='iECriticality', full_name='uenibstreamprotobuf.CriticalityDiagnostics_IE_List_Item.iECriticality', index=0,
+      name='iECriticality', full_name='streaming_protobufs.CriticalityDiagnostics_IE_List_Item.iECriticality', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_ID', full_name='uenibstreamprotobuf.CriticalityDiagnostics_IE_List_Item.iE_ID', index=1,
+      name='iE_ID', full_name='streaming_protobufs.CriticalityDiagnostics_IE_List_Item.iE_ID', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='typeOfError', full_name='uenibstreamprotobuf.CriticalityDiagnostics_IE_List_Item.typeOfError', index=2,
+      name='typeOfError', full_name='streaming_protobufs.CriticalityDiagnostics_IE_List_Item.typeOfError', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1707,20 +2026,20 @@ _CRITICALITYDIAGNOSTICS_IE_LIST_ITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4436,
-  serialized_end=4600,
+  serialized_start=5302,
+  serialized_end=5466,
 )
 
 
 _TYPEOFERROR = _descriptor.Descriptor(
   name='TypeOfError',
-  full_name='uenibstreamprotobuf.TypeOfError',
+  full_name='streaming_protobufs.TypeOfError',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.TypeOfError.value', index=0,
+      name='value', full_name='streaming_protobufs.TypeOfError.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1739,14 +2058,14 @@ _TYPEOFERROR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4603,
-  serialized_end=4739,
+  serialized_start=5469,
+  serialized_end=5605,
 )
 
 
 _CRITICALITYDIAGNOSTICS_EXTIES = _descriptor.Descriptor(
   name='CriticalityDiagnostics_ExtIEs',
-  full_name='uenibstreamprotobuf.CriticalityDiagnostics_ExtIEs',
+  full_name='streaming_protobufs.CriticalityDiagnostics_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -1763,41 +2082,41 @@ _CRITICALITYDIAGNOSTICS_EXTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4741,
-  serialized_end=4772,
+  serialized_start=5607,
+  serialized_end=5638,
 )
 
 
 _SGNBRESOURCECOORDINATIONINFORMATION = _descriptor.Descriptor(
   name='SgNBResourceCoordinationInformation',
-  full_name='uenibstreamprotobuf.SgNBResourceCoordinationInformation',
+  full_name='streaming_protobufs.SgNBResourceCoordinationInformation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='nR_CGI', full_name='uenibstreamprotobuf.SgNBResourceCoordinationInformation.nR_CGI', index=0,
+      name='nR_CGI', full_name='streaming_protobufs.SgNBResourceCoordinationInformation.nR_CGI', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='uLCoordinationInformation', full_name='uenibstreamprotobuf.SgNBResourceCoordinationInformation.uLCoordinationInformation', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='uLCoordinationInformation', full_name='streaming_protobufs.SgNBResourceCoordinationInformation.uLCoordinationInformation', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dLCoordinationInformation', full_name='uenibstreamprotobuf.SgNBResourceCoordinationInformation.dLCoordinationInformation', index=2,
+      name='dLCoordinationInformation', full_name='streaming_protobufs.SgNBResourceCoordinationInformation.dLCoordinationInformation', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.SgNBResourceCoordinationInformation.iE_Extensions', index=3,
+      name='iE_Extensions', full_name='streaming_protobufs.SgNBResourceCoordinationInformation.iE_Extensions', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1815,27 +2134,27 @@ _SGNBRESOURCECOORDINATIONINFORMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4775,
-  serialized_end=5043,
+  serialized_start=5641,
+  serialized_end=5908,
 )
 
 
 _SGNBRESOURCECOORDINATIONINFORMATIONEXTIES = _descriptor.Descriptor(
   name='SgNBResourceCoordinationInformationExtIEs',
-  full_name='uenibstreamprotobuf.SgNBResourceCoordinationInformationExtIEs',
+  full_name='streaming_protobufs.SgNBResourceCoordinationInformationExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_ECGI', full_name='uenibstreamprotobuf.SgNBResourceCoordinationInformationExtIEs.id_ECGI', index=0,
+      name='id_ECGI', full_name='streaming_protobufs.SgNBResourceCoordinationInformationExtIEs.id_ECGI', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_SgNBCoordinationAssistanceInformation', full_name='uenibstreamprotobuf.SgNBResourceCoordinationInformationExtIEs.id_SgNBCoordinationAssistanceInformation', index=1,
+      name='id_SgNBCoordinationAssistanceInformation', full_name='streaming_protobufs.SgNBResourceCoordinationInformationExtIEs.id_SgNBCoordinationAssistanceInformation', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1853,20 +2172,20 @@ _SGNBRESOURCECOORDINATIONINFORMATIONEXTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5046,
-  serialized_end=5243,
+  serialized_start=5911,
+  serialized_end=6108,
 )
 
 
 _SGNBCOORDINATIONASSISTANCEINFORMATION = _descriptor.Descriptor(
   name='SgNBCoordinationAssistanceInformation',
-  full_name='uenibstreamprotobuf.SgNBCoordinationAssistanceInformation',
+  full_name='streaming_protobufs.SgNBCoordinationAssistanceInformation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.SgNBCoordinationAssistanceInformation.value', index=0,
+      name='value', full_name='streaming_protobufs.SgNBCoordinationAssistanceInformation.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1885,20 +2204,20 @@ _SGNBCOORDINATIONASSISTANCEINFORMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5246,
-  serialized_end=5432,
+  serialized_start=6111,
+  serialized_end=6297,
 )
 
 
 _RRC_CONFIG_IND = _descriptor.Descriptor(
   name='RRC_Config_Ind',
-  full_name='uenibstreamprotobuf.RRC_Config_Ind',
+  full_name='streaming_protobufs.RRC_Config_Ind',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.RRC_Config_Ind.value', index=0,
+      name='value', full_name='streaming_protobufs.RRC_Config_Ind.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1917,55 +2236,55 @@ _RRC_CONFIG_IND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5435,
-  serialized_end=5579,
+  serialized_start=6300,
+  serialized_end=6444,
 )
 
 
 _HANDOVERRESTRICTIONLIST = _descriptor.Descriptor(
   name='HandoverRestrictionList',
-  full_name='uenibstreamprotobuf.HandoverRestrictionList',
+  full_name='streaming_protobufs.HandoverRestrictionList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='servingPLMN', full_name='uenibstreamprotobuf.HandoverRestrictionList.servingPLMN', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='servingPLMN', full_name='streaming_protobufs.HandoverRestrictionList.servingPLMN', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='equivalentPLMNs', full_name='uenibstreamprotobuf.HandoverRestrictionList.equivalentPLMNs', index=1,
+      name='equivalentPLMNs', full_name='streaming_protobufs.HandoverRestrictionList.equivalentPLMNs', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='forbiddenTAs', full_name='uenibstreamprotobuf.HandoverRestrictionList.forbiddenTAs', index=2,
+      name='forbiddenTAs', full_name='streaming_protobufs.HandoverRestrictionList.forbiddenTAs', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='forbiddenLAs', full_name='uenibstreamprotobuf.HandoverRestrictionList.forbiddenLAs', index=3,
+      name='forbiddenLAs', full_name='streaming_protobufs.HandoverRestrictionList.forbiddenLAs', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='forbiddenInterRATs', full_name='uenibstreamprotobuf.HandoverRestrictionList.forbiddenInterRATs', index=4,
+      name='forbiddenInterRATs', full_name='streaming_protobufs.HandoverRestrictionList.forbiddenInterRATs', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.HandoverRestrictionList.iE_Extensions', index=5,
+      name='iE_Extensions', full_name='streaming_protobufs.HandoverRestrictionList.iE_Extensions', index=5,
       number=6, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1983,21 +2302,21 @@ _HANDOVERRESTRICTIONLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5582,
-  serialized_end=5941,
+  serialized_start=6447,
+  serialized_end=6806,
 )
 
 
 _EPLMNS = _descriptor.Descriptor(
   name='EPLMNs',
-  full_name='uenibstreamprotobuf.EPLMNs',
+  full_name='streaming_protobufs.EPLMNs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.EPLMNs.items', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='items', full_name='streaming_protobufs.EPLMNs.items', index=0,
+      number=1, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2014,20 +2333,20 @@ _EPLMNS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5943,
-  serialized_end=5966,
+  serialized_start=6808,
+  serialized_end=6831,
 )
 
 
 _FORBIDDENTAS = _descriptor.Descriptor(
   name='ForbiddenTAs',
-  full_name='uenibstreamprotobuf.ForbiddenTAs',
+  full_name='streaming_protobufs.ForbiddenTAs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.ForbiddenTAs.items', index=0,
+      name='items', full_name='streaming_protobufs.ForbiddenTAs.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2045,27 +2364,27 @@ _FORBIDDENTAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5968,
-  serialized_end=6037,
+  serialized_start=6833,
+  serialized_end=6902,
 )
 
 
 _FORBIDDENTAS_ITEM = _descriptor.Descriptor(
   name='ForbiddenTAs_Item',
-  full_name='uenibstreamprotobuf.ForbiddenTAs_Item',
+  full_name='streaming_protobufs.ForbiddenTAs_Item',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pLMN_Identity', full_name='uenibstreamprotobuf.ForbiddenTAs_Item.pLMN_Identity', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='pLMN_Identity', full_name='streaming_protobufs.ForbiddenTAs_Item.pLMN_Identity', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='forbiddenTACs', full_name='uenibstreamprotobuf.ForbiddenTAs_Item.forbiddenTACs', index=1,
+      name='forbiddenTACs', full_name='streaming_protobufs.ForbiddenTAs_Item.forbiddenTACs', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2083,21 +2402,21 @@ _FORBIDDENTAS_ITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6039,
-  serialized_end=6140,
+  serialized_start=6904,
+  serialized_end=7005,
 )
 
 
 _FORBIDDENTACS = _descriptor.Descriptor(
   name='ForbiddenTACs',
-  full_name='uenibstreamprotobuf.ForbiddenTACs',
+  full_name='streaming_protobufs.ForbiddenTACs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.ForbiddenTACs.items', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='items', full_name='streaming_protobufs.ForbiddenTACs.items', index=0,
+      number=1, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2114,20 +2433,20 @@ _FORBIDDENTACS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6142,
-  serialized_end=6172,
+  serialized_start=7007,
+  serialized_end=7037,
 )
 
 
 _FORBIDDENLAS = _descriptor.Descriptor(
   name='ForbiddenLAs',
-  full_name='uenibstreamprotobuf.ForbiddenLAs',
+  full_name='streaming_protobufs.ForbiddenLAs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.ForbiddenLAs.items', index=0,
+      name='items', full_name='streaming_protobufs.ForbiddenLAs.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2145,27 +2464,27 @@ _FORBIDDENLAS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6174,
-  serialized_end=6243,
+  serialized_start=7039,
+  serialized_end=7108,
 )
 
 
 _FORBIDDENLAS_ITEM = _descriptor.Descriptor(
   name='ForbiddenLAs_Item',
-  full_name='uenibstreamprotobuf.ForbiddenLAs_Item',
+  full_name='streaming_protobufs.ForbiddenLAs_Item',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pLMN_Identity', full_name='uenibstreamprotobuf.ForbiddenLAs_Item.pLMN_Identity', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='pLMN_Identity', full_name='streaming_protobufs.ForbiddenLAs_Item.pLMN_Identity', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='forbiddenLACs', full_name='uenibstreamprotobuf.ForbiddenLAs_Item.forbiddenLACs', index=1,
+      name='forbiddenLACs', full_name='streaming_protobufs.ForbiddenLAs_Item.forbiddenLACs', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2183,21 +2502,21 @@ _FORBIDDENLAS_ITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6245,
-  serialized_end=6346,
+  serialized_start=7110,
+  serialized_end=7211,
 )
 
 
 _FORBIDDENLACS = _descriptor.Descriptor(
   name='ForbiddenLACs',
-  full_name='uenibstreamprotobuf.ForbiddenLACs',
+  full_name='streaming_protobufs.ForbiddenLACs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.ForbiddenLACs.items', index=0,
-      number=1, type=9, cpp_type=9, label=3,
+      name='items', full_name='streaming_protobufs.ForbiddenLACs.items', index=0,
+      number=1, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -2214,20 +2533,20 @@ _FORBIDDENLACS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6348,
-  serialized_end=6378,
+  serialized_start=7213,
+  serialized_end=7243,
 )
 
 
 _FORBIDDENINTERRATS = _descriptor.Descriptor(
   name='ForbiddenInterRATs',
-  full_name='uenibstreamprotobuf.ForbiddenInterRATs',
+  full_name='streaming_protobufs.ForbiddenInterRATs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.ForbiddenInterRATs.value', index=0,
+      name='value', full_name='streaming_protobufs.ForbiddenInterRATs.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2246,34 +2565,34 @@ _FORBIDDENINTERRATS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6381,
-  serialized_end=6584,
+  serialized_start=7246,
+  serialized_end=7449,
 )
 
 
 _HANDOVERRESTRICTIONLIST_EXTIES = _descriptor.Descriptor(
   name='HandoverRestrictionList_ExtIEs',
-  full_name='uenibstreamprotobuf.HandoverRestrictionList_ExtIEs',
+  full_name='streaming_protobufs.HandoverRestrictionList_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_NRrestrictioninEPSasSecondaryRAT', full_name='uenibstreamprotobuf.HandoverRestrictionList_ExtIEs.id_NRrestrictioninEPSasSecondaryRAT', index=0,
+      name='id_NRrestrictioninEPSasSecondaryRAT', full_name='streaming_protobufs.HandoverRestrictionList_ExtIEs.id_NRrestrictioninEPSasSecondaryRAT', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_CNTypeRestrictions', full_name='uenibstreamprotobuf.HandoverRestrictionList_ExtIEs.id_CNTypeRestrictions', index=1,
+      name='id_CNTypeRestrictions', full_name='streaming_protobufs.HandoverRestrictionList_ExtIEs.id_CNTypeRestrictions', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_NRrestrictionin5GS', full_name='uenibstreamprotobuf.HandoverRestrictionList_ExtIEs.id_NRrestrictionin5GS', index=2,
+      name='id_NRrestrictionin5GS', full_name='streaming_protobufs.HandoverRestrictionList_ExtIEs.id_NRrestrictionin5GS', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2291,20 +2610,20 @@ _HANDOVERRESTRICTIONLIST_EXTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6587,
-  serialized_end=6863,
+  serialized_start=7452,
+  serialized_end=7728,
 )
 
 
 _NRRESTRICTIONINEPSASSECONDARYRAT = _descriptor.Descriptor(
   name='NRrestrictioninEPSasSecondaryRAT',
-  full_name='uenibstreamprotobuf.NRrestrictioninEPSasSecondaryRAT',
+  full_name='streaming_protobufs.NRrestrictioninEPSasSecondaryRAT',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.NRrestrictioninEPSasSecondaryRAT.value', index=0,
+      name='value', full_name='streaming_protobufs.NRrestrictioninEPSasSecondaryRAT.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2323,20 +2642,20 @@ _NRRESTRICTIONINEPSASSECONDARYRAT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=6866,
-  serialized_end=7048,
+  serialized_start=7731,
+  serialized_end=7913,
 )
 
 
 _CNTYPERESTRICTIONS = _descriptor.Descriptor(
   name='CNTypeRestrictions',
-  full_name='uenibstreamprotobuf.CNTypeRestrictions',
+  full_name='streaming_protobufs.CNTypeRestrictions',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.CNTypeRestrictions.items', index=0,
+      name='items', full_name='streaming_protobufs.CNTypeRestrictions.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2354,27 +2673,27 @@ _CNTYPERESTRICTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7050,
-  serialized_end=7130,
+  serialized_start=7915,
+  serialized_end=7995,
 )
 
 
 _CNTYPERESTRICTIONSITEM = _descriptor.Descriptor(
   name='CNTypeRestrictionsItem',
-  full_name='uenibstreamprotobuf.CNTypeRestrictionsItem',
+  full_name='streaming_protobufs.CNTypeRestrictionsItem',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='plmn_Id', full_name='uenibstreamprotobuf.CNTypeRestrictionsItem.plmn_Id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='plmn_Id', full_name='streaming_protobufs.CNTypeRestrictionsItem.plmn_Id', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cn_type', full_name='uenibstreamprotobuf.CNTypeRestrictionsItem.cn_type', index=1,
+      name='cn_type', full_name='streaming_protobufs.CNTypeRestrictionsItem.cn_type', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2393,20 +2712,20 @@ _CNTYPERESTRICTIONSITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7133,
-  serialized_end=7303,
+  serialized_start=7998,
+  serialized_end=8168,
 )
 
 
 _NRRESTRICTIONIN5GS = _descriptor.Descriptor(
   name='NRrestrictionin5GS',
-  full_name='uenibstreamprotobuf.NRrestrictionin5GS',
+  full_name='streaming_protobufs.NRrestrictionin5GS',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.NRrestrictionin5GS.value', index=0,
+      name='value', full_name='streaming_protobufs.NRrestrictionin5GS.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2425,29 +2744,29 @@ _NRRESTRICTIONIN5GS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7306,
-  serialized_end=7446,
+  serialized_start=8171,
+  serialized_end=8311,
 )
 
 
 _NRUESECURITYCAPABILITIES = _descriptor.Descriptor(
   name='NRUESecurityCapabilities',
-  full_name='uenibstreamprotobuf.NRUESecurityCapabilities',
+  full_name='streaming_protobufs.NRUESecurityCapabilities',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='nRencryptionAlgorithms', full_name='uenibstreamprotobuf.NRUESecurityCapabilities.nRencryptionAlgorithms', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='nRencryptionAlgorithms', full_name='streaming_protobufs.NRUESecurityCapabilities.nRencryptionAlgorithms', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nRintegrityProtectionAlgorithms', full_name='uenibstreamprotobuf.NRUESecurityCapabilities.nRintegrityProtectionAlgorithms', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='nRintegrityProtectionAlgorithms', full_name='streaming_protobufs.NRUESecurityCapabilities.nRintegrityProtectionAlgorithms', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
@@ -2463,34 +2782,34 @@ _NRUESECURITYCAPABILITIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7448,
-  serialized_end=7547,
+  serialized_start=8313,
+  serialized_end=8412,
 )
 
 
 _UEAGGREGATEMAXIMUMBITRATE = _descriptor.Descriptor(
   name='UEAggregateMaximumBitRate',
-  full_name='uenibstreamprotobuf.UEAggregateMaximumBitRate',
+  full_name='streaming_protobufs.UEAggregateMaximumBitRate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uEaggregateMaximumBitRateDownlink', full_name='uenibstreamprotobuf.UEAggregateMaximumBitRate.uEaggregateMaximumBitRateDownlink', index=0,
+      name='uEaggregateMaximumBitRateDownlink', full_name='streaming_protobufs.UEAggregateMaximumBitRate.uEaggregateMaximumBitRateDownlink', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='uEaggregateMaximumBitRateUplink', full_name='uenibstreamprotobuf.UEAggregateMaximumBitRate.uEaggregateMaximumBitRateUplink', index=1,
+      name='uEaggregateMaximumBitRateUplink', full_name='streaming_protobufs.UEAggregateMaximumBitRate.uEaggregateMaximumBitRateUplink', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.UEAggregateMaximumBitRate.iE_Extensions', index=2,
+      name='iE_Extensions', full_name='streaming_protobufs.UEAggregateMaximumBitRate.iE_Extensions', index=2,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2508,27 +2827,27 @@ _UEAGGREGATEMAXIMUMBITRATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7550,
-  serialized_end=7740,
+  serialized_start=8415,
+  serialized_end=8605,
 )
 
 
 _UEAGGREGATE_MAXIMUMBITRATE_EXTIES = _descriptor.Descriptor(
   name='UEAggregate_MaximumBitrate_ExtIEs',
-  full_name='uenibstreamprotobuf.UEAggregate_MaximumBitrate_ExtIEs',
+  full_name='streaming_protobufs.UEAggregate_MaximumBitrate_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_extended_uEaggregateMaximumBitRateDownlink', full_name='uenibstreamprotobuf.UEAggregate_MaximumBitrate_ExtIEs.id_extended_uEaggregateMaximumBitRateDownlink', index=0,
+      name='id_extended_uEaggregateMaximumBitRateDownlink', full_name='streaming_protobufs.UEAggregate_MaximumBitrate_ExtIEs.id_extended_uEaggregateMaximumBitRateDownlink', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_extended_uEaggregateMaximumBitRateUplink', full_name='uenibstreamprotobuf.UEAggregate_MaximumBitrate_ExtIEs.id_extended_uEaggregateMaximumBitRateUplink', index=1,
+      name='id_extended_uEaggregateMaximumBitRateUplink', full_name='streaming_protobufs.UEAggregate_MaximumBitrate_ExtIEs.id_extended_uEaggregateMaximumBitRateUplink', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2546,20 +2865,20 @@ _UEAGGREGATE_MAXIMUMBITRATE_EXTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7743,
-  serialized_end=7946,
+  serialized_start=8608,
+  serialized_end=8811,
 )
 
 
 _DL_FORWARDING = _descriptor.Descriptor(
   name='DL_Forwarding',
-  full_name='uenibstreamprotobuf.DL_Forwarding',
+  full_name='streaming_protobufs.DL_Forwarding',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.DL_Forwarding.value', index=0,
+      name='value', full_name='streaming_protobufs.DL_Forwarding.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2578,20 +2897,20 @@ _DL_FORWARDING = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7949,
-  serialized_end=8083,
+  serialized_start=8814,
+  serialized_end=8948,
 )
 
 
 _DUPLICATIONACTIVATION = _descriptor.Descriptor(
   name='DuplicationActivation',
-  full_name='uenibstreamprotobuf.DuplicationActivation',
+  full_name='streaming_protobufs.DuplicationActivation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.DuplicationActivation.value', index=0,
+      name='value', full_name='streaming_protobufs.DuplicationActivation.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2610,41 +2929,41 @@ _DUPLICATIONACTIVATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8086,
-  serialized_end=8235,
+  serialized_start=8951,
+  serialized_end=9100,
 )
 
 
 _MENBRESOURCECOORDINATIONINFORMATION = _descriptor.Descriptor(
   name='MeNBResourceCoordinationInformation',
-  full_name='uenibstreamprotobuf.MeNBResourceCoordinationInformation',
+  full_name='streaming_protobufs.MeNBResourceCoordinationInformation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='eUTRA_Cell_ID', full_name='uenibstreamprotobuf.MeNBResourceCoordinationInformation.eUTRA_Cell_ID', index=0,
+      name='eUTRA_Cell_ID', full_name='streaming_protobufs.MeNBResourceCoordinationInformation.eUTRA_Cell_ID', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='uLCoordinationInformation', full_name='uenibstreamprotobuf.MeNBResourceCoordinationInformation.uLCoordinationInformation', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='uLCoordinationInformation', full_name='streaming_protobufs.MeNBResourceCoordinationInformation.uLCoordinationInformation', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dLCoordinationInformation', full_name='uenibstreamprotobuf.MeNBResourceCoordinationInformation.dLCoordinationInformation', index=2,
+      name='dLCoordinationInformation', full_name='streaming_protobufs.MeNBResourceCoordinationInformation.dLCoordinationInformation', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.MeNBResourceCoordinationInformation.iE_Extensions', index=3,
+      name='iE_Extensions', full_name='streaming_protobufs.MeNBResourceCoordinationInformation.iE_Extensions', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2662,27 +2981,27 @@ _MENBRESOURCECOORDINATIONINFORMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8238,
-  serialized_end=8512,
+  serialized_start=9103,
+  serialized_end=9376,
 )
 
 
 _MENBRESOURCECOORDINATIONINFORMATIONEXTIES = _descriptor.Descriptor(
   name='MeNBResourceCoordinationInformationExtIEs',
-  full_name='uenibstreamprotobuf.MeNBResourceCoordinationInformationExtIEs',
+  full_name='streaming_protobufs.MeNBResourceCoordinationInformationExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_NRCGI', full_name='uenibstreamprotobuf.MeNBResourceCoordinationInformationExtIEs.id_NRCGI', index=0,
+      name='id_NRCGI', full_name='streaming_protobufs.MeNBResourceCoordinationInformationExtIEs.id_NRCGI', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_MeNBCoordinationAssistanceInformation', full_name='uenibstreamprotobuf.MeNBResourceCoordinationInformationExtIEs.id_MeNBCoordinationAssistanceInformation', index=1,
+      name='id_MeNBCoordinationAssistanceInformation', full_name='streaming_protobufs.MeNBResourceCoordinationInformationExtIEs.id_MeNBCoordinationAssistanceInformation', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2700,20 +3019,20 @@ _MENBRESOURCECOORDINATIONINFORMATIONEXTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8515,
-  serialized_end=8714,
+  serialized_start=9379,
+  serialized_end=9578,
 )
 
 
 _MENBCOORDINATIONASSISTANCEINFORMATION = _descriptor.Descriptor(
   name='MeNBCoordinationAssistanceInformation',
-  full_name='uenibstreamprotobuf.MeNBCoordinationAssistanceInformation',
+  full_name='streaming_protobufs.MeNBCoordinationAssistanceInformation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.MeNBCoordinationAssistanceInformation.value', index=0,
+      name='value', full_name='streaming_protobufs.MeNBCoordinationAssistanceInformation.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2732,27 +3051,27 @@ _MENBCOORDINATIONASSISTANCEINFORMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8717,
-  serialized_end=8903,
+  serialized_start=9581,
+  serialized_end=9767,
 )
 
 
 _COUNTVALUE = _descriptor.Descriptor(
   name='COUNTvalue',
-  full_name='uenibstreamprotobuf.COUNTvalue',
+  full_name='streaming_protobufs.COUNTvalue',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pDCP_SN', full_name='uenibstreamprotobuf.COUNTvalue.pDCP_SN', index=0,
+      name='pDCP_SN', full_name='streaming_protobufs.COUNTvalue.pDCP_SN', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='hFN', full_name='uenibstreamprotobuf.COUNTvalue.hFN', index=1,
+      name='hFN', full_name='streaming_protobufs.COUNTvalue.hFN', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2770,27 +3089,27 @@ _COUNTVALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8905,
-  serialized_end=8947,
+  serialized_start=9769,
+  serialized_end=9811,
 )
 
 
 _COUNTVALUEEXTENDED = _descriptor.Descriptor(
   name='COUNTValueExtended',
-  full_name='uenibstreamprotobuf.COUNTValueExtended',
+  full_name='streaming_protobufs.COUNTValueExtended',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pDCP_SNExtended', full_name='uenibstreamprotobuf.COUNTValueExtended.pDCP_SNExtended', index=0,
+      name='pDCP_SNExtended', full_name='streaming_protobufs.COUNTValueExtended.pDCP_SNExtended', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='hFNModified', full_name='uenibstreamprotobuf.COUNTValueExtended.hFNModified', index=1,
+      name='hFNModified', full_name='streaming_protobufs.COUNTValueExtended.hFNModified', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2808,27 +3127,27 @@ _COUNTVALUEEXTENDED = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8949,
-  serialized_end=9015,
+  serialized_start=9813,
+  serialized_end=9879,
 )
 
 
 _COUNTVALUEPDCP_SNLENGTH18 = _descriptor.Descriptor(
   name='COUNTvaluePDCP_SNlength18',
-  full_name='uenibstreamprotobuf.COUNTvaluePDCP_SNlength18',
+  full_name='streaming_protobufs.COUNTvaluePDCP_SNlength18',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='pDCP_SNlength18', full_name='uenibstreamprotobuf.COUNTvaluePDCP_SNlength18.pDCP_SNlength18', index=0,
+      name='pDCP_SNlength18', full_name='streaming_protobufs.COUNTvaluePDCP_SNlength18.pDCP_SNlength18', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='hFNforPDCP_SNlength18', full_name='uenibstreamprotobuf.COUNTvaluePDCP_SNlength18.hFNforPDCP_SNlength18', index=1,
+      name='hFNforPDCP_SNlength18', full_name='streaming_protobufs.COUNTvaluePDCP_SNlength18.hFNforPDCP_SNlength18', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2846,27 +3165,27 @@ _COUNTVALUEPDCP_SNLENGTH18 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9017,
-  serialized_end=9100,
+  serialized_start=9881,
+  serialized_end=9964,
 )
 
 
 _EXPECTEDUEBEHAVIOUR = _descriptor.Descriptor(
   name='ExpectedUEBehaviour',
-  full_name='uenibstreamprotobuf.ExpectedUEBehaviour',
+  full_name='streaming_protobufs.ExpectedUEBehaviour',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='expectedActivity', full_name='uenibstreamprotobuf.ExpectedUEBehaviour.expectedActivity', index=0,
+      name='expectedActivity', full_name='streaming_protobufs.ExpectedUEBehaviour.expectedActivity', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='expectedHOInterval', full_name='uenibstreamprotobuf.ExpectedUEBehaviour.expectedHOInterval', index=1,
+      name='expectedHOInterval', full_name='streaming_protobufs.ExpectedUEBehaviour.expectedHOInterval', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2884,41 +3203,41 @@ _EXPECTEDUEBEHAVIOUR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9103,
-  serialized_end=9269,
+  serialized_start=9967,
+  serialized_end=10133,
 )
 
 
 _EXPECTEDUEACTIVITYBEHAVIOUR = _descriptor.Descriptor(
   name='ExpectedUEActivityBehaviour',
-  full_name='uenibstreamprotobuf.ExpectedUEActivityBehaviour',
+  full_name='streaming_protobufs.ExpectedUEActivityBehaviour',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='expectedActivityPeriod', full_name='uenibstreamprotobuf.ExpectedUEActivityBehaviour.expectedActivityPeriod', index=0,
+      name='expectedActivityPeriod', full_name='streaming_protobufs.ExpectedUEActivityBehaviour.expectedActivityPeriod', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='expectedIdlePeriod', full_name='uenibstreamprotobuf.ExpectedUEActivityBehaviour.expectedIdlePeriod', index=1,
+      name='expectedIdlePeriod', full_name='streaming_protobufs.ExpectedUEActivityBehaviour.expectedIdlePeriod', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sourceOfUEActivityBehaviourInformation', full_name='uenibstreamprotobuf.ExpectedUEActivityBehaviour.sourceOfUEActivityBehaviourInformation', index=2,
+      name='sourceOfUEActivityBehaviourInformation', full_name='streaming_protobufs.ExpectedUEActivityBehaviour.sourceOfUEActivityBehaviourInformation', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.ExpectedUEActivityBehaviour.iE_Extensions', index=3,
+      name='iE_Extensions', full_name='streaming_protobufs.ExpectedUEActivityBehaviour.iE_Extensions', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -2936,14 +3255,14 @@ _EXPECTEDUEACTIVITYBEHAVIOUR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9272,
-  serialized_end=9610,
+  serialized_start=10136,
+  serialized_end=10474,
 )
 
 
 _EXPECTEDUEACTIVITYBEHAVIOUR_EXTIES = _descriptor.Descriptor(
   name='ExpectedUEActivityBehaviour_ExtIEs',
-  full_name='uenibstreamprotobuf.ExpectedUEActivityBehaviour_ExtIEs',
+  full_name='streaming_protobufs.ExpectedUEActivityBehaviour_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -2960,20 +3279,20 @@ _EXPECTEDUEACTIVITYBEHAVIOUR_EXTIES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9612,
-  serialized_end=9648,
+  serialized_start=10476,
+  serialized_end=10512,
 )
 
 
 _EXPECTEDHOINTERVAL = _descriptor.Descriptor(
   name='ExpectedHOInterval',
-  full_name='uenibstreamprotobuf.ExpectedHOInterval',
+  full_name='streaming_protobufs.ExpectedHOInterval',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.ExpectedHOInterval.value', index=0,
+      name='value', full_name='streaming_protobufs.ExpectedHOInterval.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2992,20 +3311,20 @@ _EXPECTEDHOINTERVAL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9651,
-  serialized_end=9851,
+  serialized_start=10515,
+  serialized_end=10715,
 )
 
 
 _SOURCEOFUEACTIVITYBEHAVIOURINFORMATION = _descriptor.Descriptor(
   name='SourceOfUEActivityBehaviourInformation',
-  full_name='uenibstreamprotobuf.SourceOfUEActivityBehaviourInformation',
+  full_name='streaming_protobufs.SourceOfUEActivityBehaviourInformation',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.SourceOfUEActivityBehaviourInformation.value', index=0,
+      name='value', full_name='streaming_protobufs.SourceOfUEActivityBehaviourInformation.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -3024,20 +3343,20 @@ _SOURCEOFUEACTIVITYBEHAVIOURINFORMATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9854,
-  serialized_end=10057,
+  serialized_start=10718,
+  serialized_end=10921,
 )
 
 
 _SGNB_ADDITION_TRIGGER_IND = _descriptor.Descriptor(
   name='SGNB_Addition_Trigger_Ind',
-  full_name='uenibstreamprotobuf.SGNB_Addition_Trigger_Ind',
+  full_name='streaming_protobufs.SGNB_Addition_Trigger_Ind',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.SGNB_Addition_Trigger_Ind.value', index=0,
+      name='value', full_name='streaming_protobufs.SGNB_Addition_Trigger_Ind.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -3056,8 +3375,8 @@ _SGNB_ADDITION_TRIGGER_IND = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10060,
-  serialized_end=10242,
+  serialized_start=10924,
+  serialized_end=11106,
 )
 
 _EN_DC_RESOURCECONFIGURATION.fields_by_name['pDCPatSgNB'].enum_type = _EN_DC_RESOURCECONFIGURATION_STATUS
@@ -3080,6 +3399,11 @@ _GBR_QOSINFORMATION_EXTIES.fields_by_name['id_extended_e_RAB_MaximumBitrateDL'].
 _GBR_QOSINFORMATION_EXTIES.fields_by_name['id_extended_e_RAB_MaximumBitrateUL'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT64VALUE
 _GBR_QOSINFORMATION_EXTIES.fields_by_name['id_extended_e_RAB_GuaranteedBitrateDL'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT64VALUE
 _GBR_QOSINFORMATION_EXTIES.fields_by_name['id_extended_e_RAB_GuaranteedBitrateUL'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT64VALUE
+_GLOBALGNB_ID.fields_by_name['gNB_ID'].message_type = _GNB_ID
+_GLOBALGNB_ID.fields_by_name['iE_Extensions'].message_type = _GLOBALGNB_ID_EXTIES
+_GNB_ID.oneofs_by_name['c'].fields.append(
+  _GNB_ID.fields_by_name['gNB_ID'])
+_GNB_ID.fields_by_name['gNB_ID'].containing_oneof = _GNB_ID.oneofs_by_name['c']
 _GTPTUNNELENDPOINT.fields_by_name['iE_Extensions'].message_type = _GTPTUNNELENDPOINT_EXTIES
 _RLCMODE.fields_by_name['value'].enum_type = _RLCMODE_VALUE
 _RLCMODE_VALUE.containing_type = _RLCMODE
@@ -3097,6 +3421,13 @@ _NRCGI.fields_by_name['iE_Extensions'].message_type = _NRCGI_EXTIES
 _E_RAB_LIST.fields_by_name['items'].message_type = _E_RAB_ITEMIES
 _E_RAB_ITEMIES.fields_by_name['id_E_RAB_Item'].message_type = _E_RAB_ITEM
 _E_RAB_ITEM.fields_by_name['cause'].message_type = error__cause__pb2._CAUSE
+_ERABACTIVITYNOTIFYITEMLIST.fields_by_name['items'].message_type = _ERABACTIVITYNOTIFYITEM
+_ERABACTIVITYNOTIFYITEM.fields_by_name['activityReport'].message_type = _USERPLANETRAFFICACTIVITYREPORT
+_ERABACTIVITYNOTIFYITEM.fields_by_name['iE_Extensions'].message_type = _ERABACTIVITYNOTIFYITEM_EXTIES
+_USERPLANETRAFFICACTIVITYREPORT.fields_by_name['value'].enum_type = _USERPLANETRAFFICACTIVITYREPORT_VALUE
+_USERPLANETRAFFICACTIVITYREPORT_VALUE.containing_type = _USERPLANETRAFFICACTIVITYREPORT
+_GNBOVERLOADINFORMATION.fields_by_name['value'].enum_type = _GNBOVERLOADINFORMATION_VALUE
+_GNBOVERLOADINFORMATION_VALUE.containing_type = _GNBOVERLOADINFORMATION
 _CRITICALITYDIAGNOSTICS.fields_by_name['procedureCode'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
 _CRITICALITYDIAGNOSTICS.fields_by_name['triggeringMessage'].message_type = _TRIGGERINGMESSAGE
 _CRITICALITYDIAGNOSTICS.fields_by_name['procedureCriticality'].message_type = _CRITICALITY
@@ -3112,7 +3443,7 @@ _CRITICALITYDIAGNOSTICS_IE_LIST_ITEM.fields_by_name['typeOfError'].message_type 
 _TYPEOFERROR.fields_by_name['value'].enum_type = _TYPEOFERROR_VALUE
 _TYPEOFERROR_VALUE.containing_type = _TYPEOFERROR
 _SGNBRESOURCECOORDINATIONINFORMATION.fields_by_name['nR_CGI'].message_type = _NRCGI
-_SGNBRESOURCECOORDINATIONINFORMATION.fields_by_name['dLCoordinationInformation'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SGNBRESOURCECOORDINATIONINFORMATION.fields_by_name['dLCoordinationInformation'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _SGNBRESOURCECOORDINATIONINFORMATION.fields_by_name['iE_Extensions'].message_type = _SGNBRESOURCECOORDINATIONINFORMATIONEXTIES
 _SGNBRESOURCECOORDINATIONINFORMATIONEXTIES.fields_by_name['id_ECGI'].message_type = _ECGI
 _SGNBRESOURCECOORDINATIONINFORMATIONEXTIES.fields_by_name['id_SgNBCoordinationAssistanceInformation'].message_type = _SGNBCOORDINATIONASSISTANCEINFORMATION
@@ -3149,7 +3480,7 @@ _DL_FORWARDING_VALUE.containing_type = _DL_FORWARDING
 _DUPLICATIONACTIVATION.fields_by_name['value'].enum_type = _DUPLICATIONACTIVATION_VALUE
 _DUPLICATIONACTIVATION_VALUE.containing_type = _DUPLICATIONACTIVATION
 _MENBRESOURCECOORDINATIONINFORMATION.fields_by_name['eUTRA_Cell_ID'].message_type = _ECGI
-_MENBRESOURCECOORDINATIONINFORMATION.fields_by_name['dLCoordinationInformation'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_MENBRESOURCECOORDINATIONINFORMATION.fields_by_name['dLCoordinationInformation'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _MENBRESOURCECOORDINATIONINFORMATION.fields_by_name['iE_Extensions'].message_type = _MENBRESOURCECOORDINATIONINFORMATIONEXTIES
 _MENBRESOURCECOORDINATIONINFORMATIONEXTIES.fields_by_name['id_NRCGI'].message_type = _NRCGI
 _MENBRESOURCECOORDINATIONINFORMATIONEXTIES.fields_by_name['id_MeNBCoordinationAssistanceInformation'].message_type = _MENBCOORDINATIONASSISTANCEINFORMATION
@@ -3175,6 +3506,9 @@ DESCRIPTOR.message_types_by_name['Pre_emptionCapability'] = _PRE_EMPTIONCAPABILI
 DESCRIPTOR.message_types_by_name['E_RAB_Level_QoS_Parameters_ExtIEs'] = _E_RAB_LEVEL_QOS_PARAMETERS_EXTIES
 DESCRIPTOR.message_types_by_name['GBR_QosInformation'] = _GBR_QOSINFORMATION
 DESCRIPTOR.message_types_by_name['GBR_QosInformation_ExtIEs'] = _GBR_QOSINFORMATION_EXTIES
+DESCRIPTOR.message_types_by_name['GlobalGNB_ID'] = _GLOBALGNB_ID
+DESCRIPTOR.message_types_by_name['GNB_ID'] = _GNB_ID
+DESCRIPTOR.message_types_by_name['GlobalGNB_ID_ExtIEs'] = _GLOBALGNB_ID_EXTIES
 DESCRIPTOR.message_types_by_name['GTPtunnelEndpoint'] = _GTPTUNNELENDPOINT
 DESCRIPTOR.message_types_by_name['GTPtunnelEndpoint_ExtIEs'] = _GTPTUNNELENDPOINT_EXTIES
 DESCRIPTOR.message_types_by_name['RLCMode'] = _RLCMODE
@@ -3189,6 +3523,11 @@ DESCRIPTOR.message_types_by_name['ECGI'] = _ECGI
 DESCRIPTOR.message_types_by_name['E_RAB_List'] = _E_RAB_LIST
 DESCRIPTOR.message_types_by_name['E_RAB_ItemIEs'] = _E_RAB_ITEMIES
 DESCRIPTOR.message_types_by_name['E_RAB_Item'] = _E_RAB_ITEM
+DESCRIPTOR.message_types_by_name['ERABActivityNotifyItemList'] = _ERABACTIVITYNOTIFYITEMLIST
+DESCRIPTOR.message_types_by_name['ERABActivityNotifyItem'] = _ERABACTIVITYNOTIFYITEM
+DESCRIPTOR.message_types_by_name['ERABActivityNotifyItem_ExtIEs'] = _ERABACTIVITYNOTIFYITEM_EXTIES
+DESCRIPTOR.message_types_by_name['UserPlaneTrafficActivityReport'] = _USERPLANETRAFFICACTIVITYREPORT
+DESCRIPTOR.message_types_by_name['GNBOverloadInformation'] = _GNBOVERLOADINFORMATION
 DESCRIPTOR.message_types_by_name['CriticalityDiagnostics'] = _CRITICALITYDIAGNOSTICS
 DESCRIPTOR.message_types_by_name['TriggeringMessage'] = _TRIGGERINGMESSAGE
 DESCRIPTOR.message_types_by_name['Criticality'] = _CRITICALITY
@@ -3236,448 +3575,504 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 EN_DC_ResourceConfiguration = _reflection.GeneratedProtocolMessageType('EN_DC_ResourceConfiguration', (_message.Message,), {
   'DESCRIPTOR' : _EN_DC_RESOURCECONFIGURATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.EN_DC_ResourceConfiguration)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.EN_DC_ResourceConfiguration)
   })
 _sym_db.RegisterMessage(EN_DC_ResourceConfiguration)
 
 E_RAB_Level_QoS_Parameters = _reflection.GeneratedProtocolMessageType('E_RAB_Level_QoS_Parameters', (_message.Message,), {
   'DESCRIPTOR' : _E_RAB_LEVEL_QOS_PARAMETERS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RAB_Level_QoS_Parameters)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RAB_Level_QoS_Parameters)
   })
 _sym_db.RegisterMessage(E_RAB_Level_QoS_Parameters)
 
 AllocationAndRetentionPriority = _reflection.GeneratedProtocolMessageType('AllocationAndRetentionPriority', (_message.Message,), {
   'DESCRIPTOR' : _ALLOCATIONANDRETENTIONPRIORITY,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.AllocationAndRetentionPriority)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.AllocationAndRetentionPriority)
   })
 _sym_db.RegisterMessage(AllocationAndRetentionPriority)
 
 Pre_emptionVulnerability = _reflection.GeneratedProtocolMessageType('Pre_emptionVulnerability', (_message.Message,), {
   'DESCRIPTOR' : _PRE_EMPTIONVULNERABILITY,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.Pre_emptionVulnerability)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.Pre_emptionVulnerability)
   })
 _sym_db.RegisterMessage(Pre_emptionVulnerability)
 
 Pre_emptionCapability = _reflection.GeneratedProtocolMessageType('Pre_emptionCapability', (_message.Message,), {
   'DESCRIPTOR' : _PRE_EMPTIONCAPABILITY,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.Pre_emptionCapability)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.Pre_emptionCapability)
   })
 _sym_db.RegisterMessage(Pre_emptionCapability)
 
 E_RAB_Level_QoS_Parameters_ExtIEs = _reflection.GeneratedProtocolMessageType('E_RAB_Level_QoS_Parameters_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _E_RAB_LEVEL_QOS_PARAMETERS_EXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RAB_Level_QoS_Parameters_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RAB_Level_QoS_Parameters_ExtIEs)
   })
 _sym_db.RegisterMessage(E_RAB_Level_QoS_Parameters_ExtIEs)
 
 GBR_QosInformation = _reflection.GeneratedProtocolMessageType('GBR_QosInformation', (_message.Message,), {
   'DESCRIPTOR' : _GBR_QOSINFORMATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.GBR_QosInformation)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.GBR_QosInformation)
   })
 _sym_db.RegisterMessage(GBR_QosInformation)
 
 GBR_QosInformation_ExtIEs = _reflection.GeneratedProtocolMessageType('GBR_QosInformation_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _GBR_QOSINFORMATION_EXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.GBR_QosInformation_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.GBR_QosInformation_ExtIEs)
   })
 _sym_db.RegisterMessage(GBR_QosInformation_ExtIEs)
+
+GlobalGNB_ID = _reflection.GeneratedProtocolMessageType('GlobalGNB_ID', (_message.Message,), {
+  'DESCRIPTOR' : _GLOBALGNB_ID,
+  '__module__' : 'x2ap_common_types_pb2'
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.GlobalGNB_ID)
+  })
+_sym_db.RegisterMessage(GlobalGNB_ID)
+
+GNB_ID = _reflection.GeneratedProtocolMessageType('GNB_ID', (_message.Message,), {
+  'DESCRIPTOR' : _GNB_ID,
+  '__module__' : 'x2ap_common_types_pb2'
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.GNB_ID)
+  })
+_sym_db.RegisterMessage(GNB_ID)
+
+GlobalGNB_ID_ExtIEs = _reflection.GeneratedProtocolMessageType('GlobalGNB_ID_ExtIEs', (_message.Message,), {
+  'DESCRIPTOR' : _GLOBALGNB_ID_EXTIES,
+  '__module__' : 'x2ap_common_types_pb2'
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.GlobalGNB_ID_ExtIEs)
+  })
+_sym_db.RegisterMessage(GlobalGNB_ID_ExtIEs)
 
 GTPtunnelEndpoint = _reflection.GeneratedProtocolMessageType('GTPtunnelEndpoint', (_message.Message,), {
   'DESCRIPTOR' : _GTPTUNNELENDPOINT,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.GTPtunnelEndpoint)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.GTPtunnelEndpoint)
   })
 _sym_db.RegisterMessage(GTPtunnelEndpoint)
 
 GTPtunnelEndpoint_ExtIEs = _reflection.GeneratedProtocolMessageType('GTPtunnelEndpoint_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _GTPTUNNELENDPOINT_EXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.GTPtunnelEndpoint_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.GTPtunnelEndpoint_ExtIEs)
   })
 _sym_db.RegisterMessage(GTPtunnelEndpoint_ExtIEs)
 
 RLCMode = _reflection.GeneratedProtocolMessageType('RLCMode', (_message.Message,), {
   'DESCRIPTOR' : _RLCMODE,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RLCMode)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RLCMode)
   })
 _sym_db.RegisterMessage(RLCMode)
 
 RLC_Status = _reflection.GeneratedProtocolMessageType('RLC_Status', (_message.Message,), {
   'DESCRIPTOR' : _RLC_STATUS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RLC_Status)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RLC_Status)
   })
 _sym_db.RegisterMessage(RLC_Status)
 
 ULConfiguration = _reflection.GeneratedProtocolMessageType('ULConfiguration', (_message.Message,), {
   'DESCRIPTOR' : _ULCONFIGURATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ULConfiguration)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ULConfiguration)
   })
 _sym_db.RegisterMessage(ULConfiguration)
 
 PDCPSnLength = _reflection.GeneratedProtocolMessageType('PDCPSnLength', (_message.Message,), {
   'DESCRIPTOR' : _PDCPSNLENGTH,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.PDCPSnLength)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.PDCPSnLength)
   })
 _sym_db.RegisterMessage(PDCPSnLength)
 
 PDCPChangeIndication = _reflection.GeneratedProtocolMessageType('PDCPChangeIndication', (_message.Message,), {
   'DESCRIPTOR' : _PDCPCHANGEINDICATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.PDCPChangeIndication)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.PDCPChangeIndication)
   })
 _sym_db.RegisterMessage(PDCPChangeIndication)
 
 SplitSRBs = _reflection.GeneratedProtocolMessageType('SplitSRBs', (_message.Message,), {
   'DESCRIPTOR' : _SPLITSRBS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SplitSRBs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SplitSRBs)
   })
 _sym_db.RegisterMessage(SplitSRBs)
 
 NRCGI = _reflection.GeneratedProtocolMessageType('NRCGI', (_message.Message,), {
   'DESCRIPTOR' : _NRCGI,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.NRCGI)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.NRCGI)
   })
 _sym_db.RegisterMessage(NRCGI)
 
 NRCGI_ExtIEs = _reflection.GeneratedProtocolMessageType('NRCGI_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _NRCGI_EXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.NRCGI_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.NRCGI_ExtIEs)
   })
 _sym_db.RegisterMessage(NRCGI_ExtIEs)
 
 ECGI = _reflection.GeneratedProtocolMessageType('ECGI', (_message.Message,), {
   'DESCRIPTOR' : _ECGI,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ECGI)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ECGI)
   })
 _sym_db.RegisterMessage(ECGI)
 
 E_RAB_List = _reflection.GeneratedProtocolMessageType('E_RAB_List', (_message.Message,), {
   'DESCRIPTOR' : _E_RAB_LIST,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RAB_List)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RAB_List)
   })
 _sym_db.RegisterMessage(E_RAB_List)
 
 E_RAB_ItemIEs = _reflection.GeneratedProtocolMessageType('E_RAB_ItemIEs', (_message.Message,), {
   'DESCRIPTOR' : _E_RAB_ITEMIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RAB_ItemIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RAB_ItemIEs)
   })
 _sym_db.RegisterMessage(E_RAB_ItemIEs)
 
 E_RAB_Item = _reflection.GeneratedProtocolMessageType('E_RAB_Item', (_message.Message,), {
   'DESCRIPTOR' : _E_RAB_ITEM,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RAB_Item)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RAB_Item)
   })
 _sym_db.RegisterMessage(E_RAB_Item)
+
+ERABActivityNotifyItemList = _reflection.GeneratedProtocolMessageType('ERABActivityNotifyItemList', (_message.Message,), {
+  'DESCRIPTOR' : _ERABACTIVITYNOTIFYITEMLIST,
+  '__module__' : 'x2ap_common_types_pb2'
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ERABActivityNotifyItemList)
+  })
+_sym_db.RegisterMessage(ERABActivityNotifyItemList)
+
+ERABActivityNotifyItem = _reflection.GeneratedProtocolMessageType('ERABActivityNotifyItem', (_message.Message,), {
+  'DESCRIPTOR' : _ERABACTIVITYNOTIFYITEM,
+  '__module__' : 'x2ap_common_types_pb2'
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ERABActivityNotifyItem)
+  })
+_sym_db.RegisterMessage(ERABActivityNotifyItem)
+
+ERABActivityNotifyItem_ExtIEs = _reflection.GeneratedProtocolMessageType('ERABActivityNotifyItem_ExtIEs', (_message.Message,), {
+  'DESCRIPTOR' : _ERABACTIVITYNOTIFYITEM_EXTIES,
+  '__module__' : 'x2ap_common_types_pb2'
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ERABActivityNotifyItem_ExtIEs)
+  })
+_sym_db.RegisterMessage(ERABActivityNotifyItem_ExtIEs)
+
+UserPlaneTrafficActivityReport = _reflection.GeneratedProtocolMessageType('UserPlaneTrafficActivityReport', (_message.Message,), {
+  'DESCRIPTOR' : _USERPLANETRAFFICACTIVITYREPORT,
+  '__module__' : 'x2ap_common_types_pb2'
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.UserPlaneTrafficActivityReport)
+  })
+_sym_db.RegisterMessage(UserPlaneTrafficActivityReport)
+
+GNBOverloadInformation = _reflection.GeneratedProtocolMessageType('GNBOverloadInformation', (_message.Message,), {
+  'DESCRIPTOR' : _GNBOVERLOADINFORMATION,
+  '__module__' : 'x2ap_common_types_pb2'
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.GNBOverloadInformation)
+  })
+_sym_db.RegisterMessage(GNBOverloadInformation)
 
 CriticalityDiagnostics = _reflection.GeneratedProtocolMessageType('CriticalityDiagnostics', (_message.Message,), {
   'DESCRIPTOR' : _CRITICALITYDIAGNOSTICS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CriticalityDiagnostics)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CriticalityDiagnostics)
   })
 _sym_db.RegisterMessage(CriticalityDiagnostics)
 
 TriggeringMessage = _reflection.GeneratedProtocolMessageType('TriggeringMessage', (_message.Message,), {
   'DESCRIPTOR' : _TRIGGERINGMESSAGE,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.TriggeringMessage)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.TriggeringMessage)
   })
 _sym_db.RegisterMessage(TriggeringMessage)
 
 Criticality = _reflection.GeneratedProtocolMessageType('Criticality', (_message.Message,), {
   'DESCRIPTOR' : _CRITICALITY,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.Criticality)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.Criticality)
   })
 _sym_db.RegisterMessage(Criticality)
 
 CriticalityDiagnostics_IE_List = _reflection.GeneratedProtocolMessageType('CriticalityDiagnostics_IE_List', (_message.Message,), {
   'DESCRIPTOR' : _CRITICALITYDIAGNOSTICS_IE_LIST,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CriticalityDiagnostics_IE_List)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CriticalityDiagnostics_IE_List)
   })
 _sym_db.RegisterMessage(CriticalityDiagnostics_IE_List)
 
 CriticalityDiagnostics_IE_List_Item = _reflection.GeneratedProtocolMessageType('CriticalityDiagnostics_IE_List_Item', (_message.Message,), {
   'DESCRIPTOR' : _CRITICALITYDIAGNOSTICS_IE_LIST_ITEM,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CriticalityDiagnostics_IE_List_Item)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CriticalityDiagnostics_IE_List_Item)
   })
 _sym_db.RegisterMessage(CriticalityDiagnostics_IE_List_Item)
 
 TypeOfError = _reflection.GeneratedProtocolMessageType('TypeOfError', (_message.Message,), {
   'DESCRIPTOR' : _TYPEOFERROR,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.TypeOfError)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.TypeOfError)
   })
 _sym_db.RegisterMessage(TypeOfError)
 
 CriticalityDiagnostics_ExtIEs = _reflection.GeneratedProtocolMessageType('CriticalityDiagnostics_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _CRITICALITYDIAGNOSTICS_EXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CriticalityDiagnostics_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CriticalityDiagnostics_ExtIEs)
   })
 _sym_db.RegisterMessage(CriticalityDiagnostics_ExtIEs)
 
 SgNBResourceCoordinationInformation = _reflection.GeneratedProtocolMessageType('SgNBResourceCoordinationInformation', (_message.Message,), {
   'DESCRIPTOR' : _SGNBRESOURCECOORDINATIONINFORMATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SgNBResourceCoordinationInformation)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SgNBResourceCoordinationInformation)
   })
 _sym_db.RegisterMessage(SgNBResourceCoordinationInformation)
 
 SgNBResourceCoordinationInformationExtIEs = _reflection.GeneratedProtocolMessageType('SgNBResourceCoordinationInformationExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _SGNBRESOURCECOORDINATIONINFORMATIONEXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SgNBResourceCoordinationInformationExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SgNBResourceCoordinationInformationExtIEs)
   })
 _sym_db.RegisterMessage(SgNBResourceCoordinationInformationExtIEs)
 
 SgNBCoordinationAssistanceInformation = _reflection.GeneratedProtocolMessageType('SgNBCoordinationAssistanceInformation', (_message.Message,), {
   'DESCRIPTOR' : _SGNBCOORDINATIONASSISTANCEINFORMATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SgNBCoordinationAssistanceInformation)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SgNBCoordinationAssistanceInformation)
   })
 _sym_db.RegisterMessage(SgNBCoordinationAssistanceInformation)
 
 RRC_Config_Ind = _reflection.GeneratedProtocolMessageType('RRC_Config_Ind', (_message.Message,), {
   'DESCRIPTOR' : _RRC_CONFIG_IND,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRC_Config_Ind)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRC_Config_Ind)
   })
 _sym_db.RegisterMessage(RRC_Config_Ind)
 
 HandoverRestrictionList = _reflection.GeneratedProtocolMessageType('HandoverRestrictionList', (_message.Message,), {
   'DESCRIPTOR' : _HANDOVERRESTRICTIONLIST,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.HandoverRestrictionList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.HandoverRestrictionList)
   })
 _sym_db.RegisterMessage(HandoverRestrictionList)
 
 EPLMNs = _reflection.GeneratedProtocolMessageType('EPLMNs', (_message.Message,), {
   'DESCRIPTOR' : _EPLMNS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.EPLMNs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.EPLMNs)
   })
 _sym_db.RegisterMessage(EPLMNs)
 
 ForbiddenTAs = _reflection.GeneratedProtocolMessageType('ForbiddenTAs', (_message.Message,), {
   'DESCRIPTOR' : _FORBIDDENTAS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ForbiddenTAs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ForbiddenTAs)
   })
 _sym_db.RegisterMessage(ForbiddenTAs)
 
 ForbiddenTAs_Item = _reflection.GeneratedProtocolMessageType('ForbiddenTAs_Item', (_message.Message,), {
   'DESCRIPTOR' : _FORBIDDENTAS_ITEM,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ForbiddenTAs_Item)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ForbiddenTAs_Item)
   })
 _sym_db.RegisterMessage(ForbiddenTAs_Item)
 
 ForbiddenTACs = _reflection.GeneratedProtocolMessageType('ForbiddenTACs', (_message.Message,), {
   'DESCRIPTOR' : _FORBIDDENTACS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ForbiddenTACs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ForbiddenTACs)
   })
 _sym_db.RegisterMessage(ForbiddenTACs)
 
 ForbiddenLAs = _reflection.GeneratedProtocolMessageType('ForbiddenLAs', (_message.Message,), {
   'DESCRIPTOR' : _FORBIDDENLAS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ForbiddenLAs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ForbiddenLAs)
   })
 _sym_db.RegisterMessage(ForbiddenLAs)
 
 ForbiddenLAs_Item = _reflection.GeneratedProtocolMessageType('ForbiddenLAs_Item', (_message.Message,), {
   'DESCRIPTOR' : _FORBIDDENLAS_ITEM,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ForbiddenLAs_Item)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ForbiddenLAs_Item)
   })
 _sym_db.RegisterMessage(ForbiddenLAs_Item)
 
 ForbiddenLACs = _reflection.GeneratedProtocolMessageType('ForbiddenLACs', (_message.Message,), {
   'DESCRIPTOR' : _FORBIDDENLACS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ForbiddenLACs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ForbiddenLACs)
   })
 _sym_db.RegisterMessage(ForbiddenLACs)
 
 ForbiddenInterRATs = _reflection.GeneratedProtocolMessageType('ForbiddenInterRATs', (_message.Message,), {
   'DESCRIPTOR' : _FORBIDDENINTERRATS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ForbiddenInterRATs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ForbiddenInterRATs)
   })
 _sym_db.RegisterMessage(ForbiddenInterRATs)
 
 HandoverRestrictionList_ExtIEs = _reflection.GeneratedProtocolMessageType('HandoverRestrictionList_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _HANDOVERRESTRICTIONLIST_EXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.HandoverRestrictionList_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.HandoverRestrictionList_ExtIEs)
   })
 _sym_db.RegisterMessage(HandoverRestrictionList_ExtIEs)
 
 NRrestrictioninEPSasSecondaryRAT = _reflection.GeneratedProtocolMessageType('NRrestrictioninEPSasSecondaryRAT', (_message.Message,), {
   'DESCRIPTOR' : _NRRESTRICTIONINEPSASSECONDARYRAT,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.NRrestrictioninEPSasSecondaryRAT)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.NRrestrictioninEPSasSecondaryRAT)
   })
 _sym_db.RegisterMessage(NRrestrictioninEPSasSecondaryRAT)
 
 CNTypeRestrictions = _reflection.GeneratedProtocolMessageType('CNTypeRestrictions', (_message.Message,), {
   'DESCRIPTOR' : _CNTYPERESTRICTIONS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CNTypeRestrictions)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CNTypeRestrictions)
   })
 _sym_db.RegisterMessage(CNTypeRestrictions)
 
 CNTypeRestrictionsItem = _reflection.GeneratedProtocolMessageType('CNTypeRestrictionsItem', (_message.Message,), {
   'DESCRIPTOR' : _CNTYPERESTRICTIONSITEM,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CNTypeRestrictionsItem)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CNTypeRestrictionsItem)
   })
 _sym_db.RegisterMessage(CNTypeRestrictionsItem)
 
 NRrestrictionin5GS = _reflection.GeneratedProtocolMessageType('NRrestrictionin5GS', (_message.Message,), {
   'DESCRIPTOR' : _NRRESTRICTIONIN5GS,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.NRrestrictionin5GS)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.NRrestrictionin5GS)
   })
 _sym_db.RegisterMessage(NRrestrictionin5GS)
 
 NRUESecurityCapabilities = _reflection.GeneratedProtocolMessageType('NRUESecurityCapabilities', (_message.Message,), {
   'DESCRIPTOR' : _NRUESECURITYCAPABILITIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.NRUESecurityCapabilities)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.NRUESecurityCapabilities)
   })
 _sym_db.RegisterMessage(NRUESecurityCapabilities)
 
 UEAggregateMaximumBitRate = _reflection.GeneratedProtocolMessageType('UEAggregateMaximumBitRate', (_message.Message,), {
   'DESCRIPTOR' : _UEAGGREGATEMAXIMUMBITRATE,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.UEAggregateMaximumBitRate)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.UEAggregateMaximumBitRate)
   })
 _sym_db.RegisterMessage(UEAggregateMaximumBitRate)
 
 UEAggregate_MaximumBitrate_ExtIEs = _reflection.GeneratedProtocolMessageType('UEAggregate_MaximumBitrate_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _UEAGGREGATE_MAXIMUMBITRATE_EXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.UEAggregate_MaximumBitrate_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.UEAggregate_MaximumBitrate_ExtIEs)
   })
 _sym_db.RegisterMessage(UEAggregate_MaximumBitrate_ExtIEs)
 
 DL_Forwarding = _reflection.GeneratedProtocolMessageType('DL_Forwarding', (_message.Message,), {
   'DESCRIPTOR' : _DL_FORWARDING,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.DL_Forwarding)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.DL_Forwarding)
   })
 _sym_db.RegisterMessage(DL_Forwarding)
 
 DuplicationActivation = _reflection.GeneratedProtocolMessageType('DuplicationActivation', (_message.Message,), {
   'DESCRIPTOR' : _DUPLICATIONACTIVATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.DuplicationActivation)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.DuplicationActivation)
   })
 _sym_db.RegisterMessage(DuplicationActivation)
 
 MeNBResourceCoordinationInformation = _reflection.GeneratedProtocolMessageType('MeNBResourceCoordinationInformation', (_message.Message,), {
   'DESCRIPTOR' : _MENBRESOURCECOORDINATIONINFORMATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.MeNBResourceCoordinationInformation)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.MeNBResourceCoordinationInformation)
   })
 _sym_db.RegisterMessage(MeNBResourceCoordinationInformation)
 
 MeNBResourceCoordinationInformationExtIEs = _reflection.GeneratedProtocolMessageType('MeNBResourceCoordinationInformationExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _MENBRESOURCECOORDINATIONINFORMATIONEXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.MeNBResourceCoordinationInformationExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.MeNBResourceCoordinationInformationExtIEs)
   })
 _sym_db.RegisterMessage(MeNBResourceCoordinationInformationExtIEs)
 
 MeNBCoordinationAssistanceInformation = _reflection.GeneratedProtocolMessageType('MeNBCoordinationAssistanceInformation', (_message.Message,), {
   'DESCRIPTOR' : _MENBCOORDINATIONASSISTANCEINFORMATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.MeNBCoordinationAssistanceInformation)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.MeNBCoordinationAssistanceInformation)
   })
 _sym_db.RegisterMessage(MeNBCoordinationAssistanceInformation)
 
 COUNTvalue = _reflection.GeneratedProtocolMessageType('COUNTvalue', (_message.Message,), {
   'DESCRIPTOR' : _COUNTVALUE,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.COUNTvalue)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.COUNTvalue)
   })
 _sym_db.RegisterMessage(COUNTvalue)
 
 COUNTValueExtended = _reflection.GeneratedProtocolMessageType('COUNTValueExtended', (_message.Message,), {
   'DESCRIPTOR' : _COUNTVALUEEXTENDED,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.COUNTValueExtended)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.COUNTValueExtended)
   })
 _sym_db.RegisterMessage(COUNTValueExtended)
 
 COUNTvaluePDCP_SNlength18 = _reflection.GeneratedProtocolMessageType('COUNTvaluePDCP_SNlength18', (_message.Message,), {
   'DESCRIPTOR' : _COUNTVALUEPDCP_SNLENGTH18,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.COUNTvaluePDCP_SNlength18)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.COUNTvaluePDCP_SNlength18)
   })
 _sym_db.RegisterMessage(COUNTvaluePDCP_SNlength18)
 
 ExpectedUEBehaviour = _reflection.GeneratedProtocolMessageType('ExpectedUEBehaviour', (_message.Message,), {
   'DESCRIPTOR' : _EXPECTEDUEBEHAVIOUR,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ExpectedUEBehaviour)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ExpectedUEBehaviour)
   })
 _sym_db.RegisterMessage(ExpectedUEBehaviour)
 
 ExpectedUEActivityBehaviour = _reflection.GeneratedProtocolMessageType('ExpectedUEActivityBehaviour', (_message.Message,), {
   'DESCRIPTOR' : _EXPECTEDUEACTIVITYBEHAVIOUR,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ExpectedUEActivityBehaviour)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ExpectedUEActivityBehaviour)
   })
 _sym_db.RegisterMessage(ExpectedUEActivityBehaviour)
 
 ExpectedUEActivityBehaviour_ExtIEs = _reflection.GeneratedProtocolMessageType('ExpectedUEActivityBehaviour_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _EXPECTEDUEACTIVITYBEHAVIOUR_EXTIES,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ExpectedUEActivityBehaviour_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ExpectedUEActivityBehaviour_ExtIEs)
   })
 _sym_db.RegisterMessage(ExpectedUEActivityBehaviour_ExtIEs)
 
 ExpectedHOInterval = _reflection.GeneratedProtocolMessageType('ExpectedHOInterval', (_message.Message,), {
   'DESCRIPTOR' : _EXPECTEDHOINTERVAL,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.ExpectedHOInterval)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.ExpectedHOInterval)
   })
 _sym_db.RegisterMessage(ExpectedHOInterval)
 
 SourceOfUEActivityBehaviourInformation = _reflection.GeneratedProtocolMessageType('SourceOfUEActivityBehaviourInformation', (_message.Message,), {
   'DESCRIPTOR' : _SOURCEOFUEACTIVITYBEHAVIOURINFORMATION,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SourceOfUEActivityBehaviourInformation)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SourceOfUEActivityBehaviourInformation)
   })
 _sym_db.RegisterMessage(SourceOfUEActivityBehaviourInformation)
 
 SGNB_Addition_Trigger_Ind = _reflection.GeneratedProtocolMessageType('SGNB_Addition_Trigger_Ind', (_message.Message,), {
   'DESCRIPTOR' : _SGNB_ADDITION_TRIGGER_IND,
   '__module__' : 'x2ap_common_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SGNB_Addition_Trigger_Ind)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SGNB_Addition_Trigger_Ind)
   })
 _sym_db.RegisterMessage(SGNB_Addition_Trigger_Ind)
 

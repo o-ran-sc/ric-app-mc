@@ -18,14 +18,14 @@ PROTOBUF_C__BEGIN_DECLS
 #include "x2ap_common_types.pb-c.h"
 #include "rrc_cg_config.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge;
-typedef struct _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList;
-typedef struct _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem;
-typedef struct _Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs;
-typedef struct _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent;
-typedef struct _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs;
-typedef struct _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent;
-typedef struct _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs;
+typedef struct _StreamingProtobufs__SgNBAdditionRequestAcknowledge StreamingProtobufs__SgNBAdditionRequestAcknowledge;
+typedef struct _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList;
+typedef struct _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem;
+typedef struct _StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs;
+typedef struct _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent;
+typedef struct _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs;
+typedef struct _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent;
+typedef struct _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs;
 
 
 /* --- enums --- */
@@ -33,302 +33,302 @@ typedef struct _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCP
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge
+struct  _StreamingProtobufs__SgNBAdditionRequestAcknowledge
 {
   ProtobufCMessage base;
   uint32_t id_menb_ue_x2ap_id;
   uint32_t id_sgnb_ue_x2ap_id;
-  Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList *id_e_rabs_admitted_tobeadded_sgnbaddreqacklist;
-  Uenibstreamprotobuf__ERABList *id_e_rabs_notadmitted_list;
+  StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList *id_e_rabs_admitted_tobeadded_sgnbaddreqacklist;
+  StreamingProtobufs__ERABList *id_e_rabs_notadmitted_list;
   /*
    *The content of id_SgNBtoMeNBContainer has been specified in 3GPP 38.331 to be CG-Config.
    */
-  Uenibstreamprotobuf__CGConfig *id_sgnbtomenbcontainer;
-  Uenibstreamprotobuf__CriticalityDiagnostics *id_criticalitydiagnostics;
+  StreamingProtobufs__CGConfig *id_sgnbtomenbcontainer;
+  StreamingProtobufs__CriticalityDiagnostics *id_criticalitydiagnostics;
   Google__Protobuf__UInt32Value *id_menb_ue_x2ap_id_extension;
-  Uenibstreamprotobuf__SplitSRBs *id_admittedsplitsrbs;
-  Uenibstreamprotobuf__SgNBResourceCoordinationInformation *id_sgnbresourcecoordinationinformation;
-  Uenibstreamprotobuf__RRCConfigInd *id_rrcconfigindication;
+  StreamingProtobufs__SplitSRBs *id_admittedsplitsrbs;
+  StreamingProtobufs__SgNBResourceCoordinationInformation *id_sgnbresourcecoordinationinformation;
+  StreamingProtobufs__RRCConfigInd *id_rrcconfigindication;
 };
-#define UENIBSTREAMPROTOBUF__SG_NBADDITION_REQUEST_ACKNOWLEDGE__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sg_nbaddition_request_acknowledge__descriptor) \
+#define STREAMING_PROTOBUFS__SG_NBADDITION_REQUEST_ACKNOWLEDGE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sg_nbaddition_request_acknowledge__descriptor) \
     , 0, 0, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList
+struct  _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList
 {
   ProtobufCMessage base;
   size_t n_id_e_rabs_admitted_tobeadded_sgnbaddreqack_item;
-  Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem **id_e_rabs_admitted_tobeadded_sgnbaddreqack_item;
+  StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem **id_e_rabs_admitted_tobeadded_sgnbaddreqack_item;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK_LIST__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK_LIST__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__descriptor) \
     , 0,NULL }
 
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPPRESENT = 3,
-  UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPNOTPRESENT = 4
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION)
-} Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem__ResourceConfigurationCase;
+  STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION__NOT_SET = 0,
+  STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPPRESENT = 3,
+  STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPNOTPRESENT = 4
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION)
+} StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem__ResourceConfigurationCase;
 
-struct  _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem
+struct  _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem
 {
   ProtobufCMessage base;
   uint32_t e_rab_id;
-  Uenibstreamprotobuf__ENDCResourceConfiguration *en_dc_resourceconfiguration;
+  StreamingProtobufs__ENDCResourceConfiguration *en_dc_resourceconfiguration;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs **ie_extensions;
-  Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem__ResourceConfigurationCase resource_configuration_case;
+  StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs **ie_extensions;
+  StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem__ResourceConfigurationCase resource_configuration_case;
   union {
-    Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent *sgnbpdcppresent;
-    Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent *sgnbpdcpnotpresent;
+    StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent *sgnbpdcppresent;
+    StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent *sgnbpdcpnotpresent;
   };
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__descriptor) \
-    , 0, NULL, 0,NULL, UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__descriptor) \
+    , 0, NULL, 0,NULL, STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM__RESOURCE_CONFIGURATION__NOT_SET, {0} }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs
+struct  _StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_ADDED__SG_NBADD_REQ_ACK__ITEM_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__descriptor) \
      }
 
 
-struct  _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent
+struct  _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *s1_dl_gtptunnelendpoint;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *sgnb_ul_gtp_teidatpdcp;
-  Uenibstreamprotobuf__RLCMode *rlc_mode;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *dl_forwarding_gtptunnelendpoint;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *ul_forwarding_gtptunnelendpoint;
-  Uenibstreamprotobuf__ERABLevelQoSParameters *mcg_e_rab_level_qos_parameters;
-  Uenibstreamprotobuf__ULConfiguration *ul_configuration;
+  StreamingProtobufs__GTPtunnelEndpoint *s1_dl_gtptunnelendpoint;
+  StreamingProtobufs__GTPtunnelEndpoint *sgnb_ul_gtp_teidatpdcp;
+  StreamingProtobufs__RLCMode *rlc_mode;
+  StreamingProtobufs__GTPtunnelEndpoint *dl_forwarding_gtptunnelendpoint;
+  StreamingProtobufs__GTPtunnelEndpoint *ul_forwarding_gtptunnelendpoint;
+  StreamingProtobufs__ERABLevelQoSParameters *mcg_e_rab_level_qos_parameters;
+  StreamingProtobufs__ULConfiguration *ul_configuration;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs **ie_extensions;
+  StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__SG_NBPDCPPRESENT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__SG_NBPDCPPRESENT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__descriptor) \
     , NULL, NULL, NULL, NULL, NULL, NULL, NULL, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs
+struct  _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__PDCPSnLength *id_ulpdcpsnlength;
-  Uenibstreamprotobuf__PDCPSnLength *id_dlpdcpsnlength;
+  StreamingProtobufs__PDCPSnLength *id_ulpdcpsnlength;
+  StreamingProtobufs__PDCPSnLength *id_dlpdcpsnlength;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__SG_NBPDCPPRESENT_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__SG_NBPDCPPRESENT_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__descriptor) \
     , NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent
+struct  _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *sgnb_dl_gtp_teidatscg;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *secondary_sgnb_dl_gtp_teidatscg;
+  StreamingProtobufs__GTPtunnelEndpoint *sgnb_dl_gtp_teidatscg;
+  StreamingProtobufs__GTPtunnelEndpoint *secondary_sgnb_dl_gtp_teidatscg;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs **ie_extensions;
+  StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__SG_NBPDCPNOTPRESENT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__SG_NBPDCPNOTPRESENT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__descriptor) \
     , NULL, NULL, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs
+struct  _StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs
 {
   ProtobufCMessage base;
   Google__Protobuf__UInt32Value *lc_id;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__SG_NBPDCPNOTPRESENT_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__ADMITTED__TO_BE_ADDED__SG_NBADD_REQ_ACK__SG_NBPDCPNOTPRESENT_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__descriptor) \
     , NULL }
 
 
-/* Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge methods */
-void   uenibstreamprotobuf__sg_nbaddition_request_acknowledge__init
-                     (Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge         *message);
-size_t uenibstreamprotobuf__sg_nbaddition_request_acknowledge__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge   *message);
-size_t uenibstreamprotobuf__sg_nbaddition_request_acknowledge__pack
-                     (const Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge   *message,
+/* StreamingProtobufs__SgNBAdditionRequestAcknowledge methods */
+void   streaming_protobufs__sg_nbaddition_request_acknowledge__init
+                     (StreamingProtobufs__SgNBAdditionRequestAcknowledge         *message);
+size_t streaming_protobufs__sg_nbaddition_request_acknowledge__get_packed_size
+                     (const StreamingProtobufs__SgNBAdditionRequestAcknowledge   *message);
+size_t streaming_protobufs__sg_nbaddition_request_acknowledge__pack
+                     (const StreamingProtobufs__SgNBAdditionRequestAcknowledge   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sg_nbaddition_request_acknowledge__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge   *message,
+size_t streaming_protobufs__sg_nbaddition_request_acknowledge__pack_to_buffer
+                     (const StreamingProtobufs__SgNBAdditionRequestAcknowledge   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *
-       uenibstreamprotobuf__sg_nbaddition_request_acknowledge__unpack
+StreamingProtobufs__SgNBAdditionRequestAcknowledge *
+       streaming_protobufs__sg_nbaddition_request_acknowledge__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sg_nbaddition_request_acknowledge__free_unpacked
-                     (Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *message,
+void   streaming_protobufs__sg_nbaddition_request_acknowledge__free_unpacked
+                     (StreamingProtobufs__SgNBAdditionRequestAcknowledge *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList methods */
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__init
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList         *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList   *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__pack
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList   *message,
+/* StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList methods */
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__init
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList         *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__get_packed_size
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList   *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__pack
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList   *message,
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__pack_to_buffer
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList *
-       uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__unpack
+StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList *
+       streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__free_unpacked
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList *message,
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__free_unpacked
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem methods */
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__init
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem         *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem   *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__pack
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem   *message,
+/* StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem methods */
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__init
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem         *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__get_packed_size
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem   *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__pack
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem   *message,
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__pack_to_buffer
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem *
-       uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__unpack
+StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem *
+       streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__free_unpacked
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem *message,
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__free_unpacked
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs methods */
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs   *message,
+/* StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs methods */
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs         *message);
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs   *message);
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs   *message,
+size_t streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__unpack
+StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs *
+       streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent methods */
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__init
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent         *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent   *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__pack
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent   *message,
+/* StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent methods */
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__init
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent         *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__get_packed_size
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent   *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__pack
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent   *message,
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__pack_to_buffer
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent *
-       uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__unpack
+StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent *
+       streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__free_unpacked
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent *message,
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__free_unpacked
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs methods */
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs   *message,
+/* StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs methods */
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__init
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs         *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs   *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__pack
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs   *message,
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs *
-       uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__unpack
+StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs *
+       streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs *message,
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent methods */
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__init
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent         *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent   *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__pack
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent   *message,
+/* StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent methods */
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__init
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent         *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__get_packed_size
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent   *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__pack
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent   *message,
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__pack_to_buffer
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent *
-       uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__unpack
+StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent *
+       streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__free_unpacked
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent *message,
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__free_unpacked
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs methods */
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs   *message,
+/* StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs methods */
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__init
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs         *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs   *message);
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__pack
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs   *message,
+size_t streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs *
-       uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__unpack
+StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs *
+       streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs *message,
+void   streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge_Closure)
-                 (const Uenibstreamprotobuf__SgNBAdditionRequestAcknowledge *message,
+typedef void (*StreamingProtobufs__SgNBAdditionRequestAcknowledge_Closure)
+                 (const StreamingProtobufs__SgNBAdditionRequestAcknowledge *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList_Closure)
-                 (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckList *message,
+typedef void (*StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList_Closure)
+                 (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckList *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem_Closure)
-                 (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckItem *message,
+typedef void (*StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem_Closure)
+                 (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckItem *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeAddedSgNBAddReqAckItemExtIEs *message,
+typedef void (*StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs_Closure)
+                 (const StreamingProtobufs__ERABsToBeAddedSgNBAddReqAckItemExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent_Closure)
-                 (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent *message,
+typedef void (*StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent_Closure)
+                 (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresent *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs *message,
+typedef void (*StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs_Closure)
+                 (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPpresentExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent_Closure)
-                 (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent *message,
+typedef void (*StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent_Closure)
+                 (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresent *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs *message,
+typedef void (*StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs_Closure)
+                 (const StreamingProtobufs__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPnotpresentExtIEs *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -336,14 +336,14 @@ typedef void (*Uenibstreamprotobuf__ERABsAdmittedToBeAddedSgNBAddReqAckSgNBPDCPn
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbaddition_request_acknowledge__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sg_nbaddition_request_acknowledge__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack_list__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__item__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_added__sg_nbadd_req_ack__item_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcppresent_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__admitted__to_be_added__sg_nbadd_req_ack__sg_nbpdcpnotpresent_ext_ies__descriptor;
 
 PROTOBUF_C__END_DECLS
 

@@ -23,6 +23,9 @@
 
 #include "packet.h"
 
+
+#include "/usr/local/include/protobuf-c/protobuf-c.h"
+
 struct _sgnb_mod_req {
 	gs_uint64_t timestamp_ms;
 	gs_sp_t gnb_id;
@@ -44,10 +47,13 @@ static inline gs_retval_t get_sgnb_mod_req__timestamp_ms(struct packet *p, gs_ui
 }
 
 static inline gs_retval_t get_sgnb_mod_req__gnb_id(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_mod_req *)(p->record.packed.values))->gnb_id;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_mod_req *)(p->record.packed.values))->gnb_id;
+	if( t->data == NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = strlen(t->data);
 }
 
 static inline gs_retval_t get_sgnb_mod_req__cause_protocol(struct packet *p, gs_int64_t *t){

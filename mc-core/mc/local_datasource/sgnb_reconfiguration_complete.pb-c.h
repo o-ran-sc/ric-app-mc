@@ -17,12 +17,12 @@ PROTOBUF_C__BEGIN_DECLS
 #include "google/protobuf/wrappers.pb-c.h"
 #include "error_cause.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__SgNBReconfigurationComplete Uenibstreamprotobuf__SgNBReconfigurationComplete;
-typedef struct _Uenibstreamprotobuf__ResponseInformationSgNBReconfComp Uenibstreamprotobuf__ResponseInformationSgNBReconfComp;
-typedef struct _Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem;
-typedef struct _Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs;
-typedef struct _Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem;
-typedef struct _Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs;
+typedef struct _StreamingProtobufs__SgNBReconfigurationComplete StreamingProtobufs__SgNBReconfigurationComplete;
+typedef struct _StreamingProtobufs__ResponseInformationSgNBReconfComp StreamingProtobufs__ResponseInformationSgNBReconfComp;
+typedef struct _StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem;
+typedef struct _StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs;
+typedef struct _StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem;
+typedef struct _StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs;
 
 
 /* --- enums --- */
@@ -30,215 +30,215 @@ typedef struct _Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMe
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__SgNBReconfigurationComplete
+struct  _StreamingProtobufs__SgNBReconfigurationComplete
 {
   ProtobufCMessage base;
   uint32_t id_menb_ue_x2ap_id;
   uint32_t id_sgnb_ue_x2ap_id;
-  Uenibstreamprotobuf__ResponseInformationSgNBReconfComp *id_responseinformationsgnbreconfcomp;
+  StreamingProtobufs__ResponseInformationSgNBReconfComp *id_responseinformationsgnbreconfcomp;
   Google__Protobuf__UInt32Value *id_menb_ue_x2ap_id_extension;
 };
-#define UENIBSTREAMPROTOBUF__SG_NBRECONFIGURATION_COMPLETE__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sg_nbreconfiguration_complete__descriptor) \
+#define STREAMING_PROTOBUFS__SG_NBRECONFIGURATION_COMPLETE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sg_nbreconfiguration_complete__descriptor) \
     , 0, 0, NULL, NULL }
 
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE_SUCCESS__SG_NBRECONF_COMP = 1,
-  UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE_REJECT_BY__ME_NB__SG_NBRECONF_COMP = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE)
-} Uenibstreamprotobuf__ResponseInformationSgNBReconfComp__ValueCase;
+  STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE__NOT_SET = 0,
+  STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE_SUCCESS__SG_NBRECONF_COMP = 1,
+  STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE_REJECT_BY__ME_NB__SG_NBRECONF_COMP = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE)
+} StreamingProtobufs__ResponseInformationSgNBReconfComp__ValueCase;
 
-struct  _Uenibstreamprotobuf__ResponseInformationSgNBReconfComp
+struct  _StreamingProtobufs__ResponseInformationSgNBReconfComp
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__ResponseInformationSgNBReconfComp__ValueCase value_case;
+  StreamingProtobufs__ResponseInformationSgNBReconfComp__ValueCase value_case;
   union {
-    Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem *success_sgnbreconfcomp;
-    Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem *reject_by_menb_sgnbreconfcomp;
+    StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem *success_sgnbreconfcomp;
+    StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem *reject_by_menb_sgnbreconfcomp;
   };
 };
-#define UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__response_information_sg_nbreconf_comp__descriptor) \
-    , UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__response_information_sg_nbreconf_comp__descriptor) \
+    , STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__VALUE__NOT_SET, {0} }
 
 
-struct  _Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem
+struct  _StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem
 {
   ProtobufCMessage base;
-  Google__Protobuf__StringValue *menbtosgnbcontainer;
+  Google__Protobuf__BytesValue *menbtosgnbcontainer;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs **ie_extensions;
+  StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__SUCCESS_ITEM__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item__descriptor) \
+#define STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__SUCCESS_ITEM__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__response_information_sg_nbreconf_comp__success_item__descriptor) \
     , NULL, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs
+struct  _StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__SUCCESS_ITEM_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__SUCCESS_ITEM_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__response_information_sg_nbreconf_comp__success_item_ext_ies__descriptor) \
      }
 
 
-struct  _Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem
+struct  _StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__Cause *cause;
+  StreamingProtobufs__Cause *cause;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs **ie_extensions;
+  StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__REJECT_BY_ME_NBITEM__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem__descriptor) \
+#define STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__REJECT_BY_ME_NBITEM__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem__descriptor) \
     , NULL, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs
+struct  _StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__RESPONSE_INFORMATION_SG_NBRECONF_COMP__REJECT_BY_ME_NBITEM_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__RESPONSE_INFORMATION_SG_NBRECONF_COMP__REJECT_BY_ME_NBITEM_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__descriptor) \
      }
 
 
-/* Uenibstreamprotobuf__SgNBReconfigurationComplete methods */
-void   uenibstreamprotobuf__sg_nbreconfiguration_complete__init
-                     (Uenibstreamprotobuf__SgNBReconfigurationComplete         *message);
-size_t uenibstreamprotobuf__sg_nbreconfiguration_complete__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBReconfigurationComplete   *message);
-size_t uenibstreamprotobuf__sg_nbreconfiguration_complete__pack
-                     (const Uenibstreamprotobuf__SgNBReconfigurationComplete   *message,
+/* StreamingProtobufs__SgNBReconfigurationComplete methods */
+void   streaming_protobufs__sg_nbreconfiguration_complete__init
+                     (StreamingProtobufs__SgNBReconfigurationComplete         *message);
+size_t streaming_protobufs__sg_nbreconfiguration_complete__get_packed_size
+                     (const StreamingProtobufs__SgNBReconfigurationComplete   *message);
+size_t streaming_protobufs__sg_nbreconfiguration_complete__pack
+                     (const StreamingProtobufs__SgNBReconfigurationComplete   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sg_nbreconfiguration_complete__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBReconfigurationComplete   *message,
+size_t streaming_protobufs__sg_nbreconfiguration_complete__pack_to_buffer
+                     (const StreamingProtobufs__SgNBReconfigurationComplete   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SgNBReconfigurationComplete *
-       uenibstreamprotobuf__sg_nbreconfiguration_complete__unpack
+StreamingProtobufs__SgNBReconfigurationComplete *
+       streaming_protobufs__sg_nbreconfiguration_complete__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sg_nbreconfiguration_complete__free_unpacked
-                     (Uenibstreamprotobuf__SgNBReconfigurationComplete *message,
+void   streaming_protobufs__sg_nbreconfiguration_complete__free_unpacked
+                     (StreamingProtobufs__SgNBReconfigurationComplete *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ResponseInformationSgNBReconfComp methods */
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__init
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfComp         *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__get_packed_size
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfComp   *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__pack
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfComp   *message,
+/* StreamingProtobufs__ResponseInformationSgNBReconfComp methods */
+void   streaming_protobufs__response_information_sg_nbreconf_comp__init
+                     (StreamingProtobufs__ResponseInformationSgNBReconfComp         *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__get_packed_size
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfComp   *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__pack
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfComp   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__pack_to_buffer
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfComp   *message,
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__pack_to_buffer
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfComp   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ResponseInformationSgNBReconfComp *
-       uenibstreamprotobuf__response_information_sg_nbreconf_comp__unpack
+StreamingProtobufs__ResponseInformationSgNBReconfComp *
+       streaming_protobufs__response_information_sg_nbreconf_comp__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__free_unpacked
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfComp *message,
+void   streaming_protobufs__response_information_sg_nbreconf_comp__free_unpacked
+                     (StreamingProtobufs__ResponseInformationSgNBReconfComp *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem methods */
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item__init
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem         *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item__get_packed_size
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem   *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item__pack
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem   *message,
+/* StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem methods */
+void   streaming_protobufs__response_information_sg_nbreconf_comp__success_item__init
+                     (StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem         *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__success_item__get_packed_size
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem   *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__success_item__pack
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item__pack_to_buffer
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem   *message,
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__success_item__pack_to_buffer
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem *
-       uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item__unpack
+StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem *
+       streaming_protobufs__response_information_sg_nbreconf_comp__success_item__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item__free_unpacked
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem *message,
+void   streaming_protobufs__response_information_sg_nbreconf_comp__success_item__free_unpacked
+                     (StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs methods */
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item_ext_ies__init
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs         *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs   *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item_ext_ies__pack
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs   *message,
+/* StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs methods */
+void   streaming_protobufs__response_information_sg_nbreconf_comp__success_item_ext_ies__init
+                     (StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs         *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__success_item_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs   *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__success_item_ext_ies__pack
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs   *message,
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__success_item_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs *
-       uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item_ext_ies__unpack
+StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs *
+       streaming_protobufs__response_information_sg_nbreconf_comp__success_item_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs *message,
+void   streaming_protobufs__response_information_sg_nbreconf_comp__success_item_ext_ies__free_unpacked
+                     (StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem methods */
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem__init
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem         *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem__get_packed_size
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem   *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem__pack
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem   *message,
+/* StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem methods */
+void   streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem__init
+                     (StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem         *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem__get_packed_size
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem   *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem__pack
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem__pack_to_buffer
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem   *message,
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem__pack_to_buffer
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem *
-       uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem__unpack
+StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem *
+       streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem__free_unpacked
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem *message,
+void   streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem__free_unpacked
+                     (StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs methods */
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__init
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs         *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs   *message);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__pack
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs   *message,
+/* StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs methods */
+void   streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__init
+                     (StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs         *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs   *message);
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__pack
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs   *message,
+size_t streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs *
-       uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__unpack
+StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs *
+       streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs *message,
+void   streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__free_unpacked
+                     (StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__SgNBReconfigurationComplete_Closure)
-                 (const Uenibstreamprotobuf__SgNBReconfigurationComplete *message,
+typedef void (*StreamingProtobufs__SgNBReconfigurationComplete_Closure)
+                 (const StreamingProtobufs__SgNBReconfigurationComplete *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ResponseInformationSgNBReconfComp_Closure)
-                 (const Uenibstreamprotobuf__ResponseInformationSgNBReconfComp *message,
+typedef void (*StreamingProtobufs__ResponseInformationSgNBReconfComp_Closure)
+                 (const StreamingProtobufs__ResponseInformationSgNBReconfComp *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem_Closure)
-                 (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItem *message,
+typedef void (*StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem_Closure)
+                 (const StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItem *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompSuccessItemExtIEs *message,
+typedef void (*StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs_Closure)
+                 (const StreamingProtobufs__ResponseInformationSgNBReconfCompSuccessItemExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem_Closure)
-                 (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItem *message,
+typedef void (*StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem_Closure)
+                 (const StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItem *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs *message,
+typedef void (*StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs_Closure)
+                 (const StreamingProtobufs__ResponseInformationSgNBReconfCompRejectByMeNBItemExtIEs *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -246,12 +246,12 @@ typedef void (*Uenibstreamprotobuf__ResponseInformationSgNBReconfCompRejectByMeN
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbreconfiguration_complete__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__response_information_sg_nbreconf_comp__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__response_information_sg_nbreconf_comp__success_item_ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sg_nbreconfiguration_complete__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__response_information_sg_nbreconf_comp__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__response_information_sg_nbreconf_comp__success_item__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__response_information_sg_nbreconf_comp__success_item_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__response_information_sg_nbreconf_comp__reject_by_me_nbitem_ext_ies__descriptor;
 
 PROTOBUF_C__END_DECLS
 

@@ -23,6 +23,9 @@
 
 #include "packet.h"
 
+
+#include "/usr/local/include/protobuf-c/protobuf-c.h"
+
 struct _sgnb_release_confirm_from_menb_erabs {
 	gs_uint64_t timestamp_ms;
 	gs_sp_t gnb_id;
@@ -33,8 +36,8 @@ struct _sgnb_release_confirm_from_menb_erabs {
 	gs_int64_t e_RAB_ID;
 	gs_int64_t pDCPatSgNB;
 	gs_int64_t mCGresources;
-	gs_sp_t gTP_TEID;
-	gs_sp_t transportLayerAddress;
+	ProtobufCBinaryData gTP_TEID;
+	ProtobufCBinaryData transportLayerAddress;
 };
 
 static inline void init__sgnb_release_confirm_from_menb_erabs(struct _sgnb_release_confirm_from_menb_erabs *m){
@@ -46,10 +49,13 @@ static inline gs_retval_t get_sgnb_release_confirm_from_menb_erabs__timestamp_ms
 }
 
 static inline gs_retval_t get_sgnb_release_confirm_from_menb_erabs__gnb_id(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_release_confirm_from_menb_erabs *)(p->record.packed.values))->gnb_id;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_release_confirm_from_menb_erabs *)(p->record.packed.values))->gnb_id;
+	if( t->data == NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = strlen(t->data);
 }
 
 static inline gs_retval_t get_sgnb_release_confirm_from_menb_erabs__id_MeNB_UE_X2AP_ID(struct packet *p, gs_int64_t *t){
@@ -88,17 +94,23 @@ static inline gs_retval_t get_sgnb_release_confirm_from_menb_erabs__mCGresources
 }
 
 static inline gs_retval_t get_sgnb_release_confirm_from_menb_erabs__gTP_TEID(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_release_confirm_from_menb_erabs *)(p->record.packed.values))->gTP_TEID;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_release_confirm_from_menb_erabs *)(p->record.packed.values))->gTP_TEID.data;
+	if(t->data==NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = ((struct _sgnb_release_confirm_from_menb_erabs *)(p->record.packed.values))->gTP_TEID.len;
 }
 
 static inline gs_retval_t get_sgnb_release_confirm_from_menb_erabs__transportLayerAddress(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_release_confirm_from_menb_erabs *)(p->record.packed.values))->transportLayerAddress;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_release_confirm_from_menb_erabs *)(p->record.packed.values))->transportLayerAddress.data;
+	if(t->data==NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = ((struct _sgnb_release_confirm_from_menb_erabs *)(p->record.packed.values))->transportLayerAddress.len;
 }
 
 #endif

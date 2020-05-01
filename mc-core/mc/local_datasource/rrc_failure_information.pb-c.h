@@ -16,121 +16,121 @@ PROTOBUF_C__BEGIN_DECLS
 
 #include "google/protobuf/wrappers.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__FailureInformation Uenibstreamprotobuf__FailureInformation;
-typedef struct _Uenibstreamprotobuf__FailureInformationIEs Uenibstreamprotobuf__FailureInformationIEs;
-typedef struct _Uenibstreamprotobuf__FailureInfoRLCBearer Uenibstreamprotobuf__FailureInfoRLCBearer;
+typedef struct _StreamingProtobufs__FailureInformation StreamingProtobufs__FailureInformation;
+typedef struct _StreamingProtobufs__FailureInformationIEs StreamingProtobufs__FailureInformationIEs;
+typedef struct _StreamingProtobufs__FailureInfoRLCBearer StreamingProtobufs__FailureInfoRLCBearer;
 
 
 /* --- enums --- */
 
-typedef enum _Uenibstreamprotobuf__FailureInfoRLCBearer__FailureType {
-  UENIBSTREAMPROTOBUF__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__duplication = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE)
-} Uenibstreamprotobuf__FailureInfoRLCBearer__FailureType;
+typedef enum _StreamingProtobufs__FailureInfoRLCBearer__FailureType {
+  STREAMING_PROTOBUFS__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__duplication = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE)
+} StreamingProtobufs__FailureInfoRLCBearer__FailureType;
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__FailureInformation
+struct  _StreamingProtobufs__FailureInformation
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__FailureInformationIEs *failureinformation;
+  StreamingProtobufs__FailureInformationIEs *failureinformation;
 };
-#define UENIBSTREAMPROTOBUF__FAILURE_INFORMATION__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__failure_information__descriptor) \
+#define STREAMING_PROTOBUFS__FAILURE_INFORMATION__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__failure_information__descriptor) \
     , NULL }
 
 
-struct  _Uenibstreamprotobuf__FailureInformationIEs
+struct  _StreamingProtobufs__FailureInformationIEs
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__FailureInfoRLCBearer *failureinforlc_bearer;
-  Google__Protobuf__StringValue *latenoncriticalextension;
+  StreamingProtobufs__FailureInfoRLCBearer *failureinforlc_bearer;
+  Google__Protobuf__BytesValue *latenoncriticalextension;
 };
-#define UENIBSTREAMPROTOBUF__FAILURE_INFORMATION__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__failure_information__ies__descriptor) \
+#define STREAMING_PROTOBUFS__FAILURE_INFORMATION__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__failure_information__ies__descriptor) \
     , NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__FailureInfoRLCBearer
+struct  _StreamingProtobufs__FailureInfoRLCBearer
 {
   ProtobufCMessage base;
   uint32_t cellgroupid;
   uint32_t logicalchannelidentity;
-  Uenibstreamprotobuf__FailureInfoRLCBearer__FailureType failuretype;
+  StreamingProtobufs__FailureInfoRLCBearer__FailureType failuretype;
 };
-#define UENIBSTREAMPROTOBUF__FAILURE_INFO_RLC__BEARER__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__failure_info_rlc__bearer__descriptor) \
-    , 0, 0, UENIBSTREAMPROTOBUF__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__FAILURE_INFO_RLC__BEARER__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__failure_info_rlc__bearer__descriptor) \
+    , 0, 0, STREAMING_PROTOBUFS__FAILURE_INFO_RLC__BEARER__FAILURE_TYPE__protobuf_unspecified }
 
 
-/* Uenibstreamprotobuf__FailureInformation methods */
-void   uenibstreamprotobuf__failure_information__init
-                     (Uenibstreamprotobuf__FailureInformation         *message);
-size_t uenibstreamprotobuf__failure_information__get_packed_size
-                     (const Uenibstreamprotobuf__FailureInformation   *message);
-size_t uenibstreamprotobuf__failure_information__pack
-                     (const Uenibstreamprotobuf__FailureInformation   *message,
+/* StreamingProtobufs__FailureInformation methods */
+void   streaming_protobufs__failure_information__init
+                     (StreamingProtobufs__FailureInformation         *message);
+size_t streaming_protobufs__failure_information__get_packed_size
+                     (const StreamingProtobufs__FailureInformation   *message);
+size_t streaming_protobufs__failure_information__pack
+                     (const StreamingProtobufs__FailureInformation   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__failure_information__pack_to_buffer
-                     (const Uenibstreamprotobuf__FailureInformation   *message,
+size_t streaming_protobufs__failure_information__pack_to_buffer
+                     (const StreamingProtobufs__FailureInformation   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__FailureInformation *
-       uenibstreamprotobuf__failure_information__unpack
+StreamingProtobufs__FailureInformation *
+       streaming_protobufs__failure_information__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__failure_information__free_unpacked
-                     (Uenibstreamprotobuf__FailureInformation *message,
+void   streaming_protobufs__failure_information__free_unpacked
+                     (StreamingProtobufs__FailureInformation *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__FailureInformationIEs methods */
-void   uenibstreamprotobuf__failure_information__ies__init
-                     (Uenibstreamprotobuf__FailureInformationIEs         *message);
-size_t uenibstreamprotobuf__failure_information__ies__get_packed_size
-                     (const Uenibstreamprotobuf__FailureInformationIEs   *message);
-size_t uenibstreamprotobuf__failure_information__ies__pack
-                     (const Uenibstreamprotobuf__FailureInformationIEs   *message,
+/* StreamingProtobufs__FailureInformationIEs methods */
+void   streaming_protobufs__failure_information__ies__init
+                     (StreamingProtobufs__FailureInformationIEs         *message);
+size_t streaming_protobufs__failure_information__ies__get_packed_size
+                     (const StreamingProtobufs__FailureInformationIEs   *message);
+size_t streaming_protobufs__failure_information__ies__pack
+                     (const StreamingProtobufs__FailureInformationIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__failure_information__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__FailureInformationIEs   *message,
+size_t streaming_protobufs__failure_information__ies__pack_to_buffer
+                     (const StreamingProtobufs__FailureInformationIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__FailureInformationIEs *
-       uenibstreamprotobuf__failure_information__ies__unpack
+StreamingProtobufs__FailureInformationIEs *
+       streaming_protobufs__failure_information__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__failure_information__ies__free_unpacked
-                     (Uenibstreamprotobuf__FailureInformationIEs *message,
+void   streaming_protobufs__failure_information__ies__free_unpacked
+                     (StreamingProtobufs__FailureInformationIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__FailureInfoRLCBearer methods */
-void   uenibstreamprotobuf__failure_info_rlc__bearer__init
-                     (Uenibstreamprotobuf__FailureInfoRLCBearer         *message);
-size_t uenibstreamprotobuf__failure_info_rlc__bearer__get_packed_size
-                     (const Uenibstreamprotobuf__FailureInfoRLCBearer   *message);
-size_t uenibstreamprotobuf__failure_info_rlc__bearer__pack
-                     (const Uenibstreamprotobuf__FailureInfoRLCBearer   *message,
+/* StreamingProtobufs__FailureInfoRLCBearer methods */
+void   streaming_protobufs__failure_info_rlc__bearer__init
+                     (StreamingProtobufs__FailureInfoRLCBearer         *message);
+size_t streaming_protobufs__failure_info_rlc__bearer__get_packed_size
+                     (const StreamingProtobufs__FailureInfoRLCBearer   *message);
+size_t streaming_protobufs__failure_info_rlc__bearer__pack
+                     (const StreamingProtobufs__FailureInfoRLCBearer   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__failure_info_rlc__bearer__pack_to_buffer
-                     (const Uenibstreamprotobuf__FailureInfoRLCBearer   *message,
+size_t streaming_protobufs__failure_info_rlc__bearer__pack_to_buffer
+                     (const StreamingProtobufs__FailureInfoRLCBearer   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__FailureInfoRLCBearer *
-       uenibstreamprotobuf__failure_info_rlc__bearer__unpack
+StreamingProtobufs__FailureInfoRLCBearer *
+       streaming_protobufs__failure_info_rlc__bearer__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__failure_info_rlc__bearer__free_unpacked
-                     (Uenibstreamprotobuf__FailureInfoRLCBearer *message,
+void   streaming_protobufs__failure_info_rlc__bearer__free_unpacked
+                     (StreamingProtobufs__FailureInfoRLCBearer *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__FailureInformation_Closure)
-                 (const Uenibstreamprotobuf__FailureInformation *message,
+typedef void (*StreamingProtobufs__FailureInformation_Closure)
+                 (const StreamingProtobufs__FailureInformation *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__FailureInformationIEs_Closure)
-                 (const Uenibstreamprotobuf__FailureInformationIEs *message,
+typedef void (*StreamingProtobufs__FailureInformationIEs_Closure)
+                 (const StreamingProtobufs__FailureInformationIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__FailureInfoRLCBearer_Closure)
-                 (const Uenibstreamprotobuf__FailureInfoRLCBearer *message,
+typedef void (*StreamingProtobufs__FailureInfoRLCBearer_Closure)
+                 (const StreamingProtobufs__FailureInfoRLCBearer *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -138,10 +138,10 @@ typedef void (*Uenibstreamprotobuf__FailureInfoRLCBearer_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__failure_information__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__failure_information__ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__failure_info_rlc__bearer__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__failure_info_rlc__bearer__failure_type__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__failure_information__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__failure_information__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__failure_info_rlc__bearer__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__failure_info_rlc__bearer__failure_type__descriptor;
 
 PROTOBUF_C__END_DECLS
 

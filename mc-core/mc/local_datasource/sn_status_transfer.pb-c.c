@@ -7,277 +7,277 @@
 #endif
 
 #include "sn_status_transfer.pb-c.h"
-void   uenibstreamprotobuf__snstatus_transfer__init
-                     (Uenibstreamprotobuf__SNStatusTransfer         *message)
+void   streaming_protobufs__snstatus_transfer__init
+                     (StreamingProtobufs__SNStatusTransfer         *message)
 {
-  static const Uenibstreamprotobuf__SNStatusTransfer init_value = UENIBSTREAMPROTOBUF__SNSTATUS_TRANSFER__INIT;
+  static const StreamingProtobufs__SNStatusTransfer init_value = STREAMING_PROTOBUFS__SNSTATUS_TRANSFER__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__snstatus_transfer__get_packed_size
-                     (const Uenibstreamprotobuf__SNStatusTransfer *message)
+size_t streaming_protobufs__snstatus_transfer__get_packed_size
+                     (const StreamingProtobufs__SNStatusTransfer *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__snstatus_transfer__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__snstatus_transfer__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__snstatus_transfer__pack
-                     (const Uenibstreamprotobuf__SNStatusTransfer *message,
+size_t streaming_protobufs__snstatus_transfer__pack
+                     (const StreamingProtobufs__SNStatusTransfer *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__snstatus_transfer__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__snstatus_transfer__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__snstatus_transfer__pack_to_buffer
-                     (const Uenibstreamprotobuf__SNStatusTransfer *message,
+size_t streaming_protobufs__snstatus_transfer__pack_to_buffer
+                     (const StreamingProtobufs__SNStatusTransfer *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__snstatus_transfer__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__snstatus_transfer__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__SNStatusTransfer *
-       uenibstreamprotobuf__snstatus_transfer__unpack
+StreamingProtobufs__SNStatusTransfer *
+       streaming_protobufs__snstatus_transfer__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__SNStatusTransfer *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__snstatus_transfer__descriptor,
+  return (StreamingProtobufs__SNStatusTransfer *)
+     protobuf_c_message_unpack (&streaming_protobufs__snstatus_transfer__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__snstatus_transfer__free_unpacked
-                     (Uenibstreamprotobuf__SNStatusTransfer *message,
+void   streaming_protobufs__snstatus_transfer__free_unpacked
+                     (StreamingProtobufs__SNStatusTransfer *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__snstatus_transfer__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__snstatus_transfer__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__snstatus_transfer__ies__init
-                     (Uenibstreamprotobuf__SNStatusTransferIEs         *message)
+void   streaming_protobufs__snstatus_transfer__ies__init
+                     (StreamingProtobufs__SNStatusTransferIEs         *message)
 {
-  static const Uenibstreamprotobuf__SNStatusTransferIEs init_value = UENIBSTREAMPROTOBUF__SNSTATUS_TRANSFER__IES__INIT;
+  static const StreamingProtobufs__SNStatusTransferIEs init_value = STREAMING_PROTOBUFS__SNSTATUS_TRANSFER__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__snstatus_transfer__ies__get_packed_size
-                     (const Uenibstreamprotobuf__SNStatusTransferIEs *message)
+size_t streaming_protobufs__snstatus_transfer__ies__get_packed_size
+                     (const StreamingProtobufs__SNStatusTransferIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__snstatus_transfer__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__snstatus_transfer__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__snstatus_transfer__ies__pack
-                     (const Uenibstreamprotobuf__SNStatusTransferIEs *message,
+size_t streaming_protobufs__snstatus_transfer__ies__pack
+                     (const StreamingProtobufs__SNStatusTransferIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__snstatus_transfer__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__snstatus_transfer__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__snstatus_transfer__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__SNStatusTransferIEs *message,
+size_t streaming_protobufs__snstatus_transfer__ies__pack_to_buffer
+                     (const StreamingProtobufs__SNStatusTransferIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__snstatus_transfer__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__snstatus_transfer__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__SNStatusTransferIEs *
-       uenibstreamprotobuf__snstatus_transfer__ies__unpack
+StreamingProtobufs__SNStatusTransferIEs *
+       streaming_protobufs__snstatus_transfer__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__SNStatusTransferIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__snstatus_transfer__ies__descriptor,
+  return (StreamingProtobufs__SNStatusTransferIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__snstatus_transfer__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__snstatus_transfer__ies__free_unpacked
-                     (Uenibstreamprotobuf__SNStatusTransferIEs *message,
+void   streaming_protobufs__snstatus_transfer__ies__free_unpacked
+                     (StreamingProtobufs__SNStatusTransferIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__snstatus_transfer__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__snstatus_transfer__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__init
-                     (Uenibstreamprotobuf__ERABsSubjectToStatusTransferList         *message)
+void   streaming_protobufs__e__rabs__subject_to_status_transfer__list__init
+                     (StreamingProtobufs__ERABsSubjectToStatusTransferList         *message)
 {
-  static const Uenibstreamprotobuf__ERABsSubjectToStatusTransferList init_value = UENIBSTREAMPROTOBUF__E__RABS__SUBJECT_TO_STATUS_TRANSFER__LIST__INIT;
+  static const StreamingProtobufs__ERABsSubjectToStatusTransferList init_value = STREAMING_PROTOBUFS__E__RABS__SUBJECT_TO_STATUS_TRANSFER__LIST__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferList *message)
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__list__get_packed_size
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferList *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__list__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__pack
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferList *message,
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__list__pack
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferList *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__list__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferList *message,
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__list__pack_to_buffer
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferList *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__list__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsSubjectToStatusTransferList *
-       uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__unpack
+StreamingProtobufs__ERABsSubjectToStatusTransferList *
+       streaming_protobufs__e__rabs__subject_to_status_transfer__list__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsSubjectToStatusTransferList *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__descriptor,
+  return (StreamingProtobufs__ERABsSubjectToStatusTransferList *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__subject_to_status_transfer__list__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__free_unpacked
-                     (Uenibstreamprotobuf__ERABsSubjectToStatusTransferList *message,
+void   streaming_protobufs__e__rabs__subject_to_status_transfer__list__free_unpacked
+                     (StreamingProtobufs__ERABsSubjectToStatusTransferList *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__list__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__init
-                     (Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs         *message)
+void   streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__init
+                     (StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs         *message)
 {
-  static const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs init_value = UENIBSTREAMPROTOBUF__E__RABS__SUBJECT_TO_STATUS_TRANSFER__ITEM_IES__INIT;
+  static const StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs init_value = STREAMING_PROTOBUFS__E__RABS__SUBJECT_TO_STATUS_TRANSFER__ITEM_IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs *message)
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__pack
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs *message,
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__pack
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs *message,
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs *
-       uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__unpack
+StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs *
+       streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__descriptor,
+  return (StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs *message,
+void   streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__free_unpacked
+                     (StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__init
-                     (Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem         *message)
+void   streaming_protobufs__e__rabs__subject_to_status_transfer__item__init
+                     (StreamingProtobufs__ERABsSubjectToStatusTransferItem         *message)
 {
-  static const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem init_value = UENIBSTREAMPROTOBUF__E__RABS__SUBJECT_TO_STATUS_TRANSFER__ITEM__INIT;
+  static const StreamingProtobufs__ERABsSubjectToStatusTransferItem init_value = STREAMING_PROTOBUFS__E__RABS__SUBJECT_TO_STATUS_TRANSFER__ITEM__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem *message)
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__item__get_packed_size
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferItem *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__pack
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem *message,
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__item__pack
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferItem *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem *message,
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__item__pack_to_buffer
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferItem *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem *
-       uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__unpack
+StreamingProtobufs__ERABsSubjectToStatusTransferItem *
+       streaming_protobufs__e__rabs__subject_to_status_transfer__item__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__descriptor,
+  return (StreamingProtobufs__ERABsSubjectToStatusTransferItem *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__subject_to_status_transfer__item__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__free_unpacked
-                     (Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem *message,
+void   streaming_protobufs__e__rabs__subject_to_status_transfer__item__free_unpacked
+                     (StreamingProtobufs__ERABsSubjectToStatusTransferItem *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs         *message)
+void   streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__init
+                     (StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs         *message)
 {
-  static const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs init_value = UENIBSTREAMPROTOBUF__E__RABS__SUBJECT_TO_STATUS_TRANSFER__ITEM_EXT_IES__INIT;
+  static const StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs init_value = STREAMING_PROTOBUFS__E__RABS__SUBJECT_TO_STATUS_TRANSFER__ITEM_EXT_IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs *message)
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs *message,
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__pack
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs *message,
+size_t streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs *
-       uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__unpack
+StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs *
+       streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor,
+  return (StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs *message,
+void   streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__snstatus_transfer__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__snstatus_transfer__field_descriptors[1] =
 {
   {
     "protocolIEs",
@@ -285,37 +285,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__snstatus_transfer__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SNStatusTransfer, protocolies),
-    &uenibstreamprotobuf__snstatus_transfer__ies__descriptor,
+    offsetof(StreamingProtobufs__SNStatusTransfer, protocolies),
+    &streaming_protobufs__snstatus_transfer__ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__snstatus_transfer__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__snstatus_transfer__field_indices_by_name[] = {
   0,   /* field[0] = protocolIEs */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__snstatus_transfer__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__snstatus_transfer__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__snstatus_transfer__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__snstatus_transfer__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.SNStatusTransfer",
+  "streaming_protobufs.SNStatusTransfer",
   "SNStatusTransfer",
-  "Uenibstreamprotobuf__SNStatusTransfer",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__SNStatusTransfer),
+  "StreamingProtobufs__SNStatusTransfer",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__SNStatusTransfer),
   1,
-  uenibstreamprotobuf__snstatus_transfer__field_descriptors,
-  uenibstreamprotobuf__snstatus_transfer__field_indices_by_name,
-  1,  uenibstreamprotobuf__snstatus_transfer__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__snstatus_transfer__init,
+  streaming_protobufs__snstatus_transfer__field_descriptors,
+  streaming_protobufs__snstatus_transfer__field_indices_by_name,
+  1,  streaming_protobufs__snstatus_transfer__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__snstatus_transfer__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__snstatus_transfer__ies__field_descriptors[6] =
+static const ProtobufCFieldDescriptor streaming_protobufs__snstatus_transfer__ies__field_descriptors[6] =
 {
   {
     "id_Old_eNB_UE_X2AP_ID",
@@ -323,7 +323,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__snstatus_transfer__ie
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SNStatusTransferIEs, id_old_enb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__SNStatusTransferIEs, id_old_enb_ue_x2ap_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -335,7 +335,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__snstatus_transfer__ie
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SNStatusTransferIEs, id_new_enb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__SNStatusTransferIEs, id_new_enb_ue_x2ap_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -347,8 +347,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__snstatus_transfer__ie
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SNStatusTransferIEs, id_e_rabs_subjecttostatustransfer_list),
-    &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__descriptor,
+    offsetof(StreamingProtobufs__SNStatusTransferIEs, id_e_rabs_subjecttostatustransfer_list),
+    &streaming_protobufs__e__rabs__subject_to_status_transfer__list__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -359,7 +359,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__snstatus_transfer__ie
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SNStatusTransferIEs, id_old_enb_ue_x2ap_id_extension),
+    offsetof(StreamingProtobufs__SNStatusTransferIEs, id_old_enb_ue_x2ap_id_extension),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -371,7 +371,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__snstatus_transfer__ie
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SNStatusTransferIEs, id_new_enb_ue_x2ap_id_extension),
+    offsetof(StreamingProtobufs__SNStatusTransferIEs, id_new_enb_ue_x2ap_id_extension),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -383,14 +383,14 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__snstatus_transfer__ie
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SNStatusTransferIEs, id_sgnb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__SNStatusTransferIEs, id_sgnb_ue_x2ap_id),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__snstatus_transfer__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__snstatus_transfer__ies__field_indices_by_name[] = {
   2,   /* field[2] = id_E_RABs_SubjectToStatusTransfer_List */
   1,   /* field[1] = id_New_eNB_UE_X2AP_ID */
   4,   /* field[4] = id_New_eNB_UE_X2AP_ID_Extension */
@@ -398,65 +398,65 @@ static const unsigned uenibstreamprotobuf__snstatus_transfer__ies__field_indices
   3,   /* field[3] = id_Old_eNB_UE_X2AP_ID_Extension */
   5,   /* field[5] = id_SgNB_UE_X2AP_ID */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__snstatus_transfer__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__snstatus_transfer__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 6 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__snstatus_transfer__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__snstatus_transfer__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.SNStatusTransfer_IEs",
+  "streaming_protobufs.SNStatusTransfer_IEs",
   "SNStatusTransferIEs",
-  "Uenibstreamprotobuf__SNStatusTransferIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__SNStatusTransferIEs),
+  "StreamingProtobufs__SNStatusTransferIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__SNStatusTransferIEs),
   6,
-  uenibstreamprotobuf__snstatus_transfer__ies__field_descriptors,
-  uenibstreamprotobuf__snstatus_transfer__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__snstatus_transfer__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__snstatus_transfer__ies__init,
+  streaming_protobufs__snstatus_transfer__ies__field_descriptors,
+  streaming_protobufs__snstatus_transfer__ies__field_indices_by_name,
+  1,  streaming_protobufs__snstatus_transfer__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__snstatus_transfer__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__subject_to_status_transfer__list__field_descriptors[1] =
 {
   {
     "items",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferList, n_items),
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferList, items),
-    &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferList, n_items),
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferList, items),
+    &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__subject_to_status_transfer__list__field_indices_by_name[] = {
   0,   /* field[0] = items */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__subject_to_status_transfer__list__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__subject_to_status_transfer__list__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_SubjectToStatusTransfer_List",
+  "streaming_protobufs.E_RABs_SubjectToStatusTransfer_List",
   "ERABsSubjectToStatusTransferList",
-  "Uenibstreamprotobuf__ERABsSubjectToStatusTransferList",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferList),
+  "StreamingProtobufs__ERABsSubjectToStatusTransferList",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsSubjectToStatusTransferList),
   1,
-  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__field_descriptors,
-  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__subject_to_status_transfer__list__init,
+  streaming_protobufs__e__rabs__subject_to_status_transfer__list__field_descriptors,
+  streaming_protobufs__e__rabs__subject_to_status_transfer__list__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__subject_to_status_transfer__list__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__subject_to_status_transfer__list__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__field_descriptors[1] =
 {
   {
     "id_E_RABs_SubjectToStatusTransfer_Item",
@@ -464,37 +464,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs, id_e_rabs_subjecttostatustransfer_item),
-    &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs, id_e_rabs_subjecttostatustransfer_item),
+    &streaming_protobufs__e__rabs__subject_to_status_transfer__item__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__field_indices_by_name[] = {
   0,   /* field[0] = id_E_RABs_SubjectToStatusTransfer_Item */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_SubjectToStatusTransfer_ItemIEs",
+  "streaming_protobufs.E_RABs_SubjectToStatusTransfer_ItemIEs",
   "ERABsSubjectToStatusTransferItemIEs",
-  "Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemIEs),
+  "StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsSubjectToStatusTransferItemIEs),
   1,
-  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__field_descriptors,
-  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ies__init,
+  streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__field_descriptors,
+  streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__subject_to_status_transfer__item_ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__field_descriptors[5] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__subject_to_status_transfer__item__field_descriptors[5] =
 {
   {
     "e_RAB_ID",
@@ -502,7 +502,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem, e_rab_id),
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItem, e_rab_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -514,8 +514,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem, receivestatusofulpdcpsdus),
-    &google__protobuf__string_value__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItem, receivestatusofulpdcpsdus),
+    &google__protobuf__bytes_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -526,8 +526,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem, ul_countvalue),
-    &uenibstreamprotobuf__countvalue__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItem, ul_countvalue),
+    &streaming_protobufs__countvalue__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -538,8 +538,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem, dl_countvalue),
-    &uenibstreamprotobuf__countvalue__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItem, dl_countvalue),
+    &streaming_protobufs__countvalue__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -549,42 +549,42 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     5,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem, n_ie_extensions),
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem, ie_extensions),
-    &uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItem, n_ie_extensions),
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItem, ie_extensions),
+    &streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__subject_to_status_transfer__item__field_indices_by_name[] = {
   3,   /* field[3] = dL_COUNTvalue */
   0,   /* field[0] = e_RAB_ID */
   4,   /* field[4] = iE_Extensions */
   1,   /* field[1] = receiveStatusofULPDCPSDUs */
   2,   /* field[2] = uL_COUNTvalue */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__subject_to_status_transfer__item__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 5 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__subject_to_status_transfer__item__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_SubjectToStatusTransfer_Item",
+  "streaming_protobufs.E_RABs_SubjectToStatusTransfer_Item",
   "ERABsSubjectToStatusTransferItem",
-  "Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItem),
+  "StreamingProtobufs__ERABsSubjectToStatusTransferItem",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsSubjectToStatusTransferItem),
   5,
-  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__field_descriptors,
-  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item__init,
+  streaming_protobufs__e__rabs__subject_to_status_transfer__item__field_descriptors,
+  streaming_protobufs__e__rabs__subject_to_status_transfer__item__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__subject_to_status_transfer__item__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__subject_to_status_transfer__item__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__field_descriptors[6] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__field_descriptors[6] =
 {
   {
     "id_ReceiveStatusOfULPDCPSDUsExtended",
@@ -592,8 +592,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs, id_receivestatusofulpdcpsdusextended),
-    &google__protobuf__string_value__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs, id_receivestatusofulpdcpsdusextended),
+    &google__protobuf__bytes_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -604,8 +604,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs, id_ulcountvalueextended),
-    &uenibstreamprotobuf__countvalue_extended__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs, id_ulcountvalueextended),
+    &streaming_protobufs__countvalue_extended__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -616,8 +616,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs, id_dlcountvalueextended),
-    &uenibstreamprotobuf__countvalue_extended__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs, id_dlcountvalueextended),
+    &streaming_protobufs__countvalue_extended__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -628,8 +628,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs, id_receivestatusofulpdcpsduspdcp_snlength18),
-    &google__protobuf__string_value__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs, id_receivestatusofulpdcpsduspdcp_snlength18),
+    &google__protobuf__bytes_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -640,8 +640,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs, id_ulcountvaluepdcp_snlength18),
-    &uenibstreamprotobuf__countvalue_pdcp__snlength18__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs, id_ulcountvaluepdcp_snlength18),
+    &streaming_protobufs__countvalue_pdcp__snlength18__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -652,14 +652,14 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__subject_to_s
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs, id_dlcountvaluepdcp_snlength18),
-    &uenibstreamprotobuf__countvalue_pdcp__snlength18__descriptor,
+    offsetof(StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs, id_dlcountvaluepdcp_snlength18),
+    &streaming_protobufs__countvalue_pdcp__snlength18__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__field_indices_by_name[] = {
   2,   /* field[2] = id_DLCOUNTValueExtended */
   5,   /* field[5] = id_DLCOUNTValuePDCP_SNlength18 */
   0,   /* field[0] = id_ReceiveStatusOfULPDCPSDUsExtended */
@@ -667,23 +667,23 @@ static const unsigned uenibstreamprotobuf__e__rabs__subject_to_status_transfer__
   1,   /* field[1] = id_ULCOUNTValueExtended */
   4,   /* field[4] = id_ULCOUNTValuePDCP_SNlength18 */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 6 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_SubjectToStatusTransfer_ItemExtIEs",
+  "streaming_protobufs.E_RABs_SubjectToStatusTransfer_ItemExtIEs",
   "ERABsSubjectToStatusTransferItemExtIEs",
-  "Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsSubjectToStatusTransferItemExtIEs),
+  "StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsSubjectToStatusTransferItemExtIEs),
   6,
-  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__field_descriptors,
-  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__subject_to_status_transfer__item_ext_ies__init,
+  streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__field_descriptors,
+  streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__subject_to_status_transfer__item_ext_ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

@@ -7,7 +7,7 @@ Release Notes
 =============
 
 
-This document provides the release notes for the Amber Release of the Measurement Campaign xAPP.
+This document provides the release notes for the Bronze Release of the Measurement Campaign xAPP.
 
 .. contents::
    :depth: 3
@@ -21,6 +21,9 @@ Version history
 | **Date**           | **Ver.**           | **Author**         | **Comment**        |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
+| 2020-05-01         | 1.0.5              |   Vlad Shkapenyuk  | Bronze release     |
+|                    |                    |                    |                    |
++--------------------+--------------------+--------------------+--------------------+
 | 2019-11-25         | 1.0.0              |   Vlad Shkapenyuk  | First draft        |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
@@ -30,7 +33,7 @@ Version history
 Summary
 -------
 
-The Amber release of the MC xAPP supports calculation of a number of metrics and KPIs 
+The Bronze release of the MC xAPP supports calculation of a number of metrics and KPIs 
 based on X2 messages received from UEEC.
 
 
@@ -41,13 +44,13 @@ Release Data
 | **Project**                          | RAN Intelligent Controller           |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-| **Repo/commit-ID**                   |        ric-app/mc                    |
+| **Repo/commit-ID**                   | ric-app/mc                           |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-| **Release designation**              |              Amber                   |
+| **Release designation**              | Bronze                               |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-| **Release date**                     |      2019-11-14                      |
+| **Release date**                     | 2020-05-01                           |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
 | **Purpose of the delivery**          | open-source measurement campaign xApp|

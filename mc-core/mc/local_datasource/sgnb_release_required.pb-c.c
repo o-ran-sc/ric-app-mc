@@ -7,232 +7,232 @@
 #endif
 
 #include "sgnb_release_required.pb-c.h"
-void   uenibstreamprotobuf__sg_nbrelease_required__init
-                     (Uenibstreamprotobuf__SgNBReleaseRequired         *message)
+void   streaming_protobufs__sg_nbrelease_required__init
+                     (StreamingProtobufs__SgNBReleaseRequired         *message)
 {
-  static const Uenibstreamprotobuf__SgNBReleaseRequired init_value = UENIBSTREAMPROTOBUF__SG_NBRELEASE_REQUIRED__INIT;
+  static const StreamingProtobufs__SgNBReleaseRequired init_value = STREAMING_PROTOBUFS__SG_NBRELEASE_REQUIRED__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__sg_nbrelease_required__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBReleaseRequired *message)
+size_t streaming_protobufs__sg_nbrelease_required__get_packed_size
+                     (const StreamingProtobufs__SgNBReleaseRequired *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbrelease_required__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbrelease_required__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__sg_nbrelease_required__pack
-                     (const Uenibstreamprotobuf__SgNBReleaseRequired *message,
+size_t streaming_protobufs__sg_nbrelease_required__pack
+                     (const StreamingProtobufs__SgNBReleaseRequired *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbrelease_required__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbrelease_required__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__sg_nbrelease_required__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBReleaseRequired *message,
+size_t streaming_protobufs__sg_nbrelease_required__pack_to_buffer
+                     (const StreamingProtobufs__SgNBReleaseRequired *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbrelease_required__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbrelease_required__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__SgNBReleaseRequired *
-       uenibstreamprotobuf__sg_nbrelease_required__unpack
+StreamingProtobufs__SgNBReleaseRequired *
+       streaming_protobufs__sg_nbrelease_required__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__SgNBReleaseRequired *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__sg_nbrelease_required__descriptor,
+  return (StreamingProtobufs__SgNBReleaseRequired *)
+     protobuf_c_message_unpack (&streaming_protobufs__sg_nbrelease_required__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__sg_nbrelease_required__free_unpacked
-                     (Uenibstreamprotobuf__SgNBReleaseRequired *message,
+void   streaming_protobufs__sg_nbrelease_required__free_unpacked
+                     (StreamingProtobufs__SgNBReleaseRequired *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbrelease_required__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbrelease_required__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__sg_nbrelease_required__ies__init
-                     (Uenibstreamprotobuf__SgNBReleaseRequiredIEs         *message)
+void   streaming_protobufs__sg_nbrelease_required__ies__init
+                     (StreamingProtobufs__SgNBReleaseRequiredIEs         *message)
 {
-  static const Uenibstreamprotobuf__SgNBReleaseRequiredIEs init_value = UENIBSTREAMPROTOBUF__SG_NBRELEASE_REQUIRED__IES__INIT;
+  static const StreamingProtobufs__SgNBReleaseRequiredIEs init_value = STREAMING_PROTOBUFS__SG_NBRELEASE_REQUIRED__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__sg_nbrelease_required__ies__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBReleaseRequiredIEs *message)
+size_t streaming_protobufs__sg_nbrelease_required__ies__get_packed_size
+                     (const StreamingProtobufs__SgNBReleaseRequiredIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbrelease_required__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbrelease_required__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__sg_nbrelease_required__ies__pack
-                     (const Uenibstreamprotobuf__SgNBReleaseRequiredIEs *message,
+size_t streaming_protobufs__sg_nbrelease_required__ies__pack
+                     (const StreamingProtobufs__SgNBReleaseRequiredIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbrelease_required__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbrelease_required__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__sg_nbrelease_required__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBReleaseRequiredIEs *message,
+size_t streaming_protobufs__sg_nbrelease_required__ies__pack_to_buffer
+                     (const StreamingProtobufs__SgNBReleaseRequiredIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbrelease_required__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbrelease_required__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__SgNBReleaseRequiredIEs *
-       uenibstreamprotobuf__sg_nbrelease_required__ies__unpack
+StreamingProtobufs__SgNBReleaseRequiredIEs *
+       streaming_protobufs__sg_nbrelease_required__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__SgNBReleaseRequiredIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__sg_nbrelease_required__ies__descriptor,
+  return (StreamingProtobufs__SgNBReleaseRequiredIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__sg_nbrelease_required__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__sg_nbrelease_required__ies__free_unpacked
-                     (Uenibstreamprotobuf__SgNBReleaseRequiredIEs *message,
+void   streaming_protobufs__sg_nbrelease_required__ies__free_unpacked
+                     (StreamingProtobufs__SgNBReleaseRequiredIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__sg_nbrelease_required__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__sg_nbrelease_required__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList         *message)
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_REQD_LIST__INIT;
+  static const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_REQD_LIST__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList *message)
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor,
+  return (StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem         *message)
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_REQD__ITEM__INIT;
+  static const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_REQD__ITEM__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem *message)
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor,
+  return (StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs         *message)
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs         *message)
 {
-  static const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs init_value = UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_REQD__ITEM_EXT_IES__INIT;
+  static const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs init_value = STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_REQD__ITEM_EXT_IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs *message)
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor,
+  return (StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbrelease_required__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__sg_nbrelease_required__field_descriptors[1] =
 {
   {
     "protocolIEs",
@@ -240,37 +240,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbrelease_required
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBReleaseRequired, protocolies),
-    &uenibstreamprotobuf__sg_nbrelease_required__ies__descriptor,
+    offsetof(StreamingProtobufs__SgNBReleaseRequired, protocolies),
+    &streaming_protobufs__sg_nbrelease_required__ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__sg_nbrelease_required__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__sg_nbrelease_required__field_indices_by_name[] = {
   0,   /* field[0] = protocolIEs */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__sg_nbrelease_required__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__sg_nbrelease_required__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbrelease_required__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__sg_nbrelease_required__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.SgNBReleaseRequired",
+  "streaming_protobufs.SgNBReleaseRequired",
   "SgNBReleaseRequired",
-  "Uenibstreamprotobuf__SgNBReleaseRequired",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__SgNBReleaseRequired),
+  "StreamingProtobufs__SgNBReleaseRequired",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__SgNBReleaseRequired),
   1,
-  uenibstreamprotobuf__sg_nbrelease_required__field_descriptors,
-  uenibstreamprotobuf__sg_nbrelease_required__field_indices_by_name,
-  1,  uenibstreamprotobuf__sg_nbrelease_required__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__sg_nbrelease_required__init,
+  streaming_protobufs__sg_nbrelease_required__field_descriptors,
+  streaming_protobufs__sg_nbrelease_required__field_indices_by_name,
+  1,  streaming_protobufs__sg_nbrelease_required__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__sg_nbrelease_required__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbrelease_required__ies__field_descriptors[5] =
+static const ProtobufCFieldDescriptor streaming_protobufs__sg_nbrelease_required__ies__field_descriptors[5] =
 {
   {
     "id_MeNB_UE_X2AP_ID",
@@ -278,7 +278,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbrelease_required
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBReleaseRequiredIEs, id_menb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__SgNBReleaseRequiredIEs, id_menb_ue_x2ap_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -290,7 +290,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbrelease_required
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBReleaseRequiredIEs, id_sgnb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__SgNBReleaseRequiredIEs, id_sgnb_ue_x2ap_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -302,8 +302,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbrelease_required
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBReleaseRequiredIEs, id_cause),
-    &uenibstreamprotobuf__cause__descriptor,
+    offsetof(StreamingProtobufs__SgNBReleaseRequiredIEs, id_cause),
+    &streaming_protobufs__cause__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -314,7 +314,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbrelease_required
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBReleaseRequiredIEs, id_menb_ue_x2ap_id_extension),
+    offsetof(StreamingProtobufs__SgNBReleaseRequiredIEs, id_menb_ue_x2ap_id_extension),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -326,79 +326,79 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__sg_nbrelease_required
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__SgNBReleaseRequiredIEs, id_e_rabs_tobereleased_sgnbrelreqdlist),
-    &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor,
+    offsetof(StreamingProtobufs__SgNBReleaseRequiredIEs, id_e_rabs_tobereleased_sgnbrelreqdlist),
+    &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__sg_nbrelease_required__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__sg_nbrelease_required__ies__field_indices_by_name[] = {
   2,   /* field[2] = id_Cause */
   4,   /* field[4] = id_E_RABs_ToBeReleased_SgNBRelReqdList */
   0,   /* field[0] = id_MeNB_UE_X2AP_ID */
   3,   /* field[3] = id_MeNB_UE_X2AP_ID_Extension */
   1,   /* field[1] = id_SgNB_UE_X2AP_ID */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__sg_nbrelease_required__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__sg_nbrelease_required__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 5 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbrelease_required__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__sg_nbrelease_required__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.SgNBReleaseRequired_IEs",
+  "streaming_protobufs.SgNBReleaseRequired_IEs",
   "SgNBReleaseRequiredIEs",
-  "Uenibstreamprotobuf__SgNBReleaseRequiredIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__SgNBReleaseRequiredIEs),
+  "StreamingProtobufs__SgNBReleaseRequiredIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__SgNBReleaseRequiredIEs),
   5,
-  uenibstreamprotobuf__sg_nbrelease_required__ies__field_descriptors,
-  uenibstreamprotobuf__sg_nbrelease_required__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__sg_nbrelease_required__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__sg_nbrelease_required__ies__init,
+  streaming_protobufs__sg_nbrelease_required__ies__field_descriptors,
+  streaming_protobufs__sg_nbrelease_required__ies__field_indices_by_name,
+  1,  streaming_protobufs__sg_nbrelease_required__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__sg_nbrelease_required__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__field_descriptors[1] =
 {
   {
     "id_E_RABs_ToBeReleased_SgNBRelReqd_Item",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList, n_id_e_rabs_tobereleased_sgnbrelreqd_item),
-    offsetof(Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList, id_e_rabs_tobereleased_sgnbrelreqd_item),
-    &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList, n_id_e_rabs_tobereleased_sgnbrelreqd_item),
+    offsetof(StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList, id_e_rabs_tobereleased_sgnbrelreqd_item),
+    &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__field_indices_by_name[] = {
   0,   /* field[0] = id_E_RABs_ToBeReleased_SgNBRelReqd_Item */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqdList",
+  "streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqdList",
   "ERABsToBeReleasedSgNBRelReqdList",
-  "Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdList),
+  "StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdList),
   1,
-  uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd_list__init,
+  streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd_list__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__field_descriptors[3] =
+static const ProtobufCFieldDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__field_descriptors[3] =
 {
   {
     "e_RAB_ID",
@@ -406,7 +406,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_releas
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem, e_rab_id),
+    offsetof(StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem, e_rab_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -418,8 +418,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_releas
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem, rlc_mode_transferred),
-    &uenibstreamprotobuf__rlcmode__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem, rlc_mode_transferred),
+    &streaming_protobufs__rlcmode__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -429,54 +429,54 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__e__rabs__to_be_releas
     3,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem, n_ie_extensions),
-    offsetof(Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem, ie_extensions),
-    &uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor,
+    offsetof(StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem, n_ie_extensions),
+    offsetof(StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem, ie_extensions),
+    &streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__field_indices_by_name[] = {
   0,   /* field[0] = e_RAB_ID */
   2,   /* field[2] = iE_Extensions */
   1,   /* field[1] = rlc_Mode_transferred */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_Item",
+  "streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_Item",
   "ERABsToBeReleasedSgNBRelReqdItem",
-  "Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItem),
+  "StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItem),
   3,
-  uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__field_indices_by_name,
-  1,  uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item__init,
+  streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__field_indices_by_name,
+  1,  streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-#define uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__field_descriptors NULL
-#define uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__field_indices_by_name NULL
-#define uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__number_ranges NULL
-const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor =
+#define streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__field_descriptors NULL
+#define streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__field_indices_by_name NULL
+#define streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__number_ranges NULL
+const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs",
+  "streaming_protobufs.E_RABs_ToBeReleased_SgNBRelReqd_ItemExtIEs",
   "ERABsToBeReleasedSgNBRelReqdItemExtIEs",
-  "Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelReqdItemExtIEs),
+  "StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ERABsToBeReleasedSgNBRelReqdItemExtIEs),
   0,
-  uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__field_descriptors,
-  uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__field_indices_by_name,
-  0,  uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__init,
+  streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__field_descriptors,
+  streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__field_indices_by_name,
+  0,  streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__e__rabs__to_be_released__sg_nbrel_reqd__item_ext_ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

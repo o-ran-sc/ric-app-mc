@@ -22,7 +22,7 @@
 	"messaging": {
 		"ports": [
 			{
-				"name": "rmr_data_in",
+				"name": "rmr-data",
 				"container": "mcxapp",
 				"port": 4560,
 				"rxMessages":
@@ -48,7 +48,7 @@
 				"description": "rmr receive data port for mcxapp"
 			},
 			{
-				"name": "rmr_data_out",
+				"name": "rmr-data-out",
 				"container": "mcxapp",
 				"port": 4562,
 				"txMessages":

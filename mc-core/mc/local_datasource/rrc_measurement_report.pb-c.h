@@ -18,8 +18,8 @@ PROTOBUF_C__BEGIN_DECLS
 #include "rrc_common_types.pb-c.h"
 #include "common_types.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__MeasurementReport Uenibstreamprotobuf__MeasurementReport;
-typedef struct _Uenibstreamprotobuf__MeasurementReportIEs Uenibstreamprotobuf__MeasurementReportIEs;
+typedef struct _StreamingProtobufs__MeasurementReport StreamingProtobufs__MeasurementReport;
+typedef struct _StreamingProtobufs__MeasurementReportIEs StreamingProtobufs__MeasurementReportIEs;
 
 
 /* --- enums --- */
@@ -28,80 +28,80 @@ typedef struct _Uenibstreamprotobuf__MeasurementReportIEs Uenibstreamprotobuf__M
 /* --- messages --- */
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__MEASUREMENT_REPORT__CRITICAL_EXTENSIONS__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__MEASUREMENT_REPORT__CRITICAL_EXTENSIONS_MEASUREMENT_REPORT = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__MEASUREMENT_REPORT__CRITICAL_EXTENSIONS)
-} Uenibstreamprotobuf__MeasurementReport__CriticalExtensionsCase;
+  STREAMING_PROTOBUFS__MEASUREMENT_REPORT__CRITICAL_EXTENSIONS__NOT_SET = 0,
+  STREAMING_PROTOBUFS__MEASUREMENT_REPORT__CRITICAL_EXTENSIONS_MEASUREMENT_REPORT = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__MEASUREMENT_REPORT__CRITICAL_EXTENSIONS)
+} StreamingProtobufs__MeasurementReport__CriticalExtensionsCase;
 
-struct  _Uenibstreamprotobuf__MeasurementReport
+struct  _StreamingProtobufs__MeasurementReport
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__MeasurementReport__CriticalExtensionsCase critical_extensions_case;
+  StreamingProtobufs__MeasurementReport__CriticalExtensionsCase critical_extensions_case;
   union {
-    Uenibstreamprotobuf__MeasurementReportIEs *measurementreport;
+    StreamingProtobufs__MeasurementReportIEs *measurementreport;
   };
 };
-#define UENIBSTREAMPROTOBUF__MEASUREMENT_REPORT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__measurement_report__descriptor) \
-    , UENIBSTREAMPROTOBUF__MEASUREMENT_REPORT__CRITICAL_EXTENSIONS__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__MEASUREMENT_REPORT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__measurement_report__descriptor) \
+    , STREAMING_PROTOBUFS__MEASUREMENT_REPORT__CRITICAL_EXTENSIONS__NOT_SET, {0} }
 
 
-struct  _Uenibstreamprotobuf__MeasurementReportIEs
+struct  _StreamingProtobufs__MeasurementReportIEs
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__MeasResults *measresults;
-  Google__Protobuf__StringValue *latenoncriticalextension;
+  StreamingProtobufs__MeasResults *measresults;
+  Google__Protobuf__BytesValue *latenoncriticalextension;
 };
-#define UENIBSTREAMPROTOBUF__MEASUREMENT_REPORT__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__measurement_report__ies__descriptor) \
+#define STREAMING_PROTOBUFS__MEASUREMENT_REPORT__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__measurement_report__ies__descriptor) \
     , NULL, NULL }
 
 
-/* Uenibstreamprotobuf__MeasurementReport methods */
-void   uenibstreamprotobuf__measurement_report__init
-                     (Uenibstreamprotobuf__MeasurementReport         *message);
-size_t uenibstreamprotobuf__measurement_report__get_packed_size
-                     (const Uenibstreamprotobuf__MeasurementReport   *message);
-size_t uenibstreamprotobuf__measurement_report__pack
-                     (const Uenibstreamprotobuf__MeasurementReport   *message,
+/* StreamingProtobufs__MeasurementReport methods */
+void   streaming_protobufs__measurement_report__init
+                     (StreamingProtobufs__MeasurementReport         *message);
+size_t streaming_protobufs__measurement_report__get_packed_size
+                     (const StreamingProtobufs__MeasurementReport   *message);
+size_t streaming_protobufs__measurement_report__pack
+                     (const StreamingProtobufs__MeasurementReport   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__measurement_report__pack_to_buffer
-                     (const Uenibstreamprotobuf__MeasurementReport   *message,
+size_t streaming_protobufs__measurement_report__pack_to_buffer
+                     (const StreamingProtobufs__MeasurementReport   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__MeasurementReport *
-       uenibstreamprotobuf__measurement_report__unpack
+StreamingProtobufs__MeasurementReport *
+       streaming_protobufs__measurement_report__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__measurement_report__free_unpacked
-                     (Uenibstreamprotobuf__MeasurementReport *message,
+void   streaming_protobufs__measurement_report__free_unpacked
+                     (StreamingProtobufs__MeasurementReport *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__MeasurementReportIEs methods */
-void   uenibstreamprotobuf__measurement_report__ies__init
-                     (Uenibstreamprotobuf__MeasurementReportIEs         *message);
-size_t uenibstreamprotobuf__measurement_report__ies__get_packed_size
-                     (const Uenibstreamprotobuf__MeasurementReportIEs   *message);
-size_t uenibstreamprotobuf__measurement_report__ies__pack
-                     (const Uenibstreamprotobuf__MeasurementReportIEs   *message,
+/* StreamingProtobufs__MeasurementReportIEs methods */
+void   streaming_protobufs__measurement_report__ies__init
+                     (StreamingProtobufs__MeasurementReportIEs         *message);
+size_t streaming_protobufs__measurement_report__ies__get_packed_size
+                     (const StreamingProtobufs__MeasurementReportIEs   *message);
+size_t streaming_protobufs__measurement_report__ies__pack
+                     (const StreamingProtobufs__MeasurementReportIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__measurement_report__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__MeasurementReportIEs   *message,
+size_t streaming_protobufs__measurement_report__ies__pack_to_buffer
+                     (const StreamingProtobufs__MeasurementReportIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__MeasurementReportIEs *
-       uenibstreamprotobuf__measurement_report__ies__unpack
+StreamingProtobufs__MeasurementReportIEs *
+       streaming_protobufs__measurement_report__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__measurement_report__ies__free_unpacked
-                     (Uenibstreamprotobuf__MeasurementReportIEs *message,
+void   streaming_protobufs__measurement_report__ies__free_unpacked
+                     (StreamingProtobufs__MeasurementReportIEs *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__MeasurementReport_Closure)
-                 (const Uenibstreamprotobuf__MeasurementReport *message,
+typedef void (*StreamingProtobufs__MeasurementReport_Closure)
+                 (const StreamingProtobufs__MeasurementReport *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__MeasurementReportIEs_Closure)
-                 (const Uenibstreamprotobuf__MeasurementReportIEs *message,
+typedef void (*StreamingProtobufs__MeasurementReportIEs_Closure)
+                 (const StreamingProtobufs__MeasurementReportIEs *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -109,8 +109,8 @@ typedef void (*Uenibstreamprotobuf__MeasurementReportIEs_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__measurement_report__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__measurement_report__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__measurement_report__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__measurement_report__ies__descriptor;
 
 PROTOBUF_C__END_DECLS
 

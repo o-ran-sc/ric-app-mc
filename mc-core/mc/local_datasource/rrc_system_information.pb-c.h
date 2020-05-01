@@ -18,9 +18,9 @@ PROTOBUF_C__BEGIN_DECLS
 #include "rrc_common_types.pb-c.h"
 #include "rrc_sib.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__SystemInformation Uenibstreamprotobuf__SystemInformation;
-typedef struct _Uenibstreamprotobuf__SystemInformationIEs Uenibstreamprotobuf__SystemInformationIEs;
-typedef struct _Uenibstreamprotobuf__SIBTypeAndInfo Uenibstreamprotobuf__SIBTypeAndInfo;
+typedef struct _StreamingProtobufs__SystemInformation StreamingProtobufs__SystemInformation;
+typedef struct _StreamingProtobufs__SystemInformationIEs StreamingProtobufs__SystemInformationIEs;
+typedef struct _StreamingProtobufs__SIBTypeAndInfo StreamingProtobufs__SIBTypeAndInfo;
 
 
 /* --- enums --- */
@@ -29,136 +29,136 @@ typedef struct _Uenibstreamprotobuf__SIBTypeAndInfo Uenibstreamprotobuf__SIBType
 /* --- messages --- */
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__SYSTEM_INFORMATION__CRITICAL_EXTENSIONS__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__SYSTEM_INFORMATION__CRITICAL_EXTENSIONS_SYSTEM_INFORMATION_R15 = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__SYSTEM_INFORMATION__CRITICAL_EXTENSIONS)
-} Uenibstreamprotobuf__SystemInformation__CriticalExtensionsCase;
+  STREAMING_PROTOBUFS__SYSTEM_INFORMATION__CRITICAL_EXTENSIONS__NOT_SET = 0,
+  STREAMING_PROTOBUFS__SYSTEM_INFORMATION__CRITICAL_EXTENSIONS_SYSTEM_INFORMATION_R15 = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__SYSTEM_INFORMATION__CRITICAL_EXTENSIONS)
+} StreamingProtobufs__SystemInformation__CriticalExtensionsCase;
 
-struct  _Uenibstreamprotobuf__SystemInformation
+struct  _StreamingProtobufs__SystemInformation
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__SystemInformation__CriticalExtensionsCase critical_extensions_case;
+  StreamingProtobufs__SystemInformation__CriticalExtensionsCase critical_extensions_case;
   union {
-    Uenibstreamprotobuf__SystemInformationIEs *systeminformation_r15;
+    StreamingProtobufs__SystemInformationIEs *systeminformation_r15;
   };
 };
-#define UENIBSTREAMPROTOBUF__SYSTEM_INFORMATION__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__system_information__descriptor) \
-    , UENIBSTREAMPROTOBUF__SYSTEM_INFORMATION__CRITICAL_EXTENSIONS__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__SYSTEM_INFORMATION__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__system_information__descriptor) \
+    , STREAMING_PROTOBUFS__SYSTEM_INFORMATION__CRITICAL_EXTENSIONS__NOT_SET, {0} }
 
 
-struct  _Uenibstreamprotobuf__SystemInformationIEs
+struct  _StreamingProtobufs__SystemInformationIEs
 {
   ProtobufCMessage base;
   size_t n_sib_typeandinfo;
-  Uenibstreamprotobuf__SIBTypeAndInfo **sib_typeandinfo;
-  Google__Protobuf__StringValue *latenoncriticalextension;
+  StreamingProtobufs__SIBTypeAndInfo **sib_typeandinfo;
+  Google__Protobuf__BytesValue *latenoncriticalextension;
 };
-#define UENIBSTREAMPROTOBUF__SYSTEM_INFORMATION__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__system_information__ies__descriptor) \
+#define STREAMING_PROTOBUFS__SYSTEM_INFORMATION__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__system_information__ies__descriptor) \
     , 0,NULL, NULL }
 
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C_SIB2 = 1,
-  UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C_SIB3 = 2,
-  UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C_SIB4 = 3,
-  UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C_SIB5 = 4,
-  UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C_SIB6 = 5,
-  UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C_SIB7 = 6,
-  UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C_SIB8 = 7,
-  UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C_SIB9 = 8
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C)
-} Uenibstreamprotobuf__SIBTypeAndInfo__CCase;
+  STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C__NOT_SET = 0,
+  STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C_SIB2 = 1,
+  STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C_SIB3 = 2,
+  STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C_SIB4 = 3,
+  STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C_SIB5 = 4,
+  STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C_SIB6 = 5,
+  STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C_SIB7 = 6,
+  STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C_SIB8 = 7,
+  STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C_SIB9 = 8
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C)
+} StreamingProtobufs__SIBTypeAndInfo__CCase;
 
-struct  _Uenibstreamprotobuf__SIBTypeAndInfo
+struct  _StreamingProtobufs__SIBTypeAndInfo
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__SIBTypeAndInfo__CCase c_case;
+  StreamingProtobufs__SIBTypeAndInfo__CCase c_case;
   union {
-    Uenibstreamprotobuf__SIB2 *sib2;
-    Uenibstreamprotobuf__SIB3 *sib3;
-    Uenibstreamprotobuf__SIB4 *sib4;
-    Uenibstreamprotobuf__SIB5 *sib5;
-    Uenibstreamprotobuf__SIB6 *sib6;
-    Uenibstreamprotobuf__SIB7 *sib7;
-    Uenibstreamprotobuf__SIB8 *sib8;
-    Uenibstreamprotobuf__SIB9 *sib9;
+    StreamingProtobufs__SIB2 *sib2;
+    StreamingProtobufs__SIB3 *sib3;
+    StreamingProtobufs__SIB4 *sib4;
+    StreamingProtobufs__SIB5 *sib5;
+    StreamingProtobufs__SIB6 *sib6;
+    StreamingProtobufs__SIB7 *sib7;
+    StreamingProtobufs__SIB8 *sib8;
+    StreamingProtobufs__SIB9 *sib9;
   };
 };
-#define UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sib__type_and_info__descriptor) \
-    , UENIBSTREAMPROTOBUF__SIB__TYPE_AND_INFO__C__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sib__type_and_info__descriptor) \
+    , STREAMING_PROTOBUFS__SIB__TYPE_AND_INFO__C__NOT_SET, {0} }
 
 
-/* Uenibstreamprotobuf__SystemInformation methods */
-void   uenibstreamprotobuf__system_information__init
-                     (Uenibstreamprotobuf__SystemInformation         *message);
-size_t uenibstreamprotobuf__system_information__get_packed_size
-                     (const Uenibstreamprotobuf__SystemInformation   *message);
-size_t uenibstreamprotobuf__system_information__pack
-                     (const Uenibstreamprotobuf__SystemInformation   *message,
+/* StreamingProtobufs__SystemInformation methods */
+void   streaming_protobufs__system_information__init
+                     (StreamingProtobufs__SystemInformation         *message);
+size_t streaming_protobufs__system_information__get_packed_size
+                     (const StreamingProtobufs__SystemInformation   *message);
+size_t streaming_protobufs__system_information__pack
+                     (const StreamingProtobufs__SystemInformation   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__system_information__pack_to_buffer
-                     (const Uenibstreamprotobuf__SystemInformation   *message,
+size_t streaming_protobufs__system_information__pack_to_buffer
+                     (const StreamingProtobufs__SystemInformation   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SystemInformation *
-       uenibstreamprotobuf__system_information__unpack
+StreamingProtobufs__SystemInformation *
+       streaming_protobufs__system_information__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__system_information__free_unpacked
-                     (Uenibstreamprotobuf__SystemInformation *message,
+void   streaming_protobufs__system_information__free_unpacked
+                     (StreamingProtobufs__SystemInformation *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__SystemInformationIEs methods */
-void   uenibstreamprotobuf__system_information__ies__init
-                     (Uenibstreamprotobuf__SystemInformationIEs         *message);
-size_t uenibstreamprotobuf__system_information__ies__get_packed_size
-                     (const Uenibstreamprotobuf__SystemInformationIEs   *message);
-size_t uenibstreamprotobuf__system_information__ies__pack
-                     (const Uenibstreamprotobuf__SystemInformationIEs   *message,
+/* StreamingProtobufs__SystemInformationIEs methods */
+void   streaming_protobufs__system_information__ies__init
+                     (StreamingProtobufs__SystemInformationIEs         *message);
+size_t streaming_protobufs__system_information__ies__get_packed_size
+                     (const StreamingProtobufs__SystemInformationIEs   *message);
+size_t streaming_protobufs__system_information__ies__pack
+                     (const StreamingProtobufs__SystemInformationIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__system_information__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__SystemInformationIEs   *message,
+size_t streaming_protobufs__system_information__ies__pack_to_buffer
+                     (const StreamingProtobufs__SystemInformationIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SystemInformationIEs *
-       uenibstreamprotobuf__system_information__ies__unpack
+StreamingProtobufs__SystemInformationIEs *
+       streaming_protobufs__system_information__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__system_information__ies__free_unpacked
-                     (Uenibstreamprotobuf__SystemInformationIEs *message,
+void   streaming_protobufs__system_information__ies__free_unpacked
+                     (StreamingProtobufs__SystemInformationIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__SIBTypeAndInfo methods */
-void   uenibstreamprotobuf__sib__type_and_info__init
-                     (Uenibstreamprotobuf__SIBTypeAndInfo         *message);
-size_t uenibstreamprotobuf__sib__type_and_info__get_packed_size
-                     (const Uenibstreamprotobuf__SIBTypeAndInfo   *message);
-size_t uenibstreamprotobuf__sib__type_and_info__pack
-                     (const Uenibstreamprotobuf__SIBTypeAndInfo   *message,
+/* StreamingProtobufs__SIBTypeAndInfo methods */
+void   streaming_protobufs__sib__type_and_info__init
+                     (StreamingProtobufs__SIBTypeAndInfo         *message);
+size_t streaming_protobufs__sib__type_and_info__get_packed_size
+                     (const StreamingProtobufs__SIBTypeAndInfo   *message);
+size_t streaming_protobufs__sib__type_and_info__pack
+                     (const StreamingProtobufs__SIBTypeAndInfo   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sib__type_and_info__pack_to_buffer
-                     (const Uenibstreamprotobuf__SIBTypeAndInfo   *message,
+size_t streaming_protobufs__sib__type_and_info__pack_to_buffer
+                     (const StreamingProtobufs__SIBTypeAndInfo   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SIBTypeAndInfo *
-       uenibstreamprotobuf__sib__type_and_info__unpack
+StreamingProtobufs__SIBTypeAndInfo *
+       streaming_protobufs__sib__type_and_info__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sib__type_and_info__free_unpacked
-                     (Uenibstreamprotobuf__SIBTypeAndInfo *message,
+void   streaming_protobufs__sib__type_and_info__free_unpacked
+                     (StreamingProtobufs__SIBTypeAndInfo *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__SystemInformation_Closure)
-                 (const Uenibstreamprotobuf__SystemInformation *message,
+typedef void (*StreamingProtobufs__SystemInformation_Closure)
+                 (const StreamingProtobufs__SystemInformation *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__SystemInformationIEs_Closure)
-                 (const Uenibstreamprotobuf__SystemInformationIEs *message,
+typedef void (*StreamingProtobufs__SystemInformationIEs_Closure)
+                 (const StreamingProtobufs__SystemInformationIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__SIBTypeAndInfo_Closure)
-                 (const Uenibstreamprotobuf__SIBTypeAndInfo *message,
+typedef void (*StreamingProtobufs__SIBTypeAndInfo_Closure)
+                 (const StreamingProtobufs__SIBTypeAndInfo *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -166,9 +166,9 @@ typedef void (*Uenibstreamprotobuf__SIBTypeAndInfo_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__system_information__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__system_information__ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sib__type_and_info__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__system_information__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__system_information__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sib__type_and_info__descriptor;
 
 PROTOBUF_C__END_DECLS
 

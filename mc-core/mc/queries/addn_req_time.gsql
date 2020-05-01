@@ -7,7 +7,6 @@ select timestamp_ms as timestamp,
 	gnb_id,
 	0 as event_type
 from SGNB_ADDITION_REQ.sgnb_addreq_for_ue
-//where schemaId=401
 ;
 
 DEFINE{query_name 'add_req_success';}
@@ -19,7 +18,6 @@ select timestamp_ms as timestamp,
 	gnb_id,
 	1 as event_type
 from RECONCOMPLETE.reconfig_success
-//where schemaId=101
 ;
 
 DEFINE{query_name 'addreq_events';}

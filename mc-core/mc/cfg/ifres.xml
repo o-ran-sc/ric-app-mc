@@ -111,6 +111,7 @@
 			<StartUpDelay value='10'/>
 			<Time_Correlation value='60'/>
 			<Verbose value='TRUE'/>
+			<Schemas value='sgnb_addreq_gtp_teid'/>
 			<Schemas value='sgnb_addreq_for_ue'/>
 			<Schemas value='sgnb_addreq_for_ue_bearers'/>
 			<Schemas value='sgnb_addreq_for_ue_sn_serv_ssb'/>

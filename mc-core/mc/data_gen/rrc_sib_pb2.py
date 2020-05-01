@@ -20,10 +20,10 @@ import common_types_pb2 as common__types__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rrc_sib.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\rrrc_sib.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x16rrc_common_types.proto\x1a\x12\x63ommon_types.proto\"\xf5\x05\n\x04SIB1\x12\x45\n\x11\x63\x65llSelectionInfo\x18\x01 \x01(\x0b\x32*.uenibstreamprotobuf.SIB1CellSelectionInfo\x12I\n\x15\x63\x65llAccessRelatedInfo\x18\x02 \x01(\x0b\x32*.uenibstreamprotobuf.CellAccessRelatedInfo\x12I\n\x15\x63onnEstFailureControl\x18\x03 \x01(\x0b\x32*.uenibstreamprotobuf.ConnEstFailureControl\x12\x41\n\x11si_SchedulingInfo\x18\x04 \x01(\x0b\x32&.uenibstreamprotobuf.SI_SchedulingInfo\x12P\n\x17servingCellConfigCommon\x18\x05 \x01(\x0b\x32/.uenibstreamprotobuf.ServingCellConfigCommonSIB\x12:\n\x14ims_EmergencySupport\x18\x06 \x01(\x0b\x32\x1c.uenibstreamprotobuf.TrueOpt\x12:\n\x14\x65\x43\x61llOverIMS_Support\x18\x07 \x01(\x0b\x32\x1c.uenibstreamprotobuf.TrueOpt\x12I\n\x15ue_TimersAndConstants\x18\x08 \x01(\x0b\x32*.uenibstreamprotobuf.UE_TimersAndConstants\x12\x41\n\x0fuac_BarringInfo\x18\t \x01(\x0b\x32(.uenibstreamprotobuf.SIB1UAC_BarringInfo\x12\x35\n\x0fuseFullResumeID\x18\n \x01(\x0b\x32\x1c.uenibstreamprotobuf.TrueOpt\x12>\n\x18lateNonCriticalExtension\x18\x0b \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xfe\x01\n\x15SIB1CellSelectionInfo\x12\x12\n\nq_RxLevMin\x18\x01 \x01(\x11\x12\x36\n\x10q_RxLevMinOffset\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x32\n\rq_RxLevMinSUL\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12.\n\tq_QualMin\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x35\n\x0fq_QualMinOffset\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"\xc9\x03\n\x13SIB1UAC_BarringInfo\x12H\n\x14uac_BarringForCommon\x18\x01 \x01(\x0b\x32*.uenibstreamprotobuf.UAC_BarringPerCatList\x12M\n\x17uac_BarringPerPLMN_List\x18\x02 \x01(\x0b\x32,.uenibstreamprotobuf.UAC_BarringPerPLMN_List\x12K\n\x16uac_BarringInfoSetList\x18\x03 \x01(\x0b\x32+.uenibstreamprotobuf.UAC_BarringInfoSetList\x12V\n\nplmnCommon\x18\x04 \x01(\x0b\x32@.uenibstreamprotobuf.UAC_AccessCategory1_SelectionAssistanceInfoH\x00\x12\x45\n\x12individualPLMNList\x18\x05 \x01(\x0b\x32\'.uenibstreamprotobuf.IndividualPLMNListH\x00\x42-\n+uac_AccessCategory1_SelectionAssistanceInfo\"\xbc\x01\n+UAC_AccessCategory1_SelectionAssistanceInfo\x12U\n\x05value\x18\x01 \x01(\x0e\x32\x46.uenibstreamprotobuf.UAC_AccessCategory1_SelectionAssistanceInfo.Value\"6\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x05\n\x01\x61\x10\x01\x12\x05\n\x01\x62\x10\x02\x12\x05\n\x01\x63\x10\x03\"e\n\x12IndividualPLMNList\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.uenibstreamprotobuf.UAC_AccessCategory1_SelectionAssistanceInfo\"\x9b\x02\n\x04SIB2\x12U\n\x19\x63\x65llReselectionInfoCommon\x18\x01 \x01(\x0b\x32\x32.uenibstreamprotobuf.SIB2CellReselectionInfoCommon\x12_\n\x1e\x63\x65llReselectionServingFreqInfo\x18\x02 \x01(\x0b\x32\x37.uenibstreamprotobuf.SIB2CellReselectionServingFreqInfo\x12[\n\x1cintraFreqCellReselectionInfo\x18\x03 \x01(\x0b\x32\x35.uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo\"\xe5\x02\n\x1dSIB2CellReselectionInfoCommon\x12<\n\x16nrofSS_BlocksToAverage\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12I\n\x1f\x61\x62sThreshSS_BlocksConsolidation\x18\x02 \x01(\x0b\x32 .uenibstreamprotobuf.ThresholdNR\x12;\n\x0frangeToBestCell\x18\x03 \x01(\x0b\x32\".uenibstreamprotobuf.Q_OffsetRange\x12+\n\x06q_Hyst\x18\x04 \x01(\x0b\x32\x1b.uenibstreamprotobuf.Q_Hyst\x12Q\n\x19speedStateReselectionPars\x18\x05 \x01(\x0b\x32..uenibstreamprotobuf.SpeedStateReselectionPars\"\xf6\x01\n\x06Q_Hyst\x12\x30\n\x05value\x18\x01 \x01(\x0e\x32!.uenibstreamprotobuf.Q_Hyst.Value\"\xb9\x01\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x07\n\x03\x64\x42\x30\x10\x01\x12\x07\n\x03\x64\x42\x31\x10\x02\x12\x07\n\x03\x64\x42\x32\x10\x03\x12\x07\n\x03\x64\x42\x33\x10\x04\x12\x07\n\x03\x64\x42\x34\x10\x05\x12\x07\n\x03\x64\x42\x35\x10\x06\x12\x07\n\x03\x64\x42\x36\x10\x07\x12\x07\n\x03\x64\x42\x38\x10\x08\x12\x08\n\x04\x64\x42\x31\x30\x10\t\x12\x08\n\x04\x64\x42\x31\x32\x10\n\x12\x08\n\x04\x64\x42\x31\x34\x10\x0b\x12\x08\n\x04\x64\x42\x31\x36\x10\x0c\x12\x08\n\x04\x64\x42\x31\x38\x10\r\x12\x08\n\x04\x64\x42\x32\x30\x10\x0e\x12\x08\n\x04\x64\x42\x32\x32\x10\x0f\x12\x08\n\x04\x64\x42\x32\x34\x10\x10\"\x9b\x01\n\x19SpeedStateReselectionPars\x12M\n\x17mobilityStateParameters\x18\x01 \x01(\x0b\x32,.uenibstreamprotobuf.MobilityStateParameters\x12/\n\x08q_HystSF\x18\x02 \x01(\x0b\x32\x1d.uenibstreamprotobuf.Q_HystSF\"x\n\x08Q_HystSF\x12\x36\n\tsf_Medium\x18\x01 \x01(\x0b\x32#.uenibstreamprotobuf.SF_Medium_High\x12\x34\n\x07sf_High\x18\x02 \x01(\x0b\x32#.uenibstreamprotobuf.SF_Medium_High\"\x94\x01\n\x0eSF_Medium_High\x12\x38\n\x05value\x18\x01 \x01(\x0e\x32).uenibstreamprotobuf.SF_Medium_High.Value\"H\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x08\n\x04\x64\x42_6\x10\x01\x12\x08\n\x04\x64\x42_4\x10\x02\x12\x08\n\x04\x64\x42_2\x10\x03\x12\x07\n\x03\x64\x42\x30\x10\x04\"\xe0\x02\n\"SIB2CellReselectionServingFreqInfo\x12\x37\n\x11s_NonIntraSearchP\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x37\n\x11s_NonIntraSearchQ\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x19\n\x11threshServingLowP\x18\x03 \x01(\r\x12\x37\n\x11threshServingLowQ\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x1f\n\x17\x63\x65llReselectionPriority\x18\x05 \x01(\r\x12S\n\x1a\x63\x65llReselectionSubPriority\x18\x06 \x01(\x0b\x32/.uenibstreamprotobuf.CellReselectionSubPriority\"\xb1\x01\n\x1a\x43\x65llReselectionSubPriority\x12\x44\n\x05value\x18\x01 \x01(\x0e\x32\x35.uenibstreamprotobuf.CellReselectionSubPriority.Value\"M\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\t\n\x05oDot2\x10\x01\x12\t\n\x05oDot4\x10\x02\x12\t\n\x05oDot6\x10\x03\x12\t\n\x05oDot8\x10\x04\"\xe4\x05\n SIB2IntraFreqCellReselectionInfo\x12\x12\n\nq_RxLevMin\x18\x01 \x01(\x11\x12\x32\n\rq_RxLevMinSUL\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12.\n\tq_QualMin\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x16\n\x0es_IntraSearchP\x18\x04 \x01(\r\x12\x34\n\x0es_IntraSearchQ\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x17\n\x0ft_ReselectionNR\x18\x06 \x01(\r\x12L\n\x11\x66requencyBandList\x18\x07 \x01(\x0b\x32\x31.uenibstreamprotobuf.MultiFrequencyBandListNR_SIB\x12O\n\x14\x66requencyBandListSUL\x18\x08 \x01(\x0b\x32\x31.uenibstreamprotobuf.MultiFrequencyBandListNR_SIB\x12*\n\x05p_Max\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12*\n\x04smtc\x18\n \x01(\x0b\x32\x1c.uenibstreamprotobuf.SSB_MTC\x12\x45\n\x13ss_RSSI_Measurement\x18\x0b \x01(\x0b\x32(.uenibstreamprotobuf.SS_RSSI_Measurement\x12\x39\n\rssb_ToMeasure\x18\x0c \x01(\x0b\x32\".uenibstreamprotobuf.SSB_ToMeasure\x12\x1f\n\x17\x64\x65riveSSB_IndexFromCell\x18\r \x01(\x08\x12G\n\x12t_ReselectionNR_SF\x18\x0e \x01(\x0b\x32+.uenibstreamprotobuf.SpeedStateScaleFactors\"\xb2\x01\n\x16SpeedStateScaleFactors\x12L\n\tsf_Medium\x18\x01 \x01(\x0b\x32\x39.uenibstreamprotobuf.SpeedStateScaleFactorsSF_Medium_High\x12J\n\x07sf_High\x18\x02 \x01(\x0b\x32\x39.uenibstreamprotobuf.SpeedStateScaleFactorsSF_Medium_High\"\xc7\x01\n$SpeedStateScaleFactorsSF_Medium_High\x12N\n\x05value\x18\x01 \x01(\x0e\x32?.uenibstreamprotobuf.SpeedStateScaleFactorsSF_Medium_High.Value\"O\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\n\n\x06oDot25\x10\x01\x12\t\n\x05oDot5\x10\x02\x12\n\n\x06oDot75\x10\x03\x12\t\n\x05lDot0\x10\x04\"\xe0\x01\n\x04SIB3\x12K\n\x16intraFreqNeighCellList\x18\x01 \x01(\x0b\x32+.uenibstreamprotobuf.IntraFreqNeighCellList\x12K\n\x16intraFreqBlackCellList\x18\x02 \x01(\x0b\x32+.uenibstreamprotobuf.IntraFreqBlackCellList\x12>\n\x18lateNonCriticalExtension\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"T\n\x16IntraFreqNeighCellList\x12:\n\x05items\x18\x01 \x03(\x0b\x32+.uenibstreamprotobuf.IntraFreqNeighCellInfo\"\x9c\x02\n\x16IntraFreqNeighCellInfo\x12\x12\n\nphysCellId\x18\x01 \x01(\r\x12\x38\n\x0cq_OffsetCell\x18\x02 \x01(\x0b\x32\".uenibstreamprotobuf.Q_OffsetRange\x12:\n\x14q_RxLevMinOffsetCell\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12=\n\x17q_RxLevMinOffsetCellSUL\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x39\n\x13q_QualMinOffsetCell\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"G\n\x16IntraFreqBlackCellList\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.uenibstreamprotobuf.PCI_Range\"\x97\x01\n\x04SIB4\x12O\n\x18interFreqCarrierFreqList\x18\x01 \x01(\x0b\x32-.uenibstreamprotobuf.InterFreqCarrierFreqList\x12>\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"X\n\x18InterFreqCarrierFreqList\x12<\n\x05items\x18\x01 \x03(\x0b\x32-.uenibstreamprotobuf.InterFreqCarrierFreqInfo\"\xd5\n\n\x18InterFreqCarrierFreqInfo\x12\x16\n\x0e\x64l_CarrierFreq\x18\x01 \x01(\r\x12L\n\x11\x66requencyBandList\x18\x02 \x01(\x0b\x32\x31.uenibstreamprotobuf.MultiFrequencyBandListNR_SIB\x12O\n\x14\x66requencyBandListSUL\x18\x03 \x01(\x0b\x32\x31.uenibstreamprotobuf.MultiFrequencyBandListNR_SIB\x12<\n\x16nrofSS_BlocksToAverage\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12I\n\x1f\x61\x62sThreshSS_BlocksConsolidation\x18\x05 \x01(\x0b\x32 .uenibstreamprotobuf.ThresholdNR\x12*\n\x04smtc\x18\x06 \x01(\x0b\x32\x1c.uenibstreamprotobuf.SSB_MTC\x12\x44\n\x14ssbSubcarrierSpacing\x18\x07 \x01(\x0b\x32&.uenibstreamprotobuf.SubcarrierSpacing\x12\x39\n\rssb_ToMeasure\x18\x08 \x01(\x0b\x32\".uenibstreamprotobuf.SSB_ToMeasure\x12\x1f\n\x17\x64\x65riveSSB_IndexFromCell\x18\t \x01(\x08\x12\x45\n\x13ss_RSSI_Measurement\x18\n \x01(\x0b\x32(.uenibstreamprotobuf.SS_RSSI_Measurement\x12\x12\n\nq_RxLevMin\x18\x0b \x01(\x11\x12\x32\n\rq_RxLevMinSUL\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12.\n\tq_QualMin\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12*\n\x05p_Max\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x17\n\x0ft_ReselectionNR\x18\x0f \x01(\r\x12G\n\x12t_ReselectionNR_SF\x18\x10 \x01(\x0b\x32+.uenibstreamprotobuf.SpeedStateScaleFactors\x12\x15\n\rthreshX_HighP\x18\x11 \x01(\r\x12\x14\n\x0cthreshX_LowP\x18\x12 \x01(\r\x12I\n\tthreshX_Q\x18\x13 \x01(\x0b\x32\x36.uenibstreamprotobuf.InterFreqCarrierFreqInfoThreshX_Q\x12=\n\x17\x63\x65llReselectionPriority\x18\x14 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12S\n\x1a\x63\x65llReselectionSubPriority\x18\x15 \x01(\x0b\x32/.uenibstreamprotobuf.CellReselectionSubPriority\x12\x38\n\x0cq_OffsetFreq\x18\x16 \x01(\x0b\x32\".uenibstreamprotobuf.Q_OffsetRange\x12K\n\x16interFreqNeighCellList\x18\x17 \x01(\x0b\x32+.uenibstreamprotobuf.InterFreqNeighCellList\x12K\n\x16interFreqBlackCellList\x18\x18 \x01(\x0b\x32+.uenibstreamprotobuf.InterFreqBlackCellList\"P\n!InterFreqCarrierFreqInfoThreshX_Q\x12\x15\n\rthreshX_HighQ\x18\x01 \x01(\r\x12\x14\n\x0cthreshX_LowQ\x18\x02 \x01(\r\"T\n\x16InterFreqNeighCellList\x12:\n\x05items\x18\x01 \x03(\x0b\x32+.uenibstreamprotobuf.InterFreqNeighCellInfo\"\x9c\x02\n\x16InterFreqNeighCellInfo\x12\x12\n\nphysCellId\x18\x01 \x01(\r\x12\x38\n\x0cq_OffsetCell\x18\x02 \x01(\x0b\x32\".uenibstreamprotobuf.Q_OffsetRange\x12:\n\x14q_RxLevMinOffsetCell\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12=\n\x17q_RxLevMinOffsetCellSUL\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x39\n\x13q_QualMinOffsetCell\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"G\n\x16InterFreqBlackCellList\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.uenibstreamprotobuf.PCI_Range\"\xf7\x01\n\x04SIB5\x12G\n\x14\x63\x61rrierFreqListEUTRA\x18\x01 \x01(\x0b\x32).uenibstreamprotobuf.CarrierFreqListEUTRA\x12\x1a\n\x12t_ReselectionEUTRA\x18\x02 \x01(\r\x12J\n\x15t_ReselectionEUTRA_SF\x18\x03 \x01(\x0b\x32+.uenibstreamprotobuf.SpeedStateScaleFactors\x12>\n\x18lateNonCriticalExtension\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"L\n\x14\x43\x61rrierFreqListEUTRA\x12\x34\n\x05items\x18\x01 \x03(\x0b\x32%.uenibstreamprotobuf.CarrierFreqEUTRA\"\xba\x05\n\x10\x43\x61rrierFreqEUTRA\x12\x13\n\x0b\x63\x61rrierFreq\x18\x01 \x01(\r\x12M\n\x17\x65utra_multiBandInfoList\x18\x02 \x01(\x0b\x32,.uenibstreamprotobuf.EUTRA_MultiBandInfoList\x12M\n\x17\x65utra_FreqNeighCellList\x18\x03 \x01(\x0b\x32,.uenibstreamprotobuf.EUTRA_FreqNeighCellList\x12I\n\x13\x65utra_BlackCellList\x18\x04 \x01(\x0b\x32,.uenibstreamprotobuf.EUTRA_FreqBlackCellList\x12M\n\x14\x61llowedMeasBandwidth\x18\x05 \x01(\x0b\x32/.uenibstreamprotobuf.EUTRA_AllowedMeasBandwidth\x12\x1c\n\x14presenceAntennaPort1\x18\x06 \x01(\x08\x12=\n\x17\x63\x65llReselectionPriority\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12S\n\x1a\x63\x65llReselectionSubPriority\x18\x08 \x01(\x0b\x32/.uenibstreamprotobuf.CellReselectionSubPriority\x12\x14\n\x0cthreshX_High\x18\t \x01(\r\x12\x13\n\x0bthreshX_Low\x18\n \x01(\r\x12\x12\n\nq_RxLevMin\x18\x0b \x01(\x11\x12\x11\n\tq_QualMin\x18\x0c \x01(\x11\x12\x12\n\np_MaxEUTRA\x18\r \x01(\x11\x12\x41\n\tthreshX_Q\x18\x0e \x01(\x0b\x32..uenibstreamprotobuf.CarrierFreqEUTRAThreshX_Q\"V\n\x17\x45UTRA_FreqNeighCellList\x12;\n\x05items\x18\x01 \x03(\x0b\x32,.uenibstreamprotobuf.EUTRA_FreqNeighCellInfo\"T\n\x17\x45UTRA_FreqBlackCellList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32*.uenibstreamprotobuf.EUTRA_PhysCellIdRange\"\xe4\x01\n\x17\x45UTRA_FreqNeighCellInfo\x12\x12\n\nphysCellId\x18\x01 \x01(\r\x12>\n\x0cq_OffsetCell\x18\x02 \x01(\x0b\x32(.uenibstreamprotobuf.EUTRA_Q_OffsetRange\x12:\n\x14q_RxLevMinOffsetCell\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x39\n\x13q_QualMinOffsetCell\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"H\n\x19\x43\x61rrierFreqEUTRAThreshX_Q\x12\x15\n\rthreshX_HighQ\x18\x01 \x01(\r\x12\x14\n\x0cthreshX_LowQ\x18\x02 \x01(\r\"\x8c\x01\n\x04SIB6\x12\x19\n\x11messageIdentifier\x18\x01 \x01(\t\x12\x14\n\x0cserialNumber\x18\x02 \x01(\t\x12\x13\n\x0bwarningType\x18\x03 \x01(\t\x12>\n\x18lateNonCriticalExtension\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xa7\x03\n\x04SIB7\x12\x19\n\x11messageIdentifier\x18\x01 \x01(\t\x12\x14\n\x0cserialNumber\x18\x02 \x01(\t\x12V\n\x19warningMessageSegmentType\x18\x03 \x01(\x0e\x32\x33.uenibstreamprotobuf.SIB7.WarningMessageSegmentType\x12#\n\x1bwarningMessageSegmentNumber\x18\x04 \x01(\r\x12\x1d\n\x15warningMessageSegment\x18\x05 \x01(\t\x12\x36\n\x10\x64\x61taCodingScheme\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12>\n\x18lateNonCriticalExtension\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"Z\n\x19WarningMessageSegmentType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x12\n\x0enotLastSegment\x10\x01\x12\x0f\n\x0blastSegment\x10\x02\"\xec\x03\n\x04SIB8\x12\x19\n\x11messageIdentifier\x18\x01 \x01(\t\x12\x14\n\x0cserialNumber\x18\x02 \x01(\t\x12V\n\x19warningMessageSegmentType\x18\x03 \x01(\x0e\x32\x33.uenibstreamprotobuf.SIB8.WarningMessageSegmentType\x12#\n\x1bwarningMessageSegmentNumber\x18\x04 \x01(\r\x12\x1d\n\x15warningMessageSegment\x18\x05 \x01(\t\x12\x36\n\x10\x64\x61taCodingScheme\x18\x06 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x43\n\x1dwarningAreaCoordinatesSegment\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12>\n\x18lateNonCriticalExtension\x18\x08 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"Z\n\x19WarningMessageSegmentType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x12\n\x0enotLastSegment\x10\x01\x12\x0f\n\x0blastSegment\x10\x02\"{\n\x04SIB9\x12\x33\n\x08timeInfo\x18\x01 \x01(\x0b\x32!.uenibstreamprotobuf.SIB9TimeInfo\x12>\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"\xc5\x01\n\x0cSIB9TimeInfo\x12\x13\n\x0btimeInfoUTC\x18\x01 \x01(\x04\x12\x38\n\x12\x64\x61yLightSavingTime\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12\x30\n\x0bleapSeconds\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x34\n\x0flocalTimeOffset\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\rrrc_sib.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x16rrc_common_types.proto\x1a\x12\x63ommon_types.proto\"\xf4\x05\n\x04SIB1\x12\x45\n\x11\x63\x65llSelectionInfo\x18\x01 \x01(\x0b\x32*.streaming_protobufs.SIB1CellSelectionInfo\x12I\n\x15\x63\x65llAccessRelatedInfo\x18\x02 \x01(\x0b\x32*.streaming_protobufs.CellAccessRelatedInfo\x12I\n\x15\x63onnEstFailureControl\x18\x03 \x01(\x0b\x32*.streaming_protobufs.ConnEstFailureControl\x12\x41\n\x11si_SchedulingInfo\x18\x04 \x01(\x0b\x32&.streaming_protobufs.SI_SchedulingInfo\x12P\n\x17servingCellConfigCommon\x18\x05 \x01(\x0b\x32/.streaming_protobufs.ServingCellConfigCommonSIB\x12:\n\x14ims_EmergencySupport\x18\x06 \x01(\x0b\x32\x1c.streaming_protobufs.TrueOpt\x12:\n\x14\x65\x43\x61llOverIMS_Support\x18\x07 \x01(\x0b\x32\x1c.streaming_protobufs.TrueOpt\x12I\n\x15ue_TimersAndConstants\x18\x08 \x01(\x0b\x32*.streaming_protobufs.UE_TimersAndConstants\x12\x41\n\x0fuac_BarringInfo\x18\t \x01(\x0b\x32(.streaming_protobufs.SIB1UAC_BarringInfo\x12\x35\n\x0fuseFullResumeID\x18\n \x01(\x0b\x32\x1c.streaming_protobufs.TrueOpt\x12=\n\x18lateNonCriticalExtension\x18\x0b \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"\xfe\x01\n\x15SIB1CellSelectionInfo\x12\x12\n\nq_RxLevMin\x18\x01 \x01(\x11\x12\x36\n\x10q_RxLevMinOffset\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x32\n\rq_RxLevMinSUL\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12.\n\tq_QualMin\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x35\n\x0fq_QualMinOffset\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"\xc9\x03\n\x13SIB1UAC_BarringInfo\x12H\n\x14uac_BarringForCommon\x18\x01 \x01(\x0b\x32*.streaming_protobufs.UAC_BarringPerCatList\x12M\n\x17uac_BarringPerPLMN_List\x18\x02 \x01(\x0b\x32,.streaming_protobufs.UAC_BarringPerPLMN_List\x12K\n\x16uac_BarringInfoSetList\x18\x03 \x01(\x0b\x32+.streaming_protobufs.UAC_BarringInfoSetList\x12V\n\nplmnCommon\x18\x04 \x01(\x0b\x32@.streaming_protobufs.UAC_AccessCategory1_SelectionAssistanceInfoH\x00\x12\x45\n\x12individualPLMNList\x18\x05 \x01(\x0b\x32\'.streaming_protobufs.IndividualPLMNListH\x00\x42-\n+uac_AccessCategory1_SelectionAssistanceInfo\"\xbc\x01\n+UAC_AccessCategory1_SelectionAssistanceInfo\x12U\n\x05value\x18\x01 \x01(\x0e\x32\x46.streaming_protobufs.UAC_AccessCategory1_SelectionAssistanceInfo.Value\"6\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x05\n\x01\x61\x10\x01\x12\x05\n\x01\x62\x10\x02\x12\x05\n\x01\x63\x10\x03\"e\n\x12IndividualPLMNList\x12O\n\x05items\x18\x01 \x03(\x0b\x32@.streaming_protobufs.UAC_AccessCategory1_SelectionAssistanceInfo\"\x9b\x02\n\x04SIB2\x12U\n\x19\x63\x65llReselectionInfoCommon\x18\x01 \x01(\x0b\x32\x32.streaming_protobufs.SIB2CellReselectionInfoCommon\x12_\n\x1e\x63\x65llReselectionServingFreqInfo\x18\x02 \x01(\x0b\x32\x37.streaming_protobufs.SIB2CellReselectionServingFreqInfo\x12[\n\x1cintraFreqCellReselectionInfo\x18\x03 \x01(\x0b\x32\x35.streaming_protobufs.SIB2IntraFreqCellReselectionInfo\"\xe5\x02\n\x1dSIB2CellReselectionInfoCommon\x12<\n\x16nrofSS_BlocksToAverage\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12I\n\x1f\x61\x62sThreshSS_BlocksConsolidation\x18\x02 \x01(\x0b\x32 .streaming_protobufs.ThresholdNR\x12;\n\x0frangeToBestCell\x18\x03 \x01(\x0b\x32\".streaming_protobufs.Q_OffsetRange\x12+\n\x06q_Hyst\x18\x04 \x01(\x0b\x32\x1b.streaming_protobufs.Q_Hyst\x12Q\n\x19speedStateReselectionPars\x18\x05 \x01(\x0b\x32..streaming_protobufs.SpeedStateReselectionPars\"\xf6\x01\n\x06Q_Hyst\x12\x30\n\x05value\x18\x01 \x01(\x0e\x32!.streaming_protobufs.Q_Hyst.Value\"\xb9\x01\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x07\n\x03\x64\x42\x30\x10\x01\x12\x07\n\x03\x64\x42\x31\x10\x02\x12\x07\n\x03\x64\x42\x32\x10\x03\x12\x07\n\x03\x64\x42\x33\x10\x04\x12\x07\n\x03\x64\x42\x34\x10\x05\x12\x07\n\x03\x64\x42\x35\x10\x06\x12\x07\n\x03\x64\x42\x36\x10\x07\x12\x07\n\x03\x64\x42\x38\x10\x08\x12\x08\n\x04\x64\x42\x31\x30\x10\t\x12\x08\n\x04\x64\x42\x31\x32\x10\n\x12\x08\n\x04\x64\x42\x31\x34\x10\x0b\x12\x08\n\x04\x64\x42\x31\x36\x10\x0c\x12\x08\n\x04\x64\x42\x31\x38\x10\r\x12\x08\n\x04\x64\x42\x32\x30\x10\x0e\x12\x08\n\x04\x64\x42\x32\x32\x10\x0f\x12\x08\n\x04\x64\x42\x32\x34\x10\x10\"\x9b\x01\n\x19SpeedStateReselectionPars\x12M\n\x17mobilityStateParameters\x18\x01 \x01(\x0b\x32,.streaming_protobufs.MobilityStateParameters\x12/\n\x08q_HystSF\x18\x02 \x01(\x0b\x32\x1d.streaming_protobufs.Q_HystSF\"x\n\x08Q_HystSF\x12\x36\n\tsf_Medium\x18\x01 \x01(\x0b\x32#.streaming_protobufs.SF_Medium_High\x12\x34\n\x07sf_High\x18\x02 \x01(\x0b\x32#.streaming_protobufs.SF_Medium_High\"\x94\x01\n\x0eSF_Medium_High\x12\x38\n\x05value\x18\x01 \x01(\x0e\x32).streaming_protobufs.SF_Medium_High.Value\"H\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x08\n\x04\x64\x42_6\x10\x01\x12\x08\n\x04\x64\x42_4\x10\x02\x12\x08\n\x04\x64\x42_2\x10\x03\x12\x07\n\x03\x64\x42\x30\x10\x04\"\xe0\x02\n\"SIB2CellReselectionServingFreqInfo\x12\x37\n\x11s_NonIntraSearchP\x18\x01 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x37\n\x11s_NonIntraSearchQ\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x19\n\x11threshServingLowP\x18\x03 \x01(\r\x12\x37\n\x11threshServingLowQ\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x1f\n\x17\x63\x65llReselectionPriority\x18\x05 \x01(\r\x12S\n\x1a\x63\x65llReselectionSubPriority\x18\x06 \x01(\x0b\x32/.streaming_protobufs.CellReselectionSubPriority\"\xb1\x01\n\x1a\x43\x65llReselectionSubPriority\x12\x44\n\x05value\x18\x01 \x01(\x0e\x32\x35.streaming_protobufs.CellReselectionSubPriority.Value\"M\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\t\n\x05oDot2\x10\x01\x12\t\n\x05oDot4\x10\x02\x12\t\n\x05oDot6\x10\x03\x12\t\n\x05oDot8\x10\x04\"\xe4\x05\n SIB2IntraFreqCellReselectionInfo\x12\x12\n\nq_RxLevMin\x18\x01 \x01(\x11\x12\x32\n\rq_RxLevMinSUL\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12.\n\tq_QualMin\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x16\n\x0es_IntraSearchP\x18\x04 \x01(\r\x12\x34\n\x0es_IntraSearchQ\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x17\n\x0ft_ReselectionNR\x18\x06 \x01(\r\x12L\n\x11\x66requencyBandList\x18\x07 \x01(\x0b\x32\x31.streaming_protobufs.MultiFrequencyBandListNR_SIB\x12O\n\x14\x66requencyBandListSUL\x18\x08 \x01(\x0b\x32\x31.streaming_protobufs.MultiFrequencyBandListNR_SIB\x12*\n\x05p_Max\x18\t \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12*\n\x04smtc\x18\n \x01(\x0b\x32\x1c.streaming_protobufs.SSB_MTC\x12\x45\n\x13ss_RSSI_Measurement\x18\x0b \x01(\x0b\x32(.streaming_protobufs.SS_RSSI_Measurement\x12\x39\n\rssb_ToMeasure\x18\x0c \x01(\x0b\x32\".streaming_protobufs.SSB_ToMeasure\x12\x1f\n\x17\x64\x65riveSSB_IndexFromCell\x18\r \x01(\x08\x12G\n\x12t_ReselectionNR_SF\x18\x0e \x01(\x0b\x32+.streaming_protobufs.SpeedStateScaleFactors\"\xb2\x01\n\x16SpeedStateScaleFactors\x12L\n\tsf_Medium\x18\x01 \x01(\x0b\x32\x39.streaming_protobufs.SpeedStateScaleFactorsSF_Medium_High\x12J\n\x07sf_High\x18\x02 \x01(\x0b\x32\x39.streaming_protobufs.SpeedStateScaleFactorsSF_Medium_High\"\xc7\x01\n$SpeedStateScaleFactorsSF_Medium_High\x12N\n\x05value\x18\x01 \x01(\x0e\x32?.streaming_protobufs.SpeedStateScaleFactorsSF_Medium_High.Value\"O\n\x05Value\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\n\n\x06oDot25\x10\x01\x12\t\n\x05oDot5\x10\x02\x12\n\n\x06oDot75\x10\x03\x12\t\n\x05lDot0\x10\x04\"\xdf\x01\n\x04SIB3\x12K\n\x16intraFreqNeighCellList\x18\x01 \x01(\x0b\x32+.streaming_protobufs.IntraFreqNeighCellList\x12K\n\x16intraFreqBlackCellList\x18\x02 \x01(\x0b\x32+.streaming_protobufs.IntraFreqBlackCellList\x12=\n\x18lateNonCriticalExtension\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"T\n\x16IntraFreqNeighCellList\x12:\n\x05items\x18\x01 \x03(\x0b\x32+.streaming_protobufs.IntraFreqNeighCellInfo\"\x9c\x02\n\x16IntraFreqNeighCellInfo\x12\x12\n\nphysCellId\x18\x01 \x01(\r\x12\x38\n\x0cq_OffsetCell\x18\x02 \x01(\x0b\x32\".streaming_protobufs.Q_OffsetRange\x12:\n\x14q_RxLevMinOffsetCell\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12=\n\x17q_RxLevMinOffsetCellSUL\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x39\n\x13q_QualMinOffsetCell\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"G\n\x16IntraFreqBlackCellList\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.streaming_protobufs.PCI_Range\"\x96\x01\n\x04SIB4\x12O\n\x18interFreqCarrierFreqList\x18\x01 \x01(\x0b\x32-.streaming_protobufs.InterFreqCarrierFreqList\x12=\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"X\n\x18InterFreqCarrierFreqList\x12<\n\x05items\x18\x01 \x03(\x0b\x32-.streaming_protobufs.InterFreqCarrierFreqInfo\"\xd5\n\n\x18InterFreqCarrierFreqInfo\x12\x16\n\x0e\x64l_CarrierFreq\x18\x01 \x01(\r\x12L\n\x11\x66requencyBandList\x18\x02 \x01(\x0b\x32\x31.streaming_protobufs.MultiFrequencyBandListNR_SIB\x12O\n\x14\x66requencyBandListSUL\x18\x03 \x01(\x0b\x32\x31.streaming_protobufs.MultiFrequencyBandListNR_SIB\x12<\n\x16nrofSS_BlocksToAverage\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12I\n\x1f\x61\x62sThreshSS_BlocksConsolidation\x18\x05 \x01(\x0b\x32 .streaming_protobufs.ThresholdNR\x12*\n\x04smtc\x18\x06 \x01(\x0b\x32\x1c.streaming_protobufs.SSB_MTC\x12\x44\n\x14ssbSubcarrierSpacing\x18\x07 \x01(\x0b\x32&.streaming_protobufs.SubcarrierSpacing\x12\x39\n\rssb_ToMeasure\x18\x08 \x01(\x0b\x32\".streaming_protobufs.SSB_ToMeasure\x12\x1f\n\x17\x64\x65riveSSB_IndexFromCell\x18\t \x01(\x08\x12\x45\n\x13ss_RSSI_Measurement\x18\n \x01(\x0b\x32(.streaming_protobufs.SS_RSSI_Measurement\x12\x12\n\nq_RxLevMin\x18\x0b \x01(\x11\x12\x32\n\rq_RxLevMinSUL\x18\x0c \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12.\n\tq_QualMin\x18\r \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12*\n\x05p_Max\x18\x0e \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x17\n\x0ft_ReselectionNR\x18\x0f \x01(\r\x12G\n\x12t_ReselectionNR_SF\x18\x10 \x01(\x0b\x32+.streaming_protobufs.SpeedStateScaleFactors\x12\x15\n\rthreshX_HighP\x18\x11 \x01(\r\x12\x14\n\x0cthreshX_LowP\x18\x12 \x01(\r\x12I\n\tthreshX_Q\x18\x13 \x01(\x0b\x32\x36.streaming_protobufs.InterFreqCarrierFreqInfoThreshX_Q\x12=\n\x17\x63\x65llReselectionPriority\x18\x14 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12S\n\x1a\x63\x65llReselectionSubPriority\x18\x15 \x01(\x0b\x32/.streaming_protobufs.CellReselectionSubPriority\x12\x38\n\x0cq_OffsetFreq\x18\x16 \x01(\x0b\x32\".streaming_protobufs.Q_OffsetRange\x12K\n\x16interFreqNeighCellList\x18\x17 \x01(\x0b\x32+.streaming_protobufs.InterFreqNeighCellList\x12K\n\x16interFreqBlackCellList\x18\x18 \x01(\x0b\x32+.streaming_protobufs.InterFreqBlackCellList\"P\n!InterFreqCarrierFreqInfoThreshX_Q\x12\x15\n\rthreshX_HighQ\x18\x01 \x01(\r\x12\x14\n\x0cthreshX_LowQ\x18\x02 \x01(\r\"T\n\x16InterFreqNeighCellList\x12:\n\x05items\x18\x01 \x03(\x0b\x32+.streaming_protobufs.InterFreqNeighCellInfo\"\x9c\x02\n\x16InterFreqNeighCellInfo\x12\x12\n\nphysCellId\x18\x01 \x01(\r\x12\x38\n\x0cq_OffsetCell\x18\x02 \x01(\x0b\x32\".streaming_protobufs.Q_OffsetRange\x12:\n\x14q_RxLevMinOffsetCell\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12=\n\x17q_RxLevMinOffsetCellSUL\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x39\n\x13q_QualMinOffsetCell\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"G\n\x16InterFreqBlackCellList\x12-\n\x05items\x18\x01 \x03(\x0b\x32\x1e.streaming_protobufs.PCI_Range\"\xf6\x01\n\x04SIB5\x12G\n\x14\x63\x61rrierFreqListEUTRA\x18\x01 \x01(\x0b\x32).streaming_protobufs.CarrierFreqListEUTRA\x12\x1a\n\x12t_ReselectionEUTRA\x18\x02 \x01(\r\x12J\n\x15t_ReselectionEUTRA_SF\x18\x03 \x01(\x0b\x32+.streaming_protobufs.SpeedStateScaleFactors\x12=\n\x18lateNonCriticalExtension\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"L\n\x14\x43\x61rrierFreqListEUTRA\x12\x34\n\x05items\x18\x01 \x03(\x0b\x32%.streaming_protobufs.CarrierFreqEUTRA\"\xba\x05\n\x10\x43\x61rrierFreqEUTRA\x12\x13\n\x0b\x63\x61rrierFreq\x18\x01 \x01(\r\x12M\n\x17\x65utra_multiBandInfoList\x18\x02 \x01(\x0b\x32,.streaming_protobufs.EUTRA_MultiBandInfoList\x12M\n\x17\x65utra_FreqNeighCellList\x18\x03 \x01(\x0b\x32,.streaming_protobufs.EUTRA_FreqNeighCellList\x12I\n\x13\x65utra_BlackCellList\x18\x04 \x01(\x0b\x32,.streaming_protobufs.EUTRA_FreqBlackCellList\x12M\n\x14\x61llowedMeasBandwidth\x18\x05 \x01(\x0b\x32/.streaming_protobufs.EUTRA_AllowedMeasBandwidth\x12\x1c\n\x14presenceAntennaPort1\x18\x06 \x01(\x08\x12=\n\x17\x63\x65llReselectionPriority\x18\x07 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12S\n\x1a\x63\x65llReselectionSubPriority\x18\x08 \x01(\x0b\x32/.streaming_protobufs.CellReselectionSubPriority\x12\x14\n\x0cthreshX_High\x18\t \x01(\r\x12\x13\n\x0bthreshX_Low\x18\n \x01(\r\x12\x12\n\nq_RxLevMin\x18\x0b \x01(\x11\x12\x11\n\tq_QualMin\x18\x0c \x01(\x11\x12\x12\n\np_MaxEUTRA\x18\r \x01(\x11\x12\x41\n\tthreshX_Q\x18\x0e \x01(\x0b\x32..streaming_protobufs.CarrierFreqEUTRAThreshX_Q\"V\n\x17\x45UTRA_FreqNeighCellList\x12;\n\x05items\x18\x01 \x03(\x0b\x32,.streaming_protobufs.EUTRA_FreqNeighCellInfo\"T\n\x17\x45UTRA_FreqBlackCellList\x12\x39\n\x05items\x18\x01 \x03(\x0b\x32*.streaming_protobufs.EUTRA_PhysCellIdRange\"\xe4\x01\n\x17\x45UTRA_FreqNeighCellInfo\x12\x12\n\nphysCellId\x18\x01 \x01(\r\x12>\n\x0cq_OffsetCell\x18\x02 \x01(\x0b\x32(.streaming_protobufs.EUTRA_Q_OffsetRange\x12:\n\x14q_RxLevMinOffsetCell\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12\x39\n\x13q_QualMinOffsetCell\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"H\n\x19\x43\x61rrierFreqEUTRAThreshX_Q\x12\x15\n\rthreshX_HighQ\x18\x01 \x01(\r\x12\x14\n\x0cthreshX_LowQ\x18\x02 \x01(\r\"\x8b\x01\n\x04SIB6\x12\x19\n\x11messageIdentifier\x18\x01 \x01(\x0c\x12\x14\n\x0cserialNumber\x18\x02 \x01(\x0c\x12\x13\n\x0bwarningType\x18\x03 \x01(\x0c\x12=\n\x18lateNonCriticalExtension\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"\xa5\x03\n\x04SIB7\x12\x19\n\x11messageIdentifier\x18\x01 \x01(\x0c\x12\x14\n\x0cserialNumber\x18\x02 \x01(\x0c\x12V\n\x19warningMessageSegmentType\x18\x03 \x01(\x0e\x32\x33.streaming_protobufs.SIB7.WarningMessageSegmentType\x12#\n\x1bwarningMessageSegmentNumber\x18\x04 \x01(\r\x12\x1d\n\x15warningMessageSegment\x18\x05 \x01(\x0c\x12\x35\n\x10\x64\x61taCodingScheme\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12=\n\x18lateNonCriticalExtension\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"Z\n\x19WarningMessageSegmentType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x12\n\x0enotLastSegment\x10\x01\x12\x0f\n\x0blastSegment\x10\x02\"\xe9\x03\n\x04SIB8\x12\x19\n\x11messageIdentifier\x18\x01 \x01(\x0c\x12\x14\n\x0cserialNumber\x18\x02 \x01(\x0c\x12V\n\x19warningMessageSegmentType\x18\x03 \x01(\x0e\x32\x33.streaming_protobufs.SIB8.WarningMessageSegmentType\x12#\n\x1bwarningMessageSegmentNumber\x18\x04 \x01(\r\x12\x1d\n\x15warningMessageSegment\x18\x05 \x01(\x0c\x12\x35\n\x10\x64\x61taCodingScheme\x18\x06 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12\x42\n\x1dwarningAreaCoordinatesSegment\x18\x07 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12=\n\x18lateNonCriticalExtension\x18\x08 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"Z\n\x19WarningMessageSegmentType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x12\n\x0enotLastSegment\x10\x01\x12\x0f\n\x0blastSegment\x10\x02\"z\n\x04SIB9\x12\x33\n\x08timeInfo\x18\x01 \x01(\x0b\x32!.streaming_protobufs.SIB9TimeInfo\x12=\n\x18lateNonCriticalExtension\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"\xc4\x01\n\x0cSIB9TimeInfo\x12\x13\n\x0btimeInfoUTC\x18\x01 \x01(\x04\x12\x37\n\x12\x64\x61yLightSavingTime\x18\x02 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12\x30\n\x0bleapSeconds\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.Int32Value\x12\x34\n\x0flocalTimeOffset\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.Int32ValueB3Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,rrc__common__types__pb2.DESCRIPTOR,common__types__pb2.DESCRIPTOR,])
 
@@ -31,7 +31,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _UAC_ACCESSCATEGORY1_SELECTIONASSISTANCEINFO_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.UAC_AccessCategory1_SelectionAssistanceInfo.Value',
+  full_name='streaming_protobufs.UAC_AccessCategory1_SelectionAssistanceInfo.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -54,14 +54,14 @@ _UAC_ACCESSCATEGORY1_SELECTIONASSISTANCEINFO_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=1726,
-  serialized_end=1780,
+  serialized_start=1725,
+  serialized_end=1779,
 )
 _sym_db.RegisterEnumDescriptor(_UAC_ACCESSCATEGORY1_SELECTIONASSISTANCEINFO_VALUE)
 
 _Q_HYST_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.Q_Hyst.Value',
+  full_name='streaming_protobufs.Q_Hyst.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -136,14 +136,14 @@ _Q_HYST_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=2593,
-  serialized_end=2778,
+  serialized_start=2592,
+  serialized_end=2777,
 )
 _sym_db.RegisterEnumDescriptor(_Q_HYST_VALUE)
 
 _SF_MEDIUM_HIGH_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.SF_Medium_High.Value',
+  full_name='streaming_protobufs.SF_Medium_High.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -170,14 +170,14 @@ _SF_MEDIUM_HIGH_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3137,
-  serialized_end=3209,
+  serialized_start=3136,
+  serialized_end=3208,
 )
 _sym_db.RegisterEnumDescriptor(_SF_MEDIUM_HIGH_VALUE)
 
 _CELLRESELECTIONSUBPRIORITY_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.CellReselectionSubPriority.Value',
+  full_name='streaming_protobufs.CellReselectionSubPriority.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -204,14 +204,14 @@ _CELLRESELECTIONSUBPRIORITY_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=3667,
-  serialized_end=3744,
+  serialized_start=3666,
+  serialized_end=3743,
 )
 _sym_db.RegisterEnumDescriptor(_CELLRESELECTIONSUBPRIORITY_VALUE)
 
 _SPEEDSTATESCALEFACTORSSF_MEDIUM_HIGH_VALUE = _descriptor.EnumDescriptor(
   name='Value',
-  full_name='uenibstreamprotobuf.SpeedStateScaleFactorsSF_Medium_High.Value',
+  full_name='streaming_protobufs.SpeedStateScaleFactorsSF_Medium_High.Value',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -238,14 +238,14 @@ _SPEEDSTATESCALEFACTORSSF_MEDIUM_HIGH_VALUE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=4791,
-  serialized_end=4870,
+  serialized_start=4790,
+  serialized_end=4869,
 )
 _sym_db.RegisterEnumDescriptor(_SPEEDSTATESCALEFACTORSSF_MEDIUM_HIGH_VALUE)
 
 _SIB7_WARNINGMESSAGESEGMENTTYPE = _descriptor.EnumDescriptor(
   name='WarningMessageSegmentType',
-  full_name='uenibstreamprotobuf.SIB7.WarningMessageSegmentType',
+  full_name='streaming_protobufs.SIB7.WarningMessageSegmentType',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -264,14 +264,14 @@ _SIB7_WARNINGMESSAGESEGMENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9670,
-  serialized_end=9760,
+  serialized_start=9663,
+  serialized_end=9753,
 )
 _sym_db.RegisterEnumDescriptor(_SIB7_WARNINGMESSAGESEGMENTTYPE)
 
 _SIB8_WARNINGMESSAGESEGMENTTYPE = _descriptor.EnumDescriptor(
   name='WarningMessageSegmentType',
-  full_name='uenibstreamprotobuf.SIB8.WarningMessageSegmentType',
+  full_name='streaming_protobufs.SIB8.WarningMessageSegmentType',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -290,91 +290,91 @@ _SIB8_WARNINGMESSAGESEGMENTTYPE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=9670,
-  serialized_end=9760,
+  serialized_start=9663,
+  serialized_end=9753,
 )
 _sym_db.RegisterEnumDescriptor(_SIB8_WARNINGMESSAGESEGMENTTYPE)
 
 
 _SIB1 = _descriptor.Descriptor(
   name='SIB1',
-  full_name='uenibstreamprotobuf.SIB1',
+  full_name='streaming_protobufs.SIB1',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cellSelectionInfo', full_name='uenibstreamprotobuf.SIB1.cellSelectionInfo', index=0,
+      name='cellSelectionInfo', full_name='streaming_protobufs.SIB1.cellSelectionInfo', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cellAccessRelatedInfo', full_name='uenibstreamprotobuf.SIB1.cellAccessRelatedInfo', index=1,
+      name='cellAccessRelatedInfo', full_name='streaming_protobufs.SIB1.cellAccessRelatedInfo', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='connEstFailureControl', full_name='uenibstreamprotobuf.SIB1.connEstFailureControl', index=2,
+      name='connEstFailureControl', full_name='streaming_protobufs.SIB1.connEstFailureControl', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='si_SchedulingInfo', full_name='uenibstreamprotobuf.SIB1.si_SchedulingInfo', index=3,
+      name='si_SchedulingInfo', full_name='streaming_protobufs.SIB1.si_SchedulingInfo', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='servingCellConfigCommon', full_name='uenibstreamprotobuf.SIB1.servingCellConfigCommon', index=4,
+      name='servingCellConfigCommon', full_name='streaming_protobufs.SIB1.servingCellConfigCommon', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ims_EmergencySupport', full_name='uenibstreamprotobuf.SIB1.ims_EmergencySupport', index=5,
+      name='ims_EmergencySupport', full_name='streaming_protobufs.SIB1.ims_EmergencySupport', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='eCallOverIMS_Support', full_name='uenibstreamprotobuf.SIB1.eCallOverIMS_Support', index=6,
+      name='eCallOverIMS_Support', full_name='streaming_protobufs.SIB1.eCallOverIMS_Support', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ue_TimersAndConstants', full_name='uenibstreamprotobuf.SIB1.ue_TimersAndConstants', index=7,
+      name='ue_TimersAndConstants', full_name='streaming_protobufs.SIB1.ue_TimersAndConstants', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='uac_BarringInfo', full_name='uenibstreamprotobuf.SIB1.uac_BarringInfo', index=8,
+      name='uac_BarringInfo', full_name='streaming_protobufs.SIB1.uac_BarringInfo', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='useFullResumeID', full_name='uenibstreamprotobuf.SIB1.useFullResumeID', index=9,
+      name='useFullResumeID', full_name='streaming_protobufs.SIB1.useFullResumeID', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.SIB1.lateNonCriticalExtension', index=10,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.SIB1.lateNonCriticalExtension', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -393,47 +393,47 @@ _SIB1 = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=115,
-  serialized_end=872,
+  serialized_end=871,
 )
 
 
 _SIB1CELLSELECTIONINFO = _descriptor.Descriptor(
   name='SIB1CellSelectionInfo',
-  full_name='uenibstreamprotobuf.SIB1CellSelectionInfo',
+  full_name='streaming_protobufs.SIB1CellSelectionInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='q_RxLevMin', full_name='uenibstreamprotobuf.SIB1CellSelectionInfo.q_RxLevMin', index=0,
+      name='q_RxLevMin', full_name='streaming_protobufs.SIB1CellSelectionInfo.q_RxLevMin', index=0,
       number=1, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMinOffset', full_name='uenibstreamprotobuf.SIB1CellSelectionInfo.q_RxLevMinOffset', index=1,
+      name='q_RxLevMinOffset', full_name='streaming_protobufs.SIB1CellSelectionInfo.q_RxLevMinOffset', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMinSUL', full_name='uenibstreamprotobuf.SIB1CellSelectionInfo.q_RxLevMinSUL', index=2,
+      name='q_RxLevMinSUL', full_name='streaming_protobufs.SIB1CellSelectionInfo.q_RxLevMinSUL', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_QualMin', full_name='uenibstreamprotobuf.SIB1CellSelectionInfo.q_QualMin', index=3,
+      name='q_QualMin', full_name='streaming_protobufs.SIB1CellSelectionInfo.q_QualMin', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_QualMinOffset', full_name='uenibstreamprotobuf.SIB1CellSelectionInfo.q_QualMinOffset', index=4,
+      name='q_QualMinOffset', full_name='streaming_protobufs.SIB1CellSelectionInfo.q_QualMinOffset', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -451,48 +451,48 @@ _SIB1CELLSELECTIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=875,
-  serialized_end=1129,
+  serialized_start=874,
+  serialized_end=1128,
 )
 
 
 _SIB1UAC_BARRINGINFO = _descriptor.Descriptor(
   name='SIB1UAC_BarringInfo',
-  full_name='uenibstreamprotobuf.SIB1UAC_BarringInfo',
+  full_name='streaming_protobufs.SIB1UAC_BarringInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uac_BarringForCommon', full_name='uenibstreamprotobuf.SIB1UAC_BarringInfo.uac_BarringForCommon', index=0,
+      name='uac_BarringForCommon', full_name='streaming_protobufs.SIB1UAC_BarringInfo.uac_BarringForCommon', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='uac_BarringPerPLMN_List', full_name='uenibstreamprotobuf.SIB1UAC_BarringInfo.uac_BarringPerPLMN_List', index=1,
+      name='uac_BarringPerPLMN_List', full_name='streaming_protobufs.SIB1UAC_BarringInfo.uac_BarringPerPLMN_List', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='uac_BarringInfoSetList', full_name='uenibstreamprotobuf.SIB1UAC_BarringInfo.uac_BarringInfoSetList', index=2,
+      name='uac_BarringInfoSetList', full_name='streaming_protobufs.SIB1UAC_BarringInfo.uac_BarringInfoSetList', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='plmnCommon', full_name='uenibstreamprotobuf.SIB1UAC_BarringInfo.plmnCommon', index=3,
+      name='plmnCommon', full_name='streaming_protobufs.SIB1UAC_BarringInfo.plmnCommon', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='individualPLMNList', full_name='uenibstreamprotobuf.SIB1UAC_BarringInfo.individualPLMNList', index=4,
+      name='individualPLMNList', full_name='streaming_protobufs.SIB1UAC_BarringInfo.individualPLMNList', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -510,23 +510,23 @@ _SIB1UAC_BARRINGINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='uac_AccessCategory1_SelectionAssistanceInfo', full_name='uenibstreamprotobuf.SIB1UAC_BarringInfo.uac_AccessCategory1_SelectionAssistanceInfo',
+      name='uac_AccessCategory1_SelectionAssistanceInfo', full_name='streaming_protobufs.SIB1UAC_BarringInfo.uac_AccessCategory1_SelectionAssistanceInfo',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=1132,
-  serialized_end=1589,
+  serialized_start=1131,
+  serialized_end=1588,
 )
 
 
 _UAC_ACCESSCATEGORY1_SELECTIONASSISTANCEINFO = _descriptor.Descriptor(
   name='UAC_AccessCategory1_SelectionAssistanceInfo',
-  full_name='uenibstreamprotobuf.UAC_AccessCategory1_SelectionAssistanceInfo',
+  full_name='streaming_protobufs.UAC_AccessCategory1_SelectionAssistanceInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.UAC_AccessCategory1_SelectionAssistanceInfo.value', index=0,
+      name='value', full_name='streaming_protobufs.UAC_AccessCategory1_SelectionAssistanceInfo.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -545,20 +545,20 @@ _UAC_ACCESSCATEGORY1_SELECTIONASSISTANCEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1592,
-  serialized_end=1780,
+  serialized_start=1591,
+  serialized_end=1779,
 )
 
 
 _INDIVIDUALPLMNLIST = _descriptor.Descriptor(
   name='IndividualPLMNList',
-  full_name='uenibstreamprotobuf.IndividualPLMNList',
+  full_name='streaming_protobufs.IndividualPLMNList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.IndividualPLMNList.items', index=0,
+      name='items', full_name='streaming_protobufs.IndividualPLMNList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -576,34 +576,34 @@ _INDIVIDUALPLMNLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1782,
-  serialized_end=1883,
+  serialized_start=1781,
+  serialized_end=1882,
 )
 
 
 _SIB2 = _descriptor.Descriptor(
   name='SIB2',
-  full_name='uenibstreamprotobuf.SIB2',
+  full_name='streaming_protobufs.SIB2',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='cellReselectionInfoCommon', full_name='uenibstreamprotobuf.SIB2.cellReselectionInfoCommon', index=0,
+      name='cellReselectionInfoCommon', full_name='streaming_protobufs.SIB2.cellReselectionInfoCommon', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cellReselectionServingFreqInfo', full_name='uenibstreamprotobuf.SIB2.cellReselectionServingFreqInfo', index=1,
+      name='cellReselectionServingFreqInfo', full_name='streaming_protobufs.SIB2.cellReselectionServingFreqInfo', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='intraFreqCellReselectionInfo', full_name='uenibstreamprotobuf.SIB2.intraFreqCellReselectionInfo', index=2,
+      name='intraFreqCellReselectionInfo', full_name='streaming_protobufs.SIB2.intraFreqCellReselectionInfo', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -621,48 +621,48 @@ _SIB2 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1886,
-  serialized_end=2169,
+  serialized_start=1885,
+  serialized_end=2168,
 )
 
 
 _SIB2CELLRESELECTIONINFOCOMMON = _descriptor.Descriptor(
   name='SIB2CellReselectionInfoCommon',
-  full_name='uenibstreamprotobuf.SIB2CellReselectionInfoCommon',
+  full_name='streaming_protobufs.SIB2CellReselectionInfoCommon',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='nrofSS_BlocksToAverage', full_name='uenibstreamprotobuf.SIB2CellReselectionInfoCommon.nrofSS_BlocksToAverage', index=0,
+      name='nrofSS_BlocksToAverage', full_name='streaming_protobufs.SIB2CellReselectionInfoCommon.nrofSS_BlocksToAverage', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='absThreshSS_BlocksConsolidation', full_name='uenibstreamprotobuf.SIB2CellReselectionInfoCommon.absThreshSS_BlocksConsolidation', index=1,
+      name='absThreshSS_BlocksConsolidation', full_name='streaming_protobufs.SIB2CellReselectionInfoCommon.absThreshSS_BlocksConsolidation', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rangeToBestCell', full_name='uenibstreamprotobuf.SIB2CellReselectionInfoCommon.rangeToBestCell', index=2,
+      name='rangeToBestCell', full_name='streaming_protobufs.SIB2CellReselectionInfoCommon.rangeToBestCell', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_Hyst', full_name='uenibstreamprotobuf.SIB2CellReselectionInfoCommon.q_Hyst', index=3,
+      name='q_Hyst', full_name='streaming_protobufs.SIB2CellReselectionInfoCommon.q_Hyst', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='speedStateReselectionPars', full_name='uenibstreamprotobuf.SIB2CellReselectionInfoCommon.speedStateReselectionPars', index=4,
+      name='speedStateReselectionPars', full_name='streaming_protobufs.SIB2CellReselectionInfoCommon.speedStateReselectionPars', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -680,20 +680,20 @@ _SIB2CELLRESELECTIONINFOCOMMON = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2172,
-  serialized_end=2529,
+  serialized_start=2171,
+  serialized_end=2528,
 )
 
 
 _Q_HYST = _descriptor.Descriptor(
   name='Q_Hyst',
-  full_name='uenibstreamprotobuf.Q_Hyst',
+  full_name='streaming_protobufs.Q_Hyst',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.Q_Hyst.value', index=0,
+      name='value', full_name='streaming_protobufs.Q_Hyst.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -712,27 +712,27 @@ _Q_HYST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2532,
-  serialized_end=2778,
+  serialized_start=2531,
+  serialized_end=2777,
 )
 
 
 _SPEEDSTATERESELECTIONPARS = _descriptor.Descriptor(
   name='SpeedStateReselectionPars',
-  full_name='uenibstreamprotobuf.SpeedStateReselectionPars',
+  full_name='streaming_protobufs.SpeedStateReselectionPars',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='mobilityStateParameters', full_name='uenibstreamprotobuf.SpeedStateReselectionPars.mobilityStateParameters', index=0,
+      name='mobilityStateParameters', full_name='streaming_protobufs.SpeedStateReselectionPars.mobilityStateParameters', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_HystSF', full_name='uenibstreamprotobuf.SpeedStateReselectionPars.q_HystSF', index=1,
+      name='q_HystSF', full_name='streaming_protobufs.SpeedStateReselectionPars.q_HystSF', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -750,27 +750,27 @@ _SPEEDSTATERESELECTIONPARS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2781,
-  serialized_end=2936,
+  serialized_start=2780,
+  serialized_end=2935,
 )
 
 
 _Q_HYSTSF = _descriptor.Descriptor(
   name='Q_HystSF',
-  full_name='uenibstreamprotobuf.Q_HystSF',
+  full_name='streaming_protobufs.Q_HystSF',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='sf_Medium', full_name='uenibstreamprotobuf.Q_HystSF.sf_Medium', index=0,
+      name='sf_Medium', full_name='streaming_protobufs.Q_HystSF.sf_Medium', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sf_High', full_name='uenibstreamprotobuf.Q_HystSF.sf_High', index=1,
+      name='sf_High', full_name='streaming_protobufs.Q_HystSF.sf_High', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -788,20 +788,20 @@ _Q_HYSTSF = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2938,
-  serialized_end=3058,
+  serialized_start=2937,
+  serialized_end=3057,
 )
 
 
 _SF_MEDIUM_HIGH = _descriptor.Descriptor(
   name='SF_Medium_High',
-  full_name='uenibstreamprotobuf.SF_Medium_High',
+  full_name='streaming_protobufs.SF_Medium_High',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.SF_Medium_High.value', index=0,
+      name='value', full_name='streaming_protobufs.SF_Medium_High.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -820,55 +820,55 @@ _SF_MEDIUM_HIGH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3061,
-  serialized_end=3209,
+  serialized_start=3060,
+  serialized_end=3208,
 )
 
 
 _SIB2CELLRESELECTIONSERVINGFREQINFO = _descriptor.Descriptor(
   name='SIB2CellReselectionServingFreqInfo',
-  full_name='uenibstreamprotobuf.SIB2CellReselectionServingFreqInfo',
+  full_name='streaming_protobufs.SIB2CellReselectionServingFreqInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='s_NonIntraSearchP', full_name='uenibstreamprotobuf.SIB2CellReselectionServingFreqInfo.s_NonIntraSearchP', index=0,
+      name='s_NonIntraSearchP', full_name='streaming_protobufs.SIB2CellReselectionServingFreqInfo.s_NonIntraSearchP', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='s_NonIntraSearchQ', full_name='uenibstreamprotobuf.SIB2CellReselectionServingFreqInfo.s_NonIntraSearchQ', index=1,
+      name='s_NonIntraSearchQ', full_name='streaming_protobufs.SIB2CellReselectionServingFreqInfo.s_NonIntraSearchQ', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshServingLowP', full_name='uenibstreamprotobuf.SIB2CellReselectionServingFreqInfo.threshServingLowP', index=2,
+      name='threshServingLowP', full_name='streaming_protobufs.SIB2CellReselectionServingFreqInfo.threshServingLowP', index=2,
       number=3, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshServingLowQ', full_name='uenibstreamprotobuf.SIB2CellReselectionServingFreqInfo.threshServingLowQ', index=3,
+      name='threshServingLowQ', full_name='streaming_protobufs.SIB2CellReselectionServingFreqInfo.threshServingLowQ', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cellReselectionPriority', full_name='uenibstreamprotobuf.SIB2CellReselectionServingFreqInfo.cellReselectionPriority', index=4,
+      name='cellReselectionPriority', full_name='streaming_protobufs.SIB2CellReselectionServingFreqInfo.cellReselectionPriority', index=4,
       number=5, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cellReselectionSubPriority', full_name='uenibstreamprotobuf.SIB2CellReselectionServingFreqInfo.cellReselectionSubPriority', index=5,
+      name='cellReselectionSubPriority', full_name='streaming_protobufs.SIB2CellReselectionServingFreqInfo.cellReselectionSubPriority', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -886,20 +886,20 @@ _SIB2CELLRESELECTIONSERVINGFREQINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3212,
-  serialized_end=3564,
+  serialized_start=3211,
+  serialized_end=3563,
 )
 
 
 _CELLRESELECTIONSUBPRIORITY = _descriptor.Descriptor(
   name='CellReselectionSubPriority',
-  full_name='uenibstreamprotobuf.CellReselectionSubPriority',
+  full_name='streaming_protobufs.CellReselectionSubPriority',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.CellReselectionSubPriority.value', index=0,
+      name='value', full_name='streaming_protobufs.CellReselectionSubPriority.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -918,111 +918,111 @@ _CELLRESELECTIONSUBPRIORITY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3567,
-  serialized_end=3744,
+  serialized_start=3566,
+  serialized_end=3743,
 )
 
 
 _SIB2INTRAFREQCELLRESELECTIONINFO = _descriptor.Descriptor(
   name='SIB2IntraFreqCellReselectionInfo',
-  full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo',
+  full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='q_RxLevMin', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.q_RxLevMin', index=0,
+      name='q_RxLevMin', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.q_RxLevMin', index=0,
       number=1, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMinSUL', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.q_RxLevMinSUL', index=1,
+      name='q_RxLevMinSUL', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.q_RxLevMinSUL', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_QualMin', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.q_QualMin', index=2,
+      name='q_QualMin', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.q_QualMin', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='s_IntraSearchP', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.s_IntraSearchP', index=3,
+      name='s_IntraSearchP', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.s_IntraSearchP', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='s_IntraSearchQ', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.s_IntraSearchQ', index=4,
+      name='s_IntraSearchQ', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.s_IntraSearchQ', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='t_ReselectionNR', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.t_ReselectionNR', index=5,
+      name='t_ReselectionNR', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.t_ReselectionNR', index=5,
       number=6, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='frequencyBandList', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.frequencyBandList', index=6,
+      name='frequencyBandList', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.frequencyBandList', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='frequencyBandListSUL', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.frequencyBandListSUL', index=7,
+      name='frequencyBandListSUL', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.frequencyBandListSUL', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='p_Max', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.p_Max', index=8,
+      name='p_Max', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.p_Max', index=8,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='smtc', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.smtc', index=9,
+      name='smtc', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.smtc', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ss_RSSI_Measurement', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.ss_RSSI_Measurement', index=10,
+      name='ss_RSSI_Measurement', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.ss_RSSI_Measurement', index=10,
       number=11, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ssb_ToMeasure', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.ssb_ToMeasure', index=11,
+      name='ssb_ToMeasure', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.ssb_ToMeasure', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deriveSSB_IndexFromCell', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.deriveSSB_IndexFromCell', index=12,
+      name='deriveSSB_IndexFromCell', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.deriveSSB_IndexFromCell', index=12,
       number=13, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='t_ReselectionNR_SF', full_name='uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo.t_ReselectionNR_SF', index=13,
+      name='t_ReselectionNR_SF', full_name='streaming_protobufs.SIB2IntraFreqCellReselectionInfo.t_ReselectionNR_SF', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1040,27 +1040,27 @@ _SIB2INTRAFREQCELLRESELECTIONINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3747,
-  serialized_end=4487,
+  serialized_start=3746,
+  serialized_end=4486,
 )
 
 
 _SPEEDSTATESCALEFACTORS = _descriptor.Descriptor(
   name='SpeedStateScaleFactors',
-  full_name='uenibstreamprotobuf.SpeedStateScaleFactors',
+  full_name='streaming_protobufs.SpeedStateScaleFactors',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='sf_Medium', full_name='uenibstreamprotobuf.SpeedStateScaleFactors.sf_Medium', index=0,
+      name='sf_Medium', full_name='streaming_protobufs.SpeedStateScaleFactors.sf_Medium', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='sf_High', full_name='uenibstreamprotobuf.SpeedStateScaleFactors.sf_High', index=1,
+      name='sf_High', full_name='streaming_protobufs.SpeedStateScaleFactors.sf_High', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1078,20 +1078,20 @@ _SPEEDSTATESCALEFACTORS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4490,
-  serialized_end=4668,
+  serialized_start=4489,
+  serialized_end=4667,
 )
 
 
 _SPEEDSTATESCALEFACTORSSF_MEDIUM_HIGH = _descriptor.Descriptor(
   name='SpeedStateScaleFactorsSF_Medium_High',
-  full_name='uenibstreamprotobuf.SpeedStateScaleFactorsSF_Medium_High',
+  full_name='streaming_protobufs.SpeedStateScaleFactorsSF_Medium_High',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='uenibstreamprotobuf.SpeedStateScaleFactorsSF_Medium_High.value', index=0,
+      name='value', full_name='streaming_protobufs.SpeedStateScaleFactorsSF_Medium_High.value', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1110,34 +1110,34 @@ _SPEEDSTATESCALEFACTORSSF_MEDIUM_HIGH = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4671,
-  serialized_end=4870,
+  serialized_start=4670,
+  serialized_end=4869,
 )
 
 
 _SIB3 = _descriptor.Descriptor(
   name='SIB3',
-  full_name='uenibstreamprotobuf.SIB3',
+  full_name='streaming_protobufs.SIB3',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='intraFreqNeighCellList', full_name='uenibstreamprotobuf.SIB3.intraFreqNeighCellList', index=0,
+      name='intraFreqNeighCellList', full_name='streaming_protobufs.SIB3.intraFreqNeighCellList', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='intraFreqBlackCellList', full_name='uenibstreamprotobuf.SIB3.intraFreqBlackCellList', index=1,
+      name='intraFreqBlackCellList', full_name='streaming_protobufs.SIB3.intraFreqBlackCellList', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.SIB3.lateNonCriticalExtension', index=2,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.SIB3.lateNonCriticalExtension', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1155,20 +1155,20 @@ _SIB3 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4873,
-  serialized_end=5097,
+  serialized_start=4872,
+  serialized_end=5095,
 )
 
 
 _INTRAFREQNEIGHCELLLIST = _descriptor.Descriptor(
   name='IntraFreqNeighCellList',
-  full_name='uenibstreamprotobuf.IntraFreqNeighCellList',
+  full_name='streaming_protobufs.IntraFreqNeighCellList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.IntraFreqNeighCellList.items', index=0,
+      name='items', full_name='streaming_protobufs.IntraFreqNeighCellList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1186,48 +1186,48 @@ _INTRAFREQNEIGHCELLLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5099,
-  serialized_end=5183,
+  serialized_start=5097,
+  serialized_end=5181,
 )
 
 
 _INTRAFREQNEIGHCELLINFO = _descriptor.Descriptor(
   name='IntraFreqNeighCellInfo',
-  full_name='uenibstreamprotobuf.IntraFreqNeighCellInfo',
+  full_name='streaming_protobufs.IntraFreqNeighCellInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='physCellId', full_name='uenibstreamprotobuf.IntraFreqNeighCellInfo.physCellId', index=0,
+      name='physCellId', full_name='streaming_protobufs.IntraFreqNeighCellInfo.physCellId', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_OffsetCell', full_name='uenibstreamprotobuf.IntraFreqNeighCellInfo.q_OffsetCell', index=1,
+      name='q_OffsetCell', full_name='streaming_protobufs.IntraFreqNeighCellInfo.q_OffsetCell', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMinOffsetCell', full_name='uenibstreamprotobuf.IntraFreqNeighCellInfo.q_RxLevMinOffsetCell', index=2,
+      name='q_RxLevMinOffsetCell', full_name='streaming_protobufs.IntraFreqNeighCellInfo.q_RxLevMinOffsetCell', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMinOffsetCellSUL', full_name='uenibstreamprotobuf.IntraFreqNeighCellInfo.q_RxLevMinOffsetCellSUL', index=3,
+      name='q_RxLevMinOffsetCellSUL', full_name='streaming_protobufs.IntraFreqNeighCellInfo.q_RxLevMinOffsetCellSUL', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_QualMinOffsetCell', full_name='uenibstreamprotobuf.IntraFreqNeighCellInfo.q_QualMinOffsetCell', index=4,
+      name='q_QualMinOffsetCell', full_name='streaming_protobufs.IntraFreqNeighCellInfo.q_QualMinOffsetCell', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1245,20 +1245,20 @@ _INTRAFREQNEIGHCELLINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5186,
-  serialized_end=5470,
+  serialized_start=5184,
+  serialized_end=5468,
 )
 
 
 _INTRAFREQBLACKCELLLIST = _descriptor.Descriptor(
   name='IntraFreqBlackCellList',
-  full_name='uenibstreamprotobuf.IntraFreqBlackCellList',
+  full_name='streaming_protobufs.IntraFreqBlackCellList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.IntraFreqBlackCellList.items', index=0,
+      name='items', full_name='streaming_protobufs.IntraFreqBlackCellList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1276,27 +1276,27 @@ _INTRAFREQBLACKCELLLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5472,
-  serialized_end=5543,
+  serialized_start=5470,
+  serialized_end=5541,
 )
 
 
 _SIB4 = _descriptor.Descriptor(
   name='SIB4',
-  full_name='uenibstreamprotobuf.SIB4',
+  full_name='streaming_protobufs.SIB4',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='interFreqCarrierFreqList', full_name='uenibstreamprotobuf.SIB4.interFreqCarrierFreqList', index=0,
+      name='interFreqCarrierFreqList', full_name='streaming_protobufs.SIB4.interFreqCarrierFreqList', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.SIB4.lateNonCriticalExtension', index=1,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.SIB4.lateNonCriticalExtension', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1314,20 +1314,20 @@ _SIB4 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5546,
-  serialized_end=5697,
+  serialized_start=5544,
+  serialized_end=5694,
 )
 
 
 _INTERFREQCARRIERFREQLIST = _descriptor.Descriptor(
   name='InterFreqCarrierFreqList',
-  full_name='uenibstreamprotobuf.InterFreqCarrierFreqList',
+  full_name='streaming_protobufs.InterFreqCarrierFreqList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.InterFreqCarrierFreqList.items', index=0,
+      name='items', full_name='streaming_protobufs.InterFreqCarrierFreqList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1345,181 +1345,181 @@ _INTERFREQCARRIERFREQLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5699,
-  serialized_end=5787,
+  serialized_start=5696,
+  serialized_end=5784,
 )
 
 
 _INTERFREQCARRIERFREQINFO = _descriptor.Descriptor(
   name='InterFreqCarrierFreqInfo',
-  full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo',
+  full_name='streaming_protobufs.InterFreqCarrierFreqInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dl_CarrierFreq', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.dl_CarrierFreq', index=0,
+      name='dl_CarrierFreq', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.dl_CarrierFreq', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='frequencyBandList', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.frequencyBandList', index=1,
+      name='frequencyBandList', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.frequencyBandList', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='frequencyBandListSUL', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.frequencyBandListSUL', index=2,
+      name='frequencyBandListSUL', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.frequencyBandListSUL', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nrofSS_BlocksToAverage', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.nrofSS_BlocksToAverage', index=3,
+      name='nrofSS_BlocksToAverage', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.nrofSS_BlocksToAverage', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='absThreshSS_BlocksConsolidation', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.absThreshSS_BlocksConsolidation', index=4,
+      name='absThreshSS_BlocksConsolidation', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.absThreshSS_BlocksConsolidation', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='smtc', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.smtc', index=5,
+      name='smtc', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.smtc', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ssbSubcarrierSpacing', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.ssbSubcarrierSpacing', index=6,
+      name='ssbSubcarrierSpacing', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.ssbSubcarrierSpacing', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ssb_ToMeasure', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.ssb_ToMeasure', index=7,
+      name='ssb_ToMeasure', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.ssb_ToMeasure', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deriveSSB_IndexFromCell', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.deriveSSB_IndexFromCell', index=8,
+      name='deriveSSB_IndexFromCell', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.deriveSSB_IndexFromCell', index=8,
       number=9, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='ss_RSSI_Measurement', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.ss_RSSI_Measurement', index=9,
+      name='ss_RSSI_Measurement', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.ss_RSSI_Measurement', index=9,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMin', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.q_RxLevMin', index=10,
+      name='q_RxLevMin', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.q_RxLevMin', index=10,
       number=11, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMinSUL', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.q_RxLevMinSUL', index=11,
+      name='q_RxLevMinSUL', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.q_RxLevMinSUL', index=11,
       number=12, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_QualMin', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.q_QualMin', index=12,
+      name='q_QualMin', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.q_QualMin', index=12,
       number=13, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='p_Max', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.p_Max', index=13,
+      name='p_Max', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.p_Max', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='t_ReselectionNR', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.t_ReselectionNR', index=14,
+      name='t_ReselectionNR', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.t_ReselectionNR', index=14,
       number=15, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='t_ReselectionNR_SF', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.t_ReselectionNR_SF', index=15,
+      name='t_ReselectionNR_SF', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.t_ReselectionNR_SF', index=15,
       number=16, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshX_HighP', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.threshX_HighP', index=16,
+      name='threshX_HighP', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.threshX_HighP', index=16,
       number=17, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshX_LowP', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.threshX_LowP', index=17,
+      name='threshX_LowP', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.threshX_LowP', index=17,
       number=18, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshX_Q', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.threshX_Q', index=18,
+      name='threshX_Q', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.threshX_Q', index=18,
       number=19, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cellReselectionPriority', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.cellReselectionPriority', index=19,
+      name='cellReselectionPriority', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.cellReselectionPriority', index=19,
       number=20, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cellReselectionSubPriority', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.cellReselectionSubPriority', index=20,
+      name='cellReselectionSubPriority', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.cellReselectionSubPriority', index=20,
       number=21, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_OffsetFreq', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.q_OffsetFreq', index=21,
+      name='q_OffsetFreq', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.q_OffsetFreq', index=21,
       number=22, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='interFreqNeighCellList', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.interFreqNeighCellList', index=22,
+      name='interFreqNeighCellList', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.interFreqNeighCellList', index=22,
       number=23, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='interFreqBlackCellList', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfo.interFreqBlackCellList', index=23,
+      name='interFreqBlackCellList', full_name='streaming_protobufs.InterFreqCarrierFreqInfo.interFreqBlackCellList', index=23,
       number=24, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1537,27 +1537,27 @@ _INTERFREQCARRIERFREQINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5790,
-  serialized_end=7155,
+  serialized_start=5787,
+  serialized_end=7152,
 )
 
 
 _INTERFREQCARRIERFREQINFOTHRESHX_Q = _descriptor.Descriptor(
   name='InterFreqCarrierFreqInfoThreshX_Q',
-  full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfoThreshX_Q',
+  full_name='streaming_protobufs.InterFreqCarrierFreqInfoThreshX_Q',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='threshX_HighQ', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfoThreshX_Q.threshX_HighQ', index=0,
+      name='threshX_HighQ', full_name='streaming_protobufs.InterFreqCarrierFreqInfoThreshX_Q.threshX_HighQ', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshX_LowQ', full_name='uenibstreamprotobuf.InterFreqCarrierFreqInfoThreshX_Q.threshX_LowQ', index=1,
+      name='threshX_LowQ', full_name='streaming_protobufs.InterFreqCarrierFreqInfoThreshX_Q.threshX_LowQ', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -1575,20 +1575,20 @@ _INTERFREQCARRIERFREQINFOTHRESHX_Q = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7157,
-  serialized_end=7237,
+  serialized_start=7154,
+  serialized_end=7234,
 )
 
 
 _INTERFREQNEIGHCELLLIST = _descriptor.Descriptor(
   name='InterFreqNeighCellList',
-  full_name='uenibstreamprotobuf.InterFreqNeighCellList',
+  full_name='streaming_protobufs.InterFreqNeighCellList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.InterFreqNeighCellList.items', index=0,
+      name='items', full_name='streaming_protobufs.InterFreqNeighCellList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1606,48 +1606,48 @@ _INTERFREQNEIGHCELLLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7239,
-  serialized_end=7323,
+  serialized_start=7236,
+  serialized_end=7320,
 )
 
 
 _INTERFREQNEIGHCELLINFO = _descriptor.Descriptor(
   name='InterFreqNeighCellInfo',
-  full_name='uenibstreamprotobuf.InterFreqNeighCellInfo',
+  full_name='streaming_protobufs.InterFreqNeighCellInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='physCellId', full_name='uenibstreamprotobuf.InterFreqNeighCellInfo.physCellId', index=0,
+      name='physCellId', full_name='streaming_protobufs.InterFreqNeighCellInfo.physCellId', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_OffsetCell', full_name='uenibstreamprotobuf.InterFreqNeighCellInfo.q_OffsetCell', index=1,
+      name='q_OffsetCell', full_name='streaming_protobufs.InterFreqNeighCellInfo.q_OffsetCell', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMinOffsetCell', full_name='uenibstreamprotobuf.InterFreqNeighCellInfo.q_RxLevMinOffsetCell', index=2,
+      name='q_RxLevMinOffsetCell', full_name='streaming_protobufs.InterFreqNeighCellInfo.q_RxLevMinOffsetCell', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMinOffsetCellSUL', full_name='uenibstreamprotobuf.InterFreqNeighCellInfo.q_RxLevMinOffsetCellSUL', index=3,
+      name='q_RxLevMinOffsetCellSUL', full_name='streaming_protobufs.InterFreqNeighCellInfo.q_RxLevMinOffsetCellSUL', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_QualMinOffsetCell', full_name='uenibstreamprotobuf.InterFreqNeighCellInfo.q_QualMinOffsetCell', index=4,
+      name='q_QualMinOffsetCell', full_name='streaming_protobufs.InterFreqNeighCellInfo.q_QualMinOffsetCell', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1665,20 +1665,20 @@ _INTERFREQNEIGHCELLINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7326,
-  serialized_end=7610,
+  serialized_start=7323,
+  serialized_end=7607,
 )
 
 
 _INTERFREQBLACKCELLLIST = _descriptor.Descriptor(
   name='InterFreqBlackCellList',
-  full_name='uenibstreamprotobuf.InterFreqBlackCellList',
+  full_name='streaming_protobufs.InterFreqBlackCellList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.InterFreqBlackCellList.items', index=0,
+      name='items', full_name='streaming_protobufs.InterFreqBlackCellList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1696,41 +1696,41 @@ _INTERFREQBLACKCELLLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7612,
-  serialized_end=7683,
+  serialized_start=7609,
+  serialized_end=7680,
 )
 
 
 _SIB5 = _descriptor.Descriptor(
   name='SIB5',
-  full_name='uenibstreamprotobuf.SIB5',
+  full_name='streaming_protobufs.SIB5',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='carrierFreqListEUTRA', full_name='uenibstreamprotobuf.SIB5.carrierFreqListEUTRA', index=0,
+      name='carrierFreqListEUTRA', full_name='streaming_protobufs.SIB5.carrierFreqListEUTRA', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='t_ReselectionEUTRA', full_name='uenibstreamprotobuf.SIB5.t_ReselectionEUTRA', index=1,
+      name='t_ReselectionEUTRA', full_name='streaming_protobufs.SIB5.t_ReselectionEUTRA', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='t_ReselectionEUTRA_SF', full_name='uenibstreamprotobuf.SIB5.t_ReselectionEUTRA_SF', index=2,
+      name='t_ReselectionEUTRA_SF', full_name='streaming_protobufs.SIB5.t_ReselectionEUTRA_SF', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.SIB5.lateNonCriticalExtension', index=3,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.SIB5.lateNonCriticalExtension', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1748,20 +1748,20 @@ _SIB5 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7686,
-  serialized_end=7933,
+  serialized_start=7683,
+  serialized_end=7929,
 )
 
 
 _CARRIERFREQLISTEUTRA = _descriptor.Descriptor(
   name='CarrierFreqListEUTRA',
-  full_name='uenibstreamprotobuf.CarrierFreqListEUTRA',
+  full_name='streaming_protobufs.CarrierFreqListEUTRA',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.CarrierFreqListEUTRA.items', index=0,
+      name='items', full_name='streaming_protobufs.CarrierFreqListEUTRA.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1779,111 +1779,111 @@ _CARRIERFREQLISTEUTRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=7935,
-  serialized_end=8011,
+  serialized_start=7931,
+  serialized_end=8007,
 )
 
 
 _CARRIERFREQEUTRA = _descriptor.Descriptor(
   name='CarrierFreqEUTRA',
-  full_name='uenibstreamprotobuf.CarrierFreqEUTRA',
+  full_name='streaming_protobufs.CarrierFreqEUTRA',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='carrierFreq', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.carrierFreq', index=0,
+      name='carrierFreq', full_name='streaming_protobufs.CarrierFreqEUTRA.carrierFreq', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='eutra_multiBandInfoList', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.eutra_multiBandInfoList', index=1,
+      name='eutra_multiBandInfoList', full_name='streaming_protobufs.CarrierFreqEUTRA.eutra_multiBandInfoList', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='eutra_FreqNeighCellList', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.eutra_FreqNeighCellList', index=2,
+      name='eutra_FreqNeighCellList', full_name='streaming_protobufs.CarrierFreqEUTRA.eutra_FreqNeighCellList', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='eutra_BlackCellList', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.eutra_BlackCellList', index=3,
+      name='eutra_BlackCellList', full_name='streaming_protobufs.CarrierFreqEUTRA.eutra_BlackCellList', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='allowedMeasBandwidth', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.allowedMeasBandwidth', index=4,
+      name='allowedMeasBandwidth', full_name='streaming_protobufs.CarrierFreqEUTRA.allowedMeasBandwidth', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='presenceAntennaPort1', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.presenceAntennaPort1', index=5,
+      name='presenceAntennaPort1', full_name='streaming_protobufs.CarrierFreqEUTRA.presenceAntennaPort1', index=5,
       number=6, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cellReselectionPriority', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.cellReselectionPriority', index=6,
+      name='cellReselectionPriority', full_name='streaming_protobufs.CarrierFreqEUTRA.cellReselectionPriority', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='cellReselectionSubPriority', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.cellReselectionSubPriority', index=7,
+      name='cellReselectionSubPriority', full_name='streaming_protobufs.CarrierFreqEUTRA.cellReselectionSubPriority', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshX_High', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.threshX_High', index=8,
+      name='threshX_High', full_name='streaming_protobufs.CarrierFreqEUTRA.threshX_High', index=8,
       number=9, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshX_Low', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.threshX_Low', index=9,
+      name='threshX_Low', full_name='streaming_protobufs.CarrierFreqEUTRA.threshX_Low', index=9,
       number=10, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMin', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.q_RxLevMin', index=10,
+      name='q_RxLevMin', full_name='streaming_protobufs.CarrierFreqEUTRA.q_RxLevMin', index=10,
       number=11, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_QualMin', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.q_QualMin', index=11,
+      name='q_QualMin', full_name='streaming_protobufs.CarrierFreqEUTRA.q_QualMin', index=11,
       number=12, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='p_MaxEUTRA', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.p_MaxEUTRA', index=12,
+      name='p_MaxEUTRA', full_name='streaming_protobufs.CarrierFreqEUTRA.p_MaxEUTRA', index=12,
       number=13, type=17, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshX_Q', full_name='uenibstreamprotobuf.CarrierFreqEUTRA.threshX_Q', index=13,
+      name='threshX_Q', full_name='streaming_protobufs.CarrierFreqEUTRA.threshX_Q', index=13,
       number=14, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -1901,20 +1901,20 @@ _CARRIERFREQEUTRA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8014,
-  serialized_end=8712,
+  serialized_start=8010,
+  serialized_end=8708,
 )
 
 
 _EUTRA_FREQNEIGHCELLLIST = _descriptor.Descriptor(
   name='EUTRA_FreqNeighCellList',
-  full_name='uenibstreamprotobuf.EUTRA_FreqNeighCellList',
+  full_name='streaming_protobufs.EUTRA_FreqNeighCellList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.EUTRA_FreqNeighCellList.items', index=0,
+      name='items', full_name='streaming_protobufs.EUTRA_FreqNeighCellList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1932,20 +1932,20 @@ _EUTRA_FREQNEIGHCELLLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8714,
-  serialized_end=8800,
+  serialized_start=8710,
+  serialized_end=8796,
 )
 
 
 _EUTRA_FREQBLACKCELLLIST = _descriptor.Descriptor(
   name='EUTRA_FreqBlackCellList',
-  full_name='uenibstreamprotobuf.EUTRA_FreqBlackCellList',
+  full_name='streaming_protobufs.EUTRA_FreqBlackCellList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.EUTRA_FreqBlackCellList.items', index=0,
+      name='items', full_name='streaming_protobufs.EUTRA_FreqBlackCellList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -1963,41 +1963,41 @@ _EUTRA_FREQBLACKCELLLIST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8802,
-  serialized_end=8886,
+  serialized_start=8798,
+  serialized_end=8882,
 )
 
 
 _EUTRA_FREQNEIGHCELLINFO = _descriptor.Descriptor(
   name='EUTRA_FreqNeighCellInfo',
-  full_name='uenibstreamprotobuf.EUTRA_FreqNeighCellInfo',
+  full_name='streaming_protobufs.EUTRA_FreqNeighCellInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='physCellId', full_name='uenibstreamprotobuf.EUTRA_FreqNeighCellInfo.physCellId', index=0,
+      name='physCellId', full_name='streaming_protobufs.EUTRA_FreqNeighCellInfo.physCellId', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_OffsetCell', full_name='uenibstreamprotobuf.EUTRA_FreqNeighCellInfo.q_OffsetCell', index=1,
+      name='q_OffsetCell', full_name='streaming_protobufs.EUTRA_FreqNeighCellInfo.q_OffsetCell', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_RxLevMinOffsetCell', full_name='uenibstreamprotobuf.EUTRA_FreqNeighCellInfo.q_RxLevMinOffsetCell', index=2,
+      name='q_RxLevMinOffsetCell', full_name='streaming_protobufs.EUTRA_FreqNeighCellInfo.q_RxLevMinOffsetCell', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='q_QualMinOffsetCell', full_name='uenibstreamprotobuf.EUTRA_FreqNeighCellInfo.q_QualMinOffsetCell', index=3,
+      name='q_QualMinOffsetCell', full_name='streaming_protobufs.EUTRA_FreqNeighCellInfo.q_QualMinOffsetCell', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2015,27 +2015,27 @@ _EUTRA_FREQNEIGHCELLINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=8889,
-  serialized_end=9117,
+  serialized_start=8885,
+  serialized_end=9113,
 )
 
 
 _CARRIERFREQEUTRATHRESHX_Q = _descriptor.Descriptor(
   name='CarrierFreqEUTRAThreshX_Q',
-  full_name='uenibstreamprotobuf.CarrierFreqEUTRAThreshX_Q',
+  full_name='streaming_protobufs.CarrierFreqEUTRAThreshX_Q',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='threshX_HighQ', full_name='uenibstreamprotobuf.CarrierFreqEUTRAThreshX_Q.threshX_HighQ', index=0,
+      name='threshX_HighQ', full_name='streaming_protobufs.CarrierFreqEUTRAThreshX_Q.threshX_HighQ', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='threshX_LowQ', full_name='uenibstreamprotobuf.CarrierFreqEUTRAThreshX_Q.threshX_LowQ', index=1,
+      name='threshX_LowQ', full_name='streaming_protobufs.CarrierFreqEUTRAThreshX_Q.threshX_LowQ', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -2053,41 +2053,41 @@ _CARRIERFREQEUTRATHRESHX_Q = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9119,
-  serialized_end=9191,
+  serialized_start=9115,
+  serialized_end=9187,
 )
 
 
 _SIB6 = _descriptor.Descriptor(
   name='SIB6',
-  full_name='uenibstreamprotobuf.SIB6',
+  full_name='streaming_protobufs.SIB6',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='messageIdentifier', full_name='uenibstreamprotobuf.SIB6.messageIdentifier', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='messageIdentifier', full_name='streaming_protobufs.SIB6.messageIdentifier', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='serialNumber', full_name='uenibstreamprotobuf.SIB6.serialNumber', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='serialNumber', full_name='streaming_protobufs.SIB6.serialNumber', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='warningType', full_name='uenibstreamprotobuf.SIB6.warningType', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='warningType', full_name='streaming_protobufs.SIB6.warningType', index=2,
+      number=3, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.SIB6.lateNonCriticalExtension', index=3,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.SIB6.lateNonCriticalExtension', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2105,62 +2105,62 @@ _SIB6 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9194,
-  serialized_end=9334,
+  serialized_start=9190,
+  serialized_end=9329,
 )
 
 
 _SIB7 = _descriptor.Descriptor(
   name='SIB7',
-  full_name='uenibstreamprotobuf.SIB7',
+  full_name='streaming_protobufs.SIB7',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='messageIdentifier', full_name='uenibstreamprotobuf.SIB7.messageIdentifier', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='messageIdentifier', full_name='streaming_protobufs.SIB7.messageIdentifier', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='serialNumber', full_name='uenibstreamprotobuf.SIB7.serialNumber', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='serialNumber', full_name='streaming_protobufs.SIB7.serialNumber', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='warningMessageSegmentType', full_name='uenibstreamprotobuf.SIB7.warningMessageSegmentType', index=2,
+      name='warningMessageSegmentType', full_name='streaming_protobufs.SIB7.warningMessageSegmentType', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='warningMessageSegmentNumber', full_name='uenibstreamprotobuf.SIB7.warningMessageSegmentNumber', index=3,
+      name='warningMessageSegmentNumber', full_name='streaming_protobufs.SIB7.warningMessageSegmentNumber', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='warningMessageSegment', full_name='uenibstreamprotobuf.SIB7.warningMessageSegment', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='warningMessageSegment', full_name='streaming_protobufs.SIB7.warningMessageSegment', index=4,
+      number=5, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dataCodingScheme', full_name='uenibstreamprotobuf.SIB7.dataCodingScheme', index=5,
+      name='dataCodingScheme', full_name='streaming_protobufs.SIB7.dataCodingScheme', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.SIB7.lateNonCriticalExtension', index=6,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.SIB7.lateNonCriticalExtension', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2179,69 +2179,69 @@ _SIB7 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9337,
-  serialized_end=9760,
+  serialized_start=9332,
+  serialized_end=9753,
 )
 
 
 _SIB8 = _descriptor.Descriptor(
   name='SIB8',
-  full_name='uenibstreamprotobuf.SIB8',
+  full_name='streaming_protobufs.SIB8',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='messageIdentifier', full_name='uenibstreamprotobuf.SIB8.messageIdentifier', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='messageIdentifier', full_name='streaming_protobufs.SIB8.messageIdentifier', index=0,
+      number=1, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='serialNumber', full_name='uenibstreamprotobuf.SIB8.serialNumber', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='serialNumber', full_name='streaming_protobufs.SIB8.serialNumber', index=1,
+      number=2, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='warningMessageSegmentType', full_name='uenibstreamprotobuf.SIB8.warningMessageSegmentType', index=2,
+      name='warningMessageSegmentType', full_name='streaming_protobufs.SIB8.warningMessageSegmentType', index=2,
       number=3, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='warningMessageSegmentNumber', full_name='uenibstreamprotobuf.SIB8.warningMessageSegmentNumber', index=3,
+      name='warningMessageSegmentNumber', full_name='streaming_protobufs.SIB8.warningMessageSegmentNumber', index=3,
       number=4, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='warningMessageSegment', full_name='uenibstreamprotobuf.SIB8.warningMessageSegment', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=_b("").decode('utf-8'),
+      name='warningMessageSegment', full_name='streaming_protobufs.SIB8.warningMessageSegment', index=4,
+      number=5, type=12, cpp_type=9, label=1,
+      has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dataCodingScheme', full_name='uenibstreamprotobuf.SIB8.dataCodingScheme', index=5,
+      name='dataCodingScheme', full_name='streaming_protobufs.SIB8.dataCodingScheme', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='warningAreaCoordinatesSegment', full_name='uenibstreamprotobuf.SIB8.warningAreaCoordinatesSegment', index=6,
+      name='warningAreaCoordinatesSegment', full_name='streaming_protobufs.SIB8.warningAreaCoordinatesSegment', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.SIB8.lateNonCriticalExtension', index=7,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.SIB8.lateNonCriticalExtension', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2260,27 +2260,27 @@ _SIB8 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=9763,
-  serialized_end=10255,
+  serialized_start=9756,
+  serialized_end=10245,
 )
 
 
 _SIB9 = _descriptor.Descriptor(
   name='SIB9',
-  full_name='uenibstreamprotobuf.SIB9',
+  full_name='streaming_protobufs.SIB9',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='timeInfo', full_name='uenibstreamprotobuf.SIB9.timeInfo', index=0,
+      name='timeInfo', full_name='streaming_protobufs.SIB9.timeInfo', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.SIB9.lateNonCriticalExtension', index=1,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.SIB9.lateNonCriticalExtension', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2298,41 +2298,41 @@ _SIB9 = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10257,
-  serialized_end=10380,
+  serialized_start=10247,
+  serialized_end=10369,
 )
 
 
 _SIB9TIMEINFO = _descriptor.Descriptor(
   name='SIB9TimeInfo',
-  full_name='uenibstreamprotobuf.SIB9TimeInfo',
+  full_name='streaming_protobufs.SIB9TimeInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='timeInfoUTC', full_name='uenibstreamprotobuf.SIB9TimeInfo.timeInfoUTC', index=0,
+      name='timeInfoUTC', full_name='streaming_protobufs.SIB9TimeInfo.timeInfoUTC', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dayLightSavingTime', full_name='uenibstreamprotobuf.SIB9TimeInfo.dayLightSavingTime', index=1,
+      name='dayLightSavingTime', full_name='streaming_protobufs.SIB9TimeInfo.dayLightSavingTime', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='leapSeconds', full_name='uenibstreamprotobuf.SIB9TimeInfo.leapSeconds', index=2,
+      name='leapSeconds', full_name='streaming_protobufs.SIB9TimeInfo.leapSeconds', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='localTimeOffset', full_name='uenibstreamprotobuf.SIB9TimeInfo.localTimeOffset', index=3,
+      name='localTimeOffset', full_name='streaming_protobufs.SIB9TimeInfo.localTimeOffset', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -2350,8 +2350,8 @@ _SIB9TIMEINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=10383,
-  serialized_end=10580,
+  serialized_start=10372,
+  serialized_end=10568,
 )
 
 _SIB1.fields_by_name['cellSelectionInfo'].message_type = _SIB1CELLSELECTIONINFO
@@ -2364,7 +2364,7 @@ _SIB1.fields_by_name['eCallOverIMS_Support'].message_type = common__types__pb2._
 _SIB1.fields_by_name['ue_TimersAndConstants'].message_type = rrc__common__types__pb2._UE_TIMERSANDCONSTANTS
 _SIB1.fields_by_name['uac_BarringInfo'].message_type = _SIB1UAC_BARRINGINFO
 _SIB1.fields_by_name['useFullResumeID'].message_type = common__types__pb2._TRUEOPT
-_SIB1.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SIB1.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _SIB1CELLSELECTIONINFO.fields_by_name['q_RxLevMinOffset'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
 _SIB1CELLSELECTIONINFO.fields_by_name['q_RxLevMinSUL'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT32VALUE
 _SIB1CELLSELECTIONINFO.fields_by_name['q_QualMin'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT32VALUE
@@ -2421,7 +2421,7 @@ _SPEEDSTATESCALEFACTORSSF_MEDIUM_HIGH.fields_by_name['value'].enum_type = _SPEED
 _SPEEDSTATESCALEFACTORSSF_MEDIUM_HIGH_VALUE.containing_type = _SPEEDSTATESCALEFACTORSSF_MEDIUM_HIGH
 _SIB3.fields_by_name['intraFreqNeighCellList'].message_type = _INTRAFREQNEIGHCELLLIST
 _SIB3.fields_by_name['intraFreqBlackCellList'].message_type = _INTRAFREQBLACKCELLLIST
-_SIB3.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SIB3.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _INTRAFREQNEIGHCELLLIST.fields_by_name['items'].message_type = _INTRAFREQNEIGHCELLINFO
 _INTRAFREQNEIGHCELLINFO.fields_by_name['q_OffsetCell'].message_type = rrc__common__types__pb2._Q_OFFSETRANGE
 _INTRAFREQNEIGHCELLINFO.fields_by_name['q_RxLevMinOffsetCell'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
@@ -2429,7 +2429,7 @@ _INTRAFREQNEIGHCELLINFO.fields_by_name['q_RxLevMinOffsetCellSUL'].message_type =
 _INTRAFREQNEIGHCELLINFO.fields_by_name['q_QualMinOffsetCell'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
 _INTRAFREQBLACKCELLLIST.fields_by_name['items'].message_type = rrc__common__types__pb2._PCI_RANGE
 _SIB4.fields_by_name['interFreqCarrierFreqList'].message_type = _INTERFREQCARRIERFREQLIST
-_SIB4.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SIB4.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _INTERFREQCARRIERFREQLIST.fields_by_name['items'].message_type = _INTERFREQCARRIERFREQINFO
 _INTERFREQCARRIERFREQINFO.fields_by_name['frequencyBandList'].message_type = rrc__common__types__pb2._MULTIFREQUENCYBANDLISTNR_SIB
 _INTERFREQCARRIERFREQINFO.fields_by_name['frequencyBandListSUL'].message_type = rrc__common__types__pb2._MULTIFREQUENCYBANDLISTNR_SIB
@@ -2457,7 +2457,7 @@ _INTERFREQNEIGHCELLINFO.fields_by_name['q_QualMinOffsetCell'].message_type = goo
 _INTERFREQBLACKCELLLIST.fields_by_name['items'].message_type = rrc__common__types__pb2._PCI_RANGE
 _SIB5.fields_by_name['carrierFreqListEUTRA'].message_type = _CARRIERFREQLISTEUTRA
 _SIB5.fields_by_name['t_ReselectionEUTRA_SF'].message_type = _SPEEDSTATESCALEFACTORS
-_SIB5.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SIB5.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _CARRIERFREQLISTEUTRA.fields_by_name['items'].message_type = _CARRIERFREQEUTRA
 _CARRIERFREQEUTRA.fields_by_name['eutra_multiBandInfoList'].message_type = rrc__common__types__pb2._EUTRA_MULTIBANDINFOLIST
 _CARRIERFREQEUTRA.fields_by_name['eutra_FreqNeighCellList'].message_type = _EUTRA_FREQNEIGHCELLLIST
@@ -2471,19 +2471,19 @@ _EUTRA_FREQBLACKCELLLIST.fields_by_name['items'].message_type = rrc__common__typ
 _EUTRA_FREQNEIGHCELLINFO.fields_by_name['q_OffsetCell'].message_type = rrc__common__types__pb2._EUTRA_Q_OFFSETRANGE
 _EUTRA_FREQNEIGHCELLINFO.fields_by_name['q_RxLevMinOffsetCell'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
 _EUTRA_FREQNEIGHCELLINFO.fields_by_name['q_QualMinOffsetCell'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
-_SIB6.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SIB6.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _SIB7.fields_by_name['warningMessageSegmentType'].enum_type = _SIB7_WARNINGMESSAGESEGMENTTYPE
-_SIB7.fields_by_name['dataCodingScheme'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
-_SIB7.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SIB7.fields_by_name['dataCodingScheme'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
+_SIB7.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _SIB7_WARNINGMESSAGESEGMENTTYPE.containing_type = _SIB7
 _SIB8.fields_by_name['warningMessageSegmentType'].enum_type = _SIB8_WARNINGMESSAGESEGMENTTYPE
-_SIB8.fields_by_name['dataCodingScheme'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
-_SIB8.fields_by_name['warningAreaCoordinatesSegment'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
-_SIB8.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SIB8.fields_by_name['dataCodingScheme'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
+_SIB8.fields_by_name['warningAreaCoordinatesSegment'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
+_SIB8.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _SIB8_WARNINGMESSAGESEGMENTTYPE.containing_type = _SIB8
 _SIB9.fields_by_name['timeInfo'].message_type = _SIB9TIMEINFO
-_SIB9.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
-_SIB9TIMEINFO.fields_by_name['dayLightSavingTime'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_SIB9.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
+_SIB9TIMEINFO.fields_by_name['dayLightSavingTime'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _SIB9TIMEINFO.fields_by_name['leapSeconds'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT32VALUE
 _SIB9TIMEINFO.fields_by_name['localTimeOffset'].message_type = google_dot_protobuf_dot_wrappers__pb2._INT32VALUE
 DESCRIPTOR.message_types_by_name['SIB1'] = _SIB1
@@ -2530,273 +2530,273 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 SIB1 = _reflection.GeneratedProtocolMessageType('SIB1', (_message.Message,), {
   'DESCRIPTOR' : _SIB1,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB1)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB1)
   })
 _sym_db.RegisterMessage(SIB1)
 
 SIB1CellSelectionInfo = _reflection.GeneratedProtocolMessageType('SIB1CellSelectionInfo', (_message.Message,), {
   'DESCRIPTOR' : _SIB1CELLSELECTIONINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB1CellSelectionInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB1CellSelectionInfo)
   })
 _sym_db.RegisterMessage(SIB1CellSelectionInfo)
 
 SIB1UAC_BarringInfo = _reflection.GeneratedProtocolMessageType('SIB1UAC_BarringInfo', (_message.Message,), {
   'DESCRIPTOR' : _SIB1UAC_BARRINGINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB1UAC_BarringInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB1UAC_BarringInfo)
   })
 _sym_db.RegisterMessage(SIB1UAC_BarringInfo)
 
 UAC_AccessCategory1_SelectionAssistanceInfo = _reflection.GeneratedProtocolMessageType('UAC_AccessCategory1_SelectionAssistanceInfo', (_message.Message,), {
   'DESCRIPTOR' : _UAC_ACCESSCATEGORY1_SELECTIONASSISTANCEINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.UAC_AccessCategory1_SelectionAssistanceInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.UAC_AccessCategory1_SelectionAssistanceInfo)
   })
 _sym_db.RegisterMessage(UAC_AccessCategory1_SelectionAssistanceInfo)
 
 IndividualPLMNList = _reflection.GeneratedProtocolMessageType('IndividualPLMNList', (_message.Message,), {
   'DESCRIPTOR' : _INDIVIDUALPLMNLIST,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.IndividualPLMNList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.IndividualPLMNList)
   })
 _sym_db.RegisterMessage(IndividualPLMNList)
 
 SIB2 = _reflection.GeneratedProtocolMessageType('SIB2', (_message.Message,), {
   'DESCRIPTOR' : _SIB2,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB2)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB2)
   })
 _sym_db.RegisterMessage(SIB2)
 
 SIB2CellReselectionInfoCommon = _reflection.GeneratedProtocolMessageType('SIB2CellReselectionInfoCommon', (_message.Message,), {
   'DESCRIPTOR' : _SIB2CELLRESELECTIONINFOCOMMON,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB2CellReselectionInfoCommon)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB2CellReselectionInfoCommon)
   })
 _sym_db.RegisterMessage(SIB2CellReselectionInfoCommon)
 
 Q_Hyst = _reflection.GeneratedProtocolMessageType('Q_Hyst', (_message.Message,), {
   'DESCRIPTOR' : _Q_HYST,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.Q_Hyst)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.Q_Hyst)
   })
 _sym_db.RegisterMessage(Q_Hyst)
 
 SpeedStateReselectionPars = _reflection.GeneratedProtocolMessageType('SpeedStateReselectionPars', (_message.Message,), {
   'DESCRIPTOR' : _SPEEDSTATERESELECTIONPARS,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SpeedStateReselectionPars)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SpeedStateReselectionPars)
   })
 _sym_db.RegisterMessage(SpeedStateReselectionPars)
 
 Q_HystSF = _reflection.GeneratedProtocolMessageType('Q_HystSF', (_message.Message,), {
   'DESCRIPTOR' : _Q_HYSTSF,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.Q_HystSF)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.Q_HystSF)
   })
 _sym_db.RegisterMessage(Q_HystSF)
 
 SF_Medium_High = _reflection.GeneratedProtocolMessageType('SF_Medium_High', (_message.Message,), {
   'DESCRIPTOR' : _SF_MEDIUM_HIGH,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SF_Medium_High)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SF_Medium_High)
   })
 _sym_db.RegisterMessage(SF_Medium_High)
 
 SIB2CellReselectionServingFreqInfo = _reflection.GeneratedProtocolMessageType('SIB2CellReselectionServingFreqInfo', (_message.Message,), {
   'DESCRIPTOR' : _SIB2CELLRESELECTIONSERVINGFREQINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB2CellReselectionServingFreqInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB2CellReselectionServingFreqInfo)
   })
 _sym_db.RegisterMessage(SIB2CellReselectionServingFreqInfo)
 
 CellReselectionSubPriority = _reflection.GeneratedProtocolMessageType('CellReselectionSubPriority', (_message.Message,), {
   'DESCRIPTOR' : _CELLRESELECTIONSUBPRIORITY,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CellReselectionSubPriority)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CellReselectionSubPriority)
   })
 _sym_db.RegisterMessage(CellReselectionSubPriority)
 
 SIB2IntraFreqCellReselectionInfo = _reflection.GeneratedProtocolMessageType('SIB2IntraFreqCellReselectionInfo', (_message.Message,), {
   'DESCRIPTOR' : _SIB2INTRAFREQCELLRESELECTIONINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB2IntraFreqCellReselectionInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB2IntraFreqCellReselectionInfo)
   })
 _sym_db.RegisterMessage(SIB2IntraFreqCellReselectionInfo)
 
 SpeedStateScaleFactors = _reflection.GeneratedProtocolMessageType('SpeedStateScaleFactors', (_message.Message,), {
   'DESCRIPTOR' : _SPEEDSTATESCALEFACTORS,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SpeedStateScaleFactors)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SpeedStateScaleFactors)
   })
 _sym_db.RegisterMessage(SpeedStateScaleFactors)
 
 SpeedStateScaleFactorsSF_Medium_High = _reflection.GeneratedProtocolMessageType('SpeedStateScaleFactorsSF_Medium_High', (_message.Message,), {
   'DESCRIPTOR' : _SPEEDSTATESCALEFACTORSSF_MEDIUM_HIGH,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SpeedStateScaleFactorsSF_Medium_High)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SpeedStateScaleFactorsSF_Medium_High)
   })
 _sym_db.RegisterMessage(SpeedStateScaleFactorsSF_Medium_High)
 
 SIB3 = _reflection.GeneratedProtocolMessageType('SIB3', (_message.Message,), {
   'DESCRIPTOR' : _SIB3,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB3)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB3)
   })
 _sym_db.RegisterMessage(SIB3)
 
 IntraFreqNeighCellList = _reflection.GeneratedProtocolMessageType('IntraFreqNeighCellList', (_message.Message,), {
   'DESCRIPTOR' : _INTRAFREQNEIGHCELLLIST,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.IntraFreqNeighCellList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.IntraFreqNeighCellList)
   })
 _sym_db.RegisterMessage(IntraFreqNeighCellList)
 
 IntraFreqNeighCellInfo = _reflection.GeneratedProtocolMessageType('IntraFreqNeighCellInfo', (_message.Message,), {
   'DESCRIPTOR' : _INTRAFREQNEIGHCELLINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.IntraFreqNeighCellInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.IntraFreqNeighCellInfo)
   })
 _sym_db.RegisterMessage(IntraFreqNeighCellInfo)
 
 IntraFreqBlackCellList = _reflection.GeneratedProtocolMessageType('IntraFreqBlackCellList', (_message.Message,), {
   'DESCRIPTOR' : _INTRAFREQBLACKCELLLIST,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.IntraFreqBlackCellList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.IntraFreqBlackCellList)
   })
 _sym_db.RegisterMessage(IntraFreqBlackCellList)
 
 SIB4 = _reflection.GeneratedProtocolMessageType('SIB4', (_message.Message,), {
   'DESCRIPTOR' : _SIB4,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB4)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB4)
   })
 _sym_db.RegisterMessage(SIB4)
 
 InterFreqCarrierFreqList = _reflection.GeneratedProtocolMessageType('InterFreqCarrierFreqList', (_message.Message,), {
   'DESCRIPTOR' : _INTERFREQCARRIERFREQLIST,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.InterFreqCarrierFreqList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.InterFreqCarrierFreqList)
   })
 _sym_db.RegisterMessage(InterFreqCarrierFreqList)
 
 InterFreqCarrierFreqInfo = _reflection.GeneratedProtocolMessageType('InterFreqCarrierFreqInfo', (_message.Message,), {
   'DESCRIPTOR' : _INTERFREQCARRIERFREQINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.InterFreqCarrierFreqInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.InterFreqCarrierFreqInfo)
   })
 _sym_db.RegisterMessage(InterFreqCarrierFreqInfo)
 
 InterFreqCarrierFreqInfoThreshX_Q = _reflection.GeneratedProtocolMessageType('InterFreqCarrierFreqInfoThreshX_Q', (_message.Message,), {
   'DESCRIPTOR' : _INTERFREQCARRIERFREQINFOTHRESHX_Q,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.InterFreqCarrierFreqInfoThreshX_Q)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.InterFreqCarrierFreqInfoThreshX_Q)
   })
 _sym_db.RegisterMessage(InterFreqCarrierFreqInfoThreshX_Q)
 
 InterFreqNeighCellList = _reflection.GeneratedProtocolMessageType('InterFreqNeighCellList', (_message.Message,), {
   'DESCRIPTOR' : _INTERFREQNEIGHCELLLIST,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.InterFreqNeighCellList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.InterFreqNeighCellList)
   })
 _sym_db.RegisterMessage(InterFreqNeighCellList)
 
 InterFreqNeighCellInfo = _reflection.GeneratedProtocolMessageType('InterFreqNeighCellInfo', (_message.Message,), {
   'DESCRIPTOR' : _INTERFREQNEIGHCELLINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.InterFreqNeighCellInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.InterFreqNeighCellInfo)
   })
 _sym_db.RegisterMessage(InterFreqNeighCellInfo)
 
 InterFreqBlackCellList = _reflection.GeneratedProtocolMessageType('InterFreqBlackCellList', (_message.Message,), {
   'DESCRIPTOR' : _INTERFREQBLACKCELLLIST,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.InterFreqBlackCellList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.InterFreqBlackCellList)
   })
 _sym_db.RegisterMessage(InterFreqBlackCellList)
 
 SIB5 = _reflection.GeneratedProtocolMessageType('SIB5', (_message.Message,), {
   'DESCRIPTOR' : _SIB5,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB5)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB5)
   })
 _sym_db.RegisterMessage(SIB5)
 
 CarrierFreqListEUTRA = _reflection.GeneratedProtocolMessageType('CarrierFreqListEUTRA', (_message.Message,), {
   'DESCRIPTOR' : _CARRIERFREQLISTEUTRA,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CarrierFreqListEUTRA)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CarrierFreqListEUTRA)
   })
 _sym_db.RegisterMessage(CarrierFreqListEUTRA)
 
 CarrierFreqEUTRA = _reflection.GeneratedProtocolMessageType('CarrierFreqEUTRA', (_message.Message,), {
   'DESCRIPTOR' : _CARRIERFREQEUTRA,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CarrierFreqEUTRA)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CarrierFreqEUTRA)
   })
 _sym_db.RegisterMessage(CarrierFreqEUTRA)
 
 EUTRA_FreqNeighCellList = _reflection.GeneratedProtocolMessageType('EUTRA_FreqNeighCellList', (_message.Message,), {
   'DESCRIPTOR' : _EUTRA_FREQNEIGHCELLLIST,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.EUTRA_FreqNeighCellList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.EUTRA_FreqNeighCellList)
   })
 _sym_db.RegisterMessage(EUTRA_FreqNeighCellList)
 
 EUTRA_FreqBlackCellList = _reflection.GeneratedProtocolMessageType('EUTRA_FreqBlackCellList', (_message.Message,), {
   'DESCRIPTOR' : _EUTRA_FREQBLACKCELLLIST,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.EUTRA_FreqBlackCellList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.EUTRA_FreqBlackCellList)
   })
 _sym_db.RegisterMessage(EUTRA_FreqBlackCellList)
 
 EUTRA_FreqNeighCellInfo = _reflection.GeneratedProtocolMessageType('EUTRA_FreqNeighCellInfo', (_message.Message,), {
   'DESCRIPTOR' : _EUTRA_FREQNEIGHCELLINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.EUTRA_FreqNeighCellInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.EUTRA_FreqNeighCellInfo)
   })
 _sym_db.RegisterMessage(EUTRA_FreqNeighCellInfo)
 
 CarrierFreqEUTRAThreshX_Q = _reflection.GeneratedProtocolMessageType('CarrierFreqEUTRAThreshX_Q', (_message.Message,), {
   'DESCRIPTOR' : _CARRIERFREQEUTRATHRESHX_Q,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.CarrierFreqEUTRAThreshX_Q)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.CarrierFreqEUTRAThreshX_Q)
   })
 _sym_db.RegisterMessage(CarrierFreqEUTRAThreshX_Q)
 
 SIB6 = _reflection.GeneratedProtocolMessageType('SIB6', (_message.Message,), {
   'DESCRIPTOR' : _SIB6,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB6)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB6)
   })
 _sym_db.RegisterMessage(SIB6)
 
 SIB7 = _reflection.GeneratedProtocolMessageType('SIB7', (_message.Message,), {
   'DESCRIPTOR' : _SIB7,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB7)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB7)
   })
 _sym_db.RegisterMessage(SIB7)
 
 SIB8 = _reflection.GeneratedProtocolMessageType('SIB8', (_message.Message,), {
   'DESCRIPTOR' : _SIB8,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB8)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB8)
   })
 _sym_db.RegisterMessage(SIB8)
 
 SIB9 = _reflection.GeneratedProtocolMessageType('SIB9', (_message.Message,), {
   'DESCRIPTOR' : _SIB9,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB9)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB9)
   })
 _sym_db.RegisterMessage(SIB9)
 
 SIB9TimeInfo = _reflection.GeneratedProtocolMessageType('SIB9TimeInfo', (_message.Message,), {
   'DESCRIPTOR' : _SIB9TIMEINFO,
   '__module__' : 'rrc_sib_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SIB9TimeInfo)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SIB9TimeInfo)
   })
 _sym_db.RegisterMessage(SIB9TimeInfo)
 

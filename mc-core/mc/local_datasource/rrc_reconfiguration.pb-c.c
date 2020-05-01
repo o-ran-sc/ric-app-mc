@@ -7,232 +7,232 @@
 #endif
 
 #include "rrc_reconfiguration.pb-c.h"
-void   uenibstreamprotobuf__rrcreconfiguration__init
-                     (Uenibstreamprotobuf__RRCReconfiguration         *message)
+void   streaming_protobufs__rrcreconfiguration__init
+                     (StreamingProtobufs__RRCReconfiguration         *message)
 {
-  static const Uenibstreamprotobuf__RRCReconfiguration init_value = UENIBSTREAMPROTOBUF__RRCRECONFIGURATION__INIT;
+  static const StreamingProtobufs__RRCReconfiguration init_value = STREAMING_PROTOBUFS__RRCRECONFIGURATION__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__rrcreconfiguration__get_packed_size
-                     (const Uenibstreamprotobuf__RRCReconfiguration *message)
+size_t streaming_protobufs__rrcreconfiguration__get_packed_size
+                     (const StreamingProtobufs__RRCReconfiguration *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__rrcreconfiguration__pack
-                     (const Uenibstreamprotobuf__RRCReconfiguration *message,
+size_t streaming_protobufs__rrcreconfiguration__pack
+                     (const StreamingProtobufs__RRCReconfiguration *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__rrcreconfiguration__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCReconfiguration *message,
+size_t streaming_protobufs__rrcreconfiguration__pack_to_buffer
+                     (const StreamingProtobufs__RRCReconfiguration *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__RRCReconfiguration *
-       uenibstreamprotobuf__rrcreconfiguration__unpack
+StreamingProtobufs__RRCReconfiguration *
+       streaming_protobufs__rrcreconfiguration__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__RRCReconfiguration *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__rrcreconfiguration__descriptor,
+  return (StreamingProtobufs__RRCReconfiguration *)
+     protobuf_c_message_unpack (&streaming_protobufs__rrcreconfiguration__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__rrcreconfiguration__free_unpacked
-                     (Uenibstreamprotobuf__RRCReconfiguration *message,
+void   streaming_protobufs__rrcreconfiguration__free_unpacked
+                     (StreamingProtobufs__RRCReconfiguration *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__rrcreconfiguration__ies__init
-                     (Uenibstreamprotobuf__RRCReconfigurationIEs         *message)
+void   streaming_protobufs__rrcreconfiguration__ies__init
+                     (StreamingProtobufs__RRCReconfigurationIEs         *message)
 {
-  static const Uenibstreamprotobuf__RRCReconfigurationIEs init_value = UENIBSTREAMPROTOBUF__RRCRECONFIGURATION__IES__INIT;
+  static const StreamingProtobufs__RRCReconfigurationIEs init_value = STREAMING_PROTOBUFS__RRCRECONFIGURATION__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__rrcreconfiguration__ies__get_packed_size
-                     (const Uenibstreamprotobuf__RRCReconfigurationIEs *message)
+size_t streaming_protobufs__rrcreconfiguration__ies__get_packed_size
+                     (const StreamingProtobufs__RRCReconfigurationIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__rrcreconfiguration__ies__pack
-                     (const Uenibstreamprotobuf__RRCReconfigurationIEs *message,
+size_t streaming_protobufs__rrcreconfiguration__ies__pack
+                     (const StreamingProtobufs__RRCReconfigurationIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__rrcreconfiguration__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCReconfigurationIEs *message,
+size_t streaming_protobufs__rrcreconfiguration__ies__pack_to_buffer
+                     (const StreamingProtobufs__RRCReconfigurationIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__RRCReconfigurationIEs *
-       uenibstreamprotobuf__rrcreconfiguration__ies__unpack
+StreamingProtobufs__RRCReconfigurationIEs *
+       streaming_protobufs__rrcreconfiguration__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__RRCReconfigurationIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__rrcreconfiguration__ies__descriptor,
+  return (StreamingProtobufs__RRCReconfigurationIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__rrcreconfiguration__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__rrcreconfiguration__ies__free_unpacked
-                     (Uenibstreamprotobuf__RRCReconfigurationIEs *message,
+void   streaming_protobufs__rrcreconfiguration__ies__free_unpacked
+                     (StreamingProtobufs__RRCReconfigurationIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__rrcreconfiguration_v1530__ies__init
-                     (Uenibstreamprotobuf__RRCReconfigurationV1530IEs         *message)
+void   streaming_protobufs__rrcreconfiguration_v1530__ies__init
+                     (StreamingProtobufs__RRCReconfigurationV1530IEs         *message)
 {
-  static const Uenibstreamprotobuf__RRCReconfigurationV1530IEs init_value = UENIBSTREAMPROTOBUF__RRCRECONFIGURATION_V1530__IES__INIT;
+  static const StreamingProtobufs__RRCReconfigurationV1530IEs init_value = STREAMING_PROTOBUFS__RRCRECONFIGURATION_V1530__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__rrcreconfiguration_v1530__ies__get_packed_size
-                     (const Uenibstreamprotobuf__RRCReconfigurationV1530IEs *message)
+size_t streaming_protobufs__rrcreconfiguration_v1530__ies__get_packed_size
+                     (const StreamingProtobufs__RRCReconfigurationV1530IEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration_v1530__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration_v1530__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__rrcreconfiguration_v1530__ies__pack
-                     (const Uenibstreamprotobuf__RRCReconfigurationV1530IEs *message,
+size_t streaming_protobufs__rrcreconfiguration_v1530__ies__pack
+                     (const StreamingProtobufs__RRCReconfigurationV1530IEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration_v1530__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration_v1530__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__rrcreconfiguration_v1530__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCReconfigurationV1530IEs *message,
+size_t streaming_protobufs__rrcreconfiguration_v1530__ies__pack_to_buffer
+                     (const StreamingProtobufs__RRCReconfigurationV1530IEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration_v1530__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration_v1530__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__RRCReconfigurationV1530IEs *
-       uenibstreamprotobuf__rrcreconfiguration_v1530__ies__unpack
+StreamingProtobufs__RRCReconfigurationV1530IEs *
+       streaming_protobufs__rrcreconfiguration_v1530__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__RRCReconfigurationV1530IEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__rrcreconfiguration_v1530__ies__descriptor,
+  return (StreamingProtobufs__RRCReconfigurationV1530IEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__rrcreconfiguration_v1530__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__rrcreconfiguration_v1530__ies__free_unpacked
-                     (Uenibstreamprotobuf__RRCReconfigurationV1530IEs *message,
+void   streaming_protobufs__rrcreconfiguration_v1530__ies__free_unpacked
+                     (StreamingProtobufs__RRCReconfigurationV1530IEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration_v1530__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration_v1530__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__master_key_update__init
-                     (Uenibstreamprotobuf__MasterKeyUpdate         *message)
+void   streaming_protobufs__master_key_update__init
+                     (StreamingProtobufs__MasterKeyUpdate         *message)
 {
-  static const Uenibstreamprotobuf__MasterKeyUpdate init_value = UENIBSTREAMPROTOBUF__MASTER_KEY_UPDATE__INIT;
+  static const StreamingProtobufs__MasterKeyUpdate init_value = STREAMING_PROTOBUFS__MASTER_KEY_UPDATE__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__master_key_update__get_packed_size
-                     (const Uenibstreamprotobuf__MasterKeyUpdate *message)
+size_t streaming_protobufs__master_key_update__get_packed_size
+                     (const StreamingProtobufs__MasterKeyUpdate *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__master_key_update__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__master_key_update__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__master_key_update__pack
-                     (const Uenibstreamprotobuf__MasterKeyUpdate *message,
+size_t streaming_protobufs__master_key_update__pack
+                     (const StreamingProtobufs__MasterKeyUpdate *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__master_key_update__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__master_key_update__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__master_key_update__pack_to_buffer
-                     (const Uenibstreamprotobuf__MasterKeyUpdate *message,
+size_t streaming_protobufs__master_key_update__pack_to_buffer
+                     (const StreamingProtobufs__MasterKeyUpdate *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__master_key_update__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__master_key_update__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__MasterKeyUpdate *
-       uenibstreamprotobuf__master_key_update__unpack
+StreamingProtobufs__MasterKeyUpdate *
+       streaming_protobufs__master_key_update__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__MasterKeyUpdate *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__master_key_update__descriptor,
+  return (StreamingProtobufs__MasterKeyUpdate *)
+     protobuf_c_message_unpack (&streaming_protobufs__master_key_update__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__master_key_update__free_unpacked
-                     (Uenibstreamprotobuf__MasterKeyUpdate *message,
+void   streaming_protobufs__master_key_update__free_unpacked
+                     (StreamingProtobufs__MasterKeyUpdate *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__master_key_update__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__master_key_update__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__rrcreconfiguration_v1540__ies__init
-                     (Uenibstreamprotobuf__RRCReconfigurationV1540IEs         *message)
+void   streaming_protobufs__rrcreconfiguration_v1540__ies__init
+                     (StreamingProtobufs__RRCReconfigurationV1540IEs         *message)
 {
-  static const Uenibstreamprotobuf__RRCReconfigurationV1540IEs init_value = UENIBSTREAMPROTOBUF__RRCRECONFIGURATION_V1540__IES__INIT;
+  static const StreamingProtobufs__RRCReconfigurationV1540IEs init_value = STREAMING_PROTOBUFS__RRCRECONFIGURATION_V1540__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__rrcreconfiguration_v1540__ies__get_packed_size
-                     (const Uenibstreamprotobuf__RRCReconfigurationV1540IEs *message)
+size_t streaming_protobufs__rrcreconfiguration_v1540__ies__get_packed_size
+                     (const StreamingProtobufs__RRCReconfigurationV1540IEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration_v1540__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration_v1540__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__rrcreconfiguration_v1540__ies__pack
-                     (const Uenibstreamprotobuf__RRCReconfigurationV1540IEs *message,
+size_t streaming_protobufs__rrcreconfiguration_v1540__ies__pack
+                     (const StreamingProtobufs__RRCReconfigurationV1540IEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration_v1540__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration_v1540__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__rrcreconfiguration_v1540__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCReconfigurationV1540IEs *message,
+size_t streaming_protobufs__rrcreconfiguration_v1540__ies__pack_to_buffer
+                     (const StreamingProtobufs__RRCReconfigurationV1540IEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration_v1540__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration_v1540__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__RRCReconfigurationV1540IEs *
-       uenibstreamprotobuf__rrcreconfiguration_v1540__ies__unpack
+StreamingProtobufs__RRCReconfigurationV1540IEs *
+       streaming_protobufs__rrcreconfiguration_v1540__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__RRCReconfigurationV1540IEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__rrcreconfiguration_v1540__ies__descriptor,
+  return (StreamingProtobufs__RRCReconfigurationV1540IEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__rrcreconfiguration_v1540__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__rrcreconfiguration_v1540__ies__free_unpacked
-                     (Uenibstreamprotobuf__RRCReconfigurationV1540IEs *message,
+void   streaming_protobufs__rrcreconfiguration_v1540__ies__free_unpacked
+                     (StreamingProtobufs__RRCReconfigurationV1540IEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__rrcreconfiguration_v1540__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rrcreconfiguration_v1540__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration__field_descriptors[2] =
+static const ProtobufCFieldDescriptor streaming_protobufs__rrcreconfiguration__field_descriptors[2] =
 {
   {
     "rrc_TransactionIdentifier",
@@ -240,7 +240,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfiguration, rrc_transactionidentifier),
+    offsetof(StreamingProtobufs__RRCReconfiguration, rrc_transactionidentifier),
     NULL,
     NULL,
     0,             /* flags */
@@ -251,39 +251,39 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration__f
     2,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__RRCReconfiguration, critical_extensions_case),
-    offsetof(Uenibstreamprotobuf__RRCReconfiguration, rrcreconfiguration),
-    &uenibstreamprotobuf__rrcreconfiguration__ies__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfiguration, critical_extensions_case),
+    offsetof(StreamingProtobufs__RRCReconfiguration, rrcreconfiguration),
+    &streaming_protobufs__rrcreconfiguration__ies__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__rrcreconfiguration__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__rrcreconfiguration__field_indices_by_name[] = {
   1,   /* field[1] = rrcReconfiguration */
   0,   /* field[0] = rrc_TransactionIdentifier */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__rrcreconfiguration__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__rrcreconfiguration__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 2 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__rrcreconfiguration__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__rrcreconfiguration__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.RRCReconfiguration",
+  "streaming_protobufs.RRCReconfiguration",
   "RRCReconfiguration",
-  "Uenibstreamprotobuf__RRCReconfiguration",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__RRCReconfiguration),
+  "StreamingProtobufs__RRCReconfiguration",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__RRCReconfiguration),
   2,
-  uenibstreamprotobuf__rrcreconfiguration__field_descriptors,
-  uenibstreamprotobuf__rrcreconfiguration__field_indices_by_name,
-  1,  uenibstreamprotobuf__rrcreconfiguration__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__rrcreconfiguration__init,
+  streaming_protobufs__rrcreconfiguration__field_descriptors,
+  streaming_protobufs__rrcreconfiguration__field_indices_by_name,
+  1,  streaming_protobufs__rrcreconfiguration__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__rrcreconfiguration__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration__ies__field_descriptors[5] =
+static const ProtobufCFieldDescriptor streaming_protobufs__rrcreconfiguration__ies__field_descriptors[5] =
 {
   {
     "radioBearerConfig",
@@ -291,8 +291,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration__i
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationIEs, radiobearerconfig),
-    &uenibstreamprotobuf__radio_bearer_config__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationIEs, radiobearerconfig),
+    &streaming_protobufs__radio_bearer_config__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -303,8 +303,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration__i
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationIEs, secondarycellgroup),
-    &uenibstreamprotobuf__cell_group_config__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationIEs, secondarycellgroup),
+    &streaming_protobufs__cell_group_config__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -315,8 +315,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration__i
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationIEs, measconfig),
-    &uenibstreamprotobuf__meas_config__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationIEs, measconfig),
+    &streaming_protobufs__meas_config__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -327,8 +327,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration__i
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationIEs, latenoncriticalextension),
-    &google__protobuf__string_value__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationIEs, latenoncriticalextension),
+    &google__protobuf__bytes_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -339,41 +339,41 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration__i
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationIEs, noncriticalextension),
-    &uenibstreamprotobuf__rrcreconfiguration_v1530__ies__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationIEs, noncriticalextension),
+    &streaming_protobufs__rrcreconfiguration_v1530__ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__rrcreconfiguration__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__rrcreconfiguration__ies__field_indices_by_name[] = {
   3,   /* field[3] = lateNonCriticalExtension */
   2,   /* field[2] = measConfig */
   4,   /* field[4] = nonCriticalExtension */
   0,   /* field[0] = radioBearerConfig */
   1,   /* field[1] = secondaryCellGroup */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__rrcreconfiguration__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__rrcreconfiguration__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 5 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__rrcreconfiguration__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__rrcreconfiguration__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.RRCReconfiguration_IEs",
+  "streaming_protobufs.RRCReconfiguration_IEs",
   "RRCReconfigurationIEs",
-  "Uenibstreamprotobuf__RRCReconfigurationIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__RRCReconfigurationIEs),
+  "StreamingProtobufs__RRCReconfigurationIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__RRCReconfigurationIEs),
   5,
-  uenibstreamprotobuf__rrcreconfiguration__ies__field_descriptors,
-  uenibstreamprotobuf__rrcreconfiguration__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__rrcreconfiguration__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__rrcreconfiguration__ies__init,
+  streaming_protobufs__rrcreconfiguration__ies__field_descriptors,
+  streaming_protobufs__rrcreconfiguration__ies__field_indices_by_name,
+  1,  streaming_protobufs__rrcreconfiguration__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__rrcreconfiguration__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1530__ies__field_descriptors[8] =
+static const ProtobufCFieldDescriptor streaming_protobufs__rrcreconfiguration_v1530__ies__field_descriptors[8] =
 {
   {
     "masterCellGroup",
@@ -381,8 +381,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs, mastercellgroup),
-    &uenibstreamprotobuf__cell_group_config__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationV1530IEs, mastercellgroup),
+    &streaming_protobufs__cell_group_config__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -393,8 +393,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs, fullconfig),
-    &uenibstreamprotobuf__true_opt__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationV1530IEs, fullconfig),
+    &streaming_protobufs__true_opt__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -403,11 +403,11 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1
     "dedicatedNAS_MessageList",
     3,
     PROTOBUF_C_LABEL_REPEATED,
-    PROTOBUF_C_TYPE_STRING,
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs, n_dedicatednas_messagelist),
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs, dedicatednas_messagelist),
+    PROTOBUF_C_TYPE_BYTES,
+    offsetof(StreamingProtobufs__RRCReconfigurationV1530IEs, n_dedicatednas_messagelist),
+    offsetof(StreamingProtobufs__RRCReconfigurationV1530IEs, dedicatednas_messagelist),
     NULL,
-    &protobuf_c_empty_string,
+    NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
@@ -417,8 +417,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs, masterkeyupdate),
-    &uenibstreamprotobuf__master_key_update__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationV1530IEs, masterkeyupdate),
+    &streaming_protobufs__master_key_update__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -429,8 +429,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs, dedicatedsib1_delivery),
-    &uenibstreamprotobuf__sib1__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationV1530IEs, dedicatedsib1_delivery),
+    &streaming_protobufs__sib1__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -441,8 +441,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs, dedicatedsysteminformationdelivery),
-    &uenibstreamprotobuf__system_information__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationV1530IEs, dedicatedsysteminformationdelivery),
+    &streaming_protobufs__system_information__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -453,8 +453,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs, otherconfig),
-    &uenibstreamprotobuf__other_config__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationV1530IEs, otherconfig),
+    &streaming_protobufs__other_config__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -465,14 +465,14 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs, noncriticalextension),
-    &uenibstreamprotobuf__rrcreconfiguration_v1540__ies__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationV1530IEs, noncriticalextension),
+    &streaming_protobufs__rrcreconfiguration_v1540__ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__rrcreconfiguration_v1530__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__rrcreconfiguration_v1530__ies__field_indices_by_name[] = {
   2,   /* field[2] = dedicatedNAS_MessageList */
   4,   /* field[4] = dedicatedSIB1_Delivery */
   5,   /* field[5] = dedicatedSystemInformationDelivery */
@@ -482,27 +482,27 @@ static const unsigned uenibstreamprotobuf__rrcreconfiguration_v1530__ies__field_
   7,   /* field[7] = nonCriticalExtension */
   6,   /* field[6] = otherConfig */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__rrcreconfiguration_v1530__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__rrcreconfiguration_v1530__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 8 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__rrcreconfiguration_v1530__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__rrcreconfiguration_v1530__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.RRCReconfiguration_v1530_IEs",
+  "streaming_protobufs.RRCReconfiguration_v1530_IEs",
   "RRCReconfigurationV1530IEs",
-  "Uenibstreamprotobuf__RRCReconfigurationV1530IEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__RRCReconfigurationV1530IEs),
+  "StreamingProtobufs__RRCReconfigurationV1530IEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__RRCReconfigurationV1530IEs),
   8,
-  uenibstreamprotobuf__rrcreconfiguration_v1530__ies__field_descriptors,
-  uenibstreamprotobuf__rrcreconfiguration_v1530__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__rrcreconfiguration_v1530__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__rrcreconfiguration_v1530__ies__init,
+  streaming_protobufs__rrcreconfiguration_v1530__ies__field_descriptors,
+  streaming_protobufs__rrcreconfiguration_v1530__ies__field_indices_by_name,
+  1,  streaming_protobufs__rrcreconfiguration_v1530__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__rrcreconfiguration_v1530__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__master_key_update__field_descriptors[3] =
+static const ProtobufCFieldDescriptor streaming_protobufs__master_key_update__field_descriptors[3] =
 {
   {
     "keySetChangeIndicator",
@@ -510,7 +510,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__master_key_update__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_BOOL,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MasterKeyUpdate, keysetchangeindicator),
+    offsetof(StreamingProtobufs__MasterKeyUpdate, keysetchangeindicator),
     NULL,
     NULL,
     0,             /* flags */
@@ -522,7 +522,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__master_key_update__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MasterKeyUpdate, nexthopchainingcount),
+    offsetof(StreamingProtobufs__MasterKeyUpdate, nexthopchainingcount),
     NULL,
     NULL,
     0,             /* flags */
@@ -534,39 +534,39 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__master_key_update__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MasterKeyUpdate, nas_container),
-    &google__protobuf__string_value__descriptor,
+    offsetof(StreamingProtobufs__MasterKeyUpdate, nas_container),
+    &google__protobuf__bytes_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__master_key_update__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__master_key_update__field_indices_by_name[] = {
   0,   /* field[0] = keySetChangeIndicator */
   2,   /* field[2] = nas_Container */
   1,   /* field[1] = nextHopChainingCount */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__master_key_update__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__master_key_update__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__master_key_update__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__master_key_update__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.MasterKeyUpdate",
+  "streaming_protobufs.MasterKeyUpdate",
   "MasterKeyUpdate",
-  "Uenibstreamprotobuf__MasterKeyUpdate",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__MasterKeyUpdate),
+  "StreamingProtobufs__MasterKeyUpdate",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__MasterKeyUpdate),
   3,
-  uenibstreamprotobuf__master_key_update__field_descriptors,
-  uenibstreamprotobuf__master_key_update__field_indices_by_name,
-  1,  uenibstreamprotobuf__master_key_update__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__master_key_update__init,
+  streaming_protobufs__master_key_update__field_descriptors,
+  streaming_protobufs__master_key_update__field_indices_by_name,
+  1,  streaming_protobufs__master_key_update__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__master_key_update__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1540__ies__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__rrcreconfiguration_v1540__ies__field_descriptors[1] =
 {
   {
     "otherConfig_v1540",
@@ -574,33 +574,33 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rrcreconfiguration_v1
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RRCReconfigurationV1540IEs, otherconfig_v1540),
-    &uenibstreamprotobuf__other_config_v1540__descriptor,
+    offsetof(StreamingProtobufs__RRCReconfigurationV1540IEs, otherconfig_v1540),
+    &streaming_protobufs__other_config_v1540__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__rrcreconfiguration_v1540__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__rrcreconfiguration_v1540__ies__field_indices_by_name[] = {
   0,   /* field[0] = otherConfig_v1540 */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__rrcreconfiguration_v1540__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__rrcreconfiguration_v1540__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__rrcreconfiguration_v1540__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__rrcreconfiguration_v1540__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.RRCReconfiguration_v1540_IEs",
+  "streaming_protobufs.RRCReconfiguration_v1540_IEs",
   "RRCReconfigurationV1540IEs",
-  "Uenibstreamprotobuf__RRCReconfigurationV1540IEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__RRCReconfigurationV1540IEs),
+  "StreamingProtobufs__RRCReconfigurationV1540IEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__RRCReconfigurationV1540IEs),
   1,
-  uenibstreamprotobuf__rrcreconfiguration_v1540__ies__field_descriptors,
-  uenibstreamprotobuf__rrcreconfiguration_v1540__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__rrcreconfiguration_v1540__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__rrcreconfiguration_v1540__ies__init,
+  streaming_protobufs__rrcreconfiguration_v1540__ies__field_descriptors,
+  streaming_protobufs__rrcreconfiguration_v1540__ies__field_indices_by_name,
+  1,  streaming_protobufs__rrcreconfiguration_v1540__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__rrcreconfiguration_v1540__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

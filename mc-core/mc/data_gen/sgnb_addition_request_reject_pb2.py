@@ -20,10 +20,10 @@ import error_cause_pb2 as error__cause__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='sgnb_addition_request_reject.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\"sgnb_addition_request_reject.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x17x2ap_common_types.proto\x1a\x11\x65rror_cause.proto\"\x95\x02\n\x19SgNBAdditionRequestReject\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12,\n\x08id_Cause\x18\x03 \x01(\x0b\x32\x1a.uenibstreamprotobuf.Cause\x12N\n\x19id_CriticalityDiagnostics\x18\x04 \x01(\x0b\x32+.uenibstreamprotobuf.CriticalityDiagnostics\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32ValueB:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\"sgnb_addition_request_reject.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x17x2ap_common_types.proto\x1a\x11\x65rror_cause.proto\"\xb3\x02\n\x19SgNBAdditionRequestReject\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x38\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\x12,\n\x08id_Cause\x18\x03 \x01(\x0b\x32\x1a.streaming_protobufs.Cause\x12N\n\x19id_CriticalityDiagnostics\x18\x04 \x01(\x0b\x32+.streaming_protobufs.CriticalityDiagnostics\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32ValueB3Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,x2ap__common__types__pb2.DESCRIPTOR,error__cause__pb2.DESCRIPTOR,])
 
@@ -32,41 +32,41 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _SGNBADDITIONREQUESTREJECT = _descriptor.Descriptor(
   name='SgNBAdditionRequestReject',
-  full_name='uenibstreamprotobuf.SgNBAdditionRequestReject',
+  full_name='streaming_protobufs.SgNBAdditionRequestReject',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SgNBAdditionRequestReject.id_MeNB_UE_X2AP_ID', index=0,
+      name='id_MeNB_UE_X2AP_ID', full_name='streaming_protobufs.SgNBAdditionRequestReject.id_MeNB_UE_X2AP_ID', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_SgNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SgNBAdditionRequestReject.id_SgNB_UE_X2AP_ID', index=1,
-      number=2, type=13, cpp_type=3, label=1,
-      has_default_value=False, default_value=0,
+      name='id_SgNB_UE_X2AP_ID', full_name='streaming_protobufs.SgNBAdditionRequestReject.id_SgNB_UE_X2AP_ID', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_Cause', full_name='uenibstreamprotobuf.SgNBAdditionRequestReject.id_Cause', index=2,
+      name='id_Cause', full_name='streaming_protobufs.SgNBAdditionRequestReject.id_Cause', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_CriticalityDiagnostics', full_name='uenibstreamprotobuf.SgNBAdditionRequestReject.id_CriticalityDiagnostics', index=3,
+      name='id_CriticalityDiagnostics', full_name='streaming_protobufs.SgNBAdditionRequestReject.id_CriticalityDiagnostics', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID_Extension', full_name='uenibstreamprotobuf.SgNBAdditionRequestReject.id_MeNB_UE_X2AP_ID_Extension', index=4,
+      name='id_MeNB_UE_X2AP_ID_Extension', full_name='streaming_protobufs.SgNBAdditionRequestReject.id_MeNB_UE_X2AP_ID_Extension', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -85,9 +85,10 @@ _SGNBADDITIONREQUESTREJECT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=136,
-  serialized_end=413,
+  serialized_end=443,
 )
 
+_SGNBADDITIONREQUESTREJECT.fields_by_name['id_SgNB_UE_X2AP_ID'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
 _SGNBADDITIONREQUESTREJECT.fields_by_name['id_Cause'].message_type = error__cause__pb2._CAUSE
 _SGNBADDITIONREQUESTREJECT.fields_by_name['id_CriticalityDiagnostics'].message_type = x2ap__common__types__pb2._CRITICALITYDIAGNOSTICS
 _SGNBADDITIONREQUESTREJECT.fields_by_name['id_MeNB_UE_X2AP_ID_Extension'].message_type = google_dot_protobuf_dot_wrappers__pb2._UINT32VALUE
@@ -97,7 +98,7 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 SgNBAdditionRequestReject = _reflection.GeneratedProtocolMessageType('SgNBAdditionRequestReject', (_message.Message,), {
   'DESCRIPTOR' : _SGNBADDITIONREQUESTREJECT,
   '__module__' : 'sgnb_addition_request_reject_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SgNBAdditionRequestReject)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SgNBAdditionRequestReject)
   })
 _sym_db.RegisterMessage(SgNBAdditionRequestReject)
 

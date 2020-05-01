@@ -17,14 +17,14 @@ PROTOBUF_C__BEGIN_DECLS
 #include "google/protobuf/wrappers.pb-c.h"
 #include "x2ap_common_types.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__SgNBReleaseConfirm Uenibstreamprotobuf__SgNBReleaseConfirm;
-typedef struct _Uenibstreamprotobuf__SgNBReleaseConfirmIEs Uenibstreamprotobuf__SgNBReleaseConfirmIEs;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent;
-typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs;
+typedef struct _StreamingProtobufs__SgNBReleaseConfirm StreamingProtobufs__SgNBReleaseConfirm;
+typedef struct _StreamingProtobufs__SgNBReleaseConfirmIEs StreamingProtobufs__SgNBReleaseConfirmIEs;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent;
+typedef struct _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs;
 
 
 /* --- enums --- */
@@ -32,283 +32,283 @@ typedef struct _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpres
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__SgNBReleaseConfirm
+struct  _StreamingProtobufs__SgNBReleaseConfirm
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__SgNBReleaseConfirmIEs *protocolies;
+  StreamingProtobufs__SgNBReleaseConfirmIEs *protocolies;
 };
-#define UENIBSTREAMPROTOBUF__SG_NBRELEASE_CONFIRM__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sg_nbrelease_confirm__descriptor) \
+#define STREAMING_PROTOBUFS__SG_NBRELEASE_CONFIRM__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sg_nbrelease_confirm__descriptor) \
     , NULL }
 
 
-struct  _Uenibstreamprotobuf__SgNBReleaseConfirmIEs
+struct  _StreamingProtobufs__SgNBReleaseConfirmIEs
 {
   ProtobufCMessage base;
   uint32_t id_menb_ue_x2ap_id;
   uint32_t id_sgnb_ue_x2ap_id;
-  Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList *id_e_rabs_tobereleased_sgnbrelconflist;
-  Uenibstreamprotobuf__CriticalityDiagnostics *id_criticalitydiagnostics;
+  StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList *id_e_rabs_tobereleased_sgnbrelconflist;
+  StreamingProtobufs__CriticalityDiagnostics *id_criticalitydiagnostics;
   Google__Protobuf__UInt32Value *id_menb_ue_x2ap_id_extension;
 };
-#define UENIBSTREAMPROTOBUF__SG_NBRELEASE_CONFIRM__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sg_nbrelease_confirm__ies__descriptor) \
+#define STREAMING_PROTOBUFS__SG_NBRELEASE_CONFIRM__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sg_nbrelease_confirm__ies__descriptor) \
     , 0, 0, NULL, NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList
 {
   ProtobufCMessage base;
   size_t n_id_e_rabs_tobereleased_sgnbrelconf_item;
-  Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem **id_e_rabs_tobereleased_sgnbrelconf_item;
+  StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem **id_e_rabs_tobereleased_sgnbrelconf_item;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF_LIST__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf_list__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF_LIST__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf_list__descriptor) \
     , 0,NULL }
 
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPPRESENT = 3,
-  UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPNOTPRESENT = 4
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION)
-} Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem__ResourceConfigurationCase;
+  STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION__NOT_SET = 0,
+  STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPPRESENT = 3,
+  STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION_SG_NBPDCPNOTPRESENT = 4
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION)
+} StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem__ResourceConfigurationCase;
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem
 {
   ProtobufCMessage base;
   uint32_t e_rab_id;
-  Uenibstreamprotobuf__ENDCResourceConfiguration *en_dc_resourceconfiguration;
+  StreamingProtobufs__ENDCResourceConfiguration *en_dc_resourceconfiguration;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs **ie_extensions;
-  Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem__ResourceConfigurationCase resource_configuration_case;
+  StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs **ie_extensions;
+  StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem__ResourceConfigurationCase resource_configuration_case;
   union {
-    Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *sgnbpdcppresent;
-    Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent *sgnbpdcpnotpresent;
+    StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *sgnbpdcppresent;
+    StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent *sgnbpdcpnotpresent;
   };
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item__descriptor) \
-    , 0, NULL, 0,NULL, UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item__descriptor) \
+    , 0, NULL, 0,NULL, STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM__RESOURCE_CONFIGURATION__NOT_SET, {0} }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__ITEM_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__descriptor) \
      }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *ul_gtptunnelendpoint;
-  Uenibstreamprotobuf__GTPtunnelEndpoint *dl_gtptunnelendpoint;
+  StreamingProtobufs__GTPtunnelEndpoint *ul_gtptunnelendpoint;
+  StreamingProtobufs__GTPtunnelEndpoint *dl_gtptunnelendpoint;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__SG_NBPDCPPRESENT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__SG_NBPDCPPRESENT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__descriptor) \
     , NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent
 {
   ProtobufCMessage base;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs **ie_extensions;
+  StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__SG_NBPDCPNOTPRESENT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__SG_NBPDCPNOTPRESENT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__descriptor) \
     , 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs
+struct  _StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__SG_NBPDCPNOTPRESENT_EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__E__RABS__TO_BE_RELEASED__SG_NBREL_CONF__SG_NBPDCPNOTPRESENT_EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__descriptor) \
      }
 
 
-/* Uenibstreamprotobuf__SgNBReleaseConfirm methods */
-void   uenibstreamprotobuf__sg_nbrelease_confirm__init
-                     (Uenibstreamprotobuf__SgNBReleaseConfirm         *message);
-size_t uenibstreamprotobuf__sg_nbrelease_confirm__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBReleaseConfirm   *message);
-size_t uenibstreamprotobuf__sg_nbrelease_confirm__pack
-                     (const Uenibstreamprotobuf__SgNBReleaseConfirm   *message,
+/* StreamingProtobufs__SgNBReleaseConfirm methods */
+void   streaming_protobufs__sg_nbrelease_confirm__init
+                     (StreamingProtobufs__SgNBReleaseConfirm         *message);
+size_t streaming_protobufs__sg_nbrelease_confirm__get_packed_size
+                     (const StreamingProtobufs__SgNBReleaseConfirm   *message);
+size_t streaming_protobufs__sg_nbrelease_confirm__pack
+                     (const StreamingProtobufs__SgNBReleaseConfirm   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sg_nbrelease_confirm__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBReleaseConfirm   *message,
+size_t streaming_protobufs__sg_nbrelease_confirm__pack_to_buffer
+                     (const StreamingProtobufs__SgNBReleaseConfirm   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SgNBReleaseConfirm *
-       uenibstreamprotobuf__sg_nbrelease_confirm__unpack
+StreamingProtobufs__SgNBReleaseConfirm *
+       streaming_protobufs__sg_nbrelease_confirm__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sg_nbrelease_confirm__free_unpacked
-                     (Uenibstreamprotobuf__SgNBReleaseConfirm *message,
+void   streaming_protobufs__sg_nbrelease_confirm__free_unpacked
+                     (StreamingProtobufs__SgNBReleaseConfirm *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__SgNBReleaseConfirmIEs methods */
-void   uenibstreamprotobuf__sg_nbrelease_confirm__ies__init
-                     (Uenibstreamprotobuf__SgNBReleaseConfirmIEs         *message);
-size_t uenibstreamprotobuf__sg_nbrelease_confirm__ies__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBReleaseConfirmIEs   *message);
-size_t uenibstreamprotobuf__sg_nbrelease_confirm__ies__pack
-                     (const Uenibstreamprotobuf__SgNBReleaseConfirmIEs   *message,
+/* StreamingProtobufs__SgNBReleaseConfirmIEs methods */
+void   streaming_protobufs__sg_nbrelease_confirm__ies__init
+                     (StreamingProtobufs__SgNBReleaseConfirmIEs         *message);
+size_t streaming_protobufs__sg_nbrelease_confirm__ies__get_packed_size
+                     (const StreamingProtobufs__SgNBReleaseConfirmIEs   *message);
+size_t streaming_protobufs__sg_nbrelease_confirm__ies__pack
+                     (const StreamingProtobufs__SgNBReleaseConfirmIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sg_nbrelease_confirm__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBReleaseConfirmIEs   *message,
+size_t streaming_protobufs__sg_nbrelease_confirm__ies__pack_to_buffer
+                     (const StreamingProtobufs__SgNBReleaseConfirmIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SgNBReleaseConfirmIEs *
-       uenibstreamprotobuf__sg_nbrelease_confirm__ies__unpack
+StreamingProtobufs__SgNBReleaseConfirmIEs *
+       streaming_protobufs__sg_nbrelease_confirm__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sg_nbrelease_confirm__ies__free_unpacked
-                     (Uenibstreamprotobuf__SgNBReleaseConfirmIEs *message,
+void   streaming_protobufs__sg_nbrelease_confirm__ies__free_unpacked
+                     (StreamingProtobufs__SgNBReleaseConfirmIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf_list__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf_list__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf_list__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf_list__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf_list__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf_list__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf_list__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf_list__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf_list__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf_list__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf_list__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf_list__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs methods */
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__init
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs         *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs   *message);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__pack
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs   *message,
+/* StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs methods */
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__init
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs         *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__get_packed_size
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs   *message);
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__pack
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs   *message,
+size_t streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs *
-       uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__unpack
+StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs *
+       streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs *message,
+void   streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__free_unpacked
+                     (StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__SgNBReleaseConfirm_Closure)
-                 (const Uenibstreamprotobuf__SgNBReleaseConfirm *message,
+typedef void (*StreamingProtobufs__SgNBReleaseConfirm_Closure)
+                 (const StreamingProtobufs__SgNBReleaseConfirm *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__SgNBReleaseConfirmIEs_Closure)
-                 (const Uenibstreamprotobuf__SgNBReleaseConfirmIEs *message,
+typedef void (*StreamingProtobufs__SgNBReleaseConfirmIEs_Closure)
+                 (const StreamingProtobufs__SgNBReleaseConfirmIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfList *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfList *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItem *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItem *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfItemExtIEs *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfItemExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPpresent *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresent *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs_Closure)
-                 (const Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs *message,
+typedef void (*StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs_Closure)
+                 (const StreamingProtobufs__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotpresentExtIEs *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -316,14 +316,14 @@ typedef void (*Uenibstreamprotobuf__ERABsToBeReleasedSgNBRelConfSgNBPDCPnotprese
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbrelease_confirm__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbrelease_confirm__ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf_list__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sg_nbrelease_confirm__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sg_nbrelease_confirm__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf_list__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__item_ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcppresent__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__e__rabs__to_be_released__sg_nbrel_conf__sg_nbpdcpnotpresent_ext_ies__descriptor;
 
 PROTOBUF_C__END_DECLS
 

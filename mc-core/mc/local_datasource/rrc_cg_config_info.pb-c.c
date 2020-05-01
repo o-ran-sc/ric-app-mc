@@ -7,1172 +7,1172 @@
 #endif
 
 #include "rrc_cg_config_info.pb-c.h"
-void   uenibstreamprotobuf__cg__config_info__init
-                     (Uenibstreamprotobuf__CGConfigInfo         *message)
+void   streaming_protobufs__cg__config_info__init
+                     (StreamingProtobufs__CGConfigInfo         *message)
 {
-  static const Uenibstreamprotobuf__CGConfigInfo init_value = UENIBSTREAMPROTOBUF__CG__CONFIG_INFO__INIT;
+  static const StreamingProtobufs__CGConfigInfo init_value = STREAMING_PROTOBUFS__CG__CONFIG_INFO__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__cg__config_info__get_packed_size
-                     (const Uenibstreamprotobuf__CGConfigInfo *message)
+size_t streaming_protobufs__cg__config_info__get_packed_size
+                     (const StreamingProtobufs__CGConfigInfo *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__cg__config_info__pack
-                     (const Uenibstreamprotobuf__CGConfigInfo *message,
+size_t streaming_protobufs__cg__config_info__pack
+                     (const StreamingProtobufs__CGConfigInfo *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__cg__config_info__pack_to_buffer
-                     (const Uenibstreamprotobuf__CGConfigInfo *message,
+size_t streaming_protobufs__cg__config_info__pack_to_buffer
+                     (const StreamingProtobufs__CGConfigInfo *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__CGConfigInfo *
-       uenibstreamprotobuf__cg__config_info__unpack
+StreamingProtobufs__CGConfigInfo *
+       streaming_protobufs__cg__config_info__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__CGConfigInfo *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__cg__config_info__descriptor,
+  return (StreamingProtobufs__CGConfigInfo *)
+     protobuf_c_message_unpack (&streaming_protobufs__cg__config_info__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__cg__config_info__free_unpacked
-                     (Uenibstreamprotobuf__CGConfigInfo *message,
+void   streaming_protobufs__cg__config_info__free_unpacked
+                     (StreamingProtobufs__CGConfigInfo *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__init
-                     (Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1         *message)
+void   streaming_protobufs__cg__config_info_critical_extensions_choice1__init
+                     (StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1         *message)
 {
-  static const Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 init_value = UENIBSTREAMPROTOBUF__CG__CONFIG_INFO_CRITICAL_EXTENSIONS_CHOICE1__INIT;
+  static const StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 init_value = STREAMING_PROTOBUFS__CG__CONFIG_INFO_CRITICAL_EXTENSIONS_CHOICE1__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__get_packed_size
-                     (const Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *message)
+size_t streaming_protobufs__cg__config_info_critical_extensions_choice1__get_packed_size
+                     (const StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info_critical_extensions_choice1__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__pack
-                     (const Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *message,
+size_t streaming_protobufs__cg__config_info_critical_extensions_choice1__pack
+                     (const StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info_critical_extensions_choice1__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__pack_to_buffer
-                     (const Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *message,
+size_t streaming_protobufs__cg__config_info_critical_extensions_choice1__pack_to_buffer
+                     (const StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info_critical_extensions_choice1__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *
-       uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__unpack
+StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *
+       streaming_protobufs__cg__config_info_critical_extensions_choice1__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__descriptor,
+  return (StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *)
+     protobuf_c_message_unpack (&streaming_protobufs__cg__config_info_critical_extensions_choice1__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__free_unpacked
-                     (Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1 *message,
+void   streaming_protobufs__cg__config_info_critical_extensions_choice1__free_unpacked
+                     (StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1 *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info_critical_extensions_choice1__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__cg__config_info__ies__init
-                     (Uenibstreamprotobuf__CGConfigInfoIEs         *message)
+void   streaming_protobufs__cg__config_info__ies__init
+                     (StreamingProtobufs__CGConfigInfoIEs         *message)
 {
-  static const Uenibstreamprotobuf__CGConfigInfoIEs init_value = UENIBSTREAMPROTOBUF__CG__CONFIG_INFO__IES__INIT;
+  static const StreamingProtobufs__CGConfigInfoIEs init_value = STREAMING_PROTOBUFS__CG__CONFIG_INFO__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__cg__config_info__ies__get_packed_size
-                     (const Uenibstreamprotobuf__CGConfigInfoIEs *message)
+size_t streaming_protobufs__cg__config_info__ies__get_packed_size
+                     (const StreamingProtobufs__CGConfigInfoIEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__cg__config_info__ies__pack
-                     (const Uenibstreamprotobuf__CGConfigInfoIEs *message,
+size_t streaming_protobufs__cg__config_info__ies__pack
+                     (const StreamingProtobufs__CGConfigInfoIEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__cg__config_info__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__CGConfigInfoIEs *message,
+size_t streaming_protobufs__cg__config_info__ies__pack_to_buffer
+                     (const StreamingProtobufs__CGConfigInfoIEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__CGConfigInfoIEs *
-       uenibstreamprotobuf__cg__config_info__ies__unpack
+StreamingProtobufs__CGConfigInfoIEs *
+       streaming_protobufs__cg__config_info__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__CGConfigInfoIEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__cg__config_info__ies__descriptor,
+  return (StreamingProtobufs__CGConfigInfoIEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__cg__config_info__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__cg__config_info__ies__free_unpacked
-                     (Uenibstreamprotobuf__CGConfigInfoIEs *message,
+void   streaming_protobufs__cg__config_info__ies__free_unpacked
+                     (StreamingProtobufs__CGConfigInfoIEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__ue__capability_rat__container__init
-                     (Uenibstreamprotobuf__UECapabilityRATContainer         *message)
+void   streaming_protobufs__ue__capability_rat__container__init
+                     (StreamingProtobufs__UECapabilityRATContainer         *message)
 {
-  static const Uenibstreamprotobuf__UECapabilityRATContainer init_value = UENIBSTREAMPROTOBUF__UE__CAPABILITY_RAT__CONTAINER__INIT;
+  static const StreamingProtobufs__UECapabilityRATContainer init_value = STREAMING_PROTOBUFS__UE__CAPABILITY_RAT__CONTAINER__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__ue__capability_rat__container__get_packed_size
-                     (const Uenibstreamprotobuf__UECapabilityRATContainer *message)
+size_t streaming_protobufs__ue__capability_rat__container__get_packed_size
+                     (const StreamingProtobufs__UECapabilityRATContainer *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ue__capability_rat__container__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ue__capability_rat__container__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__ue__capability_rat__container__pack
-                     (const Uenibstreamprotobuf__UECapabilityRATContainer *message,
+size_t streaming_protobufs__ue__capability_rat__container__pack
+                     (const StreamingProtobufs__UECapabilityRATContainer *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ue__capability_rat__container__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ue__capability_rat__container__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__ue__capability_rat__container__pack_to_buffer
-                     (const Uenibstreamprotobuf__UECapabilityRATContainer *message,
+size_t streaming_protobufs__ue__capability_rat__container__pack_to_buffer
+                     (const StreamingProtobufs__UECapabilityRATContainer *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ue__capability_rat__container__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ue__capability_rat__container__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__UECapabilityRATContainer *
-       uenibstreamprotobuf__ue__capability_rat__container__unpack
+StreamingProtobufs__UECapabilityRATContainer *
+       streaming_protobufs__ue__capability_rat__container__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__UECapabilityRATContainer *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__ue__capability_rat__container__descriptor,
+  return (StreamingProtobufs__UECapabilityRATContainer *)
+     protobuf_c_message_unpack (&streaming_protobufs__ue__capability_rat__container__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__ue__capability_rat__container__free_unpacked
-                     (Uenibstreamprotobuf__UECapabilityRATContainer *message,
+void   streaming_protobufs__ue__capability_rat__container__free_unpacked
+                     (StreamingProtobufs__UECapabilityRATContainer *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__ue__capability_rat__container__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ue__capability_rat__container__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__rat__type__init
-                     (Uenibstreamprotobuf__RATType         *message)
+void   streaming_protobufs__rat__type__init
+                     (StreamingProtobufs__RATType         *message)
 {
-  static const Uenibstreamprotobuf__RATType init_value = UENIBSTREAMPROTOBUF__RAT__TYPE__INIT;
+  static const StreamingProtobufs__RATType init_value = STREAMING_PROTOBUFS__RAT__TYPE__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__rat__type__get_packed_size
-                     (const Uenibstreamprotobuf__RATType *message)
+size_t streaming_protobufs__rat__type__get_packed_size
+                     (const StreamingProtobufs__RATType *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rat__type__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rat__type__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__rat__type__pack
-                     (const Uenibstreamprotobuf__RATType *message,
+size_t streaming_protobufs__rat__type__pack
+                     (const StreamingProtobufs__RATType *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rat__type__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rat__type__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__rat__type__pack_to_buffer
-                     (const Uenibstreamprotobuf__RATType *message,
+size_t streaming_protobufs__rat__type__pack_to_buffer
+                     (const StreamingProtobufs__RATType *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__rat__type__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rat__type__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__RATType *
-       uenibstreamprotobuf__rat__type__unpack
+StreamingProtobufs__RATType *
+       streaming_protobufs__rat__type__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__RATType *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__rat__type__descriptor,
+  return (StreamingProtobufs__RATType *)
+     protobuf_c_message_unpack (&streaming_protobufs__rat__type__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__rat__type__free_unpacked
-                     (Uenibstreamprotobuf__RATType *message,
+void   streaming_protobufs__rat__type__free_unpacked
+                     (StreamingProtobufs__RATType *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__rat__type__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__rat__type__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__scg_failure_info__init
-                     (Uenibstreamprotobuf__ScgFailureInfo         *message)
+void   streaming_protobufs__scg_failure_info__init
+                     (StreamingProtobufs__ScgFailureInfo         *message)
 {
-  static const Uenibstreamprotobuf__ScgFailureInfo init_value = UENIBSTREAMPROTOBUF__SCG_FAILURE_INFO__INIT;
+  static const StreamingProtobufs__ScgFailureInfo init_value = STREAMING_PROTOBUFS__SCG_FAILURE_INFO__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__scg_failure_info__get_packed_size
-                     (const Uenibstreamprotobuf__ScgFailureInfo *message)
+size_t streaming_protobufs__scg_failure_info__get_packed_size
+                     (const StreamingProtobufs__ScgFailureInfo *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__scg_failure_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__scg_failure_info__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__scg_failure_info__pack
-                     (const Uenibstreamprotobuf__ScgFailureInfo *message,
+size_t streaming_protobufs__scg_failure_info__pack
+                     (const StreamingProtobufs__ScgFailureInfo *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__scg_failure_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__scg_failure_info__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__scg_failure_info__pack_to_buffer
-                     (const Uenibstreamprotobuf__ScgFailureInfo *message,
+size_t streaming_protobufs__scg_failure_info__pack_to_buffer
+                     (const StreamingProtobufs__ScgFailureInfo *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__scg_failure_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__scg_failure_info__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ScgFailureInfo *
-       uenibstreamprotobuf__scg_failure_info__unpack
+StreamingProtobufs__ScgFailureInfo *
+       streaming_protobufs__scg_failure_info__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ScgFailureInfo *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__scg_failure_info__descriptor,
+  return (StreamingProtobufs__ScgFailureInfo *)
+     protobuf_c_message_unpack (&streaming_protobufs__scg_failure_info__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__scg_failure_info__free_unpacked
-                     (Uenibstreamprotobuf__ScgFailureInfo *message,
+void   streaming_protobufs__scg_failure_info__free_unpacked
+                     (StreamingProtobufs__ScgFailureInfo *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__scg_failure_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__scg_failure_info__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__meas_result_scg__failure__init
-                     (Uenibstreamprotobuf__MeasResultSCGFailure         *message)
+void   streaming_protobufs__meas_result_scg__failure__init
+                     (StreamingProtobufs__MeasResultSCGFailure         *message)
 {
-  static const Uenibstreamprotobuf__MeasResultSCGFailure init_value = UENIBSTREAMPROTOBUF__MEAS_RESULT_SCG__FAILURE__INIT;
+  static const StreamingProtobufs__MeasResultSCGFailure init_value = STREAMING_PROTOBUFS__MEAS_RESULT_SCG__FAILURE__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__meas_result_scg__failure__get_packed_size
-                     (const Uenibstreamprotobuf__MeasResultSCGFailure *message)
+size_t streaming_protobufs__meas_result_scg__failure__get_packed_size
+                     (const StreamingProtobufs__MeasResultSCGFailure *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_result_scg__failure__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_result_scg__failure__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__meas_result_scg__failure__pack
-                     (const Uenibstreamprotobuf__MeasResultSCGFailure *message,
+size_t streaming_protobufs__meas_result_scg__failure__pack
+                     (const StreamingProtobufs__MeasResultSCGFailure *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_result_scg__failure__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_result_scg__failure__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__meas_result_scg__failure__pack_to_buffer
-                     (const Uenibstreamprotobuf__MeasResultSCGFailure *message,
+size_t streaming_protobufs__meas_result_scg__failure__pack_to_buffer
+                     (const StreamingProtobufs__MeasResultSCGFailure *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_result_scg__failure__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_result_scg__failure__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__MeasResultSCGFailure *
-       uenibstreamprotobuf__meas_result_scg__failure__unpack
+StreamingProtobufs__MeasResultSCGFailure *
+       streaming_protobufs__meas_result_scg__failure__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__MeasResultSCGFailure *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__meas_result_scg__failure__descriptor,
+  return (StreamingProtobufs__MeasResultSCGFailure *)
+     protobuf_c_message_unpack (&streaming_protobufs__meas_result_scg__failure__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__meas_result_scg__failure__free_unpacked
-                     (Uenibstreamprotobuf__MeasResultSCGFailure *message,
+void   streaming_protobufs__meas_result_scg__failure__free_unpacked
+                     (StreamingProtobufs__MeasResultSCGFailure *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_result_scg__failure__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_result_scg__failure__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__config_restrict_info_scg__init
-                     (Uenibstreamprotobuf__ConfigRestrictInfoSCG         *message)
+void   streaming_protobufs__config_restrict_info_scg__init
+                     (StreamingProtobufs__ConfigRestrictInfoSCG         *message)
 {
-  static const Uenibstreamprotobuf__ConfigRestrictInfoSCG init_value = UENIBSTREAMPROTOBUF__CONFIG_RESTRICT_INFO_SCG__INIT;
+  static const StreamingProtobufs__ConfigRestrictInfoSCG init_value = STREAMING_PROTOBUFS__CONFIG_RESTRICT_INFO_SCG__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__config_restrict_info_scg__get_packed_size
-                     (const Uenibstreamprotobuf__ConfigRestrictInfoSCG *message)
+size_t streaming_protobufs__config_restrict_info_scg__get_packed_size
+                     (const StreamingProtobufs__ConfigRestrictInfoSCG *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__config_restrict_info_scg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__config_restrict_info_scg__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__config_restrict_info_scg__pack
-                     (const Uenibstreamprotobuf__ConfigRestrictInfoSCG *message,
+size_t streaming_protobufs__config_restrict_info_scg__pack
+                     (const StreamingProtobufs__ConfigRestrictInfoSCG *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__config_restrict_info_scg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__config_restrict_info_scg__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__config_restrict_info_scg__pack_to_buffer
-                     (const Uenibstreamprotobuf__ConfigRestrictInfoSCG *message,
+size_t streaming_protobufs__config_restrict_info_scg__pack_to_buffer
+                     (const StreamingProtobufs__ConfigRestrictInfoSCG *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__config_restrict_info_scg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__config_restrict_info_scg__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ConfigRestrictInfoSCG *
-       uenibstreamprotobuf__config_restrict_info_scg__unpack
+StreamingProtobufs__ConfigRestrictInfoSCG *
+       streaming_protobufs__config_restrict_info_scg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ConfigRestrictInfoSCG *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__config_restrict_info_scg__descriptor,
+  return (StreamingProtobufs__ConfigRestrictInfoSCG *)
+     protobuf_c_message_unpack (&streaming_protobufs__config_restrict_info_scg__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__config_restrict_info_scg__free_unpacked
-                     (Uenibstreamprotobuf__ConfigRestrictInfoSCG *message,
+void   streaming_protobufs__config_restrict_info_scg__free_unpacked
+                     (StreamingProtobufs__ConfigRestrictInfoSCG *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__config_restrict_info_scg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__config_restrict_info_scg__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__band_combination_info_list__init
-                     (Uenibstreamprotobuf__BandCombinationInfoList         *message)
+void   streaming_protobufs__band_combination_info_list__init
+                     (StreamingProtobufs__BandCombinationInfoList         *message)
 {
-  static const Uenibstreamprotobuf__BandCombinationInfoList init_value = UENIBSTREAMPROTOBUF__BAND_COMBINATION_INFO_LIST__INIT;
+  static const StreamingProtobufs__BandCombinationInfoList init_value = STREAMING_PROTOBUFS__BAND_COMBINATION_INFO_LIST__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__band_combination_info_list__get_packed_size
-                     (const Uenibstreamprotobuf__BandCombinationInfoList *message)
+size_t streaming_protobufs__band_combination_info_list__get_packed_size
+                     (const StreamingProtobufs__BandCombinationInfoList *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__band_combination_info_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__band_combination_info_list__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__band_combination_info_list__pack
-                     (const Uenibstreamprotobuf__BandCombinationInfoList *message,
+size_t streaming_protobufs__band_combination_info_list__pack
+                     (const StreamingProtobufs__BandCombinationInfoList *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__band_combination_info_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__band_combination_info_list__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__band_combination_info_list__pack_to_buffer
-                     (const Uenibstreamprotobuf__BandCombinationInfoList *message,
+size_t streaming_protobufs__band_combination_info_list__pack_to_buffer
+                     (const StreamingProtobufs__BandCombinationInfoList *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__band_combination_info_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__band_combination_info_list__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__BandCombinationInfoList *
-       uenibstreamprotobuf__band_combination_info_list__unpack
+StreamingProtobufs__BandCombinationInfoList *
+       streaming_protobufs__band_combination_info_list__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__BandCombinationInfoList *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__band_combination_info_list__descriptor,
+  return (StreamingProtobufs__BandCombinationInfoList *)
+     protobuf_c_message_unpack (&streaming_protobufs__band_combination_info_list__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__band_combination_info_list__free_unpacked
-                     (Uenibstreamprotobuf__BandCombinationInfoList *message,
+void   streaming_protobufs__band_combination_info_list__free_unpacked
+                     (StreamingProtobufs__BandCombinationInfoList *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__band_combination_info_list__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__band_combination_info_list__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__band_combination_info__init
-                     (Uenibstreamprotobuf__BandCombinationInfo         *message)
+void   streaming_protobufs__band_combination_info__init
+                     (StreamingProtobufs__BandCombinationInfo         *message)
 {
-  static const Uenibstreamprotobuf__BandCombinationInfo init_value = UENIBSTREAMPROTOBUF__BAND_COMBINATION_INFO__INIT;
+  static const StreamingProtobufs__BandCombinationInfo init_value = STREAMING_PROTOBUFS__BAND_COMBINATION_INFO__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__band_combination_info__get_packed_size
-                     (const Uenibstreamprotobuf__BandCombinationInfo *message)
+size_t streaming_protobufs__band_combination_info__get_packed_size
+                     (const StreamingProtobufs__BandCombinationInfo *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__band_combination_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__band_combination_info__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__band_combination_info__pack
-                     (const Uenibstreamprotobuf__BandCombinationInfo *message,
+size_t streaming_protobufs__band_combination_info__pack
+                     (const StreamingProtobufs__BandCombinationInfo *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__band_combination_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__band_combination_info__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__band_combination_info__pack_to_buffer
-                     (const Uenibstreamprotobuf__BandCombinationInfo *message,
+size_t streaming_protobufs__band_combination_info__pack_to_buffer
+                     (const StreamingProtobufs__BandCombinationInfo *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__band_combination_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__band_combination_info__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__BandCombinationInfo *
-       uenibstreamprotobuf__band_combination_info__unpack
+StreamingProtobufs__BandCombinationInfo *
+       streaming_protobufs__band_combination_info__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__BandCombinationInfo *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__band_combination_info__descriptor,
+  return (StreamingProtobufs__BandCombinationInfo *)
+     protobuf_c_message_unpack (&streaming_protobufs__band_combination_info__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__band_combination_info__free_unpacked
-                     (Uenibstreamprotobuf__BandCombinationInfo *message,
+void   streaming_protobufs__band_combination_info__free_unpacked
+                     (StreamingProtobufs__BandCombinationInfo *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__band_combination_info__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__band_combination_info__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__power_coordination__fr1__init
-                     (Uenibstreamprotobuf__PowerCoordinationFR1         *message)
+void   streaming_protobufs__power_coordination__fr1__init
+                     (StreamingProtobufs__PowerCoordinationFR1         *message)
 {
-  static const Uenibstreamprotobuf__PowerCoordinationFR1 init_value = UENIBSTREAMPROTOBUF__POWER_COORDINATION__FR1__INIT;
+  static const StreamingProtobufs__PowerCoordinationFR1 init_value = STREAMING_PROTOBUFS__POWER_COORDINATION__FR1__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__power_coordination__fr1__get_packed_size
-                     (const Uenibstreamprotobuf__PowerCoordinationFR1 *message)
+size_t streaming_protobufs__power_coordination__fr1__get_packed_size
+                     (const StreamingProtobufs__PowerCoordinationFR1 *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__power_coordination__fr1__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__power_coordination__fr1__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__power_coordination__fr1__pack
-                     (const Uenibstreamprotobuf__PowerCoordinationFR1 *message,
+size_t streaming_protobufs__power_coordination__fr1__pack
+                     (const StreamingProtobufs__PowerCoordinationFR1 *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__power_coordination__fr1__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__power_coordination__fr1__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__power_coordination__fr1__pack_to_buffer
-                     (const Uenibstreamprotobuf__PowerCoordinationFR1 *message,
+size_t streaming_protobufs__power_coordination__fr1__pack_to_buffer
+                     (const StreamingProtobufs__PowerCoordinationFR1 *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__power_coordination__fr1__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__power_coordination__fr1__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__PowerCoordinationFR1 *
-       uenibstreamprotobuf__power_coordination__fr1__unpack
+StreamingProtobufs__PowerCoordinationFR1 *
+       streaming_protobufs__power_coordination__fr1__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__PowerCoordinationFR1 *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__power_coordination__fr1__descriptor,
+  return (StreamingProtobufs__PowerCoordinationFR1 *)
+     protobuf_c_message_unpack (&streaming_protobufs__power_coordination__fr1__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__power_coordination__fr1__free_unpacked
-                     (Uenibstreamprotobuf__PowerCoordinationFR1 *message,
+void   streaming_protobufs__power_coordination__fr1__free_unpacked
+                     (StreamingProtobufs__PowerCoordinationFR1 *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__power_coordination__fr1__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__power_coordination__fr1__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__serv_cell_index_range_scg__init
-                     (Uenibstreamprotobuf__ServCellIndexRangeSCG         *message)
+void   streaming_protobufs__serv_cell_index_range_scg__init
+                     (StreamingProtobufs__ServCellIndexRangeSCG         *message)
 {
-  static const Uenibstreamprotobuf__ServCellIndexRangeSCG init_value = UENIBSTREAMPROTOBUF__SERV_CELL_INDEX_RANGE_SCG__INIT;
+  static const StreamingProtobufs__ServCellIndexRangeSCG init_value = STREAMING_PROTOBUFS__SERV_CELL_INDEX_RANGE_SCG__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__serv_cell_index_range_scg__get_packed_size
-                     (const Uenibstreamprotobuf__ServCellIndexRangeSCG *message)
+size_t streaming_protobufs__serv_cell_index_range_scg__get_packed_size
+                     (const StreamingProtobufs__ServCellIndexRangeSCG *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__serv_cell_index_range_scg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__serv_cell_index_range_scg__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__serv_cell_index_range_scg__pack
-                     (const Uenibstreamprotobuf__ServCellIndexRangeSCG *message,
+size_t streaming_protobufs__serv_cell_index_range_scg__pack
+                     (const StreamingProtobufs__ServCellIndexRangeSCG *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__serv_cell_index_range_scg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__serv_cell_index_range_scg__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__serv_cell_index_range_scg__pack_to_buffer
-                     (const Uenibstreamprotobuf__ServCellIndexRangeSCG *message,
+size_t streaming_protobufs__serv_cell_index_range_scg__pack_to_buffer
+                     (const StreamingProtobufs__ServCellIndexRangeSCG *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__serv_cell_index_range_scg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__serv_cell_index_range_scg__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__ServCellIndexRangeSCG *
-       uenibstreamprotobuf__serv_cell_index_range_scg__unpack
+StreamingProtobufs__ServCellIndexRangeSCG *
+       streaming_protobufs__serv_cell_index_range_scg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__ServCellIndexRangeSCG *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__serv_cell_index_range_scg__descriptor,
+  return (StreamingProtobufs__ServCellIndexRangeSCG *)
+     protobuf_c_message_unpack (&streaming_protobufs__serv_cell_index_range_scg__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__serv_cell_index_range_scg__free_unpacked
-                     (Uenibstreamprotobuf__ServCellIndexRangeSCG *message,
+void   streaming_protobufs__serv_cell_index_range_scg__free_unpacked
+                     (StreamingProtobufs__ServCellIndexRangeSCG *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__serv_cell_index_range_scg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__serv_cell_index_range_scg__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__meas_config_mn__init
-                     (Uenibstreamprotobuf__MeasConfigMN         *message)
+void   streaming_protobufs__meas_config_mn__init
+                     (StreamingProtobufs__MeasConfigMN         *message)
 {
-  static const Uenibstreamprotobuf__MeasConfigMN init_value = UENIBSTREAMPROTOBUF__MEAS_CONFIG_MN__INIT;
+  static const StreamingProtobufs__MeasConfigMN init_value = STREAMING_PROTOBUFS__MEAS_CONFIG_MN__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__meas_config_mn__get_packed_size
-                     (const Uenibstreamprotobuf__MeasConfigMN *message)
+size_t streaming_protobufs__meas_config_mn__get_packed_size
+                     (const StreamingProtobufs__MeasConfigMN *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_config_mn__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_config_mn__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__meas_config_mn__pack
-                     (const Uenibstreamprotobuf__MeasConfigMN *message,
+size_t streaming_protobufs__meas_config_mn__pack
+                     (const StreamingProtobufs__MeasConfigMN *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_config_mn__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_config_mn__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__meas_config_mn__pack_to_buffer
-                     (const Uenibstreamprotobuf__MeasConfigMN *message,
+size_t streaming_protobufs__meas_config_mn__pack_to_buffer
+                     (const StreamingProtobufs__MeasConfigMN *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_config_mn__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_config_mn__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__MeasConfigMN *
-       uenibstreamprotobuf__meas_config_mn__unpack
+StreamingProtobufs__MeasConfigMN *
+       streaming_protobufs__meas_config_mn__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__MeasConfigMN *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__meas_config_mn__descriptor,
+  return (StreamingProtobufs__MeasConfigMN *)
+     protobuf_c_message_unpack (&streaming_protobufs__meas_config_mn__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__meas_config_mn__free_unpacked
-                     (Uenibstreamprotobuf__MeasConfigMN *message,
+void   streaming_protobufs__meas_config_mn__free_unpacked
+                     (StreamingProtobufs__MeasConfigMN *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_config_mn__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_config_mn__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__gap_purpose__init
-                     (Uenibstreamprotobuf__GapPurpose         *message)
+void   streaming_protobufs__gap_purpose__init
+                     (StreamingProtobufs__GapPurpose         *message)
 {
-  static const Uenibstreamprotobuf__GapPurpose init_value = UENIBSTREAMPROTOBUF__GAP_PURPOSE__INIT;
+  static const StreamingProtobufs__GapPurpose init_value = STREAMING_PROTOBUFS__GAP_PURPOSE__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__gap_purpose__get_packed_size
-                     (const Uenibstreamprotobuf__GapPurpose *message)
+size_t streaming_protobufs__gap_purpose__get_packed_size
+                     (const StreamingProtobufs__GapPurpose *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__gap_purpose__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__gap_purpose__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__gap_purpose__pack
-                     (const Uenibstreamprotobuf__GapPurpose *message,
+size_t streaming_protobufs__gap_purpose__pack
+                     (const StreamingProtobufs__GapPurpose *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__gap_purpose__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__gap_purpose__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__gap_purpose__pack_to_buffer
-                     (const Uenibstreamprotobuf__GapPurpose *message,
+size_t streaming_protobufs__gap_purpose__pack_to_buffer
+                     (const StreamingProtobufs__GapPurpose *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__gap_purpose__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__gap_purpose__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__GapPurpose *
-       uenibstreamprotobuf__gap_purpose__unpack
+StreamingProtobufs__GapPurpose *
+       streaming_protobufs__gap_purpose__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__GapPurpose *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__gap_purpose__descriptor,
+  return (StreamingProtobufs__GapPurpose *)
+     protobuf_c_message_unpack (&streaming_protobufs__gap_purpose__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__gap_purpose__free_unpacked
-                     (Uenibstreamprotobuf__GapPurpose *message,
+void   streaming_protobufs__gap_purpose__free_unpacked
+                     (StreamingProtobufs__GapPurpose *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__gap_purpose__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__gap_purpose__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__init
-                     (Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC         *message)
+void   streaming_protobufs__affected_carrier_freq_comb_info_mrdc__init
+                     (StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC         *message)
 {
-  static const Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC init_value = UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INIT;
+  static const StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC init_value = STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__get_packed_size
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC *message)
+size_t streaming_protobufs__affected_carrier_freq_comb_info_mrdc__get_packed_size
+                     (const StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_info_mrdc__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__pack
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC *message,
+size_t streaming_protobufs__affected_carrier_freq_comb_info_mrdc__pack
+                     (const StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_info_mrdc__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__pack_to_buffer
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC *message,
+size_t streaming_protobufs__affected_carrier_freq_comb_info_mrdc__pack_to_buffer
+                     (const StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_info_mrdc__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC *
-       uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__unpack
+StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC *
+       streaming_protobufs__affected_carrier_freq_comb_info_mrdc__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__descriptor,
+  return (StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC *)
+     protobuf_c_message_unpack (&streaming_protobufs__affected_carrier_freq_comb_info_mrdc__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__free_unpacked
-                     (Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC *message,
+void   streaming_protobufs__affected_carrier_freq_comb_info_mrdc__free_unpacked
+                     (StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_info_mrdc__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__victim_system_type__init
-                     (Uenibstreamprotobuf__VictimSystemType         *message)
+void   streaming_protobufs__victim_system_type__init
+                     (StreamingProtobufs__VictimSystemType         *message)
 {
-  static const Uenibstreamprotobuf__VictimSystemType init_value = UENIBSTREAMPROTOBUF__VICTIM_SYSTEM_TYPE__INIT;
+  static const StreamingProtobufs__VictimSystemType init_value = STREAMING_PROTOBUFS__VICTIM_SYSTEM_TYPE__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__victim_system_type__get_packed_size
-                     (const Uenibstreamprotobuf__VictimSystemType *message)
+size_t streaming_protobufs__victim_system_type__get_packed_size
+                     (const StreamingProtobufs__VictimSystemType *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__victim_system_type__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__victim_system_type__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__victim_system_type__pack
-                     (const Uenibstreamprotobuf__VictimSystemType *message,
+size_t streaming_protobufs__victim_system_type__pack
+                     (const StreamingProtobufs__VictimSystemType *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__victim_system_type__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__victim_system_type__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__victim_system_type__pack_to_buffer
-                     (const Uenibstreamprotobuf__VictimSystemType *message,
+size_t streaming_protobufs__victim_system_type__pack_to_buffer
+                     (const StreamingProtobufs__VictimSystemType *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__victim_system_type__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__victim_system_type__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__VictimSystemType *
-       uenibstreamprotobuf__victim_system_type__unpack
+StreamingProtobufs__VictimSystemType *
+       streaming_protobufs__victim_system_type__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__VictimSystemType *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__victim_system_type__descriptor,
+  return (StreamingProtobufs__VictimSystemType *)
+     protobuf_c_message_unpack (&streaming_protobufs__victim_system_type__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__victim_system_type__free_unpacked
-                     (Uenibstreamprotobuf__VictimSystemType *message,
+void   streaming_protobufs__victim_system_type__free_unpacked
+                     (StreamingProtobufs__VictimSystemType *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__victim_system_type__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__victim_system_type__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__init
-                     (Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC         *message)
+void   streaming_protobufs__affected_carrier_freq_comb_mrdc__init
+                     (StreamingProtobufs__AffectedCarrierFreqCombMRDC         *message)
 {
-  static const Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC init_value = UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_MRDC__INIT;
+  static const StreamingProtobufs__AffectedCarrierFreqCombMRDC init_value = STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_MRDC__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__get_packed_size
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC *message)
+size_t streaming_protobufs__affected_carrier_freq_comb_mrdc__get_packed_size
+                     (const StreamingProtobufs__AffectedCarrierFreqCombMRDC *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_mrdc__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__pack
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC *message,
+size_t streaming_protobufs__affected_carrier_freq_comb_mrdc__pack
+                     (const StreamingProtobufs__AffectedCarrierFreqCombMRDC *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_mrdc__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__pack_to_buffer
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC *message,
+size_t streaming_protobufs__affected_carrier_freq_comb_mrdc__pack_to_buffer
+                     (const StreamingProtobufs__AffectedCarrierFreqCombMRDC *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_mrdc__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC *
-       uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__unpack
+StreamingProtobufs__AffectedCarrierFreqCombMRDC *
+       streaming_protobufs__affected_carrier_freq_comb_mrdc__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__descriptor,
+  return (StreamingProtobufs__AffectedCarrierFreqCombMRDC *)
+     protobuf_c_message_unpack (&streaming_protobufs__affected_carrier_freq_comb_mrdc__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__free_unpacked
-                     (Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC *message,
+void   streaming_protobufs__affected_carrier_freq_comb_mrdc__free_unpacked
+                     (StreamingProtobufs__AffectedCarrierFreqCombMRDC *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_mrdc__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__affected_carrier_freq_comb_eutra__init
-                     (Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA         *message)
+void   streaming_protobufs__affected_carrier_freq_comb_eutra__init
+                     (StreamingProtobufs__AffectedCarrierFreqCombEUTRA         *message)
 {
-  static const Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA init_value = UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_EUTRA__INIT;
+  static const StreamingProtobufs__AffectedCarrierFreqCombEUTRA init_value = STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_EUTRA__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_eutra__get_packed_size
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA *message)
+size_t streaming_protobufs__affected_carrier_freq_comb_eutra__get_packed_size
+                     (const StreamingProtobufs__AffectedCarrierFreqCombEUTRA *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_eutra__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_eutra__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_eutra__pack
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA *message,
+size_t streaming_protobufs__affected_carrier_freq_comb_eutra__pack
+                     (const StreamingProtobufs__AffectedCarrierFreqCombEUTRA *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_eutra__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_eutra__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_eutra__pack_to_buffer
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA *message,
+size_t streaming_protobufs__affected_carrier_freq_comb_eutra__pack_to_buffer
+                     (const StreamingProtobufs__AffectedCarrierFreqCombEUTRA *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_eutra__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_eutra__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA *
-       uenibstreamprotobuf__affected_carrier_freq_comb_eutra__unpack
+StreamingProtobufs__AffectedCarrierFreqCombEUTRA *
+       streaming_protobufs__affected_carrier_freq_comb_eutra__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__affected_carrier_freq_comb_eutra__descriptor,
+  return (StreamingProtobufs__AffectedCarrierFreqCombEUTRA *)
+     protobuf_c_message_unpack (&streaming_protobufs__affected_carrier_freq_comb_eutra__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__affected_carrier_freq_comb_eutra__free_unpacked
-                     (Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA *message,
+void   streaming_protobufs__affected_carrier_freq_comb_eutra__free_unpacked
+                     (StreamingProtobufs__AffectedCarrierFreqCombEUTRA *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_eutra__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_eutra__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__affected_carrier_freq_comb_nr__init
-                     (Uenibstreamprotobuf__AffectedCarrierFreqCombNR         *message)
+void   streaming_protobufs__affected_carrier_freq_comb_nr__init
+                     (StreamingProtobufs__AffectedCarrierFreqCombNR         *message)
 {
-  static const Uenibstreamprotobuf__AffectedCarrierFreqCombNR init_value = UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_NR__INIT;
+  static const StreamingProtobufs__AffectedCarrierFreqCombNR init_value = STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_NR__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_nr__get_packed_size
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombNR *message)
+size_t streaming_protobufs__affected_carrier_freq_comb_nr__get_packed_size
+                     (const StreamingProtobufs__AffectedCarrierFreqCombNR *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_nr__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_nr__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_nr__pack
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombNR *message,
+size_t streaming_protobufs__affected_carrier_freq_comb_nr__pack
+                     (const StreamingProtobufs__AffectedCarrierFreqCombNR *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_nr__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_nr__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__affected_carrier_freq_comb_nr__pack_to_buffer
-                     (const Uenibstreamprotobuf__AffectedCarrierFreqCombNR *message,
+size_t streaming_protobufs__affected_carrier_freq_comb_nr__pack_to_buffer
+                     (const StreamingProtobufs__AffectedCarrierFreqCombNR *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_nr__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_nr__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__AffectedCarrierFreqCombNR *
-       uenibstreamprotobuf__affected_carrier_freq_comb_nr__unpack
+StreamingProtobufs__AffectedCarrierFreqCombNR *
+       streaming_protobufs__affected_carrier_freq_comb_nr__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__AffectedCarrierFreqCombNR *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__affected_carrier_freq_comb_nr__descriptor,
+  return (StreamingProtobufs__AffectedCarrierFreqCombNR *)
+     protobuf_c_message_unpack (&streaming_protobufs__affected_carrier_freq_comb_nr__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__affected_carrier_freq_comb_nr__free_unpacked
-                     (Uenibstreamprotobuf__AffectedCarrierFreqCombNR *message,
+void   streaming_protobufs__affected_carrier_freq_comb_nr__free_unpacked
+                     (StreamingProtobufs__AffectedCarrierFreqCombNR *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__affected_carrier_freq_comb_nr__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__affected_carrier_freq_comb_nr__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__cg__config_info_v1540__ies__init
-                     (Uenibstreamprotobuf__CGConfigInfoV1540IEs         *message)
+void   streaming_protobufs__cg__config_info_v1540__ies__init
+                     (StreamingProtobufs__CGConfigInfoV1540IEs         *message)
 {
-  static const Uenibstreamprotobuf__CGConfigInfoV1540IEs init_value = UENIBSTREAMPROTOBUF__CG__CONFIG_INFO_V1540__IES__INIT;
+  static const StreamingProtobufs__CGConfigInfoV1540IEs init_value = STREAMING_PROTOBUFS__CG__CONFIG_INFO_V1540__IES__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__cg__config_info_v1540__ies__get_packed_size
-                     (const Uenibstreamprotobuf__CGConfigInfoV1540IEs *message)
+size_t streaming_protobufs__cg__config_info_v1540__ies__get_packed_size
+                     (const StreamingProtobufs__CGConfigInfoV1540IEs *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info_v1540__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info_v1540__ies__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__cg__config_info_v1540__ies__pack
-                     (const Uenibstreamprotobuf__CGConfigInfoV1540IEs *message,
+size_t streaming_protobufs__cg__config_info_v1540__ies__pack
+                     (const StreamingProtobufs__CGConfigInfoV1540IEs *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info_v1540__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info_v1540__ies__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__cg__config_info_v1540__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__CGConfigInfoV1540IEs *message,
+size_t streaming_protobufs__cg__config_info_v1540__ies__pack_to_buffer
+                     (const StreamingProtobufs__CGConfigInfoV1540IEs *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info_v1540__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info_v1540__ies__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__CGConfigInfoV1540IEs *
-       uenibstreamprotobuf__cg__config_info_v1540__ies__unpack
+StreamingProtobufs__CGConfigInfoV1540IEs *
+       streaming_protobufs__cg__config_info_v1540__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__CGConfigInfoV1540IEs *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__cg__config_info_v1540__ies__descriptor,
+  return (StreamingProtobufs__CGConfigInfoV1540IEs *)
+     protobuf_c_message_unpack (&streaming_protobufs__cg__config_info_v1540__ies__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__cg__config_info_v1540__ies__free_unpacked
-                     (Uenibstreamprotobuf__CGConfigInfoV1540IEs *message,
+void   streaming_protobufs__cg__config_info_v1540__ies__free_unpacked
+                     (StreamingProtobufs__CGConfigInfoV1540IEs *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__cg__config_info_v1540__ies__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__cg__config_info_v1540__ies__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__ph__type_list_mcg__init
-                     (Uenibstreamprotobuf__PHTypeListMCG         *message)
+void   streaming_protobufs__ph__type_list_mcg__init
+                     (StreamingProtobufs__PHTypeListMCG         *message)
 {
-  static const Uenibstreamprotobuf__PHTypeListMCG init_value = UENIBSTREAMPROTOBUF__PH__TYPE_LIST_MCG__INIT;
+  static const StreamingProtobufs__PHTypeListMCG init_value = STREAMING_PROTOBUFS__PH__TYPE_LIST_MCG__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__ph__type_list_mcg__get_packed_size
-                     (const Uenibstreamprotobuf__PHTypeListMCG *message)
+size_t streaming_protobufs__ph__type_list_mcg__get_packed_size
+                     (const StreamingProtobufs__PHTypeListMCG *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__type_list_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__type_list_mcg__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__ph__type_list_mcg__pack
-                     (const Uenibstreamprotobuf__PHTypeListMCG *message,
+size_t streaming_protobufs__ph__type_list_mcg__pack
+                     (const StreamingProtobufs__PHTypeListMCG *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__type_list_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__type_list_mcg__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__ph__type_list_mcg__pack_to_buffer
-                     (const Uenibstreamprotobuf__PHTypeListMCG *message,
+size_t streaming_protobufs__ph__type_list_mcg__pack_to_buffer
+                     (const StreamingProtobufs__PHTypeListMCG *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__type_list_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__type_list_mcg__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__PHTypeListMCG *
-       uenibstreamprotobuf__ph__type_list_mcg__unpack
+StreamingProtobufs__PHTypeListMCG *
+       streaming_protobufs__ph__type_list_mcg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__PHTypeListMCG *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__ph__type_list_mcg__descriptor,
+  return (StreamingProtobufs__PHTypeListMCG *)
+     protobuf_c_message_unpack (&streaming_protobufs__ph__type_list_mcg__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__ph__type_list_mcg__free_unpacked
-                     (Uenibstreamprotobuf__PHTypeListMCG *message,
+void   streaming_protobufs__ph__type_list_mcg__free_unpacked
+                     (StreamingProtobufs__PHTypeListMCG *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__type_list_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__type_list_mcg__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__ph__info_mcg__init
-                     (Uenibstreamprotobuf__PHInfoMCG         *message)
+void   streaming_protobufs__ph__info_mcg__init
+                     (StreamingProtobufs__PHInfoMCG         *message)
 {
-  static const Uenibstreamprotobuf__PHInfoMCG init_value = UENIBSTREAMPROTOBUF__PH__INFO_MCG__INIT;
+  static const StreamingProtobufs__PHInfoMCG init_value = STREAMING_PROTOBUFS__PH__INFO_MCG__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__ph__info_mcg__get_packed_size
-                     (const Uenibstreamprotobuf__PHInfoMCG *message)
+size_t streaming_protobufs__ph__info_mcg__get_packed_size
+                     (const StreamingProtobufs__PHInfoMCG *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__info_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__info_mcg__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__ph__info_mcg__pack
-                     (const Uenibstreamprotobuf__PHInfoMCG *message,
+size_t streaming_protobufs__ph__info_mcg__pack
+                     (const StreamingProtobufs__PHInfoMCG *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__info_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__info_mcg__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__ph__info_mcg__pack_to_buffer
-                     (const Uenibstreamprotobuf__PHInfoMCG *message,
+size_t streaming_protobufs__ph__info_mcg__pack_to_buffer
+                     (const StreamingProtobufs__PHInfoMCG *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__info_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__info_mcg__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__PHInfoMCG *
-       uenibstreamprotobuf__ph__info_mcg__unpack
+StreamingProtobufs__PHInfoMCG *
+       streaming_protobufs__ph__info_mcg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__PHInfoMCG *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__ph__info_mcg__descriptor,
+  return (StreamingProtobufs__PHInfoMCG *)
+     protobuf_c_message_unpack (&streaming_protobufs__ph__info_mcg__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__ph__info_mcg__free_unpacked
-                     (Uenibstreamprotobuf__PHInfoMCG *message,
+void   streaming_protobufs__ph__info_mcg__free_unpacked
+                     (StreamingProtobufs__PHInfoMCG *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__info_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__info_mcg__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__ph__uplink_carrier_mcg__init
-                     (Uenibstreamprotobuf__PHUplinkCarrierMCG         *message)
+void   streaming_protobufs__ph__uplink_carrier_mcg__init
+                     (StreamingProtobufs__PHUplinkCarrierMCG         *message)
 {
-  static const Uenibstreamprotobuf__PHUplinkCarrierMCG init_value = UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_MCG__INIT;
+  static const StreamingProtobufs__PHUplinkCarrierMCG init_value = STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_MCG__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__ph__uplink_carrier_mcg__get_packed_size
-                     (const Uenibstreamprotobuf__PHUplinkCarrierMCG *message)
+size_t streaming_protobufs__ph__uplink_carrier_mcg__get_packed_size
+                     (const StreamingProtobufs__PHUplinkCarrierMCG *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__uplink_carrier_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__uplink_carrier_mcg__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__ph__uplink_carrier_mcg__pack
-                     (const Uenibstreamprotobuf__PHUplinkCarrierMCG *message,
+size_t streaming_protobufs__ph__uplink_carrier_mcg__pack
+                     (const StreamingProtobufs__PHUplinkCarrierMCG *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__uplink_carrier_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__uplink_carrier_mcg__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__ph__uplink_carrier_mcg__pack_to_buffer
-                     (const Uenibstreamprotobuf__PHUplinkCarrierMCG *message,
+size_t streaming_protobufs__ph__uplink_carrier_mcg__pack_to_buffer
+                     (const StreamingProtobufs__PHUplinkCarrierMCG *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__uplink_carrier_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__uplink_carrier_mcg__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__PHUplinkCarrierMCG *
-       uenibstreamprotobuf__ph__uplink_carrier_mcg__unpack
+StreamingProtobufs__PHUplinkCarrierMCG *
+       streaming_protobufs__ph__uplink_carrier_mcg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__PHUplinkCarrierMCG *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__ph__uplink_carrier_mcg__descriptor,
+  return (StreamingProtobufs__PHUplinkCarrierMCG *)
+     protobuf_c_message_unpack (&streaming_protobufs__ph__uplink_carrier_mcg__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__ph__uplink_carrier_mcg__free_unpacked
-                     (Uenibstreamprotobuf__PHUplinkCarrierMCG *message,
+void   streaming_protobufs__ph__uplink_carrier_mcg__free_unpacked
+                     (StreamingProtobufs__PHUplinkCarrierMCG *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__ph__uplink_carrier_mcg__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__ph__uplink_carrier_mcg__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-void   uenibstreamprotobuf__meas_result_report_cgi__init
-                     (Uenibstreamprotobuf__MeasResultReportCGI         *message)
+void   streaming_protobufs__meas_result_report_cgi__init
+                     (StreamingProtobufs__MeasResultReportCGI         *message)
 {
-  static const Uenibstreamprotobuf__MeasResultReportCGI init_value = UENIBSTREAMPROTOBUF__MEAS_RESULT_REPORT_CGI__INIT;
+  static const StreamingProtobufs__MeasResultReportCGI init_value = STREAMING_PROTOBUFS__MEAS_RESULT_REPORT_CGI__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__meas_result_report_cgi__get_packed_size
-                     (const Uenibstreamprotobuf__MeasResultReportCGI *message)
+size_t streaming_protobufs__meas_result_report_cgi__get_packed_size
+                     (const StreamingProtobufs__MeasResultReportCGI *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_result_report_cgi__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_result_report_cgi__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__meas_result_report_cgi__pack
-                     (const Uenibstreamprotobuf__MeasResultReportCGI *message,
+size_t streaming_protobufs__meas_result_report_cgi__pack
+                     (const StreamingProtobufs__MeasResultReportCGI *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_result_report_cgi__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_result_report_cgi__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__meas_result_report_cgi__pack_to_buffer
-                     (const Uenibstreamprotobuf__MeasResultReportCGI *message,
+size_t streaming_protobufs__meas_result_report_cgi__pack_to_buffer
+                     (const StreamingProtobufs__MeasResultReportCGI *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_result_report_cgi__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_result_report_cgi__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__MeasResultReportCGI *
-       uenibstreamprotobuf__meas_result_report_cgi__unpack
+StreamingProtobufs__MeasResultReportCGI *
+       streaming_protobufs__meas_result_report_cgi__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__MeasResultReportCGI *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__meas_result_report_cgi__descriptor,
+  return (StreamingProtobufs__MeasResultReportCGI *)
+     protobuf_c_message_unpack (&streaming_protobufs__meas_result_report_cgi__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__meas_result_report_cgi__free_unpacked
-                     (Uenibstreamprotobuf__MeasResultReportCGI *message,
+void   streaming_protobufs__meas_result_report_cgi__free_unpacked
+                     (StreamingProtobufs__MeasResultReportCGI *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__meas_result_report_cgi__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__meas_result_report_cgi__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__cg__config_info__field_descriptors[1] =
 {
   {
     "criticalExtensionsChoice1",
     1,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__CGConfigInfo, critical_extensions_case),
-    offsetof(Uenibstreamprotobuf__CGConfigInfo, criticalextensionschoice1),
-    &uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfo, critical_extensions_case),
+    offsetof(StreamingProtobufs__CGConfigInfo, criticalextensionschoice1),
+    &streaming_protobufs__cg__config_info_critical_extensions_choice1__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__cg__config_info__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__cg__config_info__field_indices_by_name[] = {
   0,   /* field[0] = criticalExtensionsChoice1 */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__cg__config_info__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__cg__config_info__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__cg__config_info__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__cg__config_info__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.CG_ConfigInfo",
+  "streaming_protobufs.CG_ConfigInfo",
   "CGConfigInfo",
-  "Uenibstreamprotobuf__CGConfigInfo",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__CGConfigInfo),
+  "StreamingProtobufs__CGConfigInfo",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__CGConfigInfo),
   1,
-  uenibstreamprotobuf__cg__config_info__field_descriptors,
-  uenibstreamprotobuf__cg__config_info__field_indices_by_name,
-  1,  uenibstreamprotobuf__cg__config_info__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__cg__config_info__init,
+  streaming_protobufs__cg__config_info__field_descriptors,
+  streaming_protobufs__cg__config_info__field_indices_by_name,
+  1,  streaming_protobufs__cg__config_info__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__cg__config_info__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__cg__config_info_critical_extensions_choice1__field_descriptors[1] =
 {
   {
     "protocolIEs",
     1,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1, c1_case),
-    offsetof(Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1, protocolies),
-    &uenibstreamprotobuf__cg__config_info__ies__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1, c1_case),
+    offsetof(StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1, protocolies),
+    &streaming_protobufs__cg__config_info__ies__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__cg__config_info_critical_extensions_choice1__field_indices_by_name[] = {
   0,   /* field[0] = protocolIEs */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__cg__config_info_critical_extensions_choice1__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__cg__config_info_critical_extensions_choice1__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.CG_ConfigInfoCriticalExtensionsChoice1",
+  "streaming_protobufs.CG_ConfigInfoCriticalExtensionsChoice1",
   "CGConfigInfoCriticalExtensionsChoice1",
-  "Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__CGConfigInfoCriticalExtensionsChoice1),
+  "StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__CGConfigInfoCriticalExtensionsChoice1),
   1,
-  uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__field_descriptors,
-  uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__field_indices_by_name,
-  1,  uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__cg__config_info_critical_extensions_choice1__init,
+  streaming_protobufs__cg__config_info_critical_extensions_choice1__field_descriptors,
+  streaming_protobufs__cg__config_info_critical_extensions_choice1__field_indices_by_name,
+  1,  streaming_protobufs__cg__config_info_critical_extensions_choice1__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__cg__config_info_critical_extensions_choice1__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies__field_descriptors[13] =
+static const ProtobufCFieldDescriptor streaming_protobufs__cg__config_info__ies__field_descriptors[13] =
 {
   {
     "ue_CapabilityInfo",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, n_ue_capabilityinfo),
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, ue_capabilityinfo),
-    &uenibstreamprotobuf__ue__capability_rat__container__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, n_ue_capabilityinfo),
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, ue_capabilityinfo),
+    &streaming_protobufs__ue__capability_rat__container__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1183,8 +1183,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, candidatecellinfolistmn),
-    &uenibstreamprotobuf__meas_result_list2_nr__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, candidatecellinfolistmn),
+    &streaming_protobufs__meas_result_list2_nr__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1195,8 +1195,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, candidatecellinfolistsn),
-    &uenibstreamprotobuf__meas_result_list2_nr__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, candidatecellinfolistsn),
+    &streaming_protobufs__meas_result_list2_nr__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1207,8 +1207,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, measresultcelllistsftd),
-    &uenibstreamprotobuf__meas_result_cell_list_sftd__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, measresultcelllistsftd),
+    &streaming_protobufs__meas_result_cell_list_sftd__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1219,8 +1219,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, scgfailureinfo),
-    &uenibstreamprotobuf__scg_failure_info__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, scgfailureinfo),
+    &streaming_protobufs__scg_failure_info__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1231,8 +1231,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, configrestrictinfo),
-    &uenibstreamprotobuf__config_restrict_info_scg__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, configrestrictinfo),
+    &streaming_protobufs__config_restrict_info_scg__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1243,8 +1243,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, drx_infomcg),
-    &uenibstreamprotobuf__drx__info__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, drx_infomcg),
+    &streaming_protobufs__drx__info__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1255,8 +1255,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, measconfigmn),
-    &uenibstreamprotobuf__meas_config_mn__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, measconfigmn),
+    &streaming_protobufs__meas_config_mn__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1267,8 +1267,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, sourceconfigscg),
-    &google__protobuf__string_value__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, sourceconfigscg),
+    &google__protobuf__bytes_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1279,8 +1279,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, scg_rb_config),
-    &uenibstreamprotobuf__radio_bearer_config__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, scg_rb_config),
+    &streaming_protobufs__radio_bearer_config__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1291,8 +1291,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, mcg_rb_config),
-    &uenibstreamprotobuf__radio_bearer_config__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, mcg_rb_config),
+    &streaming_protobufs__radio_bearer_config__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1302,9 +1302,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     12,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, n_mrdc_assistanceinfo),
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, mrdc_assistanceinfo),
-    &uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, n_mrdc_assistanceinfo),
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, mrdc_assistanceinfo),
+    &streaming_protobufs__affected_carrier_freq_comb_info_mrdc__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1315,14 +1315,14 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info__ies_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoIEs, noncriticalextension),
-    &uenibstreamprotobuf__cg__config_info_v1540__ies__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoIEs, noncriticalextension),
+    &streaming_protobufs__cg__config_info_v1540__ies__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__cg__config_info__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__cg__config_info__ies__field_indices_by_name[] = {
   1,   /* field[1] = candidateCellInfoListMN */
   2,   /* field[2] = candidateCellInfoListSN */
   5,   /* field[5] = configRestrictInfo */
@@ -1337,27 +1337,27 @@ static const unsigned uenibstreamprotobuf__cg__config_info__ies__field_indices_b
   8,   /* field[8] = sourceConfigSCG */
   0,   /* field[0] = ue_CapabilityInfo */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__cg__config_info__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__cg__config_info__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 13 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__cg__config_info__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__cg__config_info__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.CG_ConfigInfo_IEs",
+  "streaming_protobufs.CG_ConfigInfo_IEs",
   "CGConfigInfoIEs",
-  "Uenibstreamprotobuf__CGConfigInfoIEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__CGConfigInfoIEs),
+  "StreamingProtobufs__CGConfigInfoIEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__CGConfigInfoIEs),
   13,
-  uenibstreamprotobuf__cg__config_info__ies__field_descriptors,
-  uenibstreamprotobuf__cg__config_info__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__cg__config_info__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__cg__config_info__ies__init,
+  streaming_protobufs__cg__config_info__ies__field_descriptors,
+  streaming_protobufs__cg__config_info__ies__field_indices_by_name,
+  1,  streaming_protobufs__cg__config_info__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__cg__config_info__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__ue__capability_rat__container__field_descriptors[2] =
+static const ProtobufCFieldDescriptor streaming_protobufs__ue__capability_rat__container__field_descriptors[2] =
 {
   {
     "rat_Type",
@@ -1365,8 +1365,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__ue__capability_rat__c
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__UECapabilityRATContainer, rat_type),
-    &uenibstreamprotobuf__rat__type__descriptor,
+    offsetof(StreamingProtobufs__UECapabilityRATContainer, rat_type),
+    &streaming_protobufs__rat__type__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1375,72 +1375,72 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__ue__capability_rat__c
     "ue_CapabilityRAT_Container",
     2,
     PROTOBUF_C_LABEL_NONE,
-    PROTOBUF_C_TYPE_STRING,
+    PROTOBUF_C_TYPE_BYTES,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__UECapabilityRATContainer, ue_capabilityrat_container),
+    offsetof(StreamingProtobufs__UECapabilityRATContainer, ue_capabilityrat_container),
     NULL,
-    &protobuf_c_empty_string,
+    NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__ue__capability_rat__container__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__ue__capability_rat__container__field_indices_by_name[] = {
   0,   /* field[0] = rat_Type */
   1,   /* field[1] = ue_CapabilityRAT_Container */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__ue__capability_rat__container__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__ue__capability_rat__container__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 2 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__ue__capability_rat__container__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__ue__capability_rat__container__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.UE_CapabilityRAT_Container",
+  "streaming_protobufs.UE_CapabilityRAT_Container",
   "UECapabilityRATContainer",
-  "Uenibstreamprotobuf__UECapabilityRATContainer",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__UECapabilityRATContainer),
+  "StreamingProtobufs__UECapabilityRATContainer",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__UECapabilityRATContainer),
   2,
-  uenibstreamprotobuf__ue__capability_rat__container__field_descriptors,
-  uenibstreamprotobuf__ue__capability_rat__container__field_indices_by_name,
-  1,  uenibstreamprotobuf__ue__capability_rat__container__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__ue__capability_rat__container__init,
+  streaming_protobufs__ue__capability_rat__container__field_descriptors,
+  streaming_protobufs__ue__capability_rat__container__field_indices_by_name,
+  1,  streaming_protobufs__ue__capability_rat__container__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__ue__capability_rat__container__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue uenibstreamprotobuf__rat__type__value__enum_values_by_number[4] =
+static const ProtobufCEnumValue streaming_protobufs__rat__type__value__enum_values_by_number[4] =
 {
-  { "protobuf_unspecified", "UENIBSTREAMPROTOBUF__RAT__TYPE__VALUE__protobuf_unspecified", 0 },
-  { "nr", "UENIBSTREAMPROTOBUF__RAT__TYPE__VALUE__nr", 1 },
-  { "eutra_nr", "UENIBSTREAMPROTOBUF__RAT__TYPE__VALUE__eutra_nr", 2 },
-  { "eutra", "UENIBSTREAMPROTOBUF__RAT__TYPE__VALUE__eutra", 3 },
+  { "protobuf_unspecified", "STREAMING_PROTOBUFS__RAT__TYPE__VALUE__protobuf_unspecified", 0 },
+  { "nr", "STREAMING_PROTOBUFS__RAT__TYPE__VALUE__nr", 1 },
+  { "eutra_nr", "STREAMING_PROTOBUFS__RAT__TYPE__VALUE__eutra_nr", 2 },
+  { "eutra", "STREAMING_PROTOBUFS__RAT__TYPE__VALUE__eutra", 3 },
 };
-static const ProtobufCIntRange uenibstreamprotobuf__rat__type__value__value_ranges[] = {
+static const ProtobufCIntRange streaming_protobufs__rat__type__value__value_ranges[] = {
 {0, 0},{0, 4}
 };
-static const ProtobufCEnumValueIndex uenibstreamprotobuf__rat__type__value__enum_values_by_name[4] =
+static const ProtobufCEnumValueIndex streaming_protobufs__rat__type__value__enum_values_by_name[4] =
 {
   { "eutra", 3 },
   { "eutra_nr", 2 },
   { "nr", 1 },
   { "protobuf_unspecified", 0 },
 };
-const ProtobufCEnumDescriptor uenibstreamprotobuf__rat__type__value__descriptor =
+const ProtobufCEnumDescriptor streaming_protobufs__rat__type__value__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.RAT_Type.Value",
+  "streaming_protobufs.RAT_Type.Value",
   "Value",
-  "Uenibstreamprotobuf__RATType__Value",
-  "uenibstreamprotobuf",
+  "StreamingProtobufs__RATType__Value",
+  "streaming_protobufs",
   4,
-  uenibstreamprotobuf__rat__type__value__enum_values_by_number,
+  streaming_protobufs__rat__type__value__enum_values_by_number,
   4,
-  uenibstreamprotobuf__rat__type__value__enum_values_by_name,
+  streaming_protobufs__rat__type__value__enum_values_by_name,
   1,
-  uenibstreamprotobuf__rat__type__value__value_ranges,
+  streaming_protobufs__rat__type__value__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__rat__type__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__rat__type__field_descriptors[1] =
 {
   {
     "value",
@@ -1448,50 +1448,50 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__rat__type__field_desc
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__RATType, value),
-    &uenibstreamprotobuf__rat__type__value__descriptor,
+    offsetof(StreamingProtobufs__RATType, value),
+    &streaming_protobufs__rat__type__value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__rat__type__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__rat__type__field_indices_by_name[] = {
   0,   /* field[0] = value */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__rat__type__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__rat__type__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__rat__type__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__rat__type__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.RAT_Type",
+  "streaming_protobufs.RAT_Type",
   "RATType",
-  "Uenibstreamprotobuf__RATType",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__RATType),
+  "StreamingProtobufs__RATType",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__RATType),
   1,
-  uenibstreamprotobuf__rat__type__field_descriptors,
-  uenibstreamprotobuf__rat__type__field_indices_by_name,
-  1,  uenibstreamprotobuf__rat__type__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__rat__type__init,
+  streaming_protobufs__rat__type__field_descriptors,
+  streaming_protobufs__rat__type__field_indices_by_name,
+  1,  streaming_protobufs__rat__type__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__rat__type__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue uenibstreamprotobuf__scg_failure_info__failure_type__enum_values_by_number[7] =
+static const ProtobufCEnumValue streaming_protobufs__scg_failure_info__failure_type__enum_values_by_number[7] =
 {
-  { "protobuf_unspecified", "UENIBSTREAMPROTOBUF__SCG_FAILURE_INFO__FAILURE_TYPE__protobuf_unspecified", 0 },
-  { "t310_Expiry", "UENIBSTREAMPROTOBUF__SCG_FAILURE_INFO__FAILURE_TYPE__t310_Expiry", 1 },
-  { "randomAccessProblem", "UENIBSTREAMPROTOBUF__SCG_FAILURE_INFO__FAILURE_TYPE__randomAccessProblem", 2 },
-  { "rlc_MaxNumRetx", "UENIBSTREAMPROTOBUF__SCG_FAILURE_INFO__FAILURE_TYPE__rlc_MaxNumRetx", 3 },
-  { "synchReconfigFailure_SCG", "UENIBSTREAMPROTOBUF__SCG_FAILURE_INFO__FAILURE_TYPE__synchReconfigFailure_SCG", 4 },
-  { "scg_reconfigFailure", "UENIBSTREAMPROTOBUF__SCG_FAILURE_INFO__FAILURE_TYPE__scg_reconfigFailure", 5 },
-  { "srb3_IntegrityFailure", "UENIBSTREAMPROTOBUF__SCG_FAILURE_INFO__FAILURE_TYPE__srb3_IntegrityFailure", 6 },
+  { "protobuf_unspecified", "STREAMING_PROTOBUFS__SCG_FAILURE_INFO__FAILURE_TYPE__protobuf_unspecified", 0 },
+  { "t310_Expiry", "STREAMING_PROTOBUFS__SCG_FAILURE_INFO__FAILURE_TYPE__t310_Expiry", 1 },
+  { "randomAccessProblem", "STREAMING_PROTOBUFS__SCG_FAILURE_INFO__FAILURE_TYPE__randomAccessProblem", 2 },
+  { "rlc_MaxNumRetx", "STREAMING_PROTOBUFS__SCG_FAILURE_INFO__FAILURE_TYPE__rlc_MaxNumRetx", 3 },
+  { "synchReconfigFailure_SCG", "STREAMING_PROTOBUFS__SCG_FAILURE_INFO__FAILURE_TYPE__synchReconfigFailure_SCG", 4 },
+  { "scg_reconfigFailure", "STREAMING_PROTOBUFS__SCG_FAILURE_INFO__FAILURE_TYPE__scg_reconfigFailure", 5 },
+  { "srb3_IntegrityFailure", "STREAMING_PROTOBUFS__SCG_FAILURE_INFO__FAILURE_TYPE__srb3_IntegrityFailure", 6 },
 };
-static const ProtobufCIntRange uenibstreamprotobuf__scg_failure_info__failure_type__value_ranges[] = {
+static const ProtobufCIntRange streaming_protobufs__scg_failure_info__failure_type__value_ranges[] = {
 {0, 0},{0, 7}
 };
-static const ProtobufCEnumValueIndex uenibstreamprotobuf__scg_failure_info__failure_type__enum_values_by_name[7] =
+static const ProtobufCEnumValueIndex streaming_protobufs__scg_failure_info__failure_type__enum_values_by_name[7] =
 {
   { "protobuf_unspecified", 0 },
   { "randomAccessProblem", 2 },
@@ -1501,22 +1501,22 @@ static const ProtobufCEnumValueIndex uenibstreamprotobuf__scg_failure_info__fail
   { "synchReconfigFailure_SCG", 4 },
   { "t310_Expiry", 1 },
 };
-const ProtobufCEnumDescriptor uenibstreamprotobuf__scg_failure_info__failure_type__descriptor =
+const ProtobufCEnumDescriptor streaming_protobufs__scg_failure_info__failure_type__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.ScgFailureInfo.FailureType",
+  "streaming_protobufs.ScgFailureInfo.FailureType",
   "FailureType",
-  "Uenibstreamprotobuf__ScgFailureInfo__FailureType",
-  "uenibstreamprotobuf",
+  "StreamingProtobufs__ScgFailureInfo__FailureType",
+  "streaming_protobufs",
   7,
-  uenibstreamprotobuf__scg_failure_info__failure_type__enum_values_by_number,
+  streaming_protobufs__scg_failure_info__failure_type__enum_values_by_number,
   7,
-  uenibstreamprotobuf__scg_failure_info__failure_type__enum_values_by_name,
+  streaming_protobufs__scg_failure_info__failure_type__enum_values_by_name,
   1,
-  uenibstreamprotobuf__scg_failure_info__failure_type__value_ranges,
+  streaming_protobufs__scg_failure_info__failure_type__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__scg_failure_info__field_descriptors[2] =
+static const ProtobufCFieldDescriptor streaming_protobufs__scg_failure_info__field_descriptors[2] =
 {
   {
     "failureType",
@@ -1524,8 +1524,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__scg_failure_info__fie
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ScgFailureInfo, failuretype),
-    &uenibstreamprotobuf__scg_failure_info__failure_type__descriptor,
+    offsetof(StreamingProtobufs__ScgFailureInfo, failuretype),
+    &streaming_protobufs__scg_failure_info__failure_type__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1536,38 +1536,38 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__scg_failure_info__fie
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ScgFailureInfo, measresultscg),
-    &uenibstreamprotobuf__meas_result_scg__failure__descriptor,
+    offsetof(StreamingProtobufs__ScgFailureInfo, measresultscg),
+    &streaming_protobufs__meas_result_scg__failure__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__scg_failure_info__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__scg_failure_info__field_indices_by_name[] = {
   0,   /* field[0] = failureType */
   1,   /* field[1] = measResultSCG */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__scg_failure_info__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__scg_failure_info__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 2 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__scg_failure_info__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__scg_failure_info__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.ScgFailureInfo",
+  "streaming_protobufs.ScgFailureInfo",
   "ScgFailureInfo",
-  "Uenibstreamprotobuf__ScgFailureInfo",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ScgFailureInfo),
+  "StreamingProtobufs__ScgFailureInfo",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ScgFailureInfo),
   2,
-  uenibstreamprotobuf__scg_failure_info__field_descriptors,
-  uenibstreamprotobuf__scg_failure_info__field_indices_by_name,
-  1,  uenibstreamprotobuf__scg_failure_info__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__scg_failure_info__init,
+  streaming_protobufs__scg_failure_info__field_descriptors,
+  streaming_protobufs__scg_failure_info__field_indices_by_name,
+  1,  streaming_protobufs__scg_failure_info__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__scg_failure_info__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_result_scg__failure__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__meas_result_scg__failure__field_descriptors[1] =
 {
   {
     "measResultPerMOList",
@@ -1575,37 +1575,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_result_scg__fail
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MeasResultSCGFailure, measresultpermolist),
-    &uenibstreamprotobuf__meas_result_list2_nr__descriptor,
+    offsetof(StreamingProtobufs__MeasResultSCGFailure, measresultpermolist),
+    &streaming_protobufs__meas_result_list2_nr__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__meas_result_scg__failure__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__meas_result_scg__failure__field_indices_by_name[] = {
   0,   /* field[0] = measResultPerMOList */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__meas_result_scg__failure__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__meas_result_scg__failure__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__meas_result_scg__failure__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__meas_result_scg__failure__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.MeasResultSCG_Failure",
+  "streaming_protobufs.MeasResultSCG_Failure",
   "MeasResultSCGFailure",
-  "Uenibstreamprotobuf__MeasResultSCGFailure",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__MeasResultSCGFailure),
+  "StreamingProtobufs__MeasResultSCGFailure",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__MeasResultSCGFailure),
   1,
-  uenibstreamprotobuf__meas_result_scg__failure__field_descriptors,
-  uenibstreamprotobuf__meas_result_scg__failure__field_indices_by_name,
-  1,  uenibstreamprotobuf__meas_result_scg__failure__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__meas_result_scg__failure__init,
+  streaming_protobufs__meas_result_scg__failure__field_descriptors,
+  streaming_protobufs__meas_result_scg__failure__field_indices_by_name,
+  1,  streaming_protobufs__meas_result_scg__failure__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__meas_result_scg__failure__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__config_restrict_info_scg__field_descriptors[5] =
+static const ProtobufCFieldDescriptor streaming_protobufs__config_restrict_info_scg__field_descriptors[5] =
 {
   {
     "allowedBC_ListMRDC",
@@ -1613,8 +1613,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__config_restrict_info_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ConfigRestrictInfoSCG, allowedbc_listmrdc),
-    &uenibstreamprotobuf__band_combination_info_list__descriptor,
+    offsetof(StreamingProtobufs__ConfigRestrictInfoSCG, allowedbc_listmrdc),
+    &streaming_protobufs__band_combination_info_list__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1625,8 +1625,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__config_restrict_info_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ConfigRestrictInfoSCG, powercoordination_fr1),
-    &uenibstreamprotobuf__power_coordination__fr1__descriptor,
+    offsetof(StreamingProtobufs__ConfigRestrictInfoSCG, powercoordination_fr1),
+    &streaming_protobufs__power_coordination__fr1__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1637,8 +1637,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__config_restrict_info_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ConfigRestrictInfoSCG, servcellindexrangescg),
-    &uenibstreamprotobuf__serv_cell_index_range_scg__descriptor,
+    offsetof(StreamingProtobufs__ConfigRestrictInfoSCG, servcellindexrangescg),
+    &streaming_protobufs__serv_cell_index_range_scg__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1649,7 +1649,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__config_restrict_info_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ConfigRestrictInfoSCG, maxmeasfreqsscg_nr),
+    offsetof(StreamingProtobufs__ConfigRestrictInfoSCG, maxmeasfreqsscg_nr),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -1661,79 +1661,79 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__config_restrict_info_
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ConfigRestrictInfoSCG, maxmeasidentitiesscg_nr),
+    offsetof(StreamingProtobufs__ConfigRestrictInfoSCG, maxmeasidentitiesscg_nr),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__config_restrict_info_scg__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__config_restrict_info_scg__field_indices_by_name[] = {
   0,   /* field[0] = allowedBC_ListMRDC */
   3,   /* field[3] = maxMeasFreqsSCG_NR */
   4,   /* field[4] = maxMeasIdentitiesSCG_NR */
   1,   /* field[1] = powerCoordination_FR1 */
   2,   /* field[2] = servCellIndexRangeSCG */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__config_restrict_info_scg__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__config_restrict_info_scg__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 5 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__config_restrict_info_scg__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__config_restrict_info_scg__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.ConfigRestrictInfoSCG",
+  "streaming_protobufs.ConfigRestrictInfoSCG",
   "ConfigRestrictInfoSCG",
-  "Uenibstreamprotobuf__ConfigRestrictInfoSCG",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ConfigRestrictInfoSCG),
+  "StreamingProtobufs__ConfigRestrictInfoSCG",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ConfigRestrictInfoSCG),
   5,
-  uenibstreamprotobuf__config_restrict_info_scg__field_descriptors,
-  uenibstreamprotobuf__config_restrict_info_scg__field_indices_by_name,
-  1,  uenibstreamprotobuf__config_restrict_info_scg__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__config_restrict_info_scg__init,
+  streaming_protobufs__config_restrict_info_scg__field_descriptors,
+  streaming_protobufs__config_restrict_info_scg__field_indices_by_name,
+  1,  streaming_protobufs__config_restrict_info_scg__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__config_restrict_info_scg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__band_combination_info_list__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__band_combination_info_list__field_descriptors[1] =
 {
   {
     "items",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__BandCombinationInfoList, n_items),
-    offsetof(Uenibstreamprotobuf__BandCombinationInfoList, items),
-    &uenibstreamprotobuf__band_combination_info__descriptor,
+    offsetof(StreamingProtobufs__BandCombinationInfoList, n_items),
+    offsetof(StreamingProtobufs__BandCombinationInfoList, items),
+    &streaming_protobufs__band_combination_info__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__band_combination_info_list__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__band_combination_info_list__field_indices_by_name[] = {
   0,   /* field[0] = items */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__band_combination_info_list__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__band_combination_info_list__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__band_combination_info_list__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__band_combination_info_list__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.BandCombinationInfoList",
+  "streaming_protobufs.BandCombinationInfoList",
   "BandCombinationInfoList",
-  "Uenibstreamprotobuf__BandCombinationInfoList",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__BandCombinationInfoList),
+  "StreamingProtobufs__BandCombinationInfoList",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__BandCombinationInfoList),
   1,
-  uenibstreamprotobuf__band_combination_info_list__field_descriptors,
-  uenibstreamprotobuf__band_combination_info_list__field_indices_by_name,
-  1,  uenibstreamprotobuf__band_combination_info_list__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__band_combination_info_list__init,
+  streaming_protobufs__band_combination_info_list__field_descriptors,
+  streaming_protobufs__band_combination_info_list__field_indices_by_name,
+  1,  streaming_protobufs__band_combination_info_list__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__band_combination_info_list__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__band_combination_info__field_descriptors[2] =
+static const ProtobufCFieldDescriptor streaming_protobufs__band_combination_info__field_descriptors[2] =
 {
   {
     "bandCombinationIndex",
@@ -1741,7 +1741,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__band_combination_info
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__BandCombinationInfo, bandcombinationindex),
+    offsetof(StreamingProtobufs__BandCombinationInfo, bandcombinationindex),
     NULL,
     NULL,
     0,             /* flags */
@@ -1752,39 +1752,39 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__band_combination_info
     2,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Uenibstreamprotobuf__BandCombinationInfo, n_allowedfeaturesetslist),
-    offsetof(Uenibstreamprotobuf__BandCombinationInfo, allowedfeaturesetslist),
+    offsetof(StreamingProtobufs__BandCombinationInfo, n_allowedfeaturesetslist),
+    offsetof(StreamingProtobufs__BandCombinationInfo, allowedfeaturesetslist),
     NULL,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__band_combination_info__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__band_combination_info__field_indices_by_name[] = {
   1,   /* field[1] = allowedFeatureSetsList */
   0,   /* field[0] = bandCombinationIndex */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__band_combination_info__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__band_combination_info__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 2 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__band_combination_info__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__band_combination_info__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.BandCombinationInfo",
+  "streaming_protobufs.BandCombinationInfo",
   "BandCombinationInfo",
-  "Uenibstreamprotobuf__BandCombinationInfo",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__BandCombinationInfo),
+  "StreamingProtobufs__BandCombinationInfo",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__BandCombinationInfo),
   2,
-  uenibstreamprotobuf__band_combination_info__field_descriptors,
-  uenibstreamprotobuf__band_combination_info__field_indices_by_name,
-  1,  uenibstreamprotobuf__band_combination_info__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__band_combination_info__init,
+  streaming_protobufs__band_combination_info__field_descriptors,
+  streaming_protobufs__band_combination_info__field_indices_by_name,
+  1,  streaming_protobufs__band_combination_info__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__band_combination_info__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__power_coordination__fr1__field_descriptors[3] =
+static const ProtobufCFieldDescriptor streaming_protobufs__power_coordination__fr1__field_descriptors[3] =
 {
   {
     "p_maxNR_FR1",
@@ -1792,7 +1792,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__power_coordination__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__PowerCoordinationFR1, p_maxnr_fr1),
+    offsetof(StreamingProtobufs__PowerCoordinationFR1, p_maxnr_fr1),
     &google__protobuf__int32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -1804,7 +1804,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__power_coordination__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__PowerCoordinationFR1, p_maxeutra),
+    offsetof(StreamingProtobufs__PowerCoordinationFR1, p_maxeutra),
     &google__protobuf__int32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -1816,39 +1816,39 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__power_coordination__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__PowerCoordinationFR1, p_maxue_fr1),
+    offsetof(StreamingProtobufs__PowerCoordinationFR1, p_maxue_fr1),
     &google__protobuf__int32_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__power_coordination__fr1__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__power_coordination__fr1__field_indices_by_name[] = {
   1,   /* field[1] = p_maxEUTRA */
   0,   /* field[0] = p_maxNR_FR1 */
   2,   /* field[2] = p_maxUE_FR1 */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__power_coordination__fr1__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__power_coordination__fr1__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__power_coordination__fr1__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__power_coordination__fr1__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.PowerCoordination_FR1",
+  "streaming_protobufs.PowerCoordination_FR1",
   "PowerCoordinationFR1",
-  "Uenibstreamprotobuf__PowerCoordinationFR1",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__PowerCoordinationFR1),
+  "StreamingProtobufs__PowerCoordinationFR1",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__PowerCoordinationFR1),
   3,
-  uenibstreamprotobuf__power_coordination__fr1__field_descriptors,
-  uenibstreamprotobuf__power_coordination__fr1__field_indices_by_name,
-  1,  uenibstreamprotobuf__power_coordination__fr1__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__power_coordination__fr1__init,
+  streaming_protobufs__power_coordination__fr1__field_descriptors,
+  streaming_protobufs__power_coordination__fr1__field_indices_by_name,
+  1,  streaming_protobufs__power_coordination__fr1__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__power_coordination__fr1__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__serv_cell_index_range_scg__field_descriptors[2] =
+static const ProtobufCFieldDescriptor streaming_protobufs__serv_cell_index_range_scg__field_descriptors[2] =
 {
   {
     "lowBound",
@@ -1856,7 +1856,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__serv_cell_index_range
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ServCellIndexRangeSCG, lowbound),
+    offsetof(StreamingProtobufs__ServCellIndexRangeSCG, lowbound),
     NULL,
     NULL,
     0,             /* flags */
@@ -1868,47 +1868,47 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__serv_cell_index_range
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__ServCellIndexRangeSCG, upbound),
+    offsetof(StreamingProtobufs__ServCellIndexRangeSCG, upbound),
     NULL,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__serv_cell_index_range_scg__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__serv_cell_index_range_scg__field_indices_by_name[] = {
   0,   /* field[0] = lowBound */
   1,   /* field[1] = upBound */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__serv_cell_index_range_scg__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__serv_cell_index_range_scg__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 2 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__serv_cell_index_range_scg__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__serv_cell_index_range_scg__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.ServCellIndexRangeSCG",
+  "streaming_protobufs.ServCellIndexRangeSCG",
   "ServCellIndexRangeSCG",
-  "Uenibstreamprotobuf__ServCellIndexRangeSCG",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__ServCellIndexRangeSCG),
+  "StreamingProtobufs__ServCellIndexRangeSCG",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__ServCellIndexRangeSCG),
   2,
-  uenibstreamprotobuf__serv_cell_index_range_scg__field_descriptors,
-  uenibstreamprotobuf__serv_cell_index_range_scg__field_indices_by_name,
-  1,  uenibstreamprotobuf__serv_cell_index_range_scg__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__serv_cell_index_range_scg__init,
+  streaming_protobufs__serv_cell_index_range_scg__field_descriptors,
+  streaming_protobufs__serv_cell_index_range_scg__field_indices_by_name,
+  1,  streaming_protobufs__serv_cell_index_range_scg__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__serv_cell_index_range_scg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_config_mn__field_descriptors[4] =
+static const ProtobufCFieldDescriptor streaming_protobufs__meas_config_mn__field_descriptors[4] =
 {
   {
     "measuredFrequenciesMN",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__MeasConfigMN, n_measuredfrequenciesmn),
-    offsetof(Uenibstreamprotobuf__MeasConfigMN, measuredfrequenciesmn),
-    &uenibstreamprotobuf__nr__freq_info__descriptor,
+    offsetof(StreamingProtobufs__MeasConfigMN, n_measuredfrequenciesmn),
+    offsetof(StreamingProtobufs__MeasConfigMN, measuredfrequenciesmn),
+    &streaming_protobufs__nr__freq_info__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1918,9 +1918,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_config_mn__field
     2,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__MeasConfigMN, meas_gap_config_case),
-    offsetof(Uenibstreamprotobuf__MeasConfigMN, release_measgapconfig),
-    &uenibstreamprotobuf__null__descriptor,
+    offsetof(StreamingProtobufs__MeasConfigMN, meas_gap_config_case),
+    offsetof(StreamingProtobufs__MeasConfigMN, release_measgapconfig),
+    &streaming_protobufs__null__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1930,9 +1930,9 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_config_mn__field
     3,
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__MeasConfigMN, meas_gap_config_case),
-    offsetof(Uenibstreamprotobuf__MeasConfigMN, setup_measgapconfig),
-    &uenibstreamprotobuf__gap_config__descriptor,
+    offsetof(StreamingProtobufs__MeasConfigMN, meas_gap_config_case),
+    offsetof(StreamingProtobufs__MeasConfigMN, setup_measgapconfig),
+    &streaming_protobufs__gap_config__descriptor,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_ONEOF,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -1943,70 +1943,70 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_config_mn__field
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MeasConfigMN, gappurpose),
-    &uenibstreamprotobuf__gap_purpose__descriptor,
+    offsetof(StreamingProtobufs__MeasConfigMN, gappurpose),
+    &streaming_protobufs__gap_purpose__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__meas_config_mn__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__meas_config_mn__field_indices_by_name[] = {
   3,   /* field[3] = gapPurpose */
   0,   /* field[0] = measuredFrequenciesMN */
   1,   /* field[1] = release_measGapConfig */
   2,   /* field[2] = setup_measGapConfig */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__meas_config_mn__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__meas_config_mn__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 4 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__meas_config_mn__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__meas_config_mn__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.MeasConfigMN",
+  "streaming_protobufs.MeasConfigMN",
   "MeasConfigMN",
-  "Uenibstreamprotobuf__MeasConfigMN",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__MeasConfigMN),
+  "StreamingProtobufs__MeasConfigMN",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__MeasConfigMN),
   4,
-  uenibstreamprotobuf__meas_config_mn__field_descriptors,
-  uenibstreamprotobuf__meas_config_mn__field_indices_by_name,
-  1,  uenibstreamprotobuf__meas_config_mn__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__meas_config_mn__init,
+  streaming_protobufs__meas_config_mn__field_descriptors,
+  streaming_protobufs__meas_config_mn__field_indices_by_name,
+  1,  streaming_protobufs__meas_config_mn__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__meas_config_mn__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue uenibstreamprotobuf__gap_purpose__value__enum_values_by_number[3] =
+static const ProtobufCEnumValue streaming_protobufs__gap_purpose__value__enum_values_by_number[3] =
 {
-  { "protobuf_unspecified", "UENIBSTREAMPROTOBUF__GAP_PURPOSE__VALUE__protobuf_unspecified", 0 },
-  { "perUE", "UENIBSTREAMPROTOBUF__GAP_PURPOSE__VALUE__perUE", 1 },
-  { "perFR1", "UENIBSTREAMPROTOBUF__GAP_PURPOSE__VALUE__perFR1", 2 },
+  { "protobuf_unspecified", "STREAMING_PROTOBUFS__GAP_PURPOSE__VALUE__protobuf_unspecified", 0 },
+  { "perUE", "STREAMING_PROTOBUFS__GAP_PURPOSE__VALUE__perUE", 1 },
+  { "perFR1", "STREAMING_PROTOBUFS__GAP_PURPOSE__VALUE__perFR1", 2 },
 };
-static const ProtobufCIntRange uenibstreamprotobuf__gap_purpose__value__value_ranges[] = {
+static const ProtobufCIntRange streaming_protobufs__gap_purpose__value__value_ranges[] = {
 {0, 0},{0, 3}
 };
-static const ProtobufCEnumValueIndex uenibstreamprotobuf__gap_purpose__value__enum_values_by_name[3] =
+static const ProtobufCEnumValueIndex streaming_protobufs__gap_purpose__value__enum_values_by_name[3] =
 {
   { "perFR1", 2 },
   { "perUE", 1 },
   { "protobuf_unspecified", 0 },
 };
-const ProtobufCEnumDescriptor uenibstreamprotobuf__gap_purpose__value__descriptor =
+const ProtobufCEnumDescriptor streaming_protobufs__gap_purpose__value__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.GapPurpose.Value",
+  "streaming_protobufs.GapPurpose.Value",
   "Value",
-  "Uenibstreamprotobuf__GapPurpose__Value",
-  "uenibstreamprotobuf",
+  "StreamingProtobufs__GapPurpose__Value",
+  "streaming_protobufs",
   3,
-  uenibstreamprotobuf__gap_purpose__value__enum_values_by_number,
+  streaming_protobufs__gap_purpose__value__enum_values_by_number,
   3,
-  uenibstreamprotobuf__gap_purpose__value__enum_values_by_name,
+  streaming_protobufs__gap_purpose__value__enum_values_by_name,
   1,
-  uenibstreamprotobuf__gap_purpose__value__value_ranges,
+  streaming_protobufs__gap_purpose__value__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__gap_purpose__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__gap_purpose__field_descriptors[1] =
 {
   {
     "value",
@@ -2014,49 +2014,49 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__gap_purpose__field_de
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__GapPurpose, value),
-    &uenibstreamprotobuf__gap_purpose__value__descriptor,
+    offsetof(StreamingProtobufs__GapPurpose, value),
+    &streaming_protobufs__gap_purpose__value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__gap_purpose__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__gap_purpose__field_indices_by_name[] = {
   0,   /* field[0] = value */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__gap_purpose__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__gap_purpose__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__gap_purpose__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__gap_purpose__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.GapPurpose",
+  "streaming_protobufs.GapPurpose",
   "GapPurpose",
-  "Uenibstreamprotobuf__GapPurpose",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__GapPurpose),
+  "StreamingProtobufs__GapPurpose",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__GapPurpose),
   1,
-  uenibstreamprotobuf__gap_purpose__field_descriptors,
-  uenibstreamprotobuf__gap_purpose__field_indices_by_name,
-  1,  uenibstreamprotobuf__gap_purpose__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__gap_purpose__init,
+  streaming_protobufs__gap_purpose__field_descriptors,
+  streaming_protobufs__gap_purpose__field_indices_by_name,
+  1,  streaming_protobufs__gap_purpose__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__gap_purpose__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__enum_values_by_number[6] =
+static const ProtobufCEnumValue streaming_protobufs__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__enum_values_by_number[6] =
 {
-  { "protobuf_unspecified", "UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__protobuf_unspecified", 0 },
-  { "eutra_nr", "UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__eutra_nr", 1 },
-  { "nr", "UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__nr", 2 },
-  { "other", "UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__other", 3 },
-  { "utra_nr_other", "UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__utra_nr_other", 4 },
-  { "nr_other", "UENIBSTREAMPROTOBUF__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__nr_other", 5 },
+  { "protobuf_unspecified", "STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__protobuf_unspecified", 0 },
+  { "eutra_nr", "STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__eutra_nr", 1 },
+  { "nr", "STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__nr", 2 },
+  { "other", "STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__other", 3 },
+  { "utra_nr_other", "STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__utra_nr_other", 4 },
+  { "nr_other", "STREAMING_PROTOBUFS__AFFECTED_CARRIER_FREQ_COMB_INFO_MRDC__INTERFERENCE_DIRECTION_MRDC__nr_other", 5 },
 };
-static const ProtobufCIntRange uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__value_ranges[] = {
+static const ProtobufCIntRange streaming_protobufs__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__value_ranges[] = {
 {0, 0},{0, 6}
 };
-static const ProtobufCEnumValueIndex uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__enum_values_by_name[6] =
+static const ProtobufCEnumValueIndex streaming_protobufs__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__enum_values_by_name[6] =
 {
   { "eutra_nr", 1 },
   { "nr", 2 },
@@ -2065,22 +2065,22 @@ static const ProtobufCEnumValueIndex uenibstreamprotobuf__affected_carrier_freq_
   { "protobuf_unspecified", 0 },
   { "utra_nr_other", 4 },
 };
-const ProtobufCEnumDescriptor uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__descriptor =
+const ProtobufCEnumDescriptor streaming_protobufs__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.AffectedCarrierFreqCombInfoMRDC.InterferenceDirectionMRDC",
+  "streaming_protobufs.AffectedCarrierFreqCombInfoMRDC.InterferenceDirectionMRDC",
   "InterferenceDirectionMRDC",
-  "Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC__InterferenceDirectionMRDC",
-  "uenibstreamprotobuf",
+  "StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC__InterferenceDirectionMRDC",
+  "streaming_protobufs",
   6,
-  uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__enum_values_by_number,
+  streaming_protobufs__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__enum_values_by_number,
   6,
-  uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__enum_values_by_name,
+  streaming_protobufs__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__enum_values_by_name,
   1,
-  uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__value_ranges,
+  streaming_protobufs__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__field_descriptors[3] =
+static const ProtobufCFieldDescriptor streaming_protobufs__affected_carrier_freq_comb_info_mrdc__field_descriptors[3] =
 {
   {
     "victimSystemType",
@@ -2088,8 +2088,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__affected_carrier_freq
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC, victimsystemtype),
-    &uenibstreamprotobuf__victim_system_type__descriptor,
+    offsetof(StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC, victimsystemtype),
+    &streaming_protobufs__victim_system_type__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2100,8 +2100,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__affected_carrier_freq
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC, interferencedirectionmrdc),
-    &uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__descriptor,
+    offsetof(StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC, interferencedirectionmrdc),
+    &streaming_protobufs__affected_carrier_freq_comb_info_mrdc__interference_direction_mrdc__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2112,39 +2112,39 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__affected_carrier_freq
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC, affectedcarrierfreqcombmrdc),
-    &uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__descriptor,
+    offsetof(StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC, affectedcarrierfreqcombmrdc),
+    &streaming_protobufs__affected_carrier_freq_comb_mrdc__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__affected_carrier_freq_comb_info_mrdc__field_indices_by_name[] = {
   2,   /* field[2] = affectedCarrierFreqCombMRDC */
   1,   /* field[1] = interferenceDirectionMRDC */
   0,   /* field[0] = victimSystemType */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__affected_carrier_freq_comb_info_mrdc__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__affected_carrier_freq_comb_info_mrdc__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.AffectedCarrierFreqCombInfoMRDC",
+  "streaming_protobufs.AffectedCarrierFreqCombInfoMRDC",
   "AffectedCarrierFreqCombInfoMRDC",
-  "Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__AffectedCarrierFreqCombInfoMRDC),
+  "StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__AffectedCarrierFreqCombInfoMRDC),
   3,
-  uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__field_descriptors,
-  uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__field_indices_by_name,
-  1,  uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__affected_carrier_freq_comb_info_mrdc__init,
+  streaming_protobufs__affected_carrier_freq_comb_info_mrdc__field_descriptors,
+  streaming_protobufs__affected_carrier_freq_comb_info_mrdc__field_indices_by_name,
+  1,  streaming_protobufs__affected_carrier_freq_comb_info_mrdc__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__affected_carrier_freq_comb_info_mrdc__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__victim_system_type__field_descriptors[6] =
+static const ProtobufCFieldDescriptor streaming_protobufs__victim_system_type__field_descriptors[6] =
 {
   {
     "gps",
@@ -2152,8 +2152,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__victim_system_type__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__VictimSystemType, gps),
-    &uenibstreamprotobuf__true_opt__descriptor,
+    offsetof(StreamingProtobufs__VictimSystemType, gps),
+    &streaming_protobufs__true_opt__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2164,8 +2164,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__victim_system_type__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__VictimSystemType, glonass),
-    &uenibstreamprotobuf__true_opt__descriptor,
+    offsetof(StreamingProtobufs__VictimSystemType, glonass),
+    &streaming_protobufs__true_opt__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2176,8 +2176,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__victim_system_type__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__VictimSystemType, bds),
-    &uenibstreamprotobuf__true_opt__descriptor,
+    offsetof(StreamingProtobufs__VictimSystemType, bds),
+    &streaming_protobufs__true_opt__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2188,8 +2188,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__victim_system_type__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__VictimSystemType, galileo),
-    &uenibstreamprotobuf__true_opt__descriptor,
+    offsetof(StreamingProtobufs__VictimSystemType, galileo),
+    &streaming_protobufs__true_opt__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2200,8 +2200,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__victim_system_type__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__VictimSystemType, wlan),
-    &uenibstreamprotobuf__true_opt__descriptor,
+    offsetof(StreamingProtobufs__VictimSystemType, wlan),
+    &streaming_protobufs__true_opt__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2212,14 +2212,14 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__victim_system_type__f
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__VictimSystemType, bluetooth),
-    &uenibstreamprotobuf__true_opt__descriptor,
+    offsetof(StreamingProtobufs__VictimSystemType, bluetooth),
+    &streaming_protobufs__true_opt__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__victim_system_type__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__victim_system_type__field_indices_by_name[] = {
   2,   /* field[2] = bds */
   5,   /* field[5] = bluetooth */
   3,   /* field[3] = galileo */
@@ -2227,27 +2227,27 @@ static const unsigned uenibstreamprotobuf__victim_system_type__field_indices_by_
   0,   /* field[0] = gps */
   4,   /* field[4] = wlan */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__victim_system_type__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__victim_system_type__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 6 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__victim_system_type__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__victim_system_type__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.VictimSystemType",
+  "streaming_protobufs.VictimSystemType",
   "VictimSystemType",
-  "Uenibstreamprotobuf__VictimSystemType",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__VictimSystemType),
+  "StreamingProtobufs__VictimSystemType",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__VictimSystemType),
   6,
-  uenibstreamprotobuf__victim_system_type__field_descriptors,
-  uenibstreamprotobuf__victim_system_type__field_indices_by_name,
-  1,  uenibstreamprotobuf__victim_system_type__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__victim_system_type__init,
+  streaming_protobufs__victim_system_type__field_descriptors,
+  streaming_protobufs__victim_system_type__field_indices_by_name,
+  1,  streaming_protobufs__victim_system_type__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__victim_system_type__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__field_descriptors[2] =
+static const ProtobufCFieldDescriptor streaming_protobufs__affected_carrier_freq_comb_mrdc__field_descriptors[2] =
 {
   {
     "affectedCarrierFreqCombEUTRA",
@@ -2255,8 +2255,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__affected_carrier_freq
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC, affectedcarrierfreqcombeutra),
-    &uenibstreamprotobuf__affected_carrier_freq_comb_eutra__descriptor,
+    offsetof(StreamingProtobufs__AffectedCarrierFreqCombMRDC, affectedcarrierfreqcombeutra),
+    &streaming_protobufs__affected_carrier_freq_comb_eutra__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2267,114 +2267,114 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__affected_carrier_freq
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC, affectedcarrierfreqcombnr),
-    &uenibstreamprotobuf__affected_carrier_freq_comb_nr__descriptor,
+    offsetof(StreamingProtobufs__AffectedCarrierFreqCombMRDC, affectedcarrierfreqcombnr),
+    &streaming_protobufs__affected_carrier_freq_comb_nr__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__affected_carrier_freq_comb_mrdc__field_indices_by_name[] = {
   0,   /* field[0] = affectedCarrierFreqCombEUTRA */
   1,   /* field[1] = affectedCarrierFreqCombNR */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__affected_carrier_freq_comb_mrdc__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 2 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__affected_carrier_freq_comb_mrdc__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.AffectedCarrierFreqCombMRDC",
+  "streaming_protobufs.AffectedCarrierFreqCombMRDC",
   "AffectedCarrierFreqCombMRDC",
-  "Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__AffectedCarrierFreqCombMRDC),
+  "StreamingProtobufs__AffectedCarrierFreqCombMRDC",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__AffectedCarrierFreqCombMRDC),
   2,
-  uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__field_descriptors,
-  uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__field_indices_by_name,
-  1,  uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__affected_carrier_freq_comb_mrdc__init,
+  streaming_protobufs__affected_carrier_freq_comb_mrdc__field_descriptors,
+  streaming_protobufs__affected_carrier_freq_comb_mrdc__field_indices_by_name,
+  1,  streaming_protobufs__affected_carrier_freq_comb_mrdc__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__affected_carrier_freq_comb_mrdc__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__affected_carrier_freq_comb_eutra__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__affected_carrier_freq_comb_eutra__field_descriptors[1] =
 {
   {
     "items",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA, n_items),
-    offsetof(Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA, items),
+    offsetof(StreamingProtobufs__AffectedCarrierFreqCombEUTRA, n_items),
+    offsetof(StreamingProtobufs__AffectedCarrierFreqCombEUTRA, items),
     NULL,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__affected_carrier_freq_comb_eutra__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__affected_carrier_freq_comb_eutra__field_indices_by_name[] = {
   0,   /* field[0] = items */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__affected_carrier_freq_comb_eutra__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__affected_carrier_freq_comb_eutra__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__affected_carrier_freq_comb_eutra__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__affected_carrier_freq_comb_eutra__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.AffectedCarrierFreqCombEUTRA",
+  "streaming_protobufs.AffectedCarrierFreqCombEUTRA",
   "AffectedCarrierFreqCombEUTRA",
-  "Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__AffectedCarrierFreqCombEUTRA),
+  "StreamingProtobufs__AffectedCarrierFreqCombEUTRA",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__AffectedCarrierFreqCombEUTRA),
   1,
-  uenibstreamprotobuf__affected_carrier_freq_comb_eutra__field_descriptors,
-  uenibstreamprotobuf__affected_carrier_freq_comb_eutra__field_indices_by_name,
-  1,  uenibstreamprotobuf__affected_carrier_freq_comb_eutra__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__affected_carrier_freq_comb_eutra__init,
+  streaming_protobufs__affected_carrier_freq_comb_eutra__field_descriptors,
+  streaming_protobufs__affected_carrier_freq_comb_eutra__field_indices_by_name,
+  1,  streaming_protobufs__affected_carrier_freq_comb_eutra__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__affected_carrier_freq_comb_eutra__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__affected_carrier_freq_comb_nr__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__affected_carrier_freq_comb_nr__field_descriptors[1] =
 {
   {
     "items",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_UINT32,
-    offsetof(Uenibstreamprotobuf__AffectedCarrierFreqCombNR, n_items),
-    offsetof(Uenibstreamprotobuf__AffectedCarrierFreqCombNR, items),
+    offsetof(StreamingProtobufs__AffectedCarrierFreqCombNR, n_items),
+    offsetof(StreamingProtobufs__AffectedCarrierFreqCombNR, items),
     NULL,
     NULL,
     0 | PROTOBUF_C_FIELD_FLAG_PACKED,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__affected_carrier_freq_comb_nr__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__affected_carrier_freq_comb_nr__field_indices_by_name[] = {
   0,   /* field[0] = items */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__affected_carrier_freq_comb_nr__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__affected_carrier_freq_comb_nr__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__affected_carrier_freq_comb_nr__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__affected_carrier_freq_comb_nr__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.AffectedCarrierFreqCombNR",
+  "streaming_protobufs.AffectedCarrierFreqCombNR",
   "AffectedCarrierFreqCombNR",
-  "Uenibstreamprotobuf__AffectedCarrierFreqCombNR",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__AffectedCarrierFreqCombNR),
+  "StreamingProtobufs__AffectedCarrierFreqCombNR",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__AffectedCarrierFreqCombNR),
   1,
-  uenibstreamprotobuf__affected_carrier_freq_comb_nr__field_descriptors,
-  uenibstreamprotobuf__affected_carrier_freq_comb_nr__field_indices_by_name,
-  1,  uenibstreamprotobuf__affected_carrier_freq_comb_nr__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__affected_carrier_freq_comb_nr__init,
+  streaming_protobufs__affected_carrier_freq_comb_nr__field_descriptors,
+  streaming_protobufs__affected_carrier_freq_comb_nr__field_indices_by_name,
+  1,  streaming_protobufs__affected_carrier_freq_comb_nr__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__affected_carrier_freq_comb_nr__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info_v1540__ies__field_descriptors[2] =
+static const ProtobufCFieldDescriptor streaming_protobufs__cg__config_info_v1540__ies__field_descriptors[2] =
 {
   {
     "ph_InfoMCG",
@@ -2382,8 +2382,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info_v1540
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoV1540IEs, ph_infomcg),
-    &uenibstreamprotobuf__ph__type_list_mcg__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoV1540IEs, ph_infomcg),
+    &streaming_protobufs__ph__type_list_mcg__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2394,76 +2394,76 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__cg__config_info_v1540
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__CGConfigInfoV1540IEs, measresultreportcgi),
-    &uenibstreamprotobuf__meas_result_report_cgi__descriptor,
+    offsetof(StreamingProtobufs__CGConfigInfoV1540IEs, measresultreportcgi),
+    &streaming_protobufs__meas_result_report_cgi__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__cg__config_info_v1540__ies__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__cg__config_info_v1540__ies__field_indices_by_name[] = {
   1,   /* field[1] = measResultReportCGI */
   0,   /* field[0] = ph_InfoMCG */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__cg__config_info_v1540__ies__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__cg__config_info_v1540__ies__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 2 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__cg__config_info_v1540__ies__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__cg__config_info_v1540__ies__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.CG_ConfigInfo_v1540_IEs",
+  "streaming_protobufs.CG_ConfigInfo_v1540_IEs",
   "CGConfigInfoV1540IEs",
-  "Uenibstreamprotobuf__CGConfigInfoV1540IEs",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__CGConfigInfoV1540IEs),
+  "StreamingProtobufs__CGConfigInfoV1540IEs",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__CGConfigInfoV1540IEs),
   2,
-  uenibstreamprotobuf__cg__config_info_v1540__ies__field_descriptors,
-  uenibstreamprotobuf__cg__config_info_v1540__ies__field_indices_by_name,
-  1,  uenibstreamprotobuf__cg__config_info_v1540__ies__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__cg__config_info_v1540__ies__init,
+  streaming_protobufs__cg__config_info_v1540__ies__field_descriptors,
+  streaming_protobufs__cg__config_info_v1540__ies__field_indices_by_name,
+  1,  streaming_protobufs__cg__config_info_v1540__ies__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__cg__config_info_v1540__ies__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__ph__type_list_mcg__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__ph__type_list_mcg__field_descriptors[1] =
 {
   {
     "items",
     1,
     PROTOBUF_C_LABEL_REPEATED,
     PROTOBUF_C_TYPE_MESSAGE,
-    offsetof(Uenibstreamprotobuf__PHTypeListMCG, n_items),
-    offsetof(Uenibstreamprotobuf__PHTypeListMCG, items),
-    &uenibstreamprotobuf__ph__info_mcg__descriptor,
+    offsetof(StreamingProtobufs__PHTypeListMCG, n_items),
+    offsetof(StreamingProtobufs__PHTypeListMCG, items),
+    &streaming_protobufs__ph__info_mcg__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__ph__type_list_mcg__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__ph__type_list_mcg__field_indices_by_name[] = {
   0,   /* field[0] = items */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__ph__type_list_mcg__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__ph__type_list_mcg__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__ph__type_list_mcg__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__ph__type_list_mcg__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.PH_TypeListMCG",
+  "streaming_protobufs.PH_TypeListMCG",
   "PHTypeListMCG",
-  "Uenibstreamprotobuf__PHTypeListMCG",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__PHTypeListMCG),
+  "StreamingProtobufs__PHTypeListMCG",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__PHTypeListMCG),
   1,
-  uenibstreamprotobuf__ph__type_list_mcg__field_descriptors,
-  uenibstreamprotobuf__ph__type_list_mcg__field_indices_by_name,
-  1,  uenibstreamprotobuf__ph__type_list_mcg__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__ph__type_list_mcg__init,
+  streaming_protobufs__ph__type_list_mcg__field_descriptors,
+  streaming_protobufs__ph__type_list_mcg__field_indices_by_name,
+  1,  streaming_protobufs__ph__type_list_mcg__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__ph__type_list_mcg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__ph__info_mcg__field_descriptors[3] =
+static const ProtobufCFieldDescriptor streaming_protobufs__ph__info_mcg__field_descriptors[3] =
 {
   {
     "servCellIndex",
@@ -2471,7 +2471,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__ph__info_mcg__field_d
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__PHInfoMCG, servcellindex),
+    offsetof(StreamingProtobufs__PHInfoMCG, servcellindex),
     NULL,
     NULL,
     0,             /* flags */
@@ -2483,8 +2483,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__ph__info_mcg__field_d
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__PHInfoMCG, ph_uplink),
-    &uenibstreamprotobuf__ph__uplink_carrier_mcg__descriptor,
+    offsetof(StreamingProtobufs__PHInfoMCG, ph_uplink),
+    &streaming_protobufs__ph__uplink_carrier_mcg__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -2495,69 +2495,69 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__ph__info_mcg__field_d
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__PHInfoMCG, ph_supplementaryuplink),
-    &uenibstreamprotobuf__ph__uplink_carrier_mcg__descriptor,
+    offsetof(StreamingProtobufs__PHInfoMCG, ph_supplementaryuplink),
+    &streaming_protobufs__ph__uplink_carrier_mcg__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__ph__info_mcg__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__ph__info_mcg__field_indices_by_name[] = {
   2,   /* field[2] = ph_SupplementaryUplink */
   1,   /* field[1] = ph_Uplink */
   0,   /* field[0] = servCellIndex */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__ph__info_mcg__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__ph__info_mcg__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__ph__info_mcg__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__ph__info_mcg__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.PH_InfoMCG",
+  "streaming_protobufs.PH_InfoMCG",
   "PHInfoMCG",
-  "Uenibstreamprotobuf__PHInfoMCG",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__PHInfoMCG),
+  "StreamingProtobufs__PHInfoMCG",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__PHInfoMCG),
   3,
-  uenibstreamprotobuf__ph__info_mcg__field_descriptors,
-  uenibstreamprotobuf__ph__info_mcg__field_indices_by_name,
-  1,  uenibstreamprotobuf__ph__info_mcg__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__ph__info_mcg__init,
+  streaming_protobufs__ph__info_mcg__field_descriptors,
+  streaming_protobufs__ph__info_mcg__field_indices_by_name,
+  1,  streaming_protobufs__ph__info_mcg__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__ph__info_mcg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCEnumValue uenibstreamprotobuf__ph__uplink_carrier_mcg__ph__type1or3__enum_values_by_number[3] =
+static const ProtobufCEnumValue streaming_protobufs__ph__uplink_carrier_mcg__ph__type1or3__enum_values_by_number[3] =
 {
-  { "protobuf_unspecified", "UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_MCG__PH__TYPE1OR3__protobuf_unspecified", 0 },
-  { "type1", "UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_MCG__PH__TYPE1OR3__type1", 1 },
-  { "type3", "UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_MCG__PH__TYPE1OR3__type3", 2 },
+  { "protobuf_unspecified", "STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_MCG__PH__TYPE1OR3__protobuf_unspecified", 0 },
+  { "type1", "STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_MCG__PH__TYPE1OR3__type1", 1 },
+  { "type3", "STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_MCG__PH__TYPE1OR3__type3", 2 },
 };
-static const ProtobufCIntRange uenibstreamprotobuf__ph__uplink_carrier_mcg__ph__type1or3__value_ranges[] = {
+static const ProtobufCIntRange streaming_protobufs__ph__uplink_carrier_mcg__ph__type1or3__value_ranges[] = {
 {0, 0},{0, 3}
 };
-static const ProtobufCEnumValueIndex uenibstreamprotobuf__ph__uplink_carrier_mcg__ph__type1or3__enum_values_by_name[3] =
+static const ProtobufCEnumValueIndex streaming_protobufs__ph__uplink_carrier_mcg__ph__type1or3__enum_values_by_name[3] =
 {
   { "protobuf_unspecified", 0 },
   { "type1", 1 },
   { "type3", 2 },
 };
-const ProtobufCEnumDescriptor uenibstreamprotobuf__ph__uplink_carrier_mcg__ph__type1or3__descriptor =
+const ProtobufCEnumDescriptor streaming_protobufs__ph__uplink_carrier_mcg__ph__type1or3__descriptor =
 {
   PROTOBUF_C__ENUM_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.PH_UplinkCarrierMCG.PH_Type1or3",
+  "streaming_protobufs.PH_UplinkCarrierMCG.PH_Type1or3",
   "PH_Type1or3",
-  "Uenibstreamprotobuf__PHUplinkCarrierMCG__PHType1or3",
-  "uenibstreamprotobuf",
+  "StreamingProtobufs__PHUplinkCarrierMCG__PHType1or3",
+  "streaming_protobufs",
   3,
-  uenibstreamprotobuf__ph__uplink_carrier_mcg__ph__type1or3__enum_values_by_number,
+  streaming_protobufs__ph__uplink_carrier_mcg__ph__type1or3__enum_values_by_number,
   3,
-  uenibstreamprotobuf__ph__uplink_carrier_mcg__ph__type1or3__enum_values_by_name,
+  streaming_protobufs__ph__uplink_carrier_mcg__ph__type1or3__enum_values_by_name,
   1,
-  uenibstreamprotobuf__ph__uplink_carrier_mcg__ph__type1or3__value_ranges,
+  streaming_protobufs__ph__uplink_carrier_mcg__ph__type1or3__value_ranges,
   NULL,NULL,NULL,NULL   /* reserved[1234] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__ph__uplink_carrier_mcg__field_descriptors[1] =
+static const ProtobufCFieldDescriptor streaming_protobufs__ph__uplink_carrier_mcg__field_descriptors[1] =
 {
   {
     "ph_Type1or3",
@@ -2565,37 +2565,37 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__ph__uplink_carrier_mc
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_ENUM,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__PHUplinkCarrierMCG, ph_type1or3),
-    &uenibstreamprotobuf__ph__uplink_carrier_mcg__ph__type1or3__descriptor,
+    offsetof(StreamingProtobufs__PHUplinkCarrierMCG, ph_type1or3),
+    &streaming_protobufs__ph__uplink_carrier_mcg__ph__type1or3__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__ph__uplink_carrier_mcg__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__ph__uplink_carrier_mcg__field_indices_by_name[] = {
   0,   /* field[0] = ph_Type1or3 */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__ph__uplink_carrier_mcg__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__ph__uplink_carrier_mcg__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 1 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__ph__uplink_carrier_mcg__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__ph__uplink_carrier_mcg__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.PH_UplinkCarrierMCG",
+  "streaming_protobufs.PH_UplinkCarrierMCG",
   "PHUplinkCarrierMCG",
-  "Uenibstreamprotobuf__PHUplinkCarrierMCG",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__PHUplinkCarrierMCG),
+  "StreamingProtobufs__PHUplinkCarrierMCG",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__PHUplinkCarrierMCG),
   1,
-  uenibstreamprotobuf__ph__uplink_carrier_mcg__field_descriptors,
-  uenibstreamprotobuf__ph__uplink_carrier_mcg__field_indices_by_name,
-  1,  uenibstreamprotobuf__ph__uplink_carrier_mcg__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__ph__uplink_carrier_mcg__init,
+  streaming_protobufs__ph__uplink_carrier_mcg__field_descriptors,
+  streaming_protobufs__ph__uplink_carrier_mcg__field_indices_by_name,
+  1,  streaming_protobufs__ph__uplink_carrier_mcg__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__ph__uplink_carrier_mcg__init,
   NULL,NULL,NULL    /* reserved[123] */
 };
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_result_report_cgi__field_descriptors[3] =
+static const ProtobufCFieldDescriptor streaming_protobufs__meas_result_report_cgi__field_descriptors[3] =
 {
   {
     "ssbFrequency",
@@ -2603,7 +2603,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_result_report_cg
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MeasResultReportCGI, ssbfrequency),
+    offsetof(StreamingProtobufs__MeasResultReportCGI, ssbfrequency),
     NULL,
     NULL,
     0,             /* flags */
@@ -2615,7 +2615,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_result_report_cg
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MeasResultReportCGI, cellforwhichtoreportcgi),
+    offsetof(StreamingProtobufs__MeasResultReportCGI, cellforwhichtoreportcgi),
     NULL,
     NULL,
     0,             /* flags */
@@ -2627,35 +2627,35 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__meas_result_report_cg
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__MeasResultReportCGI, cgi_info),
-    &uenibstreamprotobuf__cgi__info__descriptor,
+    offsetof(StreamingProtobufs__MeasResultReportCGI, cgi_info),
+    &streaming_protobufs__cgi__info__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__meas_result_report_cgi__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__meas_result_report_cgi__field_indices_by_name[] = {
   1,   /* field[1] = cellForWhichToReportCGI */
   2,   /* field[2] = cgi_Info */
   0,   /* field[0] = ssbFrequency */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__meas_result_report_cgi__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__meas_result_report_cgi__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 3 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__meas_result_report_cgi__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__meas_result_report_cgi__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.MeasResultReportCGI",
+  "streaming_protobufs.MeasResultReportCGI",
   "MeasResultReportCGI",
-  "Uenibstreamprotobuf__MeasResultReportCGI",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__MeasResultReportCGI),
+  "StreamingProtobufs__MeasResultReportCGI",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__MeasResultReportCGI),
   3,
-  uenibstreamprotobuf__meas_result_report_cgi__field_descriptors,
-  uenibstreamprotobuf__meas_result_report_cgi__field_indices_by_name,
-  1,  uenibstreamprotobuf__meas_result_report_cgi__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__meas_result_report_cgi__init,
+  streaming_protobufs__meas_result_report_cgi__field_descriptors,
+  streaming_protobufs__meas_result_report_cgi__field_indices_by_name,
+  1,  streaming_protobufs__meas_result_report_cgi__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__meas_result_report_cgi__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

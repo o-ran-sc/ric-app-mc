@@ -23,17 +23,21 @@
 
 #include "packet.h"
 
+
+#include "/usr/local/include/protobuf-c/protobuf-c.h"
+
 struct _eRABs_acked_for_admit_for_ue {
 	gs_uint64_t timestamp_ms;
 	gs_sp_t gnb_id;
 	gs_int64_t id_MeNB_UE_X2AP_ID;
 	gs_int64_t id_SgNB_UE_X2AP_ID;
 	gs_uint32_t id_MeNB_UE_X2AP_ID_Extension;
-	gs_sp_t gTP_TEID_dl;
+	gs_int64_t ARP;
+	ProtobufCBinaryData gTP_TEID_dl;
 	gs_int8_t gTP_TEID_dl_exists;
 	gs_int64_t mCGresources;
 	gs_int8_t mCGresources_exists;
-	gs_sp_t transportLayerAddress_dl;
+	ProtobufCBinaryData transportLayerAddress_dl;
 	gs_int8_t transportLayerAddress_dl_exists;
 	gs_int64_t pDCPatSgNB;
 	gs_int8_t pDCPatSgNB_exists;
@@ -57,10 +61,13 @@ static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__timestamp_ms(struct 
 }
 
 static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__gnb_id(struct packet *p, struct gs_string *t){
-t->data = ((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->gnb_id;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->gnb_id;
+	if( t->data == NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = strlen(t->data);
 }
 
 static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__id_MeNB_UE_X2AP_ID(struct packet *p, gs_int64_t *t){
@@ -78,11 +85,19 @@ static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__id_MeNB_UE_X2AP_ID_E
 	return 0;
 }
 
+static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__ARP(struct packet *p, gs_int64_t *t){
+	*t = ((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->ARP;
+	return 0;
+}
+
 static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__gTP_TEID_dl(struct packet *p, struct gs_string *t){
-t->data = ((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->gTP_TEID_dl;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return (((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->gTP_TEID_dl==0);
+	t->data = ((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->gTP_TEID_dl.data;
+	if(t->data==NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = ((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->gTP_TEID_dl.len;
 }
 
 static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__mCGresources(struct packet *p, gs_int64_t *t){
@@ -91,10 +106,13 @@ static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__mCGresources(struct 
 }
 
 static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__transportLayerAddress_dl(struct packet *p, struct gs_string *t){
-t->data = ((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->transportLayerAddress_dl;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return (((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->transportLayerAddress_dl==0);
+	t->data = ((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->transportLayerAddress_dl.data;
+	if(t->data==NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = ((struct _eRABs_acked_for_admit_for_ue *)(p->record.packed.values))->transportLayerAddress_dl.len;
 }
 
 static inline gs_retval_t get_eRABs_acked_for_admit_for_ue__pDCPatSgNB(struct packet *p, gs_int64_t *t){

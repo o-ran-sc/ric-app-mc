@@ -19,8 +19,8 @@ PROTOBUF_C__BEGIN_DECLS
 #include "error_cause.pb-c.h"
 #include "rrc_cg_config_info.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__SgNBModificationRefuse Uenibstreamprotobuf__SgNBModificationRefuse;
-typedef struct _Uenibstreamprotobuf__SgNBModificationRefuseIEs Uenibstreamprotobuf__SgNBModificationRefuseIEs;
+typedef struct _StreamingProtobufs__SgNBModificationRefuse StreamingProtobufs__SgNBModificationRefuse;
+typedef struct _StreamingProtobufs__SgNBModificationRefuseIEs StreamingProtobufs__SgNBModificationRefuseIEs;
 
 
 /* --- enums --- */
@@ -28,79 +28,79 @@ typedef struct _Uenibstreamprotobuf__SgNBModificationRefuseIEs Uenibstreamprotob
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__SgNBModificationRefuse
+struct  _StreamingProtobufs__SgNBModificationRefuse
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__SgNBModificationRefuseIEs *protocolies;
+  StreamingProtobufs__SgNBModificationRefuseIEs *protocolies;
 };
-#define UENIBSTREAMPROTOBUF__SG_NBMODIFICATION_REFUSE__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sg_nbmodification_refuse__descriptor) \
+#define STREAMING_PROTOBUFS__SG_NBMODIFICATION_REFUSE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sg_nbmodification_refuse__descriptor) \
     , NULL }
 
 
-struct  _Uenibstreamprotobuf__SgNBModificationRefuseIEs
+struct  _StreamingProtobufs__SgNBModificationRefuseIEs
 {
   ProtobufCMessage base;
   uint32_t id_menb_ue_x2ap_id;
   uint32_t id_sgnb_ue_x2ap_id;
-  Uenibstreamprotobuf__Cause *id_cause;
+  StreamingProtobufs__Cause *id_cause;
   /*
    *The content of id_MeNBtoSgNBContainer has been specified in 3GPP 38.331 to be CG-ConfigInfo.
    */
-  Uenibstreamprotobuf__CGConfigInfo *id_menbtosgnbcontainer;
-  Uenibstreamprotobuf__CriticalityDiagnostics *id_criticalitydiagnostics;
+  StreamingProtobufs__CGConfigInfo *id_menbtosgnbcontainer;
+  StreamingProtobufs__CriticalityDiagnostics *id_criticalitydiagnostics;
   Google__Protobuf__UInt32Value *id_menb_ue_x2ap_id_extension;
 };
-#define UENIBSTREAMPROTOBUF__SG_NBMODIFICATION_REFUSE__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__sg_nbmodification_refuse__ies__descriptor) \
+#define STREAMING_PROTOBUFS__SG_NBMODIFICATION_REFUSE__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__sg_nbmodification_refuse__ies__descriptor) \
     , 0, 0, NULL, NULL, NULL, NULL }
 
 
-/* Uenibstreamprotobuf__SgNBModificationRefuse methods */
-void   uenibstreamprotobuf__sg_nbmodification_refuse__init
-                     (Uenibstreamprotobuf__SgNBModificationRefuse         *message);
-size_t uenibstreamprotobuf__sg_nbmodification_refuse__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBModificationRefuse   *message);
-size_t uenibstreamprotobuf__sg_nbmodification_refuse__pack
-                     (const Uenibstreamprotobuf__SgNBModificationRefuse   *message,
+/* StreamingProtobufs__SgNBModificationRefuse methods */
+void   streaming_protobufs__sg_nbmodification_refuse__init
+                     (StreamingProtobufs__SgNBModificationRefuse         *message);
+size_t streaming_protobufs__sg_nbmodification_refuse__get_packed_size
+                     (const StreamingProtobufs__SgNBModificationRefuse   *message);
+size_t streaming_protobufs__sg_nbmodification_refuse__pack
+                     (const StreamingProtobufs__SgNBModificationRefuse   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sg_nbmodification_refuse__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBModificationRefuse   *message,
+size_t streaming_protobufs__sg_nbmodification_refuse__pack_to_buffer
+                     (const StreamingProtobufs__SgNBModificationRefuse   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SgNBModificationRefuse *
-       uenibstreamprotobuf__sg_nbmodification_refuse__unpack
+StreamingProtobufs__SgNBModificationRefuse *
+       streaming_protobufs__sg_nbmodification_refuse__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sg_nbmodification_refuse__free_unpacked
-                     (Uenibstreamprotobuf__SgNBModificationRefuse *message,
+void   streaming_protobufs__sg_nbmodification_refuse__free_unpacked
+                     (StreamingProtobufs__SgNBModificationRefuse *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__SgNBModificationRefuseIEs methods */
-void   uenibstreamprotobuf__sg_nbmodification_refuse__ies__init
-                     (Uenibstreamprotobuf__SgNBModificationRefuseIEs         *message);
-size_t uenibstreamprotobuf__sg_nbmodification_refuse__ies__get_packed_size
-                     (const Uenibstreamprotobuf__SgNBModificationRefuseIEs   *message);
-size_t uenibstreamprotobuf__sg_nbmodification_refuse__ies__pack
-                     (const Uenibstreamprotobuf__SgNBModificationRefuseIEs   *message,
+/* StreamingProtobufs__SgNBModificationRefuseIEs methods */
+void   streaming_protobufs__sg_nbmodification_refuse__ies__init
+                     (StreamingProtobufs__SgNBModificationRefuseIEs         *message);
+size_t streaming_protobufs__sg_nbmodification_refuse__ies__get_packed_size
+                     (const StreamingProtobufs__SgNBModificationRefuseIEs   *message);
+size_t streaming_protobufs__sg_nbmodification_refuse__ies__pack
+                     (const StreamingProtobufs__SgNBModificationRefuseIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__sg_nbmodification_refuse__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__SgNBModificationRefuseIEs   *message,
+size_t streaming_protobufs__sg_nbmodification_refuse__ies__pack_to_buffer
+                     (const StreamingProtobufs__SgNBModificationRefuseIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SgNBModificationRefuseIEs *
-       uenibstreamprotobuf__sg_nbmodification_refuse__ies__unpack
+StreamingProtobufs__SgNBModificationRefuseIEs *
+       streaming_protobufs__sg_nbmodification_refuse__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__sg_nbmodification_refuse__ies__free_unpacked
-                     (Uenibstreamprotobuf__SgNBModificationRefuseIEs *message,
+void   streaming_protobufs__sg_nbmodification_refuse__ies__free_unpacked
+                     (StreamingProtobufs__SgNBModificationRefuseIEs *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__SgNBModificationRefuse_Closure)
-                 (const Uenibstreamprotobuf__SgNBModificationRefuse *message,
+typedef void (*StreamingProtobufs__SgNBModificationRefuse_Closure)
+                 (const StreamingProtobufs__SgNBModificationRefuse *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__SgNBModificationRefuseIEs_Closure)
-                 (const Uenibstreamprotobuf__SgNBModificationRefuseIEs *message,
+typedef void (*StreamingProtobufs__SgNBModificationRefuseIEs_Closure)
+                 (const StreamingProtobufs__SgNBModificationRefuseIEs *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -108,8 +108,8 @@ typedef void (*Uenibstreamprotobuf__SgNBModificationRefuseIEs_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbmodification_refuse__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__sg_nbmodification_refuse__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sg_nbmodification_refuse__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__sg_nbmodification_refuse__ies__descriptor;
 
 PROTOBUF_C__END_DECLS
 

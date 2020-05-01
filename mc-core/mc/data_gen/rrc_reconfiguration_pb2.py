@@ -22,10 +22,10 @@ import rrc_system_information_pb2 as rrc__system__information__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rrc_reconfiguration.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x19rrc_reconfiguration.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x12\x63ommon_types.proto\x1a\x16rrc_common_types.proto\x1a\rrrc_sib.proto\x1a\x1crrc_system_information.proto\"\x98\x01\n\x12RRCReconfiguration\x12!\n\x19rrc_TransactionIdentifier\x18\x01 \x01(\r\x12I\n\x12rrcReconfiguration\x18\x02 \x01(\x0b\x32+.uenibstreamprotobuf.RRCReconfiguration_IEsH\x00\x42\x14\n\x12\x63riticalExtensions\"\xe3\x02\n\x16RRCReconfiguration_IEs\x12\x41\n\x11radioBearerConfig\x18\x01 \x01(\x0b\x32&.uenibstreamprotobuf.RadioBearerConfig\x12@\n\x12secondaryCellGroup\x18\x02 \x01(\x0b\x32$.uenibstreamprotobuf.CellGroupConfig\x12\x33\n\nmeasConfig\x18\x03 \x01(\x0b\x32\x1f.uenibstreamprotobuf.MeasConfig\x12>\n\x18lateNonCriticalExtension\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.StringValue\x12O\n\x14nonCriticalExtension\x18\x05 \x01(\x0b\x32\x31.uenibstreamprotobuf.RRCReconfiguration_v1530_IEs\"\x87\x04\n\x1cRRCReconfiguration_v1530_IEs\x12=\n\x0fmasterCellGroup\x18\x01 \x01(\x0b\x32$.uenibstreamprotobuf.CellGroupConfig\x12\x30\n\nfullConfig\x18\x02 \x01(\x0b\x32\x1c.uenibstreamprotobuf.TrueOpt\x12 \n\x18\x64\x65\x64icatedNAS_MessageList\x18\x03 \x03(\t\x12=\n\x0fmasterKeyUpdate\x18\x04 \x01(\x0b\x32$.uenibstreamprotobuf.MasterKeyUpdate\x12\x39\n\x16\x64\x65\x64icatedSIB1_Delivery\x18\x05 \x01(\x0b\x32\x19.uenibstreamprotobuf.SIB1\x12R\n\"dedicatedSystemInformationDelivery\x18\x06 \x01(\x0b\x32&.uenibstreamprotobuf.SystemInformation\x12\x35\n\x0botherConfig\x18\x07 \x01(\x0b\x32 .uenibstreamprotobuf.OtherConfig\x12O\n\x14nonCriticalExtension\x18\x08 \x01(\x0b\x32\x31.uenibstreamprotobuf.RRCReconfiguration_v1540_IEs\"\x83\x01\n\x0fMasterKeyUpdate\x12\x1d\n\x15keySetChangeIndicator\x18\x01 \x01(\x08\x12\x1c\n\x14nextHopChainingCount\x18\x02 \x01(\r\x12\x33\n\rnas_Container\x18\x03 \x01(\x0b\x32\x1c.google.protobuf.StringValue\"a\n\x1cRRCReconfiguration_v1540_IEs\x12\x41\n\x11otherConfig_v1540\x18\x01 \x01(\x0b\x32&.uenibstreamprotobuf.OtherConfig_v1540B:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x19rrc_reconfiguration.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x12\x63ommon_types.proto\x1a\x16rrc_common_types.proto\x1a\rrrc_sib.proto\x1a\x1crrc_system_information.proto\"\x98\x01\n\x12RRCReconfiguration\x12!\n\x19rrc_TransactionIdentifier\x18\x01 \x01(\r\x12I\n\x12rrcReconfiguration\x18\x02 \x01(\x0b\x32+.streaming_protobufs.RRCReconfiguration_IEsH\x00\x42\x14\n\x12\x63riticalExtensions\"\xe2\x02\n\x16RRCReconfiguration_IEs\x12\x41\n\x11radioBearerConfig\x18\x01 \x01(\x0b\x32&.streaming_protobufs.RadioBearerConfig\x12@\n\x12secondaryCellGroup\x18\x02 \x01(\x0b\x32$.streaming_protobufs.CellGroupConfig\x12\x33\n\nmeasConfig\x18\x03 \x01(\x0b\x32\x1f.streaming_protobufs.MeasConfig\x12=\n\x18lateNonCriticalExtension\x18\x04 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\x12O\n\x14nonCriticalExtension\x18\x05 \x01(\x0b\x32\x31.streaming_protobufs.RRCReconfiguration_v1530_IEs\"\x87\x04\n\x1cRRCReconfiguration_v1530_IEs\x12=\n\x0fmasterCellGroup\x18\x01 \x01(\x0b\x32$.streaming_protobufs.CellGroupConfig\x12\x30\n\nfullConfig\x18\x02 \x01(\x0b\x32\x1c.streaming_protobufs.TrueOpt\x12 \n\x18\x64\x65\x64icatedNAS_MessageList\x18\x03 \x03(\x0c\x12=\n\x0fmasterKeyUpdate\x18\x04 \x01(\x0b\x32$.streaming_protobufs.MasterKeyUpdate\x12\x39\n\x16\x64\x65\x64icatedSIB1_Delivery\x18\x05 \x01(\x0b\x32\x19.streaming_protobufs.SIB1\x12R\n\"dedicatedSystemInformationDelivery\x18\x06 \x01(\x0b\x32&.streaming_protobufs.SystemInformation\x12\x35\n\x0botherConfig\x18\x07 \x01(\x0b\x32 .streaming_protobufs.OtherConfig\x12O\n\x14nonCriticalExtension\x18\x08 \x01(\x0b\x32\x31.streaming_protobufs.RRCReconfiguration_v1540_IEs\"\x82\x01\n\x0fMasterKeyUpdate\x12\x1d\n\x15keySetChangeIndicator\x18\x01 \x01(\x08\x12\x1c\n\x14nextHopChainingCount\x18\x02 \x01(\r\x12\x32\n\rnas_Container\x18\x03 \x01(\x0b\x32\x1b.google.protobuf.BytesValue\"a\n\x1cRRCReconfiguration_v1540_IEs\x12\x41\n\x11otherConfig_v1540\x18\x01 \x01(\x0b\x32&.streaming_protobufs.OtherConfig_v1540B3Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,common__types__pb2.DESCRIPTOR,rrc__common__types__pb2.DESCRIPTOR,rrc__sib__pb2.DESCRIPTOR,rrc__system__information__pb2.DESCRIPTOR,])
 
@@ -34,20 +34,20 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _RRCRECONFIGURATION = _descriptor.Descriptor(
   name='RRCReconfiguration',
-  full_name='uenibstreamprotobuf.RRCReconfiguration',
+  full_name='streaming_protobufs.RRCReconfiguration',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='rrc_TransactionIdentifier', full_name='uenibstreamprotobuf.RRCReconfiguration.rrc_TransactionIdentifier', index=0,
+      name='rrc_TransactionIdentifier', full_name='streaming_protobufs.RRCReconfiguration.rrc_TransactionIdentifier', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='rrcReconfiguration', full_name='uenibstreamprotobuf.RRCReconfiguration.rrcReconfiguration', index=1,
+      name='rrcReconfiguration', full_name='streaming_protobufs.RRCReconfiguration.rrcReconfiguration', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -65,7 +65,7 @@ _RRCRECONFIGURATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='criticalExtensions', full_name='uenibstreamprotobuf.RRCReconfiguration.criticalExtensions',
+      name='criticalExtensions', full_name='streaming_protobufs.RRCReconfiguration.criticalExtensions',
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=172,
@@ -75,41 +75,41 @@ _RRCRECONFIGURATION = _descriptor.Descriptor(
 
 _RRCRECONFIGURATION_IES = _descriptor.Descriptor(
   name='RRCReconfiguration_IEs',
-  full_name='uenibstreamprotobuf.RRCReconfiguration_IEs',
+  full_name='streaming_protobufs.RRCReconfiguration_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='radioBearerConfig', full_name='uenibstreamprotobuf.RRCReconfiguration_IEs.radioBearerConfig', index=0,
+      name='radioBearerConfig', full_name='streaming_protobufs.RRCReconfiguration_IEs.radioBearerConfig', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='secondaryCellGroup', full_name='uenibstreamprotobuf.RRCReconfiguration_IEs.secondaryCellGroup', index=1,
+      name='secondaryCellGroup', full_name='streaming_protobufs.RRCReconfiguration_IEs.secondaryCellGroup', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='measConfig', full_name='uenibstreamprotobuf.RRCReconfiguration_IEs.measConfig', index=2,
+      name='measConfig', full_name='streaming_protobufs.RRCReconfiguration_IEs.measConfig', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='lateNonCriticalExtension', full_name='uenibstreamprotobuf.RRCReconfiguration_IEs.lateNonCriticalExtension', index=3,
+      name='lateNonCriticalExtension', full_name='streaming_protobufs.RRCReconfiguration_IEs.lateNonCriticalExtension', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nonCriticalExtension', full_name='uenibstreamprotobuf.RRCReconfiguration_IEs.nonCriticalExtension', index=4,
+      name='nonCriticalExtension', full_name='streaming_protobufs.RRCReconfiguration_IEs.nonCriticalExtension', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -128,68 +128,68 @@ _RRCRECONFIGURATION_IES = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=327,
-  serialized_end=682,
+  serialized_end=681,
 )
 
 
 _RRCRECONFIGURATION_V1530_IES = _descriptor.Descriptor(
   name='RRCReconfiguration_v1530_IEs',
-  full_name='uenibstreamprotobuf.RRCReconfiguration_v1530_IEs',
+  full_name='streaming_protobufs.RRCReconfiguration_v1530_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='masterCellGroup', full_name='uenibstreamprotobuf.RRCReconfiguration_v1530_IEs.masterCellGroup', index=0,
+      name='masterCellGroup', full_name='streaming_protobufs.RRCReconfiguration_v1530_IEs.masterCellGroup', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='fullConfig', full_name='uenibstreamprotobuf.RRCReconfiguration_v1530_IEs.fullConfig', index=1,
+      name='fullConfig', full_name='streaming_protobufs.RRCReconfiguration_v1530_IEs.fullConfig', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dedicatedNAS_MessageList', full_name='uenibstreamprotobuf.RRCReconfiguration_v1530_IEs.dedicatedNAS_MessageList', index=2,
-      number=3, type=9, cpp_type=9, label=3,
+      name='dedicatedNAS_MessageList', full_name='streaming_protobufs.RRCReconfiguration_v1530_IEs.dedicatedNAS_MessageList', index=2,
+      number=3, type=12, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='masterKeyUpdate', full_name='uenibstreamprotobuf.RRCReconfiguration_v1530_IEs.masterKeyUpdate', index=3,
+      name='masterKeyUpdate', full_name='streaming_protobufs.RRCReconfiguration_v1530_IEs.masterKeyUpdate', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dedicatedSIB1_Delivery', full_name='uenibstreamprotobuf.RRCReconfiguration_v1530_IEs.dedicatedSIB1_Delivery', index=4,
+      name='dedicatedSIB1_Delivery', full_name='streaming_protobufs.RRCReconfiguration_v1530_IEs.dedicatedSIB1_Delivery', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='dedicatedSystemInformationDelivery', full_name='uenibstreamprotobuf.RRCReconfiguration_v1530_IEs.dedicatedSystemInformationDelivery', index=5,
+      name='dedicatedSystemInformationDelivery', full_name='streaming_protobufs.RRCReconfiguration_v1530_IEs.dedicatedSystemInformationDelivery', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='otherConfig', full_name='uenibstreamprotobuf.RRCReconfiguration_v1530_IEs.otherConfig', index=6,
+      name='otherConfig', full_name='streaming_protobufs.RRCReconfiguration_v1530_IEs.otherConfig', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nonCriticalExtension', full_name='uenibstreamprotobuf.RRCReconfiguration_v1530_IEs.nonCriticalExtension', index=7,
+      name='nonCriticalExtension', full_name='streaming_protobufs.RRCReconfiguration_v1530_IEs.nonCriticalExtension', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -207,34 +207,34 @@ _RRCRECONFIGURATION_V1530_IES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=685,
-  serialized_end=1204,
+  serialized_start=684,
+  serialized_end=1203,
 )
 
 
 _MASTERKEYUPDATE = _descriptor.Descriptor(
   name='MasterKeyUpdate',
-  full_name='uenibstreamprotobuf.MasterKeyUpdate',
+  full_name='streaming_protobufs.MasterKeyUpdate',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='keySetChangeIndicator', full_name='uenibstreamprotobuf.MasterKeyUpdate.keySetChangeIndicator', index=0,
+      name='keySetChangeIndicator', full_name='streaming_protobufs.MasterKeyUpdate.keySetChangeIndicator', index=0,
       number=1, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nextHopChainingCount', full_name='uenibstreamprotobuf.MasterKeyUpdate.nextHopChainingCount', index=1,
+      name='nextHopChainingCount', full_name='streaming_protobufs.MasterKeyUpdate.nextHopChainingCount', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='nas_Container', full_name='uenibstreamprotobuf.MasterKeyUpdate.nas_Container', index=2,
+      name='nas_Container', full_name='streaming_protobufs.MasterKeyUpdate.nas_Container', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -252,20 +252,20 @@ _MASTERKEYUPDATE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1207,
-  serialized_end=1338,
+  serialized_start=1206,
+  serialized_end=1336,
 )
 
 
 _RRCRECONFIGURATION_V1540_IES = _descriptor.Descriptor(
   name='RRCReconfiguration_v1540_IEs',
-  full_name='uenibstreamprotobuf.RRCReconfiguration_v1540_IEs',
+  full_name='streaming_protobufs.RRCReconfiguration_v1540_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='otherConfig_v1540', full_name='uenibstreamprotobuf.RRCReconfiguration_v1540_IEs.otherConfig_v1540', index=0,
+      name='otherConfig_v1540', full_name='streaming_protobufs.RRCReconfiguration_v1540_IEs.otherConfig_v1540', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -283,8 +283,8 @@ _RRCRECONFIGURATION_V1540_IES = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1340,
-  serialized_end=1437,
+  serialized_start=1338,
+  serialized_end=1435,
 )
 
 _RRCRECONFIGURATION.fields_by_name['rrcReconfiguration'].message_type = _RRCRECONFIGURATION_IES
@@ -294,7 +294,7 @@ _RRCRECONFIGURATION.fields_by_name['rrcReconfiguration'].containing_oneof = _RRC
 _RRCRECONFIGURATION_IES.fields_by_name['radioBearerConfig'].message_type = rrc__common__types__pb2._RADIOBEARERCONFIG
 _RRCRECONFIGURATION_IES.fields_by_name['secondaryCellGroup'].message_type = rrc__common__types__pb2._CELLGROUPCONFIG
 _RRCRECONFIGURATION_IES.fields_by_name['measConfig'].message_type = rrc__common__types__pb2._MEASCONFIG
-_RRCRECONFIGURATION_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_RRCRECONFIGURATION_IES.fields_by_name['lateNonCriticalExtension'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _RRCRECONFIGURATION_IES.fields_by_name['nonCriticalExtension'].message_type = _RRCRECONFIGURATION_V1530_IES
 _RRCRECONFIGURATION_V1530_IES.fields_by_name['masterCellGroup'].message_type = rrc__common__types__pb2._CELLGROUPCONFIG
 _RRCRECONFIGURATION_V1530_IES.fields_by_name['fullConfig'].message_type = common__types__pb2._TRUEOPT
@@ -303,7 +303,7 @@ _RRCRECONFIGURATION_V1530_IES.fields_by_name['dedicatedSIB1_Delivery'].message_t
 _RRCRECONFIGURATION_V1530_IES.fields_by_name['dedicatedSystemInformationDelivery'].message_type = rrc__system__information__pb2._SYSTEMINFORMATION
 _RRCRECONFIGURATION_V1530_IES.fields_by_name['otherConfig'].message_type = rrc__common__types__pb2._OTHERCONFIG
 _RRCRECONFIGURATION_V1530_IES.fields_by_name['nonCriticalExtension'].message_type = _RRCRECONFIGURATION_V1540_IES
-_MASTERKEYUPDATE.fields_by_name['nas_Container'].message_type = google_dot_protobuf_dot_wrappers__pb2._STRINGVALUE
+_MASTERKEYUPDATE.fields_by_name['nas_Container'].message_type = google_dot_protobuf_dot_wrappers__pb2._BYTESVALUE
 _RRCRECONFIGURATION_V1540_IES.fields_by_name['otherConfig_v1540'].message_type = rrc__common__types__pb2._OTHERCONFIG_V1540
 DESCRIPTOR.message_types_by_name['RRCReconfiguration'] = _RRCRECONFIGURATION
 DESCRIPTOR.message_types_by_name['RRCReconfiguration_IEs'] = _RRCRECONFIGURATION_IES
@@ -315,35 +315,35 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 RRCReconfiguration = _reflection.GeneratedProtocolMessageType('RRCReconfiguration', (_message.Message,), {
   'DESCRIPTOR' : _RRCRECONFIGURATION,
   '__module__' : 'rrc_reconfiguration_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCReconfiguration)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCReconfiguration)
   })
 _sym_db.RegisterMessage(RRCReconfiguration)
 
 RRCReconfiguration_IEs = _reflection.GeneratedProtocolMessageType('RRCReconfiguration_IEs', (_message.Message,), {
   'DESCRIPTOR' : _RRCRECONFIGURATION_IES,
   '__module__' : 'rrc_reconfiguration_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCReconfiguration_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCReconfiguration_IEs)
   })
 _sym_db.RegisterMessage(RRCReconfiguration_IEs)
 
 RRCReconfiguration_v1530_IEs = _reflection.GeneratedProtocolMessageType('RRCReconfiguration_v1530_IEs', (_message.Message,), {
   'DESCRIPTOR' : _RRCRECONFIGURATION_V1530_IES,
   '__module__' : 'rrc_reconfiguration_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCReconfiguration_v1530_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCReconfiguration_v1530_IEs)
   })
 _sym_db.RegisterMessage(RRCReconfiguration_v1530_IEs)
 
 MasterKeyUpdate = _reflection.GeneratedProtocolMessageType('MasterKeyUpdate', (_message.Message,), {
   'DESCRIPTOR' : _MASTERKEYUPDATE,
   '__module__' : 'rrc_reconfiguration_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.MasterKeyUpdate)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.MasterKeyUpdate)
   })
 _sym_db.RegisterMessage(MasterKeyUpdate)
 
 RRCReconfiguration_v1540_IEs = _reflection.GeneratedProtocolMessageType('RRCReconfiguration_v1540_IEs', (_message.Message,), {
   'DESCRIPTOR' : _RRCRECONFIGURATION_V1540_IES,
   '__module__' : 'rrc_reconfiguration_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCReconfiguration_v1540_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCReconfiguration_v1540_IEs)
   })
 _sym_db.RegisterMessage(RRCReconfiguration_v1540_IEs)
 

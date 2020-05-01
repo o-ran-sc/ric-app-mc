@@ -17,79 +17,79 @@ PROTOBUF_C__BEGIN_DECLS
 #include "google/protobuf/wrappers.pb-c.h"
 #include "rrc_general_message_types.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__UENRMeasurementExtIEs Uenibstreamprotobuf__UENRMeasurementExtIEs;
-typedef struct _Uenibstreamprotobuf__UENRMeasurement Uenibstreamprotobuf__UENRMeasurement;
-typedef struct _Uenibstreamprotobuf__SplitSRBExtIEs Uenibstreamprotobuf__SplitSRBExtIEs;
-typedef struct _Uenibstreamprotobuf__DeliveryStatusExtIEs Uenibstreamprotobuf__DeliveryStatusExtIEs;
-typedef struct _Uenibstreamprotobuf__DeliveryStatus Uenibstreamprotobuf__DeliveryStatus;
-typedef struct _Uenibstreamprotobuf__SplitSRB Uenibstreamprotobuf__SplitSRB;
-typedef struct _Uenibstreamprotobuf__RRCTransferIEs Uenibstreamprotobuf__RRCTransferIEs;
-typedef struct _Uenibstreamprotobuf__RRCTransfer Uenibstreamprotobuf__RRCTransfer;
+typedef struct _StreamingProtobufs__UENRMeasurementExtIEs StreamingProtobufs__UENRMeasurementExtIEs;
+typedef struct _StreamingProtobufs__UENRMeasurement StreamingProtobufs__UENRMeasurement;
+typedef struct _StreamingProtobufs__SplitSRBExtIEs StreamingProtobufs__SplitSRBExtIEs;
+typedef struct _StreamingProtobufs__DeliveryStatusExtIEs StreamingProtobufs__DeliveryStatusExtIEs;
+typedef struct _StreamingProtobufs__DeliveryStatus StreamingProtobufs__DeliveryStatus;
+typedef struct _StreamingProtobufs__SplitSRB StreamingProtobufs__SplitSRB;
+typedef struct _StreamingProtobufs__RRCTransferIEs StreamingProtobufs__RRCTransferIEs;
+typedef struct _StreamingProtobufs__RRCTransfer StreamingProtobufs__RRCTransfer;
 
 
 /* --- enums --- */
 
-typedef enum _Uenibstreamprotobuf__SplitSRB__SRBType {
-  UENIBSTREAMPROTOBUF__SPLIT_SRB__SRBTYPE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__SPLIT_SRB__SRBTYPE__srb1 = 1,
-  UENIBSTREAMPROTOBUF__SPLIT_SRB__SRBTYPE__srb2 = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__SPLIT_SRB__SRBTYPE)
-} Uenibstreamprotobuf__SplitSRB__SRBType;
+typedef enum _StreamingProtobufs__SplitSRB__SRBType {
+  STREAMING_PROTOBUFS__SPLIT_SRB__SRBTYPE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__SPLIT_SRB__SRBTYPE__srb1 = 1,
+  STREAMING_PROTOBUFS__SPLIT_SRB__SRBTYPE__srb2 = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__SPLIT_SRB__SRBTYPE)
+} StreamingProtobufs__SplitSRB__SRBType;
 
 /* --- messages --- */
 
-struct  _Uenibstreamprotobuf__UENRMeasurementExtIEs
+struct  _StreamingProtobufs__UENRMeasurementExtIEs
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__UENRMEASUREMENT__EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__uenrmeasurement__ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__UENRMEASUREMENT__EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__uenrmeasurement__ext_ies__descriptor) \
      }
 
 
-struct  _Uenibstreamprotobuf__UENRMeasurement
+struct  _StreamingProtobufs__UENRMeasurement
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__RRCContainer *uenrmeasurements;
+  StreamingProtobufs__RRCContainer *uenrmeasurements;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__UENRMeasurementExtIEs **ie_extensions;
+  StreamingProtobufs__UENRMeasurementExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__UENRMEASUREMENT__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__uenrmeasurement__descriptor) \
+#define STREAMING_PROTOBUFS__UENRMEASUREMENT__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__uenrmeasurement__descriptor) \
     , NULL, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__SplitSRBExtIEs
+struct  _StreamingProtobufs__SplitSRBExtIEs
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__SPLIT_SRB__EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__split_srb__ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__SPLIT_SRB__EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__split_srb__ext_ies__descriptor) \
      }
 
 
-struct  _Uenibstreamprotobuf__DeliveryStatusExtIEs
+struct  _StreamingProtobufs__DeliveryStatusExtIEs
 {
   ProtobufCMessage base;
 };
-#define UENIBSTREAMPROTOBUF__DELIVERY_STATUS__EXT_IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__delivery_status__ext_ies__descriptor) \
+#define STREAMING_PROTOBUFS__DELIVERY_STATUS__EXT_IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__delivery_status__ext_ies__descriptor) \
      }
 
 
-struct  _Uenibstreamprotobuf__DeliveryStatus
+struct  _StreamingProtobufs__DeliveryStatus
 {
   ProtobufCMessage base;
   uint32_t highestsuccessdeliveredpdcpsn;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__DeliveryStatusExtIEs **ie_extensions;
+  StreamingProtobufs__DeliveryStatusExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__DELIVERY_STATUS__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__delivery_status__descriptor) \
+#define STREAMING_PROTOBUFS__DELIVERY_STATUS__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__delivery_status__descriptor) \
     , 0, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__SplitSRB
+struct  _StreamingProtobufs__SplitSRB
 {
   ProtobufCMessage base;
   /*
@@ -98,218 +98,218 @@ struct  _Uenibstreamprotobuf__SplitSRB
    *UNNECESSARY EXERCISE TO DO PROTOBUF SPEC. FOR THE TIME BEING, IT IS
    *OK TO USE 38.331
    */
-  Uenibstreamprotobuf__RRCContainer *rrccontainer;
-  Uenibstreamprotobuf__SplitSRB__SRBType srbtype;
-  Uenibstreamprotobuf__DeliveryStatus *deliverystatus;
+  StreamingProtobufs__RRCContainer *rrccontainer;
+  StreamingProtobufs__SplitSRB__SRBType srbtype;
+  StreamingProtobufs__DeliveryStatus *deliverystatus;
   size_t n_ie_extensions;
-  Uenibstreamprotobuf__SplitSRBExtIEs **ie_extensions;
+  StreamingProtobufs__SplitSRBExtIEs **ie_extensions;
 };
-#define UENIBSTREAMPROTOBUF__SPLIT_SRB__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__split_srb__descriptor) \
-    , NULL, UENIBSTREAMPROTOBUF__SPLIT_SRB__SRBTYPE__protobuf_unspecified, NULL, 0,NULL }
+#define STREAMING_PROTOBUFS__SPLIT_SRB__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__split_srb__descriptor) \
+    , NULL, STREAMING_PROTOBUFS__SPLIT_SRB__SRBTYPE__protobuf_unspecified, NULL, 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__RRCTransferIEs
+struct  _StreamingProtobufs__RRCTransferIEs
 {
   ProtobufCMessage base;
   uint32_t id_menb_ue_x2ap_id;
   uint32_t id_sgnb_ue_x2ap_id;
-  Uenibstreamprotobuf__SplitSRB *id_splitsrb;
-  Uenibstreamprotobuf__UENRMeasurement *id_uenrmeasurement;
+  StreamingProtobufs__SplitSRB *id_splitsrb;
+  StreamingProtobufs__UENRMeasurement *id_uenrmeasurement;
   Google__Protobuf__UInt32Value *id_menb_ue_x2ap_id_extension;
 };
-#define UENIBSTREAMPROTOBUF__RRCTRANSFER__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__rrctransfer__ies__descriptor) \
+#define STREAMING_PROTOBUFS__RRCTRANSFER__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__rrctransfer__ies__descriptor) \
     , 0, 0, NULL, NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__RRCTransfer
+struct  _StreamingProtobufs__RRCTransfer
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__RRCTransferIEs *rrctransfer_ies;
+  StreamingProtobufs__RRCTransferIEs *rrctransfer_ies;
 };
-#define UENIBSTREAMPROTOBUF__RRCTRANSFER__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__rrctransfer__descriptor) \
+#define STREAMING_PROTOBUFS__RRCTRANSFER__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__rrctransfer__descriptor) \
     , NULL }
 
 
-/* Uenibstreamprotobuf__UENRMeasurementExtIEs methods */
-void   uenibstreamprotobuf__uenrmeasurement__ext_ies__init
-                     (Uenibstreamprotobuf__UENRMeasurementExtIEs         *message);
-size_t uenibstreamprotobuf__uenrmeasurement__ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__UENRMeasurementExtIEs   *message);
-size_t uenibstreamprotobuf__uenrmeasurement__ext_ies__pack
-                     (const Uenibstreamprotobuf__UENRMeasurementExtIEs   *message,
+/* StreamingProtobufs__UENRMeasurementExtIEs methods */
+void   streaming_protobufs__uenrmeasurement__ext_ies__init
+                     (StreamingProtobufs__UENRMeasurementExtIEs         *message);
+size_t streaming_protobufs__uenrmeasurement__ext_ies__get_packed_size
+                     (const StreamingProtobufs__UENRMeasurementExtIEs   *message);
+size_t streaming_protobufs__uenrmeasurement__ext_ies__pack
+                     (const StreamingProtobufs__UENRMeasurementExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__uenrmeasurement__ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__UENRMeasurementExtIEs   *message,
+size_t streaming_protobufs__uenrmeasurement__ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__UENRMeasurementExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__UENRMeasurementExtIEs *
-       uenibstreamprotobuf__uenrmeasurement__ext_ies__unpack
+StreamingProtobufs__UENRMeasurementExtIEs *
+       streaming_protobufs__uenrmeasurement__ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__uenrmeasurement__ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__UENRMeasurementExtIEs *message,
+void   streaming_protobufs__uenrmeasurement__ext_ies__free_unpacked
+                     (StreamingProtobufs__UENRMeasurementExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__UENRMeasurement methods */
-void   uenibstreamprotobuf__uenrmeasurement__init
-                     (Uenibstreamprotobuf__UENRMeasurement         *message);
-size_t uenibstreamprotobuf__uenrmeasurement__get_packed_size
-                     (const Uenibstreamprotobuf__UENRMeasurement   *message);
-size_t uenibstreamprotobuf__uenrmeasurement__pack
-                     (const Uenibstreamprotobuf__UENRMeasurement   *message,
+/* StreamingProtobufs__UENRMeasurement methods */
+void   streaming_protobufs__uenrmeasurement__init
+                     (StreamingProtobufs__UENRMeasurement         *message);
+size_t streaming_protobufs__uenrmeasurement__get_packed_size
+                     (const StreamingProtobufs__UENRMeasurement   *message);
+size_t streaming_protobufs__uenrmeasurement__pack
+                     (const StreamingProtobufs__UENRMeasurement   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__uenrmeasurement__pack_to_buffer
-                     (const Uenibstreamprotobuf__UENRMeasurement   *message,
+size_t streaming_protobufs__uenrmeasurement__pack_to_buffer
+                     (const StreamingProtobufs__UENRMeasurement   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__UENRMeasurement *
-       uenibstreamprotobuf__uenrmeasurement__unpack
+StreamingProtobufs__UENRMeasurement *
+       streaming_protobufs__uenrmeasurement__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__uenrmeasurement__free_unpacked
-                     (Uenibstreamprotobuf__UENRMeasurement *message,
+void   streaming_protobufs__uenrmeasurement__free_unpacked
+                     (StreamingProtobufs__UENRMeasurement *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__SplitSRBExtIEs methods */
-void   uenibstreamprotobuf__split_srb__ext_ies__init
-                     (Uenibstreamprotobuf__SplitSRBExtIEs         *message);
-size_t uenibstreamprotobuf__split_srb__ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__SplitSRBExtIEs   *message);
-size_t uenibstreamprotobuf__split_srb__ext_ies__pack
-                     (const Uenibstreamprotobuf__SplitSRBExtIEs   *message,
+/* StreamingProtobufs__SplitSRBExtIEs methods */
+void   streaming_protobufs__split_srb__ext_ies__init
+                     (StreamingProtobufs__SplitSRBExtIEs         *message);
+size_t streaming_protobufs__split_srb__ext_ies__get_packed_size
+                     (const StreamingProtobufs__SplitSRBExtIEs   *message);
+size_t streaming_protobufs__split_srb__ext_ies__pack
+                     (const StreamingProtobufs__SplitSRBExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__split_srb__ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__SplitSRBExtIEs   *message,
+size_t streaming_protobufs__split_srb__ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__SplitSRBExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SplitSRBExtIEs *
-       uenibstreamprotobuf__split_srb__ext_ies__unpack
+StreamingProtobufs__SplitSRBExtIEs *
+       streaming_protobufs__split_srb__ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__split_srb__ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__SplitSRBExtIEs *message,
+void   streaming_protobufs__split_srb__ext_ies__free_unpacked
+                     (StreamingProtobufs__SplitSRBExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__DeliveryStatusExtIEs methods */
-void   uenibstreamprotobuf__delivery_status__ext_ies__init
-                     (Uenibstreamprotobuf__DeliveryStatusExtIEs         *message);
-size_t uenibstreamprotobuf__delivery_status__ext_ies__get_packed_size
-                     (const Uenibstreamprotobuf__DeliveryStatusExtIEs   *message);
-size_t uenibstreamprotobuf__delivery_status__ext_ies__pack
-                     (const Uenibstreamprotobuf__DeliveryStatusExtIEs   *message,
+/* StreamingProtobufs__DeliveryStatusExtIEs methods */
+void   streaming_protobufs__delivery_status__ext_ies__init
+                     (StreamingProtobufs__DeliveryStatusExtIEs         *message);
+size_t streaming_protobufs__delivery_status__ext_ies__get_packed_size
+                     (const StreamingProtobufs__DeliveryStatusExtIEs   *message);
+size_t streaming_protobufs__delivery_status__ext_ies__pack
+                     (const StreamingProtobufs__DeliveryStatusExtIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__delivery_status__ext_ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__DeliveryStatusExtIEs   *message,
+size_t streaming_protobufs__delivery_status__ext_ies__pack_to_buffer
+                     (const StreamingProtobufs__DeliveryStatusExtIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__DeliveryStatusExtIEs *
-       uenibstreamprotobuf__delivery_status__ext_ies__unpack
+StreamingProtobufs__DeliveryStatusExtIEs *
+       streaming_protobufs__delivery_status__ext_ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__delivery_status__ext_ies__free_unpacked
-                     (Uenibstreamprotobuf__DeliveryStatusExtIEs *message,
+void   streaming_protobufs__delivery_status__ext_ies__free_unpacked
+                     (StreamingProtobufs__DeliveryStatusExtIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__DeliveryStatus methods */
-void   uenibstreamprotobuf__delivery_status__init
-                     (Uenibstreamprotobuf__DeliveryStatus         *message);
-size_t uenibstreamprotobuf__delivery_status__get_packed_size
-                     (const Uenibstreamprotobuf__DeliveryStatus   *message);
-size_t uenibstreamprotobuf__delivery_status__pack
-                     (const Uenibstreamprotobuf__DeliveryStatus   *message,
+/* StreamingProtobufs__DeliveryStatus methods */
+void   streaming_protobufs__delivery_status__init
+                     (StreamingProtobufs__DeliveryStatus         *message);
+size_t streaming_protobufs__delivery_status__get_packed_size
+                     (const StreamingProtobufs__DeliveryStatus   *message);
+size_t streaming_protobufs__delivery_status__pack
+                     (const StreamingProtobufs__DeliveryStatus   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__delivery_status__pack_to_buffer
-                     (const Uenibstreamprotobuf__DeliveryStatus   *message,
+size_t streaming_protobufs__delivery_status__pack_to_buffer
+                     (const StreamingProtobufs__DeliveryStatus   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__DeliveryStatus *
-       uenibstreamprotobuf__delivery_status__unpack
+StreamingProtobufs__DeliveryStatus *
+       streaming_protobufs__delivery_status__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__delivery_status__free_unpacked
-                     (Uenibstreamprotobuf__DeliveryStatus *message,
+void   streaming_protobufs__delivery_status__free_unpacked
+                     (StreamingProtobufs__DeliveryStatus *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__SplitSRB methods */
-void   uenibstreamprotobuf__split_srb__init
-                     (Uenibstreamprotobuf__SplitSRB         *message);
-size_t uenibstreamprotobuf__split_srb__get_packed_size
-                     (const Uenibstreamprotobuf__SplitSRB   *message);
-size_t uenibstreamprotobuf__split_srb__pack
-                     (const Uenibstreamprotobuf__SplitSRB   *message,
+/* StreamingProtobufs__SplitSRB methods */
+void   streaming_protobufs__split_srb__init
+                     (StreamingProtobufs__SplitSRB         *message);
+size_t streaming_protobufs__split_srb__get_packed_size
+                     (const StreamingProtobufs__SplitSRB   *message);
+size_t streaming_protobufs__split_srb__pack
+                     (const StreamingProtobufs__SplitSRB   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__split_srb__pack_to_buffer
-                     (const Uenibstreamprotobuf__SplitSRB   *message,
+size_t streaming_protobufs__split_srb__pack_to_buffer
+                     (const StreamingProtobufs__SplitSRB   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__SplitSRB *
-       uenibstreamprotobuf__split_srb__unpack
+StreamingProtobufs__SplitSRB *
+       streaming_protobufs__split_srb__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__split_srb__free_unpacked
-                     (Uenibstreamprotobuf__SplitSRB *message,
+void   streaming_protobufs__split_srb__free_unpacked
+                     (StreamingProtobufs__SplitSRB *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__RRCTransferIEs methods */
-void   uenibstreamprotobuf__rrctransfer__ies__init
-                     (Uenibstreamprotobuf__RRCTransferIEs         *message);
-size_t uenibstreamprotobuf__rrctransfer__ies__get_packed_size
-                     (const Uenibstreamprotobuf__RRCTransferIEs   *message);
-size_t uenibstreamprotobuf__rrctransfer__ies__pack
-                     (const Uenibstreamprotobuf__RRCTransferIEs   *message,
+/* StreamingProtobufs__RRCTransferIEs methods */
+void   streaming_protobufs__rrctransfer__ies__init
+                     (StreamingProtobufs__RRCTransferIEs         *message);
+size_t streaming_protobufs__rrctransfer__ies__get_packed_size
+                     (const StreamingProtobufs__RRCTransferIEs   *message);
+size_t streaming_protobufs__rrctransfer__ies__pack
+                     (const StreamingProtobufs__RRCTransferIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__rrctransfer__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCTransferIEs   *message,
+size_t streaming_protobufs__rrctransfer__ies__pack_to_buffer
+                     (const StreamingProtobufs__RRCTransferIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__RRCTransferIEs *
-       uenibstreamprotobuf__rrctransfer__ies__unpack
+StreamingProtobufs__RRCTransferIEs *
+       streaming_protobufs__rrctransfer__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__rrctransfer__ies__free_unpacked
-                     (Uenibstreamprotobuf__RRCTransferIEs *message,
+void   streaming_protobufs__rrctransfer__ies__free_unpacked
+                     (StreamingProtobufs__RRCTransferIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__RRCTransfer methods */
-void   uenibstreamprotobuf__rrctransfer__init
-                     (Uenibstreamprotobuf__RRCTransfer         *message);
-size_t uenibstreamprotobuf__rrctransfer__get_packed_size
-                     (const Uenibstreamprotobuf__RRCTransfer   *message);
-size_t uenibstreamprotobuf__rrctransfer__pack
-                     (const Uenibstreamprotobuf__RRCTransfer   *message,
+/* StreamingProtobufs__RRCTransfer methods */
+void   streaming_protobufs__rrctransfer__init
+                     (StreamingProtobufs__RRCTransfer         *message);
+size_t streaming_protobufs__rrctransfer__get_packed_size
+                     (const StreamingProtobufs__RRCTransfer   *message);
+size_t streaming_protobufs__rrctransfer__pack
+                     (const StreamingProtobufs__RRCTransfer   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__rrctransfer__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCTransfer   *message,
+size_t streaming_protobufs__rrctransfer__pack_to_buffer
+                     (const StreamingProtobufs__RRCTransfer   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__RRCTransfer *
-       uenibstreamprotobuf__rrctransfer__unpack
+StreamingProtobufs__RRCTransfer *
+       streaming_protobufs__rrctransfer__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__rrctransfer__free_unpacked
-                     (Uenibstreamprotobuf__RRCTransfer *message,
+void   streaming_protobufs__rrctransfer__free_unpacked
+                     (StreamingProtobufs__RRCTransfer *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__UENRMeasurementExtIEs_Closure)
-                 (const Uenibstreamprotobuf__UENRMeasurementExtIEs *message,
+typedef void (*StreamingProtobufs__UENRMeasurementExtIEs_Closure)
+                 (const StreamingProtobufs__UENRMeasurementExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__UENRMeasurement_Closure)
-                 (const Uenibstreamprotobuf__UENRMeasurement *message,
+typedef void (*StreamingProtobufs__UENRMeasurement_Closure)
+                 (const StreamingProtobufs__UENRMeasurement *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__SplitSRBExtIEs_Closure)
-                 (const Uenibstreamprotobuf__SplitSRBExtIEs *message,
+typedef void (*StreamingProtobufs__SplitSRBExtIEs_Closure)
+                 (const StreamingProtobufs__SplitSRBExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__DeliveryStatusExtIEs_Closure)
-                 (const Uenibstreamprotobuf__DeliveryStatusExtIEs *message,
+typedef void (*StreamingProtobufs__DeliveryStatusExtIEs_Closure)
+                 (const StreamingProtobufs__DeliveryStatusExtIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__DeliveryStatus_Closure)
-                 (const Uenibstreamprotobuf__DeliveryStatus *message,
+typedef void (*StreamingProtobufs__DeliveryStatus_Closure)
+                 (const StreamingProtobufs__DeliveryStatus *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__SplitSRB_Closure)
-                 (const Uenibstreamprotobuf__SplitSRB *message,
+typedef void (*StreamingProtobufs__SplitSRB_Closure)
+                 (const StreamingProtobufs__SplitSRB *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__RRCTransferIEs_Closure)
-                 (const Uenibstreamprotobuf__RRCTransferIEs *message,
+typedef void (*StreamingProtobufs__RRCTransferIEs_Closure)
+                 (const StreamingProtobufs__RRCTransferIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__RRCTransfer_Closure)
-                 (const Uenibstreamprotobuf__RRCTransfer *message,
+typedef void (*StreamingProtobufs__RRCTransfer_Closure)
+                 (const StreamingProtobufs__RRCTransfer *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -317,15 +317,15 @@ typedef void (*Uenibstreamprotobuf__RRCTransfer_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__uenrmeasurement__ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__uenrmeasurement__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__split_srb__ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__delivery_status__ext_ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__delivery_status__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__split_srb__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__split_srb__srbtype__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__rrctransfer__ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__rrctransfer__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__uenrmeasurement__ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__uenrmeasurement__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__split_srb__ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__delivery_status__ext_ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__delivery_status__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__split_srb__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__split_srb__srbtype__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__rrctransfer__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__rrctransfer__descriptor;
 
 PROTOBUF_C__END_DECLS
 

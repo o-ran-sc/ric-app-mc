@@ -18,10 +18,10 @@ from google.protobuf import wrappers_pb2 as google_dot_protobuf_dot_wrappers__pb
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='secondary_rat_data_usage_report.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n%secondary_rat_data_usage_report.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\"h\n\x1bSecondaryRATDataUsageReport\x12I\n\x0bprotocolIEs\x18\x01 \x01(\x0b\x32\x34.uenibstreamprotobuf.SecondaryRATDataUsageReport_IEs\"\xf7\x01\n\x1fSecondaryRATDataUsageReport_IEs\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12X\n\x1eid_SecondaryRATUsageReportList\x18\x03 \x01(\x0b\x32\x30.uenibstreamprotobuf.SecondaryRATUsageReportList\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"b\n\x1bSecondaryRATUsageReportList\x12\x43\n\x05items\x18\x01 \x03(\x0b\x32\x34.uenibstreamprotobuf.SecondaryRATUsageReport_ItemIEs\"}\n\x1fSecondaryRATUsageReport_ItemIEs\x12Z\n\x1fid_SecondaryRATUsageReport_Item\x18\x01 \x01(\x0b\x32\x31.uenibstreamprotobuf.SecondaryRATUsageReport_Item\"\x8d\x02\n\x1cSecondaryRATUsageReport_Item\x12\x10\n\x08\x65_RAB_ID\x18\x01 \x01(\r\x12\\\n\x10secondaryRATType\x18\x02 \x01(\x0e\x32\x42.uenibstreamprotobuf.SecondaryRATUsageReport_Item.SecondaryRATType\x12G\n\x14\x65_RABUsageReportList\x18\x03 \x01(\x0b\x32).uenibstreamprotobuf.E_RABUsageReportList\"4\n\x10SecondaryRATType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x06\n\x02nr\x10\x01\"T\n\x14\x45_RABUsageReportList\x12<\n\x05items\x18\x01 \x03(\x0b\x32-.uenibstreamprotobuf.E_RABUsageReport_ItemIEs\"h\n\x18\x45_RABUsageReport_ItemIEs\x12L\n\x18id_E_RABUsageReport_Item\x18\x01 \x01(\x0b\x32*.uenibstreamprotobuf.E_RABUsageReport_Item\"q\n\x15\x45_RABUsageReport_Item\x12\x16\n\x0estartTimeStamp\x18\x01 \x01(\x04\x12\x14\n\x0c\x65ndTimeStamp\x18\x02 \x01(\x04\x12\x14\n\x0cusageCountUL\x18\x03 \x01(\x04\x12\x14\n\x0cusageCountDL\x18\x04 \x01(\x04\x42:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n%secondary_rat_data_usage_report.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\"h\n\x1bSecondaryRATDataUsageReport\x12I\n\x0bprotocolIEs\x18\x01 \x01(\x0b\x32\x34.streaming_protobufs.SecondaryRATDataUsageReport_IEs\"\xf7\x01\n\x1fSecondaryRATDataUsageReport_IEs\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12X\n\x1eid_SecondaryRATUsageReportList\x18\x03 \x01(\x0b\x32\x30.streaming_protobufs.SecondaryRATUsageReportList\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x04 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"b\n\x1bSecondaryRATUsageReportList\x12\x43\n\x05items\x18\x01 \x03(\x0b\x32\x34.streaming_protobufs.SecondaryRATUsageReport_ItemIEs\"}\n\x1fSecondaryRATUsageReport_ItemIEs\x12Z\n\x1fid_SecondaryRATUsageReport_Item\x18\x01 \x01(\x0b\x32\x31.streaming_protobufs.SecondaryRATUsageReport_Item\"\x8d\x02\n\x1cSecondaryRATUsageReport_Item\x12\x10\n\x08\x65_RAB_ID\x18\x01 \x01(\r\x12\\\n\x10secondaryRATType\x18\x02 \x01(\x0e\x32\x42.streaming_protobufs.SecondaryRATUsageReport_Item.SecondaryRATType\x12G\n\x14\x65_RABUsageReportList\x18\x03 \x01(\x0b\x32).streaming_protobufs.E_RABUsageReportList\"4\n\x10SecondaryRATType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x06\n\x02nr\x10\x01\"T\n\x14\x45_RABUsageReportList\x12<\n\x05items\x18\x01 \x03(\x0b\x32-.streaming_protobufs.E_RABUsageReport_ItemIEs\"h\n\x18\x45_RABUsageReport_ItemIEs\x12L\n\x18id_E_RABUsageReport_Item\x18\x01 \x01(\x0b\x32*.streaming_protobufs.E_RABUsageReport_Item\"q\n\x15\x45_RABUsageReport_Item\x12\x16\n\x0estartTimeStamp\x18\x01 \x01(\x04\x12\x14\n\x0c\x65ndTimeStamp\x18\x02 \x01(\x04\x12\x14\n\x0cusageCountUL\x18\x03 \x01(\x04\x12\x14\n\x0cusageCountDL\x18\x04 \x01(\x04\x42\x33Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,])
 
@@ -29,7 +29,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _SECONDARYRATUSAGEREPORT_ITEM_SECONDARYRATTYPE = _descriptor.EnumDescriptor(
   name='SecondaryRATType',
-  full_name='uenibstreamprotobuf.SecondaryRATUsageReport_Item.SecondaryRATType',
+  full_name='streaming_protobufs.SecondaryRATUsageReport_Item.SecondaryRATType',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -52,13 +52,13 @@ _sym_db.RegisterEnumDescriptor(_SECONDARYRATUSAGEREPORT_ITEM_SECONDARYRATTYPE)
 
 _SECONDARYRATDATAUSAGEREPORT = _descriptor.Descriptor(
   name='SecondaryRATDataUsageReport',
-  full_name='uenibstreamprotobuf.SecondaryRATDataUsageReport',
+  full_name='streaming_protobufs.SecondaryRATDataUsageReport',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='protocolIEs', full_name='uenibstreamprotobuf.SecondaryRATDataUsageReport.protocolIEs', index=0,
+      name='protocolIEs', full_name='streaming_protobufs.SecondaryRATDataUsageReport.protocolIEs', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -83,34 +83,34 @@ _SECONDARYRATDATAUSAGEREPORT = _descriptor.Descriptor(
 
 _SECONDARYRATDATAUSAGEREPORT_IES = _descriptor.Descriptor(
   name='SecondaryRATDataUsageReport_IEs',
-  full_name='uenibstreamprotobuf.SecondaryRATDataUsageReport_IEs',
+  full_name='streaming_protobufs.SecondaryRATDataUsageReport_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SecondaryRATDataUsageReport_IEs.id_MeNB_UE_X2AP_ID', index=0,
+      name='id_MeNB_UE_X2AP_ID', full_name='streaming_protobufs.SecondaryRATDataUsageReport_IEs.id_MeNB_UE_X2AP_ID', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_SgNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.SecondaryRATDataUsageReport_IEs.id_SgNB_UE_X2AP_ID', index=1,
+      name='id_SgNB_UE_X2AP_ID', full_name='streaming_protobufs.SecondaryRATDataUsageReport_IEs.id_SgNB_UE_X2AP_ID', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_SecondaryRATUsageReportList', full_name='uenibstreamprotobuf.SecondaryRATDataUsageReport_IEs.id_SecondaryRATUsageReportList', index=2,
+      name='id_SecondaryRATUsageReportList', full_name='streaming_protobufs.SecondaryRATDataUsageReport_IEs.id_SecondaryRATUsageReportList', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID_Extension', full_name='uenibstreamprotobuf.SecondaryRATDataUsageReport_IEs.id_MeNB_UE_X2AP_ID_Extension', index=3,
+      name='id_MeNB_UE_X2AP_ID_Extension', full_name='streaming_protobufs.SecondaryRATDataUsageReport_IEs.id_MeNB_UE_X2AP_ID_Extension', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -135,13 +135,13 @@ _SECONDARYRATDATAUSAGEREPORT_IES = _descriptor.Descriptor(
 
 _SECONDARYRATUSAGEREPORTLIST = _descriptor.Descriptor(
   name='SecondaryRATUsageReportList',
-  full_name='uenibstreamprotobuf.SecondaryRATUsageReportList',
+  full_name='streaming_protobufs.SecondaryRATUsageReportList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.SecondaryRATUsageReportList.items', index=0,
+      name='items', full_name='streaming_protobufs.SecondaryRATUsageReportList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -166,13 +166,13 @@ _SECONDARYRATUSAGEREPORTLIST = _descriptor.Descriptor(
 
 _SECONDARYRATUSAGEREPORT_ITEMIES = _descriptor.Descriptor(
   name='SecondaryRATUsageReport_ItemIEs',
-  full_name='uenibstreamprotobuf.SecondaryRATUsageReport_ItemIEs',
+  full_name='streaming_protobufs.SecondaryRATUsageReport_ItemIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_SecondaryRATUsageReport_Item', full_name='uenibstreamprotobuf.SecondaryRATUsageReport_ItemIEs.id_SecondaryRATUsageReport_Item', index=0,
+      name='id_SecondaryRATUsageReport_Item', full_name='streaming_protobufs.SecondaryRATUsageReport_ItemIEs.id_SecondaryRATUsageReport_Item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -197,27 +197,27 @@ _SECONDARYRATUSAGEREPORT_ITEMIES = _descriptor.Descriptor(
 
 _SECONDARYRATUSAGEREPORT_ITEM = _descriptor.Descriptor(
   name='SecondaryRATUsageReport_Item',
-  full_name='uenibstreamprotobuf.SecondaryRATUsageReport_Item',
+  full_name='streaming_protobufs.SecondaryRATUsageReport_Item',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='e_RAB_ID', full_name='uenibstreamprotobuf.SecondaryRATUsageReport_Item.e_RAB_ID', index=0,
+      name='e_RAB_ID', full_name='streaming_protobufs.SecondaryRATUsageReport_Item.e_RAB_ID', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='secondaryRATType', full_name='uenibstreamprotobuf.SecondaryRATUsageReport_Item.secondaryRATType', index=1,
+      name='secondaryRATType', full_name='streaming_protobufs.SecondaryRATUsageReport_Item.secondaryRATType', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='e_RABUsageReportList', full_name='uenibstreamprotobuf.SecondaryRATUsageReport_Item.e_RABUsageReportList', index=2,
+      name='e_RABUsageReportList', full_name='streaming_protobufs.SecondaryRATUsageReport_Item.e_RABUsageReportList', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -243,13 +243,13 @@ _SECONDARYRATUSAGEREPORT_ITEM = _descriptor.Descriptor(
 
 _E_RABUSAGEREPORTLIST = _descriptor.Descriptor(
   name='E_RABUsageReportList',
-  full_name='uenibstreamprotobuf.E_RABUsageReportList',
+  full_name='streaming_protobufs.E_RABUsageReportList',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='items', full_name='uenibstreamprotobuf.E_RABUsageReportList.items', index=0,
+      name='items', full_name='streaming_protobufs.E_RABUsageReportList.items', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -274,13 +274,13 @@ _E_RABUSAGEREPORTLIST = _descriptor.Descriptor(
 
 _E_RABUSAGEREPORT_ITEMIES = _descriptor.Descriptor(
   name='E_RABUsageReport_ItemIEs',
-  full_name='uenibstreamprotobuf.E_RABUsageReport_ItemIEs',
+  full_name='streaming_protobufs.E_RABUsageReport_ItemIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_E_RABUsageReport_Item', full_name='uenibstreamprotobuf.E_RABUsageReport_ItemIEs.id_E_RABUsageReport_Item', index=0,
+      name='id_E_RABUsageReport_Item', full_name='streaming_protobufs.E_RABUsageReport_ItemIEs.id_E_RABUsageReport_Item', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -305,34 +305,34 @@ _E_RABUSAGEREPORT_ITEMIES = _descriptor.Descriptor(
 
 _E_RABUSAGEREPORT_ITEM = _descriptor.Descriptor(
   name='E_RABUsageReport_Item',
-  full_name='uenibstreamprotobuf.E_RABUsageReport_Item',
+  full_name='streaming_protobufs.E_RABUsageReport_Item',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='startTimeStamp', full_name='uenibstreamprotobuf.E_RABUsageReport_Item.startTimeStamp', index=0,
+      name='startTimeStamp', full_name='streaming_protobufs.E_RABUsageReport_Item.startTimeStamp', index=0,
       number=1, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='endTimeStamp', full_name='uenibstreamprotobuf.E_RABUsageReport_Item.endTimeStamp', index=1,
+      name='endTimeStamp', full_name='streaming_protobufs.E_RABUsageReport_Item.endTimeStamp', index=1,
       number=2, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='usageCountUL', full_name='uenibstreamprotobuf.E_RABUsageReport_Item.usageCountUL', index=2,
+      name='usageCountUL', full_name='streaming_protobufs.E_RABUsageReport_Item.usageCountUL', index=2,
       number=3, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='usageCountDL', full_name='uenibstreamprotobuf.E_RABUsageReport_Item.usageCountDL', index=3,
+      name='usageCountDL', full_name='streaming_protobufs.E_RABUsageReport_Item.usageCountDL', index=3,
       number=4, type=4, cpp_type=4, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
@@ -377,56 +377,56 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 SecondaryRATDataUsageReport = _reflection.GeneratedProtocolMessageType('SecondaryRATDataUsageReport', (_message.Message,), {
   'DESCRIPTOR' : _SECONDARYRATDATAUSAGEREPORT,
   '__module__' : 'secondary_rat_data_usage_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SecondaryRATDataUsageReport)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SecondaryRATDataUsageReport)
   })
 _sym_db.RegisterMessage(SecondaryRATDataUsageReport)
 
 SecondaryRATDataUsageReport_IEs = _reflection.GeneratedProtocolMessageType('SecondaryRATDataUsageReport_IEs', (_message.Message,), {
   'DESCRIPTOR' : _SECONDARYRATDATAUSAGEREPORT_IES,
   '__module__' : 'secondary_rat_data_usage_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SecondaryRATDataUsageReport_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SecondaryRATDataUsageReport_IEs)
   })
 _sym_db.RegisterMessage(SecondaryRATDataUsageReport_IEs)
 
 SecondaryRATUsageReportList = _reflection.GeneratedProtocolMessageType('SecondaryRATUsageReportList', (_message.Message,), {
   'DESCRIPTOR' : _SECONDARYRATUSAGEREPORTLIST,
   '__module__' : 'secondary_rat_data_usage_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SecondaryRATUsageReportList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SecondaryRATUsageReportList)
   })
 _sym_db.RegisterMessage(SecondaryRATUsageReportList)
 
 SecondaryRATUsageReport_ItemIEs = _reflection.GeneratedProtocolMessageType('SecondaryRATUsageReport_ItemIEs', (_message.Message,), {
   'DESCRIPTOR' : _SECONDARYRATUSAGEREPORT_ITEMIES,
   '__module__' : 'secondary_rat_data_usage_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SecondaryRATUsageReport_ItemIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SecondaryRATUsageReport_ItemIEs)
   })
 _sym_db.RegisterMessage(SecondaryRATUsageReport_ItemIEs)
 
 SecondaryRATUsageReport_Item = _reflection.GeneratedProtocolMessageType('SecondaryRATUsageReport_Item', (_message.Message,), {
   'DESCRIPTOR' : _SECONDARYRATUSAGEREPORT_ITEM,
   '__module__' : 'secondary_rat_data_usage_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SecondaryRATUsageReport_Item)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SecondaryRATUsageReport_Item)
   })
 _sym_db.RegisterMessage(SecondaryRATUsageReport_Item)
 
 E_RABUsageReportList = _reflection.GeneratedProtocolMessageType('E_RABUsageReportList', (_message.Message,), {
   'DESCRIPTOR' : _E_RABUSAGEREPORTLIST,
   '__module__' : 'secondary_rat_data_usage_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RABUsageReportList)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RABUsageReportList)
   })
 _sym_db.RegisterMessage(E_RABUsageReportList)
 
 E_RABUsageReport_ItemIEs = _reflection.GeneratedProtocolMessageType('E_RABUsageReport_ItemIEs', (_message.Message,), {
   'DESCRIPTOR' : _E_RABUSAGEREPORT_ITEMIES,
   '__module__' : 'secondary_rat_data_usage_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RABUsageReport_ItemIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RABUsageReport_ItemIEs)
   })
 _sym_db.RegisterMessage(E_RABUsageReport_ItemIEs)
 
 E_RABUsageReport_Item = _reflection.GeneratedProtocolMessageType('E_RABUsageReport_Item', (_message.Message,), {
   'DESCRIPTOR' : _E_RABUSAGEREPORT_ITEM,
   '__module__' : 'secondary_rat_data_usage_report_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.E_RABUsageReport_Item)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.E_RABUsageReport_Item)
   })
 _sym_db.RegisterMessage(E_RABUsageReport_Item)
 

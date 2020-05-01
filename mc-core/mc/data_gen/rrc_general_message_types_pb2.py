@@ -19,10 +19,10 @@ import rrc_failure_information_pb2 as rrc__failure__information__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rrc_general_message_types.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x1frrc_general_message_types.proto\x12\x13uenibstreamprotobuf\x1a\x1crrc_measurement_report.proto\x1a\x1drrc_failure_information.proto\"Q\n\x0cRRCContainer\x12\x41\n\x0fUL_DCCH_message\x18\x01 \x01(\x0b\x32(.uenibstreamprotobuf.UL_DCCH_MessageType\"\xa7\x01\n\x13UL_DCCH_MessageType\x12\x43\n\x11measurementReport\x18\x01 \x01(\x0b\x32&.uenibstreamprotobuf.MeasurementReportH\x00\x12\x45\n\x12\x66\x61ilureInformation\x18\x02 \x01(\x0b\x32\'.uenibstreamprotobuf.FailureInformationH\x00\x42\x04\n\x02\x63\x31\x42:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x1frrc_general_message_types.proto\x12\x13streaming_protobufs\x1a\x1crrc_measurement_report.proto\x1a\x1drrc_failure_information.proto\"Q\n\x0cRRCContainer\x12\x41\n\x0fUL_DCCH_message\x18\x01 \x01(\x0b\x32(.streaming_protobufs.UL_DCCH_MessageType\"\xa7\x01\n\x13UL_DCCH_MessageType\x12\x43\n\x11measurementReport\x18\x01 \x01(\x0b\x32&.streaming_protobufs.MeasurementReportH\x00\x12\x45\n\x12\x66\x61ilureInformation\x18\x02 \x01(\x0b\x32\'.streaming_protobufs.FailureInformationH\x00\x42\x04\n\x02\x63\x31\x42\x33Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[rrc__measurement__report__pb2.DESCRIPTOR,rrc__failure__information__pb2.DESCRIPTOR,])
 
@@ -31,13 +31,13 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _RRCCONTAINER = _descriptor.Descriptor(
   name='RRCContainer',
-  full_name='uenibstreamprotobuf.RRCContainer',
+  full_name='streaming_protobufs.RRCContainer',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='UL_DCCH_message', full_name='uenibstreamprotobuf.RRCContainer.UL_DCCH_message', index=0,
+      name='UL_DCCH_message', full_name='streaming_protobufs.RRCContainer.UL_DCCH_message', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -62,20 +62,20 @@ _RRCCONTAINER = _descriptor.Descriptor(
 
 _UL_DCCH_MESSAGETYPE = _descriptor.Descriptor(
   name='UL_DCCH_MessageType',
-  full_name='uenibstreamprotobuf.UL_DCCH_MessageType',
+  full_name='streaming_protobufs.UL_DCCH_MessageType',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='measurementReport', full_name='uenibstreamprotobuf.UL_DCCH_MessageType.measurementReport', index=0,
+      name='measurementReport', full_name='streaming_protobufs.UL_DCCH_MessageType.measurementReport', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='failureInformation', full_name='uenibstreamprotobuf.UL_DCCH_MessageType.failureInformation', index=1,
+      name='failureInformation', full_name='streaming_protobufs.UL_DCCH_MessageType.failureInformation', index=1,
       number=2, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -93,7 +93,7 @@ _UL_DCCH_MESSAGETYPE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='c1', full_name='uenibstreamprotobuf.UL_DCCH_MessageType.c1',
+      name='c1', full_name='streaming_protobufs.UL_DCCH_MessageType.c1',
       index=0, containing_type=None, fields=[]),
   ],
   serialized_start=201,
@@ -116,14 +116,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 RRCContainer = _reflection.GeneratedProtocolMessageType('RRCContainer', (_message.Message,), {
   'DESCRIPTOR' : _RRCCONTAINER,
   '__module__' : 'rrc_general_message_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCContainer)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCContainer)
   })
 _sym_db.RegisterMessage(RRCContainer)
 
 UL_DCCH_MessageType = _reflection.GeneratedProtocolMessageType('UL_DCCH_MessageType', (_message.Message,), {
   'DESCRIPTOR' : _UL_DCCH_MESSAGETYPE,
   '__module__' : 'rrc_general_message_types_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.UL_DCCH_MessageType)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.UL_DCCH_MessageType)
   })
 _sym_db.RegisterMessage(UL_DCCH_MessageType)
 

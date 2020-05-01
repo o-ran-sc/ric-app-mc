@@ -17,9 +17,9 @@ PROTOBUF_C__BEGIN_DECLS
 #include "google/protobuf/wrappers.pb-c.h"
 #include "rrc_common_types.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__RRCReconfigurationComplete Uenibstreamprotobuf__RRCReconfigurationComplete;
-typedef struct _Uenibstreamprotobuf__RRCReconfigurationCompleteIEs Uenibstreamprotobuf__RRCReconfigurationCompleteIEs;
-typedef struct _Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs;
+typedef struct _StreamingProtobufs__RRCReconfigurationComplete StreamingProtobufs__RRCReconfigurationComplete;
+typedef struct _StreamingProtobufs__RRCReconfigurationCompleteIEs StreamingProtobufs__RRCReconfigurationCompleteIEs;
+typedef struct _StreamingProtobufs__RRCReconfigurationCompleteV1530IEs StreamingProtobufs__RRCReconfigurationCompleteV1530IEs;
 
 
 /* --- enums --- */
@@ -28,113 +28,113 @@ typedef struct _Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs Uenibstr
 /* --- messages --- */
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__RRCRECONFIGURATION_COMPLETE__CRITICAL_EXTENSIONS__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__RRCRECONFIGURATION_COMPLETE__CRITICAL_EXTENSIONS_RRC_RECONFIGURATION_COMPLETE = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__RRCRECONFIGURATION_COMPLETE__CRITICAL_EXTENSIONS)
-} Uenibstreamprotobuf__RRCReconfigurationComplete__CriticalExtensionsCase;
+  STREAMING_PROTOBUFS__RRCRECONFIGURATION_COMPLETE__CRITICAL_EXTENSIONS__NOT_SET = 0,
+  STREAMING_PROTOBUFS__RRCRECONFIGURATION_COMPLETE__CRITICAL_EXTENSIONS_RRC_RECONFIGURATION_COMPLETE = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__RRCRECONFIGURATION_COMPLETE__CRITICAL_EXTENSIONS)
+} StreamingProtobufs__RRCReconfigurationComplete__CriticalExtensionsCase;
 
-struct  _Uenibstreamprotobuf__RRCReconfigurationComplete
+struct  _StreamingProtobufs__RRCReconfigurationComplete
 {
   ProtobufCMessage base;
   uint32_t rrc_transactionidentifier;
-  Uenibstreamprotobuf__RRCReconfigurationComplete__CriticalExtensionsCase critical_extensions_case;
+  StreamingProtobufs__RRCReconfigurationComplete__CriticalExtensionsCase critical_extensions_case;
   union {
-    Uenibstreamprotobuf__RRCReconfigurationCompleteIEs *rrcreconfigurationcomplete;
+    StreamingProtobufs__RRCReconfigurationCompleteIEs *rrcreconfigurationcomplete;
   };
 };
-#define UENIBSTREAMPROTOBUF__RRCRECONFIGURATION_COMPLETE__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__rrcreconfiguration_complete__descriptor) \
-    , 0, UENIBSTREAMPROTOBUF__RRCRECONFIGURATION_COMPLETE__CRITICAL_EXTENSIONS__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__RRCRECONFIGURATION_COMPLETE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__rrcreconfiguration_complete__descriptor) \
+    , 0, STREAMING_PROTOBUFS__RRCRECONFIGURATION_COMPLETE__CRITICAL_EXTENSIONS__NOT_SET, {0} }
 
 
-struct  _Uenibstreamprotobuf__RRCReconfigurationCompleteIEs
+struct  _StreamingProtobufs__RRCReconfigurationCompleteIEs
 {
   ProtobufCMessage base;
-  Google__Protobuf__StringValue *latenoncriticalextension;
-  Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs *noncriticalextension;
+  Google__Protobuf__BytesValue *latenoncriticalextension;
+  StreamingProtobufs__RRCReconfigurationCompleteV1530IEs *noncriticalextension;
 };
-#define UENIBSTREAMPROTOBUF__RRCRECONFIGURATION_COMPLETE__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__rrcreconfiguration_complete__ies__descriptor) \
+#define STREAMING_PROTOBUFS__RRCRECONFIGURATION_COMPLETE__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__rrcreconfiguration_complete__ies__descriptor) \
     , NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs
+struct  _StreamingProtobufs__RRCReconfigurationCompleteV1530IEs
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__UplinkTxDirectCurrentList *uplinktxdirectcurrentlist;
+  StreamingProtobufs__UplinkTxDirectCurrentList *uplinktxdirectcurrentlist;
 };
-#define UENIBSTREAMPROTOBUF__RRCRECONFIGURATION_COMPLETE_V1530__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__rrcreconfiguration_complete_v1530__ies__descriptor) \
+#define STREAMING_PROTOBUFS__RRCRECONFIGURATION_COMPLETE_V1530__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__rrcreconfiguration_complete_v1530__ies__descriptor) \
     , NULL }
 
 
-/* Uenibstreamprotobuf__RRCReconfigurationComplete methods */
-void   uenibstreamprotobuf__rrcreconfiguration_complete__init
-                     (Uenibstreamprotobuf__RRCReconfigurationComplete         *message);
-size_t uenibstreamprotobuf__rrcreconfiguration_complete__get_packed_size
-                     (const Uenibstreamprotobuf__RRCReconfigurationComplete   *message);
-size_t uenibstreamprotobuf__rrcreconfiguration_complete__pack
-                     (const Uenibstreamprotobuf__RRCReconfigurationComplete   *message,
+/* StreamingProtobufs__RRCReconfigurationComplete methods */
+void   streaming_protobufs__rrcreconfiguration_complete__init
+                     (StreamingProtobufs__RRCReconfigurationComplete         *message);
+size_t streaming_protobufs__rrcreconfiguration_complete__get_packed_size
+                     (const StreamingProtobufs__RRCReconfigurationComplete   *message);
+size_t streaming_protobufs__rrcreconfiguration_complete__pack
+                     (const StreamingProtobufs__RRCReconfigurationComplete   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__rrcreconfiguration_complete__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCReconfigurationComplete   *message,
+size_t streaming_protobufs__rrcreconfiguration_complete__pack_to_buffer
+                     (const StreamingProtobufs__RRCReconfigurationComplete   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__RRCReconfigurationComplete *
-       uenibstreamprotobuf__rrcreconfiguration_complete__unpack
+StreamingProtobufs__RRCReconfigurationComplete *
+       streaming_protobufs__rrcreconfiguration_complete__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__rrcreconfiguration_complete__free_unpacked
-                     (Uenibstreamprotobuf__RRCReconfigurationComplete *message,
+void   streaming_protobufs__rrcreconfiguration_complete__free_unpacked
+                     (StreamingProtobufs__RRCReconfigurationComplete *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__RRCReconfigurationCompleteIEs methods */
-void   uenibstreamprotobuf__rrcreconfiguration_complete__ies__init
-                     (Uenibstreamprotobuf__RRCReconfigurationCompleteIEs         *message);
-size_t uenibstreamprotobuf__rrcreconfiguration_complete__ies__get_packed_size
-                     (const Uenibstreamprotobuf__RRCReconfigurationCompleteIEs   *message);
-size_t uenibstreamprotobuf__rrcreconfiguration_complete__ies__pack
-                     (const Uenibstreamprotobuf__RRCReconfigurationCompleteIEs   *message,
+/* StreamingProtobufs__RRCReconfigurationCompleteIEs methods */
+void   streaming_protobufs__rrcreconfiguration_complete__ies__init
+                     (StreamingProtobufs__RRCReconfigurationCompleteIEs         *message);
+size_t streaming_protobufs__rrcreconfiguration_complete__ies__get_packed_size
+                     (const StreamingProtobufs__RRCReconfigurationCompleteIEs   *message);
+size_t streaming_protobufs__rrcreconfiguration_complete__ies__pack
+                     (const StreamingProtobufs__RRCReconfigurationCompleteIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__rrcreconfiguration_complete__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCReconfigurationCompleteIEs   *message,
+size_t streaming_protobufs__rrcreconfiguration_complete__ies__pack_to_buffer
+                     (const StreamingProtobufs__RRCReconfigurationCompleteIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__RRCReconfigurationCompleteIEs *
-       uenibstreamprotobuf__rrcreconfiguration_complete__ies__unpack
+StreamingProtobufs__RRCReconfigurationCompleteIEs *
+       streaming_protobufs__rrcreconfiguration_complete__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__rrcreconfiguration_complete__ies__free_unpacked
-                     (Uenibstreamprotobuf__RRCReconfigurationCompleteIEs *message,
+void   streaming_protobufs__rrcreconfiguration_complete__ies__free_unpacked
+                     (StreamingProtobufs__RRCReconfigurationCompleteIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs methods */
-void   uenibstreamprotobuf__rrcreconfiguration_complete_v1530__ies__init
-                     (Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs         *message);
-size_t uenibstreamprotobuf__rrcreconfiguration_complete_v1530__ies__get_packed_size
-                     (const Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs   *message);
-size_t uenibstreamprotobuf__rrcreconfiguration_complete_v1530__ies__pack
-                     (const Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs   *message,
+/* StreamingProtobufs__RRCReconfigurationCompleteV1530IEs methods */
+void   streaming_protobufs__rrcreconfiguration_complete_v1530__ies__init
+                     (StreamingProtobufs__RRCReconfigurationCompleteV1530IEs         *message);
+size_t streaming_protobufs__rrcreconfiguration_complete_v1530__ies__get_packed_size
+                     (const StreamingProtobufs__RRCReconfigurationCompleteV1530IEs   *message);
+size_t streaming_protobufs__rrcreconfiguration_complete_v1530__ies__pack
+                     (const StreamingProtobufs__RRCReconfigurationCompleteV1530IEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__rrcreconfiguration_complete_v1530__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs   *message,
+size_t streaming_protobufs__rrcreconfiguration_complete_v1530__ies__pack_to_buffer
+                     (const StreamingProtobufs__RRCReconfigurationCompleteV1530IEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs *
-       uenibstreamprotobuf__rrcreconfiguration_complete_v1530__ies__unpack
+StreamingProtobufs__RRCReconfigurationCompleteV1530IEs *
+       streaming_protobufs__rrcreconfiguration_complete_v1530__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__rrcreconfiguration_complete_v1530__ies__free_unpacked
-                     (Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs *message,
+void   streaming_protobufs__rrcreconfiguration_complete_v1530__ies__free_unpacked
+                     (StreamingProtobufs__RRCReconfigurationCompleteV1530IEs *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__RRCReconfigurationComplete_Closure)
-                 (const Uenibstreamprotobuf__RRCReconfigurationComplete *message,
+typedef void (*StreamingProtobufs__RRCReconfigurationComplete_Closure)
+                 (const StreamingProtobufs__RRCReconfigurationComplete *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__RRCReconfigurationCompleteIEs_Closure)
-                 (const Uenibstreamprotobuf__RRCReconfigurationCompleteIEs *message,
+typedef void (*StreamingProtobufs__RRCReconfigurationCompleteIEs_Closure)
+                 (const StreamingProtobufs__RRCReconfigurationCompleteIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs_Closure)
-                 (const Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs *message,
+typedef void (*StreamingProtobufs__RRCReconfigurationCompleteV1530IEs_Closure)
+                 (const StreamingProtobufs__RRCReconfigurationCompleteV1530IEs *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -142,9 +142,9 @@ typedef void (*Uenibstreamprotobuf__RRCReconfigurationCompleteV1530IEs_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__rrcreconfiguration_complete__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__rrcreconfiguration_complete__ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__rrcreconfiguration_complete_v1530__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__rrcreconfiguration_complete__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__rrcreconfiguration_complete__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__rrcreconfiguration_complete_v1530__ies__descriptor;
 
 PROTOBUF_C__END_DECLS
 

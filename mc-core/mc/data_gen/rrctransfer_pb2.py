@@ -19,10 +19,10 @@ import rrc_general_message_types_pb2 as rrc__general__message__types__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='rrctransfer.proto',
-  package='uenibstreamprotobuf',
+  package='streaming_protobufs',
   syntax='proto3',
-  serialized_options=_b('Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobuf'),
-  serialized_pb=_b('\n\x11rrctransfer.proto\x12\x13uenibstreamprotobuf\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1frrc_general_message_types.proto\"\x18\n\x16UENRMeasurement_ExtIEs\"\x92\x01\n\x0fUENRMeasurement\x12;\n\x10uENRMeasurements\x18\x01 \x01(\x0b\x32!.uenibstreamprotobuf.RRCContainer\x12\x42\n\riE_Extensions\x18\x02 \x03(\x0b\x32+.uenibstreamprotobuf.UENRMeasurement_ExtIEs\"\x11\n\x0fSplitSRB_ExtIEs\"\x17\n\x15\x44\x65liveryStatus_ExtIEs\"z\n\x0e\x44\x65liveryStatus\x12%\n\x1dhighestSuccessDeliveredPDCPSN\x18\x01 \x01(\r\x12\x41\n\riE_Extensions\x18\x02 \x03(\x0b\x32*.uenibstreamprotobuf.DeliveryStatus_ExtIEs\"\xae\x02\n\x08SplitSRB\x12\x37\n\x0crrcContainer\x18\x01 \x01(\x0b\x32!.uenibstreamprotobuf.RRCContainer\x12\x36\n\x07srbType\x18\x02 \x01(\x0e\x32%.uenibstreamprotobuf.SplitSRB.SRBType\x12;\n\x0e\x64\x65liveryStatus\x18\x03 \x01(\x0b\x32#.uenibstreamprotobuf.DeliveryStatus\x12;\n\riE_Extensions\x18\x04 \x03(\x0b\x32$.uenibstreamprotobuf.SplitSRB_ExtIEs\"7\n\x07SRBType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x08\n\x04srb1\x10\x01\x12\x08\n\x04srb2\x10\x02\"\x83\x02\n\x0fRRCTransfer_IEs\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12\x32\n\x0bid_SplitSRB\x18\x03 \x01(\x0b\x32\x1d.uenibstreamprotobuf.SplitSRB\x12@\n\x12id_UENRMeasurement\x18\x04 \x01(\x0b\x32$.uenibstreamprotobuf.UENRMeasurement\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"L\n\x0bRRCTransfer\x12=\n\x0frrcTransfer_IEs\x18\x01 \x01(\x0b\x32$.uenibstreamprotobuf.RRCTransfer_IEsB:Z8gerrit.o-ran-sc.org/r/ric-plt/ue-nib/uenibstreamprotobufb\x06proto3')
+  serialized_options=_b('Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufs'),
+  serialized_pb=_b('\n\x11rrctransfer.proto\x12\x13streaming_protobufs\x1a\x1egoogle/protobuf/wrappers.proto\x1a\x1frrc_general_message_types.proto\"\x18\n\x16UENRMeasurement_ExtIEs\"\x92\x01\n\x0fUENRMeasurement\x12;\n\x10uENRMeasurements\x18\x01 \x01(\x0b\x32!.streaming_protobufs.RRCContainer\x12\x42\n\riE_Extensions\x18\x02 \x03(\x0b\x32+.streaming_protobufs.UENRMeasurement_ExtIEs\"\x11\n\x0fSplitSRB_ExtIEs\"\x17\n\x15\x44\x65liveryStatus_ExtIEs\"z\n\x0e\x44\x65liveryStatus\x12%\n\x1dhighestSuccessDeliveredPDCPSN\x18\x01 \x01(\r\x12\x41\n\riE_Extensions\x18\x02 \x03(\x0b\x32*.streaming_protobufs.DeliveryStatus_ExtIEs\"\xae\x02\n\x08SplitSRB\x12\x37\n\x0crrcContainer\x18\x01 \x01(\x0b\x32!.streaming_protobufs.RRCContainer\x12\x36\n\x07srbType\x18\x02 \x01(\x0e\x32%.streaming_protobufs.SplitSRB.SRBType\x12;\n\x0e\x64\x65liveryStatus\x18\x03 \x01(\x0b\x32#.streaming_protobufs.DeliveryStatus\x12;\n\riE_Extensions\x18\x04 \x03(\x0b\x32$.streaming_protobufs.SplitSRB_ExtIEs\"7\n\x07SRBType\x12\x18\n\x14protobuf_unspecified\x10\x00\x12\x08\n\x04srb1\x10\x01\x12\x08\n\x04srb2\x10\x02\"\x83\x02\n\x0fRRCTransfer_IEs\x12\x1a\n\x12id_MeNB_UE_X2AP_ID\x18\x01 \x01(\r\x12\x1a\n\x12id_SgNB_UE_X2AP_ID\x18\x02 \x01(\r\x12\x32\n\x0bid_SplitSRB\x18\x03 \x01(\x0b\x32\x1d.streaming_protobufs.SplitSRB\x12@\n\x12id_UENRMeasurement\x18\x04 \x01(\x0b\x32$.streaming_protobufs.UENRMeasurement\x12\x42\n\x1cid_MeNB_UE_X2AP_ID_Extension\x18\x05 \x01(\x0b\x32\x1c.google.protobuf.UInt32Value\"L\n\x0bRRCTransfer\x12=\n\x0frrcTransfer_IEs\x18\x01 \x01(\x0b\x32$.streaming_protobufs.RRCTransfer_IEsB3Z1gerrit.o-ran-sc.org/r/ric-plt/streaming-protobufsb\x06proto3')
   ,
   dependencies=[google_dot_protobuf_dot_wrappers__pb2.DESCRIPTOR,rrc__general__message__types__pb2.DESCRIPTOR,])
 
@@ -30,7 +30,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _SPLITSRB_SRBTYPE = _descriptor.EnumDescriptor(
   name='SRBType',
-  full_name='uenibstreamprotobuf.SplitSRB.SRBType',
+  full_name='streaming_protobufs.SplitSRB.SRBType',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -57,7 +57,7 @@ _sym_db.RegisterEnumDescriptor(_SPLITSRB_SRBTYPE)
 
 _UENRMEASUREMENT_EXTIES = _descriptor.Descriptor(
   name='UENRMeasurement_ExtIEs',
-  full_name='uenibstreamprotobuf.UENRMeasurement_ExtIEs',
+  full_name='streaming_protobufs.UENRMeasurement_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -81,20 +81,20 @@ _UENRMEASUREMENT_EXTIES = _descriptor.Descriptor(
 
 _UENRMEASUREMENT = _descriptor.Descriptor(
   name='UENRMeasurement',
-  full_name='uenibstreamprotobuf.UENRMeasurement',
+  full_name='streaming_protobufs.UENRMeasurement',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='uENRMeasurements', full_name='uenibstreamprotobuf.UENRMeasurement.uENRMeasurements', index=0,
+      name='uENRMeasurements', full_name='streaming_protobufs.UENRMeasurement.uENRMeasurements', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.UENRMeasurement.iE_Extensions', index=1,
+      name='iE_Extensions', full_name='streaming_protobufs.UENRMeasurement.iE_Extensions', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -119,7 +119,7 @@ _UENRMEASUREMENT = _descriptor.Descriptor(
 
 _SPLITSRB_EXTIES = _descriptor.Descriptor(
   name='SplitSRB_ExtIEs',
-  full_name='uenibstreamprotobuf.SplitSRB_ExtIEs',
+  full_name='streaming_protobufs.SplitSRB_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -143,7 +143,7 @@ _SPLITSRB_EXTIES = _descriptor.Descriptor(
 
 _DELIVERYSTATUS_EXTIES = _descriptor.Descriptor(
   name='DeliveryStatus_ExtIEs',
-  full_name='uenibstreamprotobuf.DeliveryStatus_ExtIEs',
+  full_name='streaming_protobufs.DeliveryStatus_ExtIEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -167,20 +167,20 @@ _DELIVERYSTATUS_EXTIES = _descriptor.Descriptor(
 
 _DELIVERYSTATUS = _descriptor.Descriptor(
   name='DeliveryStatus',
-  full_name='uenibstreamprotobuf.DeliveryStatus',
+  full_name='streaming_protobufs.DeliveryStatus',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='highestSuccessDeliveredPDCPSN', full_name='uenibstreamprotobuf.DeliveryStatus.highestSuccessDeliveredPDCPSN', index=0,
+      name='highestSuccessDeliveredPDCPSN', full_name='streaming_protobufs.DeliveryStatus.highestSuccessDeliveredPDCPSN', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.DeliveryStatus.iE_Extensions', index=1,
+      name='iE_Extensions', full_name='streaming_protobufs.DeliveryStatus.iE_Extensions', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -205,34 +205,34 @@ _DELIVERYSTATUS = _descriptor.Descriptor(
 
 _SPLITSRB = _descriptor.Descriptor(
   name='SplitSRB',
-  full_name='uenibstreamprotobuf.SplitSRB',
+  full_name='streaming_protobufs.SplitSRB',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='rrcContainer', full_name='uenibstreamprotobuf.SplitSRB.rrcContainer', index=0,
+      name='rrcContainer', full_name='streaming_protobufs.SplitSRB.rrcContainer', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='srbType', full_name='uenibstreamprotobuf.SplitSRB.srbType', index=1,
+      name='srbType', full_name='streaming_protobufs.SplitSRB.srbType', index=1,
       number=2, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='deliveryStatus', full_name='uenibstreamprotobuf.SplitSRB.deliveryStatus', index=2,
+      name='deliveryStatus', full_name='streaming_protobufs.SplitSRB.deliveryStatus', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='iE_Extensions', full_name='uenibstreamprotobuf.SplitSRB.iE_Extensions', index=3,
+      name='iE_Extensions', full_name='streaming_protobufs.SplitSRB.iE_Extensions', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -258,41 +258,41 @@ _SPLITSRB = _descriptor.Descriptor(
 
 _RRCTRANSFER_IES = _descriptor.Descriptor(
   name='RRCTransfer_IEs',
-  full_name='uenibstreamprotobuf.RRCTransfer_IEs',
+  full_name='streaming_protobufs.RRCTransfer_IEs',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.RRCTransfer_IEs.id_MeNB_UE_X2AP_ID', index=0,
+      name='id_MeNB_UE_X2AP_ID', full_name='streaming_protobufs.RRCTransfer_IEs.id_MeNB_UE_X2AP_ID', index=0,
       number=1, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_SgNB_UE_X2AP_ID', full_name='uenibstreamprotobuf.RRCTransfer_IEs.id_SgNB_UE_X2AP_ID', index=1,
+      name='id_SgNB_UE_X2AP_ID', full_name='streaming_protobufs.RRCTransfer_IEs.id_SgNB_UE_X2AP_ID', index=1,
       number=2, type=13, cpp_type=3, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_SplitSRB', full_name='uenibstreamprotobuf.RRCTransfer_IEs.id_SplitSRB', index=2,
+      name='id_SplitSRB', full_name='streaming_protobufs.RRCTransfer_IEs.id_SplitSRB', index=2,
       number=3, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_UENRMeasurement', full_name='uenibstreamprotobuf.RRCTransfer_IEs.id_UENRMeasurement', index=3,
+      name='id_UENRMeasurement', full_name='streaming_protobufs.RRCTransfer_IEs.id_UENRMeasurement', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR),
     _descriptor.FieldDescriptor(
-      name='id_MeNB_UE_X2AP_ID_Extension', full_name='uenibstreamprotobuf.RRCTransfer_IEs.id_MeNB_UE_X2AP_ID_Extension', index=4,
+      name='id_MeNB_UE_X2AP_ID_Extension', full_name='streaming_protobufs.RRCTransfer_IEs.id_MeNB_UE_X2AP_ID_Extension', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -317,13 +317,13 @@ _RRCTRANSFER_IES = _descriptor.Descriptor(
 
 _RRCTRANSFER = _descriptor.Descriptor(
   name='RRCTransfer',
-  full_name='uenibstreamprotobuf.RRCTransfer',
+  full_name='streaming_protobufs.RRCTransfer',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='rrcTransfer_IEs', full_name='uenibstreamprotobuf.RRCTransfer.rrcTransfer_IEs', index=0,
+      name='rrcTransfer_IEs', full_name='streaming_protobufs.RRCTransfer.rrcTransfer_IEs', index=0,
       number=1, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -370,56 +370,56 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 UENRMeasurement_ExtIEs = _reflection.GeneratedProtocolMessageType('UENRMeasurement_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _UENRMEASUREMENT_EXTIES,
   '__module__' : 'rrctransfer_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.UENRMeasurement_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.UENRMeasurement_ExtIEs)
   })
 _sym_db.RegisterMessage(UENRMeasurement_ExtIEs)
 
 UENRMeasurement = _reflection.GeneratedProtocolMessageType('UENRMeasurement', (_message.Message,), {
   'DESCRIPTOR' : _UENRMEASUREMENT,
   '__module__' : 'rrctransfer_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.UENRMeasurement)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.UENRMeasurement)
   })
 _sym_db.RegisterMessage(UENRMeasurement)
 
 SplitSRB_ExtIEs = _reflection.GeneratedProtocolMessageType('SplitSRB_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _SPLITSRB_EXTIES,
   '__module__' : 'rrctransfer_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SplitSRB_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SplitSRB_ExtIEs)
   })
 _sym_db.RegisterMessage(SplitSRB_ExtIEs)
 
 DeliveryStatus_ExtIEs = _reflection.GeneratedProtocolMessageType('DeliveryStatus_ExtIEs', (_message.Message,), {
   'DESCRIPTOR' : _DELIVERYSTATUS_EXTIES,
   '__module__' : 'rrctransfer_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.DeliveryStatus_ExtIEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.DeliveryStatus_ExtIEs)
   })
 _sym_db.RegisterMessage(DeliveryStatus_ExtIEs)
 
 DeliveryStatus = _reflection.GeneratedProtocolMessageType('DeliveryStatus', (_message.Message,), {
   'DESCRIPTOR' : _DELIVERYSTATUS,
   '__module__' : 'rrctransfer_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.DeliveryStatus)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.DeliveryStatus)
   })
 _sym_db.RegisterMessage(DeliveryStatus)
 
 SplitSRB = _reflection.GeneratedProtocolMessageType('SplitSRB', (_message.Message,), {
   'DESCRIPTOR' : _SPLITSRB,
   '__module__' : 'rrctransfer_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.SplitSRB)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.SplitSRB)
   })
 _sym_db.RegisterMessage(SplitSRB)
 
 RRCTransfer_IEs = _reflection.GeneratedProtocolMessageType('RRCTransfer_IEs', (_message.Message,), {
   'DESCRIPTOR' : _RRCTRANSFER_IES,
   '__module__' : 'rrctransfer_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCTransfer_IEs)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCTransfer_IEs)
   })
 _sym_db.RegisterMessage(RRCTransfer_IEs)
 
 RRCTransfer = _reflection.GeneratedProtocolMessageType('RRCTransfer', (_message.Message,), {
   'DESCRIPTOR' : _RRCTRANSFER,
   '__module__' : 'rrctransfer_pb2'
-  # @@protoc_insertion_point(class_scope:uenibstreamprotobuf.RRCTransfer)
+  # @@protoc_insertion_point(class_scope:streaming_protobufs.RRCTransfer)
   })
 _sym_db.RegisterMessage(RRCTransfer)
 

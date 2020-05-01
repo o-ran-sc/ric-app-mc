@@ -1,80 +1,13 @@
 {
-  "rrcx_stats_neigh_cell": {
-    "keys": [
-      "CELL_ID"
-    ], 
-    "fields": [
-      {
-        "is_ts": true, 
-        "type": "ULLONG", 
-        "name": "TS", 
-        "pos": "0"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "FLOAT", 
-        "name": "measurementInterval", 
-        "pos": "1"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "CELL_ID", 
-        "pos": "2"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
-        "pos": "3"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "INT", 
-        "name": "min_rsrp", 
-        "pos": "4"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "INT", 
-        "name": "pctl_05_rsrp", 
-        "pos": "5"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "INT", 
-        "name": "median_rsrp", 
-        "pos": "6"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "INT", 
-        "name": "pctl_95_rsrp", 
-        "pos": "7"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "FLOAT", 
-        "name": "stddev_rsrp", 
-        "pos": "8"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "INT", 
-        "name": "max_rsrp", 
-        "pos": "9"
-      }
-    ]
-  }, 
   "reconfig_status_reject_cause": {
     "keys": [
-      "gnb_id"
+      "GNB_ID"
     ], 
     "fields": [
       {
         "is_ts": false, 
         "type": "V_STR", 
-        "name": "gnb_id", 
+        "name": "GNB_ID", 
         "pos": "0"
       }, 
       {
@@ -115,9 +48,78 @@
       }
     ]
   }, 
+  "mc_connection_stats_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "min_connected_time", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "max_connected_time", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "avg_connected_time", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "pctl_05_connected_time", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "pctl_95_connected_time", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "stddev_connected_time", 
+        "pos": "9"
+      }
+    ]
+  }, 
   "rrcx_stats_neighbor_cell": {
     "keys": [
-      "CELL_ID"
+      "CELL_ID", 
+      "GNB_ID"
     ], 
     "fields": [
       {
@@ -140,50 +142,58 @@
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "min_rsrp", 
+        "name": "cnt", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "pctl_05_rsrp", 
+        "name": "min_rsrp", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "median_rsrp", 
+        "name": "pctl_05_rsrp", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "pctl_95_rsrp", 
+        "name": "median_rsrp", 
         "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_95_rsrp", 
+        "pos": "8"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
         "name": "stddev_rsrp", 
-        "pos": "8"
+        "pos": "9"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
         "name": "max_rsrp", 
-        "pos": "9"
+        "pos": "10"
       }
     ]
   }, 
   "mc_disconnects_cnt": {
-    "keys": [], 
+    "keys": [
+      "GNB_ID"
+    ], 
     "fields": [
       {
         "is_ts": true, 
@@ -193,15 +203,21 @@
       }, 
       {
         "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
         "type": "FLOAT", 
         "name": "measurementInterval", 
-        "pos": "1"
+        "pos": "2"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
         "name": "count_ue_disconnects", 
-        "pos": "2"
+        "pos": "3"
       }
     ]
   }, 
@@ -273,7 +289,9 @@
     ]
   }, 
   "mc_connects_cnt": {
-    "keys": [], 
+    "keys": [
+      "GNB_ID"
+    ], 
     "fields": [
       {
         "is_ts": true, 
@@ -283,20 +301,28 @@
       }, 
       {
         "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
         "type": "FLOAT", 
         "name": "measurementInterval", 
-        "pos": "1"
+        "pos": "2"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
         "name": "count_ue_connects", 
-        "pos": "2"
+        "pos": "3"
       }
     ]
   }, 
   "erab_stats": {
-    "keys": [], 
+    "keys": [
+      "GNB_ID"
+    ], 
     "fields": [
       {
         "is_ts": true, 
@@ -306,75 +332,81 @@
       }, 
       {
         "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
         "type": "FLOAT", 
         "name": "measurementInterval", 
-        "pos": "1"
+        "pos": "2"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
         "name": "total_erabs", 
-        "pos": "2"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "qCI_1", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "qCI_2", 
+        "name": "qCI_1", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "qCI_3", 
+        "name": "qCI_2", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "qCI_4", 
+        "name": "qCI_3", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "qCI_5", 
+        "name": "qCI_4", 
         "pos": "7"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "qCI_6", 
+        "name": "qCI_5", 
         "pos": "8"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "qCI_7", 
+        "name": "qCI_6", 
         "pos": "9"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "qCI_8", 
+        "name": "qCI_7", 
         "pos": "10"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "qCI_9", 
+        "name": "qCI_8", 
         "pos": "11"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "qCI_other", 
+        "name": "qCI_9", 
         "pos": "12"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "qCI_other", 
+        "pos": "13"
       }
     ]
   }, 
@@ -418,72 +450,18 @@
         "type": "FLOAT", 
         "name": "success_rate", 
         "pos": "5"
-      }
-    ]
-  }, 
-  "rrcx_pdf_neigh_cell_csi": {
-    "keys": [
-      "CELL_ID"
-    ], 
-    "fields": [
-      {
-        "is_ts": true, 
-        "type": "ULLONG", 
-        "name": "TS", 
-        "pos": "0"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
-        "name": "measurementInterval", 
-        "pos": "1"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "CELL_ID", 
-        "pos": "2"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
-        "pos": "3"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vbad", 
-        "pos": "4"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_bad", 
-        "pos": "5"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_medium", 
+        "name": "failure_rate", 
         "pos": "6"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_good", 
-        "pos": "7"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vgood", 
-        "pos": "8"
       }
     ]
   }, 
-  "rrcx_pdf_neigh_gnb_ssb": {
+  "rrcx_pdf_neighbor_beam_gtp_teid": {
     "keys": [
+      "gTP_TEID", 
       "GNB_ID"
     ], 
     "fields": [
@@ -507,39 +485,101 @@
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vbad", 
+        "type": "INT", 
+        "name": "cnt", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_bad", 
+        "name": "rsrp_vbad", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_medium", 
+        "name": "rsrp_bad", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_good", 
+        "name": "rsrp_medium", 
         "pos": "7"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_vgood", 
+        "name": "rsrp_good", 
         "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
+        "pos": "9"
+      }
+    ]
+  }, 
+  "reconfig_status_success_rate_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "total_reconfiguration_requests", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "successful_reconfiguration_requests", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "success_rate", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "failure_rate", 
+        "pos": "7"
       }
     ]
   }, 
@@ -629,67 +669,6 @@
       }
     ]
   }, 
-  "rrcx_pdf_neigh_cell_ssb": {
-    "keys": [
-      "CELL_ID"
-    ], 
-    "fields": [
-      {
-        "is_ts": true, 
-        "type": "ULLONG", 
-        "name": "TS", 
-        "pos": "0"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "FLOAT", 
-        "name": "measurementInterval", 
-        "pos": "1"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "CELL_ID", 
-        "pos": "2"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
-        "pos": "3"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vbad", 
-        "pos": "4"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_bad", 
-        "pos": "5"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_medium", 
-        "pos": "6"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_good", 
-        "pos": "7"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vgood", 
-        "pos": "8"
-      }
-    ]
-  }, 
   "rrcx_pdf_neighbor_gnb": {
     "keys": [
       "GNB_ID"
@@ -748,6 +727,147 @@
         "type": "UINT", 
         "name": "rsrp_vgood", 
         "pos": "8"
+      }
+    ]
+  }, 
+  "rrcx_stats_serv_beam_cell": {
+    "keys": [
+      "CELL_ID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "CELL_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "cnt", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "min_rsrp", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_05_rsrp", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "median_rsrp", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_95_rsrp", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "stddev_rsrp", 
+        "pos": "9"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "max_rsrp", 
+        "pos": "10"
+      }
+    ]
+  }, 
+  "rrcx_stats_neighbor_beam_gnb": {
+    "keys": [
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "cnt", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "min_rsrp", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_05_rsrp", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "median_rsrp", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_95_rsrp", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "stddev_rsrp", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "max_rsrp", 
+        "pos": "9"
       }
     ]
   }, 
@@ -813,7 +933,9 @@
     ]
   }, 
   "mc_connection_stats": {
-    "keys": [], 
+    "keys": [
+      "GNB_ID"
+    ], 
     "fields": [
       {
         "is_ts": true, 
@@ -823,51 +945,58 @@
       }, 
       {
         "is_ts": false, 
-        "type": "FLOAT", 
-        "name": "measurementInterval", 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
         "pos": "1"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
-        "name": "min_connected_time", 
+        "name": "measurementInterval", 
         "pos": "2"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
-        "name": "max_connected_time", 
+        "name": "min_connected_time", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
-        "name": "avg_connected_time", 
+        "name": "max_connected_time", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
-        "name": "pctl_05_connected_time", 
+        "name": "avg_connected_time", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
-        "name": "pctl_95_connected_time", 
+        "name": "pctl_05_connected_time", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
-        "name": "stddev_connected_time", 
+        "name": "pctl_95_connected_time", 
         "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "stddev_connected_time", 
+        "pos": "8"
       }
     ]
   }, 
   "addreq_stats_nr_cell": {
     "keys": [
-      "CELL_ID"
+      "CELL_ID", 
+      "GNB_ID"
     ], 
     "fields": [
       {
@@ -890,45 +1019,51 @@
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "min_rsrp", 
+        "name": "cnt", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "pctl_05_rsrp", 
+        "name": "min_rsrp", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "median_rsrp", 
+        "name": "pctl_05_rsrp", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "pctl_95_rsrp", 
+        "name": "median_rsrp", 
         "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_95_rsrp", 
+        "pos": "8"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
         "name": "stddev_rsrp", 
-        "pos": "8"
+        "pos": "9"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
         "name": "max_rsrp", 
-        "pos": "9"
+        "pos": "10"
       }
     ]
   }, 
@@ -993,7 +1128,113 @@
       }
     ]
   }, 
-  "rrcx_stats_neigh_gnb": {
+  "rrcx_pdf_serv_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "cnt", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vbad", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_bad", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_medium", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_good", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
+        "pos": "9"
+      }
+    ]
+  }, 
+  "mc_connects_cnt_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "count_ue_connects", 
+        "pos": "4"
+      }
+    ]
+  }, 
+  "rrcx_pdf_neighbor_beam_gnb": {
     "keys": [
       "GNB_ID"
     ], 
@@ -1024,38 +1265,100 @@
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "min_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_vbad", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "pctl_05_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_bad", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "median_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_medium", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "pctl_95_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_good", 
         "pos": "7"
       }, 
       {
         "is_ts": false, 
-        "type": "FLOAT", 
-        "name": "stddev_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
         "pos": "8"
+      }
+    ]
+  }, 
+  "rrcx_pdf_serv_beam_cell": {
+    "keys": [
+      "CELL_ID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "CELL_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "3"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "max_rsrp", 
+        "name": "cnt", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vbad", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_bad", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_medium", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_good", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
         "pos": "9"
       }
     ]
@@ -1212,7 +1515,9 @@
     ]
   }, 
   "mod_req_failure_distribution": {
-    "keys": [], 
+    "keys": [
+      "GNB_ID"
+    ], 
     "fields": [
       {
         "is_ts": true, 
@@ -1222,63 +1527,70 @@
       }, 
       {
         "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
         "type": "FLOAT", 
         "name": "measurementInterval", 
-        "pos": "1"
+        "pos": "2"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
         "name": "cnt", 
-        "pos": "2"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "UINT", 
-        "name": "count_protobuf_unspecified", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "count_t310_Expiry", 
+        "name": "count_protobuf_unspecified", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "count_randomAccessProblem", 
+        "name": "count_t310_Expiry", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "count_rlc_MaxNumRetx", 
+        "name": "count_randomAccessProblem", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "count_synchReconfigFailure_SCG", 
+        "name": "count_rlc_MaxNumRetx", 
         "pos": "7"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "count_scg_reconfigFailure", 
+        "name": "count_synchReconfigFailure_SCG", 
         "pos": "8"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "count_srb3_IntegrityFailure", 
+        "name": "count_scg_reconfigFailure", 
         "pos": "9"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_srb3_IntegrityFailure", 
+        "pos": "10"
       }
     ]
   }, 
   "rrcx_stats_serv_cell": {
     "keys": [
-      "CELL_ID"
+      "CELL_ID", 
+      "GNB_ID"
     ], 
     "fields": [
       {
@@ -1301,44 +1613,118 @@
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "min_rsrp", 
+        "name": "cnt", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "pctl_05_rsrp", 
+        "name": "min_rsrp", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "median_rsrp", 
+        "name": "pctl_05_rsrp", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "pctl_95_rsrp", 
+        "name": "median_rsrp", 
         "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_95_rsrp", 
+        "pos": "8"
       }, 
       {
         "is_ts": false, 
         "type": "FLOAT", 
         "name": "stddev_rsrp", 
-        "pos": "8"
+        "pos": "9"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
         "name": "max_rsrp", 
+        "pos": "10"
+      }
+    ]
+  }, 
+  "rrcx_pdf_neighbor_beam_cell": {
+    "keys": [
+      "CELL_ID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "CELL_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "cnt", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vbad", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_bad", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_medium", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_good", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
         "pos": "9"
       }
     ]
@@ -1427,59 +1813,81 @@
       }
     ]
   }, 
-  "reconfig_all_debug": {
-    "keys": [], 
+  "rrcx_stats_neighbor_beam_cell": {
+    "keys": [
+      "CELL_ID", 
+      "GNB_ID"
+    ], 
     "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "CELL_ID", 
+        "pos": "2"
+      }, 
       {
         "is_ts": false, 
         "type": "V_STR", 
-        "name": "name", 
-        "pos": "0"
+        "name": "GNB_ID", 
+        "pos": "3"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
         "name": "cnt", 
-        "pos": "1"
-      }, 
-      {
-        "is_ts": true, 
-        "type": "ULLONG", 
-        "name": "TS", 
-        "pos": "2"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "FLOAT", 
-        "name": "measurementInterval", 
-        "pos": "3"
-      }
-    ]
-  }, 
-  "mc_unique_ue_cnt": {
-    "keys": [], 
-    "fields": [
-      {
-        "is_ts": true, 
-        "type": "ULLONG", 
-        "name": "TS", 
-        "pos": "0"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "FLOAT", 
-        "name": "measurementInterval", 
-        "pos": "1"
+        "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "INT", 
-        "name": "count_unique_ue", 
-        "pos": "2"
+        "name": "min_rsrp", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_05_rsrp", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "median_rsrp", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_95_rsrp", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "stddev_rsrp", 
+        "pos": "9"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "max_rsrp", 
+        "pos": "10"
       }
     ]
   }, 
-  "rrcx_pdf_neigh_gnb_csi": {
+  "rrcx_stats_serv_gnb": {
     "keys": [
       "GNB_ID"
     ], 
@@ -1510,33 +1918,70 @@
       }, 
       {
         "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vbad", 
+        "type": "INT", 
+        "name": "min_rsrp", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_bad", 
+        "type": "INT", 
+        "name": "pctl_05_rsrp", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_medium", 
+        "type": "INT", 
+        "name": "median_rsrp", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_good", 
+        "type": "INT", 
+        "name": "pctl_95_rsrp", 
         "pos": "7"
       }, 
       {
         "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vgood", 
+        "type": "FLOAT", 
+        "name": "stddev_rsrp", 
         "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "max_rsrp", 
+        "pos": "9"
+      }
+    ]
+  }, 
+  "mc_unique_ue_cnt": {
+    "keys": [
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "count_unique_ue", 
+        "pos": "3"
       }
     ]
   }, 
@@ -1626,14 +2071,139 @@
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "extr_quant_hfta0_fcn_quant_udaf_hfta0", 
+        "name": "active_throughput_percentile_05", 
         "pos": "8"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "extr_quant_hfta0_fcn_quant_udaf_hfta01", 
+        "name": "active_throughput_percentile_95", 
         "pos": "9"
+      }
+    ]
+  }, 
+  "throughput_gtp_teid_bearer": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID", 
+      "e_RAB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "e_RAB_ID", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "active_throughput", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "average_throughput", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "min_throughput", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "max_throughput", 
+        "pos": "8"
+      }
+    ]
+  }, 
+  "mod_failure_cause_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "total_reconfig_refuse", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_radio_network", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_transport", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_protocol", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_misc", 
+        "pos": "8"
       }
     ]
   }, 
@@ -1706,7 +2276,8 @@
   }, 
   "rrcx_pdf_serv_cell": {
     "keys": [
-      "CELL_ID"
+      "CELL_ID", 
+      "GNB_ID"
     ], 
     "fields": [
       {
@@ -1729,45 +2300,52 @@
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vbad", 
+        "type": "INT", 
+        "name": "cnt", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_bad", 
+        "name": "rsrp_vbad", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_medium", 
+        "name": "rsrp_bad", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_good", 
+        "name": "rsrp_medium", 
         "pos": "7"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_vgood", 
+        "name": "rsrp_good", 
         "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
+        "pos": "9"
       }
     ]
   }, 
   "rrcx_pdf_neighbor_cell": {
     "keys": [
-      "CELL_ID"
+      "CELL_ID", 
+      "GNB_ID"
     ], 
     "fields": [
       {
@@ -1790,43 +2368,99 @@
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vbad", 
+        "type": "INT", 
+        "name": "cnt", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_bad", 
+        "name": "rsrp_vbad", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_medium", 
+        "name": "rsrp_bad", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_good", 
+        "name": "rsrp_medium", 
         "pos": "7"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_vgood", 
+        "name": "rsrp_good", 
         "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
+        "pos": "9"
       }
     ]
   }, 
-  "rrcx_stats_serv_gnb": {
+  "handovers_gnb": {
+    "keys": [
+      "GTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GTP_TEID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "total_addition_requests", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "n_handovers", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "n_ping_pong", 
+        "pos": "6"
+      }
+    ]
+  }, 
+  "rrcx_pdf_serv_beam_gnb": {
     "keys": [
       "GNB_ID"
     ], 
@@ -1857,39 +2491,33 @@
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "min_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_vbad", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "pctl_05_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_bad", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "median_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_medium", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "pctl_95_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_good", 
         "pos": "7"
       }, 
       {
         "is_ts": false, 
-        "type": "FLOAT", 
-        "name": "stddev_rsrp", 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
         "pos": "8"
-      }, 
-      {
-        "is_ts": false, 
-        "type": "INT", 
-        "name": "max_rsrp", 
-        "pos": "9"
       }
     ]
   }, 
@@ -1956,8 +2584,10 @@
       }
     ]
   }, 
-  "mc_connected_cnt": {
-    "keys": [], 
+  "distinct_users": {
+    "keys": [
+      "GNB_ID"
+    ], 
     "fields": [
       {
         "is_ts": true, 
@@ -1973,9 +2603,140 @@
       }, 
       {
         "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "num_users", 
+        "pos": "3"
+      }
+    ]
+  }, 
+  "throughput_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "active_throughput", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "average_throughput", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "min_throughput", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "max_throughput", 
+        "pos": "7"
+      }
+    ]
+  }, 
+  "ho_counts_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "n_handovers", 
+        "pos": "4"
+      }
+    ]
+  }, 
+  "mc_connected_cnt": {
+    "keys": [
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
         "type": "INT", 
         "name": "count_connected_ue", 
-        "pos": "2"
+        "pos": "3"
       }
     ]
   }, 
@@ -2034,9 +2795,399 @@
       }
     ]
   }, 
+  "rrcx_stats_serv_beam_gnb": {
+    "keys": [
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "cnt", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "min_rsrp", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_05_rsrp", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "median_rsrp", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "pctl_95_rsrp", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "stddev_rsrp", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "max_rsrp", 
+        "pos": "9"
+      }
+    ]
+  }, 
+  "rrcx_pdf_neighbor_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "cnt", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vbad", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_bad", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_medium", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_good", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
+        "pos": "9"
+      }
+    ]
+  }, 
+  "reconfig_status_reject_cause_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TB", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "total_reconfig_reject", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_radio_network", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_transport", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_protocol", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_misc", 
+        "pos": "7"
+      }
+    ]
+  }, 
+  "release_cause_gtp_ueid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "total_reconfig_refuse", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_radio_network", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_transport", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_protocol", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_misc", 
+        "pos": "8"
+      }
+    ]
+  }, 
+  "throughput_userclass": {
+    "keys": [
+      "GNB_ID", 
+      "CLASS"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "CLASS", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "active_throughput", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "average_throughput", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "min_throughput", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "LLONG", 
+        "name": "max_throughput", 
+        "pos": "7"
+      }
+    ]
+  }, 
+  "mod_req_failure_distribution_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "cnt", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_protobuf_unspecified", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_t310_Expiry", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_randomAccessProblem", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_rlc_MaxNumRetx", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_synchReconfigFailure_SCG", 
+        "pos": "9"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_scg_reconfigFailure", 
+        "pos": "10"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "count_srb3_IntegrityFailure", 
+        "pos": "11"
+      }
+    ]
+  }, 
   "addreq_pdf_nr_cell": {
     "keys": [
-      "CELL_ID"
+      "CELL_ID", 
+      "GNB_ID"
     ], 
     "fields": [
       {
@@ -2059,39 +3210,113 @@
       }, 
       {
         "is_ts": false, 
-        "type": "INT", 
-        "name": "cnt", 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
         "pos": "3"
       }, 
       {
         "is_ts": false, 
-        "type": "UINT", 
-        "name": "rsrp_vbad", 
+        "type": "INT", 
+        "name": "cnt", 
         "pos": "4"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_bad", 
+        "name": "rsrp_vbad", 
         "pos": "5"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_medium", 
+        "name": "rsrp_bad", 
         "pos": "6"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_good", 
+        "name": "rsrp_medium", 
         "pos": "7"
       }, 
       {
         "is_ts": false, 
         "type": "UINT", 
-        "name": "rsrp_vgood", 
+        "name": "rsrp_good", 
         "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
+        "pos": "9"
+      }
+    ]
+  }, 
+  "rrcx_pdf_serv_beam_gtp_teid": {
+    "keys": [
+      "gTP_TEID", 
+      "GNB_ID"
+    ], 
+    "fields": [
+      {
+        "is_ts": true, 
+        "type": "ULLONG", 
+        "name": "TS", 
+        "pos": "0"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "FLOAT", 
+        "name": "measurementInterval", 
+        "pos": "1"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "GNB_ID", 
+        "pos": "2"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "V_STR", 
+        "name": "gTP_TEID", 
+        "pos": "3"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "INT", 
+        "name": "cnt", 
+        "pos": "4"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vbad", 
+        "pos": "5"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_bad", 
+        "pos": "6"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_medium", 
+        "pos": "7"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_good", 
+        "pos": "8"
+      }, 
+      {
+        "is_ts": false, 
+        "type": "UINT", 
+        "name": "rsrp_vgood", 
+        "pos": "9"
       }
     ]
   }

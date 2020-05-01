@@ -7,52 +7,52 @@
 #endif
 
 #include "ue_context_release.pb-c.h"
-void   uenibstreamprotobuf__uecontext_release__init
-                     (Uenibstreamprotobuf__UEContextRelease         *message)
+void   streaming_protobufs__uecontext_release__init
+                     (StreamingProtobufs__UEContextRelease         *message)
 {
-  static const Uenibstreamprotobuf__UEContextRelease init_value = UENIBSTREAMPROTOBUF__UECONTEXT_RELEASE__INIT;
+  static const StreamingProtobufs__UEContextRelease init_value = STREAMING_PROTOBUFS__UECONTEXT_RELEASE__INIT;
   *message = init_value;
 }
-size_t uenibstreamprotobuf__uecontext_release__get_packed_size
-                     (const Uenibstreamprotobuf__UEContextRelease *message)
+size_t streaming_protobufs__uecontext_release__get_packed_size
+                     (const StreamingProtobufs__UEContextRelease *message)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__uecontext_release__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__uecontext_release__descriptor);
   return protobuf_c_message_get_packed_size ((const ProtobufCMessage*)(message));
 }
-size_t uenibstreamprotobuf__uecontext_release__pack
-                     (const Uenibstreamprotobuf__UEContextRelease *message,
+size_t streaming_protobufs__uecontext_release__pack
+                     (const StreamingProtobufs__UEContextRelease *message,
                       uint8_t       *out)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__uecontext_release__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__uecontext_release__descriptor);
   return protobuf_c_message_pack ((const ProtobufCMessage*)message, out);
 }
-size_t uenibstreamprotobuf__uecontext_release__pack_to_buffer
-                     (const Uenibstreamprotobuf__UEContextRelease *message,
+size_t streaming_protobufs__uecontext_release__pack_to_buffer
+                     (const StreamingProtobufs__UEContextRelease *message,
                       ProtobufCBuffer *buffer)
 {
-  assert(message->base.descriptor == &uenibstreamprotobuf__uecontext_release__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__uecontext_release__descriptor);
   return protobuf_c_message_pack_to_buffer ((const ProtobufCMessage*)message, buffer);
 }
-Uenibstreamprotobuf__UEContextRelease *
-       uenibstreamprotobuf__uecontext_release__unpack
+StreamingProtobufs__UEContextRelease *
+       streaming_protobufs__uecontext_release__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data)
 {
-  return (Uenibstreamprotobuf__UEContextRelease *)
-     protobuf_c_message_unpack (&uenibstreamprotobuf__uecontext_release__descriptor,
+  return (StreamingProtobufs__UEContextRelease *)
+     protobuf_c_message_unpack (&streaming_protobufs__uecontext_release__descriptor,
                                 allocator, len, data);
 }
-void   uenibstreamprotobuf__uecontext_release__free_unpacked
-                     (Uenibstreamprotobuf__UEContextRelease *message,
+void   streaming_protobufs__uecontext_release__free_unpacked
+                     (StreamingProtobufs__UEContextRelease *message,
                       ProtobufCAllocator *allocator)
 {
   if(!message)
     return;
-  assert(message->base.descriptor == &uenibstreamprotobuf__uecontext_release__descriptor);
+  assert(message->base.descriptor == &streaming_protobufs__uecontext_release__descriptor);
   protobuf_c_message_free_unpacked ((ProtobufCMessage*)message, allocator);
 }
-static const ProtobufCFieldDescriptor uenibstreamprotobuf__uecontext_release__field_descriptors[6] =
+static const ProtobufCFieldDescriptor streaming_protobufs__uecontext_release__field_descriptors[6] =
 {
   {
     "id_Old_eNB_UE_X2AP_ID",
@@ -60,7 +60,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__uecontext_release__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__UEContextRelease, id_old_enb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__UEContextRelease, id_old_enb_ue_x2ap_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -72,7 +72,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__uecontext_release__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_UINT32,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__UEContextRelease, id_new_enb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__UEContextRelease, id_new_enb_ue_x2ap_id),
     NULL,
     NULL,
     0,             /* flags */
@@ -84,7 +84,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__uecontext_release__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__UEContextRelease, id_old_enb_ue_x2ap_id_extension),
+    offsetof(StreamingProtobufs__UEContextRelease, id_old_enb_ue_x2ap_id_extension),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -96,7 +96,7 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__uecontext_release__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__UEContextRelease, id_new_enb_ue_x2ap_id_extension),
+    offsetof(StreamingProtobufs__UEContextRelease, id_new_enb_ue_x2ap_id_extension),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
@@ -108,8 +108,8 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__uecontext_release__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__UEContextRelease, id_sipto_bearerdeactivationindication),
-    &uenibstreamprotobuf__true_opt__descriptor,
+    offsetof(StreamingProtobufs__UEContextRelease, id_sipto_bearerdeactivationindication),
+    &streaming_protobufs__true_opt__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
@@ -120,14 +120,14 @@ static const ProtobufCFieldDescriptor uenibstreamprotobuf__uecontext_release__fi
     PROTOBUF_C_LABEL_NONE,
     PROTOBUF_C_TYPE_MESSAGE,
     0,   /* quantifier_offset */
-    offsetof(Uenibstreamprotobuf__UEContextRelease, id_sgnb_ue_x2ap_id),
+    offsetof(StreamingProtobufs__UEContextRelease, id_sgnb_ue_x2ap_id),
     &google__protobuf__uint32_value__descriptor,
     NULL,
     0,             /* flags */
     0,NULL,NULL    /* reserved1,reserved2, etc */
   },
 };
-static const unsigned uenibstreamprotobuf__uecontext_release__field_indices_by_name[] = {
+static const unsigned streaming_protobufs__uecontext_release__field_indices_by_name[] = {
   1,   /* field[1] = id_New_eNB_UE_X2AP_ID */
   3,   /* field[3] = id_New_eNB_UE_X2AP_ID_Extension */
   0,   /* field[0] = id_Old_eNB_UE_X2AP_ID */
@@ -135,23 +135,23 @@ static const unsigned uenibstreamprotobuf__uecontext_release__field_indices_by_n
   4,   /* field[4] = id_SIPTO_BearerDeactivationIndication */
   5,   /* field[5] = id_SgNB_UE_X2AP_ID */
 };
-static const ProtobufCIntRange uenibstreamprotobuf__uecontext_release__number_ranges[1 + 1] =
+static const ProtobufCIntRange streaming_protobufs__uecontext_release__number_ranges[1 + 1] =
 {
   { 1, 0 },
   { 0, 6 }
 };
-const ProtobufCMessageDescriptor uenibstreamprotobuf__uecontext_release__descriptor =
+const ProtobufCMessageDescriptor streaming_protobufs__uecontext_release__descriptor =
 {
   PROTOBUF_C__MESSAGE_DESCRIPTOR_MAGIC,
-  "uenibstreamprotobuf.UEContextRelease",
+  "streaming_protobufs.UEContextRelease",
   "UEContextRelease",
-  "Uenibstreamprotobuf__UEContextRelease",
-  "uenibstreamprotobuf",
-  sizeof(Uenibstreamprotobuf__UEContextRelease),
+  "StreamingProtobufs__UEContextRelease",
+  "streaming_protobufs",
+  sizeof(StreamingProtobufs__UEContextRelease),
   6,
-  uenibstreamprotobuf__uecontext_release__field_descriptors,
-  uenibstreamprotobuf__uecontext_release__field_indices_by_name,
-  1,  uenibstreamprotobuf__uecontext_release__number_ranges,
-  (ProtobufCMessageInit) uenibstreamprotobuf__uecontext_release__init,
+  streaming_protobufs__uecontext_release__field_descriptors,
+  streaming_protobufs__uecontext_release__field_indices_by_name,
+  1,  streaming_protobufs__uecontext_release__number_ranges,
+  (ProtobufCMessageInit) streaming_protobufs__uecontext_release__init,
   NULL,NULL,NULL    /* reserved[123] */
 };

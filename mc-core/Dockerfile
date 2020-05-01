@@ -30,8 +30,10 @@ RUN ldconfig
 
 COPY mc ${STAGE_DIR}
 WORKDIR ${STAGE_DIR}
-RUN apt-get install -y libboost-all-dev
-RUN apt-get install -y libhiredis-dev
+RUN apt-get update && \
+	apt-get install -y libboost-all-dev && \
+	apt-get install -y libhiredis-dev && \
+	apt-get clean
 RUN git clone https://gerrit.o-ran-sc.org/r/ric-plt/sdl
 WORKDIR ${STAGE_DIR}/sdl
 RUN ./autogen.sh
@@ -57,9 +59,11 @@ RUN make
 RUN make install
 RUN ldconfig
 WORKDIR ${STAGE_DIR}
-RUN git clone -b release/0.1.0 https://gerrit.o-ran-sc.org/r/com/gs-lite
+RUN git clone -b release/0.2.0 https://gerrit.o-ran-sc.org/r/com/gs-lite
 WORKDIR ${STAGE_DIR}/gs-lite
-COPY mc/cfg ${STAGE_DIR}/gs-lite/cfg
+COPY mc/cfg/packet_schema.txt ${STAGE_DIR}/gs-lite/cfg/
+COPY mc/cfg/ifres.xml ${STAGE_DIR}/gs-lite/cfg/
+COPY mc/cfg/localhost.ifq ${STAGE_DIR}/gs-lite/cfg/
 COPY mc/local_datasource ${STAGE_DIR}/gs-lite/src/lib/gscprts/local_datasource
 COPY mc/local ${STAGE_DIR}/gs-lite/include/lfta/local
 COPY mc/queries ${STAGE_DIR}/gs-lite/demo/queries

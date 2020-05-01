@@ -16,594 +16,595 @@ PROTOBUF_C__BEGIN_DECLS
 
 #include "google/protobuf/wrappers.pb-c.h"
 #include "rrc_common_types.pb-c.h"
+#include "rrc_reconfiguration.pb-c.h"
 
-typedef struct _Uenibstreamprotobuf__CGConfig Uenibstreamprotobuf__CGConfig;
-typedef struct _Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1;
-typedef struct _Uenibstreamprotobuf__CGConfigIEs Uenibstreamprotobuf__CGConfigIEs;
-typedef struct _Uenibstreamprotobuf__ConfigRestrictModReqSCG Uenibstreamprotobuf__ConfigRestrictModReqSCG;
-typedef struct _Uenibstreamprotobuf__BandCombinationInfoSN Uenibstreamprotobuf__BandCombinationInfoSN;
-typedef struct _Uenibstreamprotobuf__FRInfoList Uenibstreamprotobuf__FRInfoList;
-typedef struct _Uenibstreamprotobuf__FRInfo Uenibstreamprotobuf__FRInfo;
-typedef struct _Uenibstreamprotobuf__FRType Uenibstreamprotobuf__FRType;
-typedef struct _Uenibstreamprotobuf__CandidateServingFreqListNR Uenibstreamprotobuf__CandidateServingFreqListNR;
-typedef struct _Uenibstreamprotobuf__CGConfigV1540IEs Uenibstreamprotobuf__CGConfigV1540IEs;
-typedef struct _Uenibstreamprotobuf__ReportCGIRequest Uenibstreamprotobuf__ReportCGIRequest;
-typedef struct _Uenibstreamprotobuf__RequestedCellInfo Uenibstreamprotobuf__RequestedCellInfo;
-typedef struct _Uenibstreamprotobuf__PHTypeListSCG Uenibstreamprotobuf__PHTypeListSCG;
-typedef struct _Uenibstreamprotobuf__PHInfoSCG Uenibstreamprotobuf__PHInfoSCG;
-typedef struct _Uenibstreamprotobuf__PHUplinkCarrierSCG Uenibstreamprotobuf__PHUplinkCarrierSCG;
-typedef struct _Uenibstreamprotobuf__MeasConfigSN Uenibstreamprotobuf__MeasConfigSN;
+typedef struct _StreamingProtobufs__CGConfig StreamingProtobufs__CGConfig;
+typedef struct _StreamingProtobufs__CGConfigCriticalExtensionsChoice1 StreamingProtobufs__CGConfigCriticalExtensionsChoice1;
+typedef struct _StreamingProtobufs__CGConfigIEs StreamingProtobufs__CGConfigIEs;
+typedef struct _StreamingProtobufs__ConfigRestrictModReqSCG StreamingProtobufs__ConfigRestrictModReqSCG;
+typedef struct _StreamingProtobufs__BandCombinationInfoSN StreamingProtobufs__BandCombinationInfoSN;
+typedef struct _StreamingProtobufs__FRInfoList StreamingProtobufs__FRInfoList;
+typedef struct _StreamingProtobufs__FRInfo StreamingProtobufs__FRInfo;
+typedef struct _StreamingProtobufs__FRType StreamingProtobufs__FRType;
+typedef struct _StreamingProtobufs__CandidateServingFreqListNR StreamingProtobufs__CandidateServingFreqListNR;
+typedef struct _StreamingProtobufs__CGConfigV1540IEs StreamingProtobufs__CGConfigV1540IEs;
+typedef struct _StreamingProtobufs__ReportCGIRequest StreamingProtobufs__ReportCGIRequest;
+typedef struct _StreamingProtobufs__RequestedCellInfo StreamingProtobufs__RequestedCellInfo;
+typedef struct _StreamingProtobufs__PHTypeListSCG StreamingProtobufs__PHTypeListSCG;
+typedef struct _StreamingProtobufs__PHInfoSCG StreamingProtobufs__PHInfoSCG;
+typedef struct _StreamingProtobufs__PHUplinkCarrierSCG StreamingProtobufs__PHUplinkCarrierSCG;
+typedef struct _StreamingProtobufs__MeasConfigSN StreamingProtobufs__MeasConfigSN;
 
 
 /* --- enums --- */
 
-typedef enum _Uenibstreamprotobuf__FRType__Value {
-  UENIBSTREAMPROTOBUF__FR__TYPE__VALUE__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__FR__TYPE__VALUE__fr1 = 1,
-  UENIBSTREAMPROTOBUF__FR__TYPE__VALUE__fr2 = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__FR__TYPE__VALUE)
-} Uenibstreamprotobuf__FRType__Value;
-typedef enum _Uenibstreamprotobuf__PHUplinkCarrierSCG__PHType1or3 {
-  UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3__protobuf_unspecified = 0,
-  UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3__type1 = 1,
-  UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3__type3 = 2
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3)
-} Uenibstreamprotobuf__PHUplinkCarrierSCG__PHType1or3;
+typedef enum _StreamingProtobufs__FRType__Value {
+  STREAMING_PROTOBUFS__FR__TYPE__VALUE__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__FR__TYPE__VALUE__fr1 = 1,
+  STREAMING_PROTOBUFS__FR__TYPE__VALUE__fr2 = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__FR__TYPE__VALUE)
+} StreamingProtobufs__FRType__Value;
+typedef enum _StreamingProtobufs__PHUplinkCarrierSCG__PHType1or3 {
+  STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3__protobuf_unspecified = 0,
+  STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3__type1 = 1,
+  STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3__type3 = 2
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3)
+} StreamingProtobufs__PHUplinkCarrierSCG__PHType1or3;
 
 /* --- messages --- */
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__CG__CONFIG__CRITICAL_EXTENSIONS__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__CG__CONFIG__CRITICAL_EXTENSIONS_CRITICAL_EXTENSIONS_CHOICE1 = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__CG__CONFIG__CRITICAL_EXTENSIONS)
-} Uenibstreamprotobuf__CGConfig__CriticalExtensionsCase;
+  STREAMING_PROTOBUFS__CG__CONFIG__CRITICAL_EXTENSIONS__NOT_SET = 0,
+  STREAMING_PROTOBUFS__CG__CONFIG__CRITICAL_EXTENSIONS_CRITICAL_EXTENSIONS_CHOICE1 = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__CG__CONFIG__CRITICAL_EXTENSIONS)
+} StreamingProtobufs__CGConfig__CriticalExtensionsCase;
 
-struct  _Uenibstreamprotobuf__CGConfig
+struct  _StreamingProtobufs__CGConfig
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__CGConfig__CriticalExtensionsCase critical_extensions_case;
+  StreamingProtobufs__CGConfig__CriticalExtensionsCase critical_extensions_case;
   union {
-    Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 *criticalextensionschoice1;
+    StreamingProtobufs__CGConfigCriticalExtensionsChoice1 *criticalextensionschoice1;
   };
 };
-#define UENIBSTREAMPROTOBUF__CG__CONFIG__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__cg__config__descriptor) \
-    , UENIBSTREAMPROTOBUF__CG__CONFIG__CRITICAL_EXTENSIONS__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__CG__CONFIG__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__cg__config__descriptor) \
+    , STREAMING_PROTOBUFS__CG__CONFIG__CRITICAL_EXTENSIONS__NOT_SET, {0} }
 
 
 typedef enum {
-  UENIBSTREAMPROTOBUF__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__C1__NOT_SET = 0,
-  UENIBSTREAMPROTOBUF__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__C1_PROTOCOL_IES = 1
-    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(UENIBSTREAMPROTOBUF__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__C1)
-} Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1__C1Case;
+  STREAMING_PROTOBUFS__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__C1__NOT_SET = 0,
+  STREAMING_PROTOBUFS__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__C1_PROTOCOL_IES = 1
+    PROTOBUF_C__FORCE_ENUM_TO_BE_INT_SIZE(STREAMING_PROTOBUFS__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__C1)
+} StreamingProtobufs__CGConfigCriticalExtensionsChoice1__C1Case;
 
-struct  _Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1
+struct  _StreamingProtobufs__CGConfigCriticalExtensionsChoice1
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1__C1Case c1_case;
+  StreamingProtobufs__CGConfigCriticalExtensionsChoice1__C1Case c1_case;
   union {
-    Uenibstreamprotobuf__CGConfigIEs *protocolies;
+    StreamingProtobufs__CGConfigIEs *protocolies;
   };
 };
-#define UENIBSTREAMPROTOBUF__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__cg__config_critical_extensions_choice1__descriptor) \
-    , UENIBSTREAMPROTOBUF__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__C1__NOT_SET, {0} }
+#define STREAMING_PROTOBUFS__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__cg__config_critical_extensions_choice1__descriptor) \
+    , STREAMING_PROTOBUFS__CG__CONFIG_CRITICAL_EXTENSIONS_CHOICE1__C1__NOT_SET, {0} }
 
 
-struct  _Uenibstreamprotobuf__CGConfigIEs
+struct  _StreamingProtobufs__CGConfigIEs
 {
   ProtobufCMessage base;
-  Google__Protobuf__StringValue *scg_cellgroupconfig;
-  Uenibstreamprotobuf__RadioBearerConfig *scg_rb_config;
-  Uenibstreamprotobuf__ConfigRestrictModReqSCG *configrestrictmodreq;
-  Uenibstreamprotobuf__DRXInfo *drx_infoscg;
-  Uenibstreamprotobuf__MeasResultList2NR *candidatecellinfolistsn;
-  Uenibstreamprotobuf__MeasConfigSN *measconfigsn;
-  Uenibstreamprotobuf__BandCombinationInfoSN *selectedbandcombinationnr;
-  Uenibstreamprotobuf__FRInfoList *fr_infolistscg;
-  Uenibstreamprotobuf__CandidateServingFreqListNR *candidateservingfreqlistnr;
-  Uenibstreamprotobuf__CGConfigV1540IEs *noncriticalextension;
+  StreamingProtobufs__RRCReconfiguration *scg_cellgroupconfig;
+  StreamingProtobufs__RadioBearerConfig *scg_rb_config;
+  StreamingProtobufs__ConfigRestrictModReqSCG *configrestrictmodreq;
+  StreamingProtobufs__DRXInfo *drx_infoscg;
+  StreamingProtobufs__MeasResultList2NR *candidatecellinfolistsn;
+  StreamingProtobufs__MeasConfigSN *measconfigsn;
+  StreamingProtobufs__BandCombinationInfoSN *selectedbandcombinationnr;
+  StreamingProtobufs__FRInfoList *fr_infolistscg;
+  StreamingProtobufs__CandidateServingFreqListNR *candidateservingfreqlistnr;
+  StreamingProtobufs__CGConfigV1540IEs *noncriticalextension;
 };
-#define UENIBSTREAMPROTOBUF__CG__CONFIG__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__cg__config__ies__descriptor) \
+#define STREAMING_PROTOBUFS__CG__CONFIG__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__cg__config__ies__descriptor) \
     , NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__ConfigRestrictModReqSCG
+struct  _StreamingProtobufs__ConfigRestrictModReqSCG
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__BandCombinationInfoSN *requestedbc_mrdc;
+  StreamingProtobufs__BandCombinationInfoSN *requestedbc_mrdc;
   Google__Protobuf__Int32Value *requestedp_maxfr1;
 };
-#define UENIBSTREAMPROTOBUF__CONFIG_RESTRICT_MOD_REQ_SCG__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__config_restrict_mod_req_scg__descriptor) \
+#define STREAMING_PROTOBUFS__CONFIG_RESTRICT_MOD_REQ_SCG__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__config_restrict_mod_req_scg__descriptor) \
     , NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__BandCombinationInfoSN
+struct  _StreamingProtobufs__BandCombinationInfoSN
 {
   ProtobufCMessage base;
   uint32_t bandcombinationindex;
   uint32_t requestedfeaturesets;
 };
-#define UENIBSTREAMPROTOBUF__BAND_COMBINATION_INFO_SN__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__band_combination_info_sn__descriptor) \
+#define STREAMING_PROTOBUFS__BAND_COMBINATION_INFO_SN__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__band_combination_info_sn__descriptor) \
     , 0, 0 }
 
 
-struct  _Uenibstreamprotobuf__FRInfoList
+struct  _StreamingProtobufs__FRInfoList
 {
   ProtobufCMessage base;
   size_t n_items;
-  Uenibstreamprotobuf__FRInfo **items;
+  StreamingProtobufs__FRInfo **items;
 };
-#define UENIBSTREAMPROTOBUF__FR__INFO_LIST__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__fr__info_list__descriptor) \
+#define STREAMING_PROTOBUFS__FR__INFO_LIST__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__fr__info_list__descriptor) \
     , 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__FRInfo
+struct  _StreamingProtobufs__FRInfo
 {
   ProtobufCMessage base;
   uint32_t servcellindex;
-  Uenibstreamprotobuf__FRType *fr_type;
+  StreamingProtobufs__FRType *fr_type;
 };
-#define UENIBSTREAMPROTOBUF__FR__INFO__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__fr__info__descriptor) \
+#define STREAMING_PROTOBUFS__FR__INFO__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__fr__info__descriptor) \
     , 0, NULL }
 
 
-struct  _Uenibstreamprotobuf__FRType
+struct  _StreamingProtobufs__FRType
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__FRType__Value value;
+  StreamingProtobufs__FRType__Value value;
 };
-#define UENIBSTREAMPROTOBUF__FR__TYPE__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__fr__type__descriptor) \
-    , UENIBSTREAMPROTOBUF__FR__TYPE__VALUE__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__FR__TYPE__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__fr__type__descriptor) \
+    , STREAMING_PROTOBUFS__FR__TYPE__VALUE__protobuf_unspecified }
 
 
-struct  _Uenibstreamprotobuf__CandidateServingFreqListNR
+struct  _StreamingProtobufs__CandidateServingFreqListNR
 {
   ProtobufCMessage base;
   size_t n_items;
   uint32_t *items;
 };
-#define UENIBSTREAMPROTOBUF__CANDIDATE_SERVING_FREQ_LIST_NR__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__candidate_serving_freq_list_nr__descriptor) \
+#define STREAMING_PROTOBUFS__CANDIDATE_SERVING_FREQ_LIST_NR__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__candidate_serving_freq_list_nr__descriptor) \
     , 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__CGConfigV1540IEs
+struct  _StreamingProtobufs__CGConfigV1540IEs
 {
   ProtobufCMessage base;
   Google__Protobuf__UInt32Value *pscellfrequency;
-  Uenibstreamprotobuf__ReportCGIRequest *reportcgi_request;
-  Uenibstreamprotobuf__PHTypeListSCG *ph_infoscg;
+  StreamingProtobufs__ReportCGIRequest *reportcgi_request;
+  StreamingProtobufs__PHTypeListSCG *ph_infoscg;
 };
-#define UENIBSTREAMPROTOBUF__CG__CONFIG_V1540__IES__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__cg__config_v1540__ies__descriptor) \
+#define STREAMING_PROTOBUFS__CG__CONFIG_V1540__IES__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__cg__config_v1540__ies__descriptor) \
     , NULL, NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__ReportCGIRequest
+struct  _StreamingProtobufs__ReportCGIRequest
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__RequestedCellInfo *requestedcellinfo;
+  StreamingProtobufs__RequestedCellInfo *requestedcellinfo;
 };
-#define UENIBSTREAMPROTOBUF__REPORT_CGI__REQUEST__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__report_cgi__request__descriptor) \
+#define STREAMING_PROTOBUFS__REPORT_CGI__REQUEST__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__report_cgi__request__descriptor) \
     , NULL }
 
 
-struct  _Uenibstreamprotobuf__RequestedCellInfo
+struct  _StreamingProtobufs__RequestedCellInfo
 {
   ProtobufCMessage base;
   uint32_t ssbfrequency;
   uint32_t cellforwhichtoreportcgi;
 };
-#define UENIBSTREAMPROTOBUF__REQUESTED_CELL_INFO__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__requested_cell_info__descriptor) \
+#define STREAMING_PROTOBUFS__REQUESTED_CELL_INFO__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__requested_cell_info__descriptor) \
     , 0, 0 }
 
 
-struct  _Uenibstreamprotobuf__PHTypeListSCG
+struct  _StreamingProtobufs__PHTypeListSCG
 {
   ProtobufCMessage base;
   size_t n_items;
-  Uenibstreamprotobuf__PHInfoSCG **items;
+  StreamingProtobufs__PHInfoSCG **items;
 };
-#define UENIBSTREAMPROTOBUF__PH__TYPE_LIST_SCG__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__ph__type_list_scg__descriptor) \
+#define STREAMING_PROTOBUFS__PH__TYPE_LIST_SCG__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__ph__type_list_scg__descriptor) \
     , 0,NULL }
 
 
-struct  _Uenibstreamprotobuf__PHInfoSCG
+struct  _StreamingProtobufs__PHInfoSCG
 {
   ProtobufCMessage base;
   uint32_t servcellindex;
-  Uenibstreamprotobuf__PHUplinkCarrierSCG *ph_uplink;
-  Uenibstreamprotobuf__PHUplinkCarrierSCG *ph_supplementaryuplink;
+  StreamingProtobufs__PHUplinkCarrierSCG *ph_uplink;
+  StreamingProtobufs__PHUplinkCarrierSCG *ph_supplementaryuplink;
 };
-#define UENIBSTREAMPROTOBUF__PH__INFO_SCG__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__ph__info_scg__descriptor) \
+#define STREAMING_PROTOBUFS__PH__INFO_SCG__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__ph__info_scg__descriptor) \
     , 0, NULL, NULL }
 
 
-struct  _Uenibstreamprotobuf__PHUplinkCarrierSCG
+struct  _StreamingProtobufs__PHUplinkCarrierSCG
 {
   ProtobufCMessage base;
-  Uenibstreamprotobuf__PHUplinkCarrierSCG__PHType1or3 ph_type1or3;
+  StreamingProtobufs__PHUplinkCarrierSCG__PHType1or3 ph_type1or3;
 };
-#define UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_SCG__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__ph__uplink_carrier_scg__descriptor) \
-    , UENIBSTREAMPROTOBUF__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3__protobuf_unspecified }
+#define STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_SCG__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__ph__uplink_carrier_scg__descriptor) \
+    , STREAMING_PROTOBUFS__PH__UPLINK_CARRIER_SCG__PH__TYPE1OR3__protobuf_unspecified }
 
 
-struct  _Uenibstreamprotobuf__MeasConfigSN
+struct  _StreamingProtobufs__MeasConfigSN
 {
   ProtobufCMessage base;
   size_t n_measuredfrequenciessn;
-  Uenibstreamprotobuf__NRFreqInfo **measuredfrequenciessn;
+  StreamingProtobufs__NRFreqInfo **measuredfrequenciessn;
 };
-#define UENIBSTREAMPROTOBUF__MEAS_CONFIG_SN__INIT \
- { PROTOBUF_C_MESSAGE_INIT (&uenibstreamprotobuf__meas_config_sn__descriptor) \
+#define STREAMING_PROTOBUFS__MEAS_CONFIG_SN__INIT \
+ { PROTOBUF_C_MESSAGE_INIT (&streaming_protobufs__meas_config_sn__descriptor) \
     , 0,NULL }
 
 
-/* Uenibstreamprotobuf__CGConfig methods */
-void   uenibstreamprotobuf__cg__config__init
-                     (Uenibstreamprotobuf__CGConfig         *message);
-size_t uenibstreamprotobuf__cg__config__get_packed_size
-                     (const Uenibstreamprotobuf__CGConfig   *message);
-size_t uenibstreamprotobuf__cg__config__pack
-                     (const Uenibstreamprotobuf__CGConfig   *message,
+/* StreamingProtobufs__CGConfig methods */
+void   streaming_protobufs__cg__config__init
+                     (StreamingProtobufs__CGConfig         *message);
+size_t streaming_protobufs__cg__config__get_packed_size
+                     (const StreamingProtobufs__CGConfig   *message);
+size_t streaming_protobufs__cg__config__pack
+                     (const StreamingProtobufs__CGConfig   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__cg__config__pack_to_buffer
-                     (const Uenibstreamprotobuf__CGConfig   *message,
+size_t streaming_protobufs__cg__config__pack_to_buffer
+                     (const StreamingProtobufs__CGConfig   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__CGConfig *
-       uenibstreamprotobuf__cg__config__unpack
+StreamingProtobufs__CGConfig *
+       streaming_protobufs__cg__config__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__cg__config__free_unpacked
-                     (Uenibstreamprotobuf__CGConfig *message,
+void   streaming_protobufs__cg__config__free_unpacked
+                     (StreamingProtobufs__CGConfig *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 methods */
-void   uenibstreamprotobuf__cg__config_critical_extensions_choice1__init
-                     (Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1         *message);
-size_t uenibstreamprotobuf__cg__config_critical_extensions_choice1__get_packed_size
-                     (const Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1   *message);
-size_t uenibstreamprotobuf__cg__config_critical_extensions_choice1__pack
-                     (const Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1   *message,
+/* StreamingProtobufs__CGConfigCriticalExtensionsChoice1 methods */
+void   streaming_protobufs__cg__config_critical_extensions_choice1__init
+                     (StreamingProtobufs__CGConfigCriticalExtensionsChoice1         *message);
+size_t streaming_protobufs__cg__config_critical_extensions_choice1__get_packed_size
+                     (const StreamingProtobufs__CGConfigCriticalExtensionsChoice1   *message);
+size_t streaming_protobufs__cg__config_critical_extensions_choice1__pack
+                     (const StreamingProtobufs__CGConfigCriticalExtensionsChoice1   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__cg__config_critical_extensions_choice1__pack_to_buffer
-                     (const Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1   *message,
+size_t streaming_protobufs__cg__config_critical_extensions_choice1__pack_to_buffer
+                     (const StreamingProtobufs__CGConfigCriticalExtensionsChoice1   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 *
-       uenibstreamprotobuf__cg__config_critical_extensions_choice1__unpack
+StreamingProtobufs__CGConfigCriticalExtensionsChoice1 *
+       streaming_protobufs__cg__config_critical_extensions_choice1__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__cg__config_critical_extensions_choice1__free_unpacked
-                     (Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 *message,
+void   streaming_protobufs__cg__config_critical_extensions_choice1__free_unpacked
+                     (StreamingProtobufs__CGConfigCriticalExtensionsChoice1 *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__CGConfigIEs methods */
-void   uenibstreamprotobuf__cg__config__ies__init
-                     (Uenibstreamprotobuf__CGConfigIEs         *message);
-size_t uenibstreamprotobuf__cg__config__ies__get_packed_size
-                     (const Uenibstreamprotobuf__CGConfigIEs   *message);
-size_t uenibstreamprotobuf__cg__config__ies__pack
-                     (const Uenibstreamprotobuf__CGConfigIEs   *message,
+/* StreamingProtobufs__CGConfigIEs methods */
+void   streaming_protobufs__cg__config__ies__init
+                     (StreamingProtobufs__CGConfigIEs         *message);
+size_t streaming_protobufs__cg__config__ies__get_packed_size
+                     (const StreamingProtobufs__CGConfigIEs   *message);
+size_t streaming_protobufs__cg__config__ies__pack
+                     (const StreamingProtobufs__CGConfigIEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__cg__config__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__CGConfigIEs   *message,
+size_t streaming_protobufs__cg__config__ies__pack_to_buffer
+                     (const StreamingProtobufs__CGConfigIEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__CGConfigIEs *
-       uenibstreamprotobuf__cg__config__ies__unpack
+StreamingProtobufs__CGConfigIEs *
+       streaming_protobufs__cg__config__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__cg__config__ies__free_unpacked
-                     (Uenibstreamprotobuf__CGConfigIEs *message,
+void   streaming_protobufs__cg__config__ies__free_unpacked
+                     (StreamingProtobufs__CGConfigIEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ConfigRestrictModReqSCG methods */
-void   uenibstreamprotobuf__config_restrict_mod_req_scg__init
-                     (Uenibstreamprotobuf__ConfigRestrictModReqSCG         *message);
-size_t uenibstreamprotobuf__config_restrict_mod_req_scg__get_packed_size
-                     (const Uenibstreamprotobuf__ConfigRestrictModReqSCG   *message);
-size_t uenibstreamprotobuf__config_restrict_mod_req_scg__pack
-                     (const Uenibstreamprotobuf__ConfigRestrictModReqSCG   *message,
+/* StreamingProtobufs__ConfigRestrictModReqSCG methods */
+void   streaming_protobufs__config_restrict_mod_req_scg__init
+                     (StreamingProtobufs__ConfigRestrictModReqSCG         *message);
+size_t streaming_protobufs__config_restrict_mod_req_scg__get_packed_size
+                     (const StreamingProtobufs__ConfigRestrictModReqSCG   *message);
+size_t streaming_protobufs__config_restrict_mod_req_scg__pack
+                     (const StreamingProtobufs__ConfigRestrictModReqSCG   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__config_restrict_mod_req_scg__pack_to_buffer
-                     (const Uenibstreamprotobuf__ConfigRestrictModReqSCG   *message,
+size_t streaming_protobufs__config_restrict_mod_req_scg__pack_to_buffer
+                     (const StreamingProtobufs__ConfigRestrictModReqSCG   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ConfigRestrictModReqSCG *
-       uenibstreamprotobuf__config_restrict_mod_req_scg__unpack
+StreamingProtobufs__ConfigRestrictModReqSCG *
+       streaming_protobufs__config_restrict_mod_req_scg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__config_restrict_mod_req_scg__free_unpacked
-                     (Uenibstreamprotobuf__ConfigRestrictModReqSCG *message,
+void   streaming_protobufs__config_restrict_mod_req_scg__free_unpacked
+                     (StreamingProtobufs__ConfigRestrictModReqSCG *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__BandCombinationInfoSN methods */
-void   uenibstreamprotobuf__band_combination_info_sn__init
-                     (Uenibstreamprotobuf__BandCombinationInfoSN         *message);
-size_t uenibstreamprotobuf__band_combination_info_sn__get_packed_size
-                     (const Uenibstreamprotobuf__BandCombinationInfoSN   *message);
-size_t uenibstreamprotobuf__band_combination_info_sn__pack
-                     (const Uenibstreamprotobuf__BandCombinationInfoSN   *message,
+/* StreamingProtobufs__BandCombinationInfoSN methods */
+void   streaming_protobufs__band_combination_info_sn__init
+                     (StreamingProtobufs__BandCombinationInfoSN         *message);
+size_t streaming_protobufs__band_combination_info_sn__get_packed_size
+                     (const StreamingProtobufs__BandCombinationInfoSN   *message);
+size_t streaming_protobufs__band_combination_info_sn__pack
+                     (const StreamingProtobufs__BandCombinationInfoSN   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__band_combination_info_sn__pack_to_buffer
-                     (const Uenibstreamprotobuf__BandCombinationInfoSN   *message,
+size_t streaming_protobufs__band_combination_info_sn__pack_to_buffer
+                     (const StreamingProtobufs__BandCombinationInfoSN   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__BandCombinationInfoSN *
-       uenibstreamprotobuf__band_combination_info_sn__unpack
+StreamingProtobufs__BandCombinationInfoSN *
+       streaming_protobufs__band_combination_info_sn__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__band_combination_info_sn__free_unpacked
-                     (Uenibstreamprotobuf__BandCombinationInfoSN *message,
+void   streaming_protobufs__band_combination_info_sn__free_unpacked
+                     (StreamingProtobufs__BandCombinationInfoSN *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__FRInfoList methods */
-void   uenibstreamprotobuf__fr__info_list__init
-                     (Uenibstreamprotobuf__FRInfoList         *message);
-size_t uenibstreamprotobuf__fr__info_list__get_packed_size
-                     (const Uenibstreamprotobuf__FRInfoList   *message);
-size_t uenibstreamprotobuf__fr__info_list__pack
-                     (const Uenibstreamprotobuf__FRInfoList   *message,
+/* StreamingProtobufs__FRInfoList methods */
+void   streaming_protobufs__fr__info_list__init
+                     (StreamingProtobufs__FRInfoList         *message);
+size_t streaming_protobufs__fr__info_list__get_packed_size
+                     (const StreamingProtobufs__FRInfoList   *message);
+size_t streaming_protobufs__fr__info_list__pack
+                     (const StreamingProtobufs__FRInfoList   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__fr__info_list__pack_to_buffer
-                     (const Uenibstreamprotobuf__FRInfoList   *message,
+size_t streaming_protobufs__fr__info_list__pack_to_buffer
+                     (const StreamingProtobufs__FRInfoList   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__FRInfoList *
-       uenibstreamprotobuf__fr__info_list__unpack
+StreamingProtobufs__FRInfoList *
+       streaming_protobufs__fr__info_list__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__fr__info_list__free_unpacked
-                     (Uenibstreamprotobuf__FRInfoList *message,
+void   streaming_protobufs__fr__info_list__free_unpacked
+                     (StreamingProtobufs__FRInfoList *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__FRInfo methods */
-void   uenibstreamprotobuf__fr__info__init
-                     (Uenibstreamprotobuf__FRInfo         *message);
-size_t uenibstreamprotobuf__fr__info__get_packed_size
-                     (const Uenibstreamprotobuf__FRInfo   *message);
-size_t uenibstreamprotobuf__fr__info__pack
-                     (const Uenibstreamprotobuf__FRInfo   *message,
+/* StreamingProtobufs__FRInfo methods */
+void   streaming_protobufs__fr__info__init
+                     (StreamingProtobufs__FRInfo         *message);
+size_t streaming_protobufs__fr__info__get_packed_size
+                     (const StreamingProtobufs__FRInfo   *message);
+size_t streaming_protobufs__fr__info__pack
+                     (const StreamingProtobufs__FRInfo   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__fr__info__pack_to_buffer
-                     (const Uenibstreamprotobuf__FRInfo   *message,
+size_t streaming_protobufs__fr__info__pack_to_buffer
+                     (const StreamingProtobufs__FRInfo   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__FRInfo *
-       uenibstreamprotobuf__fr__info__unpack
+StreamingProtobufs__FRInfo *
+       streaming_protobufs__fr__info__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__fr__info__free_unpacked
-                     (Uenibstreamprotobuf__FRInfo *message,
+void   streaming_protobufs__fr__info__free_unpacked
+                     (StreamingProtobufs__FRInfo *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__FRType methods */
-void   uenibstreamprotobuf__fr__type__init
-                     (Uenibstreamprotobuf__FRType         *message);
-size_t uenibstreamprotobuf__fr__type__get_packed_size
-                     (const Uenibstreamprotobuf__FRType   *message);
-size_t uenibstreamprotobuf__fr__type__pack
-                     (const Uenibstreamprotobuf__FRType   *message,
+/* StreamingProtobufs__FRType methods */
+void   streaming_protobufs__fr__type__init
+                     (StreamingProtobufs__FRType         *message);
+size_t streaming_protobufs__fr__type__get_packed_size
+                     (const StreamingProtobufs__FRType   *message);
+size_t streaming_protobufs__fr__type__pack
+                     (const StreamingProtobufs__FRType   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__fr__type__pack_to_buffer
-                     (const Uenibstreamprotobuf__FRType   *message,
+size_t streaming_protobufs__fr__type__pack_to_buffer
+                     (const StreamingProtobufs__FRType   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__FRType *
-       uenibstreamprotobuf__fr__type__unpack
+StreamingProtobufs__FRType *
+       streaming_protobufs__fr__type__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__fr__type__free_unpacked
-                     (Uenibstreamprotobuf__FRType *message,
+void   streaming_protobufs__fr__type__free_unpacked
+                     (StreamingProtobufs__FRType *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__CandidateServingFreqListNR methods */
-void   uenibstreamprotobuf__candidate_serving_freq_list_nr__init
-                     (Uenibstreamprotobuf__CandidateServingFreqListNR         *message);
-size_t uenibstreamprotobuf__candidate_serving_freq_list_nr__get_packed_size
-                     (const Uenibstreamprotobuf__CandidateServingFreqListNR   *message);
-size_t uenibstreamprotobuf__candidate_serving_freq_list_nr__pack
-                     (const Uenibstreamprotobuf__CandidateServingFreqListNR   *message,
+/* StreamingProtobufs__CandidateServingFreqListNR methods */
+void   streaming_protobufs__candidate_serving_freq_list_nr__init
+                     (StreamingProtobufs__CandidateServingFreqListNR         *message);
+size_t streaming_protobufs__candidate_serving_freq_list_nr__get_packed_size
+                     (const StreamingProtobufs__CandidateServingFreqListNR   *message);
+size_t streaming_protobufs__candidate_serving_freq_list_nr__pack
+                     (const StreamingProtobufs__CandidateServingFreqListNR   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__candidate_serving_freq_list_nr__pack_to_buffer
-                     (const Uenibstreamprotobuf__CandidateServingFreqListNR   *message,
+size_t streaming_protobufs__candidate_serving_freq_list_nr__pack_to_buffer
+                     (const StreamingProtobufs__CandidateServingFreqListNR   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__CandidateServingFreqListNR *
-       uenibstreamprotobuf__candidate_serving_freq_list_nr__unpack
+StreamingProtobufs__CandidateServingFreqListNR *
+       streaming_protobufs__candidate_serving_freq_list_nr__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__candidate_serving_freq_list_nr__free_unpacked
-                     (Uenibstreamprotobuf__CandidateServingFreqListNR *message,
+void   streaming_protobufs__candidate_serving_freq_list_nr__free_unpacked
+                     (StreamingProtobufs__CandidateServingFreqListNR *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__CGConfigV1540IEs methods */
-void   uenibstreamprotobuf__cg__config_v1540__ies__init
-                     (Uenibstreamprotobuf__CGConfigV1540IEs         *message);
-size_t uenibstreamprotobuf__cg__config_v1540__ies__get_packed_size
-                     (const Uenibstreamprotobuf__CGConfigV1540IEs   *message);
-size_t uenibstreamprotobuf__cg__config_v1540__ies__pack
-                     (const Uenibstreamprotobuf__CGConfigV1540IEs   *message,
+/* StreamingProtobufs__CGConfigV1540IEs methods */
+void   streaming_protobufs__cg__config_v1540__ies__init
+                     (StreamingProtobufs__CGConfigV1540IEs         *message);
+size_t streaming_protobufs__cg__config_v1540__ies__get_packed_size
+                     (const StreamingProtobufs__CGConfigV1540IEs   *message);
+size_t streaming_protobufs__cg__config_v1540__ies__pack
+                     (const StreamingProtobufs__CGConfigV1540IEs   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__cg__config_v1540__ies__pack_to_buffer
-                     (const Uenibstreamprotobuf__CGConfigV1540IEs   *message,
+size_t streaming_protobufs__cg__config_v1540__ies__pack_to_buffer
+                     (const StreamingProtobufs__CGConfigV1540IEs   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__CGConfigV1540IEs *
-       uenibstreamprotobuf__cg__config_v1540__ies__unpack
+StreamingProtobufs__CGConfigV1540IEs *
+       streaming_protobufs__cg__config_v1540__ies__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__cg__config_v1540__ies__free_unpacked
-                     (Uenibstreamprotobuf__CGConfigV1540IEs *message,
+void   streaming_protobufs__cg__config_v1540__ies__free_unpacked
+                     (StreamingProtobufs__CGConfigV1540IEs *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__ReportCGIRequest methods */
-void   uenibstreamprotobuf__report_cgi__request__init
-                     (Uenibstreamprotobuf__ReportCGIRequest         *message);
-size_t uenibstreamprotobuf__report_cgi__request__get_packed_size
-                     (const Uenibstreamprotobuf__ReportCGIRequest   *message);
-size_t uenibstreamprotobuf__report_cgi__request__pack
-                     (const Uenibstreamprotobuf__ReportCGIRequest   *message,
+/* StreamingProtobufs__ReportCGIRequest methods */
+void   streaming_protobufs__report_cgi__request__init
+                     (StreamingProtobufs__ReportCGIRequest         *message);
+size_t streaming_protobufs__report_cgi__request__get_packed_size
+                     (const StreamingProtobufs__ReportCGIRequest   *message);
+size_t streaming_protobufs__report_cgi__request__pack
+                     (const StreamingProtobufs__ReportCGIRequest   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__report_cgi__request__pack_to_buffer
-                     (const Uenibstreamprotobuf__ReportCGIRequest   *message,
+size_t streaming_protobufs__report_cgi__request__pack_to_buffer
+                     (const StreamingProtobufs__ReportCGIRequest   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__ReportCGIRequest *
-       uenibstreamprotobuf__report_cgi__request__unpack
+StreamingProtobufs__ReportCGIRequest *
+       streaming_protobufs__report_cgi__request__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__report_cgi__request__free_unpacked
-                     (Uenibstreamprotobuf__ReportCGIRequest *message,
+void   streaming_protobufs__report_cgi__request__free_unpacked
+                     (StreamingProtobufs__ReportCGIRequest *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__RequestedCellInfo methods */
-void   uenibstreamprotobuf__requested_cell_info__init
-                     (Uenibstreamprotobuf__RequestedCellInfo         *message);
-size_t uenibstreamprotobuf__requested_cell_info__get_packed_size
-                     (const Uenibstreamprotobuf__RequestedCellInfo   *message);
-size_t uenibstreamprotobuf__requested_cell_info__pack
-                     (const Uenibstreamprotobuf__RequestedCellInfo   *message,
+/* StreamingProtobufs__RequestedCellInfo methods */
+void   streaming_protobufs__requested_cell_info__init
+                     (StreamingProtobufs__RequestedCellInfo         *message);
+size_t streaming_protobufs__requested_cell_info__get_packed_size
+                     (const StreamingProtobufs__RequestedCellInfo   *message);
+size_t streaming_protobufs__requested_cell_info__pack
+                     (const StreamingProtobufs__RequestedCellInfo   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__requested_cell_info__pack_to_buffer
-                     (const Uenibstreamprotobuf__RequestedCellInfo   *message,
+size_t streaming_protobufs__requested_cell_info__pack_to_buffer
+                     (const StreamingProtobufs__RequestedCellInfo   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__RequestedCellInfo *
-       uenibstreamprotobuf__requested_cell_info__unpack
+StreamingProtobufs__RequestedCellInfo *
+       streaming_protobufs__requested_cell_info__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__requested_cell_info__free_unpacked
-                     (Uenibstreamprotobuf__RequestedCellInfo *message,
+void   streaming_protobufs__requested_cell_info__free_unpacked
+                     (StreamingProtobufs__RequestedCellInfo *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__PHTypeListSCG methods */
-void   uenibstreamprotobuf__ph__type_list_scg__init
-                     (Uenibstreamprotobuf__PHTypeListSCG         *message);
-size_t uenibstreamprotobuf__ph__type_list_scg__get_packed_size
-                     (const Uenibstreamprotobuf__PHTypeListSCG   *message);
-size_t uenibstreamprotobuf__ph__type_list_scg__pack
-                     (const Uenibstreamprotobuf__PHTypeListSCG   *message,
+/* StreamingProtobufs__PHTypeListSCG methods */
+void   streaming_protobufs__ph__type_list_scg__init
+                     (StreamingProtobufs__PHTypeListSCG         *message);
+size_t streaming_protobufs__ph__type_list_scg__get_packed_size
+                     (const StreamingProtobufs__PHTypeListSCG   *message);
+size_t streaming_protobufs__ph__type_list_scg__pack
+                     (const StreamingProtobufs__PHTypeListSCG   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__ph__type_list_scg__pack_to_buffer
-                     (const Uenibstreamprotobuf__PHTypeListSCG   *message,
+size_t streaming_protobufs__ph__type_list_scg__pack_to_buffer
+                     (const StreamingProtobufs__PHTypeListSCG   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__PHTypeListSCG *
-       uenibstreamprotobuf__ph__type_list_scg__unpack
+StreamingProtobufs__PHTypeListSCG *
+       streaming_protobufs__ph__type_list_scg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__ph__type_list_scg__free_unpacked
-                     (Uenibstreamprotobuf__PHTypeListSCG *message,
+void   streaming_protobufs__ph__type_list_scg__free_unpacked
+                     (StreamingProtobufs__PHTypeListSCG *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__PHInfoSCG methods */
-void   uenibstreamprotobuf__ph__info_scg__init
-                     (Uenibstreamprotobuf__PHInfoSCG         *message);
-size_t uenibstreamprotobuf__ph__info_scg__get_packed_size
-                     (const Uenibstreamprotobuf__PHInfoSCG   *message);
-size_t uenibstreamprotobuf__ph__info_scg__pack
-                     (const Uenibstreamprotobuf__PHInfoSCG   *message,
+/* StreamingProtobufs__PHInfoSCG methods */
+void   streaming_protobufs__ph__info_scg__init
+                     (StreamingProtobufs__PHInfoSCG         *message);
+size_t streaming_protobufs__ph__info_scg__get_packed_size
+                     (const StreamingProtobufs__PHInfoSCG   *message);
+size_t streaming_protobufs__ph__info_scg__pack
+                     (const StreamingProtobufs__PHInfoSCG   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__ph__info_scg__pack_to_buffer
-                     (const Uenibstreamprotobuf__PHInfoSCG   *message,
+size_t streaming_protobufs__ph__info_scg__pack_to_buffer
+                     (const StreamingProtobufs__PHInfoSCG   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__PHInfoSCG *
-       uenibstreamprotobuf__ph__info_scg__unpack
+StreamingProtobufs__PHInfoSCG *
+       streaming_protobufs__ph__info_scg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__ph__info_scg__free_unpacked
-                     (Uenibstreamprotobuf__PHInfoSCG *message,
+void   streaming_protobufs__ph__info_scg__free_unpacked
+                     (StreamingProtobufs__PHInfoSCG *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__PHUplinkCarrierSCG methods */
-void   uenibstreamprotobuf__ph__uplink_carrier_scg__init
-                     (Uenibstreamprotobuf__PHUplinkCarrierSCG         *message);
-size_t uenibstreamprotobuf__ph__uplink_carrier_scg__get_packed_size
-                     (const Uenibstreamprotobuf__PHUplinkCarrierSCG   *message);
-size_t uenibstreamprotobuf__ph__uplink_carrier_scg__pack
-                     (const Uenibstreamprotobuf__PHUplinkCarrierSCG   *message,
+/* StreamingProtobufs__PHUplinkCarrierSCG methods */
+void   streaming_protobufs__ph__uplink_carrier_scg__init
+                     (StreamingProtobufs__PHUplinkCarrierSCG         *message);
+size_t streaming_protobufs__ph__uplink_carrier_scg__get_packed_size
+                     (const StreamingProtobufs__PHUplinkCarrierSCG   *message);
+size_t streaming_protobufs__ph__uplink_carrier_scg__pack
+                     (const StreamingProtobufs__PHUplinkCarrierSCG   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__ph__uplink_carrier_scg__pack_to_buffer
-                     (const Uenibstreamprotobuf__PHUplinkCarrierSCG   *message,
+size_t streaming_protobufs__ph__uplink_carrier_scg__pack_to_buffer
+                     (const StreamingProtobufs__PHUplinkCarrierSCG   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__PHUplinkCarrierSCG *
-       uenibstreamprotobuf__ph__uplink_carrier_scg__unpack
+StreamingProtobufs__PHUplinkCarrierSCG *
+       streaming_protobufs__ph__uplink_carrier_scg__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__ph__uplink_carrier_scg__free_unpacked
-                     (Uenibstreamprotobuf__PHUplinkCarrierSCG *message,
+void   streaming_protobufs__ph__uplink_carrier_scg__free_unpacked
+                     (StreamingProtobufs__PHUplinkCarrierSCG *message,
                       ProtobufCAllocator *allocator);
-/* Uenibstreamprotobuf__MeasConfigSN methods */
-void   uenibstreamprotobuf__meas_config_sn__init
-                     (Uenibstreamprotobuf__MeasConfigSN         *message);
-size_t uenibstreamprotobuf__meas_config_sn__get_packed_size
-                     (const Uenibstreamprotobuf__MeasConfigSN   *message);
-size_t uenibstreamprotobuf__meas_config_sn__pack
-                     (const Uenibstreamprotobuf__MeasConfigSN   *message,
+/* StreamingProtobufs__MeasConfigSN methods */
+void   streaming_protobufs__meas_config_sn__init
+                     (StreamingProtobufs__MeasConfigSN         *message);
+size_t streaming_protobufs__meas_config_sn__get_packed_size
+                     (const StreamingProtobufs__MeasConfigSN   *message);
+size_t streaming_protobufs__meas_config_sn__pack
+                     (const StreamingProtobufs__MeasConfigSN   *message,
                       uint8_t             *out);
-size_t uenibstreamprotobuf__meas_config_sn__pack_to_buffer
-                     (const Uenibstreamprotobuf__MeasConfigSN   *message,
+size_t streaming_protobufs__meas_config_sn__pack_to_buffer
+                     (const StreamingProtobufs__MeasConfigSN   *message,
                       ProtobufCBuffer     *buffer);
-Uenibstreamprotobuf__MeasConfigSN *
-       uenibstreamprotobuf__meas_config_sn__unpack
+StreamingProtobufs__MeasConfigSN *
+       streaming_protobufs__meas_config_sn__unpack
                      (ProtobufCAllocator  *allocator,
                       size_t               len,
                       const uint8_t       *data);
-void   uenibstreamprotobuf__meas_config_sn__free_unpacked
-                     (Uenibstreamprotobuf__MeasConfigSN *message,
+void   streaming_protobufs__meas_config_sn__free_unpacked
+                     (StreamingProtobufs__MeasConfigSN *message,
                       ProtobufCAllocator *allocator);
 /* --- per-message closures --- */
 
-typedef void (*Uenibstreamprotobuf__CGConfig_Closure)
-                 (const Uenibstreamprotobuf__CGConfig *message,
+typedef void (*StreamingProtobufs__CGConfig_Closure)
+                 (const StreamingProtobufs__CGConfig *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1_Closure)
-                 (const Uenibstreamprotobuf__CGConfigCriticalExtensionsChoice1 *message,
+typedef void (*StreamingProtobufs__CGConfigCriticalExtensionsChoice1_Closure)
+                 (const StreamingProtobufs__CGConfigCriticalExtensionsChoice1 *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__CGConfigIEs_Closure)
-                 (const Uenibstreamprotobuf__CGConfigIEs *message,
+typedef void (*StreamingProtobufs__CGConfigIEs_Closure)
+                 (const StreamingProtobufs__CGConfigIEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ConfigRestrictModReqSCG_Closure)
-                 (const Uenibstreamprotobuf__ConfigRestrictModReqSCG *message,
+typedef void (*StreamingProtobufs__ConfigRestrictModReqSCG_Closure)
+                 (const StreamingProtobufs__ConfigRestrictModReqSCG *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__BandCombinationInfoSN_Closure)
-                 (const Uenibstreamprotobuf__BandCombinationInfoSN *message,
+typedef void (*StreamingProtobufs__BandCombinationInfoSN_Closure)
+                 (const StreamingProtobufs__BandCombinationInfoSN *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__FRInfoList_Closure)
-                 (const Uenibstreamprotobuf__FRInfoList *message,
+typedef void (*StreamingProtobufs__FRInfoList_Closure)
+                 (const StreamingProtobufs__FRInfoList *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__FRInfo_Closure)
-                 (const Uenibstreamprotobuf__FRInfo *message,
+typedef void (*StreamingProtobufs__FRInfo_Closure)
+                 (const StreamingProtobufs__FRInfo *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__FRType_Closure)
-                 (const Uenibstreamprotobuf__FRType *message,
+typedef void (*StreamingProtobufs__FRType_Closure)
+                 (const StreamingProtobufs__FRType *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__CandidateServingFreqListNR_Closure)
-                 (const Uenibstreamprotobuf__CandidateServingFreqListNR *message,
+typedef void (*StreamingProtobufs__CandidateServingFreqListNR_Closure)
+                 (const StreamingProtobufs__CandidateServingFreqListNR *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__CGConfigV1540IEs_Closure)
-                 (const Uenibstreamprotobuf__CGConfigV1540IEs *message,
+typedef void (*StreamingProtobufs__CGConfigV1540IEs_Closure)
+                 (const StreamingProtobufs__CGConfigV1540IEs *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__ReportCGIRequest_Closure)
-                 (const Uenibstreamprotobuf__ReportCGIRequest *message,
+typedef void (*StreamingProtobufs__ReportCGIRequest_Closure)
+                 (const StreamingProtobufs__ReportCGIRequest *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__RequestedCellInfo_Closure)
-                 (const Uenibstreamprotobuf__RequestedCellInfo *message,
+typedef void (*StreamingProtobufs__RequestedCellInfo_Closure)
+                 (const StreamingProtobufs__RequestedCellInfo *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__PHTypeListSCG_Closure)
-                 (const Uenibstreamprotobuf__PHTypeListSCG *message,
+typedef void (*StreamingProtobufs__PHTypeListSCG_Closure)
+                 (const StreamingProtobufs__PHTypeListSCG *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__PHInfoSCG_Closure)
-                 (const Uenibstreamprotobuf__PHInfoSCG *message,
+typedef void (*StreamingProtobufs__PHInfoSCG_Closure)
+                 (const StreamingProtobufs__PHInfoSCG *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__PHUplinkCarrierSCG_Closure)
-                 (const Uenibstreamprotobuf__PHUplinkCarrierSCG *message,
+typedef void (*StreamingProtobufs__PHUplinkCarrierSCG_Closure)
+                 (const StreamingProtobufs__PHUplinkCarrierSCG *message,
                   void *closure_data);
-typedef void (*Uenibstreamprotobuf__MeasConfigSN_Closure)
-                 (const Uenibstreamprotobuf__MeasConfigSN *message,
+typedef void (*StreamingProtobufs__MeasConfigSN_Closure)
+                 (const StreamingProtobufs__MeasConfigSN *message,
                   void *closure_data);
 
 /* --- services --- */
@@ -611,24 +612,24 @@ typedef void (*Uenibstreamprotobuf__MeasConfigSN_Closure)
 
 /* --- descriptors --- */
 
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__cg__config__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__cg__config_critical_extensions_choice1__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__cg__config__ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__config_restrict_mod_req_scg__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__band_combination_info_sn__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__fr__info_list__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__fr__info__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__fr__type__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__fr__type__value__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__candidate_serving_freq_list_nr__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__cg__config_v1540__ies__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__report_cgi__request__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__requested_cell_info__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__ph__type_list_scg__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__ph__info_scg__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__ph__uplink_carrier_scg__descriptor;
-extern const ProtobufCEnumDescriptor    uenibstreamprotobuf__ph__uplink_carrier_scg__ph__type1or3__descriptor;
-extern const ProtobufCMessageDescriptor uenibstreamprotobuf__meas_config_sn__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__cg__config__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__cg__config_critical_extensions_choice1__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__cg__config__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__config_restrict_mod_req_scg__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__band_combination_info_sn__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__fr__info_list__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__fr__info__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__fr__type__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__fr__type__value__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__candidate_serving_freq_list_nr__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__cg__config_v1540__ies__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__report_cgi__request__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__requested_cell_info__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__ph__type_list_scg__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__ph__info_scg__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__ph__uplink_carrier_scg__descriptor;
+extern const ProtobufCEnumDescriptor    streaming_protobufs__ph__uplink_carrier_scg__ph__type1or3__descriptor;
+extern const ProtobufCMessageDescriptor streaming_protobufs__meas_config_sn__descriptor;
 
 PROTOBUF_C__END_DECLS
 

@@ -23,6 +23,9 @@
 
 #include "packet.h"
 
+
+#include "/usr/local/include/protobuf-c/protobuf-c.h"
+
 struct _sgnb_addreq_for_ue {
 	gs_uint64_t timestamp_ms;
 	gs_sp_t gnb_id;
@@ -30,8 +33,8 @@ struct _sgnb_addreq_for_ue {
 	gs_int64_t uEaggregateMaximumBitRateDownlink;
 	gs_int8_t uEaggregateMaximumBitRateDownlink_exists;
 	gs_uint32_t id_MeNB_UE_X2AP_ID_Extension;
-	gs_sp_t eUTRANcellIdentifier;
-	gs_sp_t pLMN_Identity;
+	ProtobufCBinaryData eUTRANcellIdentifier;
+	ProtobufCBinaryData pLMN_Identity;
 };
 
 static inline void init__sgnb_addreq_for_ue(struct _sgnb_addreq_for_ue *m){
@@ -44,10 +47,13 @@ static inline gs_retval_t get_sgnb_addreq_for_ue__timestamp_ms(struct packet *p,
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue__gnb_id(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_addreq_for_ue *)(p->record.packed.values))->gnb_id;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_addreq_for_ue *)(p->record.packed.values))->gnb_id;
+	if( t->data == NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = strlen(t->data);
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue__id_MeNB_UE_X2AP_ID(struct packet *p, gs_int64_t *t){
@@ -66,17 +72,23 @@ static inline gs_retval_t get_sgnb_addreq_for_ue__id_MeNB_UE_X2AP_ID_Extension(s
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue__eUTRANcellIdentifier(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_addreq_for_ue *)(p->record.packed.values))->eUTRANcellIdentifier;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_addreq_for_ue *)(p->record.packed.values))->eUTRANcellIdentifier.data;
+	if(t->data==NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = ((struct _sgnb_addreq_for_ue *)(p->record.packed.values))->eUTRANcellIdentifier.len;
 }
 
 static inline gs_retval_t get_sgnb_addreq_for_ue__pLMN_Identity(struct packet *p, struct gs_string *t){
-t->data = ((struct _sgnb_addreq_for_ue *)(p->record.packed.values))->pLMN_Identity;
-	t->length = strlen(t->data);
 	t->owner=0;
-	return 0;
+	t->data = ((struct _sgnb_addreq_for_ue *)(p->record.packed.values))->pLMN_Identity.data;
+	if(t->data==NULL){
+		t->length=0;
+		return 0;
+	}
+	t->length = ((struct _sgnb_addreq_for_ue *)(p->record.packed.values))->pLMN_Identity.len;
 }
 
 #endif

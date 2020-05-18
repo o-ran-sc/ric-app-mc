@@ -41,8 +41,12 @@
 
 set -e
 
+FIFO_DIR="/tmp/mcl/fifos"
+
 SIMULATOR_MODE=`python /mc/extract_params.py ${XAPP_DESCRIPTOR_PATH}/config-file.json simulator_mode`
 RMR_PORT=`python /mc/extract_rmr_port.py ${XAPP_DESCRIPTOR_PATH}/config-file.json rmr-data`
+
+mkdir -p $FIFO_DIR
 
 if [ "$SIMULATOR_MODE" != "true" ]
 then

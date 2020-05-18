@@ -76,7 +76,6 @@ RMR_PORT=`python /mc/extract_rmr_port.py ${XAPP_DESCRIPTOR_PATH}/config-file.jso
 
 if [ "$SIMULATOR_MODE" = "true" ]
 then
-	mkdir -p $FIFO_DIR
 	python /mc/data_gen/dc_gen.py &
 	python /mc/data_gen/rrcx_gen.py &
 fi

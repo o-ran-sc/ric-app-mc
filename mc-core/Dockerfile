@@ -76,7 +76,7 @@ RUN python generate_runall.py
 
 
 # now install the binaries and libraries into smaller docker image
-FROM nexus3.o-ran-sc.org:10004/o-ran-sc/ric-app-mc-listener:1.5.0
+FROM nexus3.o-ran-sc.org:10002/o-ran-sc/ric-app-mc-listener:1.6.0
 
 ARG STAGE_DIR
 

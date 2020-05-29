@@ -24,7 +24,125 @@ PROTOCOL dc_release (base, schema_id 201){
 	llong id_Old_eNB_UE_X2AP_ID get_dc_release__id_Old_eNB_UE_X2AP_ID (required);
 }
 
-// transfer per UE and bearere between given time intervals
+// A record with information relevant to computing DL throughput, primarily extracted from TpDlUeThroughputMeasurements.
+// Defined in lte_pcmd.json on ricgeomessages_pcmdreport.proto
+// schemaId = 10000, interface LTE_PCMD
+PROTOCOL lte_thpt_meas (base, schema_id 10000){
+// timestamp in milliseconds
+	ullong timestamp_ms get_lte_thpt_meas__timestamp_ms (required,increasing);
+// E-UTRAN Cell Identity
+	uint eci get_lte_thpt_meas__eci (required);
+// Public Land Mobile Network code
+	uint plmn get_lte_thpt_meas__plmn (required);
+// ???
+	ullong eutran_trace_id get_lte_thpt_meas__eutran_trace_id (required);
+// Cell Radio Network Temporary Identifier
+	uint crnti get_lte_thpt_meas__crnti (required);
+//   default=-1
+	llong numOfTtiUeSched get_lte_thpt_meas__numOfTtiUeSched (required);
+//   default=-1
+	llong imei get_lte_thpt_meas__imei (required);
+//   default=-1
+	llong imsi get_lte_thpt_meas__imsi (required);
+// ??? Is mandatory
+	llong numOfTtiPositiveDlBuf get_lte_thpt_meas__numOfTtiPositiveDlBuf (required);
+// ??? is mandatory
+	llong sumOfSentNonGbrBytes get_lte_thpt_meas__sumOfSentNonGbrBytes (required);
+// ??? Is mandatory
+	llong sumOfSentGbrBytes get_lte_thpt_meas__sumOfSentGbrBytes (required);
+}
+
+// A record with information relevant to computing radio bearer throughput, primarily extracted from TpDlRadioBearerPdcpThroughputData.
+// Defined in lte_pcmd.json on ricgeomessages_pcmdreport.proto
+// schemaId = 10001, interface LTE_PCMD
+PROTOCOL lte_rb_thpt (base, schema_id 10001){
+// timestamp in milliseconds
+	ullong timestamp_ms get_lte_rb_thpt__timestamp_ms (required,increasing);
+// E-UTRAN Cell Identity
+	uint eci get_lte_rb_thpt__eci (required);
+// Public Land Mobile Network code
+	uint plmn get_lte_rb_thpt__plmn (required);
+// ???
+	ullong eutran_trace_id get_lte_rb_thpt__eutran_trace_id (required);
+// Cell Radio Network Temporary Identifier
+	uint crnti get_lte_rb_thpt__crnti (required);
+//   default=-1
+	llong imei get_lte_rb_thpt__imei (required);
+//   default=-1
+	llong imsi get_lte_rb_thpt__imsi (required);
+// ??? Is mandatory
+	llong dataCollectionDuration get_lte_rb_thpt__dataCollectionDuration (required);
+// ??? is mandatory
+	llong numOfPdcpPduRcvdForTx get_lte_rb_thpt__numOfPdcpPduRcvdForTx (required);
+// ??? Is mandatory
+	llong numOfPdcpPduDiscarded get_lte_rb_thpt__numOfPdcpPduDiscarded (required);
+// ??? Is mandatory
+	llong drb_Id get_lte_rb_thpt__drb_Id (required);
+}
+
+// A record with information relevant to DL scheduling trace, primarily extracted from TpDlSchedulingTraceRecord.
+// Defined in lte_pcmd.json on ricgeomessages_pcmdreport.proto
+// schemaId = 10002, interface LTE_PCMD
+PROTOCOL lte_dl_sched_trace (base, schema_id 10002){
+// timestamp in milliseconds
+	ullong timestamp_ms get_lte_dl_sched_trace__timestamp_ms (required,increasing);
+// E-UTRAN Cell Identity
+	uint eci get_lte_dl_sched_trace__eci (required);
+// Public Land Mobile Network code
+	uint plmn get_lte_dl_sched_trace__plmn (required);
+// ???
+	ullong eutran_trace_id get_lte_dl_sched_trace__eutran_trace_id (required);
+// Cell Radio Network Temporary Identifier
+	uint crnti get_lte_dl_sched_trace__crnti (required);
+//   default=-1
+	llong imei get_lte_dl_sched_trace__imei (required);
+//   default=-1
+	llong imsi get_lte_dl_sched_trace__imsi (required);
+// ??? Is mandatory
+	uint numOfHarqReTx get_lte_dl_sched_trace__numOfHarqReTx;
+// ??? is mandatory
+	llong numOfTtiUeSched get_lte_dl_sched_trace__numOfTtiUeSched (required);
+// ??? Is mandatory
+	llong numOfHarq1stTx get_lte_dl_sched_trace__numOfHarq1stTx (required);
+// ??? Is mandatory
+	llong recordCollectionDuration get_lte_dl_sched_trace__recordCollectionDuration (required);
+// ??? Is mandatory
+	uint numOfTtiUeSchedMimo get_lte_dl_sched_trace__numOfTtiUeSchedMimo;
+// ??? Is mandatory
+	llong numOfPrbUsed get_lte_dl_sched_trace__numOfPrbUsed (required);
+// ??? Is mandatory
+	uint numOfBad1stMacPduTx get_lte_dl_sched_trace__numOfBad1stMacPduTx;
+// ??? Is mandatory
+	uint numOfBadLastMacPduTx get_lte_dl_sched_trace__numOfBadLastMacPduTx;
+}
+
+// A record with information relevant to primary cell signal strength measurements, primarily extracted from TpMeasResultPCell.
+// Defined in lte_pcmd.json on ricgeomessages_pcmdreport.proto
+// schemaId = 10003, interface LTE_PCMD
+PROTOCOL lte_pcell_meas (base, schema_id 10003){
+// timestamp in milliseconds
+	ullong timestamp_ms get_lte_pcell_meas__timestamp_ms (required,increasing);
+// E-UTRAN Cell Identity
+	uint eci get_lte_pcell_meas__eci (required);
+// Public Land Mobile Network code
+	uint plmn get_lte_pcell_meas__plmn (required);
+// ???
+	ullong eutran_trace_id get_lte_pcell_meas__eutran_trace_id (required);
+// Cell Radio Network Temporary Identifier
+	uint crnti get_lte_pcell_meas__crnti (required);
+//   default=-1
+	llong imei get_lte_pcell_meas__imei (required);
+//   default=-1
+	llong imsi get_lte_pcell_meas__imsi (required);
+// ??? Is mandatory
+	llong pci get_lte_pcell_meas__pci (required);
+// ??? Is mandatory
+	llong rsrq get_lte_pcell_meas__rsrq (required);
+// ??? is mandatory
+	llong rsrp get_lte_pcell_meas__rsrp (required);
+}
+
+// transfer per UE and bearer between given time intervals
 // Defined in rat_data_usage.json on secondary_rat_data_usage_report.proto
 // schemaId = 1501, interface RATDATAUSAGE
 PROTOCOL rat_data_usage (base, schema_id 1501){
@@ -401,6 +519,24 @@ PROTOCOL eRABs_notadmitted_for_ue (base, schema_id 501){
 	llong cause_radio_network get_eRABs_notadmitted_for_ue__cause_radio_network (required);
 }
 
+// Associates a Physical Cell ID (PCI) with a enb-ueid / gnb-ueid
+// Defined in sgnb_addition_ack.json on sgnb_addition_request_acknowledge.proto
+// schemaId = 10004, interface SGNB_ADDITION_REQ_ACK
+PROTOCOL add_req_ack_cellid (base, schema_id 10004){
+// timestamp in milliseconds
+	ullong timestamp_ms get_add_req_ack_cellid__timestamp_ms (required,increasing);
+// gNB ID
+	string gnb_id get_add_req_ack_cellid__gnb_id (required);
+// UE_ID assigned by eNB for the UE over an X2.  primary key for matching between addition_req and addition_req_ack.
+	llong id_MeNB_UE_X2AP_ID get_add_req_ack_cellid__id_MeNB_UE_X2AP_ID (required);
+// UE_ID assigned by gNB for the UE over an X2. primary key for referring to the UE within SgNB.
+	llong id_SgNB_UE_X2AP_ID get_add_req_ack_cellid__id_SgNB_UE_X2AP_ID (required);
+// additional bytes optionally rqd. for user id (MeNB ue ID is 16 bits)  not expected to be used for PIZ trial.  default=0
+	uint id_MeNB_UE_X2AP_ID_Extension get_add_req_ack_cellid__id_MeNB_UE_X2AP_ID_Extension (required);
+// Physical Cell ID (PCI) of the serving cell
+	uint physCellId get_add_req_ack_cellid__physCellId;
+}
+
 // Indicates positive response for adding secondary node to the UE.  This record indicates eRABs acknowledged for admission for the UE. 
 // Defined in sgnb_addition_ack.json on sgnb_addition_request_acknowledge.proto
 // schemaId = 502, interface SGNB_ADDITION_REQ_ACK
@@ -586,8 +722,8 @@ PROTOCOL SgNB_ack_for_ue_beam_ssb (base, schema_id 507){
 
 // Extract the gtp_teid and also the transport layer address
 // Defined in sgnb_addition_req.json on sgnb_addition_request.proto
-// schemaId = 10000, interface SGNB_ADDITION_REQ
-PROTOCOL sgnb_addreq_gtp_teid (base, schema_id 10000){
+// schemaId = 10005, interface SGNB_ADDITION_REQ
+PROTOCOL sgnb_addreq_gtp_teid (base, schema_id 10005){
 // timestamp in milliseconds
 	ullong timestamp_ms get_sgnb_addreq_gtp_teid__timestamp_ms (required,increasing);
 // gNB ID

@@ -48,7 +48,7 @@
 				"description": "rmr receive data port for mcxapp"
 			},
 			{
-				"name": "rmr-data-out",
+				"name": "rmr-data-out1",
 				"container": "mcxapp",
 				"port": 4562,
 				"txMessages":

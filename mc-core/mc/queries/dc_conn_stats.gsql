@@ -40,7 +40,16 @@ Where d.gnb_id=M.GNB_ID and d.gUE_ID=M.id_SgNB_UE_X2AP_ID
 	and d.timestamp/$window=M.TB
 ;
 
-
+DEFINE{query_name 'dc_events_pci';
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'tag dc_events with the pci';
+}
+PARAM{ window uint; }
+Select M.TB, non_temporal(d.timestamp) as timestamp, d.gnb_id, d.eUE_ID, d.gUE_ID, d.event_type, M.physCellId
+LEFT_OUTER_JOIN from dc_events d, gnb_ueid_cellid_map M
+Where d.gnb_id=M.GNB_ID and d.gUE_ID=M.id_SgNB_UE_X2AP_ID 
+	and d.timestamp/$window=M.TB
+;
 
 
 DEFINE{ query_name 'mc_connected_ues'; 
@@ -56,9 +65,22 @@ CLOSING_WHEN LAST(event_type) = 0 OR
 		((TB+1)*$window-LAST(timestamp))/1000.0 >= 3600
 ;
 
+DEFINE{ query_name 'mc_connected_ues_pci'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
+PARAM{ window uint; }
+SELECT TB, UE_ID, GNB_ID, physCellId,
+	((TB+1)*$window-LAST(timestamp))/1000.0 as connected_time
+FROM dc_events_pci
+GROUP BY  TB, gUE_ID as UE_ID, gnb_id as GNB_ID, physCellId
+HAVING LAST(event_type) = 1
+CLOSING_WHEN LAST(event_type) = 0 OR
+		((TB+1)*$window-LAST(timestamp))/1000.0 >= 3600
+;
+
 DEFINE{ query_name 'mc_connected_cnt'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
-	comment 'Number of dual connected users';
+	comment 'Number of dual connected sessions';
 }
 PARAM{ window uint; }
 SELECT ($window*(TB+1))/1000 as TS, GNB_ID, 
@@ -67,6 +89,20 @@ SELECT ($window*(TB+1))/1000 as TS, GNB_ID,
 FROM mc_connected_ues
 GROUP BY TB,  GNB_ID
 ;
+
+DEFINE{ query_name 'mc_connected_cnt_pci'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'Number of dual connected users by gnb and pci';
+}
+PARAM{ window uint; }
+SELECT ($window*(TB+1))/1000 as TS, GNB_ID, physCellId,
+                $window/1000.0 as measurementInterval, // standard_name
+      COUNT(*) as count_connected_ue
+FROM mc_connected_ues_pci
+GROUP BY TB,  GNB_ID, physCellId
+;
+
+
 
 DEFINE{ query_name 'mc_disconnected_ues'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
@@ -147,6 +183,19 @@ WHERE event_type = 1
 GROUP BY timestamp / $window as TB, gnb_id as GNB_ID
 ;
 
+DEFINE{ query_name 'mc_connects_cnt_pci'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'number of DC connection requests, by GNB and PCI';
+}
+PARAM{ window uint; }
+SELECT ($window*(TB+1))/1000 as TS, GNB_ID, physCellId,
+        $window/1000.0 as measurementInterval, // standard_name
+        COUNT(*) as count_ue_connects
+FROM dc_events_pci
+WHERE event_type = 1
+GROUP BY TB, gnb_id as GNB_ID, physCellId
+;
+
 DEFINE{ query_name 'mc_connects_cnt_gtp_teid'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
 	comment 'number of DC connection requests by UE';
@@ -182,6 +231,18 @@ FROM dc_events
 GROUP BY timestamp / $window as TB, gUE_ID as UE_ID, gnb_id as GNB_ID
 ;
 
+DEFINE{ query_name 'mc_unique_ues_pci'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+}
+PARAM{ window uint; }
+SELECT TB, UE_ID, GNB_ID, physCellId
+FROM dc_events_pci
+GROUP BY  TB,
+	gUE_ID as UE_ID, gnb_id as GNB_ID, physCellId
+;
+
+
+
 DEFINE{ query_name 'mc_unique_ue_cnt'; 
 	max_lfta_disorder '1'; max_hfta_disorder '1';
 	comment 'Number of distinct UEs making a DC request or release';
@@ -192,6 +253,18 @@ SELECT ($window*(TB+1))/1000 as TS, GNB_ID,
          COUNT(*) as count_unique_ue
 FROM mc_unique_ues
 GROUP BY TB, GNB_ID
+;
 
+
+DEFINE{ query_name 'mc_unique_ue_pci_cnt'; 
+	max_lfta_disorder '1'; max_hfta_disorder '1';
+	comment 'Number of distinct UEs making a DC request or release by pci';
+}
+PARAM{ window uint; } 
+SELECT ($window*(TB+1))/1000 as TS, GNB_ID, physCellId,
+         $window/1000.0 as measurementInterval, // standard_name
+         COUNT(*) as count_unique_ue
+FROM mc_unique_ues_pci
+GROUP BY TB, GNB_ID, physCellId
 
 

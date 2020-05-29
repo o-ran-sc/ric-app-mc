@@ -59,7 +59,7 @@ RUN make
 RUN make install
 RUN ldconfig
 WORKDIR ${STAGE_DIR}
-RUN git clone -b release/0.2.0 https://gerrit.o-ran-sc.org/r/com/gs-lite
+RUN git clone -b release/0.3.0 https://gerrit.o-ran-sc.org/r/com/gs-lite
 WORKDIR ${STAGE_DIR}/gs-lite
 COPY mc/cfg/packet_schema.txt ${STAGE_DIR}/gs-lite/cfg/
 COPY mc/cfg/ifres.xml ${STAGE_DIR}/gs-lite/cfg/
@@ -105,3 +105,4 @@ WORKDIR /playpen
 ENV GSLITE_ROOT /mc/gs-lite
 
 CMD ["/playpen/bin/container_start.sh"]
+# CMD ["/bin/bash"]

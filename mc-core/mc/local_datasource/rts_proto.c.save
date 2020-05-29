@@ -70,12 +70,6 @@ static unsigned long long timestamp; // extract from input header
 #include "x2ap_streaming.pb-c.h"
 #include "ue_context_release.pb-c.h"
 #include "lfta/local/dc_release.h"
-#include "ricgeomessages.pb-c.h"
-#include "ricgeomessages_pcmdreport.pb-c.h"
-#include "lfta/local/lte_thpt_meas.h"
-#include "lfta/local/lte_rb_thpt.h"
-#include "lfta/local/lte_dl_sched_trace.h"
-#include "lfta/local/lte_pcell_meas.h"
 #include "secondary_rat_data_usage_report.pb-c.h"
 #include "lfta/local/rat_data_usage.h"
 #include "sgnb_reconfiguration_complete.pb-c.h"
@@ -184,206 +178,6 @@ unsigned long long int ts_lo, ts_hi;
 	dc_release->id_Old_eNB_UE_X2AP_ID = node_0_0->id_old_enb_ue_x2ap_id;
 	rts_fta_process_packet(&cur_packet);
 	streaming_protobufs__uecontext_release__free_unpacked(node_0_0,NULL);
-	return 0;
-}
-
-gs_uint32_t process_buffer_LTE_PCMD(gs_uint8_t * buffer, gs_uint32_t buflen){
-	char *empty_string = "";
-unsigned long long int ts_lo, ts_hi;
-	GeoMsg *hdr = NULL;
-// ------------------------------------------
-// ---  Variables for .proto ricgeomessages_pcmdreport.json, path lte_pcmd.json
-	struct _lte_thpt_meas *lte_thpt_meas = NULL;
-	PcmdReport *node_0_0 = NULL;
-	PcmdReport__TpDlUeThroughputMeasurements *node_0_1 = NULL;
-// ------------------------------------------
-// ---  Variables for .proto ricgeomessages_pcmdreport.json, path lte_pcmd.json
-	struct _lte_rb_thpt *lte_rb_thpt = NULL;
-	PcmdReport *node_1_0 = NULL;
-	PcmdReport__TpDlRadioBearerPdcpThroughputRecord *node_1_1 = NULL;
-	PcmdReport__TpDlRadioBearerPdcpThroughputData *node_1_2 = NULL;
-	gs_uint32_t i_1_2;
-// ------------------------------------------
-// ---  Variables for .proto ricgeomessages_pcmdreport.json, path lte_pcmd.json
-	struct _lte_dl_sched_trace *lte_dl_sched_trace = NULL;
-	PcmdReport *node_2_0 = NULL;
-	PcmdReport__TpDlSchedulingTraceRecord *node_2_1 = NULL;
-// ------------------------------------------
-// ---  Variables for .proto ricgeomessages_pcmdreport.json, path lte_pcmd.json
-	struct _lte_pcell_meas *lte_pcell_meas = NULL;
-	PcmdReport *node_3_0 = NULL;
-	PcmdReport__TpUeMeasTraceRecord *node_3_1 = NULL;
-	PcmdReport__TpMeasResultPCell *node_3_2 = NULL;
-
-// --------------------------------------------------
-// ---  Specialized processing for .proto ricgeomessages_pcmdreport.json, path lte_pcmd.json
-
-	lte_thpt_meas = (struct _lte_thpt_meas *)(cur_packet.record.packed.values);
-	cur_packet.schema = 10000;
-
-	hdr = geo_msg__unpack(NULL, buflen, buffer);
-	if(hdr==NULL) return -1;
-
-	node_0_0 = hdr->report;
-	if(node_0_0==NULL) return -2;
-	if(hdr->hdr==NULL) return -3;
-
-	ts_lo = hdr->hdr->timestamp & 0xffffffff;
-	ts_hi = hdr->hdr->timestamp >> 32;
-	lte_thpt_meas->timestamp_ms = (ts_hi) * 1000 + ((ts_lo * 1000) >> 32);
-	lte_thpt_meas->eci = hdr->hdr->eci;
-	lte_thpt_meas->plmn = hdr->hdr->plmn;
-	lte_thpt_meas->eutran_trace_id = hdr->hdr->eutrantraceid;
-	lte_thpt_meas->crnti = hdr->hdr->crnti;
-
-	if(node_0_0->dlschedulingrecord){
-		lte_thpt_meas->numOfTtiUeSched = node_0_0->dlschedulingrecord->numofttiuesched;
-	}else{
-		lte_thpt_meas->numOfTtiUeSched = -1;
-	}
-	if(node_0_0->sessioninfo){
-		lte_thpt_meas->imei = node_0_0->sessioninfo->imei;
-	}else{
-		lte_thpt_meas->imei = -1;
-	}
-	if(node_0_0->sessioninfo){
-		lte_thpt_meas->imsi = node_0_0->sessioninfo->imsi;
-	}else{
-		lte_thpt_meas->imsi = -1;
-	}
-	node_0_1 = node_0_0->dluethroughputmeasurementsrecord;
-	if(node_0_0->dluethroughputmeasurementsrecord){
-		lte_thpt_meas->numOfTtiPositiveDlBuf = node_0_1->numofttipositivedlbuf;
-		lte_thpt_meas->sumOfSentNonGbrBytes = node_0_1->sumofsentnongbrbytes;
-		lte_thpt_meas->sumOfSentGbrBytes = node_0_1->sumofsentgbrbytes;
-		rts_fta_process_packet(&cur_packet);
-	}
-// --------------------------------------------------
-// ---  Specialized processing for .proto ricgeomessages_pcmdreport.json, path lte_pcmd.json
-
-	lte_rb_thpt = (struct _lte_rb_thpt *)(cur_packet.record.packed.values);
-	cur_packet.schema = 10001;
-	node_1_0 = node_0_0;
-	ts_lo = hdr->hdr->timestamp & 0xffffffff;
-	ts_hi = hdr->hdr->timestamp >> 32;
-	lte_rb_thpt->timestamp_ms = (ts_hi) * 1000 + ((ts_lo * 1000) >> 32);
-	lte_rb_thpt->eci = hdr->hdr->eci;
-	lte_rb_thpt->plmn = hdr->hdr->plmn;
-	lte_rb_thpt->eutran_trace_id = hdr->hdr->eutrantraceid;
-	lte_rb_thpt->crnti = hdr->hdr->crnti;
-
-	if(node_1_0->sessioninfo){
-		lte_rb_thpt->imei = node_1_0->sessioninfo->imei;
-	}else{
-		lte_rb_thpt->imei = -1;
-	}
-	if(node_1_0->sessioninfo){
-		lte_rb_thpt->imsi = node_1_0->sessioninfo->imsi;
-	}else{
-		lte_rb_thpt->imsi = -1;
-	}
-	node_1_1 = node_1_0->dlrbpdcpthroughputrecord;
-	if(node_1_0->dlrbpdcpthroughputrecord){
-		for(i_1_2=0;i_1_2<node_1_1->n_dlradiobearerpdcpthroughputlist; i_1_2++){
-			node_1_2 = node_1_1->dlradiobearerpdcpthroughputlist[i_1_2];
-			lte_rb_thpt->dataCollectionDuration = node_1_2->datacollectionduration;
-			lte_rb_thpt->numOfPdcpPduRcvdForTx = node_1_2->numofpdcppdurcvdfortx;
-			lte_rb_thpt->numOfPdcpPduDiscarded = node_1_2->numofpdcppdudiscarded;
-			lte_rb_thpt->drb_Id = node_1_2->drb_id;
-			rts_fta_process_packet(&cur_packet);
-		}
-	}
-// --------------------------------------------------
-// ---  Specialized processing for .proto ricgeomessages_pcmdreport.json, path lte_pcmd.json
-
-	lte_dl_sched_trace = (struct _lte_dl_sched_trace *)(cur_packet.record.packed.values);
-	cur_packet.schema = 10002;
-	node_2_0 = node_1_0;
-	ts_lo = hdr->hdr->timestamp & 0xffffffff;
-	ts_hi = hdr->hdr->timestamp >> 32;
-	lte_dl_sched_trace->timestamp_ms = (ts_hi) * 1000 + ((ts_lo * 1000) >> 32);
-	lte_dl_sched_trace->eci = hdr->hdr->eci;
-	lte_dl_sched_trace->plmn = hdr->hdr->plmn;
-	lte_dl_sched_trace->eutran_trace_id = hdr->hdr->eutrantraceid;
-	lte_dl_sched_trace->crnti = hdr->hdr->crnti;
-
-	if(node_2_0->sessioninfo){
-		lte_dl_sched_trace->imei = node_2_0->sessioninfo->imei;
-	}else{
-		lte_dl_sched_trace->imei = -1;
-	}
-	if(node_2_0->sessioninfo){
-		lte_dl_sched_trace->imsi = node_2_0->sessioninfo->imsi;
-	}else{
-		lte_dl_sched_trace->imsi = -1;
-	}
-	node_2_1 = node_2_0->dlschedulingrecord;
-	if(node_2_0->dlschedulingrecord){
-		if(node_2_1->numofharqretx){
-			lte_dl_sched_trace->numOfHarqReTx = node_2_1->numofharqretx->value;
-			lte_dl_sched_trace->numOfHarqReTx_exists = 1;
-		}else{
-			lte_dl_sched_trace->numOfHarqReTx_exists = 0;
-		}
-		lte_dl_sched_trace->numOfTtiUeSched = node_2_1->numofttiuesched;
-		lte_dl_sched_trace->numOfHarq1stTx = node_2_1->numofharq1sttx;
-		lte_dl_sched_trace->recordCollectionDuration = node_2_1->recordcollectionduration;
-		if(node_2_1->numofttiueschedmimo){
-			lte_dl_sched_trace->numOfTtiUeSchedMimo = node_2_1->numofttiueschedmimo->value;
-			lte_dl_sched_trace->numOfTtiUeSchedMimo_exists = 1;
-		}else{
-			lte_dl_sched_trace->numOfTtiUeSchedMimo_exists = 0;
-		}
-		lte_dl_sched_trace->numOfPrbUsed = node_2_1->numofprbused;
-		if(node_2_1->numofbad1stmacpdutx){
-			lte_dl_sched_trace->numOfBad1stMacPduTx = node_2_1->numofbad1stmacpdutx->value;
-			lte_dl_sched_trace->numOfBad1stMacPduTx_exists = 1;
-		}else{
-			lte_dl_sched_trace->numOfBad1stMacPduTx_exists = 0;
-		}
-		if(node_2_1->numofbadlastmacpdutx){
-			lte_dl_sched_trace->numOfBadLastMacPduTx = node_2_1->numofbadlastmacpdutx->value;
-			lte_dl_sched_trace->numOfBadLastMacPduTx_exists = 1;
-		}else{
-			lte_dl_sched_trace->numOfBadLastMacPduTx_exists = 0;
-		}
-		rts_fta_process_packet(&cur_packet);
-	}
-// --------------------------------------------------
-// ---  Specialized processing for .proto ricgeomessages_pcmdreport.json, path lte_pcmd.json
-
-	lte_pcell_meas = (struct _lte_pcell_meas *)(cur_packet.record.packed.values);
-	cur_packet.schema = 10003;
-	node_3_0 = node_2_0;
-	ts_lo = hdr->hdr->timestamp & 0xffffffff;
-	ts_hi = hdr->hdr->timestamp >> 32;
-	lte_pcell_meas->timestamp_ms = (ts_hi) * 1000 + ((ts_lo * 1000) >> 32);
-	lte_pcell_meas->eci = hdr->hdr->eci;
-	lte_pcell_meas->plmn = hdr->hdr->plmn;
-	lte_pcell_meas->eutran_trace_id = hdr->hdr->eutrantraceid;
-	lte_pcell_meas->crnti = hdr->hdr->crnti;
-
-	if(node_3_0->sessioninfo){
-		lte_pcell_meas->imei = node_3_0->sessioninfo->imei;
-	}else{
-		lte_pcell_meas->imei = -1;
-	}
-	if(node_3_0->sessioninfo){
-		lte_pcell_meas->imsi = node_3_0->sessioninfo->imsi;
-	}else{
-		lte_pcell_meas->imsi = -1;
-	}
-	node_3_1 = node_3_0->uemeastracerecord;
-	if(node_3_0->uemeastracerecord){
-		node_3_2 = node_3_1->measresultpcell;
-		if(node_3_1->measresultpcell){
-			lte_pcell_meas->pci = node_3_2->pci;
-			lte_pcell_meas->rsrq = node_3_2->rsrq;
-			lte_pcell_meas->rsrp = node_3_2->rsrp;
-			rts_fta_process_packet(&cur_packet);
-		}
-	}
-	pcmd_report__free_unpacked(node_0_0,NULL);
 	return 0;
 }
 
@@ -1797,7 +1591,7 @@ unsigned long long int ts_lo, ts_hi;
 // ---  Specialized processing for .proto sgnb_addition_request_acknowledge.json, path sgnb_addition_ack.json
 
 	add_req_ack_cellid = (struct _add_req_ack_cellid *)(cur_packet.record.packed.values);
-	cur_packet.schema = 10004;
+	cur_packet.schema = 10000;
 	node_1_0 = node_0_0;
 	ts_lo = hdr->header->timestamp & 0xffffffff;
 	ts_hi = hdr->header->timestamp >> 32;
@@ -2558,7 +2352,7 @@ unsigned long long int ts_lo, ts_hi;
 // ---  Specialized processing for .proto sgnb_addition_request.json, path sgnb_addition_req.json
 
 	sgnb_addreq_gtp_teid = (struct _sgnb_addreq_gtp_teid *)(cur_packet.record.packed.values);
-	cur_packet.schema = 10005;
+	cur_packet.schema = 10001;
 
 	hdr = streaming_protobufs__x2_apstreaming__unpack(NULL, buflen, buffer);
 	if(hdr==NULL) return -1;
@@ -4094,9 +3888,6 @@ gs_retval_t main_dproto(gs_int32_t devicenum, gs_sp_t device, gs_int32_t mapcnt,
 //----  Generated dispatch code 
 	if(strcmp(device,"CONRELEASE")==0){
 		process_buffer = &process_buffer_CONRELEASE;
-	}
-	if(strcmp(device,"LTE_PCMD")==0){
-		process_buffer = &process_buffer_LTE_PCMD;
 	}
 	if(strcmp(device,"RATDATAUSAGE")==0){
 		process_buffer = &process_buffer_RATDATAUSAGE;

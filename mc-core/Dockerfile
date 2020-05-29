@@ -105,4 +105,3 @@ WORKDIR /playpen
 ENV GSLITE_ROOT /mc/gs-lite
 
 CMD ["/playpen/bin/container_start.sh"]
-# CMD ["/bin/bash"]

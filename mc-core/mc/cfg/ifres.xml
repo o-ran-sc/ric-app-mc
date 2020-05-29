@@ -11,19 +11,6 @@
 			<SingleFile value='TRUE'/>
 			<FIFO value='TRUE'/>
 		</Interface>
-                <Interface Name='LTE_PCMD'>
-                        <InterfaceType value='PROTO'/>
-                        <Filename value='/tmp/mcl/fifos/MT_000033002'/>
-                        <StartUpDelay value='10'/>
-                        <Time_Correlation value='10'/>
-                        <Verbose value='TRUE'/>
-                        <Schemas value='lte_thpt_meas'/>
-                        <Schemas value='lte_rb_thpt'/>
-                        <Schemas value='lte_dl_sched_trace'/>
-                        <Schemas value='lte_pcell_meas'/>
-                        <SingleFile value='TRUE'/>
-                        <FIFO value='TRUE'/>
-                </Interface>
 		<Interface Name='RATDATAUSAGE'>
 			<InterfaceType value='PROTO'/>
 			<Filename value='/tmp/mcl/fifos/MT_000010380'/>

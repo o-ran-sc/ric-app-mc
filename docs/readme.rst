@@ -6,7 +6,7 @@
 RIC Measurement Campaign (MC) supported KPIs
 ============================================
 
-me: addreq_pdf_nr_cell
+name: addreq_pdf_nr_cell
 ------------------------
 
 description: histogram of neighboring cell RSRP, aggregated by gnb_id / cell id
@@ -151,25 +151,54 @@ transitive sources: CONRELEASE.dc_release
 
 Interface map: CONRELEASE (ue_context_release)
 
-name: distinct_users
---------------------
+name: dl_sched_trace_stats
+--------------------------
 
-description: Number of users based on distinct gTP_TEIDs seen
+description: dl sched trace stats
 
-keys: GNB_ID
+keys: eutran_trace_id, eci
 
 timestamp: TS
 
 - ULLONG TS
-- FLOAT measurementInterval
-- STRING GNB_ID
-- INT num_users
+- UINT eci
+- ULLONG eutran_trace_id
+- LLONG ue_num_schedTTIs
+- FLOAT ue_num_schedTTIs_per_time
+- FLOAT ue_avg_PRB_alloc_rate
+- FLOAT ue_avg_PRB_alloc_rate_per_TTI
+- LLONG ue_HARQ_pid_count
+- FLOAT ue_HARQ_pid_count_per_time
+- FLOAT ue_schedTTIs_MIMO_percent
+- FLOAT ue_schedTTIs_TxDiversity_percent
+- FLOAT ue_HARQ_retx_pid_count
+- FLOAT ue_MAC_PDU_init_Tx_failed_percent
+- FLOAT ue_MAC_PDU_last_Tx_failed_percent
 
-sources: sgnb_addreq_gtp_teid
+sources: lte_dl_sched_trace
 
-transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid
+transitive sources: LTE_PCMD.lte_dl_sched_trace
 
-Interface map: SGNB_ADDITION_REQ (sgnb_addition_request)
+name: drb_pdcp_pdu_stats
+------------------------
+
+description: drb pdcp pdu stats
+
+keys: drb_Id, eutran_trace_id, eci
+
+timestamp: TS
+
+- ULLONG TS
+- UINT eci
+- ULLONG eutran_trace_id
+- LLONG drb_Id
+- LLONG ue_drb_pdcppdu_count
+- FLOAT ue_drb_pdcppdu_count_per_time
+- FLOAT ue_drb_pdcppdu_discard_rate
+
+sources: lte_rb_thpt
+
+transitive sources: LTE_PCMD.lte_rb_thpt
 
 name: erab_stats
 ----------------
@@ -195,9 +224,40 @@ timestamp: TS
 - UINT qCI_9
 - UINT qCI_other
 
-sources: eRABs_acked_for_admit_for_ue, reconfig_success
+sources: erab_stats_join
 
 transitive sources: SGNB_ADDITION_REQ_ACK.eRABs_acked_for_admit_for_ue, RECONCOMPLETE.reconfig_success
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
+
+name: erab_stats_pci
+--------------------
+
+description: number of admitted bearers and the distribution of their qCI, by physical cell id
+
+keys: physCellId, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- UINT physCellId
+- FLOAT measurementInterval
+- INT total_erabs
+- UINT qCI_1
+- UINT qCI_2
+- UINT qCI_3
+- UINT qCI_4
+- UINT qCI_5
+- UINT qCI_6
+- UINT qCI_7
+- UINT qCI_8
+- UINT qCI_9
+- UINT qCI_other
+
+sources: erab_stats_join, gnb_ueid_cellid_map
+
+transitive sources: SGNB_ADDITION_REQ_ACK.eRABs_acked_for_admit_for_ue, RECONCOMPLETE.reconfig_success, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
 
 Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
 
@@ -248,7 +308,7 @@ Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNBMODREQACK (sgn
 name: mc_connected_cnt
 ----------------------
 
-description: Number of dual connected users
+description: Number of dual connected sessions
 
 keys: GNB_ID
 
@@ -264,6 +324,27 @@ sources: dc_events
 transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release
 
 Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), CONRELEASE (ue_context_release)
+
+name: mc_connected_cnt_pci
+--------------------------
+
+description: Number of dual connected users by gnb and pci
+
+keys: physCellId, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- UINT physCellId
+- FLOAT measurementInterval
+- INT count_connected_ue
+
+sources: dc_events_pci
+
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge), CONRELEASE (ue_context_release)
 
 name: mc_connection_stats
 -------------------------
@@ -357,6 +438,27 @@ transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release, SGNB_
 
 Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request), CONRELEASE (ue_context_release)
 
+name: mc_connects_cnt_pci
+-------------------------
+
+description: number of DC connection requests, by GNB and PCI
+
+keys: physCellId, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- UINT physCellId
+- FLOAT measurementInterval
+- INT count_ue_connects
+
+sources: dc_events_pci
+
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge), CONRELEASE (ue_context_release)
+
 name: mc_disconnects_cnt
 ------------------------
 
@@ -396,6 +498,27 @@ sources: dc_events
 transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release
 
 Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), CONRELEASE (ue_context_release)
+
+name: mc_unique_ue_pci_cnt
+--------------------------
+
+description: Number of distinct UEs making a DC request or release by pci
+
+keys: physCellId, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- UINT physCellId
+- FLOAT measurementInterval
+- INT count_unique_ue
+
+sources: dc_events_pci
+
+transitive sources: RECONCOMPLETE.reconfig_success, CONRELEASE.dc_release, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge), CONRELEASE (ue_context_release)
 
 name: mod_failure_cause_gtp_teid
 --------------------------------
@@ -477,6 +600,34 @@ transitive sources: SGNBMODREQ.sgnb_mod_req, SGNB_ADDITION_REQ.sgnb_addreq_gtp_t
 
 Interface map: SGNBMODREQ (sgnb_modification_request), RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request)
 
+name: mod_req_failure_distribution_pci
+--------------------------------------
+
+description: distribution of causes of a modification request failure
+
+keys: physCellId, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- UINT physCellId
+- FLOAT measurementInterval
+- INT cnt
+- UINT count_protobuf_unspecified
+- UINT count_t310_Expiry
+- UINT count_randomAccessProblem
+- UINT count_rlc_MaxNumRetx
+- UINT count_synchReconfigFailure_SCG
+- UINT count_scg_reconfigFailure
+- UINT count_srb3_IntegrityFailure
+
+sources: base_mod_req_failure_distribution, gnb_ueid_cellid_map
+
+transitive sources: SGNBMODREQ.sgnb_mod_req, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: SGNBMODREQ (sgnb_modification_request), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
+
 name: mod_status_refuse_cause
 -----------------------------
 
@@ -500,6 +651,47 @@ sources: mod_status_refuse_cause_base
 transitive sources: SGNBMODREFUSE.sgnb_mod_refuse
 
 Interface map: SGNBMODREFUSE (sgnb_modification_refuse)
+
+name: mod_status_refuse_cause_pci
+---------------------------------
+
+description: distribution of causes for a sgnb modification refusal (base)
+
+keys: physCellId, GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
+- ULLONG TS
+- UINT physCellId
+- FLOAT measurementInterval
+- INT total_reconfig_refuse
+- UINT count_radio_network
+- UINT count_transport
+- UINT count_protocol
+- UINT count_misc
+
+sources: mod_status_refuse_cause_base, gnb_ueid_cellid_map
+
+transitive sources: SGNBMODREFUSE.sgnb_mod_refuse, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge), SGNBMODREFUSE (sgnb_modification_refuse)
+
+name: reconfig_all_debug
+------------------------
+
+timestamp: TS
+
+- STRING name
+- INT cnt
+- ULLONG TS
+- FLOAT measurementInterval
+
+sources: reconfig_all
+
+transitive sources: RECONCOMPLETE.reconfig_all
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete)
 
 name: reconfig_reject_debug
 ---------------------------
@@ -528,6 +720,8 @@ timestamp: TB
 
 - STRING GNB_ID
 - ULLONG TB
+- ULLONG TS
+- FLOAT measurementInterval
 - INT total_reconfig_reject
 - UINT count_radio_network
 - UINT count_transport
@@ -552,6 +746,8 @@ timestamp: TB
 - STRING GNB_ID
 - STRING gTP_TEID
 - ULLONG TB
+- ULLONG TS
+- FLOAT measurementInterval
 - INT total_reconfig_reject
 - UINT count_radio_network
 - UINT count_transport
@@ -563,6 +759,32 @@ sources: sgnb_add_req_reject, gnb_ueid_teid_map
 transitive sources: ADDREQREJECT.sgnb_add_req_reject, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
 
 Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), ADDREQREJECT (sgnb_addition_request_reject), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: reconfig_status_reject_cause_pci
+--------------------------------------
+
+description: distribution of causes for DC rejection
+
+keys: physCellId, GNB_ID
+
+timestamp: TB
+
+- STRING GNB_ID
+- ULLONG TB
+- ULLONG TS
+- UINT physCellId
+- FLOAT measurementInterval
+- INT total_reconfig_reject
+- UINT count_radio_network
+- UINT count_transport
+- UINT count_protocol
+- UINT count_misc
+
+sources: sgnb_add_req_reject, gnb_ueid_cellid_map
+
+transitive sources: ADDREQREJECT.sgnb_add_req_reject, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: ADDREQREJECT (sgnb_addition_request_reject), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
 
 name: reconfig_status_success_rate
 ----------------------------------
@@ -610,6 +832,30 @@ sources: reconfig_status_merge, gnb_ueid_teid_map
 transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_for_ue, RECONCOMPLETE.reconfig_success, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid
 
 Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: reconfig_status_success_rate_pci
+--------------------------------------
+
+description: fraction of DC connect requests which are successful, on a per-user (gtp_teid) basis.
+
+keys: physCellId, GNB_ID
+
+timestamp: TS
+
+- STRING GNB_ID
+- UINT physCellId
+- ULLONG TS
+- FLOAT measurementInterval
+- INT total_reconfiguration_requests
+- UINT successful_reconfiguration_requests
+- FLOAT success_rate
+- FLOAT failure_rate
+
+sources: reconfig_status_merge, gnb_ueid_cellid_map
+
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_for_ue, RECONCOMPLETE.reconfig_success, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), SGNB_ADDITION_REQ (sgnb_addition_request), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
 
 name: reconfig_success_debug
 ----------------------------
@@ -700,6 +946,49 @@ sources: release_req_start, release_req_success
 transitive sources: RELREQ.release_req, CONRELEASE.dc_release
 
 Interface map: RELREQ (sgnb_release_request), CONRELEASE (ue_context_release)
+
+name: requests_per_gtp_teid
+---------------------------
+
+description: Number of sgnb addition requests requests per gTP_TEID
+
+keys: gTP_TEID, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- STRING gTP_TEID
+- INT n_requests
+
+sources: sgnb_addreq_gtp_teid
+
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid
+
+Interface map: SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: requests_per_gtp_teid_pci
+-------------------------------
+
+description: Number of sgnb addition requests requests per gTP_TEID
+
+keys: gTP_TEID, physCellId, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- FLOAT measurementInterval
+- STRING GNB_ID
+- STRING gTP_TEID
+- UINT physCellId
+- INT n_requests
+
+sources: sgnb_addreq_gtp_teid, gnb_ueid_cellid_map
+
+transitive sources: SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: SGNB_ADDITION_REQ (sgnb_addition_request), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
 
 name: rrcx_pdf_neighbor_beam_cell
 ---------------------------------
@@ -1265,7 +1554,7 @@ timestamp: TS
 - LLONG min_throughput
 - LLONG max_throughput
 
-sources: throughput_ue_gtp_teid_join
+sources: throughput_session_gtp_teid_join
 
 transitive sources: RATDATAUSAGE.rat_data_usage, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
 
@@ -1290,11 +1579,71 @@ timestamp: TS
 - LLONG min_throughput
 - LLONG max_throughput
 
-sources: throughput_ue_gtp_teid_join
+sources: throughput_session_gtp_teid_join
 
 transitive sources: RATDATAUSAGE.rat_data_usage, SGNB_ADDITION_REQ.sgnb_addreq_gtp_teid, RECONCOMPLETE.reconfig_success
 
 Interface map: RECONCOMPLETE (sgnb_reconfiguration_complete), RATDATAUSAGE (secondary_rat_data_usage_report), SGNB_ADDITION_REQ (sgnb_addition_request)
+
+name: throughput_meas_alt_crnti
+-------------------------------
+
+description: throughput experienced by a UE (alternative version)
+
+keys: eutran_trace_id, eci
+
+timestamp: TS
+
+- ULLONG TS
+- UINT eci
+- ULLONG eutran_trace_id
+- FLOAT ue_lte_tput
+
+sources: lte_thpt_meas
+
+transitive sources: LTE_PCMD.lte_thpt_meas
+
+name: throughput_meas_crnti
+---------------------------
+
+description: throughput experienced by a UE
+
+keys: eutran_trace_id, eci
+
+timestamp: TS
+
+- ULLONG TS
+- UINT eci
+- ULLONG eutran_trace_id
+- FLOAT ue_lte_tput
+
+sources: lte_thpt_meas
+
+transitive sources: LTE_PCMD.lte_thpt_meas
+
+name: throughput_pci
+--------------------
+
+description: throughput experienced by UE, as determined by the gtp_teid, over a measurement interval.   *Active* throughput is throughput while actively downloading, *average* averages bytes transfered over the measurement interval
+
+keys: physCellId, GNB_ID
+
+timestamp: TS
+
+- ULLONG TS
+- UINT physCellId
+- STRING GNB_ID
+- FLOAT measurementInterval
+- LLONG active_throughput
+- LLONG average_throughput
+- LLONG min_throughput
+- LLONG max_throughput
+
+sources: prelim_throughput_gtp_teid, gnb_ueid_cellid_map
+
+transitive sources: RATDATAUSAGE.rat_data_usage, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: RATDATAUSAGE (secondary_rat_data_usage_report), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
 
 name: throughput_rollup
 -----------------------
@@ -1319,16 +1668,16 @@ timestamp: TS
 - FLOAT average_active_throughput
 - UINT active_throughput_percentile_95
 
-sources: throughput_ue
+sources: throughput_session
 
 transitive sources: RATDATAUSAGE.rat_data_usage
 
 Interface map: RATDATAUSAGE (secondary_rat_data_usage_report)
 
-name: throughput_ue
--------------------
+name: throughput_session
+------------------------
 
-description: throughput experienced by UE over a measurement interval.   *Active* throughput is throughput while actively downloading, *average* averages bytes transfered over the measurement interval
+description: throughput experienced by UE session over a measurement interval.   *Active* throughput is throughput while actively downloading, *average* averages bytes transfered over the measurement interval
 
 keys: UE_ID, GNB_ID, e_RAB_ID
 
@@ -1368,11 +1717,55 @@ timestamp: TS
 - LLONG min_throughput
 - LLONG max_throughput
 
-sources: prelim_throughput_gtp_teid, add_req_event, add_req_ack_event
+sources: throughput_session_userclass_join
 
 transitive sources: RATDATAUSAGE.rat_data_usage, SGNB_ADDITION_REQ.sgnb_addreq_for_ue_bearers, SGNB_ADDITION_REQ_ACK.eRABs_acked_for_admit_for_ue
 
 Interface map: RATDATAUSAGE (secondary_rat_data_usage_report), SGNB_ADDITION_REQ (sgnb_addition_request), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
+
+name: throughput_userclass_pci
+------------------------------
+
+description: throughput experienced by UE, rolled up into user classes, over a measurement interval.  Class A (qci=9, arp=15) is class=1 and Class B  (qci=8, arp=15) is class=2.   *Active* throughput is throughput while actively downloading, *average* averages bytes transfered over the measurement interval
+
+keys: ARP, physCellId, GNB_ID, qCI
+
+timestamp: TS
+
+- ULLONG TS
+- STRING GNB_ID
+- UINT physCellId
+- LLONG qCI
+- LLONG ARP
+- FLOAT measurementInterval
+- LLONG active_throughput
+- LLONG average_throughput
+- LLONG min_throughput
+- LLONG max_throughput
+
+sources: throughput_session_userclass_join, gnb_ueid_cellid_map
+
+transitive sources: RATDATAUSAGE.rat_data_usage, SGNB_ADDITION_REQ.sgnb_addreq_for_ue_bearers, SGNB_ADDITION_REQ_ACK.eRABs_acked_for_admit_for_ue, SGNB_ADDITION_REQ_ACK.add_req_ack_cellid
+
+Interface map: RATDATAUSAGE (secondary_rat_data_usage_report), SGNB_ADDITION_REQ (sgnb_addition_request), SGNB_ADDITION_REQ_ACK (sgnb_addition_request_acknowledge)
+
+name: ue_drb_count
+------------------
+
+description: ue drb count
+
+keys: eutran_trace_id, eci
+
+timestamp: TS
+
+- ULLONG TS
+- UINT eci
+- ULLONG eutran_trace_id
+- INT ue_drb_count
+
+sources: drb_pdcp_pdu_stats
+
+transitive sources: LTE_PCMD.lte_rb_thpt
 
 
 

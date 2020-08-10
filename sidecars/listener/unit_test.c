@@ -159,6 +159,7 @@ int main( int argc,  char** argv ) {
 	logit( LOG_WARN, "warning message" );
 	logit( LOG_STAT, "stats message" );
 
+	fprintf( stderr, "[INFO] expected create fail message should follow\n" );
 	bad_ctx = mcl_mk_context( "/nosuchdirectoryinthesystem" );		// create a context where fifo opens should fail
 	if( bad_ctx == NULL ) {
 		fprintf( stderr, "[FAIL] couldn't make 'bad' context" );

@@ -31,7 +31,7 @@ function abort_after {
 	sleep ${1:-60}
 	if [[ -e /tmp/running ]]
 	then
-		echo "abort: unit test running too long"
+		echo "abort: unit test running too long, killing $2"
 		kill -9 ${2:-bad-pid}
 	fi
 }
@@ -57,7 +57,6 @@ function purge_dirs {
 	rm -fr /tmp/mc_listener_test
 }
 
-
 if ! make -B unit_test			# ensure that it's fresh
 then
 	echo "[FAIL] cannot make unit_test"
@@ -77,16 +76,16 @@ then
 	exit
 fi
 
-abort_after 60 
+abort_after 60
 if ! unit_test >/tmp/PID$$.utlog 2>&1
 then
-	rm /tmp/running
+	rm -f /tmp/running
 	cat /tmp/PID$$.utlog
 	rm -f /tmp/PID$$.*
 	purge_dirs
 	exit 1
 fi
-rm /tmp/running
+rm -f /tmp/running
 
 echo "[PASS] base unit tests all pass"
 echo "[INFO] file/directory verification begins...."
@@ -101,7 +100,7 @@ if [[ -e $copy_src ]]
 then
 	echo "[FAIL] copy source test should have been unlinked but was there!"
 	rc=1
-else 
+else
 	dest_md5=$( cat $copy_dest | md5sum )		# use cat so that filename doesn't factor in to output
 	if [[ $dest_md5 != $src_md5 ]]
 	then
@@ -129,6 +128,7 @@ then
 	echo "[FAIL] overall test fails"
 else
 	echo "[PASS] overall test passes"
+	rm -f *test*.gcov
 fi
 
 rm -f /tmp/PID$$.*

@@ -16,7 +16,7 @@
 
 ARG STAGE_DIR=/mc
 
-FROM nexus3.o-ran-sc.org:10004/o-ran-sc/bldr-ubuntu18-c-go:8-u18.04 AS project-build
+FROM nexus3.o-ran-sc.org:10004/o-ran-sc/bldr-ubuntu18-c-go:9-u18.04 AS project-build
 
 ARG STAGE_DIR
 

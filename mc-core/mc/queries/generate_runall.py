@@ -142,7 +142,8 @@ runall += """
 
 sleep 1
 bash /mc/gs-lite/bin/start_processing
-fg %1
+sleep infinity
+# fg %1
 """
 
 rflnm = options.querydir+"/runall"

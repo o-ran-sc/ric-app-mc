@@ -40,7 +40,7 @@ enable_testing()
 #
 add_test(
 		NAME drive_listener_tests
-		COMMAND  ksh run_unit_test.ksh CMBUILD=${CMAKE_CURRENT_BINARY_DIR}
+		COMMAND  bash run_unit_test.ksh CMBUILD=${CMAKE_CURRENT_BINARY_DIR}
 		WORKING_DIRECTORY   ${CMAKE_CURRENT_BINARY_DIR}/../sidecars/listener
 )
 		#WORKING_DIRECTORY ../sidecars/listener

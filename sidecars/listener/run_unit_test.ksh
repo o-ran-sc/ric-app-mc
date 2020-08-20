@@ -57,6 +57,12 @@ function purge_dirs {
 	rm -fr /tmp/mc_listener_test
 }
 
+# ------------------------------------------------------------------------------------------------
+# these aren't set by default in some of the CI environments
+#
+export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
+export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
+
 if ! make -B unit_test			# ensure that it's fresh
 then
 	echo "[FAIL] cannot make unit_test"

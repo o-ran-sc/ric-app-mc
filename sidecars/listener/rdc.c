@@ -30,13 +30,13 @@
 				Where <mtype> is the message type of the message received and
 				<len> is the length of the data that was written to the FIFO.
 
-				
+			
 	Date:		06 Oct 2019
 	Author:		E. Scott Daniels
 */
 
 #include <stdarg.h>
-#include <errno.h> 
+#include <errno.h>
 #include <stdio.h>
 #include <fcntl.h>
 #include <unistd.h>
@@ -49,7 +49,7 @@
 
 /*
 	A capture buffer. The listener writes FIFO output in two stages, thus
-	we provide the ability to initialise a capture with the msg type and 
+	we provide the ability to initialise a capture with the msg type and
 	the MRL header, then to write the payload using this saved data. The
 	idea is to not require the caller to save the header.
 */
@@ -81,10 +81,10 @@ typedef struct {
 	Copy and unlink old file is successful. During writing the file mode will
 	be write only for the owner (0200). If the mode passed in is not 0, then
 	just prior to renaming the file to 'new', the mode will be changed. If
-	mode is 0, then we assume the caller will change the file mode when 
+	mode is 0, then we assume the caller will change the file mode when
 	appropriate.
 
-	There seems to be an issue with some collectors and thus it is required 
+	There seems to be an issue with some collectors and thus it is required
 	to initially name the file with a leading dot (.) until the file is closed
 	and ready to be read by external processes (marking it write-only seems
 	not to discourage them from trying!).
@@ -101,7 +101,7 @@ static int copy_unlink( char* old, char* new, int mode ) {
 	int	state;
 	int remain;		// number of bytes remaining to write
 
-	
+
 	errno = 0;
 	if( (rfd = open( old, O_RDONLY )) < 0 ) {
 		logit( LOG_ERR, "copy: open src for copy failed: %s: %s", old, strerror( errno ) );
@@ -119,6 +119,7 @@ static int copy_unlink( char* old, char* new, int mode ) {
 	} else {
 		snprintf( tfname, len, ".%s", wbuf );									// no path, just add leading .
 	}
+	free( wbuf );
 	//logit( LOG_INFO, "copy: creating file in tmp filename: %s", tfname );
 
 	if( (wfd = open( tfname, O_WRONLY | O_CREAT | O_TRUNC, 0200 )) < 0 ) {
@@ -164,6 +165,7 @@ static int copy_unlink( char* old, char* new, int mode ) {
 		}
 	}
 
+	free( tfname );
 	return state < 0 ? -1 : 0;
 }
 
@@ -171,7 +173,7 @@ static int copy_unlink( char* old, char* new, int mode ) {
 	Attempt to rename (move) the old file to the new file. If that fails with
 	the error EXDEV (not on same device), then we will copy the file. All
 	other errors returned by the rename() command are considered fatal and
-	copy is not attempted.  Returns 0 on success, -1 with errno set on 
+	copy is not attempted.  Returns 0 on success, -1 with errno set on
 	failure. See man page for rename for possible errno values and meanings.
 */
 static int mvocp( char* old, char* new ) {
@@ -186,7 +188,7 @@ static int mvocp( char* old, char* new ) {
 
 		return copy_unlink( old, new, 0644 );
 	}
-	
+
 	return 0;
 }
 
@@ -202,8 +204,8 @@ static int rdc_open( void* vctx ) {
 	rdc_ctx_t* ctx;
 
 	ctx = (rdc_ctx_t *) vctx;
-	
-	
+
+
 	if( ctx == NULL ) {
 		return -1;
 	}
@@ -275,7 +277,7 @@ extern void logit( int priority, char *fmt, ... ) {
 
 
 /*
-	Initialise the raw data collection facility.  The two directories, staging and final, may be the 
+	Initialise the raw data collection facility.  The two directories, staging and final, may be the
 	same, and if different they _should_ reside on the same filesystem such that a move
 	(rename) operation is only the change in the directory and does not involve the copy
 	of bytes.
@@ -314,7 +316,7 @@ extern void* rdc_init( char* sdir, char* fdir, char* suffix, char* dsuffix ) {
 		} else {
 			ctx->fdir = strdup( fdir );
 		}
-		
+	
 	}
 
 	if( suffix ) {
@@ -338,14 +340,14 @@ extern void* rdc_init( char* sdir, char* fdir, char* suffix, char* dsuffix ) {
 
 /*
 	Allow the file rotation frequency to be set to something other
-	than the default.  A minimum of 10s is enforced, but there is 
+	than the default.  A minimum of 10s is enforced, but there is
 	no maximum.
 */
 extern void rdc_set_freq( void* vctx, int freq ) {
 	rdc_ctx_t* ctx;
 
 	ctx = (rdc_ctx_t *) vctx;
-	
+
 	if( ctx != NULL && freq >= 10 ) {
 		ctx->frequency = freq;
 		logit( LOG_INFO, "(rdc) file roll frequency set to %d seconds", ctx->frequency );
@@ -420,7 +422,7 @@ extern int rdc_write( void* vctx, void* vcb, char* payload, int len ) {
 
 	if( ctx->fd < 0 ) {
 		rdc_open( ctx );					// need a file, get it open
-	}	
+	}
 
 	snprintf( header, sizeof( header ), "@RDC%07d*%07d", cb->mtype, cb->uhlen + len );
 	write( ctx->fd, header, 20 );
@@ -435,7 +437,7 @@ extern int rdc_write( void* vctx, void* vcb, char* payload, int len ) {
 	We save the message type, and will use that and the user header length and payload
 	length on write to create the complete RDC header.
 */
-extern void* rdc_init_buf( int mtype, char* uheader, int uhlen, void* vcb ) { 
+extern void* rdc_init_buf( int mtype, char* uheader, int uhlen, void* vcb ) {
 	cap_buf_t* cb;
 
 	cb = (cap_buf_t *) vcb;
@@ -445,7 +447,7 @@ extern void* rdc_init_buf( int mtype, char* uheader, int uhlen, void* vcb ) {
 			errno = ENOMEM;
 			return NULL;
 		}
-	}	
+	}
 
 	cb->mtype = mtype;
 	if(  uhlen > sizeof( cb->uheader ) ) {
@@ -459,7 +461,7 @@ extern void* rdc_init_buf( int mtype, char* uheader, int uhlen, void* vcb ) {
 
 #ifdef SELF_TEST
 /*
-	Run some quick checks which require the directories in /tmp to exist, and some 
+	Run some quick checks which require the directories in /tmp to exist, and some
 	manual verification on the part of the tester.
 */
 int main( ) {
@@ -467,7 +469,7 @@ int main( ) {
 	void*	cb = NULL;		// capture buffere
 	char*	uheader;
 	char*	payload;
-	int 	i;
+	int		i;
 
 	ctx = rdc_init( "/tmp/rdc/stage", "/tmp/rdc/final", ".rdc", NULL );			// does not create done files
 	//ctx = rdc_init( "/tmp/rdc/stage", "/tmp/rdc/final", ".rdc", ".done" );	// will create a "done" file

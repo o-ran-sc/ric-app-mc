@@ -21,7 +21,7 @@
 	Mnemonic:	unit_test.c
 	Abstract:	Basic unit tests for the mc listener.
 	Date:		22 August 2019
-	Author: 	E. Scott Daniels
+	Author:		E. Scott Daniels
 */
 
 #define FOREVER 0			// allows forever loops in mcl code to escape after one loop
@@ -41,8 +41,8 @@
 #include "test_rmr_em.c"		// emulated rmr functions (for receives)
 
 // this/these are what we are testing; include them directly (must be after forever def)
-#include "mcl.c"
-#include "rdc.c"
+#include "../listener/mcl.c"
+#include "../listener/rdc.c"
 
 /*
 	Set up env things for the rdc setup call.
@@ -74,12 +74,15 @@ int main( int argc,  char** argv ) {
 	char*	bp;
 	void*	buf;
 	int state;
-	char 	timestamp[1024];		// read will put a timestamp here
+	char	timestamp[1024];		// read will put a timestamp here
 
 	if( argc > 1 ) {
 		dname = argv[1];
 	}
-	
+
+	setenv( "MCL_RDC_ENABLE", "0", 1 );				/// test disabled mode for coverage
+	setup_rdc( );
+
 	set_env();							// set env that setup_rdc() looks for
 
 	ctx = mcl_mk_context( dname );			// allocate the context
@@ -126,7 +129,7 @@ int main( int argc,  char** argv ) {
 	// under test, the FOREVER = 0 keeps fanout from blocking; drive several times to cover all cases
 	mcl_fifo_fanout( ctx, 5, 1 );					// first rmr receive call will simulate a timeout
 	mcl_fifo_fanout( ctx, 5, 1 );					// second receive simulates a health check
-	mcl_fifo_fanout( ctx, 5, 1 );					// 3-n return alternating timeout messages; drive so that 
+	mcl_fifo_fanout( ctx, 5, 1 );					// 3-n return alternating timeout messages; drive so that
 	mcl_fifo_fanout( ctx, 5, 1 );					// we will have several land in the FIFO
 	mcl_fifo_fanout( ctx, 5, 1 );
 	mcl_fifo_fanout( ctx, 5, 1 );

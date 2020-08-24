@@ -17,7 +17,7 @@
 
 
 #	Mnemonic:	Dockerfile
-#	Abstract:	Build file which creaes a runtime image for the listener. 
+#	Abstract:	Build file which creaes a runtime image for the listener.
 #				Building should be as simple as:
 #
 #					docker build -f sidecars/listener/Dockerfile -t mc_listener:xx.xx .
@@ -56,23 +56,29 @@ RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/release/pack
 RUN dpkg -i rmr_${RMR_VER}_amd64.deb
 RUN dpkg -i rmr-dev_${RMR_VER}_amd64.deb
 
-RUN mkdir /playpen/bin /playpen/src
+RUN mkdir /playpen/bin /playpen/listener /playpen/listener/test
 ARG SRC=.
-COPY ${SRC}/*.ksh ${SRC}/Makefile ${SRC}/*.h ${SRC}/*.c /playpen/src/
-COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh /playpen/src/
+COPY ${SRC}/*.ksh ${SRC}/Makefile ${SRC}/*.h ${SRC}/*.c /playpen/listener/
+COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh /playpen/listener/
+
+ARG TEST=${SRC}/test
+COPY ${TEST}/*.ksh ${TEST}/Makefile ${TEST}/*.h ${TEST}/*.c /playpen/listener/test/
 
 # Build all binaries; verify scripts expect them to be in bin, so we must copy too
 #
 ENV LD_LIBRARY_PATH=/usr/local/lib64:/usr/local/lib
 ENV C_INCLUDE_PATH=/usr/local/include
-RUN cd /playpen/src/; make -B all; ls -al mc_listener; cp mc_listener sender pipe_reader rdc_replay rdc_extract /playpen/bin/
+RUN     cd /playpen/listener \
+	&&  make -B all \
+	&&  ls -al mc_listener \
+	&&  cp mc_listener sender pipe_reader rdc_replay rdc_extract /playpen/bin/
 
 # Run unit tests. If they don't pass the build fails here. Tests can be run from src, but expect binaries in bin
 # so that they can be run in the final image as well.
 #
-ENV PATH /playpen/bin:/playpen/src:$PATH
-RUN cd /playpen/src/; ./run_unit_test.ksh
-RUN /playpen/src/verify.sh; /playpen/src/verify_replay.sh
+ENV PATH /playpen/bin:/playpen/listener:$PATH
+RUN cd /playpen/listener/test/; ./run_unit_test.ksh
+RUN cd /playpen/listener/; /playpen/listener/verify.sh; /playpen/listener/verify_replay.sh
 
 
 # -----  final, smaller image ----------------------------------
@@ -80,7 +86,7 @@ FROM ubuntu:18.04
 
 # bash doesn't cut it for run_replay so grab a real shell and clean up as much as we can
 RUN apt-get update; apt-get install -y ksh
-RUN rm -fr /var/lib/apt/lists 
+RUN rm -fr /var/lib/apt/lists
 
 # must have rmr runtime to get health check etc
 COPY --from=buildenv /playpen/rmr_*.deb /tmp/
@@ -91,7 +97,7 @@ ARG SRC
 
 RUN mkdir -p /playpen/bin
 COPY --from=buildenv /usr/local/lib/* /usr/local/lib/
-COPY --from=buildenv /playpen/src/mc_listener /playpen/src/sender /playpen/src/pipe_reader /playpen/src/rdc_replay /playpen/src/rdc_extract /playpen/bin/
+COPY --from=buildenv /playpen/listener/mc_listener /playpen/listener/sender /playpen/listener/pipe_reader /playpen/listener/rdc_replay /playpen/listener/rdc_extract /playpen/bin/
 COPY ${SRC}/verify_replay.sh ${SRC}/verify.sh ${SRC}/run_replay.sh ${SRC}/help /playpen/bin/
 
 ENV PATH=/playpen/bin:$PATH

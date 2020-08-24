@@ -22,11 +22,11 @@
 
 # with the latest builder support for NNG was dropped, so we must build only SI95
 # based applications; the _si suffix has been dropped
-binaries = mc_listener 
+binaries = mc_listener
 adjuncts = rdc_replay rdc_extract
 testers = sender pipe_reader sender
 
-test_progs = sender unit_test pipe_reader
+test_progs = sender pipe_reader
 lib_obj = mcl.o rdc.o
 lib_h = mcl.h
 
@@ -41,24 +41,19 @@ libmcl.a::	$(lib_obj) $(lib_h)
 mc_listener: mc_listener.c libmcl.a
 	gcc mc_listener.c -o mc_listener -L. -lmcl  -lrmr_si -lm -lpthread
 
-# ---- testing stuff -----------------------------------------------------------------
-tests: $(test_progs)
+# ---- adjunct tools -----------------------------------------------------------------
+rdc_replay: rdc_replay.c libmcl.a
+	gcc rdc_replay.c -o rdc_replay -L. -lmcl -lrmr_si -lpthread -lm
 
+rdc_extract: rdc_extract.c libmcl.a
+	gcc rdc_extract.c -o rdc_extract -L. -lmcl -lrmr_si -lpthread -lm
+
+# ------- container verification programmes -------------------------------------------
 sender : sender.c
 	gcc sender.c -o sender  -lrmr_si -lm -lpthread
 
 pipe_reader : pipe_reader.c libmcl.a
 	gcc pipe_reader.c -o pipe_reader  -L. -lmcl -lrmr_si -lm -lpthread
-
-unit_test: unit_test.c mcl.c
-	gcc -g $(coverage_opts) unit_test.c -o unit_test -lrmr_si -lm -lpthread
-
-# ---- adjunct tools -----------------------------------------------------------------
-rdc_replay: rdc_replay.c libmcl.a
-	gcc rdc_replay.c -o rdc_replay -L. -lmcl -lrmr_si -lpthread -lm 
-
-rdc_extract: rdc_extract.c libmcl.a
-	gcc rdc_extract.c -o rdc_extract -L. -lmcl -lrmr_si -lpthread -lm 
 
 # ---- housekeeping stuff -------------------------------------------------------------
 # remove only intermediates

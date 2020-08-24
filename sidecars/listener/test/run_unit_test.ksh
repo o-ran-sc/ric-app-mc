@@ -68,6 +68,11 @@ function purge_dirs {
 # woudl do (but seems not to).
 #
 function ensure_pkgs {
+	if (( no_rmr_load ))
+	then
+		return
+	fi
+
 	if (( force_rmr_load )) || [[ -d /usr/local/include/rmr ]]
 	then
 		echo "[INFO] found RMR installed in /usr/local"
@@ -127,6 +132,7 @@ while [[ $1 == -* ]]
 do
 	case $1 in
 		-f)	force_rmr_load=1;;
+		-N) no_rmr_load=1;;					# for local testing
 
 		*)	echo "unrecognised option: $1"
 			exit 1
@@ -217,6 +223,8 @@ else
 	echo "[PASS] overall test passes"
 	rm -f *test*.gcov
 fi
+
+cp *.gcov ../				# the CI job defines the listener dir as the spot to find these, so put them there
 
 rm -f /tmp/PID$$.*
 exit $rc

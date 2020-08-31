@@ -224,7 +224,5 @@ else
 	rm -f *test*.gcov
 fi
 
-cp *.gcov ../				# the CI job defines the listener dir as the spot to find these, so put them there
-
 rm -f /tmp/PID$$.*
 exit $rc

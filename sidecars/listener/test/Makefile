@@ -36,7 +36,7 @@ all: tests
 tests: $(test_progs)
 
 
-unit_test: unit_test.c ../mcl.c ../rdc.c
+unit_test: unit_test.c ../src/mcl.c ../src/rdc.c
 	gcc -g $(coverage_opts) unit_test.c -o unit_test -lrmr_si -lm -lpthread
 
 # ---- housekeeping stuff -------------------------------------------------------------

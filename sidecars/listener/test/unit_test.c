@@ -41,8 +41,8 @@
 #include "test_rmr_em.c"		// emulated rmr functions (for receives)
 
 // this/these are what we are testing; include them directly (must be after forever def)
-#include "../mcl.c"
-#include "../rdc.c"
+#include "../src/mcl.c"
+#include "../src/rdc.c"
 
 /*
 	Set up env things for the rdc setup call.

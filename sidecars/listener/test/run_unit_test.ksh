@@ -25,6 +25,12 @@
 #				the ability to pre-install before running this test, so
 #				we will force one to be there if we don't find it in /usr.
 #
+#				CI Mode
+#				For the Jenkins jobs to capture trigger data allowing sonar
+#				analysis, we must force a build in the ../src directory.
+#				CI mode is on by default, to force this build, but can be
+#				turned off with the -c option for local builds/testing.
+#
 #	Date:		10 December 2019
 #	Author:		E. Scott Daniels
 # -------------------------------------------------------------------------
@@ -127,10 +133,12 @@ export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 
 running=/tmp/PID$$.running
 force_rmr_load=0
+ci_mode=1								# -c turns off; see the flower box above
 
 while [[ $1 == -* ]]
 do
 	case $1 in
+		-c) ci_mode=0;;
 		-f)	force_rmr_load=1;;
 		-N) no_rmr_load=1;;					# for local testing
 
@@ -150,6 +158,16 @@ fi
 
 ensure_pkgs						# ensure that we have RMR; some CI environments are lacking
 
+if (( ci_mode ))				# in CI mode we must force a build in the src so build wrapper captures trigger data
+then
+	echo "building in src for sonar build wrapper capture"
+	(
+		cd ../src
+		make
+	)
+fi
+
+echo "building unit test(s)"
 if ! make -B unit_test			# ensure that it's fresh
 then
 	echo "[FAIL] cannot make unit_test"
@@ -223,6 +241,8 @@ else
 	echo "[PASS] overall test passes"
 	rm -f *test*.gcov
 fi
+
+cp *.gcov ../				# jjb description points to top listener dir for sonar to find gcov files
 
 rm -f /tmp/PID$$.*
 exit $rc

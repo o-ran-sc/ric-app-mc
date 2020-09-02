@@ -53,31 +53,35 @@
 #include "mcl.h"
 
 //---- support -----------------------------------------------------------------------------
+char* usage_str =
+		"[-d fifo-dir] [-e] [-p listen-port] [-q | -r report-freq]\n"
+		"  -e  disable extended header in buffers written to FIFOs\n"
+		"\n"
+		"The following environment variables may be set to affect operation:\n"
+		"  MCL_RDC_STAGE: the directory where raw data capture files are staged. (/tmp/rdc/stage)\n"
+		"  MCL_RDC_FINAL: the directory where raw data capture files are placed for export. (/tmp/rdc/final)\n"
+		"  MCL_RDC_SUFFIX: the suffix written on each raw data capture file; must include '.'. (.rdc)\n"
+		"  MCL_RDC_SOURCE: a short string used as source identification in rdc file names.\n"
+		"  MCL_RDC_FREQ: the amount of time (seconds) that raw capture files are rolled. (300)\n"
+		"\nIf either final or staging directories are defined by environment vars, they MUST exist.\n";
 
-static void bad_arg( char* what ) {
+/*
+	Bad argument error.
+*/
+static void ba_err( char* what ) {
 	fprintf( stderr, "[ERR] option is unrecognised or isn't followed by meaningful data: %s\n", what );
 }
 
 static void usage( char* argv0 ) {
-	fprintf( stderr, "usage: %s [-d fifo-dir] [-e] [-p listen-port] [-q | -r report-freq]\n", argv0 );
-	fprintf( stderr, "  -e  disable extended header in buffers written to FIFOs\n" );
-	fprintf( stderr, "\n" );
-	fprintf( stderr, "The following environment variables may be set to affect operation:\n" );
-	fprintf( stderr, "  MCL_RDC_STAGE: the directory where raw data capture files are staged. (/tmp/rdc/stage)\n" );
-	fprintf( stderr, "  MCL_RDC_FINAL: the directory where raw data capture files are placed for export. (/tmp/rdc/final)\n" );
-	fprintf( stderr, "  MCL_RDC_SUFFIX: the suffix written on each raw data capture file; must include '.'. (.rdc)\n" );
-	fprintf( stderr, "  MCL_RDC_SOURCE: a short string used as source identification in rdc file names.\n" );
-	fprintf( stderr, "  MCL_RDC_FREQ: the amount of time (seconds) that raw capture files are rolled. (300)\n" );
-	fprintf( stderr, "\nIf either final or staging directories are defined by environment vars, they MUST exist.\n" );
-	fprintf( stderr, "\n" );
+	fprintf( stderr, "usage: %s %s\n", argv0, usage_str );
 }
 
 /*
-	We exit on any trapped signal so that we can kill  -15 the proecss
-	and still get gcoverage information to keep sonar happy.
+	Exit on trapped signal allowing ctl-C or SIGTERM to stop us gracefully and capture
+	the gcda data for coverage.
 */
-static void sigh( int sig ) {
-	fprintf( stderr, "\n[INFO] exiting on signal %d\n", sig );
+static void sigh( int sign ) {
+	fprintf( stderr, "\n[INFO] exiting on signal %d\n", sign );
 	exit( 0 );
 }
 
@@ -85,9 +89,7 @@ static void sigh( int sig ) {
 int main( int argc,  char** argv ) {
 	void*	ctx;							// the mc listener library context
 	char*	dname = NULL;					// default directory where we open fifos
-	char*	port = "4560";					// default rmr port
-	char*	siphon_dir = "/tmp/mci/siphon";	// where siphon files are placed
-	int		siphon = 0;						// percentage of messages to siphone off
+	char*	port =  NULL;
 	int		report_freq = 60;				// report stats every n seconds
 	int		pidx = 1;						// parameter index
 	int		error = 0;
@@ -97,15 +99,17 @@ int main( int argc,  char** argv ) {
 	signal( SIGTERM, sigh );
 
 	dname = strdup( "/tmp/mcl/fifos" );					// so we can always free
+	port = strdup( "4560" );							// default port
 
 	while( pidx < argc && argv[pidx][0] == '-' ) {			// simple argument parsing (-x  or -x value)
 		switch( argv[pidx][1] ) {
 			case 'd':
 				if( pidx+1 < argc ) {
+					free( dname );
 					dname = strdup( argv[pidx+1] );
 					pidx++;
 				} else {
-					bad_arg( argv[pidx] );
+					ba_err( argv[pidx] );
 					error = 1;
 				}
 				break;
@@ -116,10 +120,11 @@ int main( int argc,  char** argv ) {
 
 			case 'p':
 				if( pidx+1 < argc ) {
+					free( port );
 					port = strdup( argv[pidx+1] );
 					pidx++;
 				} else {
-					bad_arg( argv[pidx] );
+					ba_err( argv[pidx] );
 					error = 1;
 				}
 				break;
@@ -133,7 +138,7 @@ int main( int argc,  char** argv ) {
 					report_freq = atoi( argv[pidx+1] );
 					pidx++;
 				} else {
-					bad_arg( argv[pidx] );
+					ba_err( argv[pidx] );
 					error = 1;
 				}
 				break;
@@ -144,7 +149,7 @@ int main( int argc,  char** argv ) {
 				exit( 0 );
 
 			default:
-				bad_arg( argv[pidx] );
+				ba_err( argv[pidx] );
 				error = 1;
 				break;
 		}

@@ -102,6 +102,15 @@ export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 force_rmr_load=0
 no_rmr_load=0
 
+# defined in the CI configuration where jenkins jobs are looking for gcov files
+gcov_dir=/tmp/gcov_rpts
+if [[ ! -d $cov_dir ]]
+then
+	echo "<INFO> making $gcov_dir"
+	mkdir $gcov_dir
+fi
+
+
 while [[ $1 == -* ]]
 do
 	case $1 in
@@ -130,8 +139,10 @@ make -B				# ensure coverage data is nuked
 mc_listener -p 4567 -q -r 10 -e -d foo -x  >/dev/null 2>&1		# -x (invalid) prevents execution loop
 for x in d p r \? h						# drive with missing values for d, p, r and singletons -h and -?
 do
+	gcov mc_listener.c					# debugging because jenkins gcov doesn't seem to be accumulating data
 	mc_listener -$x >/dev/null 2>&1
 done
+gcov mc_listener.c					# debugging because jenkins gcov doesn't seem to be accumulating data
 
 pipe_reader -d foo -e -f -m 0 -s  -x >/dev/null 2>&1		# drive for all "good" conditions
 for x in d m \? h
@@ -154,7 +165,7 @@ $script_dir/verify_replay.sh
 for x in mc_listener sender rdc_replay pipe_reader
 do
 	gcov $x.c
-	cp $x.c.gcov ../				# copy only interesting things (not the lib modules if they exist)
+	cp $x.c.gcov $gcov_dir/
 done
 
 exit

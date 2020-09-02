@@ -131,6 +131,14 @@ function ensure_pkgs {
 export LD_LIBRARY_PATH=/usr/local/lib:$LD_LIBRARY_PATH
 export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 
+# defined in the CI configuration where jenkins jobs are looking for gcov files
+gcov_dir=/tmp/gcov_rpts
+if [[ ! -d $cov_dir ]]
+then
+	echo "[INFO] making $gcov_dir"
+	mkdir $gcov_dir
+fi
+
 running=/tmp/PID$$.running
 force_rmr_load=0
 ci_mode=1								# -c turns off; see the flower box above
@@ -157,6 +165,10 @@ then
 fi
 
 ensure_pkgs						# ensure that we have RMR; some CI environments are lacking
+
+echo "[INFO] ----------------------------------------------"
+gcov --version					# gcov files don't seem to aggregate on the LF guest
+echo "[INFO] ----------------------------------------------"
 
 if (( ci_mode ))				# in CI mode we must force a build in the src so build wrapper captures trigger data
 then
@@ -187,10 +199,9 @@ fi
 pid=$!
 abort_after 60 $pid &
 wait $pid
-#if ! unit_test >/tmp/PID$$.utlog 2>&1
 if (( $? != 0 ))
 then
-	echo ">>>> wait popped"
+	echo "<FAIL> run_unit_test: wait popped"
 	rm -f $running
 	cat /tmp/PID$$.utlog
 	rm -f /tmp/PID$$.*
@@ -243,7 +254,7 @@ else
 	rm -f *test*.gcov
 fi
 
-cp *.gcov ../				# jjb description points to top listener dir for sonar to find gcov files
+cp *.gcov	$gcov_dir/				# make avilable to jenkins job(s)
 
 rm -f /tmp/PID$$.*
 exit $rc

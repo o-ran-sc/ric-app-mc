@@ -65,11 +65,11 @@ extern int mcl_start_listening( void* vctx, char* port, int wait4ready );
 
 // ---- these can be used by external programmes, but it liekely doesn't make sense to do so ----
 extern void logit( int level, char* fmt, ... );
-extern void* rdc_init( char* sdir, char* fdir, char* suffix, char* dsuffix );
-extern void* rdc_init_buf( int mtype, char* uheader, int uhlen, void* capture_buf );
+extern void* rdc_init( const char* sdir, const char* fdir, const char* suffix, const char* dsuffix );
+extern void* rdc_init_buf( int mtype, const char* uheader, int uhlen, void* capture_buf );
 extern void rdc_close( void* rdl_ctx );
 extern void rdc_set_freq( void* rdl_ctx, int freq );
-extern int rdc_write( void* rdl_ctx, void* rdc_buffer, char* payload, int len );
+extern int rdc_write( void* rdl_ctx, void* rdc_buffer, const char* payload, int len );
 
 
 #endif

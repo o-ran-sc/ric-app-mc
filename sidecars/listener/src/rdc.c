@@ -30,7 +30,7 @@
 				Where <mtype> is the message type of the message received and
 				<len> is the length of the data that was written to the FIFO.
 
-		
+
 	Date:		06 Oct 2019
 	Author:		E. Scott Daniels
 */
@@ -94,7 +94,7 @@ static int copy_unlink( char* old, char* new, int mode ) {
 	char*	tfname = NULL;		// temp file name while we have it open
 	char*	wbuf;				// work buffer for disecting the new filename
 	char*	tok;				// token pointer into a buffer
-	int	len;
+	size_t	len;
 	int	rfd;		// read/write file descriptors
 	int	wfd;
 	int start;
@@ -108,7 +108,7 @@ static int copy_unlink( char* old, char* new, int mode ) {
 		return -1;
 	}
 
-	len = sizeof( char ) * (strlen( new ) + 2 );			// space needed for temp file name with added .
+	len = (int) sizeof( char ) * (strlen( new ) + 2 );			// space needed for temp file name with added .
 	tfname = (char *) malloc( len );
 	wbuf = strdup( new );													// we need to trash the string, so copy
 	tok = strrchr( wbuf, '/' );												// find end of path
@@ -120,7 +120,6 @@ static int copy_unlink( char* old, char* new, int mode ) {
 		snprintf( tfname, len, ".%s", wbuf );									// no path, just add leading .
 	}
 	free( wbuf );
-	//logit( LOG_INFO, "copy: creating file in tmp filename: %s", tfname );
 
 	if( (wfd = open( tfname, O_WRONLY | O_CREAT | O_TRUNC, 0200 )) < 0 ) {
 		logit( LOG_ERR, "copy: open tmp file for copy failed: %s: %s", tfname, strerror( errno ) );
@@ -132,14 +131,15 @@ static int copy_unlink( char* old, char* new, int mode ) {
 		start = 0;
 		while( remain > 0 ) {
 			errno = 0;
-			if( (len = write( wfd, &buf[start], len )) != remain ) {		// short write
-				if( errno != EINTR && errno != EAGAIN ) {
-					logit( LOG_ERR, "copy: write failed: %s", strerror( errno ) );
-					free( tfname );
-					close( wfd );
-					close( rfd );
-					return -1;
-				}
+			if( (len = write( wfd, &buf[start], len )) != remain		// short write
+				&& errno != EINTR										// and not interrrupted or try later
+				&& errno != EAGAIN ) {
+
+				logit( LOG_ERR, "copy: write failed: %s", strerror( errno ) );
+				free( tfname );
+				close( wfd );
+				close( rfd );
+				return -1;
 			}
 
 			remain -= len;		// recompute what we need to write, and try again
@@ -156,7 +156,6 @@ static int copy_unlink( char* old, char* new, int mode ) {
 		if( mode != 0 ) {
 			chmod( tfname, mode );
 		}
-		//logit( LOG_INFO, "copy: moving tmp file to: %s", new );
 		if( (state = rename( tfname, new )) < 0 ) {
 			logit( LOG_WARN, "copy: rename of tmp to final name failed for %s -> %s: %s", tfname, new, strerror( errno ) );
 		} else {
@@ -215,8 +214,8 @@ static int rdc_open( void* vctx ) {
 	ts = ts - (ts % ctx->frequency);			// round to previous frequency
 	ctx->next_roll = ts + ctx->frequency;		// set next time to roll the file
 
-	snprintf( basename, sizeof( fname ), "MCLT%s_%ld", ctx->source, (long) ts );		// basename needed to build final file name at close
-	snprintf( fname, sizeof( fname ), "%s/MCLT_%ld", ctx->sdir, (long) ts );
+	snprintf( basename, sizeof( fname ), "MCLT%s_%ld", ctx->source, ts );		// basename needed to build final file name at close
+	snprintf( fname, sizeof( fname ), "%s/MCLT_%ld", ctx->sdir, ts );
 	fd = open( fname, O_WRONLY | O_CREAT, 0200 );		// open in w-- mode so that it should not be readable
 	if( fd < 0 ) {
 		logit( LOG_CRIT, "(rdf) cannot open data capture file: %s: %s", fname, strerror( errno ) );
@@ -290,9 +289,9 @@ extern void logit( int priority, char *fmt, ... ) {
 	A pointer to the context is returned; nil on error with errno set to some useful
 	(we hope) value.
 */
-extern void* rdc_init( char* sdir, char* fdir, char* suffix, char* dsuffix ) {
+extern void* rdc_init( const char* sdir, const char* fdir, const char* suffix, const char* dsuffix ) {
 	rdc_ctx_t*	ctx;
-	char*		ep;			// pointer at environment var value
+	const char*		ep;			// pointer at environment var value
 
 	ctx = (rdc_ctx_t *) malloc( sizeof( *ctx ) );
 	if( ctx == NULL ) {
@@ -405,8 +404,8 @@ extern void rdc_close( void* vctx ) {
 	If it's time to roll the file, or the file isn't opened, the needed housekeeping
 	is done first.
 */
-extern int rdc_write( void* vctx, void* vcb, char* payload, int len ) {
-	cap_buf_t* cb;
+extern int rdc_write( void* vctx, void* vcb, const char* payload, int len ) {
+	const cap_buf_t* cb;
 	char	header[100];					// our header
 	rdc_ctx_t* ctx;
 
@@ -438,7 +437,7 @@ extern int rdc_write( void* vctx, void* vcb, char* payload, int len ) {
 	We save the message type, and will use that and the user header length and payload
 	length on write to create the complete RDC header.
 */
-extern void* rdc_init_buf( int mtype, char* uheader, int uhlen, void* vcb ) {
+extern void* rdc_init_buf( int mtype, const char* uheader, int uhlen, void* vcb ) {
 	cap_buf_t* cb;
 
 	cb = (cap_buf_t *) vcb;

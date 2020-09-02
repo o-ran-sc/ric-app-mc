@@ -33,6 +33,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <signal.h>
 
 
 #include "mcl.h"
@@ -51,6 +52,15 @@ static void usage( char* argv0 ) {
 	fprintf( stderr, "   -s  stats only mode\n" );
 }
 
+/*
+	We exit on any trapped signal so that we can kill  -15 the proecss
+	and still get gcoverage information to keep sonar happy.
+*/
+static void sigh( int sig ) {
+	fprintf( stderr, "\n[INFO] exiting on signal %d\n", sig );
+	exit( 0 );
+}
+
 //------------------------------------------------------------------------------------------
 int main( int argc,  char** argv ) {
 	void*	ctx;							// the mc listener library context
@@ -67,16 +77,19 @@ int main( int argc,  char** argv ) {
 	long	count = 0;
 	int		blabber = 0;
 
+	signal( SIGINT, sigh );
+	signal( SIGTERM, sigh );
+
 	while( pidx < argc && argv[pidx][0] == '-' ) {			// simple argument parsing (-x  or -x value)
 		switch( argv[pidx][1] ) {
 			case 'd':
 				if( pidx+1 < argc ) {
 					dname = strdup( argv[pidx+1] );
-					pidx++;	
+					pidx++;
 				} else {
-					bad_arg( argv[pidx] ); 
+					bad_arg( argv[pidx] );
 					error = 1;
-				}	
+				}
 				break;
 
 			case 'e':
@@ -90,11 +103,11 @@ int main( int argc,  char** argv ) {
 			case 'm':
 				if( pidx+1 < argc ) {
 					mtype = atoi( argv[pidx+1] );
-					pidx++;	
+					pidx++;
 				} else {
-					bad_arg( argv[pidx] ); 
+					bad_arg( argv[pidx] );
 					error = 1;
-				}	
+				}
 				break;
 
 			case 's':
@@ -105,7 +118,6 @@ int main( int argc,  char** argv ) {
 			case '?':
 				usage( argv[0] );
 				exit( 0 );
-				break;
 
 			default:
 				bad_arg( argv[pidx] );
@@ -120,7 +132,7 @@ int main( int argc,  char** argv ) {
 		usage( argv[0] );
 		exit( 1 );
 	}
-	
+
 	ctx = mcl_mk_context( dname );			// initialise the library context
 	if( ctx == NULL ) {
 		fprintf( stderr, "[FAIL] couldn't initialise the mc listener library" );
@@ -146,7 +158,5 @@ int main( int argc,  char** argv ) {
 			count++;
 		}
 	}
-
-	fprintf( stderr, "[INFO] mc listener is finished.\n" );
 }
 

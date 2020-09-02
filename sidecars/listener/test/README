@@ -1,0 +1,13 @@
+
+Test things for listener. These are broken out to prevent sonar from
+analysing them as they force things like passing nil pointers which sonar
+finds distasteful and complains (incorrectly) about.
+
+The run_unit_test script will drive the vetting and coverage tests on all
+of the library modules in ../src. Coverage files are moved to the parent
+directory where the jjb jobs expect to find them.
+
+The run_app_test script drives the listener application and tools, as well
+as the test sender, to generate coverage.  There is little vetting done
+here; any problems should be discovered by the verify scripts in ../src
+at the time the code is pushed. This is simply a coverage test for sonar.

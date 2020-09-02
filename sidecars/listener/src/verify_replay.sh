@@ -24,7 +24,7 @@
 # Abstract: Simple script to attempt to verify that the replay utility
 #			works as expected. This assumes that verify.sh has been run
 #			and that at least one RDC file is in /tmp/rdc. This script
-#			will start the replay utility and a few pipe listeners to 
+#			will start the replay utility and a few pipe listeners to
 #			parse the data.
 #
 # Date:		19 November 2019
@@ -40,9 +40,10 @@ function set_wait_values {
 function run_replay {
 	echo "starting replayer"
 	file=$( ls ${stage_dir}/MCLT_*|head -1 )
+	chmod 644 $file
 
 	set -x
-	/playpen/bin/rdc_replay -f $file -d $fifo_dir >/tmp/replay.log 2>&1
+	$bin_dir/rdc_replay -f $file -d $fifo_dir >/tmp/replay.log 2>&1
 	lpid=$!
 	set +x
 	echo "replay finished"
@@ -51,10 +52,10 @@ function run_replay {
 # run a pipe reader for one message type
 function run_pr {
 	echo "starting pipe reader $1"
-	/playpen/bin/pipe_reader $ext_hdr -m $1 -d $fifo_dir  >/tmp/pr.$1.log 2>&1 &
-	#/playpen/bin/pipe_reader -m $1 -d $fifo_dir & # >/tmp/pr.$1.log 2>&1 
+	$bin_dir/pipe_reader $ext_hdr -m $1 -d $fifo_dir  >/tmp/pr.$1.log 2>&1 &
+	#$bin_dir/pipe_reader -m $1 -d $fifo_dir & # >/tmp/pr.$1.log 2>&1
 	typeset prpid=$!
-	
+
 	sleep $reader_wait
 	echo "stopping pipe reader $1"
 	kill -1 $prpid
@@ -66,7 +67,7 @@ ext_hdr=""					# run with extended header enabled (-e turns extended off)
 run_listener=0				# -a turns on to run all
 while [[ $1 == -* ]]
 do
-	case $1 in 
+	case $1 in
 		-a)	run_listener=1;;
 		*)	echo "$1 is not a recognised option"
 			echo "usage: $0 [-a]"
@@ -77,6 +78,13 @@ do
 
 	shift
 done
+
+if [[ -d /playpen/bin ]]	# designed to run in the container, but this allows unit test by jenkins to drive too
+then
+	bin_dir=/playpen/${si}bin
+else
+	bin_dir="."
+fi
 
 if (( run_listener ))
 then
@@ -151,7 +159,7 @@ do
 	fi
 done
 
-if (( ! errors )) 
+if (( ! errors ))
 then
 	echo "[OK]    All logs seem good"
 fi

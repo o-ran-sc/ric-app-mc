@@ -47,6 +47,7 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <signal.h>
 
 
 #include "mcl.h"
@@ -71,10 +72,19 @@ static void usage( char* argv0 ) {
 	fprintf( stderr, "\n" );
 }
 
+/*
+	We exit on any trapped signal so that we can kill  -15 the proecss
+	and still get gcoverage information to keep sonar happy.
+*/
+static void sigh( int sig ) {
+	fprintf( stderr, "\n[INFO] exiting on signal %d\n", sig );
+	exit( 0 );
+}
+
 //------------------------------------------------------------------------------------------
 int main( int argc,  char** argv ) {
 	void*	ctx;							// the mc listener library context
-	char*	dname = "/tmp/mcl/fifos";		// default directory where we open fifos
+	char*	dname = NULL;					// default directory where we open fifos
 	char*	port = "4560";					// default rmr port
 	char*	siphon_dir = "/tmp/mci/siphon";	// where siphon files are placed
 	int		siphon = 0;						// percentage of messages to siphone off
@@ -82,6 +92,11 @@ int main( int argc,  char** argv ) {
 	int		pidx = 1;						// parameter index
 	int		error = 0;
 	int		long_hdrs = 1;					// -e sets and causes extended headers to be written
+
+	signal( SIGINT, sigh );
+	signal( SIGTERM, sigh );
+
+	dname = strdup( "/tmp/mcl/fifos" );					// so we can always free
 
 	while( pidx < argc && argv[pidx][0] == '-' ) {			// simple argument parsing (-x  or -x value)
 		switch( argv[pidx][1] ) {
@@ -127,7 +142,6 @@ int main( int argc,  char** argv ) {
 			case '?':
 				usage( argv[0] );
 				exit( 0 );
-				break;
 
 			default:
 				bad_arg( argv[pidx] );
@@ -139,6 +153,7 @@ int main( int argc,  char** argv ) {
 	}
 
 	if( error ) {
+		free( dname );
 		usage( argv[0] );
 		exit( 1 );
 	}
@@ -146,6 +161,7 @@ int main( int argc,  char** argv ) {
 	ctx = mcl_mk_context( dname );			// initialise the library context
 	if( ctx == NULL ) {
 		fprintf( stderr, "[FAIL] couldn't initialise the mc listener environment\n" );
+		free( dname );
 		exit( 1 );
 	}
 	mcl_set_sigh();									// set signal handler(s)
@@ -154,5 +170,8 @@ int main( int argc,  char** argv ) {
 	mcl_fifo_fanout( ctx, report_freq, long_hdrs );		// listen and fanout messages to fifo; report to stdout every ~2sec
 
 	fprintf( stderr, "[INFO] mc listener is finished.\n" );
+
+	free( port );			// uneeded, but these keep sonar from twisting it's knickers about leaks
+	free( dname );
 }
 

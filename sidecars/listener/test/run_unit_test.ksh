@@ -163,7 +163,8 @@ then
 	echo "building in src for sonar build wrapper capture"
 	(
 		cd ../src
-		make
+		export TEST_COV_OPTS="-ftest-coverage -fprofile-arcs"		# picked up by make so we get coverage on tools for sonar
+		make -B
 	)
 fi
 

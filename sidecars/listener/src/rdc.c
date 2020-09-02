@@ -30,7 +30,7 @@
 				Where <mtype> is the message type of the message received and
 				<len> is the length of the data that was written to the FIFO.
 
-			
+		
 	Date:		06 Oct 2019
 	Author:		E. Scott Daniels
 */
@@ -90,10 +90,10 @@ typedef struct {
 	not to discourage them from trying!).
 */
 static int copy_unlink( char* old, char* new, int mode ) {
-	char	buf[8192];	// read buffer
-	char*	tfname;		// temp file name while we have it open
-	char*	wbuf;		// work buffer for disecting the new filename
-	char*	tok;		// token pointer into a buffer
+	char	buf[8192];			// read buffer
+	char*	tfname = NULL;		// temp file name while we have it open
+	char*	wbuf;				// work buffer for disecting the new filename
+	char*	tok;				// token pointer into a buffer
 	int	len;
 	int	rfd;		// read/write file descriptors
 	int	wfd;
@@ -135,6 +135,7 @@ static int copy_unlink( char* old, char* new, int mode ) {
 			if( (len = write( wfd, &buf[start], len )) != remain ) {		// short write
 				if( errno != EINTR && errno != EAGAIN ) {
 					logit( LOG_ERR, "copy: write failed: %s", strerror( errno ) );
+					free( tfname );
 					close( wfd );
 					close( rfd );
 					return -1;
@@ -316,7 +317,7 @@ extern void* rdc_init( char* sdir, char* fdir, char* suffix, char* dsuffix ) {
 		} else {
 			ctx->fdir = strdup( fdir );
 		}
-	
+
 	}
 
 	if( suffix ) {

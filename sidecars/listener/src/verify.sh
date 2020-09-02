@@ -26,7 +26,9 @@
 #			and then will cat a few lines from one of the FIFOs.
 #			This script is designed to run using the geneated runtime
 #			image; in other words, it expects to find the binaries
-#			in /playpen/bin.
+#			in /playpen/bin if that directory exists. If it does not it
+#			assumes the current working directory is where the binaries
+#			exist.
 #
 # Date:		26 August 2019
 # Author:	E. Scott Daniels
@@ -57,34 +59,34 @@ function set_wait_values {
 #
 function run_sender {
 	echo "starting sender"
-	RMR_SEED_RT=/tmp/local.rt RMR_RTG_SVC=9989 /playpen/${si}bin/sender 43086 10000 >/tmp/sender.log 2>&1 &
+	RMR_SEED_RT=/tmp/local.rt RMR_RTG_SVC=9989 $bin_dir/sender 43086 10000 >/tmp/sender.log 2>&1 &
 	spid=$!
 	sleep $sender_wait
 
-	echo "stopping sender"
+	echo "stopping sender $spid"
 	kill -15 $spid
 }
 
 function run_listener {
 	echo "starting listener"
-	/playpen/${si}bin/mc_listener $ext_hdr -r 1 -d $fifo_dir >/tmp/listen.log 2>&1 &
+	$bin_dir/mc_listener $ext_hdr -r 1 -d $fifo_dir >/tmp/listen.log 2>&1 &
 	lpid=$!
 
 	sleep $listener_wait
-	echo "stopping listener"
+	echo "stopping listener $lpid"
 	kill -15 $lpid
 }
 
 # run a pipe reader for one message type
 function run_pr {
 	echo "starting pipe reader $1"
-	/playpen/bin/pipe_reader $ext_hdr -m $1 -d $fifo_dir  >/tmp/pr.$1.log 2>&1 &
-	#/playpen/bin/pipe_reader -m $1 -d $fifo_dir & # >/tmp/pr.$1.log 2>&1 
+	$bin_dir/pipe_reader $ext_hdr -m $1 -d $fifo_dir  >/tmp/pr.$1.log 2>&1 &
+	#$bin_dir/pipe_reader -m $1 -d $fifo_dir & # >/tmp/pr.$1.log 2>&1 
 	typeset prpid=$!
 	
 	sleep $reader_wait
-	echo "stopping pipe reader $1"
-	kill -1 $prpid
+	echo "stopping pipe reader $ppid"
+	kill -15 $prpid
 }
 
 # generate a dummy route table that the sender needs
@@ -121,6 +123,14 @@ do
 
 	shift
 done
+
+
+if [[ -d /playpen/bin ]]	# designed to run in the container, but this allows unit test by jenkins to drive too
+then
+	bin_dir=/playpen/${si}bin
+else
+	bin_dir="."
+fi
 
 set_wait_values
 

@@ -27,7 +27,7 @@
 					[listen_port [delay [stats-freq] [msg-type]]]]
 
 					Defaults:
-						listen_port 43086 
+						listen_port 43086
 						delay (mu-sec) 1000000 (1 sec)
 						stats-freq 10
 						msg-type 0
@@ -42,15 +42,25 @@
 #include <stdlib.h>
 #include <sys/epoll.h>
 #include <time.h>
+#include <signal.h>
 
 #include <rmr/rmr.h>
 
+/*
+	We exit on any trapped signal so that we can kill  -15 the proecss
+	and still get gcoverage information to keep sonar happy.
+*/
+static void sigh( int sig ) {
+	fprintf( stderr, "\n[<SNDR> exiting on signal %d\n", sig );
+	exit( 0 );
+}
+
 int main( int argc, char** argv ) {
-	void* mrc;      						//msg router context
+	void* mrc;								//msg router context
 	struct epoll_event events[1];			// list of events to give to epoll
 	struct epoll_event epe;                 // event definition for event to listen to
 	int     ep_fd = -1;						// epoll's file des (given to epoll_wait)
-	int rcv_fd;     						// file des that NNG tickles -- give this to epoll to listen on
+	int rcv_fd;								// file des that NNG tickles -- give this to epoll to listen on
 	int nready;								// number of events ready for receive
 	rmr_mbuf_t*		sbuf;					// send buffer
 	rmr_mbuf_t*		rbuf;					// received buffer
@@ -60,6 +70,9 @@ int main( int argc, char** argv ) {
 	int		delay = 1000000;						// mu-sec delay between messages
 	int		mtype = 0;
 	int		stats_freq = 100;
+
+	signal( SIGINT, sigh );
+	signal( SIGTERM, sigh );
 
 	if( argc > 1 ) {
 		listen_port = argv[1];
@@ -102,10 +115,10 @@ int main( int argc, char** argv ) {
 		sleep( 1 );
 	}
 	fprintf( stderr, "<DEMO> rmr is ready\n" );
-	
+
 
 	while( 1 ) {										// send messages until the cows come home
-		snprintf( sbuf->payload, 200, "count=%d received= %d ts=%lld %d stand up and cheer!\n", 	// create the payload
+		snprintf( sbuf->payload, 200, "count=%d received= %d ts=%lld %d stand up and cheer!\n",		// create the payload
 			count, rcvd_count, (long long) time( NULL ), rand() );
 
 		sbuf->mtype = mtype;							// fill in the message bits

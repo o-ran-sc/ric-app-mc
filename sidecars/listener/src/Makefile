@@ -17,6 +17,11 @@
 #
 #---------------------------------------------------------------------------------
 
+# CAUTION:  We expect that the unit test script(s) might build the various tools
+#	with the environment variable "TEST_COV_OPTS" set. This variable should NOT
+#	be set for the normal build.
+
+
 # this make file assuems that both NNG and RMR are installed and that the variables
 # LD_LIBRARY_PATH, LIBRARY_PATH are set correctly.
 
@@ -39,21 +44,21 @@ libmcl.a::	$(lib_obj) $(lib_h)
 	ar -v -r libmcl.a $(lib_obj)
 
 mc_listener: mc_listener.c libmcl.a
-	gcc mc_listener.c -o mc_listener -L. -lmcl  -lrmr_si -lm -lpthread
+	gcc mc_listener.c $$TEST_COV_OPTS -o mc_listener -L. -lmcl  -lrmr_si -lm -lpthread
 
 # ---- adjunct tools -----------------------------------------------------------------
 rdc_replay: rdc_replay.c libmcl.a
-	gcc rdc_replay.c -o rdc_replay -L. -lmcl -lrmr_si -lpthread -lm
+	gcc rdc_replay.c $$TEST_COV_OPTS -o rdc_replay -L. -lmcl -lrmr_si -lpthread -lm
 
 rdc_extract: rdc_extract.c libmcl.a
-	gcc rdc_extract.c -o rdc_extract -L. -lmcl -lrmr_si -lpthread -lm
+	gcc rdc_extract.c $$TEST_COV_OPTS -o rdc_extract -L. -lmcl -lrmr_si -lpthread -lm
 
 # ------- container verification programmes -------------------------------------------
 sender : sender.c
-	gcc sender.c -o sender  -lrmr_si -lm -lpthread
+	gcc sender.c $$TEST_COV_OPTS -o sender  -lrmr_si -lm -lpthread
 
 pipe_reader : pipe_reader.c libmcl.a
-	gcc pipe_reader.c -o pipe_reader  -L. -lmcl -lrmr_si -lm -lpthread
+	gcc pipe_reader.c $$TEST_COV_OPTS -o pipe_reader  -L. -lmcl -lrmr_si -lm -lpthread
 
 # ---- housekeeping stuff -------------------------------------------------------------
 # remove only intermediates
@@ -63,4 +68,3 @@ clean:
 # remove anything that can be rebuilt
 nuke: clean
 	rm -f *mcl.a $(binaries) $(test_progs)
-

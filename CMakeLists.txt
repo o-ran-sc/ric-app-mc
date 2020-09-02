@@ -36,10 +36,17 @@ enable_testing()
 # cmake cannot set env vars, so we have to passed desired vars on the wrapper command
 # and assume the wrapper will do the right thing with them.  CMake also seems unable
 # to reference ../dir1/dir2 (../dir1 works), so we have to use the crazy syntax
-# with the absurdly long variable name.
+# with the absurdly long variable name before the ../.
 #
 add_test(
 		NAME drive_listener_tests
 		COMMAND  bash run_unit_test.ksh CMBUILD=${CMAKE_CURRENT_BINARY_DIR}
+		WORKING_DIRECTORY   ${CMAKE_CURRENT_BINARY_DIR}/../sidecars/listener/test
+)
+
+# the listener application tests for sonar reports
+add_test(
+		NAME drive_mcl_app_tests
+		COMMAND  bash run_app_tests.ksh CMBUILD=${CMAKE_CURRENT_BINARY_DIR}
 		WORKING_DIRECTORY   ${CMAKE_CURRENT_BINARY_DIR}/../sidecars/listener/test
 )

@@ -6,17 +6,17 @@
 				listener received, and then writes those messages.  The assumption
 				is that a dummy route table is in place that causes one or more message
 				types to be routed to the mc_listener for "replay" into the mc-core
-				application. 
+				application.
 
 
 				The RDC file format is expected to be:
 					@RDC<mtype><len> or as depicted in hex:
 
 
-					0000000 40 52 44 43 				<< delim == @RDC
+					0000000 40 52 44 43					<< delim == @RDC
 										30 30 31 30 30 35 30 2a  << mtype
-				 												30 30 30 30 << msg len
-					0000020 30 37 34 00 
+																30 30 30 30 << msg len
+					0000020 30 37 34 00
 										40 4d 43 4c 30 30 30 30 30 34 36 00 << raw message
 							:
 							:
@@ -65,10 +65,10 @@ int main( int argc, char** argv ) {
 	char*	fifo_path = "/tmp/mcl_replay/fifos";	// directory where we create fifos; -d overrieds
 	char*	input_file = NULL;						// -f to set; stdin is default if nil
 	char*	arg;
-	int 	i;
+	int		i;
 
-
-	for( i = 1; i < argc; i++ ) {
+	i = 1;
+	while( i < argc ) {
 		arg = argv[i];
 		if( *arg != '-' ) {
 			break;
@@ -108,17 +108,19 @@ int main( int argc, char** argv ) {
 			default:
 				fprintf( stderr, "unrecognised option: %s\n", arg );
 				err_count++;
-				break;	
+				break;
 		}
+
+		i++;
 	}
-	
+
 	if( err_count ) {
 		fprintf( stderr, "usage: %s [-d fifo-dir] [-f input-file] [-t msg-type]\n", argv[0] );
 		fprintf( stderr, "if -f not given, then standard input is read\n" );
 		exit( 1 );
 	}
 
-	
+
 	if( input_file == NULL ) {
 		fd = 0;
 	} else {
@@ -144,7 +146,7 @@ int main( int argc, char** argv ) {
 			fprintf( stderr, "abort: @header check, truncated file, or record > read buffer size\n" );
 			exit( 1 );
 		}
-	
+
 		if( strncmp( nxt, "@RDC", 4 ) == 0 ) {
 			mtype = atoi( nxt+4 );
 			mlen = atoi( nxt+12 );
@@ -161,7 +163,7 @@ int main( int argc, char** argv ) {
 				fprintf( stderr, "abort: truncated file, or record > read buffer size\n" );
 				exit( 1 );
 			}
-			
+
 			if( desired < 0 || mtype == desired ) {				// all mtypes, or specific
 				state = mcl_fifo_one( mcl_ctx, nxt, mlen, mtype );
 				if( state ) {

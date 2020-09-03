@@ -101,6 +101,7 @@ export LIBRARY_PATH=/usr/local/lib:$LIBRARY_PATH
 
 force_rmr_load=0
 no_rmr_load=0
+test_dir=$PWD
 
 # defined in the CI configuration where jenkins jobs are looking for gcov files
 gcov_dir=/tmp/gcov_rpts
@@ -127,45 +128,55 @@ done
 
 ensure_pkgs									# some CI enviroments may not have RMR; get it
 
-script_dir=${PWD%/*}/src
 cd ../src
 
 # build the binaries with coverage options set
 export TEST_COV_OPTS="-ftest-coverage -fprofile-arcs"		# picked up by make so we get coverage on tools for sonar
 make clean			# ensure coverage files removed
-make -B				# ensure coverage data is nuked
+make -B				# force build under the eyes of sonar build wrapper
+
+rm -fr *.gcov *.gcda			# ditch any previously generated coverage info
 
 # drive with full complement to test good branches, then with bad (missing value) to drive exceptions
-mc_listener -p 4567 -q -r 10 -e -d foo -x  >/dev/null 2>&1		# -x (invalid) prevents execution loop
+./mc_listener -p 4567 -q -r 10 -e -d foo -x  >/dev/null 2>&1		# -x (invalid) prevents execution loop
+gcov  mc_listener.c					# debugging because jenkins gcov doesn't seem to be accumulating data
 for x in d p r \? h						# drive with missing values for d, p, r and singletons -h and -?
 do
-	gcov mc_listener.c					# debugging because jenkins gcov doesn't seem to be accumulating data
-	mc_listener -$x >/dev/null 2>&1
+	./mc_listener -$x >/dev/null 2>&1
+	gcov  mc_listener.c					# debugging because jenkins gcov doesn't seem to be accumulating data
 done
-gcov mc_listener.c					# debugging because jenkins gcov doesn't seem to be accumulating data
+gcov  mc_listener.c					# debugging because jenkins gcov doesn't seem to be accumulating data
 
-pipe_reader -d foo -e -f -m 0 -s  -x >/dev/null 2>&1		# drive for all "good" conditions
+./pipe_reader -d foo -e -f -m 0 -s  -x >/dev/null 2>&1		# drive for all "good" conditions
 for x in d m \? h
 do
-	pipe_reader  -$x >/dev/null 2>&1		# drive each exception (missing value) or 'help'
+	./pipe_reader  -$x >/dev/null 2>&1		# drive each exception (missing value) or 'help'
 done
 
-rdc_replay -d foo -f bar -t 0  -x >/dev/null 2>&1			# drive for all "good" conditions
+./rdc_replay -d foo -f bar -t 0  -x >/dev/null 2>&1			# drive for all "good" conditions
 for x in d f t  \? h
 do
-	rdc_replay  -$x >/dev/null 2>&1		# drive each exception (missing value) or 'help'
+	./rdc_replay  -$x >/dev/null 2>&1		# drive each exception (missing value) or 'help'
 done
 
-$script_dir/verify.sh					# verify MUST be first (replay relies on its output)
-$script_dir/verify_replay.sh
+./verify.sh					# verify MUST be first (replay relies on its output)
+./verify_replay.sh
 
 # generate and copy coverage files to parent which is where the CI jobs are looking for them
 # we do NOT gen stats for the library functions; the unit test script(s) do that
 #
 for x in mc_listener sender rdc_replay pipe_reader
 do
-	gcov $x.c
-	cp $x.c.gcov $gcov_dir/
+	gcov  $x.c
+	#cp $x.c.gcov $gcov_dir/
 done
+$test_dir/publish_cov.ksh			# publish coverage files and fixup source names
+
+echo "[INFO] ----- published coverage information ----------------------------------"
+ls -al $gcov_dir
+grep -i "0:Source:" $gcov_dir/*.gcov
+
+echo "------------------------------------------------------------------------------"
+echo "run_app_tests finished"
 
 exit

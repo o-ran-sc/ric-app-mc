@@ -166,10 +166,6 @@ fi
 
 ensure_pkgs						# ensure that we have RMR; some CI environments are lacking
 
-echo "[INFO] ----------------------------------------------"
-gcov --version					# gcov files don't seem to aggregate on the LF guest
-echo "[INFO] ----------------------------------------------"
-
 if (( ci_mode ))				# in CI mode we must force a build in the src so build wrapper captures trigger data
 then
 	echo "building in src for sonar build wrapper capture"
@@ -194,6 +190,8 @@ if [[ $1 == "set"* ]]			# setup only
 then
 	exit
 fi
+
+rm -fr *.gcov *.gcda			# ditch any previously generated coverage info
 
 ./unit_test >/tmp/PID$$.utlog 2>&1 &
 pid=$!
@@ -251,10 +249,11 @@ then
 	echo "[FAIL] overall test fails"
 else
 	echo "[PASS] overall test passes"
-	rm -f *test*.gcov
+	rm -f *test*.gcov					# ditch test specific coverage files first
+	#cp *.gcov	$gcov_dir/				# make avilable to jenkins job(s)
+	./publish_cov.ksh					# push to reports dir and fix internal source filenames
 fi
 
-cp *.gcov	$gcov_dir/				# make avilable to jenkins job(s)
 
 rm -f /tmp/PID$$.*
 exit $rc

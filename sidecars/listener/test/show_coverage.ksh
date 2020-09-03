@@ -33,7 +33,7 @@ chatty=0
 show_all=0
 cfail="DCHK"
 
-gcov -f $1 | sed "s/'//g" | awk \
+gcov  -f $1 | sed "s/'//g" | awk \
 		-v cfail=$cfail \
 		-v show_all=$show_all \
 		-v ignore_list="$iflist" \

@@ -20,7 +20,7 @@ FROM nexus3.o-ran-sc.org:10004/o-ran-sc/bldr-ubuntu18-c-go:9-u18.04 AS project-b
 
 ARG STAGE_DIR
 
-ARG RMR_VER=4.0.5
+ARG RMR_VER=4.4.6
 
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/release/packages/debian/stretch/rmr_${RMR_VER}_amd64.deb/download.deb
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/release/packages/debian/stretch/rmr-dev_${RMR_VER}_amd64.deb/download.deb
@@ -76,7 +76,7 @@ RUN python generate_runall.py
 
 
 # now install the binaries and libraries into smaller docker image
-FROM nexus3.o-ran-sc.org:10002/o-ran-sc/ric-app-mc-listener:1.6.0
+FROM nexus3.o-ran-sc.org:10002/o-ran-sc/ric-app-mc-listener:1.7.0
 
 ARG STAGE_DIR
 

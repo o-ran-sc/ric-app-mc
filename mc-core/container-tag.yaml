@@ -1,4 +1,4 @@
 ---
-tag: '1.0.8'
+tag: '1.0.9'
 
 # this is used by the CI jobs to tag the image it builds

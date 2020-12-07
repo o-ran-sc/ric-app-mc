@@ -687,19 +687,25 @@ int main(int argc, char* argv[]) {
 
             if (rmr_port) {
                 rmr_sbuf->mtype = rmr_mtype;							// fill in the message bits
-		rmr_sbuf->len =  strlen(linebuf) + 1;           // our receiver likely wants a nice acsii-z string
-		memcpy(rmr_sbuf->payload, linebuf, rmr_sbuf->len);
+		        rmr_sbuf->len =  strlen(linebuf) + 1;           // our receiver likely wants a nice acsii-z string
+		        memcpy(rmr_sbuf->payload, linebuf, rmr_sbuf->len);
                 rmr_sbuf->state = 0;
                 rmr_sbuf = rmr_send_msg( mrc, rmr_sbuf);				// send it (send returns an empty payload on success, or the original payload on fail/retry)
                 while( rmr_sbuf->state == RMR_ERR_RETRY ) {			// soft failure (device busy?) retry
                     rmr_sbuf = rmr_send_msg( mrc, rmr_sbuf);			// retry send until it's good (simple test; real programmes should do better)
                 }
-                rmr_post_success_cnt++;
-
+                if(rmr_sbuf->state != RMR_OK) {
+                    gslog(LOG_WARNING, "rmr_send_msg() failure, strerror(errno) is %s", strerror(errno));
+                    rmr_post_failure_cnt++;
+                } else
+                    rmr_post_success_cnt++;
+                if (((rmr_post_success_cnt+rmr_post_failure_cnt) % STAT_FREQUENCY) == 0)
+                    gslog(LOG_WARNING, "%s: successful RMR posts - %llu, failed RMR posts - %llu", argv[0], rmr_post_success_cnt, rmr_post_failure_cnt);
             }
 
 			if(curl_address==NULL){
-            	emit_line();
+                if (!rmr_port)  // if neither VES collector nor RMR is specified print to standard output
+            	    emit_line();
 			}else{
 				http_post_request_hdr(curl_endpoint, curl_url, linebuf, &http_code, curl_auth);
 				if(http_code != 200 && http_code != 202){

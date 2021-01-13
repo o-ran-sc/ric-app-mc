@@ -41,7 +41,8 @@
 #	Author:		E. Scott Daniels
 
 
-FROM nexus3.o-ran-sc.org:10004/o-ran-sc/bldr-ubuntu18-c-go:9-u18.04 as buildenv
+# builder images are now in release (10002)
+FROM nexus3.o-ran-sc.org:10002/o-ran-sc/bldr-ubuntu18-c-go:1.9.0 as buildenv
 
 RUN mkdir /playpen
 
@@ -49,8 +50,9 @@ RUN apt-get update && apt-get install -y cmake gcc make git g++ wget
 
 WORKDIR /playpen
 # Install RMr (runtime and dev) from debian package cached on packagecloud.io
-ARG RMR_VER=4.4.6
-ARG RMR_PC_REPO=release
+ARG RMR_VER=4.5.0
+#ARG RMR_PC_REPO=release
+ARG RMR_PC_REPO=staging
 
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/${RMR_PC_REPO}/packages/debian/stretch/rmr_${RMR_VER}_amd64.deb/download.deb
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/${RMR_PC_REPO}/packages/debian/stretch/rmr-dev_${RMR_VER}_amd64.deb/download.deb

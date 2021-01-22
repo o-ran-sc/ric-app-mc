@@ -14,7 +14,7 @@
 	],
 	"livenessProbe": {
 	    "exec": {
-	        "command": ["/usr/local/bin/health_ck"]
+	        "command": ["/usr/local/../local/bin/health_ck"]
 	    },
 	    "initialDelaySeconds": 5,
 	    "periodSeconds": 15

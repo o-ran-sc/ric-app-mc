@@ -31,7 +31,7 @@
 	},
 	"parameters": {
 		"ves_collector_address":"envy15:8888",
-		"measurement_interval": 10000,
+		"measurement_interval": 100000,
 		"simulator_mode": "true",
 		"debug_mode": "true"
 	}

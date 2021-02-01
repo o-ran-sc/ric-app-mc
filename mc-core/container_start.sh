@@ -25,19 +25,28 @@
 #			This starts all of the related processes which normally would
 #			be started in individual containers.
 #
-#			There are two environment variables which affect the operation
+#			There are environment variables which affect the operation
 #			of this script:
-#				USE_NNG -- if set to !0 then the NNG version of the listener
-#							is started; undefined or when 0 then the SI95
-#							version is used.
 #
-#				GSLITE_ROOT -- Assumed to be the root directory for the 
+#				GSLITE_ROOT -- Assumed to be the root directory for the
 #							core MC xAPP. If not defined, /mc/gs-lite is
 #							assumed.
+#
+#			When NOT running in simulation mode, a registration message is
+#			sent to the xAPP manager via the registration script in /playpen.
+#			An unregister message is "queued" and should be sent when this
+#			script receives a terminating event, or exits normally.
 #
 # Date:		13 February 2019
 # Author:	E. Scott Daniels
 # ----------------------------------------------------------------------
+
+# MUST have a posix style function declaration!
+unreg() {
+	trap - EXIT						# prevent running this again when we force the exit
+	/playpen/bin/xam_register -U
+	exit
+}
 
 set -e
 
@@ -50,25 +59,26 @@ mkdir -p $FIFO_DIR
 
 if [ "$SIMULATOR_MODE" != "true" ]
 then
-# --- start "sidecars" first. They are expected to need /playpen as the working dir
+	# --- start "sidecars" first. They are expected to need /playpen as the working dir
 
-(
-	cd /playpen
-	if [ "$RMR_PORT" != "" ]
-	then
-		bin/mc_listener -p $RMR_PORT
-	else
-		bin/mc_listener
-	fi
-) >/tmp/listener.std 2>&1 &
+	(
+		cd /playpen
+		if [ "$RMR_PORT" != "" ]
+		then
+			bin/mc_listener -p $RMR_PORT
+		else
+			bin/mc_listener
+		fi
+	) >/tmp/listener.std 2>&1 &
 
-echo "listener was started" >&2
+	echo "listener was started" >&2
 
+	trap 'unreg' EXIT 1 2 3 4 15				# unregister on exit/hup/quit/term
+	/playpen/bin/xam_register.sh				# register the xapp now that listener is up
 fi
 
 
 # ---- finally, start the core MC application -----------------------------
 cd ${GSLITE_ROOT:-/mc/gs-lite}/demo/queries
 ./runall
-
 

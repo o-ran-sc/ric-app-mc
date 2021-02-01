@@ -20,7 +20,7 @@ FROM nexus3.o-ran-sc.org:10004/o-ran-sc/bldr-ubuntu18-c-go:9-u18.04 AS project-b
 
 ARG STAGE_DIR
 
-ARG RMR_VER=4.4.6
+ARG RMR_VER=4.5.2
 
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/release/packages/debian/stretch/rmr_${RMR_VER}_amd64.deb/download.deb
 RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/release/packages/debian/stretch/rmr-dev_${RMR_VER}_amd64.deb/download.deb
@@ -78,6 +78,11 @@ RUN python generate_runall.py
 # now install the binaries and libraries into smaller docker image
 FROM nexus3.o-ran-sc.org:10002/o-ran-sc/ric-app-mc-listener:1.7.0
 
+# keep this close to the top to prevent lengthy rebuilds during testing
+RUN apt-get update && \
+    apt-get install -y curl python python-pip libboost-all-dev libhiredis-dev && \
+    apt-get clean
+
 ARG STAGE_DIR
 
 COPY --from=project-build ${STAGE_DIR}/gs-lite/demo/queries /mc/gs-lite/demo/queries
@@ -92,10 +97,7 @@ WORKDIR /opt/ric/config
 COPY --from=project-build ${STAGE_DIR}/mc_deployment.json /opt/ric/config/config-file.json
 
 COPY container_start.sh /playpen/bin/
-
-RUN apt-get update && \
-    apt-get install -y curl python python-pip libboost-all-dev libhiredis-dev && \
-    apt-get clean
+COPY package/*.py package/*.sh /playpen/bin/
 
 RUN ldconfig
 RUN pip install protobuf

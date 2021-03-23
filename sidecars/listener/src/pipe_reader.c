@@ -49,6 +49,7 @@ static void usage( char* argv0 ) {
 	fprintf( stderr, "   -d  dir (default is /tmp/mcl/fifos)\n" );
 	fprintf( stderr, "   -e  disable extended headers expectation in FIFO data\n" );
 	fprintf( stderr, "   -m  msg-type (default is 0)\n" );
+	fprintf( stderr, "   -M  max msg to read (default is all)\n" );
 	fprintf( stderr, "   -s  stats only mode\n" );
 }
 
@@ -76,6 +77,7 @@ int main( int argc,  char** argv ) {
 	char	timestamp[MCL_TSTAMP_SIZE];		// we'll get the timestamp from this
 	long	count = 0;
 	int		blabber = 0;
+	int		max = 0;						// we'll force one reader down early to simulate MC going away
 
 	signal( SIGINT, sigh );
 	signal( SIGTERM, sigh );
@@ -103,6 +105,16 @@ int main( int argc,  char** argv ) {
 			case 'm':
 				if( pidx+1 < argc ) {
 					mtype = atoi( argv[pidx+1] );
+					pidx++;
+				} else {
+					bad_arg( argv[pidx] );
+					error = 1;
+				}
+				break;
+
+			case 'M':
+				if( pidx+1 < argc ) {
+					max = atoi( argv[pidx+1] );
 					pidx++;
 				} else {
 					bad_arg( argv[pidx] );
@@ -139,7 +151,8 @@ int main( int argc,  char** argv ) {
 		exit( 1 );
 	}
 
-	while( 1 ) {
+	fprintf( stderr, "[INFO] max = %d\n", max );
+	while( max == 0 || count < max ) {
 		len = mcl_fifo_tsread1( ctx, mtype, buf, sizeof( buf ) -1, long_hdrs, timestamp );
 		if( len > 0 ) {
 			if( stats_only ) {
@@ -156,7 +169,11 @@ int main( int argc,  char** argv ) {
 			}
 
 			count++;
+		} else {
+			sleep( 1 );
 		}
 	}
+
+	fprintf( stderr, "[INFO] max reached: %d\n", max );
 }
 

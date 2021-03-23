@@ -43,7 +43,7 @@ function run_replay {
 	chmod 644 $file
 
 	set -x
-	$bin_dir/rdc_replay -f $file -d $fifo_dir >/tmp/replay.log 2>&1
+	$bin_dir/rdc_replay -f $file -d $fifo_dir >$log_dir/replay.log 2>&1
 	lpid=$!
 	set +x
 	echo "replay finished"
@@ -52,8 +52,7 @@ function run_replay {
 # run a pipe reader for one message type
 function run_pr {
 	echo "starting pipe reader $1"
-	$bin_dir/pipe_reader $ext_hdr -m $1 -d $fifo_dir  >/tmp/pr.$1.log 2>&1 &
-	#$bin_dir/pipe_reader -m $1 -d $fifo_dir & # >/tmp/pr.$1.log 2>&1
+	$bin_dir/pipe_reader $ext_hdr -m $1 -d $fifo_dir  >$log_dir/pr.$1.log 2>&1 &
 	typeset prpid=$!
 
 	sleep $reader_wait
@@ -62,6 +61,9 @@ function run_pr {
 }
 
 # ---- run everything ---------------------------------------------------
+
+log_dir=/tmp/mcl_verify
+mkdir -p $log_dir
 
 ext_hdr=""					# run with extended header enabled (-e turns extended off)
 run_listener=0				# -a turns on to run all
@@ -138,7 +140,7 @@ errors=0
 
 # logs should be > 0 in size
 echo "----- logs ---------"
-ls -al /tmp/*.log
+ls -al $log_dir/*.log
 
 # pipe reader log files 1-6 should have 'stand up and cheer' messages
 # pipe reader log for MT 0 will likley be empty as sender sends only
@@ -146,14 +148,14 @@ ls -al /tmp/*.log
 #
 for l in 1 2 3 4 5 6
 do
-	if [[ ! -s /tmp/pr.$l.log ]]
+	if [[ ! -s $log_dir/pr.$l.log ]]
 	then
 		echo "[FAIL] log $l was empty"
 		(( errors++ ))
 	else
-		if ! grep -q -i "stand up and cheer" /tmp/pr.$l.log
+		if ! grep -q -i "stand up and cheer" $log_dir/pr.$l.log
 		then
-			echo "[FAIL] pipe reader log did not have any valid messages: /tmp/pr.$l.log"
+			echo "[FAIL] pipe reader log did not have any valid messages: $log_dir/pr.$l.log"
 			(( errors++ ))
 		fi
 	fi

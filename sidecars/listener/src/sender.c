@@ -129,11 +129,11 @@ int main( int argc, char** argv ) {
 			sbuf = rmr_send_msg( mrc, sbuf );			// retry send until it's good (simple test; real programmes should do better)
 		}
 		count++;
-		fprintf( stderr, "<SNDR> sent message\n" );
+		fprintf( stderr, "<SNDR> sent message type=%d\n", mtype );
 
 		usleep( delay );
 		mtype++;
-		if( mtype > 6 ) {
+		if( mtype > 8 ) {			// ensure we send a mt that doesn't have a fifo reader to ensure we don't block
 			mtype = 1;
 		}
 	}

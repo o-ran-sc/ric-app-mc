@@ -124,6 +124,9 @@ int main( int argc,  char** argv ) {
 		errors++;
 	}
 
+	close_fifo( ctx, TEST_MTYPE, WRITER );			// close one we know is there
+	close_fifo( ctx, 84306, WRITER );				// coverage on error case
+
 	mcl_start_listening( ctx, port, 0 );			// start the listener
 
 	// under test, the FOREVER = 0 keeps fanout from blocking; drive several times to cover all cases

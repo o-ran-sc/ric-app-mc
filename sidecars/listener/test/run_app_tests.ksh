@@ -35,11 +35,11 @@
 
 
 # This is a hack! There seems not to be an easy way to have the LF
-# environment add RMR (or other needed packages) for testing. If we don't
+# environment adds RMR (or other needed packages) for testing. If we don't
 # find RMR in the /usr/local part of the filesystem, we'll force it into
 # /tmp which doesn't require root.  We'll be smart and get the desired
-# rmr version from the repo root juas as we _expected_ the CI environmnt
-# woudl do (but seems not to).
+# rmr version from the repo root just as we _expected_ the CI environmnt
+# would do (but seems not to).
 #
 function ensure_pkgs {
 	if (( no_rmr_load ))
@@ -112,11 +112,13 @@ then
 fi
 
 
+verbose=0
 while [[ $1 == -* ]]
 do
 	case $1 in
 		-f)	force_rmr_load=1;;
 		-N) no_rmr_load=1;;					# for local testing
+		-v)	verbose=1; vflag="-v";;
 
 		*)	echo "unrecognised option: $1"
 			exit 1
@@ -134,6 +136,11 @@ cd ../src
 export TEST_COV_OPTS="-ftest-coverage -fprofile-arcs"		# picked up by make so we get coverage on tools for sonar
 make clean			# ensure coverage files removed
 make -B				# force build under the eyes of sonar build wrapper
+if (( $? != 0 ))
+then
+	echo "[FAIL] build failed"
+	exit
+fi
 
 rm -fr *.gcov *.gcda			# ditch any previously generated coverage info
 
@@ -157,7 +164,7 @@ do
 	./rdc_replay  -$x >/dev/null 2>&1		# drive each exception (missing value) or 'help'
 done
 
-./verify.sh					# verify MUST be first (replay relies on its output)
+./verify.sh $vflag					# verify MUST be first (replay relies on its output)
 ./verify_replay.sh
 
 # generate and copy coverage files to parent which is where the CI jobs are looking for them

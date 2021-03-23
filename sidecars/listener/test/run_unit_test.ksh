@@ -142,6 +142,7 @@ fi
 running=/tmp/PID$$.running
 force_rmr_load=0
 ci_mode=1								# -c turns off; see the flower box above
+verbose=0
 
 while [[ $1 == -* ]]
 do
@@ -149,6 +150,7 @@ do
 		-c) ci_mode=0;;
 		-f)	force_rmr_load=1;;
 		-N) no_rmr_load=1;;					# for local testing
+		-v)	verbose=1;;
 
 		*)	echo "unrecognised option: $1"
 			exit 1
@@ -168,7 +170,7 @@ ensure_pkgs						# ensure that we have RMR; some CI environments are lacking
 
 if (( ci_mode ))				# in CI mode we must force a build in the src so build wrapper captures trigger data
 then
-	echo "building in src for sonar build wrapper capture"
+	echo "unit_test: building in src for sonar build wrapper capture"
 	(
 		cd ../src
 		export TEST_COV_OPTS="-ftest-coverage -fprofile-arcs"		# picked up by make so we get coverage on tools for sonar
@@ -176,23 +178,26 @@ then
 	)
 fi
 
-echo "building unit test(s)"
+echo "[INFO] unit_test: building unit test(s)"
 if ! make -B unit_test			# ensure that it's fresh
 then
 	echo "[FAIL] cannot make unit_test"
 	exit 1
 fi
-echo "unit test(s) successfully built"
+echo "[INFO] unit_test: unit test(s) successfully built"
 
 setup_dirs
+echo "[INFO] unit_test: directories set up"
 
 if [[ $1 == "set"* ]]			# setup only
 then
+	echo "[INFO] unit_test: setup only; exiting good"
 	exit
 fi
 
 rm -fr *.gcov *.gcda			# ditch any previously generated coverage info
 
+echo "[INFO] unit_test: running tests -- may take as long as 120 seconds"
 ./unit_test >/tmp/PID$$.utlog 2>&1 &
 pid=$!
 abort_after 60 $pid &

@@ -79,11 +79,12 @@ function run_listener {
 
 # run a pipe reader for one message type
 function run_pr {
-	echo "starting pipe reader $1"
-	$bin_dir/pipe_reader $ext_hdr -m $1 -d $fifo_dir  >/tmp/pr.$1.log 2>&1 &
-	#$bin_dir/pipe_reader -m $1 -d $fifo_dir & # >/tmp/pr.$1.log 2>&1 
+	echo "starting pipe reader $1  $max_flag"
+	set -x
+	$bin_dir/pipe_reader $ext_hdr $max_flag -m $1 -d $fifo_dir  >/tmp/pr.$1.log 2>&1 &
+	set +x
 	typeset prpid=$!
-	
+
 	sleep $reader_wait
 	echo "stopping pipe reader $ppid"
 	kill -15 $prpid
@@ -93,13 +94,16 @@ function run_pr {
 function gen_rt {
 	cat <<endKat >/tmp/local.rt
 	newrt|start
-	mse | 0 | -1 | localhost:4560	
-	mse | 1 | -1 | localhost:4560	
-	mse | 2 | -1 | localhost:4560	
-	mse | 3 | -1 | localhost:4560	
-	mse | 4 | -1 | localhost:4560	
-	mse | 5 | -1 | localhost:4560	
-	mse | 6 | -1 | localhost:4560	
+	mse | 0 | -1 | localhost:4560
+	mse | 1 | -1 | localhost:4560
+	mse | 2 | -1 | localhost:4560
+	mse | 3 | -1 | localhost:4560
+	mse | 4 | -1 | localhost:4560
+	mse | 5 | -1 | localhost:4560
+	mse | 6 | -1 | localhost:4560
+	mse | 7 | -1 | localhost:4560
+	mse | 8 | -1 | localhost:4560
+	mse | 9 | -1 | localhost:4560
 	newrt|end
 endKat
 }
@@ -110,12 +114,14 @@ si=""						# if -s given then we add this to sender/listener to run SI95 version
 ext_hdr=""					# run with extended header enabled (-e turns extended off)
 long_test=0
 raw_capture=1
+verbose=0
 while [[ $1 == -* ]]
 do
-	case $1 in 
+	case $1 in
 		-l)	long_test=1;;
 		-n)	raw_capture=0;;
 		-s)	si="si_";;
+		-v) verbose=1;;
 		*)	echo "$1 is not a recognised option"
 			exit 1
 			;;
@@ -160,15 +166,29 @@ gen_rt						# generate a dummy route table
 run_listener &
 sleep 4
 
-for p in 0 1 2 3 4 5 6
+# the sender will send types 0-8 inclusive; we only start 7 readers to
+# endure listener doesn't hang on pipes without a reader
+#
+for p in 0 1 2 3 4 5
 do
-	run_pr $p &
+	run_pr $p &				# all but last have no max read
 done
-sleep 1
+max_flag="-M 10"
+run_pr 6 &
+
+sleep 1						# let the readers settle
 run_sender &
 
 sleep $main_wait			# long enough for all functions to finish w/o having to risk a wait hanging
 echo "all functions stopped; looking at logs"
+
+if (( verbose ))
+then
+	echo "[INFO] ---- mc_lisener log follwos --------------------------"
+	cat /tmp/listen.log
+	echo "[INFO] ------------------------------------------------------"
+fi
+
 
 # ---------- validation -------------------------------------------------
 
@@ -197,7 +217,7 @@ do
 	fi
 done
 
-if (( ! errors )) 
+if (( ! errors ))
 then
 	echo "[OK]    All logs seem good"
 fi
@@ -228,7 +248,7 @@ then
 	then
 		echo "[OK]    Found final direcory ($final_dir)"
 		ls -al $final_dir
-	
+
 		if (( long_test ))		# look for files in final dir to ensure roll
 		then
 			found=$( ls $final_dir/MC* | wc -l )

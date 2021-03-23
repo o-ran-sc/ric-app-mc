@@ -50,7 +50,7 @@ RUN apt-get update && apt-get install -y cmake gcc make git g++ wget
 
 WORKDIR /playpen
 # Install RMr (runtime and dev) from debian package cached on packagecloud.io
-ARG RMR_VER=4.5.2
+ARG RMR_VER=4.6.0
 ARG RMR_PC_REPO=release
 #ARG RMR_PC_REPO=staging
 

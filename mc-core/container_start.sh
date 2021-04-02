@@ -62,6 +62,11 @@ then
 	# --- start "sidecars" first. They are expected to need /playpen as the working dir
 
 	(
+		export RMR_SEED_RT=/tmp/empty.rt		# must ensure this exists; we won't use
+		export RMR_STASH_RT=/tmp/stash.rt		# listener's rmr will stash the table received from RM
+		>$RMR_SEED_RT
+		>$RMR_STASH_RT							# mc-core apps will set this as their seed; it must be emptied here
+
 		cd /playpen
 		if [ "$RMR_PORT" != "" ]
 		then
@@ -71,7 +76,7 @@ then
 		fi
 	) >/tmp/listener.std 2>&1 &
 
-	echo "listener was started" >&2
+	echo "$(date) listener was started; stashing route tables in $RMR_STASH_RT" >&2
 
 	trap 'unreg' EXIT 1 2 3 4 15				# unregister on exit/hup/quit/term
 	/playpen/bin/xam_register.sh				# register the xapp now that listener is up
@@ -80,5 +85,8 @@ fi
 
 # ---- finally, start the core MC application -----------------------------
 cd ${GSLITE_ROOT:-/mc/gs-lite}/demo/queries
+
+export RMR_SEED_RT=/tmp/stash.rt		# must match above; place where "writers" will pick up the route table
+export RMR_RTG_SVC=-1					# force all writers to use only the seed rt
 ./runall
 

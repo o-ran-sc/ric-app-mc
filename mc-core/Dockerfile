@@ -16,7 +16,8 @@
 
 ARG STAGE_DIR=/mc
 
-FROM nexus3.o-ran-sc.org:10004/o-ran-sc/bldr-ubuntu18-c-go:1.9.0 AS project-build
+# builders are now in release (10002)
+FROM nexus3.o-ran-sc.org:10002/o-ran-sc/bldr-ubuntu18-c-go:1.9.0 AS project-build
 
 ARG STAGE_DIR
 
@@ -49,6 +50,10 @@ RUN make clean
 RUN make
 RUN make install
 RUN ldconfig
+
+# hack to get protobufs to build
+RUN cp src/google/protobuf/stubs/int128.h /usr/local/include/google/protobuf/stubs
+
 WORKDIR ${STAGE_DIR}
 RUN git clone https://github.com/protobuf-c/protobuf-c.git
 WORKDIR protobuf-c

@@ -1,6 +1,6 @@
 # causes CI job(s) to install RMR with the desired version
 ---
-version: 4.5.2
-repo: staging
+version: 4.7.0
+repo: release
 
 

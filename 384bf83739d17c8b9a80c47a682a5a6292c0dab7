@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9199fa0b_360655e1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000037
+      },
+      "writtenOn": "2021-05-11T16:47:41Z",
+      "side": 1,
+      "message": "This is a small fix to one of the test programmes to keep Sonar from showing that the code doesn\u0027t \"pass\".  The programme is never executed in \"production\" and thus there should be no release of a new listener image for this; sonar should stop grumbling once this is merged.   Thanks!",
+      "revId": "384bf83739d17c8b9a80c47a682a5a6292c0dab7",
+      "serverId": "84e4e190-e623-4c37-9eda-58b1937c1b53"
+    }
+  ]
+}

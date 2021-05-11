@@ -65,7 +65,7 @@ static void sigh( int sig ) {
 //------------------------------------------------------------------------------------------
 int main( int argc,  char** argv ) {
 	void*	ctx;							// the mc listener library context
-	char*	dname = "/tmp/mcl/fifos";		// default directory where we open fifos
+	char*	dname = NULL;					// directory where we open fifos
 	int		pidx = 1;						// parameter index
 	int		error = 0;
 	int		len;
@@ -79,6 +79,7 @@ int main( int argc,  char** argv ) {
 	int		blabber = 0;
 	int		max = 0;						// we'll force one reader down early to simulate MC going away
 
+	dname = strdup( "/tmp/mcl/fifos" );		// default to this so we can blindly free in 'd' to keep sonar happy
 	signal( SIGINT, sigh );
 	signal( SIGTERM, sigh );
 
@@ -86,6 +87,9 @@ int main( int argc,  char** argv ) {
 		switch( argv[pidx][1] ) {
 			case 'd':
 				if( pidx+1 < argc ) {
+					if( dname != NULL ) {
+						free( dname );						// keep sonar happy even though this is a test programme where a leak is meaningless
+					}
 					dname = strdup( argv[pidx+1] );
 					pidx++;
 				} else {

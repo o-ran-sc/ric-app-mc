@@ -21,10 +21,11 @@ FROM nexus3.o-ran-sc.org:10002/o-ran-sc/bldr-ubuntu18-c-go:1.9.0 AS project-buil
 
 ARG STAGE_DIR
 
-ARG RMR_VER=4.5.2
-
-RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/release/packages/debian/stretch/rmr_${RMR_VER}_amd64.deb/download.deb
-RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/release/packages/debian/stretch/rmr-dev_${RMR_VER}_amd64.deb/download.deb
+ARG RMR_VER=4.7.4
+ARG RMR_PC_REPO=release
+#ARG RMR_PC_REPO=staging
+RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/${RMR_PC_REPO}/packages/debian/stretch/rmr_${RMR_VER}_amd64.deb/download.deb
+RUN wget -nv --content-disposition https://packagecloud.io/o-ran-sc/${RMR_PC_REPO}/packages/debian/stretch/rmr-dev_${RMR_VER}_amd64.deb/download.deb
 RUN dpkg -i rmr_${RMR_VER}_amd64.deb
 RUN dpkg -i rmr-dev_${RMR_VER}_amd64.deb
 RUN ldconfig
@@ -81,7 +82,7 @@ RUN python generate_runall.py
 
 
 # now install the binaries and libraries into smaller docker image
-FROM nexus3.o-ran-sc.org:10002/o-ran-sc/ric-app-mc-listener:1.7.0
+FROM nexus3.o-ran-sc.org:10002/o-ran-sc/ric-app-mc-listener:1.12.0
 
 # keep this close to the top to prevent lengthy rebuilds during testing
 RUN apt-get update && \

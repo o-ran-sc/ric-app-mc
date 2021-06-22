@@ -44,7 +44,7 @@
 # MUST have a posix style function declaration!
 unreg() {
 	trap - EXIT						# prevent running this again when we force the exit
-	/playpen/bin/xam_register -U
+	/playpen/bin/xam_register.sh -U
 	exit
 }
 

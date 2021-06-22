@@ -177,6 +177,7 @@ int main( int argc,  char** argv ) {
 			sleep( 1 );
 		}
 	}
+	free(dname);	// lets keep SONAR happy
 
 	fprintf( stderr, "[INFO] max reached: %d\n", max );
 }

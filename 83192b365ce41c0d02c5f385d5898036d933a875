@@ -1,0 +1,9 @@
+Verified+1: Vlad Shkapenyuk <vshkap@research.att.com>
+Verified+1: ORAN Jobbuilder <releng+oran-jobbuilder@linuxfoundation.org>
+Code-Review+1: Matti Hiltunen <hiltunen@att.com>
+Code-Review+2: Vlad Shkapenyuk <vshkap@research.att.com>
+Submitted-by: Vlad Shkapenyuk <vshkap@research.att.com>
+Submitted-at: Thu, 24 Jun 2021 18:19:42 +0000
+Reviewed-on: https://gerrit.o-ran-sc.org/r/c/ric-app/mc/+/6382
+Project: ric-app/mc
+Branch: refs/heads/master

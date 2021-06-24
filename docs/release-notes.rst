@@ -7,7 +7,7 @@ Release Notes
 =============
 
 
-This document provides the release notes for the Bronze Release of the Measurement Campaign xAPP.
+This document provides the release notes for the Dawn Release of the Measurement Campaign xAPP.
 
 .. contents::
    :depth: 3
@@ -19,6 +19,9 @@ Version history
 
 +--------------------+--------------------+--------------------+--------------------+
 | **Date**           | **Ver.**           | **Author**         | **Comment**        |
+|                    |                    |                    |                    |
++--------------------+--------------------+--------------------+--------------------+
+| 2021-06-24         | 1.0.11             |   Vlad Shkapenyuk  | Dawn release       |
 |                    |                    |                    |                    |
 +--------------------+--------------------+--------------------+--------------------+
 | 2020-05-01         | 1.0.5              |   Vlad Shkapenyuk  | Bronze release     |
@@ -33,7 +36,7 @@ Version history
 Summary
 -------
 
-The Bronze release of the MC xAPP supports calculation of a number of metrics and KPIs 
+The Dawn release of the MC xAPP supports calculation of a number of metrics and KPIs 
 based on X2 messages received from UEEC.
 
 
@@ -47,10 +50,10 @@ Release Data
 | **Repo/commit-ID**                   | ric-app/mc                           |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-| **Release designation**              | Bronze                               |
+| **Release designation**              | Dawn                                 |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
-| **Release date**                     | 2020-05-01                           |
+| **Release date**                     | 2021-06-24                           |
 |                                      |                                      |
 +--------------------------------------+--------------------------------------+
 | **Purpose of the delivery**          | open-source measurement campaign xApp|
